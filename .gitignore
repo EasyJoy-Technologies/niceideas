@@ -1,0 +1,17 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Runtime/env
+.env
+.env.*
+
+# Dependencies/build (generic)
+node_modules/
+dist/
+build/
+coverage/
