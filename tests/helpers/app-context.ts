@@ -5,6 +5,7 @@ import { setAuthContextForTests } from "@/server/auth/authenticate";
 import { parseFirstPartyPolicy } from "@/server/auth/first-party";
 import { createTokenVerifier } from "@/server/auth/token-verifier";
 import { resetConfigForTests } from "@/server/config/env";
+import { closeDbForTests } from "@/server/db";
 import { LocalStore } from "@/server/storage/local-store";
 import { setMediaStoresForTests } from "@/server/storage";
 import { startTestDb } from "./pg";
@@ -30,5 +31,9 @@ export async function startAppContext() {
   const stores = { privateStore: new LocalStore(path.join(root, "private")), publicStore: new LocalStore(path.join(root, "public")) };
   setMediaStoresForTests(stores);
   const tokenFor = (sub: string, aud = AUD_INTL) => issuer.sign({ sub, client_id: TEST_CLIENT, aud });
-  return { ...pg, stores, tokenFor };
+  const stop = async () => {
+    await closeDbForTests();
+    await pg.stop();
+  };
+  return { ...pg, stop, stores, tokenFor };
 }

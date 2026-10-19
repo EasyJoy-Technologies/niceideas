@@ -10,3 +10,9 @@ export function getDb(): Db {
   }
   return globalForDb.__niceideasDb;
 }
+
+/** Test hook: close the process-wide pool (before the test database stops). */
+export async function closeDbForTests(): Promise<void> {
+  await globalForDb.__niceideasDb?.destroy();
+  globalForDb.__niceideasDb = undefined;
+}

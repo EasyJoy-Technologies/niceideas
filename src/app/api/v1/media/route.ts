@@ -6,6 +6,7 @@ import { jsonOk } from "@/server/http/json";
 import { ingestUpload } from "@/server/media/ingest";
 import { mediaLimitsFromConfig } from "@/server/media/limits";
 import { toMediaDto } from "@/server/media/media-dto";
+import { assertCanUploadMedia } from "@/server/posts/rate-limit";
 import { ensureProfile } from "@/server/profiles/ensure-profile";
 import { getMediaStores } from "@/server/storage";
 import { BodyTooLargeError, removeTempDir, spoolBody } from "@/server/util/temp-file";
@@ -25,6 +26,7 @@ export const POST = apiRoute("media.upload", async (request) => {
 
   const db = getDb();
   await ensureProfile(db, principal.userId);
+  await assertCanUploadMedia(db, principal.userId);
   const limits = mediaLimitsFromConfig();
   const declaredLength = Number(request.headers.get("content-length") ?? "0");
   const hardLimit = Math.max(limits.maxImageBytes, limits.maxAudioBytes);

@@ -36,6 +36,14 @@ const schema = z.object({
   MEDIA_MAX_AUDIO_SECONDS: z.coerce.number().int().positive().default(4 * 60 * 60),
   MEDIA_MAX_IMAGE_PIXELS: z.coerce.number().int().positive().default(100_000_000),
   MEDIA_USER_QUOTA_BYTES: z.coerce.number().int().positive().default(5 * 1024 * 1024 * 1024),
+
+  /** Withdrawn / removed posts are physically deleted after this many days (plan D9). */
+  POST_RETENTION_DAYS: z.coerce.number().int().positive().default(30),
+  /** Publishing limits per user (plan §11). */
+  RATE_POSTS_PER_HOUR: z.coerce.number().int().positive().default(30),
+  RATE_POSTS_PER_DAY: z.coerce.number().int().positive().default(200),
+  RATE_REVISIONS_PER_HOUR: z.coerce.number().int().positive().default(720),
+  RATE_MEDIA_PER_HOUR: z.coerce.number().int().positive().default(300),
 }).superRefine((cfg, ctx) => {
   if (cfg.STORAGE_DRIVER !== "s3") return;
   for (const key of ["S3_ENDPOINT", "S3_ACCESS_KEY_ID", "S3_SECRET_ACCESS_KEY", "S3_PRIVATE_BUCKET", "S3_PUBLIC_BUCKET"] as const) {
