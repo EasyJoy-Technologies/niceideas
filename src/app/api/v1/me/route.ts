@@ -6,7 +6,7 @@ import { ensureProfile } from "@/server/profiles/ensure-profile";
 import { toProfileDto } from "@/server/profiles/profile-dto";
 
 /** Current caller's profile (created on first call). */
-export const GET = apiRoute("me.get", async (request) => {
+export const GET = apiRoute("me.get", "site_api", async (request) => {
   const principal = await authenticateFirstParty(request);
   const profile = await ensureProfile(getDb(), principal.userId);
   return jsonOk({ profile: toProfileDto(profile) });

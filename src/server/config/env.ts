@@ -37,6 +37,9 @@ const schema = z.object({
   MEDIA_MAX_IMAGE_PIXELS: z.coerce.number().int().positive().default(100_000_000),
   MEDIA_USER_QUOTA_BYTES: z.coerce.number().int().positive().default(5 * 1024 * 1024 * 1024),
 
+  /** Mainland-China rule (plan §4): `link_only` = only share links / publish APIs; `off` = no restriction. */
+  REGION_POLICY_CN: z.enum(["link_only", "off"]).default("link_only"),
+
   /** Withdrawn / removed posts are physically deleted after this many days (plan D9). */
   POST_RETENTION_DAYS: z.coerce.number().int().positive().default(30),
   /** Publishing limits per user (plan §11). */

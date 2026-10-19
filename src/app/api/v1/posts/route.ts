@@ -9,7 +9,7 @@ import { postRuntime } from "@/server/posts/runtime";
 import { ensureProfile } from "@/server/profiles/ensure-profile";
 
 /** Publish a note. Re-sharing the same note returns the existing link (200). */
-export const POST = apiRoute("posts.create", async (request) => {
+export const POST = apiRoute("posts.create", "publish_api", async (request) => {
   const principal = await authenticateFirstParty(request);
   const payload = await readJson(request);
   const input = parseCreateRequest(payload);

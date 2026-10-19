@@ -16,14 +16,14 @@ async function hashOf(revisionId: string | null): Promise<string | null> {
   return revisionId ? ((await findRevision(postRuntime().db, revisionId))?.content_hash ?? null) : null;
 }
 
-export const GET = apiRoute<Ctx>("posts.get", async (request, ctx) => {
+export const GET = apiRoute<Ctx>("posts.get", "publish_api", async (request, ctx) => {
   const principal = await authenticateFirstParty(request);
   const post = await loadOwnPost(postRuntime().db, principal, (await ctx.params).id);
   return jsonOk({ post: toPostDto(post, await hashOf(post.current_revision_id)) });
 });
 
 /** Change summary / cover / kind / sync mode (`null` returns a field to automatic). */
-export const PATCH = apiRoute<Ctx>("posts.settings", async (request, ctx) => {
+export const PATCH = apiRoute<Ctx>("posts.settings", "publish_api", async (request, ctx) => {
   const principal = await authenticateFirstParty(request);
   const input = parseSettingsRequest(await readJson(request));
   const post = await updatePostSettings(postRuntime().db, principal, (await ctx.params).id, input);
@@ -31,7 +31,7 @@ export const PATCH = apiRoute<Ctx>("posts.settings", async (request, ctx) => {
 });
 
 /** Withdraw (plan §10). Idempotent. */
-export const DELETE = apiRoute<Ctx>("posts.withdraw", async (request, ctx) => {
+export const DELETE = apiRoute<Ctx>("posts.withdraw", "publish_api", async (request, ctx) => {
   const principal = await authenticateFirstParty(request);
   const { db, stores, retentionDays } = postRuntime();
   const post = await withdrawPost(db, stores, principal, (await ctx.params).id, retentionDays);

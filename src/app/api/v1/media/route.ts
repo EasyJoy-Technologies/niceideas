@@ -18,7 +18,7 @@ const SHA256 = /^[0-9a-f]{64}$/;
  * header `X-Content-SHA256` = lowercase hex sha256 of the bytes.
  * Same owner + same hash → returns the existing media (200) without re-upload work.
  */
-export const POST = apiRoute("media.upload", async (request) => {
+export const POST = apiRoute("media.upload", "publish_api", async (request) => {
   const principal = await authenticateFirstParty(request);
   const declared = (request.headers.get("x-content-sha256") ?? "").toLowerCase();
   if (!SHA256.test(declared)) throw badRequest("media.sha256_required");
