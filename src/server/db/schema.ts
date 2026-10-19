@@ -15,11 +15,13 @@ export type PostSource = "nicenote_intl" | "nicenote_cn" | "web" | `api:${string
 export type SyncMode = "follow" | "frozen";
 export type MediaKind = "image" | "audio";
 
-/** Stored object keys per derived rendition (relative to the storage root). */
-export type MediaVariants = {
-  image?: { w480?: string; w960?: string; w1600?: string; fallback: string; fallbackMime: string };
-  audio?: { original: string };
-};
+/** One stored rendition (object key relative to the bucket root). */
+export type MediaRendition = { key: string; mime: string; bytes: number; width?: number; height?: number };
+
+/** Derived renditions. Images: responsive webp set + one jpeg/png fallback. Audio: original bytes. */
+export type MediaVariants =
+  | { kind: "image"; webp: MediaRendition[]; fallback: MediaRendition }
+  | { kind: "audio"; original: MediaRendition };
 
 export interface ProfileTable {
   user_id: string;

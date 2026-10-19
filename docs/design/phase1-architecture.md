@@ -45,7 +45,8 @@
 
 ## 4. 媒体
 
-- 上传 `POST /api/v1/media`（multipart：`file` + `sha256`）。同一作者同一 sha256 → 直接返回已有。
+- 上传 `POST /api/v1/media`：请求体 = 文件原始字节（流式落盘，不进内存），请求头 `X-Content-SHA256`。不用 multipart，避免大音频被整体缓冲。同一作者同一 sha256 → 直接返回已有（200），新建返回 201。
+- 限额：图片 ≤ 30 MB、≤ 1 亿像素；音频 ≤ 150 MB、≤ 4 小时；单用户媒体总量 ≤ 5 GB（均可配置）。
 - 按文件头识别：图片 jpeg/png/webp/gif/avif（禁 SVG；gif 取首帧；HEIC 不支持，客户端先转 JPEG）；音频 mp3/m4a(aac)/ogg/opus/webm/wav。
 - 图片：自动旋转后去掉全部元数据（EXIF/GPS），生成宽 480/960/1600 的 webp（不放大）+ 1600 jpeg 兜底。
 - 音频：原样保存（不转码），校验时长与大小。

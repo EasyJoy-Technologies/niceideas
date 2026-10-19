@@ -16,6 +16,31 @@ const schema = z.object({
     .default("https://api.nicematrix.com=nicenote_intl,https://apiv3.ej-mobile.cn=nicenote_cn"),
   /** Logto client_ids allowed to call first-party APIs. Empty = no first-party access (fail closed). */
   FIRST_PARTY_CLIENT_IDS: z.string().default(""),
+
+  /** Object storage: `local` (development/tests) or `s3` (Cloudflare R2). */
+  STORAGE_DRIVER: z.enum(["local", "s3"]).default("local"),
+  LOCAL_STORAGE_DIR: z.string().default("./var/storage"),
+  S3_ENDPOINT: z.url().optional(),
+  S3_REGION: z.string().default("auto"),
+  S3_ACCESS_KEY_ID: z.string().optional(),
+  S3_SECRET_ACCESS_KEY: z.string().optional(),
+  /** Holds every derived rendition; never publicly reachable. */
+  S3_PRIVATE_BUCKET: z.string().optional(),
+  /** Holds only media of live posts; served by MEDIA_PUBLIC_BASE_URL. */
+  S3_PUBLIC_BUCKET: z.string().optional(),
+  MEDIA_PUBLIC_BASE_URL: z.url().default("http://localhost:3000/media-local"),
+  /** Short TTL bounds how long withdrawn media can linger in CDN / browser caches. */
+  MEDIA_CACHE_CONTROL: z.string().default("public, max-age=300"),
+  MEDIA_MAX_IMAGE_BYTES: z.coerce.number().int().positive().default(30 * 1024 * 1024),
+  MEDIA_MAX_AUDIO_BYTES: z.coerce.number().int().positive().default(150 * 1024 * 1024),
+  MEDIA_MAX_AUDIO_SECONDS: z.coerce.number().int().positive().default(4 * 60 * 60),
+  MEDIA_MAX_IMAGE_PIXELS: z.coerce.number().int().positive().default(100_000_000),
+  MEDIA_USER_QUOTA_BYTES: z.coerce.number().int().positive().default(5 * 1024 * 1024 * 1024),
+}).superRefine((cfg, ctx) => {
+  if (cfg.STORAGE_DRIVER !== "s3") return;
+  for (const key of ["S3_ENDPOINT", "S3_ACCESS_KEY_ID", "S3_SECRET_ACCESS_KEY", "S3_PRIVATE_BUCKET", "S3_PUBLIC_BUCKET"] as const) {
+    if (!cfg[key]) ctx.addIssue({ code: "custom", path: [key], message: "required when STORAGE_DRIVER=s3" });
+  }
 });
 
 export type AppConfig = z.infer<typeof schema>;

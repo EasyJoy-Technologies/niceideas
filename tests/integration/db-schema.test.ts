@@ -73,7 +73,7 @@ describe("posts + revisions", () => {
 
 describe("media", () => {
   it("dedupes by owner + sha256 and tracks public references", async () => {
-    const row = { owner_id: "u1", sha256: "c".repeat(64), kind: "image" as const, mime: "image/jpeg", byte_size: 10, width: 1, height: 1, duration_ms: null, variants: JSON.stringify({ image: { fallback: "k", fallbackMime: "image/jpeg" } }) };
+    const row = { owner_id: "u1", sha256: "c".repeat(64), kind: "image" as const, mime: "image/jpeg", byte_size: 10, width: 1, height: 1, duration_ms: null, variants: JSON.stringify({ kind: "image", webp: [], fallback: { key: "k", mime: "image/jpeg" } }) };
     const a = await insertMediaOrGet(db, row);
     const b = await insertMediaOrGet(db, row);
     expect(a.created).toBe(true);
