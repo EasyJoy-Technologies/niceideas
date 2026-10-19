@@ -1,0 +1,391 @@
+/*
+ * NiceIdeas share page (/p/<slug>) — style draft for review.
+ * Tokens mirror DESIGN.md / src/styles/tokens.css. No framework JS; readable without JS.
+ */
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 900;
+  src: url(assets/inter-latin-wght-normal.woff2) format("woff2");
+}
+
+:root {
+  color-scheme: light;
+  --primary: #7c3aed;
+  --primary-hover: #6d28d9;
+  --secondary: #a78bfa;
+  --neutral: #f8fafc;
+  --surface: #ffffff;
+  --surface-2: #f5f3ff;
+  --ink: #1f2937;
+  --ink-muted: #6b7280;
+  --line: #e5e7eb;
+  --success: #15803d;
+  --radius-sm: 10px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --shadow-card: 0 1px 2px rgb(31 41 55 / 0.04), 0 8px 24px rgb(124 58 237 / 0.06);
+  --reading: 42rem;
+  --font: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans", "PingFang SC", "Hiragino Sans",
+    "Microsoft YaHei", "Apple SD Gothic Neo", sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--neutral);
+  color: var(--ink);
+  font-family: var(--font);
+  font-size: 1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---------- top bar ---------- */
+.ni-bar {
+  max-width: var(--reading);
+  margin: 0 auto;
+  padding: 1rem 1.25rem 0;
+  display: flex;
+  align-items: center;
+}
+.ni-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 700;
+  font-size: 0.9375rem;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  text-decoration: none;
+}
+.ni-brand-mark {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 0.5rem;
+  background: linear-gradient(135deg, var(--secondary), var(--primary));
+  box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.25);
+}
+
+/* ---------- post card ---------- */
+.ni-post {
+  max-width: var(--reading);
+  margin: 1rem auto 0;
+  background: var(--surface);
+  padding: 1.5rem 1.25rem 2rem;
+}
+@media (min-width: 48rem) {
+  .ni-post {
+    margin-top: 1.5rem;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-card);
+    padding: 2.5rem 3rem 3rem;
+  }
+}
+
+.ni-author {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+.ni-avatar {
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 50%;
+  object-fit: cover;
+  background: var(--surface-2);
+  flex: none;
+}
+.ni-author-name {
+  font-weight: 600;
+  line-height: 1.3;
+}
+.ni-author-meta {
+  font-size: 0.875rem;
+  color: var(--ink-muted);
+  line-height: 1.4;
+}
+
+.ni-title {
+  font-size: 1.75rem;
+  line-height: 1.2;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin: 0 0 1.25rem;
+}
+@media (min-width: 48rem) {
+  .ni-title {
+    font-size: 2.25rem;
+  }
+}
+
+/* ---------- body ---------- */
+.ni-body {
+  font-size: 1.0625rem;
+  line-height: 1.75;
+  overflow-wrap: anywhere;
+}
+.ni-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.ni-body > * {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.ni-short .ni-body {
+  font-size: 1.25rem;
+  line-height: 1.6;
+}
+.ni-text > * {
+  margin: 0;
+}
+.ni-text > * + * {
+  margin-top: 1rem;
+}
+.ni-text > * + h2,
+.ni-text > * + h3 {
+  margin-top: 1.75rem;
+}
+.ni-text h2,
+.ni-text h3 {
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+}
+.ni-text h2 {
+  font-size: 1.375rem;
+}
+.ni-text h3 {
+  font-size: 1.125rem;
+}
+.ni-text a {
+  color: var(--primary);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+.ni-text blockquote {
+  margin: 0;
+  padding: 0.25rem 0 0.25rem 1rem;
+  border-inline-start: 3px solid var(--secondary);
+  color: var(--ink-muted);
+}
+.ni-text code {
+  font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  font-size: 0.875em;
+  background: var(--surface-2);
+  border-radius: 6px;
+  padding: 0.1em 0.35em;
+}
+.ni-text pre {
+  background: #1f2937;
+  color: #f9fafb;
+  border-radius: var(--radius-md);
+  padding: 1rem;
+  overflow-x: auto;
+}
+.ni-text pre code {
+  background: none;
+  padding: 0;
+  color: inherit;
+}
+.ni-text ul,
+.ni-text ol {
+  padding-inline-start: 1.5rem;
+  margin: 0;
+}
+
+/* todo */
+.ni-todo {
+  list-style: none;
+  margin: 0;
+  padding: 0.5rem 1rem;
+  background: var(--surface-2);
+  border-radius: var(--radius-md);
+}
+.ni-todo-item label {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+  padding: 0.5rem 0;
+}
+.ni-todo-item + .ni-todo-item {
+  border-top: 1px solid rgb(124 58 237 / 0.1);
+}
+.ni-todo input {
+  appearance: none;
+  flex: none;
+  width: 1.25rem;
+  height: 1.25rem;
+  margin: 0.3rem 0 0;
+  border-radius: 6px;
+  border: 1.5px solid var(--secondary);
+  background: var(--surface);
+  display: grid;
+  place-content: center;
+}
+.ni-todo input:checked {
+  background: var(--primary);
+  border-color: var(--primary);
+}
+.ni-todo input:checked::after {
+  content: "";
+  width: 0.35rem;
+  height: 0.65rem;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  transform: translateY(-1px) rotate(45deg);
+}
+.ni-done span {
+  color: var(--ink-muted);
+  text-decoration: line-through;
+  text-decoration-color: rgb(107 114 128 / 0.6);
+}
+
+/* image */
+.ni-image {
+  margin-top: 0;
+  margin-left: -1.25rem;
+  margin-right: -1.25rem;
+}
+@media (min-width: 48rem) {
+  .ni-image {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+.ni-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: var(--surface-2);
+}
+@media (min-width: 48rem) {
+  .ni-image img {
+    border-radius: var(--radius-md);
+  }
+}
+.ni-zoom {
+  display: block;
+  cursor: zoom-in;
+}
+.ni-image figcaption,
+.ni-audio figcaption {
+  font-size: 0.875rem;
+  color: var(--ink-muted);
+  text-align: center;
+  margin-top: 0.625rem;
+  padding: 0 1.25rem;
+}
+
+/* audio */
+.ni-audio {
+  margin: 0;
+  padding: 1rem;
+  border-radius: var(--radius-md);
+  background: var(--surface-2);
+}
+.ni-audio figcaption {
+  text-align: start;
+  padding: 0 0 0.625rem;
+  font-weight: 600;
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.ni-audio figcaption::before {
+  content: "";
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: 50%;
+  background: var(--primary);
+  mask: radial-gradient(circle at 50% 50%, #000 30%, transparent 31%), linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  flex: none;
+}
+.ni-audio audio {
+  width: 100%;
+  height: 2.5rem;
+  display: block;
+}
+
+/* ---------- footer ---------- */
+.ni-foot {
+  max-width: var(--reading);
+  margin: 0 auto;
+  padding: 1.5rem 1.25rem 3rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  justify-content: space-between;
+  font-size: 0.8125rem;
+  color: var(--ink-muted);
+}
+.ni-foot a {
+  color: var(--ink-muted);
+  text-decoration: none;
+}
+.ni-foot a:hover {
+  color: var(--primary);
+}
+.ni-updated {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--line);
+  font-size: 0.875rem;
+  color: var(--ink-muted);
+}
+
+/* ---------- status pages (404 / 410 / 451) ---------- */
+.ni-status {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 1.5rem;
+}
+.ni-status-card {
+  width: 100%;
+  max-width: 26rem;
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  padding: 2.5rem 2rem;
+  text-align: center;
+}
+.ni-status-icon {
+  width: 3.5rem;
+  height: 3.5rem;
+  margin: 0 auto 1.25rem;
+  border-radius: 1rem;
+  background: var(--surface-2);
+  display: grid;
+  place-items: center;
+  color: var(--primary);
+}
+.ni-status-card h1 {
+  font-size: 1.375rem;
+  line-height: 1.3;
+  margin: 0;
+}
+.ni-status-card p {
+  margin: 0.75rem 0 0;
+  color: var(--ink-muted);
+}
+
+/* RTL locales */
+[dir="rtl"] .ni-todo input:checked::after {
+  transform: translateY(-1px) rotate(45deg);
+}
