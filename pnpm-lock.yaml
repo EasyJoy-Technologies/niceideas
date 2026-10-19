@@ -78,6 +78,9 @@ importers:
       '@types/sanitize-html':
         specifier: ^2.16.2
         version: 2.16.2
+      esbuild:
+        specifier: ^0.28.2
+        version: 0.28.2
       eslint:
         specifier: ^9
         version: 9.39.5(jiti@2.7.0)

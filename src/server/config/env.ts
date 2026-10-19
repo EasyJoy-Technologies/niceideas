@@ -7,6 +7,7 @@ import { z } from "zod";
 const schema = z.object({
   APP_ENV: z.enum(["development", "test", "staging", "production"]).default("development"),
   PUBLIC_BASE_URL: z.url().default("http://localhost:3000"),
+  DATABASE_URL: z.string().regex(/^postgres(ql)?:\/\//, "must be a postgres:// URL"),
 });
 
 export type AppConfig = z.infer<typeof schema>;

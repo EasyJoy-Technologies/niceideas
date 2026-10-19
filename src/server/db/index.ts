@@ -1,0 +1,12 @@
+import { getConfig } from "@/server/config/env";
+import { createDb, type Db } from "./client";
+
+const globalForDb = globalThis as unknown as { __niceideasDb?: Db };
+
+/** Process-wide database handle (one pool per process, survives dev HMR). */
+export function getDb(): Db {
+  if (!globalForDb.__niceideasDb) {
+    globalForDb.__niceideasDb = createDb(getConfig().DATABASE_URL);
+  }
+  return globalForDb.__niceideasDb;
+}
