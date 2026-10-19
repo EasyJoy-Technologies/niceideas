@@ -90,7 +90,8 @@ describe("audio ingest", () => {
   });
   it("rejects video and over-long audio", async () => {
     expect(await code(ingest(mp4Video()))).toBe("media.unprocessable");
-    expect(await code(ingest(mp3Tone(5), { limits: { ...limits, maxAudioSeconds: 1 } }))).toBe("media.unprocessable");
+    // Different owner: the same bytes were accepted above for "owner" and would dedupe.
+    expect(await code(ingest(mp3Tone(), { owner: "other", limits: { ...limits, maxAudioSeconds: 1 } }))).toBe("media.unprocessable");
   });
 });
 

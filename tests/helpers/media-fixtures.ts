@@ -1,4 +1,3 @@
-import { execFileSync } from "node:child_process";
 import { createHash } from "node:crypto";
 import { mkdtempSync, readFileSync, writeFileSync } from "node:fs";
 import os from "node:os";
@@ -23,17 +22,11 @@ export async function smallPngWithAlpha(): Promise<Buffer> {
 
 export const svg = () => Buffer.from('<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10"><script>alert(1)</script></svg>');
 
-/** Generates audio / video with ffmpeg (sine tone). */
-export function ffmpegFixture(args: string[], ext: string): Buffer {
-  const out = path.join(fixtureDir(), `f.${ext}`);
-  execFileSync("ffmpeg", ["-hide_banner", "-loglevel", "error", "-y", ...args, out]);
-  return readFileSync(out);
-}
-export const m4aTone = () => ffmpegFixture(["-f", "lavfi", "-i", "sine=frequency=440:duration=2", "-c:a", "aac"], "m4a");
-export const mp3Tone = (seconds = 3) =>
-  ffmpegFixture(["-f", "lavfi", "-i", `sine=frequency=440:duration=${seconds}`, "-c:a", "libmp3lame"], "mp3");
-export const mp4Video = () =>
-  ffmpegFixture(["-f", "lavfi", "-i", "testsrc=size=64x64:duration=1", "-f", "lavfi", "-i", "sine=duration=1", "-c:v", "mpeg4", "-c:a", "aac", "-shortest"], "mp4");
+/** Small committed audio/video fixtures (generated once with ffmpeg; CI needs no ffmpeg). */
+const FIXTURES = path.resolve(import.meta.dirname, "../fixtures/media");
+export const m4aTone = () => readFileSync(path.join(FIXTURES, "tone-2s.m4a"));
+export const mp3Tone = () => readFileSync(path.join(FIXTURES, "tone-3s.mp3"));
+export const mp4Video = () => readFileSync(path.join(FIXTURES, "video-1s.mp4"));
 
 /** Writes a buffer to a spool-like temp dir (mirrors spoolBody output). */
 export function spooled(buf: Buffer) {

@@ -4,17 +4,30 @@ on:
     branches: [main]
   pull_request:
 
+permissions:
+  contents: read
+
+# A newer push supersedes an older run on the same ref (saves minutes).
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   check:
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
       - uses: pnpm/action-setup@v4
       - uses: actions/setup-node@v4
         with:
           node-version: 24
-          cache: pnpm
+          cache: pnpm # dependency cache is the only thing kept between runs
       - run: pnpm install --frozen-lockfile
       # lint + typecheck + i18n (keys / empty / untranslated / placeholders) + structure + tests
       - run: pnpm check
+      # Build verification only: outputs stay on the ephemeral runner; nothing is uploaded.
       - run: pnpm build
+      - name: Remove build outputs
+        if: always()
+        run: rm -rf .next dist
