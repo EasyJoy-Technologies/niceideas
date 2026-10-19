@@ -1,0 +1,31 @@
+{
+  "common": {
+    "footer": {
+      "version": "Versi {version}"
+    }
+  },
+  "home": {
+    "landing": {
+      "comingSoon": "Kami sedang menyelesaikan persiapan. Situs lengkap segera dibuka.",
+      "tagline": "Pemikiran singkat dan tulisan panjang, lengkap dengan gambar dan audio — dalam satu tautan.",
+      "title": "Ide yang layak dibagikan"
+    }
+  },
+  "meta": {
+    "site": {
+      "description": "Pemikiran singkat dan tulisan panjang dengan gambar dan audio, dibagikan lewat satu tautan.",
+      "title": "{brand} — bagikan idemu"
+    }
+  },
+  "status": {
+    "error": {
+      "body": "Silakan coba lagi sebentar lagi.",
+      "retry": "Coba lagi",
+      "title": "Terjadi kesalahan"
+    },
+    "notFound": {
+      "body": "Tautannya mungkin salah, atau halaman ini sudah tidak ada.",
+      "title": "Halaman tidak ditemukan"
+    }
+  }
+}

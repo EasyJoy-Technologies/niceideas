@@ -1,0 +1,31 @@
+{
+  "common": {
+    "footer": {
+      "version": "版本 {version}"
+    }
+  },
+  "home": {
+    "landing": {
+      "comingSoon": "我們正在做最後的準備，完整網站即將開放。",
+      "tagline": "短想法與長圖文，搭配圖片和音訊——一個連結就能分享。",
+      "title": "值得分享的想法"
+    }
+  },
+  "meta": {
+    "site": {
+      "description": "短想法與長圖文，搭配圖片與音訊，一個連結即可分享。",
+      "title": "{brand}——分享你的想法"
+    }
+  },
+  "status": {
+    "error": {
+      "body": "請稍後再試。",
+      "retry": "重試",
+      "title": "發生了一些問題"
+    },
+    "notFound": {
+      "body": "連結可能有誤，或此頁面已不存在。",
+      "title": "找不到頁面"
+    }
+  }
+}

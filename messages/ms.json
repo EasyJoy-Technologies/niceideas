@@ -1,0 +1,31 @@
+{
+  "common": {
+    "footer": {
+      "version": "Versi {version}"
+    }
+  },
+  "home": {
+    "landing": {
+      "comingSoon": "Kami sedang membuat persiapan terakhir. Laman penuh akan dibuka tidak lama lagi.",
+      "tagline": "Fikiran ringkas dan tulisan panjang, bersama imej dan audio — dikongsi dalam satu pautan.",
+      "title": "Idea yang wajar dikongsi"
+    }
+  },
+  "meta": {
+    "site": {
+      "description": "Fikiran ringkas dan tulisan panjang dengan imej dan audio, dikongsi melalui satu pautan.",
+      "title": "{brand} — kongsi idea anda"
+    }
+  },
+  "status": {
+    "error": {
+      "body": "Sila cuba lagi sebentar nanti.",
+      "retry": "Cuba lagi",
+      "title": "Ada sesuatu yang tidak kena"
+    },
+    "notFound": {
+      "body": "Pautan mungkin salah, atau halaman ini sudah tiada.",
+      "title": "Halaman tidak dijumpai"
+    }
+  }
+}

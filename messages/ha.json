@@ -1,0 +1,31 @@
+{
+  "common": {
+    "footer": {
+      "version": "Siga {version}"
+    }
+  },
+  "home": {
+    "landing": {
+      "comingSoon": "Muna kammala shirye-shiryen ƙarshe. Cikakken shafin zai buɗe nan ba da jimawa ba.",
+      "tagline": "Gajerun tunani da dogayen rubuce-rubuce, tare da hotuna da sauti — a cikin hanyar haɗi ɗaya.",
+      "title": "Raʼayoyi masu cancantar a raba"
+    }
+  },
+  "meta": {
+    "site": {
+      "description": "Gajerun tunani da dogayen rubuce-rubuce masu hotuna da sauti, ana raba su ta hanyar haɗi ɗaya.",
+      "title": "{brand} — raba raʼayoyinka"
+    }
+  },
+  "status": {
+    "error": {
+      "body": "Da fatan za a sake gwadawa nan da ɗan lokaci.",
+      "retry": "Sake gwadawa",
+      "title": "An sami matsala"
+    },
+    "notFound": {
+      "body": "Wataƙila hanyar haɗin ba daidai ba ce, ko shafin ba ya nan kuma.",
+      "title": "Ba a sami shafin ba"
+    }
+  }
+}

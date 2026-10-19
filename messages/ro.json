@@ -1,0 +1,31 @@
+{
+  "common": {
+    "footer": {
+      "version": "Versiunea {version}"
+    }
+  },
+  "home": {
+    "landing": {
+      "comingSoon": "Facem ultimele pregătiri. Site-ul complet se deschide în curând.",
+      "tagline": "Gânduri scurte și texte lungi, cu imagini și audio, distribuite printr-un singur link.",
+      "title": "Idei care merită împărtășite"
+    }
+  },
+  "meta": {
+    "site": {
+      "description": "Gânduri scurte și texte lungi cu imagini și audio, distribuite printr-un singur link.",
+      "title": "{brand} – împărtășește-ți ideile"
+    }
+  },
+  "status": {
+    "error": {
+      "body": "Încearcă din nou peste câteva momente.",
+      "retry": "Încearcă din nou",
+      "title": "Ceva n-a funcționat"
+    },
+    "notFound": {
+      "body": "Linkul poate fi greșit sau pagina nu mai există.",
+      "title": "Pagina nu a fost găsită"
+    }
+  }
+}

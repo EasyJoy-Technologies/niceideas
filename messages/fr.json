@@ -1,0 +1,31 @@
+{
+  "common": {
+    "footer": {
+      "version": "Version {version}"
+    }
+  },
+  "home": {
+    "landing": {
+      "comingSoon": "Nous peaufinons les derniers détails. Le site complet ouvre bientôt.",
+      "tagline": "Pensées brèves et lectures longues, avec images et audio, réunies dans un seul lien.",
+      "title": "Des idées à partager"
+    }
+  },
+  "meta": {
+    "site": {
+      "description": "Pensées brèves et lectures longues avec images et audio, partagées en un seul lien.",
+      "title": "{brand} – partagez vos idées"
+    }
+  },
+  "status": {
+    "error": {
+      "body": "Veuillez réessayer dans un instant.",
+      "retry": "Réessayer",
+      "title": "Un problème est survenu"
+    },
+    "notFound": {
+      "body": "Le lien est peut-être erroné, ou la page n’existe plus.",
+      "title": "Page introuvable"
+    }
+  }
+}

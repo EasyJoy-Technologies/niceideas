@@ -6,12 +6,21 @@ Thumbs.db
 *.log
 logs/
 
-# Runtime/env
+# Runtime / env (never commit secrets)
 .env
 .env.*
+!.env.example
 
-# Dependencies/build (generic)
+# Dependencies / build
 node_modules/
+/.next/
+/out/
+/build/
 dist/
-build/
 coverage/
+*.tsbuildinfo
+next-env.d.ts
+
+
+# Local storage driver data
+/var/

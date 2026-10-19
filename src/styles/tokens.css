@@ -1,0 +1,46 @@
+/*
+ * NiceIdeas design tokens — single source for the React app and the share page.
+ * Values mirror the workspace DESIGN.md (colors, typography, rounded, spacing).
+ */
+:root {
+  color-scheme: light;
+
+  --ni-color-primary: #7c3aed;
+  --ni-color-primary-hover: #6d28d9;
+  --ni-color-secondary: #a78bfa;
+  --ni-color-neutral: #f8fafc;
+  --ni-color-surface: #ffffff;
+  --ni-color-surface-2: #f5f3ff;
+  --ni-color-text-primary: #1f2937;
+  --ni-color-text-secondary: #6b7280;
+  --ni-color-text-inverse: #ffffff;
+  --ni-color-border: #e5e7eb;
+  --ni-color-success: #15803d;
+  --ni-color-warning: #d97706;
+  --ni-color-danger: #dc2626;
+  --ni-color-info: #2563eb;
+
+  --ni-font-sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans",
+    "PingFang SC", "Hiragino Sans", "Microsoft YaHei", "Apple SD Gothic Neo", sans-serif;
+  --ni-font-mono: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+
+  --ni-text-h1: 2.75rem;
+  --ni-text-h2: 2rem;
+  --ni-text-body: 1rem;
+  --ni-text-sm: 0.875rem;
+
+  --ni-radius-sm: 10px;
+  --ni-radius-md: 14px;
+  --ni-radius-lg: 20px;
+  --ni-radius-xl: 28px;
+
+  --ni-space-xs: 0.25rem;
+  --ni-space-sm: 0.5rem;
+  --ni-space-md: 1rem;
+  --ni-space-lg: 1.5rem;
+  --ni-space-xl: 2rem;
+  --ni-space-2xl: 3rem;
+
+  --ni-shadow-card: 0 1px 2px rgb(31 41 55 / 0.04), 0 8px 24px rgb(124 58 237 / 0.06);
+  --ni-reading-width: 42rem;
+}

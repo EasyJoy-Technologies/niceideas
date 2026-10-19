@@ -1,0 +1,31 @@
+{
+  "common": {
+    "footer": {
+      "version": "Version {version}"
+    }
+  },
+  "home": {
+    "landing": {
+      "comingSoon": "Wir legen letzte Hand an. Die vollständige Website ist bald verfügbar.",
+      "tagline": "Kurze Gedanken und lange Texte, mit Bildern und Audio – geteilt als ein Link.",
+      "title": "Ideen, die es wert sind, geteilt zu werden"
+    }
+  },
+  "meta": {
+    "site": {
+      "description": "Kurze Gedanken und lange Texte mit Bildern und Audio, geteilt über einen einzigen Link.",
+      "title": "{brand} – teile deine Ideen"
+    }
+  },
+  "status": {
+    "error": {
+      "body": "Bitte versuche es gleich noch einmal.",
+      "retry": "Erneut versuchen",
+      "title": "Etwas ist schiefgelaufen"
+    },
+    "notFound": {
+      "body": "Der Link ist möglicherweise falsch oder die Seite existiert nicht mehr.",
+      "title": "Seite nicht gefunden"
+    }
+  }
+}

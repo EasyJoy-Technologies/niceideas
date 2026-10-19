@@ -1,0 +1,31 @@
+{
+  "common": {
+    "footer": {
+      "version": "Verze {version}"
+    }
+  },
+  "home": {
+    "landing": {
+      "comingSoon": "Dokončujeme přípravy. Celý web brzy otevřeme.",
+      "tagline": "Krátké myšlenky i dlouhé texty s obrázky a zvukem – sdílené jedním odkazem.",
+      "title": "Nápady, které stojí za sdílení"
+    }
+  },
+  "meta": {
+    "site": {
+      "description": "Krátké myšlenky i dlouhé texty s obrázky a zvukem, sdílené jedním odkazem.",
+      "title": "{brand} – sdílejte své nápady"
+    }
+  },
+  "status": {
+    "error": {
+      "body": "Zkuste to prosím za chvíli znovu.",
+      "retry": "Zkusit znovu",
+      "title": "Něco se pokazilo"
+    },
+    "notFound": {
+      "body": "Odkaz může být chybný, nebo stránka už neexistuje.",
+      "title": "Stránka nenalezena"
+    }
+  }
+}

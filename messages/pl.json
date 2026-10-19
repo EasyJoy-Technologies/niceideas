@@ -1,0 +1,31 @@
+{
+  "common": {
+    "footer": {
+      "version": "Wersja {version}"
+    }
+  },
+  "home": {
+    "landing": {
+      "comingSoon": "Kończymy przygotowania. Pełna wersja serwisu już wkrótce.",
+      "tagline": "Krótkie myśli i dłuższe teksty, ze zdjęciami i dźwiękiem – w jednym linku.",
+      "title": "Pomysły warte udostępnienia"
+    }
+  },
+  "meta": {
+    "site": {
+      "description": "Krótkie myśli i dłuższe teksty ze zdjęciami i dźwiękiem, udostępniane jednym linkiem.",
+      "title": "{brand} – dziel się pomysłami"
+    }
+  },
+  "status": {
+    "error": {
+      "body": "Spróbuj ponownie za chwilę.",
+      "retry": "Spróbuj ponownie",
+      "title": "Coś poszło nie tak"
+    },
+    "notFound": {
+      "body": "Link może być nieprawidłowy albo strona już nie istnieje.",
+      "title": "Nie znaleziono strony"
+    }
+  }
+}

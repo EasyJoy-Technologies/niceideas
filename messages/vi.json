@@ -1,0 +1,31 @@
+{
+  "common": {
+    "footer": {
+      "version": "Phiên bản {version}"
+    }
+  },
+  "home": {
+    "landing": {
+      "comingSoon": "Chúng tôi đang hoàn tất những bước chuẩn bị cuối cùng. Trang web đầy đủ sẽ sớm ra mắt.",
+      "tagline": "Suy nghĩ ngắn và bài viết dài, kèm hình ảnh và âm thanh — chia sẻ chỉ bằng một đường liên kết.",
+      "title": "Những ý tưởng đáng để chia sẻ"
+    }
+  },
+  "meta": {
+    "site": {
+      "description": "Suy nghĩ ngắn và bài viết dài kèm hình ảnh, âm thanh, chia sẻ chỉ bằng một đường liên kết.",
+      "title": "{brand} — chia sẻ ý tưởng của bạn"
+    }
+  },
+  "status": {
+    "error": {
+      "body": "Vui lòng thử lại sau giây lát.",
+      "retry": "Thử lại",
+      "title": "Đã xảy ra lỗi"
+    },
+    "notFound": {
+      "body": "Có thể liên kết bị sai hoặc trang không còn tồn tại.",
+      "title": "Không tìm thấy trang"
+    }
+  }
+}

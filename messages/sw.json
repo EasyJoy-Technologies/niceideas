@@ -1,0 +1,31 @@
+{
+  "common": {
+    "footer": {
+      "version": "Toleo {version}"
+    }
+  },
+  "home": {
+    "landing": {
+      "comingSoon": "Tunakamilisha maandalizi ya mwisho. Tovuti kamili itafunguliwa hivi karibuni.",
+      "tagline": "Mawazo mafupi na makala marefu, pamoja na picha na sauti — kwa kiungo kimoja.",
+      "title": "Mawazo yanayostahili kushirikiwa"
+    }
+  },
+  "meta": {
+    "site": {
+      "description": "Mawazo mafupi na makala marefu yenye picha na sauti, yanashirikiwa kwa kiungo kimoja.",
+      "title": "{brand} — shiriki mawazo yako"
+    }
+  },
+  "status": {
+    "error": {
+      "body": "Tafadhali jaribu tena baada ya muda mfupi.",
+      "retry": "Jaribu tena",
+      "title": "Hitilafu imetokea"
+    },
+    "notFound": {
+      "body": "Huenda kiungo si sahihi, au ukurasa huu haupo tena.",
+      "title": "Ukurasa haukupatikana"
+    }
+  }
+}

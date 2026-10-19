@@ -1,0 +1,31 @@
+{
+  "common": {
+    "footer": {
+      "version": "Versie {version}"
+    }
+  },
+  "home": {
+    "landing": {
+      "comingSoon": "We leggen de laatste hand aan alles. De volledige site gaat binnenkort open.",
+      "tagline": "Korte gedachten en lange verhalen, met afbeeldingen en audio – gedeeld via één link.",
+      "title": "Ideeën die het delen waard zijn"
+    }
+  },
+  "meta": {
+    "site": {
+      "description": "Korte gedachten en lange verhalen met afbeeldingen en audio, gedeeld via één link.",
+      "title": "{brand} – deel je ideeën"
+    }
+  },
+  "status": {
+    "error": {
+      "body": "Probeer het zo meteen opnieuw.",
+      "retry": "Opnieuw proberen",
+      "title": "Er is iets misgegaan"
+    },
+    "notFound": {
+      "body": "De link klopt misschien niet, of de pagina bestaat niet meer.",
+      "title": "Pagina niet gevonden"
+    }
+  }
+}

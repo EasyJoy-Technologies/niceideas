@@ -1,0 +1,31 @@
+{
+  "common": {
+    "footer": {
+      "version": "Versiya {version}"
+    }
+  },
+  "home": {
+    "landing": {
+      "comingSoon": "Soʻnggi tayyorgarlikni koʻryapmiz. Toʻliq sayt tez orada ochiladi.",
+      "tagline": "Qisqa fikrlar va uzun matnlar, rasm va audio bilan — bitta havolada.",
+      "title": "Ulashishga arziydigan gʻoyalar"
+    }
+  },
+  "meta": {
+    "site": {
+      "description": "Qisqa fikrlar va uzun matnlar rasm va audio bilan bitta havola orqali ulashiladi.",
+      "title": "{brand} — gʻoyalaringizni ulashing"
+    }
+  },
+  "status": {
+    "error": {
+      "body": "Birozdan keyin qayta urinib koʻring.",
+      "retry": "Qayta urinish",
+      "title": "Nimadir xato ketdi"
+    },
+    "notFound": {
+      "body": "Havola notoʻgʻri boʻlishi yoki bu sahifa endi mavjud boʻlmasligi mumkin.",
+      "title": "Sahifa topilmadi"
+    }
+  }
+}

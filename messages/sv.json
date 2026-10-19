@@ -1,0 +1,31 @@
+{
+  "common": {
+    "footer": {
+      "version": "Version {version}"
+    }
+  },
+  "home": {
+    "landing": {
+      "comingSoon": "Vi lägger sista handen vid allt. Hela webbplatsen öppnar snart.",
+      "tagline": "Korta tankar och längre texter, med bilder och ljud – delade som en enda länk.",
+      "title": "Idéer värda att dela"
+    }
+  },
+  "meta": {
+    "site": {
+      "description": "Korta tankar och längre texter med bilder och ljud, delade via en enda länk.",
+      "title": "{brand} – dela dina idéer"
+    }
+  },
+  "status": {
+    "error": {
+      "body": "Försök igen om en liten stund.",
+      "retry": "Försök igen",
+      "title": "Något gick fel"
+    },
+    "notFound": {
+      "body": "Länken kan vara fel, eller så finns sidan inte längre.",
+      "title": "Sidan hittades inte"
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "common": {
+    "footer": {
+      "version": "Bersyon {version}"
+    }
+  },
+  "home": {
+    "landing": {
+      "comingSoon": "Inihahanda pa namin ang lahat. Malapit nang magbukas ang buong site.",
+      "tagline": "Maiikling kaisipan at mahahabang sulatin, may larawan at audio — ibinabahagi sa iisang link.",
+      "title": "Mga ideyang sulit ibahagi"
+    }
+  },
+  "meta": {
+    "site": {
+      "description": "Maiikling kaisipan at mahahabang sulatin na may larawan at audio, ibinabahagi sa iisang link.",
+      "title": "{brand} — ibahagi ang iyong mga ideya"
+    }
+  },
+  "status": {
+    "error": {
+      "body": "Pakisubukang muli mamaya.",
+      "retry": "Subukang muli",
+      "title": "May nangyaring mali"
+    },
+    "notFound": {
+      "body": "Maaaring mali ang link, o wala na ang page na ito.",
+      "title": "Hindi nakita ang page"
+    }
+  }
+}

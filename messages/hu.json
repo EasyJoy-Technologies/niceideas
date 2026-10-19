@@ -1,0 +1,31 @@
+{
+  "common": {
+    "footer": {
+      "version": "Verzió: {version}"
+    }
+  },
+  "home": {
+    "landing": {
+      "comingSoon": "Az utolsó simításokat végezzük. A teljes oldal hamarosan megnyílik.",
+      "tagline": "Rövid gondolatok és hosszabb írások képekkel és hanggal – egyetlen linkben.",
+      "title": "Megosztásra érdemes ötletek"
+    }
+  },
+  "meta": {
+    "site": {
+      "description": "Rövid gondolatok és hosszabb írások képekkel és hanggal, egyetlen linken megosztva.",
+      "title": "{brand} – oszd meg az ötleteidet"
+    }
+  },
+  "status": {
+    "error": {
+      "body": "Kérjük, próbáld újra egy kicsit később.",
+      "retry": "Újrapróbálás",
+      "title": "Hiba történt"
+    },
+    "notFound": {
+      "body": "Lehet, hogy hibás a link, vagy az oldal már nem létezik.",
+      "title": "Az oldal nem található"
+    }
+  }
+}

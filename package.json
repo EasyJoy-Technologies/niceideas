@@ -1,0 +1,55 @@
+{
+  "name": "niceideas",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev -p 3000",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint .",
+    "typecheck": "next typegen && tsc --noEmit",
+    "test": "vitest run",
+    "check:i18n": "node scripts/check-i18n.mjs",
+    "check:structure": "node scripts/check-structure.mjs",
+    "check": "pnpm lint && pnpm typecheck && pnpm check:i18n && pnpm check:structure && pnpm test",
+    "version:bump": "node scripts/version-bump.mjs"
+  },
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.1153.0",
+    "file-type": "^22.2.0",
+    "jose": "^6.2.12",
+    "kysely": "^0.29.7",
+    "markdown-it": "^15.0.3",
+    "music-metadata": "^12.2.3",
+    "next": "16.4.2",
+    "next-intl": "^4.14.9",
+    "pg": "^8.23.1",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "sanitize-html": "^2.18.1",
+    "sharp": "^0.35.5",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@formatjs/icu-messageformat-parser": "^3.5.21",
+    "@tailwindcss/turbopack": "^4",
+    "@testcontainers/postgresql": "^12.2.1",
+    "@types/markdown-it": "^14.2.0",
+    "@types/node": "^24.19.2",
+    "@types/pg": "^8.23.1",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "@types/sanitize-html": "^2.16.2",
+    "eslint": "^9",
+    "eslint-config-next": "16.4.2",
+    "tailwindcss": "^4",
+    "testcontainers": "^12.2.1",
+    "tsx": "^4.23.15",
+    "typescript": "^5",
+    "vitest": "^5.0.5"
+  },
+  "packageManager": "pnpm@10.33.0",
+  "engines": {
+    "node": ">=24"
+  }
+}

@@ -1,0 +1,38 @@
+@import "tailwindcss";
+@import "../styles/fonts.css";
+@import "../styles/tokens.css";
+
+@theme inline {
+  --color-primary: var(--ni-color-primary);
+  --color-primary-hover: var(--ni-color-primary-hover);
+  --color-secondary: var(--ni-color-secondary);
+  --color-neutral: var(--ni-color-neutral);
+  --color-surface: var(--ni-color-surface);
+  --color-surface-2: var(--ni-color-surface-2);
+  --color-ink: var(--ni-color-text-primary);
+  --color-ink-muted: var(--ni-color-text-secondary);
+  --color-ink-inverse: var(--ni-color-text-inverse);
+  --color-line: var(--ni-color-border);
+  --color-success: var(--ni-color-success);
+  --color-warning: var(--ni-color-warning);
+  --color-danger: var(--ni-color-danger);
+  --color-info: var(--ni-color-info);
+  --font-sans: var(--ni-font-sans);
+  --font-mono: var(--ni-font-mono);
+  --radius-sm: var(--ni-radius-sm);
+  --radius-md: var(--ni-radius-md);
+  --radius-lg: var(--ni-radius-lg);
+  --radius-xl: var(--ni-radius-xl);
+  --shadow-card: var(--ni-shadow-card);
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: var(--ni-color-neutral);
+  color: var(--ni-color-text-primary);
+  font-family: var(--ni-font-sans);
+  line-height: 1.6;
+}

@@ -1,0 +1,31 @@
+{
+  "common": {
+    "footer": {
+      "version": "Sürüm {version}"
+    }
+  },
+  "home": {
+    "landing": {
+      "comingSoon": "Son hazırlıkları yapıyoruz. Sitenin tamamı yakında açılıyor.",
+      "tagline": "Kısa düşünceler ve uzun yazılar, görsel ve sesle birlikte tek bir bağlantıda.",
+      "title": "Paylaşmaya değer fikirler"
+    }
+  },
+  "meta": {
+    "site": {
+      "description": "Görsel ve sesli kısa düşünceler ve uzun yazılar, tek bir bağlantıyla paylaşılır.",
+      "title": "{brand} — fikirlerini paylaş"
+    }
+  },
+  "status": {
+    "error": {
+      "body": "Lütfen birazdan tekrar deneyin.",
+      "retry": "Tekrar dene",
+      "title": "Bir sorun oluştu"
+    },
+    "notFound": {
+      "body": "Bağlantı hatalı olabilir ya da sayfa artık mevcut değil.",
+      "title": "Sayfa bulunamadı"
+    }
+  }
+}

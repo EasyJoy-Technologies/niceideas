@@ -1,0 +1,31 @@
+{
+  "common": {
+    "footer": {
+      "version": "Versão {version}"
+    }
+  },
+  "home": {
+    "landing": {
+      "comingSoon": "Estamos a tratar dos últimos preparativos. O site completo abre em breve.",
+      "tagline": "Pensamentos curtos e leituras longas, com imagens e áudio, partilhados numa só ligação.",
+      "title": "Ideias que vale a pena partilhar"
+    }
+  },
+  "meta": {
+    "site": {
+      "description": "Pensamentos curtos e leituras longas com imagens e áudio, partilhados numa única ligação.",
+      "title": "{brand} — partilhe as suas ideias"
+    }
+  },
+  "status": {
+    "error": {
+      "body": "Tente novamente daqui a pouco.",
+      "retry": "Tentar novamente",
+      "title": "Ocorreu um problema"
+    },
+    "notFound": {
+      "body": "A ligação pode estar errada ou a página já não existe.",
+      "title": "Página não encontrada"
+    }
+  }
+}
