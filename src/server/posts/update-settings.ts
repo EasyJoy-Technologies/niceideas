@@ -1,6 +1,6 @@
 import type { Principal } from "@/server/auth/principal";
 import type { Db } from "@/server/db/client";
-import type { Post, PostKind, PostUpdate, SyncMode } from "@/server/db/schema";
+import type { CommentsMode, Post, PostKind, PostUpdate, SyncMode } from "@/server/db/schema";
 import { lockPost, updatePost } from "@/server/db/repos/posts";
 import { findRevision } from "@/server/db/repos/revisions";
 import { deriveCoverMediaId, deriveKind, deriveSummary } from "@/server/documents/derive";
@@ -14,6 +14,8 @@ export type PostSettings = {
   coverMediaId?: string | null;
   kind?: PostKind | null;
   syncMode?: SyncMode;
+  /** Who may comment on the post page (plan §16.2 author controls). */
+  commentsMode?: CommentsMode;
 };
 
 /** Changes author-controlled presentation settings (plan §8 PATCH). */
@@ -43,6 +45,7 @@ export async function updatePostSettings(db: Db, principal: Principal, postId: s
       patch.kind_locked = input.kind !== null;
     }
     if (input.syncMode !== undefined) patch.sync_mode = input.syncMode;
+    if (input.commentsMode !== undefined) patch.comments_mode = input.commentsMode;
     return Object.keys(patch).length ? updatePost(trx, post.id, patch) : post;
   });
 }

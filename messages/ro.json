@@ -66,9 +66,30 @@
   },
   "share": {
     "action": {
+      "cancel": "Anulează",
       "close": "Închide",
       "copied": "Link copiat",
+      "like": "Îmi place",
+      "reply": "Răspunde",
+      "report": "Raportează",
       "share": "Distribuie"
+    },
+    "comments": {
+      "anonHint": "Comentezi ca vizitator anonim.",
+      "anonTag": "Anonim",
+      "anonymous": "Vizitator anonim",
+      "authorTag": "Autor",
+      "closed": "Comentariile sunt închise.",
+      "empty": "Încă nu există comentarii. Fii primul!",
+      "error": "Ceva n-a mers bine. Încearcă din nou.",
+      "more": "Mai multe comentarii",
+      "name": "Nume (opțional)",
+      "placeholder": "Spune ce crezi…",
+      "rateLimited": "Faci asta prea des. Încearcă mai târziu.",
+      "replyingTo": "Răspuns pentru {name}",
+      "signedInOnly": "Doar membrii conectați pot comenta această postare.",
+      "submit": "Publică",
+      "title": "Comentarii"
     },
     "header": {
       "join": "Alătură-te {brand}"
@@ -77,6 +98,16 @@
     "post": {
       "edited": "Editat la {time}",
       "from": "Din {app}"
+    },
+    "report": {
+      "done": "Mulțumim. Vom analiza.",
+      "reason": {
+        "abuse": "Hărțuire sau ură",
+        "illegal": "Conținut ilegal sau dăunător",
+        "other": "Altceva",
+        "spam": "Spam sau înșelătorie"
+      },
+      "submit": "Trimite raportarea"
     },
     "status": {
       "notFound": {

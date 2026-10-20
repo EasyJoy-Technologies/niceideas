@@ -10,6 +10,8 @@
 | 部署 | 在开发目录执行 `deploy/deploy-staging.sh`：构建 → `releases/<版本>-<sha>` → 迁移 → 切换 `current` → 重启 → 核对 `/api/v1/meta` 版本；保留 3 个版本 |
 | 回滚 | `ln -sfn /var/www/niceideas-staging/releases/<旧版本> /var/www/niceideas-staging/current && systemctl restart niceideas-staging`（仅限无新迁移的版本） |
 | 测试发布 | `cd /var/www/niceideas-staging/current && set -a && . /etc/niceideas/env.staging && set +a && node dist/publish.mjs publish --user <id> --text …`（另有 `withdraw`） |
+| 维护任务 | `niceideas-staging-maintain.timer`（每天 UTC 10:30）运行 `dist/maintain.mjs`：清理过期帖子与无引用媒体、重试公开桶下线、清过期幂等键和封禁；`journalctl -u niceideas-staging-maintain` 查看结果 |
+| 审核 | `node dist/moderate.mjs reports`；隐藏 / 删除评论、封禁评论者、下架 / 恢复帖子、关闭评论、处理举报均需 `--actor <操作人> --reason <原因>`，全部写审计表 `moderation_action` |
 | 旧目录 | Sharkey 时期的 `.git` 已移到 `/root/backups/niceideas/staging-sharkey-git-20261019` |
 
 ## 已知局限

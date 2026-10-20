@@ -1,0 +1,11 @@
+[Unit]
+Description=NiceIdeas (staging) daily maintenance — purge expired posts / unused media
+After=network.target docker.service
+
+[Service]
+Type=oneshot
+WorkingDirectory=/var/www/niceideas-staging/current
+EnvironmentFile=/etc/niceideas/env.staging
+ExecStart=/usr/bin/node dist/maintain.mjs
+NoNewPrivileges=true
+PrivateTmp=true

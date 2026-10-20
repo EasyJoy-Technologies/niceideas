@@ -1,5 +1,7 @@
 import { randomUUID } from "node:crypto";
 import { getDb } from "@/server/db";
+import { peekVisitorKey } from "@/server/interactions/visitor";
+import { commentPage, loadPageInteractions } from "@/server/share/load-interactions";
 import { loadSharePost } from "@/server/share/load-post";
 import { renderPostPage } from "@/server/share/post-page";
 import { htmlResponse, pageContext } from "@/server/share/respond";
@@ -9,10 +11,12 @@ import { renderStatusPage } from "@/server/share/status-page";
 export async function GET(request: Request, ctx: RouteContext<"/p/[slug]">) {
   const page = await pageContext(request);
   try {
-    const result = await loadSharePost(getDb(), (await ctx.params).slug);
+    const db = getDb();
+    const result = await loadSharePost(db, (await ctx.params).slug);
     if (result.state === "not_found") return htmlResponse(renderStatusPage(page, "notFound"), 404);
     if (result.state === "gone") return htmlResponse(renderStatusPage(page, result.reason), 410);
-    return htmlResponse(renderPostPage(page, result.data), 200);
+    const social = await loadPageInteractions(db, result.data.post, peekVisitorKey(request.headers), commentPage(new URL(request.url)));
+    return htmlResponse(renderPostPage(page, result.data, social), 200);
   } catch (err) {
     console.error(`[share] page failed errorId=${randomUUID()}`, err);
     throw err;

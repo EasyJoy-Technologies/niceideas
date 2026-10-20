@@ -66,9 +66,30 @@
   },
   "share": {
     "action": {
+      "cancel": "キャンセル",
       "close": "閉じる",
       "copied": "リンクをコピーしました",
+      "like": "いいね",
+      "reply": "返信",
+      "report": "報告",
       "share": "共有"
+    },
+    "comments": {
+      "anonHint": "匿名の訪問者としてコメントします。",
+      "anonTag": "匿名",
+      "anonymous": "匿名の訪問者",
+      "authorTag": "作成者",
+      "closed": "コメントは締め切られています。",
+      "empty": "まだコメントはありません。最初のコメントを書いてみましょう！",
+      "error": "問題が発生しました。もう一度お試しください。",
+      "more": "さらにコメントを表示",
+      "name": "名前（任意）",
+      "placeholder": "あなたの考えを書いてください…",
+      "rateLimited": "操作が多すぎます。しばらくしてからもう一度お試しください。",
+      "replyingTo": "{name} さんに返信",
+      "signedInOnly": "この投稿にはログインしたメンバーのみコメントできます。",
+      "submit": "投稿",
+      "title": "コメント"
     },
     "header": {
       "join": "{brand} に参加"
@@ -77,6 +98,16 @@
     "post": {
       "edited": "{time} に編集",
       "from": "{app} から"
+    },
+    "report": {
+      "done": "ありがとうございます。確認します。",
+      "reason": {
+        "abuse": "嫌がらせ・ヘイト",
+        "illegal": "違法・有害なコンテンツ",
+        "other": "その他",
+        "spam": "スパム・詐欺"
+      },
+      "submit": "報告を送信"
     },
     "status": {
       "notFound": {

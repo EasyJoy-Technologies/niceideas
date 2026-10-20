@@ -66,9 +66,30 @@
   },
   "share": {
     "action": {
+      "cancel": "Hủy",
       "close": "Đóng",
       "copied": "Đã sao chép liên kết",
+      "like": "Thích",
+      "reply": "Trả lời",
+      "report": "Báo cáo",
       "share": "Chia sẻ"
+    },
+    "comments": {
+      "anonHint": "Bạn đang bình luận với tư cách khách ẩn danh.",
+      "anonTag": "Ẩn danh",
+      "anonymous": "Khách ẩn danh",
+      "authorTag": "Tác giả",
+      "closed": "Đã đóng bình luận.",
+      "empty": "Chưa có bình luận nào. Hãy là người đầu tiên!",
+      "error": "Đã xảy ra lỗi. Vui lòng thử lại.",
+      "more": "Xem thêm bình luận",
+      "name": "Tên (không bắt buộc)",
+      "placeholder": "Chia sẻ suy nghĩ của bạn…",
+      "rateLimited": "Bạn thao tác quá nhanh. Vui lòng thử lại sau.",
+      "replyingTo": "Trả lời {name}",
+      "signedInOnly": "Chỉ thành viên đã đăng nhập mới có thể bình luận bài viết này.",
+      "submit": "Đăng",
+      "title": "Bình luận"
     },
     "header": {
       "join": "Tham gia {brand}"
@@ -77,6 +98,16 @@
     "post": {
       "edited": "Đã chỉnh sửa lúc {time}",
       "from": "Từ {app}"
+    },
+    "report": {
+      "done": "Cảm ơn bạn. Chúng tôi sẽ xem xét.",
+      "reason": {
+        "abuse": "Quấy rối hoặc thù ghét",
+        "illegal": "Nội dung bất hợp pháp hoặc có hại",
+        "other": "Lý do khác",
+        "spam": "Spam hoặc lừa đảo"
+      },
+      "submit": "Gửi báo cáo"
     },
     "status": {
       "notFound": {

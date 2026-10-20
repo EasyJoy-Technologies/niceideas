@@ -66,9 +66,30 @@
   },
   "share": {
     "action": {
+      "cancel": "Batal",
       "close": "Tutup",
       "copied": "Pautan disalin",
+      "like": "Suka",
+      "reply": "Balas",
+      "report": "Laporkan",
       "share": "Kongsi"
+    },
+    "comments": {
+      "anonHint": "Anda mengulas sebagai pelawat tanpa nama.",
+      "anonTag": "Tanpa nama",
+      "anonymous": "Pelawat tanpa nama",
+      "authorTag": "Penulis",
+      "closed": "Ulasan telah ditutup.",
+      "empty": "Belum ada ulasan. Jadilah yang pertama!",
+      "error": "Berlaku masalah. Sila cuba lagi.",
+      "more": "Lagi ulasan",
+      "name": "Nama (pilihan)",
+      "placeholder": "Kongsi pendapat anda…",
+      "rateLimited": "Terlalu kerap. Sila cuba lagi kemudian.",
+      "replyingTo": "Membalas {name}",
+      "signedInOnly": "Hanya ahli yang log masuk boleh mengulas siaran ini.",
+      "submit": "Siarkan",
+      "title": "Ulasan"
     },
     "header": {
       "join": "Sertai {brand}"
@@ -77,6 +98,16 @@
     "post": {
       "edited": "Disunting {time}",
       "from": "Daripada {app}"
+    },
+    "report": {
+      "done": "Terima kasih. Kami akan menyemaknya.",
+      "reason": {
+        "abuse": "Gangguan atau kebencian",
+        "illegal": "Kandungan haram atau berbahaya",
+        "other": "Lain-lain",
+        "spam": "Spam atau penipuan"
+      },
+      "submit": "Hantar laporan"
     },
     "status": {
       "notFound": {

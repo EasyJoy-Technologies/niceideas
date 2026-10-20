@@ -19,3 +19,6 @@ export const forbidden = (code: string) => new ApiError(code, 403);
 export const notFound = (code: string) => new ApiError(code, 404);
 export const badRequest = (code: string, details?: unknown) => new ApiError(code, 400, details);
 export const conflict = (code: string, details?: unknown) => new ApiError(code, 409, details);
+
+/** Throttled: tells the client how long to wait. */
+export const rateLimited = (seconds: number) => new ApiError("rate.limited", 429, { retryAfterSeconds: seconds }, { "Retry-After": String(seconds) });

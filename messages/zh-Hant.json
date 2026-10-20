@@ -66,9 +66,30 @@
   },
   "share": {
     "action": {
+      "cancel": "取消",
       "close": "關閉",
       "copied": "已複製連結",
+      "like": "讚",
+      "reply": "回覆",
+      "report": "檢舉",
       "share": "分享"
+    },
+    "comments": {
+      "anonHint": "你將以匿名訪客身分發表。",
+      "anonTag": "匿名",
+      "anonymous": "匿名訪客",
+      "authorTag": "作者",
+      "closed": "留言已關閉。",
+      "empty": "還沒有留言，來搶頭香吧！",
+      "error": "發生了一點問題，請再試一次。",
+      "more": "查看更多留言",
+      "name": "暱稱（選填）",
+      "placeholder": "寫下你的想法…",
+      "rateLimited": "操作太頻繁了，請稍後再試。",
+      "replyingTo": "回覆 {name}",
+      "signedInOnly": "這則內容僅限登入使用者留言。",
+      "submit": "發表",
+      "title": "留言"
     },
     "header": {
       "join": "加入 {brand}"
@@ -77,6 +98,16 @@
     "post": {
       "edited": "編輯於 {time}",
       "from": "來自 {app}"
+    },
+    "report": {
+      "done": "感謝回報，我們會盡快處理。",
+      "reason": {
+        "abuse": "騷擾或仇恨言論",
+        "illegal": "違法或有害內容",
+        "other": "其他問題",
+        "spam": "垃圾訊息或詐騙"
+      },
+      "submit": "送出檢舉"
     },
     "status": {
       "notFound": {

@@ -66,9 +66,30 @@
   },
   "share": {
     "action": {
+      "cancel": "取消",
       "close": "关闭",
       "copied": "链接已复制",
+      "like": "赞",
+      "reply": "回复",
+      "report": "举报",
       "share": "分享"
+    },
+    "comments": {
+      "anonHint": "你将以匿名访客身份发表。",
+      "anonTag": "匿名",
+      "anonymous": "匿名访客",
+      "authorTag": "作者",
+      "closed": "评论已关闭。",
+      "empty": "还没有评论，来抢沙发吧！",
+      "error": "出了点问题，请重试。",
+      "more": "查看更多评论",
+      "name": "昵称（可选）",
+      "placeholder": "写下你的想法…",
+      "rateLimited": "操作太频繁了，请稍后再试。",
+      "replyingTo": "回复 {name}",
+      "signedInOnly": "这条内容仅允许登录用户评论。",
+      "submit": "发表",
+      "title": "评论"
     },
     "header": {
       "join": "加入 {brand}"
@@ -77,6 +98,16 @@
     "post": {
       "edited": "编辑于 {time}",
       "from": "来自 {app}"
+    },
+    "report": {
+      "done": "感谢反馈，我们会尽快处理。",
+      "reason": {
+        "abuse": "骚扰或仇恨言论",
+        "illegal": "违法或有害内容",
+        "other": "其他问题",
+        "spam": "垃圾信息或诈骗"
+      },
+      "submit": "提交举报"
     },
     "status": {
       "notFound": {

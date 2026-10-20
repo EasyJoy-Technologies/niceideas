@@ -1,7 +1,7 @@
 import { getConfig } from "@/server/config/env";
 import type { Db } from "@/server/db/client";
 import { countMediaSince, countPostsSince, countRevisionsSince } from "@/server/db/repos/counters";
-import { ApiError } from "@/server/http/errors";
+import { rateLimited } from "@/server/http/errors";
 
 const HOUR = 3600;
 const DAY = 86400;
@@ -10,9 +10,7 @@ const DAY = 86400;
  * Per-user publishing limits (plan §11), counted from stored rows so they hold
  * across restarts and processes. A small overshoot under heavy concurrency is acceptable.
  */
-function limited(window: number): ApiError {
-  return new ApiError("rate.limited", 429, { retryAfterSeconds: window }, { "Retry-After": String(window) });
-}
+const limited = rateLimited;
 
 export async function assertCanCreatePost(db: Db, userId: string): Promise<void> {
   const cfg = getConfig();

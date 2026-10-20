@@ -66,9 +66,30 @@
   },
   "share": {
     "action": {
+      "cancel": "Batal",
       "close": "Tutup",
       "copied": "Tautan disalin",
+      "like": "Suka",
+      "reply": "Balas",
+      "report": "Laporkan",
       "share": "Bagikan"
+    },
+    "comments": {
+      "anonHint": "Kamu berkomentar sebagai pengunjung anonim.",
+      "anonTag": "Anonim",
+      "anonymous": "Pengunjung anonim",
+      "authorTag": "Penulis",
+      "closed": "Komentar ditutup.",
+      "empty": "Belum ada komentar. Jadilah yang pertama!",
+      "error": "Terjadi kesalahan. Silakan coba lagi.",
+      "more": "Komentar lainnya",
+      "name": "Nama (opsional)",
+      "placeholder": "Bagikan pendapatmu…",
+      "rateLimited": "Terlalu sering. Silakan coba lagi nanti.",
+      "replyingTo": "Membalas {name}",
+      "signedInOnly": "Hanya anggota yang sudah masuk yang bisa mengomentari postingan ini.",
+      "submit": "Kirim",
+      "title": "Komentar"
     },
     "header": {
       "join": "Gabung ke {brand}"
@@ -77,6 +98,16 @@
     "post": {
       "edited": "Diedit {time}",
       "from": "Dari {app}"
+    },
+    "report": {
+      "done": "Terima kasih. Kami akan meninjaunya.",
+      "reason": {
+        "abuse": "Pelecehan atau kebencian",
+        "illegal": "Konten ilegal atau berbahaya",
+        "other": "Lainnya",
+        "spam": "Spam atau penipuan"
+      },
+      "submit": "Kirim laporan"
     },
     "status": {
       "notFound": {

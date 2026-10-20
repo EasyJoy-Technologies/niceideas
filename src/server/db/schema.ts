@@ -14,6 +14,8 @@ export type PostStatus = "active" | "unpublished" | "removed" | "author_deleting
 export type PostSource = "nicenote_intl" | "nicenote_cn" | "web" | `api:${string}`;
 export type SyncMode = "follow" | "frozen";
 export type MediaKind = "image" | "audio";
+export type CommentsMode = "open" | "signed_in" | "closed";
+export type CommentStatus = "visible" | "hidden" | "deleted";
 
 /** One stored rendition (object key relative to the bucket root). */
 export type MediaRendition = { key: string; mime: string; bytes: number; width?: number; height?: number };
@@ -58,6 +60,9 @@ export interface PostTable {
   status_changed_at: Timestamp | null;
   status_reason: string | null;
   purge_after: Timestamp | null;
+  like_count: Generated<number>;
+  comment_count: Generated<number>;
+  comments_mode: Generated<CommentsMode>;
 }
 
 export interface PostRevisionTable {
@@ -107,15 +112,63 @@ export interface ReportTable {
   created_at: CreatedAt;
   resolved_at: Timestamp | null;
   resolved_by: string | null;
+  comment_id: string | null;
+  reporter_key: string | null;
+  ip_hash: string | null;
 }
+
+export type ModerationActionKind =
+  | "remove" | "restore" | "hide_comment" | "restore_comment" | "delete_comment"
+  | "ban" | "unban" | "comments_mode" | "resolve_report" | "dismiss_report";
 
 export interface ModerationActionTable {
   id: Generated<string>;
-  post_id: string;
+  post_id: string | null;
+  comment_id: string | null;
   actor_id: string;
-  action: "remove" | "restore";
+  action: ModerationActionKind;
   reason: string;
+  detail: Generated<string>;
   created_at: CreatedAt;
+}
+
+export interface PostLikeTable {
+  post_id: string;
+  liker_key: string;
+  user_id: string | null;
+  ip_hash: string;
+  created_at: CreatedAt;
+}
+
+export interface CommentTable {
+  id: Generated<string>;
+  post_id: string;
+  parent_id: string | null;
+  author_id: string | null;
+  visitor_key: string | null;
+  anon_name: string | null;
+  ip_hash: string;
+  body: string;
+  status: Generated<CommentStatus>;
+  like_count: Generated<number>;
+  created_at: CreatedAt;
+}
+
+export interface CommentLikeTable {
+  comment_id: string;
+  liker_key: string;
+  user_id: string | null;
+  ip_hash: string;
+  created_at: CreatedAt;
+}
+
+export interface VisitorBanTable {
+  kind: "visitor" | "ip";
+  key_hash: string;
+  reason: string;
+  created_by: string;
+  created_at: CreatedAt;
+  expires_at: Timestamp | null;
 }
 
 export interface ApiClientTable {
@@ -149,6 +202,10 @@ export interface Database {
   moderation_action: ModerationActionTable;
   api_client: ApiClientTable;
   idempotency: IdempotencyTable;
+  post_like: PostLikeTable;
+  comment: CommentTable;
+  comment_like: CommentLikeTable;
+  visitor_ban: VisitorBanTable;
 }
 
 export type Profile = Selectable<ProfileTable>;
@@ -159,3 +216,6 @@ export type PostUpdate = Updateable<PostTable>;
 export type PostRevision = Selectable<PostRevisionTable>;
 export type Media = Selectable<MediaTable>;
 export type NewMedia = Insertable<MediaTable>;
+export type Comment = Selectable<CommentTable>;
+export type NewComment = Insertable<CommentTable>;
+export type Report = Selectable<ReportTable>;

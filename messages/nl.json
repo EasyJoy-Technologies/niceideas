@@ -66,9 +66,30 @@
   },
   "share": {
     "action": {
+      "cancel": "Annuleren",
       "close": "Sluiten",
       "copied": "Link gekopieerd",
+      "like": "Vind ik leuk",
+      "reply": "Reageren",
+      "report": "Melden",
       "share": "Delen"
+    },
+    "comments": {
+      "anonHint": "Je reageert als anonieme bezoeker.",
+      "anonTag": "Anoniem",
+      "anonymous": "Anonieme bezoeker",
+      "authorTag": "Auteur",
+      "closed": "Reacties zijn gesloten.",
+      "empty": "Nog geen reacties. Wees de eerste!",
+      "error": "Er ging iets mis. Probeer het opnieuw.",
+      "more": "Meer reacties",
+      "name": "Naam (optioneel)",
+      "placeholder": "Deel je gedachten…",
+      "rateLimited": "Je doet dit te vaak. Probeer het later opnieuw.",
+      "replyingTo": "Reactie op {name}",
+      "signedInOnly": "Alleen ingelogde leden kunnen op dit bericht reageren.",
+      "submit": "Plaatsen",
+      "title": "Reacties"
     },
     "header": {
       "join": "Word lid van {brand}"
@@ -77,6 +98,16 @@
     "post": {
       "edited": "Bewerkt op {time}",
       "from": "Via {app}"
+    },
+    "report": {
+      "done": "Bedankt. We bekijken het.",
+      "reason": {
+        "abuse": "Intimidatie of haat",
+        "illegal": "Illegale of schadelijke inhoud",
+        "other": "Iets anders",
+        "spam": "Spam of oplichting"
+      },
+      "submit": "Melding versturen"
     },
     "status": {
       "notFound": {

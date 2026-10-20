@@ -66,9 +66,30 @@
   },
   "share": {
     "action": {
+      "cancel": "Cancel",
       "close": "Close",
       "copied": "Link copied",
+      "like": "Like",
+      "reply": "Reply",
+      "report": "Report",
       "share": "Share"
+    },
+    "comments": {
+      "anonHint": "You're commenting as an anonymous visitor.",
+      "anonTag": "Anonymous",
+      "anonymous": "Anonymous visitor",
+      "authorTag": "Author",
+      "closed": "Comments are closed.",
+      "empty": "No comments yet. Be the first!",
+      "error": "Something went wrong. Please try again.",
+      "more": "More comments",
+      "name": "Name (optional)",
+      "placeholder": "Share your thoughts…",
+      "rateLimited": "You're doing that too often. Please try again later.",
+      "replyingTo": "Replying to {name}",
+      "signedInOnly": "Only signed-in members can comment on this post.",
+      "submit": "Post",
+      "title": "Comments"
     },
     "header": {
       "join": "Join {brand}"
@@ -77,6 +98,16 @@
     "post": {
       "edited": "Edited {time}",
       "from": "From {app}"
+    },
+    "report": {
+      "done": "Thanks. We'll review it.",
+      "reason": {
+        "abuse": "Harassment or hate",
+        "illegal": "Illegal or harmful content",
+        "other": "Something else",
+        "spam": "Spam or scam"
+      },
+      "submit": "Send report"
     },
     "status": {
       "notFound": {

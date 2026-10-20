@@ -66,9 +66,30 @@
   },
   "share": {
     "action": {
+      "cancel": "Ghairi",
       "close": "Funga",
       "copied": "Kiungo kimenakiliwa",
+      "like": "Penda",
+      "reply": "Jibu",
+      "report": "Ripoti",
       "share": "Shiriki"
+    },
+    "comments": {
+      "anonHint": "Unatoa maoni kama mgeni asiyejulikana.",
+      "anonTag": "Bila jina",
+      "anonymous": "Mgeni asiyejulikana",
+      "authorTag": "Mwandishi",
+      "closed": "Maoni yamefungwa.",
+      "empty": "Bado hakuna maoni. Kuwa wa kwanza!",
+      "error": "Hitilafu imetokea. Tafadhali jaribu tena.",
+      "more": "Maoni zaidi",
+      "name": "Jina (si lazima)",
+      "placeholder": "Shiriki mawazo yako…",
+      "rateLimited": "Unafanya hivyo mara nyingi mno. Tafadhali jaribu tena baadaye.",
+      "replyingTo": "Unamjibu {name}",
+      "signedInOnly": "Wanachama walioingia pekee ndio wanaweza kutoa maoni kwenye chapisho hili.",
+      "submit": "Chapisha",
+      "title": "Maoni"
     },
     "header": {
       "join": "Jiunge na {brand}"
@@ -77,6 +98,16 @@
     "post": {
       "edited": "Ilihaririwa {time}",
       "from": "Kutoka {app}"
+    },
+    "report": {
+      "done": "Asante. Tutaikagua.",
+      "reason": {
+        "abuse": "Unyanyasaji au chuki",
+        "illegal": "Maudhui haramu au hatari",
+        "other": "Kitu kingine",
+        "spam": "Barua taka au utapeli"
+      },
+      "submit": "Tuma ripoti"
     },
     "status": {
       "notFound": {

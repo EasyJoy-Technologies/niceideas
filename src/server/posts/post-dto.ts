@@ -21,6 +21,9 @@ export type PostDto = {
   publishedAt: string;
   updatedAt: string;
   purgeAfter: string | null;
+  likeCount: number;
+  commentCount: number;
+  commentsMode: Post["comments_mode"];
 };
 
 const iso = (d: Date | null) => (d ? d.toISOString() : null);
@@ -50,5 +53,8 @@ export function toPostDto(p: Post, contentHash: string | null): PostDto {
     publishedAt: p.published_at.toISOString(),
     updatedAt: p.updated_at.toISOString(),
     purgeAfter: iso(p.purge_after),
+    likeCount: p.like_count,
+    commentCount: p.comment_count,
+    commentsMode: p.comments_mode,
   };
 }

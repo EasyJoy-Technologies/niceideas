@@ -66,9 +66,30 @@
   },
   "share": {
     "action": {
+      "cancel": "취소",
       "close": "닫기",
       "copied": "링크가 복사되었습니다",
+      "like": "좋아요",
+      "reply": "답글",
+      "report": "신고",
       "share": "공유"
+    },
+    "comments": {
+      "anonHint": "익명 방문자로 댓글을 남깁니다.",
+      "anonTag": "익명",
+      "anonymous": "익명 방문자",
+      "authorTag": "작성자",
+      "closed": "댓글이 닫혀 있습니다.",
+      "empty": "아직 댓글이 없습니다. 첫 댓글을 남겨 보세요!",
+      "error": "문제가 발생했습니다. 다시 시도해 주세요.",
+      "more": "댓글 더 보기",
+      "name": "이름(선택)",
+      "placeholder": "생각을 남겨 주세요…",
+      "rateLimited": "너무 자주 시도했습니다. 잠시 후 다시 시도해 주세요.",
+      "replyingTo": "{name}님에게 답글",
+      "signedInOnly": "이 게시물에는 로그인한 회원만 댓글을 남길 수 있습니다.",
+      "submit": "게시",
+      "title": "댓글"
     },
     "header": {
       "join": "{brand} 가입하기"
@@ -77,6 +98,16 @@
     "post": {
       "edited": "{time}에 수정됨",
       "from": "{app}에서 작성"
+    },
+    "report": {
+      "done": "감사합니다. 검토하겠습니다.",
+      "reason": {
+        "abuse": "괴롭힘 또는 혐오",
+        "illegal": "불법 또는 유해한 콘텐츠",
+        "other": "기타",
+        "spam": "스팸 또는 사기"
+      },
+      "submit": "신고 보내기"
     },
     "status": {
       "notFound": {

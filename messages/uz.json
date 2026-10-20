@@ -66,9 +66,30 @@
   },
   "share": {
     "action": {
+      "cancel": "Bekor qilish",
       "close": "Yopish",
       "copied": "Havola nusxalandi",
+      "like": "Yoqdi",
+      "reply": "Javob berish",
+      "report": "Shikoyat qilish",
       "share": "Ulashish"
+    },
+    "comments": {
+      "anonHint": "Siz anonim mehmon sifatida izoh qoldiryapsiz.",
+      "anonTag": "Anonim",
+      "anonymous": "Anonim mehmon",
+      "authorTag": "Muallif",
+      "closed": "Izohlar yopilgan.",
+      "empty": "Hali izohlar yo‘q. Birinchi bo‘ling!",
+      "error": "Nimadir xato ketdi. Qayta urinib ko‘ring.",
+      "more": "Yana izohlar",
+      "name": "Ism (ixtiyoriy)",
+      "placeholder": "Fikringizni yozing…",
+      "rateLimited": "Juda tez-tez urinyapsiz. Keyinroq qayta urinib ko‘ring.",
+      "replyingTo": "{name} ga javob",
+      "signedInOnly": "Bu postga faqat tizimga kirgan a’zolar izoh qoldira oladi.",
+      "submit": "Yuborish",
+      "title": "Izohlar"
     },
     "header": {
       "join": "{brand} ga qo‘shiling"
@@ -77,6 +98,16 @@
     "post": {
       "edited": "Tahrirlangan: {time}",
       "from": "{app} orqali"
+    },
+    "report": {
+      "done": "Rahmat. Ko‘rib chiqamiz.",
+      "reason": {
+        "abuse": "Ta’qib yoki nafrat",
+        "illegal": "Noqonuniy yoki zararli kontent",
+        "other": "Boshqa sabab",
+        "spam": "Spam yoki firibgarlik"
+      },
+      "submit": "Shikoyatni yuborish"
     },
     "status": {
       "notFound": {

@@ -66,9 +66,30 @@
   },
   "share": {
     "action": {
+      "cancel": "Soke",
       "close": "Rufe",
       "copied": "An kwafi hanyar haɗi",
+      "like": "So",
+      "reply": "Amsa",
+      "report": "Kai rahoto",
       "share": "Raba"
+    },
+    "comments": {
+      "anonHint": "Kana sharhi a matsayin baƙo marar suna.",
+      "anonTag": "Marar suna",
+      "anonymous": "Baƙo marar suna",
+      "authorTag": "Marubuci",
+      "closed": "An rufe sharhi.",
+      "empty": "Babu sharhi tukuna. Ka zama na farko!",
+      "error": "Wani abu ya faru. Da fatan a sake gwadawa.",
+      "more": "Ƙarin sharhi",
+      "name": "Suna (zaɓi)",
+      "placeholder": "Faɗi ra'ayinka…",
+      "rateLimited": "Kana yawan yin haka. Da fatan a sake gwadawa daga baya.",
+      "replyingTo": "Amsa ga {name}",
+      "signedInOnly": "Mambobin da suka shiga ne kawai za su iya yin sharhi a wannan rubutun.",
+      "submit": "Wallafa",
+      "title": "Sharhi"
     },
     "header": {
       "join": "Shiga {brand}"
@@ -77,6 +98,16 @@
     "post": {
       "edited": "An gyara a {time}",
       "from": "Daga {app}"
+    },
+    "report": {
+      "done": "Na gode. Za mu duba shi.",
+      "reason": {
+        "abuse": "Tsangwama ko ƙiyayya",
+        "illegal": "Abu na haram ko mai cutarwa",
+        "other": "Wani abu dabam",
+        "spam": "Saƙon banza ko zamba"
+      },
+      "submit": "Aika rahoto"
     },
     "status": {
       "notFound": {

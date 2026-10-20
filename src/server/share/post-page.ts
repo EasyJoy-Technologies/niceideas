@@ -8,6 +8,9 @@ import type { ChromeContext } from "./chrome";
 import { renderPage } from "./document";
 import { icon } from "./icons";
 import type { SharePost } from "./load-post";
+import { commentsSection, reportDialog } from "./comments-section";
+import type { PageInteractions } from "./load-interactions";
+import { postActions } from "./post-actions";
 import { sourceBadge } from "./sources";
 
 /** Edits within this window after publishing are not shown as "edited". */
@@ -74,16 +77,16 @@ function editedBlock(ctx: ChromeContext, data: SharePost): string {
 }
 
 /** Server-rendered post page (plan §6, §16): complete without JS. */
-export function renderPostPage(ctx: ChromeContext, data: SharePost): string {
+export function renderPostPage(ctx: ChromeContext, data: SharePost, social: PageInteractions): string {
   const { post, document } = data;
   const url = postUrl(post.slug);
   const title = post.title ? `<h1 class="ni-title">${escapeHtml(post.title)}</h1>` : "";
   const body = renderDocumentHtml(document, data.media, publicUrl);
-  const share = `<button type="button" class="ni-act ni-share" hidden>${icon("share")}${escapeHtml(ctx.intl.t("share.action.share"))}</button>`;
   const main =
     `<main class="ni-main"><article class="ni-post${post.kind === "short" ? " ni-short" : ""}">` +
     `${authorBlock(ctx, data)}${sourceBlock(ctx, data)}${title}<div class="ni-body">${body}</div>` +
-    `${editedBlock(ctx, data)}<div class="ni-actions">${share}</div></article></main>`;
+    `${editedBlock(ctx, data)}${postActions(ctx, post, social.liked)}</article>` +
+    `${commentsSection(ctx, post, social, ctx.path)}${reportDialog(ctx, post.slug)}</main>`;
   const card = shareCard(post);
   // WeChat's in-app browser picks the first sizeable <img> as the thumbnail.
   const wx = `<div class="ni-wx"><img src="${escapeHtml(card.thumbUrl)}" width="600" height="600" alt=""></div>`;

@@ -40,6 +40,16 @@ const schema = z.object({
   /** Source badge target for NiceNote posts (plan §16.4); `utm_*` is appended. Moves to the API-client registry with the open API. */
   SOURCE_NICENOTE_URL: z.url().default("https://enp.ej-mobile.cn"),
 
+  /** Key for one-way hashes of visitor cookies / network addresses (interactions). Required outside development / test. */
+  INTERACTION_SECRET: z.string().min(32).optional(),
+  /** Anonymous commenting: proof-of-work difficulty (leading zero bits) and limits. */
+  COMMENT_POW_BITS: z.coerce.number().int().min(0).max(24).default(16),
+  RATE_ANON_COMMENTS_PER_10MIN: z.coerce.number().int().positive().default(5),
+  RATE_IP_COMMENTS_PER_10MIN: z.coerce.number().int().positive().default(20),
+  RATE_IP_COMMENTS_PER_DAY: z.coerce.number().int().positive().default(200),
+  RATE_IP_LIKES_PER_HOUR: z.coerce.number().int().positive().default(300),
+  RATE_IP_REPORTS_PER_DAY: z.coerce.number().int().positive().default(30),
+
   /** Mainland-China rule (plan §4): `link_only` = only share links / publish APIs; `off` = no restriction. */
   REGION_POLICY_CN: z.enum(["link_only", "off"]).default("link_only"),
 
@@ -51,6 +61,9 @@ const schema = z.object({
   RATE_REVISIONS_PER_HOUR: z.coerce.number().int().positive().default(720),
   RATE_MEDIA_PER_HOUR: z.coerce.number().int().positive().default(300),
 }).superRefine((cfg, ctx) => {
+  if ((cfg.APP_ENV === "staging" || cfg.APP_ENV === "production") && !cfg.INTERACTION_SECRET) {
+    ctx.addIssue({ code: "custom", path: ["INTERACTION_SECRET"], message: "required outside development / test" });
+  }
   if (cfg.STORAGE_DRIVER !== "s3") return;
   for (const key of ["S3_ENDPOINT", "S3_ACCESS_KEY_ID", "S3_SECRET_ACCESS_KEY", "S3_PRIVATE_BUCKET", "S3_PUBLIC_BUCKET"] as const) {
     if (!cfg[key]) ctx.addIssue({ code: "custom", path: [key], message: "required when STORAGE_DRIVER=s3" });

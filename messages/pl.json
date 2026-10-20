@@ -66,9 +66,30 @@
   },
   "share": {
     "action": {
+      "cancel": "Anuluj",
       "close": "Zamknij",
       "copied": "Skopiowano link",
+      "like": "Lubię to",
+      "reply": "Odpowiedz",
+      "report": "Zgłoś",
       "share": "Udostępnij"
+    },
+    "comments": {
+      "anonHint": "Komentujesz jako anonimowy gość.",
+      "anonTag": "Anonim",
+      "anonymous": "Anonimowy gość",
+      "authorTag": "Autor",
+      "closed": "Komentarze są zamknięte.",
+      "empty": "Brak komentarzy. Bądź pierwszy!",
+      "error": "Coś poszło nie tak. Spróbuj ponownie.",
+      "more": "Więcej komentarzy",
+      "name": "Nazwa (opcjonalnie)",
+      "placeholder": "Podziel się przemyśleniami…",
+      "rateLimited": "Robisz to zbyt często. Spróbuj później.",
+      "replyingTo": "Odpowiedź dla {name}",
+      "signedInOnly": "Ten wpis mogą komentować tylko zalogowani członkowie.",
+      "submit": "Opublikuj",
+      "title": "Komentarze"
     },
     "header": {
       "join": "Dołącz do {brand}"
@@ -77,6 +98,16 @@
     "post": {
       "edited": "Edytowano: {time}",
       "from": "Z aplikacji {app}"
+    },
+    "report": {
+      "done": "Dziękujemy. Sprawdzimy to.",
+      "reason": {
+        "abuse": "Nękanie lub nienawiść",
+        "illegal": "Treści nielegalne lub szkodliwe",
+        "other": "Coś innego",
+        "spam": "Spam lub oszustwo"
+      },
+      "submit": "Wyślij zgłoszenie"
     },
     "status": {
       "notFound": {

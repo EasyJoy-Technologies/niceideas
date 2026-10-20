@@ -66,9 +66,30 @@
   },
   "share": {
     "action": {
+      "cancel": "Avbryt",
       "close": "Stäng",
       "copied": "Länken har kopierats",
+      "like": "Gilla",
+      "reply": "Svara",
+      "report": "Anmäl",
       "share": "Dela"
+    },
+    "comments": {
+      "anonHint": "Du kommenterar som anonym besökare.",
+      "anonTag": "Anonym",
+      "anonymous": "Anonym besökare",
+      "authorTag": "Författare",
+      "closed": "Kommentarerna är stängda.",
+      "empty": "Inga kommentarer än. Bli först!",
+      "error": "Något gick fel. Försök igen.",
+      "more": "Fler kommentarer",
+      "name": "Namn (valfritt)",
+      "placeholder": "Dela dina tankar…",
+      "rateLimited": "Du gör det för ofta. Försök igen senare.",
+      "replyingTo": "Svar till {name}",
+      "signedInOnly": "Bara inloggade medlemmar kan kommentera det här inlägget.",
+      "submit": "Publicera",
+      "title": "Kommentarer"
     },
     "header": {
       "join": "Gå med i {brand}"
@@ -77,6 +98,16 @@
     "post": {
       "edited": "Redigerat {time}",
       "from": "Från {app}"
+    },
+    "report": {
+      "done": "Tack. Vi granskar det.",
+      "reason": {
+        "abuse": "Trakasserier eller hat",
+        "illegal": "Olagligt eller skadligt innehåll",
+        "other": "Något annat",
+        "spam": "Spam eller bedrägeri"
+      },
+      "submit": "Skicka anmälan"
     },
     "status": {
       "notFound": {

@@ -66,9 +66,30 @@
   },
   "share": {
     "action": {
+      "cancel": "Abbrechen",
       "close": "Schließen",
       "copied": "Link kopiert",
+      "like": "Gefällt mir",
+      "reply": "Antworten",
+      "report": "Melden",
       "share": "Teilen"
+    },
+    "comments": {
+      "anonHint": "Du kommentierst als anonymer Besucher.",
+      "anonTag": "Anonym",
+      "anonymous": "Anonymer Besucher",
+      "authorTag": "Autor",
+      "closed": "Die Kommentare sind geschlossen.",
+      "empty": "Noch keine Kommentare. Schreib den ersten!",
+      "error": "Etwas ist schiefgelaufen. Bitte versuche es erneut.",
+      "more": "Weitere Kommentare",
+      "name": "Name (optional)",
+      "placeholder": "Teile deine Gedanken …",
+      "rateLimited": "Das geht zu schnell. Bitte versuche es später erneut.",
+      "replyingTo": "Antwort an {name}",
+      "signedInOnly": "Nur angemeldete Mitglieder können diesen Beitrag kommentieren.",
+      "submit": "Senden",
+      "title": "Kommentare"
     },
     "header": {
       "join": "{brand} beitreten"
@@ -77,6 +98,16 @@
     "post": {
       "edited": "Bearbeitet am {time}",
       "from": "Aus {app}"
+    },
+    "report": {
+      "done": "Danke. Wir prüfen das.",
+      "reason": {
+        "abuse": "Belästigung oder Hass",
+        "illegal": "Illegaler oder schädlicher Inhalt",
+        "other": "Etwas anderes",
+        "spam": "Spam oder Betrug"
+      },
+      "submit": "Meldung senden"
     },
     "status": {
       "notFound": {

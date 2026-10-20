@@ -7,6 +7,8 @@
 export type AccessClass =
   /** A specific post page `/p/<slug>` and the static assets it needs. */
   | "share"
+  /** Likes, comments and reports on a specific post page (plan §16.2; open in mainland China). */
+  | "interaction"
   /** First-party publishing APIs (publish, sync, withdraw, media upload, sources). */
   | "publish_api"
   /** Third-party APIs (called server-to-server, e.g. OmniFire). */
@@ -25,7 +27,7 @@ export type RegionDecision = { allowed: true; restricted: boolean } | { allowed:
 /** Mainland China only; Hong Kong (HK), Macau (MO) and Taiwan (TW) are separate codes and unaffected. */
 const RESTRICTED_COUNTRY = "CN";
 
-const ALLOWED_WHEN_RESTRICTED: ReadonlySet<AccessClass> = new Set(["share", "publish_api", "third_party_api", "public_meta"]);
+const ALLOWED_WHEN_RESTRICTED: ReadonlySet<AccessClass> = new Set(["share", "interaction", "publish_api", "third_party_api", "public_meta"]);
 
 /** Normalizes Cloudflare's `CF-IPCountry` (two letters; "XX"/"T1" etc. are not CN). */
 export function countryFromHeaders(headers: Headers): string | null {

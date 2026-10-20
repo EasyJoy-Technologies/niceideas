@@ -66,9 +66,30 @@
   },
   "share": {
     "action": {
+      "cancel": "Mégse",
       "close": "Bezárás",
       "copied": "Link másolva",
+      "like": "Tetszik",
+      "reply": "Válasz",
+      "report": "Jelentés",
       "share": "Megosztás"
+    },
+    "comments": {
+      "anonHint": "Névtelen látogatóként szólsz hozzá.",
+      "anonTag": "Névtelen",
+      "anonymous": "Névtelen látogató",
+      "authorTag": "Szerző",
+      "closed": "A hozzászólás le van zárva.",
+      "empty": "Még nincs hozzászólás. Légy az első!",
+      "error": "Hiba történt. Próbáld újra.",
+      "more": "További hozzászólások",
+      "name": "Név (nem kötelező)",
+      "placeholder": "Oszd meg a gondolataidat…",
+      "rateLimited": "Túl gyakran próbálkozol. Próbáld később.",
+      "replyingTo": "Válasz neki: {name}",
+      "signedInOnly": "Ehhez a bejegyzéshez csak bejelentkezett tagok szólhatnak hozzá.",
+      "submit": "Küldés",
+      "title": "Hozzászólások"
     },
     "header": {
       "join": "Csatlakozás: {brand}"
@@ -77,6 +98,16 @@
     "post": {
       "edited": "Szerkesztve: {time}",
       "from": "Forrás: {app}"
+    },
+    "report": {
+      "done": "Köszönjük. Megvizsgáljuk.",
+      "reason": {
+        "abuse": "Zaklatás vagy gyűlölet",
+        "illegal": "Illegális vagy ártalmas tartalom",
+        "other": "Egyéb",
+        "spam": "Kéretlen tartalom vagy csalás"
+      },
+      "submit": "Jelentés küldése"
     },
     "status": {
       "notFound": {

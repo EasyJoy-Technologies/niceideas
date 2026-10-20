@@ -66,9 +66,30 @@
   },
   "share": {
     "action": {
+      "cancel": "Kanselahin",
       "close": "Isara",
       "copied": "Nakopya ang link",
+      "like": "I-like",
+      "reply": "Sumagot",
+      "report": "I-report",
       "share": "Ibahagi"
+    },
+    "comments": {
+      "anonHint": "Magkokomento ka bilang di-kilalang bisita.",
+      "anonTag": "Di-kilala",
+      "anonymous": "Di-kilalang bisita",
+      "authorTag": "May-akda",
+      "closed": "Sarado na ang mga komento.",
+      "empty": "Wala pang komento. Ikaw na ang mauna!",
+      "error": "May nangyaring mali. Pakisubukang muli.",
+      "more": "Higit pang komento",
+      "name": "Pangalan (opsyonal)",
+      "placeholder": "Ibahagi ang iyong saloobin…",
+      "rateLimited": "Masyadong madalas. Pakisubukang muli mamaya.",
+      "replyingTo": "Sumasagot kay {name}",
+      "signedInOnly": "Mga naka-sign in na miyembro lang ang puwedeng magkomento sa post na ito.",
+      "submit": "I-post",
+      "title": "Mga komento"
     },
     "header": {
       "join": "Sumali sa {brand}"
@@ -77,6 +98,16 @@
     "post": {
       "edited": "Na-edit noong {time}",
       "from": "Mula sa {app}"
+    },
+    "report": {
+      "done": "Salamat. Susuriin namin ito.",
+      "reason": {
+        "abuse": "Panliligalig o pagkapoot",
+        "illegal": "Ilegal o mapanganib na nilalaman",
+        "other": "Iba pa",
+        "spam": "Spam o scam"
+      },
+      "submit": "Ipadala ang report"
     },
     "status": {
       "notFound": {

@@ -24,6 +24,7 @@ const settingsBody = z
     coverMediaId: z.uuid().nullable().optional(),
     kind: z.enum(["short", "article"]).nullable().optional(),
     syncMode: z.enum(["follow", "frozen"]).optional(),
+    commentsMode: z.enum(["open", "signed_in", "closed"]).optional(),
   })
   .strict();
 

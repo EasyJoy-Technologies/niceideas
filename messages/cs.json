@@ -66,9 +66,30 @@
   },
   "share": {
     "action": {
+      "cancel": "Zrušit",
       "close": "Zavřít",
       "copied": "Odkaz zkopírován",
+      "like": "Líbí se mi",
+      "reply": "Odpovědět",
+      "report": "Nahlásit",
       "share": "Sdílet"
+    },
+    "comments": {
+      "anonHint": "Komentujete jako anonymní návštěvník.",
+      "anonTag": "Anonym",
+      "anonymous": "Anonymní návštěvník",
+      "authorTag": "Autor",
+      "closed": "Komentáře jsou uzavřené.",
+      "empty": "Zatím žádné komentáře. Buďte první!",
+      "error": "Něco se pokazilo. Zkuste to znovu.",
+      "more": "Další komentáře",
+      "name": "Jméno (nepovinné)",
+      "placeholder": "Napište, co si myslíte…",
+      "rateLimited": "Děláte to příliš často. Zkuste to později.",
+      "replyingTo": "Odpověď pro {name}",
+      "signedInOnly": "Tento příspěvek mohou komentovat jen přihlášení členové.",
+      "submit": "Odeslat",
+      "title": "Komentáře"
     },
     "header": {
       "join": "Připojit se k {brand}"
@@ -77,6 +98,16 @@
     "post": {
       "edited": "Upraveno {time}",
       "from": "Z aplikace {app}"
+    },
+    "report": {
+      "done": "Děkujeme. Prověříme to.",
+      "reason": {
+        "abuse": "Obtěžování nebo nenávist",
+        "illegal": "Nezákonný nebo škodlivý obsah",
+        "other": "Něco jiného",
+        "spam": "Spam nebo podvod"
+      },
+      "submit": "Odeslat nahlášení"
     },
     "status": {
       "notFound": {
