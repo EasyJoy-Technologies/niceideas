@@ -6,3 +6,4 @@
 | 2 | Logto Web 应用（staging + 生产） | 阶段 2（网页登录） | 回调 `https://t.niceideas.app/auth/callback`、`https://niceideas.app/auth/callback`；登出回跳站点首页 |
 | 3 | 删号联动契约 | 阶段 3 | 删号编排新增"通知 niceideas"步骤：HMAC 签名、幂等、失败重试与告警；niceideas 收到后删除该用户资料、帖子、媒体、点赞与评论 |
 | 4 | 开放 API resource + OmniFire 第三方应用 | 阶段 3 | audience `https://api.niceideas.app` |
+| 5 | 会员状态（预留，见方案 §17） | 会员功能实施前（生产上线后） | 服务端之间按 user_id 查询会员状态的接口（复用 `/v1/entitlements` 口径），会员变化推送（HMAC 签名、幂等）；确认乐趣记事本会员 `vipsub` 是否同时覆盖 NiceIdeas（Q9） |
