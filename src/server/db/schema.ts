@@ -191,6 +191,16 @@ export interface IdempotencyTable {
   expires_at: Timestamp;
 }
 
+export type AccountEventKind = "deletion_requested" | "deletion_cancelled" | "deletion_completed";
+
+export interface AccountEventTable {
+  event_id: string;
+  user_id: string;
+  event: AccountEventKind;
+  occurred_at: Timestamp;
+  processed_at: CreatedAt;
+}
+
 export interface Database {
   profile: ProfileTable;
   post: PostTable;
@@ -206,6 +216,7 @@ export interface Database {
   comment: CommentTable;
   comment_like: CommentLikeTable;
   visitor_ban: VisitorBanTable;
+  account_event: AccountEventTable;
 }
 
 export type Profile = Selectable<ProfileTable>;

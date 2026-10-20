@@ -50,6 +50,9 @@ const schema = z.object({
   RATE_IP_LIKES_PER_HOUR: z.coerce.number().int().positive().default(300),
   RATE_IP_REPORTS_PER_DAY: z.coerce.number().int().positive().default(30),
 
+  /** Shared secret for NiceMatrix account events (HMAC-SHA256). Unset = endpoint disabled (503). */
+  ACCOUNT_EVENTS_SECRET: z.string().min(32).optional(),
+
   /** Mainland-China rule (plan §4): `link_only` = only share links / publish APIs; `off` = no restriction. */
   REGION_POLICY_CN: z.enum(["link_only", "off"]).default("link_only"),
 

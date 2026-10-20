@@ -6,9 +6,23 @@
   const labels = d.body.dataset;
 
   const fmt = new Intl.DateTimeFormat(lang, { dateStyle: "medium", timeStyle: "short" });
+  const day = new Intl.DateTimeFormat(lang, { dateStyle: "medium" });
+  const rel = new Intl.RelativeTimeFormat(lang, { numeric: "auto" });
+  // `data-rel` times read "5 minutes ago" for the first week, then a date.
+  const relative = (at) => {
+    const s = Math.round((at.getTime() - Date.now()) / 1000);
+    const a = Math.abs(s);
+    if (a < 45) return rel.format(0, "second");
+    if (a < 3600) return rel.format(Math.round(s / 60), "minute");
+    if (a < 86400) return rel.format(Math.round(s / 3600), "hour");
+    if (a < 7 * 86400) return rel.format(Math.round(s / 86400), "day");
+    return day.format(at);
+  };
   for (const t of d.querySelectorAll("time[datetime]")) {
     const at = new Date(t.getAttribute("datetime"));
-    if (!Number.isNaN(at.getTime())) t.textContent = fmt.format(at);
+    if (Number.isNaN(at.getTime())) continue;
+    t.textContent = t.hasAttribute("data-rel") ? relative(at) : fmt.format(at);
+    t.title = fmt.format(at);
   }
 
   let box;
