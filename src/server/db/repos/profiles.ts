@@ -28,6 +28,10 @@ export async function insertProfileIfAbsent(db: Db, row: NewProfile): Promise<Pr
   }
 }
 
+export async function updateProfileDisplayName(db: Db, userId: string, displayName: string): Promise<void> {
+  await db.updateTable("profile").set({ display_name: displayName, updated_at: new Date() }).where("user_id", "=", userId).execute();
+}
+
 export function isUniqueViolation(err: unknown, constraint?: string): boolean {
   const e = err as { code?: string; constraint?: string };
   return e?.code === "23505" && (constraint === undefined || e.constraint === constraint);

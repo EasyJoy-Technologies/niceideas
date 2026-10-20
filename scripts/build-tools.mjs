@@ -5,7 +5,7 @@ import { build } from "esbuild";
 import path from "node:path";
 
 const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), "..");
-const ENTRIES = { migrate: "scripts/migrate.ts" };
+const ENTRIES = { migrate: "scripts/migrate.ts", publish: "scripts/publish.ts" };
 
 for (const [name, entry] of Object.entries(ENTRIES)) {
   await build({
