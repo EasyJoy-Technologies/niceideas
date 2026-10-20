@@ -63,7 +63,7 @@ def comments_block():
 
 def footer(cn=False):
     links = "" if cn else '<div class="ftr-links"><a href="#">关于 NiceIdeas</a><a href="#">社区准则</a><a href="#">使用条款</a><a href="#">隐私政策</a><a href="#">帮助</a><a href="https://enp.ej-mobile.cn">下载乐趣记事本</a></div>'
-    return f'''<footer class="ftr"><div class="ftr-in"><div class="ftr-brand">{brand(not cn)}<p>记录生活里的好想法，一个链接就能分享。</p></div>{links}
+    return f'''<footer class="ftr"><div class="ftr-in"><div class="ftr-brand">{brand(not cn)}<p>随时随地分享你的好主意！</p></div>{links}
 <div class="ftr-meta"><span>© 2026 NiceIdeas · 版本 1.0.7</span><span class="lang">{ic("globe")}简体中文</span></div></div></footer>'''
 
 def post_page(mobile=False, cn=False):
