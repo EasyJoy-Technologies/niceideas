@@ -14,6 +14,50 @@
       "title": "Idea yang wajar dikongsi"
     }
   },
+  "info": {
+    "about": {
+      "p1": "{brand} ialah tempat untuk berkongsi Nice Ideas anda — buah fikiran ringkas, tulisan panjang, foto dan audio — melalui satu pautan.",
+      "p2": "Sesiapa sahaja boleh membuka pautan yang dikongsi, dengan atau tanpa akaun. Siaran boleh datang terus daripada aplikasi seperti NiceNote atau ditulis di web.",
+      "p3": "Siaran anda kekal milik anda: anda boleh menyunting atau menarik baliknya pada bila-bila masa, dan siaran yang ditarik balik dipadam secara kekal selepas 30 hari.",
+      "title": "Mengenai {brand}"
+    },
+    "guidelines": {
+      "intro": "Bantu kekalkan {brand} sebagai tempat yang mesra untuk idea. Siaran dan ulasan tidak boleh:",
+      "item1": "melanggar undang-undang atau hak orang lain, termasuk hak cipta dan privasi;",
+      "item2": "mengganggu, mengugut atau menghasut kebencian terhadap sesiapa;",
+      "item3": "mengandungi kandungan seksual yang melibatkan kanak-kanak atau keganasan grafik;",
+      "item4": "berupa spam, penipuan atau mengelirukan orang.",
+      "outro": "Kandungan yang melanggar peraturan ini boleh dialih keluar, dan pesalah berulang boleh hilang akses. Gunakan Laporkan pada siaran untuk memaklumkan masalah kepada kami.",
+      "title": "Garis panduan komuniti"
+    },
+    "help": {
+      "a1": "Kongsi nota daripada NiceNote, atau tulis siaran di web apabila penerbitan web dibuka.",
+      "a2": "Sunting nota dalam aplikasi dan siaran akan dikemas kini. Tarik balik dalam aplikasi dan pautan terus tidak berfungsi.",
+      "a3": "Sesiapa yang mempunyai pautan. Siaran juga dipaparkan pada profil dan suapan anda.",
+      "a4": "Gunakan Laporkan pada siaran. Kami menyemak setiap laporan.",
+      "q1": "Bagaimana untuk menyiarkan?",
+      "q2": "Bagaimana untuk menyunting atau mengalih keluar siaran?",
+      "q3": "Siapa yang boleh melihat siaran saya?",
+      "q4": "Bagaimana untuk melaporkan masalah?",
+      "title": "Bantuan"
+    },
+    "privacy": {
+      "item1": "Kami menyimpan apa yang anda terbitkan dan profil asas akaun NiceMatrix anda: nama, avatar dan nama pengguna.",
+      "item2": "Data lokasi dan kamera dibuang daripada imej sebelum diterbitkan.",
+      "item3": "Bagi ulasan dan suka tanpa nama, kami hanya menyimpan cincangan sehala alamat rangkaian anda untuk mencegah penyalahgunaan.",
+      "item4": "Kami tidak menjual data anda.",
+      "item5": "Siaran yang ditarik balik dipadam dalam tempoh 30 hari. Jika anda memadam akaun, siaran dan ulasan anda juga dipadam.",
+      "title": "Dasar privasi"
+    },
+    "terms": {
+      "item1": "Dengan menggunakan {brand}, anda bersetuju dengan terma ini dan garis panduan komuniti.",
+      "item2": "Apa yang anda siarkan ialah milik anda. Anda membenarkan {brand} menyimpan, memaparkan dan menyampaikannya supaya pautan anda berfungsi.",
+      "item3": "Anda bertanggungjawab atas apa yang anda siarkan dan mesti berhak untuk berkongsinya.",
+      "item4": "Kami boleh mengalih keluar kandungan atau menggantung akaun yang melanggar terma ini.",
+      "item5": "{brand} disediakan seadanya. Kami berusaha memastikannya tersedia tetapi tidak dapat menjamin ia tidak akan terganggu.",
+      "title": "Terma penggunaan"
+    }
+  },
   "meta": {
     "site": {
       "description": "Fikiran ringkas dan tulisan panjang dengan imej dan audio, dikongsi melalui satu pautan.",
@@ -25,9 +69,6 @@
       "close": "Tutup",
       "copied": "Pautan disalin",
       "share": "Kongsi"
-    },
-    "footer": {
-      "getApp": "Muat turun {app}"
     },
     "header": {
       "join": "Sertai {brand}"

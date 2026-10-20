@@ -14,6 +14,50 @@
       "title": "Idee che vale la pena condividere"
     }
   },
+  "info": {
+    "about": {
+      "p1": "{brand} è il posto dove condividere le tue Nice Ideas — pensieri brevi, testi lunghi, foto e audio — con un solo link.",
+      "p2": "Chiunque può aprire un link condiviso, con o senza account. I post possono arrivare da app come NiceNote o essere scritti sul web.",
+      "p3": "I tuoi post restano tuoi: puoi modificarli o ritirarli in qualsiasi momento, e quelli ritirati vengono eliminati definitivamente dopo 30 giorni.",
+      "title": "Informazioni su {brand}"
+    },
+    "guidelines": {
+      "intro": "Aiutaci a mantenere {brand} un luogo cordiale per le idee. Post e commenti non devono:",
+      "item1": "violare la legge o i diritti altrui, inclusi diritto d’autore e privacy;",
+      "item2": "molestare, minacciare o incitare all’odio contro chiunque;",
+      "item3": "contenere materiale sessuale che coinvolga minori o violenza esplicita;",
+      "item4": "fare spam, truffare o ingannare le persone.",
+      "outro": "I contenuti che violano queste regole possono essere rimossi e chi le viola ripetutamente può perdere l’accesso. Usa Segnala su un post per avvisarci di un problema.",
+      "title": "Linee guida della community"
+    },
+    "help": {
+      "a1": "Condividi una nota da NiceNote, oppure scrivi un post sul web quando sarà attiva la pubblicazione web.",
+      "a2": "Modifica la nota nell’app e il post si aggiorna. Ritirala nell’app e il link smette subito di funzionare.",
+      "a3": "Chiunque abbia il link. I post compaiono anche sul tuo profilo e nei feed.",
+      "a4": "Usa Segnala sul post. Esaminiamo ogni segnalazione.",
+      "q1": "Come pubblico?",
+      "q2": "Come modifico o rimuovo un post?",
+      "q3": "Chi può vedere i miei post?",
+      "q4": "Come segnalo un problema?",
+      "title": "Aiuto"
+    },
+    "privacy": {
+      "item1": "Conserviamo ciò che pubblichi e il profilo di base del tuo account NiceMatrix: nome, avatar e nome utente.",
+      "item2": "I dati di posizione e della fotocamera vengono rimossi dalle immagini prima della pubblicazione.",
+      "item3": "Per commenti e «mi piace» anonimi conserviamo solo un hash unidirezionale del tuo indirizzo di rete, per prevenire abusi.",
+      "item4": "Non vendiamo i tuoi dati.",
+      "item5": "I post ritirati vengono eliminati entro 30 giorni. Se elimini il tuo account, vengono eliminati anche i tuoi post e commenti.",
+      "title": "Informativa sulla privacy"
+    },
+    "terms": {
+      "item1": "Usando {brand} accetti questi termini e le linee guida della community.",
+      "item2": "Ciò che pubblichi è tuo. Consenti a {brand} di archiviarlo, mostrarlo e distribuirlo affinché i tuoi link funzionino.",
+      "item3": "Sei responsabile di ciò che pubblichi e devi avere il diritto di condividerlo.",
+      "item4": "Possiamo rimuovere contenuti o sospendere account che violano questi termini.",
+      "item5": "{brand} è fornito così com’è. Lavoriamo per mantenerlo disponibile, ma non possiamo garantire che non subisca mai interruzioni.",
+      "title": "Termini di utilizzo"
+    }
+  },
   "meta": {
     "site": {
       "description": "Pensieri brevi e letture lunghe con immagini e audio, condivisi con un unico link.",
@@ -25,9 +69,6 @@
       "close": "Chiudi",
       "copied": "Link copiato",
       "share": "Condividi"
-    },
-    "footer": {
-      "getApp": "Scarica {app}"
     },
     "header": {
       "join": "Unisciti a {brand}"

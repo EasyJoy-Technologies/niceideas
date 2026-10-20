@@ -14,6 +14,50 @@
       "title": "Paylaşmaya değer fikirler"
     }
   },
+  "info": {
+    "about": {
+      "p1": "{brand}, Nice Ideas'larını — kısa düşünceler, uzun yazılar, fotoğraflar ve sesler — tek bir bağlantıyla paylaşabileceğin yerdir.",
+      "p2": "Paylaşılan bir bağlantıyı hesabı olan da olmayan da herkes açabilir. Gönderiler NiceNote gibi uygulamalardan doğrudan gelebilir ya da web'de yazılabilir.",
+      "p3": "Gönderilerin sana ait kalır: Onları istediğin zaman düzenleyebilir ya da geri çekebilirsin; geri çekilen gönderiler 30 gün sonra kalıcı olarak silinir.",
+      "title": "{brand} hakkında"
+    },
+    "guidelines": {
+      "intro": "{brand}'in fikirler için dostça bir yer olarak kalmasına yardım et. Gönderiler ve yorumlar şunları içeremez:",
+      "item1": "yasaları ya da telif hakkı ve gizlilik dahil başkalarının haklarını ihlal etmek;",
+      "item2": "birini taciz etmek, tehdit etmek ya da birine karşı nefreti körüklemek;",
+      "item3": "reşit olmayanları içeren cinsel içerik ya da açık şiddet;",
+      "item4": "spam, dolandırıcılık ya da insanları yanıltmak.",
+      "outro": "Bu kuralları ihlal eden içerikler kaldırılabilir; kuralları tekrar tekrar ihlal edenler erişimini kaybedebilir. Bir sorunu bildirmek için gönderideki Şikayet et seçeneğini kullan.",
+      "title": "Topluluk kuralları"
+    },
+    "help": {
+      "a1": "NiceNote'tan bir not paylaş ya da web'de paylaşım açıldığında doğrudan web'de yaz.",
+      "a2": "Notu uygulamada düzenlediğinde gönderi güncellenir. Uygulamada geri çektiğinde bağlantı hemen çalışmaz hale gelir.",
+      "a3": "Bağlantıya sahip olan herkes. Gönderiler profilinde ve akışlarda da görünür.",
+      "a4": "Gönderideki Şikayet et seçeneğini kullan. Her bildirimi inceleriz.",
+      "q1": "Nasıl paylaşım yaparım?",
+      "q2": "Bir gönderiyi nasıl düzenler ya da kaldırırım?",
+      "q3": "Gönderilerimi kimler görebilir?",
+      "q4": "Bir sorunu nasıl bildiririm?",
+      "title": "Yardım"
+    },
+    "privacy": {
+      "item1": "Paylaştıklarını ve NiceMatrix hesabının temel profilini (ad, profil fotoğrafı ve kullanıcı adı) saklarız.",
+      "item2": "Görseller yayımlanmadan önce konum ve kamera bilgileri kaldırılır.",
+      "item3": "Anonim yorumlar ve beğeniler için kötüye kullanımı önlemek amacıyla yalnızca ağ adresinin tek yönlü bir özetini saklarız.",
+      "item4": "Verilerini satmayız.",
+      "item5": "Geri çekilen gönderiler 30 gün içinde silinir. Hesabını sildiğinde gönderilerin ve yorumların da silinir.",
+      "title": "Gizlilik politikası"
+    },
+    "terms": {
+      "item1": "{brand}'i kullanarak bu koşulları ve topluluk kurallarını kabul etmiş olursun.",
+      "item2": "Paylaştıkların sana aittir. Bağlantılarının çalışması için {brand}'in bunları saklamasına, göstermesine ve iletmesine izin verirsin.",
+      "item3": "Paylaştıklarından sen sorumlusun ve bunları paylaşma hakkına sahip olmalısın.",
+      "item4": "Bu koşulları ihlal eden içerikleri kaldırabilir ya da hesapları askıya alabiliriz.",
+      "item5": "{brand} olduğu gibi sunulur. Erişilebilir tutmak için çalışırız ancak hiç kesinti olmayacağını garanti edemeyiz.",
+      "title": "Kullanım koşulları"
+    }
+  },
   "meta": {
     "site": {
       "description": "Görsel ve sesli kısa düşünceler ve uzun yazılar, tek bir bağlantıyla paylaşılır.",
@@ -25,9 +69,6 @@
       "close": "Kapat",
       "copied": "Bağlantı kopyalandı",
       "share": "Paylaş"
-    },
-    "footer": {
-      "getApp": "{app} uygulamasını indir"
     },
     "header": {
       "join": "{brand} topluluğuna katıl"

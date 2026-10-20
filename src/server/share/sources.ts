@@ -25,8 +25,3 @@ export function sourceBadge(source: PostSource): SourceBadge | null {
   }
   return null;
 }
-
-/** Store / landing page of NiceNote (footer "Get NiceNote"). */
-export function nicenoteHome(medium: string): string {
-  return withUtm(getConfig().SOURCE_NICENOTE_URL, medium);
-}

@@ -14,6 +14,50 @@
       "title": "Mga ideyang sulit ibahagi"
     }
   },
+  "info": {
+    "about": {
+      "p1": "Ang {brand} ay lugar para ibahagi ang iyong Nice Ideas — maiikling kaisipan, mahahabang sulatin, larawan at audio — sa iisang link.",
+      "p2": "Kahit sino ay puwedeng magbukas ng ibinahaging link, may account man o wala. Ang mga post ay puwedeng manggaling mismo sa mga app tulad ng NiceNote o isulat sa web.",
+      "p3": "Sa iyo pa rin ang mga post mo: puwede mong i-edit o bawiin ang mga ito anumang oras, at permanenteng binubura ang mga binawing post pagkalipas ng 30 araw.",
+      "title": "Tungkol sa {brand}"
+    },
+    "guidelines": {
+      "intro": "Tumulong na panatilihing magiliw na lugar para sa mga ideya ang {brand}. Hindi dapat ang mga post at komento ay:",
+      "item1": "lumabag sa batas o sa karapatan ng iba, kasama ang copyright at privacy;",
+      "item2": "manligalig, magbanta o mag-udyok ng pagkapoot sa sinuman;",
+      "item3": "maglaman ng sekswal na nilalamang may kinalaman sa menor de edad o marahas na nilalaman;",
+      "item4": "mag-spam, manloko o manlinlang ng tao.",
+      "outro": "Maaaring alisin ang nilalamang lumalabag sa mga alituntuning ito, at maaaring mawalan ng access ang paulit-ulit na lumalabag. Gamitin ang I-report sa isang post para ipaalam sa amin ang problema.",
+      "title": "Mga alituntunin ng komunidad"
+    },
+    "help": {
+      "a1": "Magbahagi ng note mula sa NiceNote, o magsulat ng post sa web kapag binuksan na ang pag-publish sa web.",
+      "a2": "I-edit ang note sa app at maa-update ang post. Bawiin ito sa app at agad na hindi na gagana ang link.",
+      "a3": "Kahit sinong may link. Lumalabas din ang mga post sa iyong profile at sa mga feed.",
+      "a4": "Gamitin ang I-report sa post. Sinusuri namin ang bawat report.",
+      "q1": "Paano ako magpo-post?",
+      "q2": "Paano ko ie-edit o aalisin ang isang post?",
+      "q3": "Sino ang makakakita ng mga post ko?",
+      "q4": "Paano mag-report ng problema?",
+      "title": "Tulong"
+    },
+    "privacy": {
+      "item1": "Iniimbak namin ang inilalathala mo at ang pangunahing profile ng iyong NiceMatrix account: pangalan, avatar at username.",
+      "item2": "Inaalis ang location at camera data sa mga larawan bago ito ilathala.",
+      "item3": "Para sa mga anonymous na komento at like, isang one-way hash lang ng iyong network address ang itinatago namin, para maiwasan ang pang-aabuso.",
+      "item4": "Hindi namin ibinebenta ang iyong data.",
+      "item5": "Binubura ang mga binawing post sa loob ng 30 araw. Kapag binura mo ang iyong account, binubura rin ang iyong mga post at komento.",
+      "title": "Patakaran sa privacy"
+    },
+    "terms": {
+      "item1": "Sa paggamit ng {brand}, sumasang-ayon ka sa mga tuntuning ito at sa mga alituntunin ng komunidad.",
+      "item2": "Sa iyo ang ipino-post mo. Pinapayagan mo ang {brand} na itago, ipakita at ihatid ito para gumana ang iyong mga link.",
+      "item3": "Ikaw ang may pananagutan sa ipino-post mo at dapat may karapatan kang ibahagi ito.",
+      "item4": "Maaari naming alisin ang nilalaman o suspindihin ang mga account na lumalabag sa mga tuntuning ito.",
+      "item5": "Ibinibigay ang {brand} nang ganito. Sinisikap naming panatilihin itong available pero hindi namin maipapangakong hindi ito kailanman maaantala.",
+      "title": "Mga tuntunin ng paggamit"
+    }
+  },
   "meta": {
     "site": {
       "description": "Maiikling kaisipan at mahahabang sulatin na may larawan at audio, ibinabahagi sa iisang link.",
@@ -25,9 +69,6 @@
       "close": "Isara",
       "copied": "Nakopya ang link",
       "share": "Ibahagi"
-    },
-    "footer": {
-      "getApp": "I-download ang {app}"
     },
     "header": {
       "join": "Sumali sa {brand}"

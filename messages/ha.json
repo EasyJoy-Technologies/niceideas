@@ -14,6 +14,50 @@
       "title": "Raʼayoyi masu cancantar a raba"
     }
   },
+  "info": {
+    "about": {
+      "p1": "{brand} wuri ne na raba Nice Ideas ɗinka — gajerun tunani, dogayen rubuce-rubuce, hotuna da sauti — da hanyar haɗi ɗaya.",
+      "p2": "Kowa zai iya buɗe hanyar haɗin da aka raba, ko yana da asusu ko babu. Rubuce-rubuce za su iya zuwa kai tsaye daga manhajoji kamar NiceNote ko a rubuta su a yanar gizo.",
+      "p3": "Rubuce-rubucenka naka ne: za ka iya gyara su ko janye su a kowane lokaci, kuma ana goge waɗanda aka janye har abada bayan kwana 30.",
+      "title": "Game da {brand}"
+    },
+    "guidelines": {
+      "intro": "Taimaka wajen ganin {brand} ya kasance wuri mai kyau ga ra'ayoyi. Rubuce-rubuce da sharhi ba za su:",
+      "item1": "karya doka ko take haƙƙin wasu ba, ciki har da haƙƙin mallaka da sirri;",
+      "item2": "tsangwama, tsoratarwa ko tayar da ƙiyayya ga kowa ba;",
+      "item3": "ƙunshi abubuwan batsa da suka shafi ƙananan yara ko tashin hankali mai muni ba;",
+      "item4": "zama saƙonnin banza, zamba ko yaudarar mutane ba.",
+      "outro": "Ana iya cire abubuwan da suka karya waɗannan ƙa'idoji, kuma waɗanda suke maimaitawa za su iya rasa damar shiga. Yi amfani da Kai rahoto a kan rubutu don sanar da mu matsala.",
+      "title": "Ƙa'idojin al'umma"
+    },
+    "help": {
+      "a1": "Raba bayani daga NiceNote, ko ka rubuta a yanar gizo idan aka buɗe wallafawa ta yanar gizo.",
+      "a2": "Gyara bayanin a manhajar kuma rubutun zai sabunta. Janye shi a manhajar kuma hanyar haɗin za ta daina aiki nan take.",
+      "a3": "Duk wanda yake da hanyar haɗin. Rubuce-rubucen kuma suna bayyana a bayanin martabarka da cikin ciyarwa.",
+      "a4": "Yi amfani da Kai rahoto a kan rubutun. Muna duba kowane rahoto.",
+      "q1": "Ta yaya zan wallafa?",
+      "q2": "Ta yaya zan gyara ko cire rubutu?",
+      "q3": "Wa zai iya ganin rubuce-rubucena?",
+      "q4": "Ta yaya zan kai rahoton matsala?",
+      "title": "Taimako"
+    },
+    "privacy": {
+      "item1": "Muna adana abin da ka wallafa da bayanan asali na asusunka na NiceMatrix: suna, hoton bayanin martaba da sunan mai amfani.",
+      "item2": "Ana cire bayanan wuri da na kyamara daga hotuna kafin a wallafa su.",
+      "item3": "Don sharhi da so marasa suna, muna adana hash na hanya ɗaya kawai na adireshin hanyar sadarwarka, don hana cin zarafi.",
+      "item4": "Ba ma sayar da bayananka.",
+      "item5": "Ana goge rubuce-rubucen da aka janye cikin kwana 30. Idan ka goge asusunka, ana goge rubuce-rubucenka da sharhinka ma.",
+      "title": "Manufar sirri"
+    },
+    "terms": {
+      "item1": "Ta amfani da {brand} ka amince da waɗannan sharuɗɗa da ƙa'idojin al'umma.",
+      "item2": "Abin da ka wallafa naka ne. Ka ba {brand} izinin adana shi, nuna shi da isar da shi don hanyoyin haɗinka su yi aiki.",
+      "item3": "Kai ke da alhakin abin da ka wallafa, kuma dole ne kana da haƙƙin raba shi.",
+      "item4": "Za mu iya cire abubuwa ko dakatar da asusun da suka karya waɗannan sharuɗɗa.",
+      "item5": "Ana bayar da {brand} yadda yake. Muna ƙoƙarin ganin yana aiki, amma ba za mu iya tabbatar da cewa ba zai taɓa tsayawa ba.",
+      "title": "Sharuɗɗan amfani"
+    }
+  },
   "meta": {
     "site": {
       "description": "Gajerun tunani da dogayen rubuce-rubuce masu hotuna da sauti, ana raba su ta hanyar haɗi ɗaya.",
@@ -25,9 +69,6 @@
       "close": "Rufe",
       "copied": "An kwafi hanyar haɗi",
       "share": "Raba"
-    },
-    "footer": {
-      "getApp": "Sauke {app}"
     },
     "header": {
       "join": "Shiga {brand}"

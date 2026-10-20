@@ -14,6 +14,50 @@
       "title": "Ideen, die es wert sind, geteilt zu werden"
     }
   },
+  "info": {
+    "about": {
+      "p1": "{brand} ist der Ort, um deine Nice Ideas zu teilen – kurze Gedanken, lange Texte, Fotos und Audio – mit einem einzigen Link.",
+      "p2": "Jede und jeder kann einen geteilten Link öffnen, mit oder ohne Konto. Beiträge können direkt aus Apps wie NiceNote kommen oder im Web geschrieben werden.",
+      "p3": "Deine Beiträge gehören dir: Du kannst sie jederzeit bearbeiten oder zurückziehen, und zurückgezogene Beiträge werden nach 30 Tagen endgültig gelöscht.",
+      "title": "Über {brand}"
+    },
+    "guidelines": {
+      "intro": "Hilf mit, dass {brand} ein freundlicher Ort für Ideen bleibt. Beiträge und Kommentare dürfen nicht:",
+      "item1": "gegen Gesetze verstoßen oder Rechte anderer verletzen, einschließlich Urheberrecht und Privatsphäre;",
+      "item2": "andere belästigen, bedrohen oder Hass gegen sie schüren;",
+      "item3": "sexuelle Inhalte mit Minderjährigen oder drastische Gewalt enthalten;",
+      "item4": "Spam verbreiten, betrügen oder Menschen täuschen.",
+      "outro": "Inhalte, die gegen diese Regeln verstoßen, können entfernt werden; wer wiederholt verstößt, kann den Zugang verlieren. Nutze „Melden“ bei einem Beitrag, um uns auf ein Problem hinzuweisen.",
+      "title": "Community-Richtlinien"
+    },
+    "help": {
+      "a1": "Teile eine Notiz aus NiceNote oder schreibe einen Beitrag im Web, sobald das Veröffentlichen im Web freigeschaltet ist.",
+      "a2": "Bearbeite die Notiz in der App, und der Beitrag wird aktualisiert. Ziehst du sie in der App zurück, funktioniert der Link sofort nicht mehr.",
+      "a3": "Alle, die den Link haben. Beiträge erscheinen auch in deinem Profil und in Feeds.",
+      "a4": "Nutze „Melden“ beim Beitrag. Wir prüfen jede Meldung.",
+      "q1": "Wie veröffentliche ich etwas?",
+      "q2": "Wie bearbeite oder entferne ich einen Beitrag?",
+      "q3": "Wer kann meine Beiträge sehen?",
+      "q4": "Wie melde ich ein Problem?",
+      "title": "Hilfe"
+    },
+    "privacy": {
+      "item1": "Wir speichern, was du veröffentlichst, sowie das Basisprofil deines NiceMatrix-Kontos: Name, Profilbild und Benutzername.",
+      "item2": "Standort- und Kameradaten werden vor der Veröffentlichung aus Bildern entfernt.",
+      "item3": "Bei anonymen Kommentaren und Likes speichern wir nur einen Einweg-Hash deiner Netzwerkadresse, um Missbrauch zu verhindern.",
+      "item4": "Wir verkaufen deine Daten nicht.",
+      "item5": "Zurückgezogene Beiträge werden innerhalb von 30 Tagen gelöscht. Wenn du dein Konto löschst, werden auch deine Beiträge und Kommentare gelöscht.",
+      "title": "Datenschutzerklärung"
+    },
+    "terms": {
+      "item1": "Mit der Nutzung von {brand} stimmst du diesen Bedingungen und den Community-Richtlinien zu.",
+      "item2": "Was du veröffentlichst, gehört dir. Du erlaubst {brand}, es zu speichern, anzuzeigen und auszuliefern, damit deine Links funktionieren.",
+      "item3": "Du bist für deine Beiträge verantwortlich und musst das Recht haben, sie zu teilen.",
+      "item4": "Wir können Inhalte entfernen oder Konten sperren, die gegen diese Bedingungen verstoßen.",
+      "item5": "{brand} wird ohne Gewähr bereitgestellt. Wir sorgen für einen möglichst stabilen Betrieb, können aber keine unterbrechungsfreie Verfügbarkeit zusagen.",
+      "title": "Nutzungsbedingungen"
+    }
+  },
   "meta": {
     "site": {
       "description": "Kurze Gedanken und lange Texte mit Bildern und Audio, geteilt über einen einzigen Link.",
@@ -25,9 +69,6 @@
       "close": "Schließen",
       "copied": "Link kopiert",
       "share": "Teilen"
-    },
-    "footer": {
-      "getApp": "{app} herunterladen"
     },
     "header": {
       "join": "{brand} beitreten"

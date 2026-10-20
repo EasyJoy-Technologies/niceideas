@@ -14,6 +14,50 @@
       "title": "Những ý tưởng đáng để chia sẻ"
     }
   },
+  "info": {
+    "about": {
+      "p1": "{brand} là nơi chia sẻ Nice Ideas của bạn — suy nghĩ ngắn, bài viết dài, ảnh và âm thanh — chỉ bằng một liên kết.",
+      "p2": "Ai cũng có thể mở liên kết được chia sẻ, dù có tài khoản hay không. Bài viết có thể đến trực tiếp từ các ứng dụng như NiceNote hoặc được viết trên web.",
+      "p3": "Bài viết vẫn là của bạn: bạn có thể chỉnh sửa hoặc thu hồi bất cứ lúc nào, và bài đã thu hồi sẽ bị xóa vĩnh viễn sau 30 ngày.",
+      "title": "Giới thiệu {brand}"
+    },
+    "guidelines": {
+      "intro": "Hãy cùng giữ {brand} là nơi thân thiện cho các ý tưởng. Bài viết và bình luận không được:",
+      "item1": "vi phạm pháp luật hoặc quyền của người khác, bao gồm bản quyền và quyền riêng tư;",
+      "item2": "quấy rối, đe dọa hoặc kích động thù ghét đối với bất kỳ ai;",
+      "item3": "chứa nội dung tình dục liên quan đến trẻ vị thành niên hoặc bạo lực ghê rợn;",
+      "item4": "spam, lừa đảo hoặc gây hiểu lầm.",
+      "outro": "Nội dung vi phạm có thể bị gỡ, và người vi phạm nhiều lần có thể mất quyền truy cập. Hãy dùng nút Báo cáo trên bài viết để cho chúng tôi biết vấn đề.",
+      "title": "Nguyên tắc cộng đồng"
+    },
+    "help": {
+      "a1": "Chia sẻ ghi chú từ NiceNote, hoặc viết bài trên web khi tính năng đăng bài trên web được mở.",
+      "a2": "Sửa ghi chú trong ứng dụng thì bài viết sẽ được cập nhật. Thu hồi trong ứng dụng thì liên kết ngừng hoạt động ngay.",
+      "a3": "Bất kỳ ai có liên kết. Bài viết cũng hiển thị trên trang cá nhân và bảng tin.",
+      "a4": "Dùng nút Báo cáo trên bài viết. Chúng tôi xem xét mọi báo cáo.",
+      "q1": "Làm sao để đăng bài?",
+      "q2": "Làm sao để sửa hoặc gỡ bài viết?",
+      "q3": "Ai có thể xem bài viết của tôi?",
+      "q4": "Làm sao để báo cáo sự cố?",
+      "title": "Trợ giúp"
+    },
+    "privacy": {
+      "item1": "Chúng tôi lưu nội dung bạn đăng và hồ sơ cơ bản của tài khoản NiceMatrix: tên, ảnh đại diện và tên người dùng.",
+      "item2": "Dữ liệu vị trí và thông tin máy ảnh được xóa khỏi hình ảnh trước khi đăng.",
+      "item3": "Với bình luận và lượt thích ẩn danh, chúng tôi chỉ lưu mã băm một chiều của địa chỉ mạng của bạn để ngăn chặn lạm dụng.",
+      "item4": "Chúng tôi không bán dữ liệu của bạn.",
+      "item5": "Bài viết đã thu hồi sẽ bị xóa trong vòng 30 ngày. Khi bạn xóa tài khoản, bài viết và bình luận của bạn cũng bị xóa.",
+      "title": "Chính sách quyền riêng tư"
+    },
+    "terms": {
+      "item1": "Khi sử dụng {brand}, bạn đồng ý với các điều khoản này và nguyên tắc cộng đồng.",
+      "item2": "Nội dung bạn đăng thuộc về bạn. Bạn cho phép {brand} lưu trữ, hiển thị và phân phối nội dung để liên kết của bạn hoạt động.",
+      "item3": "Bạn chịu trách nhiệm về nội dung mình đăng và phải có quyền chia sẻ nội dung đó.",
+      "item4": "Chúng tôi có thể gỡ nội dung hoặc tạm ngưng tài khoản vi phạm các điều khoản này.",
+      "item5": "{brand} được cung cấp theo hiện trạng. Chúng tôi cố gắng duy trì dịch vụ nhưng không thể cam kết sẽ không bao giờ gián đoạn.",
+      "title": "Điều khoản sử dụng"
+    }
+  },
   "meta": {
     "site": {
       "description": "Suy nghĩ ngắn và bài viết dài kèm hình ảnh, âm thanh, chia sẻ chỉ bằng một đường liên kết.",
@@ -25,9 +69,6 @@
       "close": "Đóng",
       "copied": "Đã sao chép liên kết",
       "share": "Chia sẻ"
-    },
-    "footer": {
-      "getApp": "Tải {app}"
     },
     "header": {
       "join": "Tham gia {brand}"

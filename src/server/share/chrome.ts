@@ -4,7 +4,7 @@ import { escapeHtml } from "@/server/render/escape";
 import { APP_VERSION } from "@/server/version";
 import { icon } from "./icons";
 import { LANG_PARAM, type PageIntl } from "./locale";
-import { nicenoteHome } from "./sources";
+import { INFO_PAGES } from "./info-content";
 
 /** Page context shared by every server-rendered page. */
 export type ChromeContext = {
@@ -46,16 +46,19 @@ export function siteHeader(ctx: ChromeContext): string {
   return `<header class="ni-hdr"><div class="ni-hdr-in">${brand(ctx, 1.875)}<span class="ni-sp"></span>${languageMenu(ctx)}${join}</div></header>`;
 }
 
+/** Footer per approved v2 design: brand + tagline, site links, © · version + language. */
 export function siteFooter(ctx: ChromeContext): string {
   const { t } = ctx.intl;
-  const app = t("common.brand.nicenote");
+  // Mainland-China visitors get no in-site links (plan §4.2).
   const links = ctx.restricted
     ? ""
-    : `<nav class="ni-ftr-links"><a href="${escapeHtml(nicenoteHome("footer"))}" target="_blank" rel="noopener">${escapeHtml(t("share.footer.getApp", { app }))}</a></nav>`;
+    : `<nav class="ni-ftr-links">${INFO_PAGES.map((p) => `<a href="/${p}">${escapeHtml(t(`info.${p}.title`, { brand: GLOSSARY.brand }))}</a>`).join("")}</nav>`;
   const year = new Date().getUTCFullYear();
-  const meta = `<span>© ${year} ${GLOSSARY.brand} · ${escapeHtml(t("common.footer.version", { version: APP_VERSION }))}</span>`;
+  const meta =
+    `<div class="ni-ftr-meta"><span>© ${year} ${GLOSSARY.brand} · ${escapeHtml(t("common.footer.version", { version: APP_VERSION }))}</span>` +
+    `${languageMenu(ctx)}</div>`;
   return (
     `<footer class="ni-ftr"><div class="ni-ftr-in"><div class="ni-ftr-brand">${brand(ctx, 1.625)}` +
-    `<p>${escapeHtml(t("common.tagline"))}</p></div>${links}<div class="ni-ftr-meta">${meta}</div></div></footer>`
+    `<p>${escapeHtml(t("common.tagline"))}</p></div>${links}${meta}</div></footer>`
   );
 }

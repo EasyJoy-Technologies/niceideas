@@ -14,6 +14,50 @@
       "title": "Ideeën die het delen waard zijn"
     }
   },
+  "info": {
+    "about": {
+      "p1": "{brand} is de plek om je Nice Ideas te delen — korte gedachten, lange teksten, foto’s en audio — met één link.",
+      "p2": "Iedereen kan een gedeelde link openen, met of zonder account. Berichten kunnen rechtstreeks uit apps zoals NiceNote komen of op het web geschreven worden.",
+      "p3": "Je berichten blijven van jou: je kunt ze altijd bewerken of intrekken, en ingetrokken berichten worden na 30 dagen definitief verwijderd.",
+      "title": "Over {brand}"
+    },
+    "guidelines": {
+      "intro": "Help {brand} een vriendelijke plek voor ideeën te houden. Berichten en reacties mogen niet:",
+      "item1": "de wet of de rechten van anderen schenden, waaronder auteursrecht en privacy;",
+      "item2": "iemand intimideren, bedreigen of haat tegen iemand aanwakkeren;",
+      "item3": "seksuele inhoud met minderjarigen of expliciet geweld bevatten;",
+      "item4": "spammen, oplichten of mensen misleiden.",
+      "outro": "Inhoud die deze regels overtreedt kan worden verwijderd, en wie herhaaldelijk overtreedt kan de toegang verliezen. Gebruik Melden bij een bericht om ons op een probleem te wijzen.",
+      "title": "Communityrichtlijnen"
+    },
+    "help": {
+      "a1": "Deel een notitie vanuit NiceNote, of schrijf een bericht op het web zodra publiceren via het web open is.",
+      "a2": "Bewerk de notitie in de app en het bericht wordt bijgewerkt. Trek het in de app in en de link werkt meteen niet meer.",
+      "a3": "Iedereen met de link. Berichten verschijnen ook op je profiel en in feeds.",
+      "a4": "Gebruik Melden bij het bericht. We bekijken elke melding.",
+      "q1": "Hoe publiceer ik?",
+      "q2": "Hoe bewerk of verwijder ik een bericht?",
+      "q3": "Wie kan mijn berichten zien?",
+      "q4": "Hoe meld ik een probleem?",
+      "title": "Help"
+    },
+    "privacy": {
+      "item1": "We bewaren wat je publiceert en het basisprofiel van je NiceMatrix-account: naam, avatar en gebruikersnaam.",
+      "item2": "Locatie- en cameragegevens worden uit afbeeldingen verwijderd voordat ze worden gepubliceerd.",
+      "item3": "Bij anonieme reacties en likes bewaren we alleen een eenrichtingshash van je netwerkadres, om misbruik te voorkomen.",
+      "item4": "We verkopen je gegevens niet.",
+      "item5": "Ingetrokken berichten worden binnen 30 dagen verwijderd. Als je je account verwijdert, worden ook je berichten en reacties verwijderd.",
+      "title": "Privacybeleid"
+    },
+    "terms": {
+      "item1": "Door {brand} te gebruiken ga je akkoord met deze voorwaarden en de communityrichtlijnen.",
+      "item2": "Wat je plaatst is van jou. Je staat {brand} toe het op te slaan, te tonen en te leveren zodat je links werken.",
+      "item3": "Je bent verantwoordelijk voor wat je plaatst en moet het recht hebben het te delen.",
+      "item4": "We kunnen inhoud verwijderen of accounts opschorten die deze voorwaarden schenden.",
+      "item5": "{brand} wordt geleverd zoals het is. We doen ons best het beschikbaar te houden, maar kunnen niet beloven dat het nooit onderbroken wordt.",
+      "title": "Gebruiksvoorwaarden"
+    }
+  },
   "meta": {
     "site": {
       "description": "Korte gedachten en lange verhalen met afbeeldingen en audio, gedeeld via één link.",
@@ -25,9 +69,6 @@
       "close": "Sluiten",
       "copied": "Link gekopieerd",
       "share": "Delen"
-    },
-    "footer": {
-      "getApp": "{app} downloaden"
     },
     "header": {
       "join": "Word lid van {brand}"

@@ -8,6 +8,7 @@ import { GET as pageRoute } from "@/app/p/[slug]/route";
 import { GET as ogRoute } from "@/app/p/[slug]/og/[variant]/route";
 import { GET as regionRoute } from "@/app/status/region/route";
 import { proxy, REGION_PAGE } from "@/proxy";
+import { GET as termsRoute } from "@/app/terms/route";
 import { startAppContext } from "../../helpers/app-context";
 import { jsonRequest, params } from "../../helpers/api";
 import { jpegWithExif, sha256 } from "../../helpers/media-fixtures";
@@ -61,6 +62,9 @@ describe("share page /p/<slug>", () => {
     expect(html).toContain("https://enp.ej-mobile.cn/?utm_source=niceideas&amp;utm_medium=post_source");
     expect(html).toContain('class="ni-post ni-short"');
     expect(html).toContain('<a class="ni-brand" href="/">');
+    // Footer per approved design: site links, no NiceNote store link (only the source badge links there).
+    for (const page of ["about", "guidelines", "terms", "privacy", "help"]) expect(html).toContain(`<a href="/${page}">`);
+    expect(html.match(/enp\.ej-mobile\.cn/g)).toHaveLength(1);
     expect(html).not.toMatch(/<script>|style="/);
   });
 
@@ -115,6 +119,16 @@ describe("share page /p/<slug>", () => {
   });
 });
 
+describe("information pages", () => {
+  it("render in the visitor language with the site chrome", async () => {
+    const res = await termsRoute(new Request("http://localhost:3000/terms", { headers: { "accept-language": "de" } }));
+    expect(res.status).toBe(200);
+    const html = await res.text();
+    expect(html).toContain('<h1 class="ni-title">Nutzungsbedingungen</h1>');
+    expect(html).toContain("<li>");
+  });
+});
+
 describe("page-level mainland-China rule", () => {
   const req = (path: string, country?: string) =>
     new NextRequest(`http://localhost:3000${path}`, { headers: country ? { "cf-ipcountry": country } : {} });
@@ -124,6 +138,7 @@ describe("page-level mainland-China rule", () => {
     expect(blocked.headers.get("x-middleware-rewrite")).toBe(`http://localhost:3000${REGION_PAGE}`);
     expect(proxy(req("/", "HK")).headers.get("x-middleware-rewrite")).toBeNull();
     expect(proxy(req("/")).headers.get("x-middleware-rewrite")).toBeNull();
+    expect(proxy(req("/terms", "CN")).headers.get("x-middleware-rewrite")).toBe(`http://localhost:3000${REGION_PAGE}`);
   });
 
   it("451 page has no in-site links", async () => {

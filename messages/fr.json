@@ -14,6 +14,50 @@
       "title": "Des idées à partager"
     }
   },
+  "info": {
+    "about": {
+      "p1": "{brand} est l’endroit où partager vos Nice Ideas — pensées courtes, textes longs, photos et audio — en un seul lien.",
+      "p2": "Tout le monde peut ouvrir un lien partagé, avec ou sans compte. Les publications peuvent venir d’applications comme NiceNote ou être rédigées sur le web.",
+      "p3": "Vos publications restent les vôtres : vous pouvez les modifier ou les retirer à tout moment, et les publications retirées sont définitivement supprimées au bout de 30 jours.",
+      "title": "À propos de {brand}"
+    },
+    "guidelines": {
+      "intro": "Aidez-nous à faire de {brand} un lieu bienveillant pour les idées. Les publications et commentaires ne doivent pas :",
+      "item1": "enfreindre la loi ou les droits d’autrui, y compris le droit d’auteur et la vie privée ;",
+      "item2": "harceler, menacer ou inciter à la haine envers quiconque ;",
+      "item3": "contenir de contenu sexuel impliquant des mineurs ni de violence explicite ;",
+      "item4": "faire du spam, escroquer ou tromper les gens.",
+      "outro": "Le contenu qui enfreint ces règles peut être supprimé, et les récidivistes peuvent perdre l’accès. Utilisez Signaler sur une publication pour nous alerter.",
+      "title": "Règles de la communauté"
+    },
+    "help": {
+      "a1": "Partagez une note depuis NiceNote, ou rédigez sur le web dès que la publication web sera ouverte.",
+      "a2": "Modifiez la note dans l’application et la publication se met à jour. Retirez-la dans l’application et le lien cesse aussitôt de fonctionner.",
+      "a3": "Toute personne disposant du lien. Elles apparaissent aussi sur votre profil et dans les fils.",
+      "a4": "Utilisez Signaler sur la publication. Nous examinons chaque signalement.",
+      "q1": "Comment publier ?",
+      "q2": "Comment modifier ou supprimer une publication ?",
+      "q3": "Qui peut voir mes publications ?",
+      "q4": "Comment signaler un problème ?",
+      "title": "Aide"
+    },
+    "privacy": {
+      "item1": "Nous conservons ce que vous publiez et le profil de base de votre compte NiceMatrix : nom, avatar et nom d’utilisateur.",
+      "item2": "Les données de localisation et d’appareil photo sont retirées des images avant leur publication.",
+      "item3": "Pour les commentaires et « j’aime » anonymes, nous ne conservons qu’un hachage à sens unique de votre adresse réseau, afin d’éviter les abus.",
+      "item4": "Nous ne vendons pas vos données.",
+      "item5": "Les publications retirées sont supprimées sous 30 jours. Si vous supprimez votre compte, vos publications et commentaires sont aussi supprimés.",
+      "title": "Politique de confidentialité"
+    },
+    "terms": {
+      "item1": "En utilisant {brand}, vous acceptez ces conditions et les règles de la communauté.",
+      "item2": "Ce que vous publiez vous appartient. Vous autorisez {brand} à le stocker, l’afficher et le diffuser pour que vos liens fonctionnent.",
+      "item3": "Vous êtes responsable de ce que vous publiez et devez avoir le droit de le partager.",
+      "item4": "Nous pouvons supprimer du contenu ou suspendre des comptes qui enfreignent ces conditions.",
+      "item5": "{brand} est fourni en l’état. Nous faisons le nécessaire pour qu’il reste disponible, sans pouvoir garantir l’absence d’interruption.",
+      "title": "Conditions d’utilisation"
+    }
+  },
   "meta": {
     "site": {
       "description": "Pensées brèves et lectures longues avec images et audio, partagées en un seul lien.",
@@ -25,9 +69,6 @@
       "close": "Fermer",
       "copied": "Lien copié",
       "share": "Partager"
-    },
-    "footer": {
-      "getApp": "Télécharger {app}"
     },
     "header": {
       "join": "Rejoindre {brand}"

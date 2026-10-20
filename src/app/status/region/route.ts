@@ -1,4 +1,4 @@
-import { htmlResponse, shareContext } from "@/server/share/respond";
+import { htmlResponse, pageContext } from "@/server/share/respond";
 import { renderStatusPage } from "@/server/share/status-page";
 
 /**
@@ -6,6 +6,6 @@ import { renderStatusPage } from "@/server/share/status-page";
  * rewrites blocked requests here (the URL in the address bar is unchanged).
  */
 export async function GET(request: Request) {
-  const ctx = await shareContext(request);
+  const ctx = await pageContext(request);
   return htmlResponse(renderStatusPage({ ...ctx, restricted: true }, "restricted"), 451);
 }

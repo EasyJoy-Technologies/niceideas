@@ -14,6 +14,50 @@
       "title": "Nápady, které stojí za sdílení"
     }
   },
+  "info": {
+    "about": {
+      "p1": "{brand} je místo, kde můžete sdílet své Nice Ideas — krátké myšlenky, dlouhé texty, fotky i zvuk — jediným odkazem.",
+      "p2": "Sdílený odkaz může otevřít kdokoli, s účtem i bez něj. Příspěvky mohou přicházet přímo z aplikací, jako je NiceNote, nebo vznikat na webu.",
+      "p3": "Vaše příspěvky zůstávají vaše: můžete je kdykoli upravit nebo stáhnout a stažené příspěvky se po 30 dnech trvale smažou.",
+      "title": "O {brand}"
+    },
+    "guidelines": {
+      "intro": "Pomozte udržet {brand} přátelským místem pro nápady. Příspěvky a komentáře nesmí:",
+      "item1": "porušovat zákon ani práva druhých, včetně autorských práv a soukromí;",
+      "item2": "obtěžovat, vyhrožovat ani podněcovat k nenávisti vůči komukoli;",
+      "item3": "obsahovat sexuální obsah s nezletilými ani drastické násilí;",
+      "item4": "šířit spam, podvádět ani klamat lidi.",
+      "outro": "Obsah porušující tato pravidla může být odstraněn a opakovaní porušovatelé mohou přijít o přístup. Problém nám nahlásíte volbou Nahlásit u příspěvku.",
+      "title": "Pravidla komunity"
+    },
+    "help": {
+      "a1": "Sdílejte poznámku z NiceNote, nebo napište příspěvek na webu, jakmile se publikování na webu otevře.",
+      "a2": "Upravte poznámku v aplikaci a příspěvek se aktualizuje. Stáhněte ji v aplikaci a odkaz okamžitě přestane fungovat.",
+      "a3": "Kdokoli s odkazem. Příspěvky se zobrazují i na vašem profilu a ve zdrojích.",
+      "a4": "Použijte Nahlásit u příspěvku. Každé nahlášení prověříme.",
+      "q1": "Jak publikovat?",
+      "q2": "Jak upravit nebo odstranit příspěvek?",
+      "q3": "Kdo vidí mé příspěvky?",
+      "q4": "Jak nahlásit problém?",
+      "title": "Nápověda"
+    },
+    "privacy": {
+      "item1": "Ukládáme, co zveřejníte, a základní profil vašeho účtu NiceMatrix: jméno, avatar a uživatelské jméno.",
+      "item2": "Před zveřejněním odstraníme z obrázků údaje o poloze a fotoaparátu.",
+      "item3": "U anonymních komentářů a lajků uchováváme jen jednosměrný hash vaší síťové adresy, abychom zabránili zneužití.",
+      "item4": "Vaše data neprodáváme.",
+      "item5": "Stažené příspěvky se smažou do 30 dnů. Když smažete účet, smažou se i vaše příspěvky a komentáře.",
+      "title": "Zásady ochrany soukromí"
+    },
+    "terms": {
+      "item1": "Používáním {brand} souhlasíte s těmito podmínkami a s pravidly komunity.",
+      "item2": "Co zveřejníte, patří vám. Umožňujete {brand} obsah ukládat, zobrazovat a doručovat, aby vaše odkazy fungovaly.",
+      "item3": "Za své příspěvky odpovídáte a musíte mít právo je sdílet.",
+      "item4": "Obsah nebo účty porušující tyto podmínky můžeme odstranit či pozastavit.",
+      "item5": "{brand} je poskytován tak, jak je. Snažíme se o jeho dostupnost, ale nemůžeme zaručit, že nikdy nedojde k výpadku.",
+      "title": "Podmínky použití"
+    }
+  },
   "meta": {
     "site": {
       "description": "Krátké myšlenky i dlouhé texty s obrázky a zvukem, sdílené jedním odkazem.",
@@ -25,9 +69,6 @@
       "close": "Zavřít",
       "copied": "Odkaz zkopírován",
       "share": "Sdílet"
-    },
-    "footer": {
-      "getApp": "Stáhnout {app}"
     },
     "header": {
       "join": "Připojit se k {brand}"

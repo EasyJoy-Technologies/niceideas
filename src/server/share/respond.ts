@@ -1,5 +1,5 @@
 import { getConfig } from "@/server/config/env";
-import { countryFromHeaders, decideAccess, logRegionDecision } from "@/server/region/region-policy";
+import { countryFromHeaders, decideAccess, logRegionDecision, type AccessClass } from "@/server/region/region-policy";
 import type { ChromeContext } from "./chrome";
 import { pageIntl, requestLocale } from "./locale";
 
@@ -24,11 +24,14 @@ function contentSecurityPolicy(): string {
   ].join("; ");
 }
 
-/** Builds the page context for a share-class request (pages allowed in mainland China). */
-export async function shareContext(request: Request): Promise<ChromeContext> {
+/**
+ * Page context of a server-rendered page. Blocking of `site` pages in mainland China
+ * happens in `src/proxy.ts`; here the decision only selects the restricted chrome.
+ */
+export async function pageContext(request: Request, access: AccessClass = "share"): Promise<ChromeContext> {
   const path = new URL(request.url).pathname;
-  const decision = decideAccess({ country: countryFromHeaders(request.headers), access: "share", mode: getConfig().REGION_POLICY_CN });
-  logRegionDecision(path, "share", decision);
+  const decision = decideAccess({ country: countryFromHeaders(request.headers), access, mode: getConfig().REGION_POLICY_CN });
+  logRegionDecision(path, access, decision);
   return { intl: await pageIntl(requestLocale(request)), restricted: decision.restricted, path };
 }
 

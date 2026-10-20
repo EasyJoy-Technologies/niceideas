@@ -14,6 +14,50 @@
       "title": "Megosztásra érdemes ötletek"
     }
   },
+  "info": {
+    "about": {
+      "p1": "A {brand} az a hely, ahol megoszthatod a Nice Ideas-eidet – rövid gondolatokat, hosszú írásokat, fotókat és hangot – egyetlen linkkel.",
+      "p2": "A megosztott linket bárki megnyithatja, fiókkal vagy anélkül. A bejegyzések érkezhetnek közvetlenül alkalmazásokból, például a NiceNote-ból, vagy készülhetnek a weben.",
+      "p3": "A bejegyzéseid a tieid maradnak: bármikor szerkesztheted vagy visszavonhatod őket, a visszavont bejegyzések pedig 30 nap után véglegesen törlődnek.",
+      "title": "A {brand} bemutatása"
+    },
+    "guidelines": {
+      "intro": "Segíts, hogy a {brand} barátságos hely maradjon az ötletek számára. A bejegyzések és hozzászólások nem:",
+      "item1": "sérthetik a törvényt vagy mások jogait, beleértve a szerzői jogot és a magánszférát;",
+      "item2": "zaklathatnak, fenyegethetnek senkit, és nem szíthatnak gyűlöletet senki ellen;",
+      "item3": "tartalmazhatnak kiskorúakat érintő szexuális tartalmat vagy naturalisztikus erőszakot;",
+      "item4": "lehetnek kéretlen reklámok, csalások vagy félrevezetők.",
+      "outro": "Az irányelveket sértő tartalom eltávolítható, az ismételt szabálysértők pedig elveszíthetik a hozzáférésüket. Probléma esetén használd a Jelentés gombot a bejegyzésen.",
+      "title": "Közösségi irányelvek"
+    },
+    "help": {
+      "a1": "Ossz meg egy jegyzetet a NiceNote-ból, vagy írj bejegyzést a weben, amint elindul a webes közzététel.",
+      "a2": "Szerkeszd a jegyzetet az alkalmazásban, és a bejegyzés frissül. Ha visszavonod az alkalmazásban, a link azonnal megszűnik.",
+      "a3": "Bárki, akinél megvan a link. A bejegyzések a profilodon és a hírfolyamokban is megjelennek.",
+      "a4": "Használd a Jelentés gombot a bejegyzésen. Minden jelentést megvizsgálunk.",
+      "q1": "Hogyan tehetek közzé valamit?",
+      "q2": "Hogyan szerkeszthetek vagy távolíthatok el egy bejegyzést?",
+      "q3": "Ki láthatja a bejegyzéseimet?",
+      "q4": "Hogyan jelenthetek problémát?",
+      "title": "Súgó"
+    },
+    "privacy": {
+      "item1": "Tároljuk, amit közzéteszel, valamint NiceMatrix-fiókod alapprofilját: nevet, profilképet és felhasználónevet.",
+      "item2": "A képekből a közzététel előtt eltávolítjuk a hely- és fényképezőgép-adatokat.",
+      "item3": "Névtelen hozzászólásoknál és kedveléseknél csak a hálózati címed egyirányú hash-ét tároljuk a visszaélések megelőzésére.",
+      "item4": "Nem adjuk el az adataidat.",
+      "item5": "A visszavont bejegyzéseket 30 napon belül töröljük. Ha törlöd a fiókodat, a bejegyzéseid és hozzászólásaid is törlődnek.",
+      "title": "Adatvédelmi szabályzat"
+    },
+    "terms": {
+      "item1": "A {brand} használatával elfogadod ezeket a feltételeket és a közösségi irányelveket.",
+      "item2": "Amit közzéteszel, az a tiéd. Engedélyezed, hogy a {brand} tárolja, megjelenítse és továbbítsa, hogy a linkjeid működjenek.",
+      "item3": "Felelős vagy azért, amit közzéteszel, és jogosultnak kell lenned a megosztására.",
+      "item4": "Eltávolíthatjuk azokat a tartalmakat, illetve felfüggeszthetjük azokat a fiókokat, amelyek megsértik ezeket a feltételeket.",
+      "item5": "A {brand} szolgáltatást a jelenlegi állapotában nyújtjuk. Igyekszünk elérhetően tartani, de nem garantálhatjuk, hogy soha nem lesz fennakadás.",
+      "title": "Felhasználási feltételek"
+    }
+  },
   "meta": {
     "site": {
       "description": "Rövid gondolatok és hosszabb írások képekkel és hanggal, egyetlen linken megosztva.",
@@ -25,9 +69,6 @@
       "close": "Bezárás",
       "copied": "Link másolva",
       "share": "Megosztás"
-    },
-    "footer": {
-      "getApp": "{app} letöltése"
     },
     "header": {
       "join": "Csatlakozás: {brand}"

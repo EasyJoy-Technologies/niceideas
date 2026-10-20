@@ -14,6 +14,50 @@
       "title": "Ideas que vale la pena compartir"
     }
   },
+  "info": {
+    "about": {
+      "p1": "{brand} es el lugar para compartir tus Nice Ideas —pensamientos breves, textos largos, fotos y audio— con un solo enlace.",
+      "p2": "Cualquiera puede abrir un enlace compartido, tenga cuenta o no. Las publicaciones pueden venir de apps como NiceNote o escribirse en la web.",
+      "p3": "Tus publicaciones siguen siendo tuyas: puedes editarlas o retirarlas cuando quieras, y las retiradas se eliminan definitivamente a los 30 días.",
+      "title": "Acerca de {brand}"
+    },
+    "guidelines": {
+      "intro": "Ayuda a que {brand} sea un lugar amable para las ideas. Las publicaciones y los comentarios no deben:",
+      "item1": "infringir la ley ni los derechos de otras personas, incluidos los derechos de autor y la privacidad;",
+      "item2": "acosar, amenazar ni promover el odio contra nadie;",
+      "item3": "contener contenido sexual con menores ni violencia explícita;",
+      "item4": "hacer spam, estafar ni engañar a la gente.",
+      "outro": "El contenido que incumpla estas normas puede eliminarse, y quien las incumpla repetidamente puede perder el acceso. Usa Denunciar en una publicación para avisarnos de un problema.",
+      "title": "Normas de la comunidad"
+    },
+    "help": {
+      "a1": "Comparte una nota desde NiceNote, o escribe en la web cuando se abra la publicación web.",
+      "a2": "Edita la nota en la app y la publicación se actualiza. Retírala en la app y el enlace deja de funcionar al instante.",
+      "a3": "Cualquiera que tenga el enlace. También aparecen en tu perfil y en los feeds.",
+      "a4": "Usa Denunciar en la publicación. Revisamos todas las denuncias.",
+      "q1": "¿Cómo publico?",
+      "q2": "¿Cómo edito o elimino una publicación?",
+      "q3": "¿Quién puede ver mis publicaciones?",
+      "q4": "¿Cómo informo de un problema?",
+      "title": "Ayuda"
+    },
+    "privacy": {
+      "item1": "Guardamos lo que publicas y el perfil básico de tu cuenta NiceMatrix: nombre, avatar y nombre de usuario.",
+      "item2": "Antes de publicar una imagen, eliminamos sus datos de ubicación y de la cámara.",
+      "item3": "En los comentarios y «me gusta» anónimos solo guardamos un hash unidireccional de tu dirección de red, para evitar abusos.",
+      "item4": "No vendemos tus datos.",
+      "item5": "Las publicaciones retiradas se eliminan en un plazo de 30 días. Si eliminas tu cuenta, también se eliminan tus publicaciones y comentarios.",
+      "title": "Política de privacidad"
+    },
+    "terms": {
+      "item1": "Al usar {brand} aceptas estas condiciones y las normas de la comunidad.",
+      "item2": "Lo que publicas es tuyo. Permites que {brand} lo almacene, lo muestre y lo entregue para que tus enlaces funcionen.",
+      "item3": "Eres responsable de lo que publicas y debes tener derecho a compartirlo.",
+      "item4": "Podemos eliminar contenido o suspender cuentas que incumplan estas condiciones.",
+      "item5": "{brand} se ofrece tal cual. Trabajamos para mantenerlo disponible, pero no podemos garantizar que nunca se interrumpa.",
+      "title": "Condiciones de uso"
+    }
+  },
   "meta": {
     "site": {
       "description": "Pensamientos breves y lecturas largas con imágenes y audio, compartidos en un solo enlace.",
@@ -25,9 +69,6 @@
       "close": "Cerrar",
       "copied": "Enlace copiado",
       "share": "Compartir"
-    },
-    "footer": {
-      "getApp": "Descargar {app}"
     },
     "header": {
       "join": "Únete a {brand}"

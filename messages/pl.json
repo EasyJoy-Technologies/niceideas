@@ -14,6 +14,50 @@
       "title": "Pomysły warte udostępnienia"
     }
   },
+  "info": {
+    "about": {
+      "p1": "{brand} to miejsce, w którym dzielisz się swoimi Nice Ideas — krótkimi myślami, długimi tekstami, zdjęciami i nagraniami — za pomocą jednego linku.",
+      "p2": "Każdy może otworzyć udostępniony link, z kontem lub bez. Wpisy mogą pochodzić bezpośrednio z aplikacji takich jak NiceNote albo powstawać w przeglądarce.",
+      "p3": "Twoje wpisy pozostają Twoje: możesz je w każdej chwili edytować lub wycofać, a wycofane wpisy są trwale usuwane po 30 dniach.",
+      "title": "O {brand}"
+    },
+    "guidelines": {
+      "intro": "Pomóż utrzymać {brand} jako przyjazne miejsce dla pomysłów. Wpisy i komentarze nie mogą:",
+      "item1": "łamać prawa ani naruszać praw innych osób, w tym praw autorskich i prywatności;",
+      "item2": "nękać, grozić ani szerzyć nienawiści wobec kogokolwiek;",
+      "item3": "zawierać treści seksualnych z udziałem nieletnich ani drastycznej przemocy;",
+      "item4": "zawierać spamu, oszustw ani wprowadzać w błąd.",
+      "outro": "Treści naruszające te zasady mogą zostać usunięte, a osoby wielokrotnie je łamiące mogą utracić dostęp. Użyj opcji Zgłoś przy wpisie, aby poinformować nas o problemie.",
+      "title": "Zasady społeczności"
+    },
+    "help": {
+      "a1": "Udostępnij notatkę z NiceNote albo napisz wpis w przeglądarce, gdy zostanie uruchomione publikowanie w sieci.",
+      "a2": "Edytuj notatkę w aplikacji, a wpis się zaktualizuje. Wycofaj ją w aplikacji, a link od razu przestanie działać.",
+      "a3": "Każdy, kto ma link. Wpisy pojawiają się też na Twoim profilu i w kanałach.",
+      "a4": "Użyj opcji Zgłoś przy wpisie. Rozpatrujemy każde zgłoszenie.",
+      "q1": "Jak opublikować wpis?",
+      "q2": "Jak edytować lub usunąć wpis?",
+      "q3": "Kto widzi moje wpisy?",
+      "q4": "Jak zgłosić problem?",
+      "title": "Pomoc"
+    },
+    "privacy": {
+      "item1": "Przechowujemy to, co publikujesz, oraz podstawowy profil Twojego konta NiceMatrix: nazwę, awatar i nazwę użytkownika.",
+      "item2": "Przed publikacją usuwamy z obrazów dane o lokalizacji i aparacie.",
+      "item3": "W przypadku anonimowych komentarzy i polubień przechowujemy tylko jednokierunkowy skrót Twojego adresu sieciowego, aby zapobiegać nadużyciom.",
+      "item4": "Nie sprzedajemy Twoich danych.",
+      "item5": "Wycofane wpisy są usuwane w ciągu 30 dni. Po usunięciu konta usuwane są też Twoje wpisy i komentarze.",
+      "title": "Polityka prywatności"
+    },
+    "terms": {
+      "item1": "Korzystając z {brand}, akceptujesz te warunki i zasady społeczności.",
+      "item2": "To, co publikujesz, należy do Ciebie. Pozwalasz {brand} przechowywać, wyświetlać i dostarczać te treści, aby Twoje linki działały.",
+      "item3": "Odpowiadasz za to, co publikujesz, i musisz mieć prawo do udostępniania tych treści.",
+      "item4": "Możemy usuwać treści lub zawieszać konta naruszające te warunki.",
+      "item5": "{brand} jest udostępniany w obecnej postaci. Dbamy o jego dostępność, ale nie możemy zagwarantować, że nigdy nie wystąpią przerwy.",
+      "title": "Warunki korzystania"
+    }
+  },
   "meta": {
     "site": {
       "description": "Krótkie myśli i dłuższe teksty ze zdjęciami i dźwiękiem, udostępniane jednym linkiem.",
@@ -25,9 +69,6 @@
       "close": "Zamknij",
       "copied": "Skopiowano link",
       "share": "Udostępnij"
-    },
-    "footer": {
-      "getApp": "Pobierz {app}"
     },
     "header": {
       "join": "Dołącz do {brand}"

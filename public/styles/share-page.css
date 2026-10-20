@@ -138,3 +138,9 @@ a { color: inherit; text-decoration: none; }
   .ni-ftr { margin-top: 1.5rem; }
   .ni-ftr-in { padding: 1.375rem 1rem 2rem; }
 }
+
+/* information pages */
+.ni-info .ni-text { margin-top: 1.25rem; font-size: 1rem; line-height: 1.7; }
+.ni-info .ni-text h2 { font-size: 1.0625rem; margin-top: 1.5rem; }
+.ni-info .ni-text li + li { margin-top: 0.5rem; }
+.ni-ftr-meta .ni-lang summary { height: 1.75rem; }
