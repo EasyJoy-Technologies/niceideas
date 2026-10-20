@@ -7,7 +7,8 @@ import { POST as mediaRoute } from "@/app/api/v1/media/route";
 import { GET as pageRoute } from "@/app/p/[slug]/route";
 import { GET as ogRoute } from "@/app/p/[slug]/og/[variant]/route";
 import { GET as regionRoute } from "@/app/status/region/route";
-import { proxy, REGION_PAGE } from "@/proxy";
+import { config as proxyConfig, proxy } from "@/proxy";
+import { REGION_BLOCK_HEADER, SITE_PATH_EXCLUSIONS } from "@/server/region/region-header";
 import { GET as termsRoute } from "@/app/terms/route";
 import { startAppContext } from "../../helpers/app-context";
 import { jsonRequest, params } from "../../helpers/api";
@@ -133,12 +134,19 @@ describe("page-level mainland-China rule", () => {
   const req = (path: string, country?: string) =>
     new NextRequest(`http://localhost:3000${path}`, { headers: country ? { "cf-ipcountry": country } : {} });
 
-  it("rewrites site pages to the 451 page for CN only", () => {
-    const blocked = proxy(req("/", "CN"));
-    expect(blocked.headers.get("x-middleware-rewrite")).toBe(`http://localhost:3000${REGION_PAGE}`);
-    expect(proxy(req("/", "HK")).headers.get("x-middleware-rewrite")).toBeNull();
-    expect(proxy(req("/")).headers.get("x-middleware-rewrite")).toBeNull();
-    expect(proxy(req("/terms", "CN")).headers.get("x-middleware-rewrite")).toBe(`http://localhost:3000${REGION_PAGE}`);
+  it("marks site pages of CN visitors for the 451 rewrite, and drops forged markers", () => {
+    const marked = (r: NextRequest) => proxy(r).headers.get(`x-middleware-request-${REGION_BLOCK_HEADER}`);
+    expect(marked(req("/", "CN"))).toBe("1");
+    expect(marked(req("/terms", "CN"))).toBe("1");
+    expect(marked(req("/", "HK"))).toBeNull();
+    expect(marked(req("/"))).toBeNull();
+    const forged = new NextRequest("http://localhost:3000/", { headers: { [REGION_BLOCK_HEADER]: "1" } });
+    expect(marked(forged)).toBeNull();
+    expect(proxy(forged).headers.get("x-middleware-override-headers")).not.toContain(REGION_BLOCK_HEADER);
+  });
+
+  it("the 451 rewrite covers exactly the proxy's paths", () => {
+    expect(proxyConfig.matcher).toEqual([`/(${SITE_PATH_EXCLUSIONS}.*)`]);
   });
 
   it("451 page has no in-site links", async () => {

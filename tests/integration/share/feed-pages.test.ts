@@ -1,10 +1,8 @@
 import { afterAll, beforeAll, describe, expect, it } from "vitest";
-import { NextRequest } from "next/server";
 import { POST as createRoute } from "@/app/api/v1/posts/route";
 import { DELETE } from "@/app/api/v1/posts/[id]/route";
 import { GET as discoverRoute } from "@/app/discover/route";
 import { GET as profileRoute } from "@/app/u/[handle]/route";
-import { proxy } from "@/proxy";
 import { FEED_PAGE_SIZE, readingMinutes } from "@/server/share/load-feed";
 import { startAppContext } from "../../helpers/app-context";
 import { jsonRequest, params } from "../../helpers/api";
@@ -92,12 +90,8 @@ describe("discover and profile pages", () => {
     expect((await profile(handle)).html).toMatch(/<b>21<\/b> Posts/);
   });
 
-  it("proxy rewrites /@handle and blocks feeds in mainland China", async () => {
-    const rw = proxy(new NextRequest("http://localhost:3000/@Some_User?tab=articles"));
-    expect(rw.headers.get("x-middleware-rewrite")).toBe("http://localhost:3000/u/some_user?tab=articles");
-    const cn = proxy(new NextRequest("http://localhost:3000/@some_user", { headers: { "cf-ipcountry": "CN" } }));
-    expect(cn.headers.get("x-middleware-rewrite")).toContain("/status/region");
-    // The proxy blocks the page itself; the header must not link into the site either.
+  it("feeds have no in-site header link for mainland-China visitors", async () => {
+    // The page itself is blocked by the proxy marker + rewrite (see share-page.test.ts).
     expect((await discover("", { "cf-ipcountry": "CN" })).html).not.toContain("ni-hdr-nav");
     expect((await discover()).html).toContain('class="ni-hdr-nav" href="/discover" aria-current="page"');
   });
