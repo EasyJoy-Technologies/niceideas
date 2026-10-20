@@ -9,6 +9,9 @@ SHEETS = {
     "g-bloom": ("方向 G 花开", "保留上一轮 C 的风车花（呼应乐趣记事本图标），花心是一颗紫色灵光——好主意在这里绽放"),
     "h-voices": ("方向 H 众声", "八个对话气泡围成一朵花，尖角都指向中心的灵光——大家围绕一个好主意交流"),
     "i-spark-bloom": ("方向 I 灵光", "八片对称花瓣从中心的紫色灵光向外舒展——一个好主意被分享出去"),
+    "j-petal-i": ("方向 J 花瓣 i", "I 的花心换成紫色圆点：每片花瓣连同圆点像一个 i，一圈 i 即 ideas，整体仍是一朵花"),
+    "k-stem-i": ("方向 K 竖笔 i", "花瓣换成 i 的圆头竖笔，围着紫色圆点——i 的意思更直白"),
+    "l-ring-i": ("方向 L 一圈 i", "八个完整的 i 向外站成一圈，点朝外，中心紫色圆点——最直白的 ideas"),
 }
 def page(key, title, desc):
     m, ic, icd = f"assets/logo-{key}.svg", f"assets/icon-{key}.svg", f"assets/icon-{key}-dark.svg"
