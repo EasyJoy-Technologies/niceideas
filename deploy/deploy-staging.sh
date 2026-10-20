@@ -24,8 +24,20 @@ cp -a .next/static "$REL/.next/static"
 cp -a public "$REL/public"
 cp -a dist "$REL/dist"
 rm -rf .next/standalone dist
+# The standalone tracer copies a few repo files (dynamic fs paths); none are used at runtime.
+rm -rf "$REL/docs" "$REL/src" "$REL/tests"
+# CLIs (dist/*.mjs) keep these packages third-party; link them from the traced pnpm store.
+mkdir -p "$REL/dist/node_modules"
+for pkg in sharp file-type music-metadata; do
+  dir=$(ls -d "$REL"/node_modules/.pnpm/"$pkg"@*/node_modules/"$pkg" | head -1)
+  [ -n "$dir" ] || { echo "missing runtime package $pkg"; exit 1; }
+  ln -sfn "$dir" "$REL/dist/node_modules/$pkg"
+done
 
 set -a; . "$ENV_FILE"; set +a
+# Fail before switching if a media-pipeline dependency is incomplete (the server's traced
+# .next/node_modules entries point at the same store directories as these links).
+(cd "$REL/dist" && node --input-type=module -e 'for (const m of ["sharp", "file-type", "music-metadata"]) await import(m);')
 node "$REL/dist/migrate.mjs"
 
 ln -sfn "$REL" "$DEST/current.tmp" && mv -T "$DEST/current.tmp" "$DEST/current"
