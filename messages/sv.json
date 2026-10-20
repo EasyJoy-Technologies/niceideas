@@ -1,13 +1,16 @@
 {
   "common": {
+    "brand": {
+      "nicenote": "NiceNote"
+    },
     "footer": {
       "version": "Version {version}"
-    }
+    },
+    "tagline": "Dela dina Nice Ideas när och var du vill!"
   },
   "home": {
     "landing": {
       "comingSoon": "Vi lägger sista handen vid allt. Hela webbplatsen öppnar snart.",
-      "tagline": "Korta tankar och längre texter, med bilder och ljud – delade som en enda länk.",
       "title": "Idéer värda att dela"
     }
   },
@@ -15,6 +18,42 @@
     "site": {
       "description": "Korta tankar och längre texter med bilder och ljud, delade via en enda länk.",
       "title": "{brand} – dela dina idéer"
+    }
+  },
+  "share": {
+    "action": {
+      "close": "Stäng",
+      "copied": "Länken har kopierats",
+      "share": "Dela"
+    },
+    "footer": {
+      "getApp": "Hämta {app}"
+    },
+    "header": {
+      "join": "Gå med i {brand}"
+    },
+    "language": "Språk",
+    "post": {
+      "edited": "Redigerat {time}",
+      "from": "Från {app}"
+    },
+    "status": {
+      "notFound": {
+        "body": "Länken kan vara fel, eller så finns inlägget inte längre.",
+        "title": "Inlägget hittades inte"
+      },
+      "removed": {
+        "body": "Inlägget har tagits bort eftersom det bröt mot gemenskapsriktlinjerna.",
+        "title": "Inlägget har tagits bort"
+      },
+      "restricted": {
+        "body": "Du kan fortfarande öppna länkar till inlägg som andra delar med dig.",
+        "title": "Sidan är inte tillgänglig i din region"
+      },
+      "withdrawn": {
+        "body": "Författaren har dragit tillbaka det här inlägget.",
+        "title": "Inlägget har dragits tillbaka"
+      }
     }
   },
   "status": {

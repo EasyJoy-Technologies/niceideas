@@ -1,13 +1,16 @@
 {
   "common": {
+    "brand": {
+      "nicenote": "NiceNote"
+    },
     "footer": {
       "version": "Verzió: {version}"
-    }
+    },
+    "tagline": "Oszd meg a Nice Ideas-eidet bármikor, bárhol!"
   },
   "home": {
     "landing": {
       "comingSoon": "Az utolsó simításokat végezzük. A teljes oldal hamarosan megnyílik.",
-      "tagline": "Rövid gondolatok és hosszabb írások képekkel és hanggal – egyetlen linkben.",
       "title": "Megosztásra érdemes ötletek"
     }
   },
@@ -15,6 +18,42 @@
     "site": {
       "description": "Rövid gondolatok és hosszabb írások képekkel és hanggal, egyetlen linken megosztva.",
       "title": "{brand} – oszd meg az ötleteidet"
+    }
+  },
+  "share": {
+    "action": {
+      "close": "Bezárás",
+      "copied": "Link másolva",
+      "share": "Megosztás"
+    },
+    "footer": {
+      "getApp": "{app} letöltése"
+    },
+    "header": {
+      "join": "Csatlakozás: {brand}"
+    },
+    "language": "Nyelv",
+    "post": {
+      "edited": "Szerkesztve: {time}",
+      "from": "Forrás: {app}"
+    },
+    "status": {
+      "notFound": {
+        "body": "Lehet, hogy hibás a link, vagy a bejegyzés már nem létezik.",
+        "title": "A bejegyzés nem található"
+      },
+      "removed": {
+        "body": "Ezt a bejegyzést a közösségi irányelvek megsértése miatt eltávolították.",
+        "title": "A bejegyzést eltávolították"
+      },
+      "restricted": {
+        "body": "A mások által veled megosztott bejegyzéslinkeket továbbra is megnyithatod.",
+        "title": "Ez az oldal nem érhető el a régiódban"
+      },
+      "withdrawn": {
+        "body": "A szerző visszavonta ezt a bejegyzést.",
+        "title": "A bejegyzést visszavonták"
+      }
     }
   },
   "status": {

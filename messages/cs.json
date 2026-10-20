@@ -1,13 +1,16 @@
 {
   "common": {
+    "brand": {
+      "nicenote": "NiceNote"
+    },
     "footer": {
       "version": "Verze {version}"
-    }
+    },
+    "tagline": "Sdílejte své Nice Ideas kdykoli a kdekoli!"
   },
   "home": {
     "landing": {
       "comingSoon": "Dokončujeme přípravy. Celý web brzy otevřeme.",
-      "tagline": "Krátké myšlenky i dlouhé texty s obrázky a zvukem – sdílené jedním odkazem.",
       "title": "Nápady, které stojí za sdílení"
     }
   },
@@ -15,6 +18,42 @@
     "site": {
       "description": "Krátké myšlenky i dlouhé texty s obrázky a zvukem, sdílené jedním odkazem.",
       "title": "{brand} – sdílejte své nápady"
+    }
+  },
+  "share": {
+    "action": {
+      "close": "Zavřít",
+      "copied": "Odkaz zkopírován",
+      "share": "Sdílet"
+    },
+    "footer": {
+      "getApp": "Stáhnout {app}"
+    },
+    "header": {
+      "join": "Připojit se k {brand}"
+    },
+    "language": "Jazyk",
+    "post": {
+      "edited": "Upraveno {time}",
+      "from": "Z aplikace {app}"
+    },
+    "status": {
+      "notFound": {
+        "body": "Odkaz může být chybný, nebo příspěvek už neexistuje.",
+        "title": "Příspěvek nenalezen"
+      },
+      "removed": {
+        "body": "Tento příspěvek byl odstraněn kvůli porušení pravidel komunity.",
+        "title": "Příspěvek odstraněn"
+      },
+      "restricted": {
+        "body": "Odkazy na příspěvky, které s vámi ostatní sdílejí, můžete otevírat i nadále.",
+        "title": "Tato stránka není ve vašem regionu dostupná"
+      },
+      "withdrawn": {
+        "body": "Autor tento příspěvek stáhl.",
+        "title": "Příspěvek stažen"
+      }
     }
   },
   "status": {

@@ -1,13 +1,16 @@
 {
   "common": {
+    "brand": {
+      "nicenote": "乐趣记事本"
+    },
     "footer": {
       "version": "版本 {version}"
-    }
+    },
+    "tagline": "随时随地分享你的好主意！"
   },
   "home": {
     "landing": {
       "comingSoon": "我们正在做最后的准备，完整网站即将开放。",
-      "tagline": "短想法与长图文，配上图片和音频——一个链接就能分享。",
       "title": "值得分享的想法"
     }
   },
@@ -15,6 +18,42 @@
     "site": {
       "description": "短想法与长图文，配图配音频，一个链接即可分享。",
       "title": "{brand}——分享你的想法"
+    }
+  },
+  "share": {
+    "action": {
+      "close": "关闭",
+      "copied": "链接已复制",
+      "share": "分享"
+    },
+    "footer": {
+      "getApp": "下载{app}"
+    },
+    "header": {
+      "join": "加入 {brand}"
+    },
+    "language": "语言",
+    "post": {
+      "edited": "编辑于 {time}",
+      "from": "来自 {app}"
+    },
+    "status": {
+      "notFound": {
+        "body": "链接可能有误，或这条内容已不存在。",
+        "title": "找不到这条内容"
+      },
+      "removed": {
+        "body": "这条内容因违反社区准则已被移除。",
+        "title": "内容已被移除"
+      },
+      "restricted": {
+        "body": "你仍然可以打开别人分享给你的内容链接。",
+        "title": "此页面在你所在的地区不可用"
+      },
+      "withdrawn": {
+        "body": "作者已撤回这条内容。",
+        "title": "内容已撤回"
+      }
     }
   },
   "status": {

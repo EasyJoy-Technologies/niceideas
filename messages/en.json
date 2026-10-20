@@ -1,13 +1,16 @@
 {
   "common": {
+    "brand": {
+      "nicenote": "NiceNote"
+    },
     "footer": {
       "version": "Version {version}"
-    }
+    },
+    "tagline": "Share your Nice Ideas anytime, anywhere!"
   },
   "home": {
     "landing": {
       "comingSoon": "We're getting things ready. The full site opens soon.",
-      "tagline": "Short thoughts and long reads, with images and audio — shared as one link.",
       "title": "Ideas worth sharing"
     }
   },
@@ -15,6 +18,42 @@
     "site": {
       "description": "Short thoughts and long reads with images and audio, shared as a single link.",
       "title": "{brand} — share your ideas"
+    }
+  },
+  "share": {
+    "action": {
+      "close": "Close",
+      "copied": "Link copied",
+      "share": "Share"
+    },
+    "footer": {
+      "getApp": "Get {app}"
+    },
+    "header": {
+      "join": "Join {brand}"
+    },
+    "language": "Language",
+    "post": {
+      "edited": "Edited {time}",
+      "from": "From {app}"
+    },
+    "status": {
+      "notFound": {
+        "body": "The link may be wrong, or the post no longer exists.",
+        "title": "Post not found"
+      },
+      "removed": {
+        "body": "This post was removed for breaking the community guidelines.",
+        "title": "This post was removed"
+      },
+      "restricted": {
+        "body": "You can still open post links that people share with you.",
+        "title": "This page isn't available in your region"
+      },
+      "withdrawn": {
+        "body": "The author has withdrawn this post.",
+        "title": "This post was withdrawn"
+      }
     }
   },
   "status": {

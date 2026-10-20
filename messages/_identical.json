@@ -1,3 +1,46 @@
 {
-  "common.footer.version": ["fr", "de", "sv"]
+  "common.footer.version": [
+    "fr",
+    "de",
+    "sv"
+  ],
+  "common.brand.nicenote": [
+    "am",
+    "ar",
+    "bn",
+    "cs",
+    "de",
+    "el",
+    "es",
+    "fa",
+    "fil",
+    "fr",
+    "ha",
+    "he",
+    "hi",
+    "hu",
+    "id",
+    "it",
+    "ja",
+    "kk",
+    "km",
+    "ko",
+    "ms",
+    "my",
+    "ne",
+    "nl",
+    "pl",
+    "pt-BR",
+    "pt-PT",
+    "ro",
+    "ru",
+    "sv",
+    "sw",
+    "th",
+    "tr",
+    "uk",
+    "ur",
+    "uz",
+    "vi"
+  ]
 }

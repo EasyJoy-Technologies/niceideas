@@ -1,13 +1,16 @@
 {
   "common": {
+    "brand": {
+      "nicenote": "NiceNote"
+    },
     "footer": {
       "version": "Siga {version}"
-    }
+    },
+    "tagline": "Raba Nice Ideas ɗinka a kowane lokaci, a ko'ina!"
   },
   "home": {
     "landing": {
       "comingSoon": "Muna kammala shirye-shiryen ƙarshe. Cikakken shafin zai buɗe nan ba da jimawa ba.",
-      "tagline": "Gajerun tunani da dogayen rubuce-rubuce, tare da hotuna da sauti — a cikin hanyar haɗi ɗaya.",
       "title": "Raʼayoyi masu cancantar a raba"
     }
   },
@@ -15,6 +18,42 @@
     "site": {
       "description": "Gajerun tunani da dogayen rubuce-rubuce masu hotuna da sauti, ana raba su ta hanyar haɗi ɗaya.",
       "title": "{brand} — raba raʼayoyinka"
+    }
+  },
+  "share": {
+    "action": {
+      "close": "Rufe",
+      "copied": "An kwafi hanyar haɗi",
+      "share": "Raba"
+    },
+    "footer": {
+      "getApp": "Sauke {app}"
+    },
+    "header": {
+      "join": "Shiga {brand}"
+    },
+    "language": "Harshe",
+    "post": {
+      "edited": "An gyara a {time}",
+      "from": "Daga {app}"
+    },
+    "status": {
+      "notFound": {
+        "body": "Wataƙila hanyar haɗin ba daidai ba ce, ko rubutun ba ya nan.",
+        "title": "Ba a sami rubutun ba"
+      },
+      "removed": {
+        "body": "An cire wannan rubutun saboda ya karya ƙa'idojin al'umma.",
+        "title": "An cire rubutun"
+      },
+      "restricted": {
+        "body": "Har yanzu kuna iya buɗe hanyoyin haɗin rubuce-rubucen da wasu suka raba muku.",
+        "title": "Babu wannan shafin a yankinku"
+      },
+      "withdrawn": {
+        "body": "Marubucin ya janye wannan rubutun.",
+        "title": "An janye rubutun"
+      }
     }
   },
   "status": {

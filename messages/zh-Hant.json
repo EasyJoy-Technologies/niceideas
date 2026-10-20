@@ -1,13 +1,16 @@
 {
   "common": {
+    "brand": {
+      "nicenote": "樂趣記事本"
+    },
     "footer": {
       "version": "版本 {version}"
-    }
+    },
+    "tagline": "隨時隨地分享你的好主意！"
   },
   "home": {
     "landing": {
       "comingSoon": "我們正在做最後的準備，完整網站即將開放。",
-      "tagline": "短想法與長圖文，搭配圖片和音訊——一個連結就能分享。",
       "title": "值得分享的想法"
     }
   },
@@ -15,6 +18,42 @@
     "site": {
       "description": "短想法與長圖文，搭配圖片與音訊，一個連結即可分享。",
       "title": "{brand}——分享你的想法"
+    }
+  },
+  "share": {
+    "action": {
+      "close": "關閉",
+      "copied": "已複製連結",
+      "share": "分享"
+    },
+    "footer": {
+      "getApp": "下載{app}"
+    },
+    "header": {
+      "join": "加入 {brand}"
+    },
+    "language": "語言",
+    "post": {
+      "edited": "編輯於 {time}",
+      "from": "來自 {app}"
+    },
+    "status": {
+      "notFound": {
+        "body": "連結可能有誤，或這則內容已不存在。",
+        "title": "找不到這則內容"
+      },
+      "removed": {
+        "body": "這則內容因違反社群守則已被移除。",
+        "title": "內容已被移除"
+      },
+      "restricted": {
+        "body": "你仍然可以開啟別人分享給你的內容連結。",
+        "title": "此頁面在你所在的地區無法使用"
+      },
+      "withdrawn": {
+        "body": "作者已撤回這則內容。",
+        "title": "內容已撤回"
+      }
     }
   },
   "status": {

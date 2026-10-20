@@ -6,8 +6,8 @@
 
 | 请求 | 入口 | 中国大陆判定 | 说明 |
 |---|---|---|---|
-| `/p/<slug>` 帖子页 | Route Handler，服务端拼装 HTML（`src/server/share/`） | `region-policy`（允许） | 无框架 JS、免 JS 可读；可返回 200/404/410/451；自带 CSP |
-| 其余页面（`/`、以后的 Web App） | React 页面 | `src/proxy.ts` 调 `region-policy`（大陆→451 页） | nonce CSP 由 proxy 生成 |
+| `/p/<slug>` 帖子页 | Route Handler，服务端拼装 HTML（`src/server/share/`） | `region-policy`（允许） | 无框架 JS、免 JS 可读；可返回 200/404/410/451；CSP 不允许任何内联脚本 / 样式（仅同源 + 媒体域） |
+| 其余页面（`/`、以后的 Web App） | React 页面 | `src/proxy.ts` 调 `region-policy`（大陆→451 页） | 以后的 React 页面再定 CSP（nonce） |
 | `/api/v1/*` | Route Handler + `src/server/http/api-route.ts` 包装 | 包装器调 `region-policy`，按路由声明的访问类别判定 | proxy 不匹配 API（避免请求体被 proxy 缓冲截断） |
 | 静态资源 `/_next/static`、`/assets`、`/fonts` | Next 静态 | 不判定（无内容） | 帖子页依赖 |
 | 媒体 | R2 公开桶自定义域 | 不经本服务 | 只放已发布媒体 |

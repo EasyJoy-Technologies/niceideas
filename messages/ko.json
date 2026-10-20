@@ -1,13 +1,16 @@
 {
   "common": {
+    "brand": {
+      "nicenote": "NiceNote"
+    },
     "footer": {
       "version": "버전 {version}"
-    }
+    },
+    "tagline": "언제 어디서나 나의 Nice Ideas를 공유하세요!"
   },
   "home": {
     "landing": {
       "comingSoon": "마무리 준비 중입니다. 전체 사이트가 곧 열립니다.",
-      "tagline": "짧은 생각도 긴 글도, 이미지와 오디오와 함께 링크 하나로 공유하세요.",
       "title": "나누고 싶은 아이디어"
     }
   },
@@ -15,6 +18,42 @@
     "site": {
       "description": "짧은 생각과 긴 글을 이미지, 오디오와 함께 링크 하나로 공유하세요.",
       "title": "{brand} — 아이디어를 공유하세요"
+    }
+  },
+  "share": {
+    "action": {
+      "close": "닫기",
+      "copied": "링크가 복사되었습니다",
+      "share": "공유"
+    },
+    "footer": {
+      "getApp": "{app} 다운로드"
+    },
+    "header": {
+      "join": "{brand} 가입하기"
+    },
+    "language": "언어",
+    "post": {
+      "edited": "{time}에 수정됨",
+      "from": "{app}에서 작성"
+    },
+    "status": {
+      "notFound": {
+        "body": "링크가 잘못되었거나 게시물이 더 이상 존재하지 않습니다.",
+        "title": "게시물을 찾을 수 없습니다"
+      },
+      "removed": {
+        "body": "이 게시물은 커뮤니티 가이드라인 위반으로 삭제되었습니다.",
+        "title": "게시물이 삭제되었습니다"
+      },
+      "restricted": {
+        "body": "다른 사람이 공유한 게시물 링크는 계속 열 수 있습니다.",
+        "title": "이 페이지는 현재 지역에서 이용할 수 없습니다"
+      },
+      "withdrawn": {
+        "body": "작성자가 이 게시물을 철회했습니다.",
+        "title": "게시물이 철회되었습니다"
+      }
     }
   },
   "status": {

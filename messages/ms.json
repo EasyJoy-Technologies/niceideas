@@ -1,13 +1,16 @@
 {
   "common": {
+    "brand": {
+      "nicenote": "NiceNote"
+    },
     "footer": {
       "version": "Versi {version}"
-    }
+    },
+    "tagline": "Kongsi Nice Ideas anda bila-bila masa, di mana-mana sahaja!"
   },
   "home": {
     "landing": {
       "comingSoon": "Kami sedang membuat persiapan terakhir. Laman penuh akan dibuka tidak lama lagi.",
-      "tagline": "Fikiran ringkas dan tulisan panjang, bersama imej dan audio — dikongsi dalam satu pautan.",
       "title": "Idea yang wajar dikongsi"
     }
   },
@@ -15,6 +18,42 @@
     "site": {
       "description": "Fikiran ringkas dan tulisan panjang dengan imej dan audio, dikongsi melalui satu pautan.",
       "title": "{brand} — kongsi idea anda"
+    }
+  },
+  "share": {
+    "action": {
+      "close": "Tutup",
+      "copied": "Pautan disalin",
+      "share": "Kongsi"
+    },
+    "footer": {
+      "getApp": "Muat turun {app}"
+    },
+    "header": {
+      "join": "Sertai {brand}"
+    },
+    "language": "Bahasa",
+    "post": {
+      "edited": "Disunting {time}",
+      "from": "Daripada {app}"
+    },
+    "status": {
+      "notFound": {
+        "body": "Pautan mungkin salah, atau siaran itu tidak wujud lagi.",
+        "title": "Siaran tidak ditemui"
+      },
+      "removed": {
+        "body": "Siaran ini dialih keluar kerana melanggar garis panduan komuniti.",
+        "title": "Siaran dialih keluar"
+      },
+      "restricted": {
+        "body": "Anda masih boleh membuka pautan siaran yang dikongsi oleh orang lain kepada anda.",
+        "title": "Halaman ini tidak tersedia di rantau anda"
+      },
+      "withdrawn": {
+        "body": "Penulis telah menarik balik siaran ini.",
+        "title": "Siaran ditarik balik"
+      }
     }
   },
   "status": {

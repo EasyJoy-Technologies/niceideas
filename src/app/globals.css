@@ -1,6 +1,6 @@
 @import "tailwindcss";
-@import "../styles/fonts.css";
-@import "../styles/tokens.css";
+@import "../../public/styles/fonts.css";
+@import "../../public/styles/tokens.css";
 
 @theme inline {
   --color-primary: var(--ni-color-primary);

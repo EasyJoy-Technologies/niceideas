@@ -1,13 +1,16 @@
 {
   "common": {
+    "brand": {
+      "nicenote": "NiceNote"
+    },
     "footer": {
       "version": "Sürüm {version}"
-    }
+    },
+    "tagline": "Nice Ideas'larını her zaman, her yerde paylaş!"
   },
   "home": {
     "landing": {
       "comingSoon": "Son hazırlıkları yapıyoruz. Sitenin tamamı yakında açılıyor.",
-      "tagline": "Kısa düşünceler ve uzun yazılar, görsel ve sesle birlikte tek bir bağlantıda.",
       "title": "Paylaşmaya değer fikirler"
     }
   },
@@ -15,6 +18,42 @@
     "site": {
       "description": "Görsel ve sesli kısa düşünceler ve uzun yazılar, tek bir bağlantıyla paylaşılır.",
       "title": "{brand} — fikirlerini paylaş"
+    }
+  },
+  "share": {
+    "action": {
+      "close": "Kapat",
+      "copied": "Bağlantı kopyalandı",
+      "share": "Paylaş"
+    },
+    "footer": {
+      "getApp": "{app} uygulamasını indir"
+    },
+    "header": {
+      "join": "{brand} topluluğuna katıl"
+    },
+    "language": "Dil",
+    "post": {
+      "edited": "Düzenlendi: {time}",
+      "from": "{app} üzerinden"
+    },
+    "status": {
+      "notFound": {
+        "body": "Bağlantı hatalı olabilir ya da gönderi artık mevcut değil.",
+        "title": "Gönderi bulunamadı"
+      },
+      "removed": {
+        "body": "Bu gönderi topluluk kurallarını ihlal ettiği için kaldırıldı.",
+        "title": "Gönderi kaldırıldı"
+      },
+      "restricted": {
+        "body": "Başkalarının seninle paylaştığı gönderi bağlantılarını açmaya devam edebilirsin.",
+        "title": "Bu sayfa bölgende kullanılamıyor"
+      },
+      "withdrawn": {
+        "body": "Yazar bu gönderiyi geri çekti.",
+        "title": "Gönderi geri çekildi"
+      }
     }
   },
   "status": {

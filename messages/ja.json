@@ -1,13 +1,16 @@
 {
   "common": {
+    "brand": {
+      "nicenote": "NiceNote"
+    },
     "footer": {
       "version": "バージョン {version}"
-    }
+    },
+    "tagline": "いつでもどこでも、あなたの Nice Ideas をシェアしよう！"
   },
   "home": {
     "landing": {
       "comingSoon": "ただいま準備中です。サイト全体の公開まで、もう少しお待ちください。",
-      "tagline": "短いつぶやきも長文も、画像や音声と一緒にリンクひとつでシェア。",
       "title": "シェアしたくなるアイデアを"
     }
   },
@@ -15,6 +18,42 @@
     "site": {
       "description": "短いつぶやきも長文も、画像や音声と一緒にリンクひとつでシェアできます。",
       "title": "{brand} — アイデアをシェアしよう"
+    }
+  },
+  "share": {
+    "action": {
+      "close": "閉じる",
+      "copied": "リンクをコピーしました",
+      "share": "共有"
+    },
+    "footer": {
+      "getApp": "{app} をダウンロード"
+    },
+    "header": {
+      "join": "{brand} に参加"
+    },
+    "language": "言語",
+    "post": {
+      "edited": "{time} に編集",
+      "from": "{app} から"
+    },
+    "status": {
+      "notFound": {
+        "body": "リンクが間違っているか、投稿がすでに存在しない可能性があります。",
+        "title": "投稿が見つかりません"
+      },
+      "removed": {
+        "body": "この投稿はコミュニティガイドラインに違反したため削除されました。",
+        "title": "投稿は削除されました"
+      },
+      "restricted": {
+        "body": "共有された投稿のリンクは引き続き開けます。",
+        "title": "このページはお住まいの地域ではご利用いただけません"
+      },
+      "withdrawn": {
+        "body": "作成者がこの投稿を取り下げました。",
+        "title": "投稿は取り下げられました"
+      }
     }
   },
   "status": {

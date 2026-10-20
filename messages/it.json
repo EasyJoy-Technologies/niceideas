@@ -1,13 +1,16 @@
 {
   "common": {
+    "brand": {
+      "nicenote": "NiceNote"
+    },
     "footer": {
       "version": "Versione {version}"
-    }
+    },
+    "tagline": "Condividi le tue Nice Ideas sempre e ovunque!"
   },
   "home": {
     "landing": {
       "comingSoon": "Stiamo ultimando i preparativi. Il sito completo aprirà a breve.",
-      "tagline": "Pensieri brevi e letture lunghe, con immagini e audio, condivisi in un solo link.",
       "title": "Idee che vale la pena condividere"
     }
   },
@@ -15,6 +18,42 @@
     "site": {
       "description": "Pensieri brevi e letture lunghe con immagini e audio, condivisi con un unico link.",
       "title": "{brand} – condividi le tue idee"
+    }
+  },
+  "share": {
+    "action": {
+      "close": "Chiudi",
+      "copied": "Link copiato",
+      "share": "Condividi"
+    },
+    "footer": {
+      "getApp": "Scarica {app}"
+    },
+    "header": {
+      "join": "Unisciti a {brand}"
+    },
+    "language": "Lingua",
+    "post": {
+      "edited": "Modificato il {time}",
+      "from": "Da {app}"
+    },
+    "status": {
+      "notFound": {
+        "body": "Il link potrebbe essere errato oppure il post non esiste più.",
+        "title": "Post non trovato"
+      },
+      "removed": {
+        "body": "Questo post è stato rimosso perché viola le linee guida della community.",
+        "title": "Post rimosso"
+      },
+      "restricted": {
+        "body": "Puoi comunque aprire i link ai post che altri condividono con te.",
+        "title": "Questa pagina non è disponibile nella tua area geografica"
+      },
+      "withdrawn": {
+        "body": "L’autore ha ritirato questo post.",
+        "title": "Post ritirato"
+      }
     }
   },
   "status": {

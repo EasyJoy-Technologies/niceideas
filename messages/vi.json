@@ -1,13 +1,16 @@
 {
   "common": {
+    "brand": {
+      "nicenote": "NiceNote"
+    },
     "footer": {
       "version": "Phiên bản {version}"
-    }
+    },
+    "tagline": "Chia sẻ Nice Ideas của bạn mọi lúc, mọi nơi!"
   },
   "home": {
     "landing": {
       "comingSoon": "Chúng tôi đang hoàn tất những bước chuẩn bị cuối cùng. Trang web đầy đủ sẽ sớm ra mắt.",
-      "tagline": "Suy nghĩ ngắn và bài viết dài, kèm hình ảnh và âm thanh — chia sẻ chỉ bằng một đường liên kết.",
       "title": "Những ý tưởng đáng để chia sẻ"
     }
   },
@@ -15,6 +18,42 @@
     "site": {
       "description": "Suy nghĩ ngắn và bài viết dài kèm hình ảnh, âm thanh, chia sẻ chỉ bằng một đường liên kết.",
       "title": "{brand} — chia sẻ ý tưởng của bạn"
+    }
+  },
+  "share": {
+    "action": {
+      "close": "Đóng",
+      "copied": "Đã sao chép liên kết",
+      "share": "Chia sẻ"
+    },
+    "footer": {
+      "getApp": "Tải {app}"
+    },
+    "header": {
+      "join": "Tham gia {brand}"
+    },
+    "language": "Ngôn ngữ",
+    "post": {
+      "edited": "Đã chỉnh sửa lúc {time}",
+      "from": "Từ {app}"
+    },
+    "status": {
+      "notFound": {
+        "body": "Liên kết có thể sai hoặc bài viết không còn tồn tại.",
+        "title": "Không tìm thấy bài viết"
+      },
+      "removed": {
+        "body": "Bài viết này đã bị gỡ do vi phạm nguyên tắc cộng đồng.",
+        "title": "Bài viết đã bị gỡ"
+      },
+      "restricted": {
+        "body": "Bạn vẫn có thể mở liên kết bài viết mà người khác chia sẻ với bạn.",
+        "title": "Trang này không khả dụng ở khu vực của bạn"
+      },
+      "withdrawn": {
+        "body": "Tác giả đã thu hồi bài viết này.",
+        "title": "Bài viết đã bị thu hồi"
+      }
     }
   },
   "status": {

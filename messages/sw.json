@@ -1,13 +1,16 @@
 {
   "common": {
+    "brand": {
+      "nicenote": "NiceNote"
+    },
     "footer": {
       "version": "Toleo {version}"
-    }
+    },
+    "tagline": "Shiriki Nice Ideas zako wakati wowote, mahali popote!"
   },
   "home": {
     "landing": {
       "comingSoon": "Tunakamilisha maandalizi ya mwisho. Tovuti kamili itafunguliwa hivi karibuni.",
-      "tagline": "Mawazo mafupi na makala marefu, pamoja na picha na sauti — kwa kiungo kimoja.",
       "title": "Mawazo yanayostahili kushirikiwa"
     }
   },
@@ -15,6 +18,42 @@
     "site": {
       "description": "Mawazo mafupi na makala marefu yenye picha na sauti, yanashirikiwa kwa kiungo kimoja.",
       "title": "{brand} — shiriki mawazo yako"
+    }
+  },
+  "share": {
+    "action": {
+      "close": "Funga",
+      "copied": "Kiungo kimenakiliwa",
+      "share": "Shiriki"
+    },
+    "footer": {
+      "getApp": "Pakua {app}"
+    },
+    "header": {
+      "join": "Jiunge na {brand}"
+    },
+    "language": "Lugha",
+    "post": {
+      "edited": "Ilihaririwa {time}",
+      "from": "Kutoka {app}"
+    },
+    "status": {
+      "notFound": {
+        "body": "Huenda kiungo si sahihi, au chapisho halipo tena.",
+        "title": "Chapisho halijapatikana"
+      },
+      "removed": {
+        "body": "Chapisho hili limeondolewa kwa kukiuka miongozo ya jumuiya.",
+        "title": "Chapisho limeondolewa"
+      },
+      "restricted": {
+        "body": "Bado unaweza kufungua viungo vya machapisho ambavyo wengine wanashiriki nawe.",
+        "title": "Ukurasa huu haupatikani katika eneo lako"
+      },
+      "withdrawn": {
+        "body": "Mwandishi ameondoa chapisho hili.",
+        "title": "Chapisho limeondolewa na mwandishi"
+      }
     }
   },
   "status": {

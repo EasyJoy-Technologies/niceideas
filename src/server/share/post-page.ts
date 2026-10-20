@@ -1,0 +1,95 @@
+import { GLOSSARY } from "@/i18n/glossary";
+import { publicUrl } from "@/server/media/keys";
+import { postUrl } from "@/server/posts/post-dto";
+import { renderDocumentHtml } from "@/server/render/document-html";
+import { escapeHtml } from "@/server/render/escape";
+import { shareCard } from "./card";
+import type { ChromeContext } from "./chrome";
+import { renderPage } from "./document";
+import { icon } from "./icons";
+import type { SharePost } from "./load-post";
+import { sourceBadge } from "./sources";
+
+/** Edits within this window after publishing are not shown as "edited". */
+const EDIT_GRACE_MS = 60_000;
+
+const meta = (property: string, content: string, attr = "property") => `<meta ${attr}="${property}" content="${escapeHtml(content)}">`;
+
+/** Share-card tags read by Facebook, X, LinkedIn, Telegram, WhatsApp, WeChat, QQ, Weibo … (plan §16.3). */
+function cardHead(ctx: ChromeContext, data: SharePost, url: string): string {
+  const card = shareCard(data.post);
+  const desc = card.description || ctx.intl.t("common.tagline");
+  return [
+    `<link rel="canonical" href="${escapeHtml(url)}">`,
+    meta("description", desc, "name"),
+    meta("og:type", "article"),
+    meta("og:site_name", GLOSSARY.brand),
+    meta("og:locale", ctx.intl.locale.replace("-", "_")),
+    meta("og:url", url),
+    meta("og:title", card.title),
+    meta("og:description", desc),
+    meta("og:image", card.imageUrl),
+    meta("og:image:width", String(card.imageWidth)),
+    meta("og:image:height", String(card.imageHeight)),
+    meta("og:image:alt", card.title),
+    meta("article:published_time", data.post.published_at.toISOString()),
+    meta("article:modified_time", data.revision.created_at.toISOString()),
+    meta("twitter:card", "summary_large_image", "name"),
+    // schema.org microdata on <head> (QQ / some in-app browsers read itemprop).
+    meta("name", card.title, "itemprop"),
+    meta("description", desc, "itemprop"),
+    meta("image", card.thumbUrl, "itemprop"),
+  ].join("");
+}
+
+function authorBlock(ctx: ChromeContext, data: SharePost): string {
+  const a = data.author;
+  const name = a.display_name || `@${a.handle}`;
+  const avatar = a.avatar_url
+    ? `<img class="ni-avatar" src="${escapeHtml(a.avatar_url)}" width="44" height="44" alt="">`
+    : `<span class="ni-avatar" aria-hidden="true">${escapeHtml(Array.from(name.replace(/^@/, ""))[0]?.toUpperCase() ?? "")}</span>`;
+  const handle = a.display_name ? `<span>@${escapeHtml(a.handle)}</span><i class="ni-dot"></i>` : "";
+  const at = data.post.published_at;
+  const time = `<time datetime="${at.toISOString()}">${escapeHtml(ctx.intl.format.dateTime(at, { dateStyle: "medium", timeStyle: "short" }))}</time>`;
+  return `<div class="ni-author">${avatar}<div class="ni-who"><div class="ni-name">${escapeHtml(name)}</div><div class="ni-meta">${handle}${time}</div></div></div>`;
+}
+
+function sourceBlock(ctx: ChromeContext, data: SharePost): string {
+  const badge = sourceBadge(data.post.source);
+  if (!badge) return "";
+  const app = ctx.intl.t(`common.${badge.nameKey}`);
+  return (
+    `<a class="ni-source" href="${escapeHtml(badge.href)}" target="_blank" rel="noopener">` +
+    `<img src="${badge.icon}" width="18" height="18" alt="">${escapeHtml(ctx.intl.t("share.post.from", { app }))}${icon("outLink")}</a>`
+  );
+}
+
+function editedBlock(ctx: ChromeContext, data: SharePost): string {
+  const edited = data.revision.created_at;
+  if (edited.getTime() - data.post.published_at.getTime() < EDIT_GRACE_MS) return "";
+  const time = `<time datetime="${edited.toISOString()}">${escapeHtml(ctx.intl.format.dateTime(edited, { dateStyle: "medium", timeStyle: "short" }))}</time>`;
+  // The label is translated text; only the time element is markup.
+  const [before, after = ""] = ctx.intl.t("share.post.edited", { time: "\u0000" }).split("\u0000");
+  return `<div class="ni-edited">${escapeHtml(before)}${time}${escapeHtml(after)}</div>`;
+}
+
+/** Server-rendered post page (plan §6, §16): complete without JS. */
+export function renderPostPage(ctx: ChromeContext, data: SharePost): string {
+  const { post, document } = data;
+  const url = postUrl(post.slug);
+  const title = post.title ? `<h1 class="ni-title">${escapeHtml(post.title)}</h1>` : "";
+  const body = renderDocumentHtml(document, data.media, publicUrl);
+  const share = `<button type="button" class="ni-act ni-share" hidden>${icon("share")}${escapeHtml(ctx.intl.t("share.action.share"))}</button>`;
+  const main =
+    `<main class="ni-main"><article class="ni-post${post.kind === "short" ? " ni-short" : ""}">` +
+    `${authorBlock(ctx, data)}${sourceBlock(ctx, data)}${title}<div class="ni-body">${body}</div>` +
+    `${editedBlock(ctx, data)}<div class="ni-actions">${share}</div></article></main>`;
+  const card = shareCard(post);
+  // WeChat's in-app browser picks the first sizeable <img> as the thumbnail.
+  const wx = `<div class="ni-wx"><img src="${escapeHtml(card.thumbUrl)}" width="600" height="600" alt=""></div>`;
+  return renderPage(ctx, {
+    title: `${card.title} · ${GLOSSARY.brand}`,
+    head: cardHead(ctx, data, url),
+    main: wx + main,
+  });
+}

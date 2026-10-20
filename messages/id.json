@@ -1,13 +1,16 @@
 {
   "common": {
+    "brand": {
+      "nicenote": "NiceNote"
+    },
     "footer": {
       "version": "Versi {version}"
-    }
+    },
+    "tagline": "Bagikan Nice Ideas-mu kapan saja, di mana saja!"
   },
   "home": {
     "landing": {
       "comingSoon": "Kami sedang menyelesaikan persiapan. Situs lengkap segera dibuka.",
-      "tagline": "Pemikiran singkat dan tulisan panjang, lengkap dengan gambar dan audio — dalam satu tautan.",
       "title": "Ide yang layak dibagikan"
     }
   },
@@ -15,6 +18,42 @@
     "site": {
       "description": "Pemikiran singkat dan tulisan panjang dengan gambar dan audio, dibagikan lewat satu tautan.",
       "title": "{brand} — bagikan idemu"
+    }
+  },
+  "share": {
+    "action": {
+      "close": "Tutup",
+      "copied": "Tautan disalin",
+      "share": "Bagikan"
+    },
+    "footer": {
+      "getApp": "Unduh {app}"
+    },
+    "header": {
+      "join": "Gabung ke {brand}"
+    },
+    "language": "Bahasa",
+    "post": {
+      "edited": "Diedit {time}",
+      "from": "Dari {app}"
+    },
+    "status": {
+      "notFound": {
+        "body": "Tautan mungkin salah, atau postingan sudah tidak ada.",
+        "title": "Postingan tidak ditemukan"
+      },
+      "removed": {
+        "body": "Postingan ini dihapus karena melanggar pedoman komunitas.",
+        "title": "Postingan dihapus"
+      },
+      "restricted": {
+        "body": "Kamu tetap bisa membuka tautan postingan yang dibagikan orang lain kepadamu.",
+        "title": "Halaman ini tidak tersedia di wilayahmu"
+      },
+      "withdrawn": {
+        "body": "Penulis telah menarik postingan ini.",
+        "title": "Postingan ditarik"
+      }
     }
   },
   "status": {

@@ -1,13 +1,16 @@
 {
   "common": {
+    "brand": {
+      "nicenote": "NiceNote"
+    },
     "footer": {
       "version": "Wersja {version}"
-    }
+    },
+    "tagline": "Dziel się swoimi Nice Ideas zawsze i wszędzie!"
   },
   "home": {
     "landing": {
       "comingSoon": "Kończymy przygotowania. Pełna wersja serwisu już wkrótce.",
-      "tagline": "Krótkie myśli i dłuższe teksty, ze zdjęciami i dźwiękiem – w jednym linku.",
       "title": "Pomysły warte udostępnienia"
     }
   },
@@ -15,6 +18,42 @@
     "site": {
       "description": "Krótkie myśli i dłuższe teksty ze zdjęciami i dźwiękiem, udostępniane jednym linkiem.",
       "title": "{brand} – dziel się pomysłami"
+    }
+  },
+  "share": {
+    "action": {
+      "close": "Zamknij",
+      "copied": "Skopiowano link",
+      "share": "Udostępnij"
+    },
+    "footer": {
+      "getApp": "Pobierz {app}"
+    },
+    "header": {
+      "join": "Dołącz do {brand}"
+    },
+    "language": "Język",
+    "post": {
+      "edited": "Edytowano: {time}",
+      "from": "Z aplikacji {app}"
+    },
+    "status": {
+      "notFound": {
+        "body": "Link może być błędny albo wpis już nie istnieje.",
+        "title": "Nie znaleziono wpisu"
+      },
+      "removed": {
+        "body": "Ten wpis został usunięty za naruszenie zasad społeczności.",
+        "title": "Wpis usunięty"
+      },
+      "restricted": {
+        "body": "Nadal możesz otwierać linki do wpisów, które inni Ci udostępniają.",
+        "title": "Ta strona jest niedostępna w Twoim regionie"
+      },
+      "withdrawn": {
+        "body": "Autor wycofał ten wpis.",
+        "title": "Wpis wycofany"
+      }
     }
   },
   "status": {

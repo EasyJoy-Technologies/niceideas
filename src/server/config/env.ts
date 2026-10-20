@@ -37,6 +37,9 @@ const schema = z.object({
   MEDIA_MAX_IMAGE_PIXELS: z.coerce.number().int().positive().default(100_000_000),
   MEDIA_USER_QUOTA_BYTES: z.coerce.number().int().positive().default(5 * 1024 * 1024 * 1024),
 
+  /** Source badge target for NiceNote posts (plan §16.4); `utm_*` is appended. Moves to the API-client registry with the open API. */
+  SOURCE_NICENOTE_URL: z.url().default("https://enp.ej-mobile.cn"),
+
   /** Mainland-China rule (plan §4): `link_only` = only share links / publish APIs; `off` = no restriction. */
   REGION_POLICY_CN: z.enum(["link_only", "off"]).default("link_only"),
 

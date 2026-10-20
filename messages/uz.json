@@ -1,13 +1,16 @@
 {
   "common": {
+    "brand": {
+      "nicenote": "NiceNote"
+    },
     "footer": {
       "version": "Versiya {version}"
-    }
+    },
+    "tagline": "Nice Ideas’laringizni istalgan vaqtda, istalgan joyda ulashing!"
   },
   "home": {
     "landing": {
       "comingSoon": "Soʻnggi tayyorgarlikni koʻryapmiz. Toʻliq sayt tez orada ochiladi.",
-      "tagline": "Qisqa fikrlar va uzun matnlar, rasm va audio bilan — bitta havolada.",
       "title": "Ulashishga arziydigan gʻoyalar"
     }
   },
@@ -15,6 +18,42 @@
     "site": {
       "description": "Qisqa fikrlar va uzun matnlar rasm va audio bilan bitta havola orqali ulashiladi.",
       "title": "{brand} — gʻoyalaringizni ulashing"
+    }
+  },
+  "share": {
+    "action": {
+      "close": "Yopish",
+      "copied": "Havola nusxalandi",
+      "share": "Ulashish"
+    },
+    "footer": {
+      "getApp": "{app} ni yuklab olish"
+    },
+    "header": {
+      "join": "{brand} ga qo‘shiling"
+    },
+    "language": "Til",
+    "post": {
+      "edited": "Tahrirlangan: {time}",
+      "from": "{app} orqali"
+    },
+    "status": {
+      "notFound": {
+        "body": "Havola noto‘g‘ri bo‘lishi yoki post endi mavjud bo‘lmasligi mumkin.",
+        "title": "Post topilmadi"
+      },
+      "removed": {
+        "body": "Bu post hamjamiyat qoidalarini buzgani uchun olib tashlandi.",
+        "title": "Post olib tashlandi"
+      },
+      "restricted": {
+        "body": "Boshqalar siz bilan ulashgan post havolalarini ochishda davom etishingiz mumkin.",
+        "title": "Bu sahifa hududingizda mavjud emas"
+      },
+      "withdrawn": {
+        "body": "Muallif bu postni qaytarib oldi.",
+        "title": "Post qaytarib olindi"
+      }
     }
   },
   "status": {

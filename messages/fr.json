@@ -1,13 +1,16 @@
 {
   "common": {
+    "brand": {
+      "nicenote": "NiceNote"
+    },
     "footer": {
       "version": "Version {version}"
-    }
+    },
+    "tagline": "Partagez vos Nice Ideas, où que vous soyez, quand vous voulez !"
   },
   "home": {
     "landing": {
       "comingSoon": "Nous peaufinons les derniers détails. Le site complet ouvre bientôt.",
-      "tagline": "Pensées brèves et lectures longues, avec images et audio, réunies dans un seul lien.",
       "title": "Des idées à partager"
     }
   },
@@ -15,6 +18,42 @@
     "site": {
       "description": "Pensées brèves et lectures longues avec images et audio, partagées en un seul lien.",
       "title": "{brand} – partagez vos idées"
+    }
+  },
+  "share": {
+    "action": {
+      "close": "Fermer",
+      "copied": "Lien copié",
+      "share": "Partager"
+    },
+    "footer": {
+      "getApp": "Télécharger {app}"
+    },
+    "header": {
+      "join": "Rejoindre {brand}"
+    },
+    "language": "Langue",
+    "post": {
+      "edited": "Modifié le {time}",
+      "from": "Depuis {app}"
+    },
+    "status": {
+      "notFound": {
+        "body": "Le lien est peut-être erroné, ou la publication n’existe plus.",
+        "title": "Publication introuvable"
+      },
+      "removed": {
+        "body": "Cette publication a été supprimée pour non-respect des règles de la communauté.",
+        "title": "Publication supprimée"
+      },
+      "restricted": {
+        "body": "Vous pouvez toujours ouvrir les liens de publications que l’on partage avec vous.",
+        "title": "Cette page n’est pas disponible dans votre région"
+      },
+      "withdrawn": {
+        "body": "L’auteur a retiré cette publication.",
+        "title": "Publication retirée"
+      }
     }
   },
   "status": {

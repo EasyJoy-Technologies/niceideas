@@ -1,13 +1,16 @@
 {
   "common": {
+    "brand": {
+      "nicenote": "NiceNote"
+    },
     "footer": {
       "version": "Versiunea {version}"
-    }
+    },
+    "tagline": "Împărtășește-ți Nice Ideas oricând, oriunde!"
   },
   "home": {
     "landing": {
       "comingSoon": "Facem ultimele pregătiri. Site-ul complet se deschide în curând.",
-      "tagline": "Gânduri scurte și texte lungi, cu imagini și audio, distribuite printr-un singur link.",
       "title": "Idei care merită împărtășite"
     }
   },
@@ -15,6 +18,42 @@
     "site": {
       "description": "Gânduri scurte și texte lungi cu imagini și audio, distribuite printr-un singur link.",
       "title": "{brand} – împărtășește-ți ideile"
+    }
+  },
+  "share": {
+    "action": {
+      "close": "Închide",
+      "copied": "Link copiat",
+      "share": "Distribuie"
+    },
+    "footer": {
+      "getApp": "Descarcă {app}"
+    },
+    "header": {
+      "join": "Alătură-te {brand}"
+    },
+    "language": "Limbă",
+    "post": {
+      "edited": "Editat la {time}",
+      "from": "Din {app}"
+    },
+    "status": {
+      "notFound": {
+        "body": "Linkul poate fi greșit sau postarea nu mai există.",
+        "title": "Postarea nu a fost găsită"
+      },
+      "removed": {
+        "body": "Această postare a fost eliminată pentru încălcarea regulilor comunității.",
+        "title": "Postare eliminată"
+      },
+      "restricted": {
+        "body": "Poți deschide în continuare linkurile către postări pe care alții le distribuie cu tine.",
+        "title": "Această pagină nu este disponibilă în regiunea ta"
+      },
+      "withdrawn": {
+        "body": "Autorul a retras această postare.",
+        "title": "Postare retrasă"
+      }
     }
   },
   "status": {

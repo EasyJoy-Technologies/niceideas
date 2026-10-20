@@ -1,13 +1,16 @@
 {
   "common": {
+    "brand": {
+      "nicenote": "NiceNote"
+    },
     "footer": {
       "version": "Version {version}"
-    }
+    },
+    "tagline": "Teile deine Nice Ideas – jederzeit und überall!"
   },
   "home": {
     "landing": {
       "comingSoon": "Wir legen letzte Hand an. Die vollständige Website ist bald verfügbar.",
-      "tagline": "Kurze Gedanken und lange Texte, mit Bildern und Audio – geteilt als ein Link.",
       "title": "Ideen, die es wert sind, geteilt zu werden"
     }
   },
@@ -15,6 +18,42 @@
     "site": {
       "description": "Kurze Gedanken und lange Texte mit Bildern und Audio, geteilt über einen einzigen Link.",
       "title": "{brand} – teile deine Ideen"
+    }
+  },
+  "share": {
+    "action": {
+      "close": "Schließen",
+      "copied": "Link kopiert",
+      "share": "Teilen"
+    },
+    "footer": {
+      "getApp": "{app} herunterladen"
+    },
+    "header": {
+      "join": "{brand} beitreten"
+    },
+    "language": "Sprache",
+    "post": {
+      "edited": "Bearbeitet am {time}",
+      "from": "Aus {app}"
+    },
+    "status": {
+      "notFound": {
+        "body": "Der Link ist möglicherweise falsch oder der Beitrag existiert nicht mehr.",
+        "title": "Beitrag nicht gefunden"
+      },
+      "removed": {
+        "body": "Dieser Beitrag wurde wegen Verstoßes gegen die Community-Richtlinien entfernt.",
+        "title": "Beitrag entfernt"
+      },
+      "restricted": {
+        "body": "Links zu Beiträgen, die andere mit dir teilen, kannst du weiterhin öffnen.",
+        "title": "Diese Seite ist in deiner Region nicht verfügbar"
+      },
+      "withdrawn": {
+        "body": "Der Autor hat diesen Beitrag zurückgezogen.",
+        "title": "Beitrag zurückgezogen"
+      }
     }
   },
   "status": {

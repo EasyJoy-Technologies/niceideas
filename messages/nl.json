@@ -1,13 +1,16 @@
 {
   "common": {
+    "brand": {
+      "nicenote": "NiceNote"
+    },
     "footer": {
       "version": "Versie {version}"
-    }
+    },
+    "tagline": "Deel je Nice Ideas, altijd en overal!"
   },
   "home": {
     "landing": {
       "comingSoon": "We leggen de laatste hand aan alles. De volledige site gaat binnenkort open.",
-      "tagline": "Korte gedachten en lange verhalen, met afbeeldingen en audio – gedeeld via één link.",
       "title": "Ideeën die het delen waard zijn"
     }
   },
@@ -15,6 +18,42 @@
     "site": {
       "description": "Korte gedachten en lange verhalen met afbeeldingen en audio, gedeeld via één link.",
       "title": "{brand} – deel je ideeën"
+    }
+  },
+  "share": {
+    "action": {
+      "close": "Sluiten",
+      "copied": "Link gekopieerd",
+      "share": "Delen"
+    },
+    "footer": {
+      "getApp": "{app} downloaden"
+    },
+    "header": {
+      "join": "Word lid van {brand}"
+    },
+    "language": "Taal",
+    "post": {
+      "edited": "Bewerkt op {time}",
+      "from": "Via {app}"
+    },
+    "status": {
+      "notFound": {
+        "body": "De link klopt mogelijk niet, of het bericht bestaat niet meer.",
+        "title": "Bericht niet gevonden"
+      },
+      "removed": {
+        "body": "Dit bericht is verwijderd omdat het de communityrichtlijnen schendt.",
+        "title": "Bericht verwijderd"
+      },
+      "restricted": {
+        "body": "Je kunt nog steeds links openen naar berichten die anderen met je delen.",
+        "title": "Deze pagina is niet beschikbaar in jouw regio"
+      },
+      "withdrawn": {
+        "body": "De auteur heeft dit bericht ingetrokken.",
+        "title": "Bericht ingetrokken"
+      }
     }
   },
   "status": {
