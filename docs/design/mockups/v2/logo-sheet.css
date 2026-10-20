@@ -1,0 +1,50 @@
+@font-face{font-family:"Inter";font-weight:100 900;src:url(assets/inter-latin-wght-normal.woff2) format("woff2")}
+*{box-sizing:border-box}
+body{margin:0;font-family:"Inter",system-ui,"PingFang SC","Noto Sans CJK SC",sans-serif;color:#1f2937;background:#f3f4f6}
+.sheet{width:1280px;padding:40px;display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.panel{background:#fff;border-radius:20px;padding:28px;box-shadow:0 1px 2px rgb(31 41 55/.04),0 8px 24px rgb(31 41 55/.06)}
+.panel h3{margin:0 0 18px;font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#6b7280}
+.title{grid-column:1/-1;display:flex;align-items:baseline;gap:16px}
+.title h1{margin:0;font-size:30px;letter-spacing:-.02em}.title p{margin:0;color:#6b7280}
+.lockups{display:flex;flex-direction:column;gap:20px}
+.lockup{display:flex;align-items:center;gap:14px;padding:22px 26px;border-radius:16px;background:#fff;border:1px solid #e5e7eb}
+.lockup.dark{background:#111827;border-color:#111827;color:#fff}
+.lockup img{width:64px;height:64px}
+.word{font-size:40px;font-weight:750;letter-spacing:-.03em}
+.word b{color:#7c3aed;font-weight:750}
+.lockup.dark .word b{color:#c4b5fd}
+.big{display:grid;place-items:center;height:300px;border-radius:16px;background:#fafafa}
+.big img{width:250px}
+.home{border-radius:16px;padding:26px 20px;background:linear-gradient(160deg,#c7d2fe,#fbcfe8 55%,#fde68a);display:grid;grid-template-columns:repeat(4,1fr);gap:18px 10px}
+.app{display:flex;flex-direction:column;align-items:center;gap:6px;font-size:12px;color:#111827;font-weight:500}
+.app img,.app i{width:64px;height:64px;border-radius:15px;background:#fff;box-shadow:0 2px 6px rgb(0 0 0/.12);display:block}
+.app i.g1{background:linear-gradient(135deg,#34d399,#059669)}.app i.g2{background:linear-gradient(135deg,#60a5fa,#2563eb)}
+.app i.g3{background:linear-gradient(135deg,#f87171,#dc2626)}.app i.g4{background:linear-gradient(135deg,#fbbf24,#d97706)}
+.app i.g5{background:linear-gradient(135deg,#a3a3a3,#525252)}.app i.g6{background:linear-gradient(135deg,#f472b6,#be185d)}
+.browser{border-radius:14px;overflow:hidden;border:1px solid #e5e7eb}
+.tabs{background:#e5e7eb;padding:8px 8px 0;display:flex;gap:4px}
+.tab{display:flex;align-items:center;gap:8px;background:#f3f4f6;border-radius:10px 10px 0 0;padding:8px 14px;font-size:12px;color:#6b7280;width:220px}
+.tab.on{background:#fff;color:#111827}.tab img{width:16px;height:16px}
+.url{background:#fff;padding:8px 14px;font-size:12px;color:#6b7280;border-bottom:1px solid #e5e7eb}
+.site{background:#fff;padding:14px 20px;display:flex;align-items:center;justify-content:space-between}
+.site .brand{display:flex;align-items:center;gap:8px;font-weight:750;font-size:19px;letter-spacing:-.02em}
+.site .brand img{width:32px;height:32px}.site .brand b{color:#7c3aed}
+.btn{background:#7c3aed;color:#fff;border-radius:12px;padding:9px 16px;font-size:13px;font-weight:600}
+.chat{background:#ece5dd;border-radius:16px;padding:22px}
+.bubble{background:#dcf8c6;border-radius:12px;max-width:430px;margin-left:auto;padding:6px;font-size:13px}
+.card{background:#fff;border-radius:8px;overflow:hidden}
+.og{aspect-ratio:1200/630;background:linear-gradient(135deg,#faf5ff,#fff 55%,#fff7ed);display:flex;align-items:center;justify-content:center;gap:22px;position:relative}
+.og img{width:120px}.og .w{font-size:44px;font-weight:780;letter-spacing:-.03em}.og .w b{color:#7c3aed}
+.og small{position:absolute;bottom:18px;font-size:14px;color:#6b7280}
+.meta{padding:8px 10px}.meta strong{display:block;font-size:13px}.meta span{color:#6b7280;font-size:12px}
+.bubble p{margin:6px 6px 2px;color:#2563eb}
+.sizes{display:flex;align-items:flex-end;gap:28px}
+.sizes figure{margin:0;text-align:center;font-size:11px;color:#6b7280}
+.sizes img{display:block;margin:0 auto 8px}
+.wechat{background:#ededed;border-radius:16px;padding:22px}
+.wx{background:#fff;border-radius:6px;max-width:300px;margin-left:auto;padding:12px;display:grid;grid-template-columns:1fr 54px;gap:6px 10px}
+.wx strong{font-size:14px;grid-column:1/-1}.wx span{font-size:12px;color:#888;line-height:1.4}.wx img{width:54px;height:54px;border-radius:4px;object-fit:cover}
+.wx em{grid-column:1/-1;border-top:1px solid #eee;padding-top:6px;font-style:normal;font-size:11px;color:#999;display:flex;align-items:center;gap:5px}
+.wx em img{width:14px;height:14px}
+/* Wordmark capital I drawn with serifs so "NiceIdeas" never reads as "Niceldeas". */
+.capI{height:.727em;width:auto;vertical-align:baseline;margin:0 .02em 0 .04em}

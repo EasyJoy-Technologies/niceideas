@@ -58,6 +58,9 @@ if __name__ == "__main__":
     for name, body in CONCEPTS.items():
         open(f"logo-{name}.svg", "w").write(svg(body))
         open(f"icon-{name}.svg", "w").write(svg(f'<g transform="translate(51 51) scale(0.8)">{body}</g>', bg="#ffffff", rx=112))
+    # Dark-background variants: ink parts turn white.
+    for name, body in CONCEPTS.items():
+        open(f"logo-{name}-dark.svg", "w").write(svg(body.replace(INK, "#FFFFFF").replace('fill="#fff"', 'fill="none"')))
     # Small flower used as the dots of the "niceideas" wordmark.
     open("flower.svg", "w").write(svg(flower(256, 256, 240, 0.06)))
     print("ok")
