@@ -8,10 +8,20 @@
     },
     "tagline": "Nice Ideas'larını her zaman, her yerde paylaş!"
   },
-  "home": {
-    "landing": {
-      "comingSoon": "Son hazırlıkları yapıyoruz. Sitenin tamamı yakında açılıyor.",
-      "title": "Paylaşmaya değer fikirler"
+  "discover": {
+    "title": "Keşfet"
+  },
+  "feed": {
+    "article": "Makale",
+    "audios": "{count, plural, one {# ses kaydı} other {# ses kaydı}}",
+    "empty": "Burada henüz bir şey yok.",
+    "images": "{count, plural, one {# görsel} other {# görsel}}",
+    "more": "Daha fazla göster",
+    "readingTime": "{minutes} dk okuma",
+    "tab": {
+      "all": "Tümü",
+      "articles": "Makaleler",
+      "images": "Görseller"
     }
   },
   "info": {
@@ -64,6 +74,15 @@
       "title": "{brand} — fikirlerini paylaş"
     }
   },
+  "profile": {
+    "joined": "{date} tarihinde katıldı",
+    "stats": {
+      "followers": "Takipçiler",
+      "following": "Takip edilen",
+      "likes": "Beğeniler",
+      "posts": "Gönderiler"
+    }
+  },
   "share": {
     "action": {
       "cancel": "İptal",
@@ -113,6 +132,10 @@
       "notFound": {
         "body": "Bağlantı hatalı olabilir ya da gönderi artık mevcut değil.",
         "title": "Gönderi bulunamadı"
+      },
+      "profileNotFound": {
+        "body": "Bağlantı hatalı olabilir ya da bu hesap artık mevcut değil.",
+        "title": "Hesap bulunamadı"
       },
       "removed": {
         "body": "Bu gönderi topluluk kurallarını ihlal ettiği için kaldırıldı.",

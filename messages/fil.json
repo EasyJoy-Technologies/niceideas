@@ -8,10 +8,20 @@
     },
     "tagline": "Ibahagi ang iyong Nice Ideas kahit kailan, kahit saan!"
   },
-  "home": {
-    "landing": {
-      "comingSoon": "Inihahanda pa namin ang lahat. Malapit nang magbukas ang buong site.",
-      "title": "Mga ideyang sulit ibahagi"
+  "discover": {
+    "title": "Tuklasin"
+  },
+  "feed": {
+    "article": "Artikulo",
+    "audios": "{count, plural, one {# audio clip} other {# audio clip}}",
+    "empty": "Wala pang laman dito.",
+    "images": "{count, plural, one {# larawan} other {# larawan}}",
+    "more": "Magpakita pa",
+    "readingTime": "{minutes} min na pagbasa",
+    "tab": {
+      "all": "Lahat",
+      "articles": "Mga artikulo",
+      "images": "Mga larawan"
     }
   },
   "info": {
@@ -64,6 +74,15 @@
       "title": "{brand} — ibahagi ang iyong mga ideya"
     }
   },
+  "profile": {
+    "joined": "Sumali noong {date}",
+    "stats": {
+      "followers": "Mga tagasunod",
+      "following": "Sinusundan",
+      "likes": "Mga like",
+      "posts": "Mga post"
+    }
+  },
   "share": {
     "action": {
       "cancel": "Kanselahin",
@@ -113,6 +132,10 @@
       "notFound": {
         "body": "Maaaring mali ang link, o wala na ang post.",
         "title": "Hindi nahanap ang post"
+      },
+      "profileNotFound": {
+        "body": "Maaaring mali ang link, o wala na ang account na ito.",
+        "title": "Hindi nahanap ang account"
       },
       "removed": {
         "body": "Inalis ang post na ito dahil lumabag ito sa mga alituntunin ng komunidad.",

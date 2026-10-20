@@ -8,10 +8,20 @@
     },
     "tagline": "Sdílejte své Nice Ideas kdykoli a kdekoli!"
   },
-  "home": {
-    "landing": {
-      "comingSoon": "Dokončujeme přípravy. Celý web brzy otevřeme.",
-      "title": "Nápady, které stojí za sdílení"
+  "discover": {
+    "title": "Objevovat"
+  },
+  "feed": {
+    "article": "Článek",
+    "audios": "{count, plural, one {# zvuková nahrávka} few {# zvukové nahrávky} many {# zvukové nahrávky} other {# zvukových nahrávek}}",
+    "empty": "Zatím tu nic není.",
+    "images": "{count, plural, one {# obrázek} few {# obrázky} many {# obrázku} other {# obrázků}}",
+    "more": "Zobrazit další",
+    "readingTime": "{minutes} min čtení",
+    "tab": {
+      "all": "Vše",
+      "articles": "Články",
+      "images": "Obrázky"
     }
   },
   "info": {
@@ -64,6 +74,15 @@
       "title": "{brand} – sdílejte své nápady"
     }
   },
+  "profile": {
+    "joined": "Připojil(a) se {date}",
+    "stats": {
+      "followers": "Sledující",
+      "following": "Sleduje",
+      "likes": "To se mi líbí",
+      "posts": "Příspěvky"
+    }
+  },
   "share": {
     "action": {
       "cancel": "Zrušit",
@@ -113,6 +132,10 @@
       "notFound": {
         "body": "Odkaz může být chybný, nebo příspěvek už neexistuje.",
         "title": "Příspěvek nenalezen"
+      },
+      "profileNotFound": {
+        "body": "Odkaz může být chybný, nebo tento účet už neexistuje.",
+        "title": "Účet nenalezen"
       },
       "removed": {
         "body": "Tento příspěvek byl odstraněn kvůli porušení pravidel komunity.",

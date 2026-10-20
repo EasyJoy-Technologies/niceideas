@@ -43,7 +43,10 @@ export function siteHeader(ctx: ChromeContext): string {
   const join = ctx.restricted
     ? ""
     : `<a class="ni-btn ni-btn-primary" href="/">${escapeHtml(ctx.intl.t("share.header.join", { brand: GLOSSARY.brand }))}</a>`;
-  return `<header class="ni-hdr"><div class="ni-hdr-in">${brand(ctx, 1.875)}<span class="ni-sp"></span>${languageMenu(ctx)}${join}</div></header>`;
+  // Mainland-China visitors get no in-site navigation (plan §4.2).
+  const current = ctx.path === "/discover" || ctx.path === "/" ? ' aria-current="page"' : "";
+  const discover = ctx.restricted ? "" : `<a class="ni-hdr-nav" href="/discover"${current}>${escapeHtml(ctx.intl.t("discover.title"))}</a>`;
+  return `<header class="ni-hdr"><div class="ni-hdr-in">${brand(ctx, 1.875)}<span class="ni-sp"></span>${discover}${languageMenu(ctx)}${join}</div></header>`;
 }
 
 /** Footer per approved v2 design: brand + tagline, site links, © · version + language. */

@@ -8,10 +8,20 @@
     },
     "tagline": "Dziel się swoimi Nice Ideas zawsze i wszędzie!"
   },
-  "home": {
-    "landing": {
-      "comingSoon": "Kończymy przygotowania. Pełna wersja serwisu już wkrótce.",
-      "title": "Pomysły warte udostępnienia"
+  "discover": {
+    "title": "Odkrywaj"
+  },
+  "feed": {
+    "article": "Artykuł",
+    "audios": "{count, plural, one {# nagranie} few {# nagrania} many {# nagrań} other {# nagrania}}",
+    "empty": "Na razie nic tu nie ma.",
+    "images": "{count, plural, one {# obraz} few {# obrazy} many {# obrazów} other {# obrazu}}",
+    "more": "Pokaż więcej",
+    "readingTime": "{minutes} min czytania",
+    "tab": {
+      "all": "Wszystko",
+      "articles": "Artykuły",
+      "images": "Zdjęcia"
     }
   },
   "info": {
@@ -64,6 +74,15 @@
       "title": "{brand} – dziel się pomysłami"
     }
   },
+  "profile": {
+    "joined": "Dołączył(a): {date}",
+    "stats": {
+      "followers": "Obserwujący",
+      "following": "Obserwowani",
+      "likes": "Polubienia",
+      "posts": "Posty"
+    }
+  },
   "share": {
     "action": {
       "cancel": "Anuluj",
@@ -113,6 +132,10 @@
       "notFound": {
         "body": "Link może być błędny albo wpis już nie istnieje.",
         "title": "Nie znaleziono wpisu"
+      },
+      "profileNotFound": {
+        "body": "Link może być błędny albo to konto już nie istnieje.",
+        "title": "Nie znaleziono konta"
       },
       "removed": {
         "body": "Ten wpis został usunięty za naruszenie zasad społeczności.",

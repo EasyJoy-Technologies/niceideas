@@ -8,10 +8,20 @@
     },
     "tagline": "随时随地分享你的好主意！"
   },
-  "home": {
-    "landing": {
-      "comingSoon": "我们正在做最后的准备，完整网站即将开放。",
-      "title": "值得分享的想法"
+  "discover": {
+    "title": "发现"
+  },
+  "feed": {
+    "article": "长文",
+    "audios": "{count, plural, other {# 段音频}}",
+    "empty": "这里还没有内容。",
+    "images": "{count, plural, other {# 张图片}}",
+    "more": "查看更多",
+    "readingTime": "阅读约 {minutes} 分钟",
+    "tab": {
+      "all": "全部",
+      "articles": "长文",
+      "images": "图片"
     }
   },
   "info": {
@@ -64,6 +74,15 @@
       "title": "{brand}——分享你的想法"
     }
   },
+  "profile": {
+    "joined": "{date}加入",
+    "stats": {
+      "followers": "粉丝",
+      "following": "关注",
+      "likes": "获赞",
+      "posts": "帖子"
+    }
+  },
   "share": {
     "action": {
       "cancel": "取消",
@@ -113,6 +132,10 @@
       "notFound": {
         "body": "链接可能有误，或这条内容已不存在。",
         "title": "找不到这条内容"
+      },
+      "profileNotFound": {
+        "body": "链接可能有误，或者该账号已不存在。",
+        "title": "找不到这个账号"
       },
       "removed": {
         "body": "这条内容因违反社区准则已被移除。",

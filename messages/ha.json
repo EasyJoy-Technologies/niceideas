@@ -8,10 +8,20 @@
     },
     "tagline": "Raba Nice Ideas ɗinka a kowane lokaci, a ko'ina!"
   },
-  "home": {
-    "landing": {
-      "comingSoon": "Muna kammala shirye-shiryen ƙarshe. Cikakken shafin zai buɗe nan ba da jimawa ba.",
-      "title": "Raʼayoyi masu cancantar a raba"
+  "discover": {
+    "title": "Bincika"
+  },
+  "feed": {
+    "article": "Makala",
+    "audios": "{count, plural, one {sauti #} other {sautuka #}}",
+    "empty": "Babu komai a nan tukuna.",
+    "images": "{count, plural, one {hoto #} other {hotuna #}}",
+    "more": "Nuna ƙari",
+    "readingTime": "Karatun minti {minutes}",
+    "tab": {
+      "all": "Duka",
+      "articles": "Makaloli",
+      "images": "Hotuna"
     }
   },
   "info": {
@@ -64,6 +74,15 @@
       "title": "{brand} — raba raʼayoyinka"
     }
   },
+  "profile": {
+    "joined": "Ya shiga {date}",
+    "stats": {
+      "followers": "Mabiya",
+      "following": "Masu bibiya da yake bi",
+      "likes": "So",
+      "posts": "Rubuce-rubuce"
+    }
+  },
   "share": {
     "action": {
       "cancel": "Soke",
@@ -113,6 +132,10 @@
       "notFound": {
         "body": "Wataƙila hanyar haɗin ba daidai ba ce, ko rubutun ba ya nan.",
         "title": "Ba a sami rubutun ba"
+      },
+      "profileNotFound": {
+        "body": "Wataƙila mahaɗin ba daidai ba ne, ko kuma wannan asusun babu shi kuma.",
+        "title": "Ba a sami asusun ba"
       },
       "removed": {
         "body": "An cire wannan rubutun saboda ya karya ƙa'idojin al'umma.",

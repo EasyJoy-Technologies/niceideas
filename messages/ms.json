@@ -8,10 +8,20 @@
     },
     "tagline": "Kongsi Nice Ideas anda bila-bila masa, di mana-mana sahaja!"
   },
-  "home": {
-    "landing": {
-      "comingSoon": "Kami sedang membuat persiapan terakhir. Laman penuh akan dibuka tidak lama lagi.",
-      "title": "Idea yang wajar dikongsi"
+  "discover": {
+    "title": "Teroka"
+  },
+  "feed": {
+    "article": "Artikel",
+    "audios": "{count, plural, other {# klip audio}}",
+    "empty": "Belum ada apa-apa di sini.",
+    "images": "{count, plural, other {# imej}}",
+    "more": "Tunjukkan lagi",
+    "readingTime": "{minutes} minit bacaan",
+    "tab": {
+      "all": "Semua",
+      "articles": "Artikel",
+      "images": "Imej"
     }
   },
   "info": {
@@ -64,6 +74,15 @@
       "title": "{brand} — kongsi idea anda"
     }
   },
+  "profile": {
+    "joined": "Menyertai {date}",
+    "stats": {
+      "followers": "Pengikut",
+      "following": "Mengikuti",
+      "likes": "Suka",
+      "posts": "Siaran"
+    }
+  },
   "share": {
     "action": {
       "cancel": "Batal",
@@ -113,6 +132,10 @@
       "notFound": {
         "body": "Pautan mungkin salah, atau siaran itu tidak wujud lagi.",
         "title": "Siaran tidak ditemui"
+      },
+      "profileNotFound": {
+        "body": "Pautan mungkin salah, atau akaun ini tidak lagi wujud.",
+        "title": "Akaun tidak ditemui"
       },
       "removed": {
         "body": "Siaran ini dialih keluar kerana melanggar garis panduan komuniti.",

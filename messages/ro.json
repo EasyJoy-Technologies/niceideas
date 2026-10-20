@@ -8,10 +8,20 @@
     },
     "tagline": "Împărtășește-ți Nice Ideas oricând, oriunde!"
   },
-  "home": {
-    "landing": {
-      "comingSoon": "Facem ultimele pregătiri. Site-ul complet se deschide în curând.",
-      "title": "Idei care merită împărtășite"
+  "discover": {
+    "title": "Descoperă"
+  },
+  "feed": {
+    "article": "Articol",
+    "audios": "{count, plural, one {# clip audio} few {# clipuri audio} other {# de clipuri audio}}",
+    "empty": "Încă nu este nimic aici.",
+    "images": "{count, plural, one {# imagine} few {# imagini} other {# de imagini}}",
+    "more": "Afișează mai mult",
+    "readingTime": "{minutes} min de citit",
+    "tab": {
+      "all": "Toate",
+      "articles": "Articole",
+      "images": "Imagini"
     }
   },
   "info": {
@@ -64,6 +74,15 @@
       "title": "{brand} – împărtășește-ți ideile"
     }
   },
+  "profile": {
+    "joined": "Membru din {date}",
+    "stats": {
+      "followers": "Urmăritori",
+      "following": "Urmăriri",
+      "likes": "Aprecieri",
+      "posts": "Postări"
+    }
+  },
   "share": {
     "action": {
       "cancel": "Anulează",
@@ -113,6 +132,10 @@
       "notFound": {
         "body": "Linkul poate fi greșit sau postarea nu mai există.",
         "title": "Postarea nu a fost găsită"
+      },
+      "profileNotFound": {
+        "body": "Linkul poate fi greșit sau acest cont nu mai există.",
+        "title": "Contul nu a fost găsit"
       },
       "removed": {
         "body": "Această postare a fost eliminată pentru încălcarea regulilor comunității.",

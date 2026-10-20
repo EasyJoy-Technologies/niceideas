@@ -5,6 +5,8 @@ import { countryFromHeaders, decideAccess, logRegionDecision } from "@/server/re
 /** Internal target of blocked page requests. */
 export const REGION_PAGE = "/status/region";
 
+const PROFILE_PATH = /^\/@([A-Za-z0-9_]{1,40})\/?$/;
+
 /**
  * Page-level mainland-China rule (plan §4): every page the matcher covers is a
  * "site" page; blocked visitors get the 451 page. Share pages (/p/…), APIs (own
@@ -13,8 +15,11 @@ export const REGION_PAGE = "/status/region";
 export function proxy(request: NextRequest) {
   const decision = decideAccess({ country: countryFromHeaders(request.headers), access: "site", mode: getConfig().REGION_POLICY_CN });
   logRegionDecision(request.nextUrl.pathname, "site", decision);
-  if (decision.allowed) return NextResponse.next();
-  return NextResponse.rewrite(new URL(REGION_PAGE, request.url));
+  if (!decision.allowed) return NextResponse.rewrite(new URL(REGION_PAGE, request.url));
+  // `/@handle` profiles live at /u/<handle> (an "@" folder would be a parallel route).
+  const handle = PROFILE_PATH.exec(request.nextUrl.pathname)?.[1];
+  if (handle) return NextResponse.rewrite(new URL(`/u/${handle.toLowerCase()}${request.nextUrl.search}`, request.url));
+  return NextResponse.next();
 }
 
 export const config = {

@@ -8,10 +8,20 @@
     },
     "tagline": "Deel je Nice Ideas, altijd en overal!"
   },
-  "home": {
-    "landing": {
-      "comingSoon": "We leggen de laatste hand aan alles. De volledige site gaat binnenkort open.",
-      "title": "Ideeën die het delen waard zijn"
+  "discover": {
+    "title": "Ontdekken"
+  },
+  "feed": {
+    "article": "Artikel",
+    "audios": "{count, plural, one {# audiofragment} other {# audiofragmenten}}",
+    "empty": "Hier staat nog niets.",
+    "images": "{count, plural, one {# afbeelding} other {# afbeeldingen}}",
+    "more": "Meer tonen",
+    "readingTime": "{minutes} min. lezen",
+    "tab": {
+      "all": "Alles",
+      "articles": "Artikelen",
+      "images": "Afbeeldingen"
     }
   },
   "info": {
@@ -64,6 +74,15 @@
       "title": "{brand} – deel je ideeën"
     }
   },
+  "profile": {
+    "joined": "Lid sinds {date}",
+    "stats": {
+      "followers": "Volgers",
+      "following": "Volgend",
+      "likes": "Likes",
+      "posts": "Berichten"
+    }
+  },
   "share": {
     "action": {
       "cancel": "Annuleren",
@@ -113,6 +132,10 @@
       "notFound": {
         "body": "De link klopt mogelijk niet, of het bericht bestaat niet meer.",
         "title": "Bericht niet gevonden"
+      },
+      "profileNotFound": {
+        "body": "De link klopt misschien niet, of dit account bestaat niet meer.",
+        "title": "Account niet gevonden"
       },
       "removed": {
         "body": "Dit bericht is verwijderd omdat het de communityrichtlijnen schendt.",

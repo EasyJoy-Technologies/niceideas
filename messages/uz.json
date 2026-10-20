@@ -8,10 +8,20 @@
     },
     "tagline": "Nice Ideas’laringizni istalgan vaqtda, istalgan joyda ulashing!"
   },
-  "home": {
-    "landing": {
-      "comingSoon": "Soʻnggi tayyorgarlikni koʻryapmiz. Toʻliq sayt tez orada ochiladi.",
-      "title": "Ulashishga arziydigan gʻoyalar"
+  "discover": {
+    "title": "Kashf etish"
+  },
+  "feed": {
+    "article": "Maqola",
+    "audios": "{count, plural, one {# ta audio} other {# ta audio}}",
+    "empty": "Bu yerda hali hech narsa yoʻq.",
+    "images": "{count, plural, one {# ta rasm} other {# ta rasm}}",
+    "more": "Yana koʻrsatish",
+    "readingTime": "{minutes} daqiqalik oʻqish",
+    "tab": {
+      "all": "Hammasi",
+      "articles": "Maqolalar",
+      "images": "Rasmlar"
     }
   },
   "info": {
@@ -64,6 +74,15 @@
       "title": "{brand} — gʻoyalaringizni ulashing"
     }
   },
+  "profile": {
+    "joined": "{date} dan beri aʼzo",
+    "stats": {
+      "followers": "Kuzatuvchilar",
+      "following": "Kuzatilmoqda",
+      "likes": "Yoqtirishlar",
+      "posts": "Postlar"
+    }
+  },
   "share": {
     "action": {
       "cancel": "Bekor qilish",
@@ -113,6 +132,10 @@
       "notFound": {
         "body": "Havola noto‘g‘ri bo‘lishi yoki post endi mavjud bo‘lmasligi mumkin.",
         "title": "Post topilmadi"
+      },
+      "profileNotFound": {
+        "body": "Havola notoʻgʻri boʻlishi mumkin yoki bu hisob endi mavjud emas.",
+        "title": "Hisob topilmadi"
       },
       "removed": {
         "body": "Bu post hamjamiyat qoidalarini buzgani uchun olib tashlandi.",

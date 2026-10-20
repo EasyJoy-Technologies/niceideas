@@ -8,10 +8,20 @@
     },
     "tagline": "いつでもどこでも、あなたの Nice Ideas をシェアしよう！"
   },
-  "home": {
-    "landing": {
-      "comingSoon": "ただいま準備中です。サイト全体の公開まで、もう少しお待ちください。",
-      "title": "シェアしたくなるアイデアを"
+  "discover": {
+    "title": "発見"
+  },
+  "feed": {
+    "article": "長文",
+    "audios": "{count, plural, other {音声 # 件}}",
+    "empty": "まだ何もありません。",
+    "images": "{count, plural, other {画像 # 枚}}",
+    "more": "もっと見る",
+    "readingTime": "約 {minutes} 分で読めます",
+    "tab": {
+      "all": "すべて",
+      "articles": "長文",
+      "images": "画像"
     }
   },
   "info": {
@@ -64,6 +74,15 @@
       "title": "{brand} — アイデアをシェアしよう"
     }
   },
+  "profile": {
+    "joined": "{date}から利用",
+    "stats": {
+      "followers": "フォロワー",
+      "following": "フォロー中",
+      "likes": "いいね",
+      "posts": "投稿"
+    }
+  },
   "share": {
     "action": {
       "cancel": "キャンセル",
@@ -113,6 +132,10 @@
       "notFound": {
         "body": "リンクが間違っているか、投稿がすでに存在しない可能性があります。",
         "title": "投稿が見つかりません"
+      },
+      "profileNotFound": {
+        "body": "リンクが間違っているか、このアカウントはもう存在しません。",
+        "title": "アカウントが見つかりません"
       },
       "removed": {
         "body": "この投稿はコミュニティガイドラインに違反したため削除されました。",

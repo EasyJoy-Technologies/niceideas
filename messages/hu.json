@@ -8,10 +8,20 @@
     },
     "tagline": "Oszd meg a Nice Ideas-eidet bármikor, bárhol!"
   },
-  "home": {
-    "landing": {
-      "comingSoon": "Az utolsó simításokat végezzük. A teljes oldal hamarosan megnyílik.",
-      "title": "Megosztásra érdemes ötletek"
+  "discover": {
+    "title": "Felfedezés"
+  },
+  "feed": {
+    "article": "Cikk",
+    "audios": "{count, plural, one {# hangfelvétel} other {# hangfelvétel}}",
+    "empty": "Itt még nincs semmi.",
+    "images": "{count, plural, one {# kép} other {# kép}}",
+    "more": "Továbbiak",
+    "readingTime": "{minutes} perc olvasás",
+    "tab": {
+      "all": "Összes",
+      "articles": "Cikkek",
+      "images": "Képek"
     }
   },
   "info": {
@@ -64,6 +74,15 @@
       "title": "{brand} – oszd meg az ötleteidet"
     }
   },
+  "profile": {
+    "joined": "Csatlakozott: {date}",
+    "stats": {
+      "followers": "Követők",
+      "following": "Követett",
+      "likes": "Kedvelések",
+      "posts": "Bejegyzések"
+    }
+  },
   "share": {
     "action": {
       "cancel": "Mégse",
@@ -113,6 +132,10 @@
       "notFound": {
         "body": "Lehet, hogy hibás a link, vagy a bejegyzés már nem létezik.",
         "title": "A bejegyzés nem található"
+      },
+      "profileNotFound": {
+        "body": "Lehet, hogy hibás a link, vagy ez a fiók már nem létezik.",
+        "title": "A fiók nem található"
       },
       "removed": {
         "body": "Ezt a bejegyzést a közösségi irányelvek megsértése miatt eltávolították.",

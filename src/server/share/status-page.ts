@@ -3,9 +3,9 @@ import type { ChromeContext } from "./chrome";
 import { renderPage } from "./document";
 import { icon, type IconName } from "./icons";
 
-export type StatusKind = "notFound" | "withdrawn" | "removed" | "restricted";
+export type StatusKind = "notFound" | "profileNotFound" | "withdrawn" | "removed" | "restricted";
 
-const ICONS: Record<StatusKind, IconName> = { notFound: "missing", withdrawn: "withdrawn", removed: "withdrawn", restricted: "restricted" };
+const ICONS: Record<StatusKind, IconName> = { notFound: "missing", profileNotFound: "missing", withdrawn: "withdrawn", removed: "withdrawn", restricted: "restricted" };
 
 /** 404 / 410 / 451 page in the share-page style; never indexed. */
 export function renderStatusPage(ctx: ChromeContext, kind: StatusKind): string {

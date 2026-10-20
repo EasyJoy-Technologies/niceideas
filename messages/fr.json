@@ -8,10 +8,20 @@
     },
     "tagline": "Partagez vos Nice Ideas, où que vous soyez, quand vous voulez !"
   },
-  "home": {
-    "landing": {
-      "comingSoon": "Nous peaufinons les derniers détails. Le site complet ouvre bientôt.",
-      "title": "Des idées à partager"
+  "discover": {
+    "title": "Découvrir"
+  },
+  "feed": {
+    "article": "Article",
+    "audios": "{count, plural, one {# audio} other {# audios}}",
+    "empty": "Rien ici pour le moment.",
+    "images": "{count, plural, one {# image} other {# images}}",
+    "more": "Voir plus",
+    "readingTime": "{minutes} min de lecture",
+    "tab": {
+      "all": "Tout",
+      "articles": "Articles",
+      "images": "Images"
     }
   },
   "info": {
@@ -64,6 +74,15 @@
       "title": "{brand} – partagez vos idées"
     }
   },
+  "profile": {
+    "joined": "Membre depuis {date}",
+    "stats": {
+      "followers": "Abonnés",
+      "following": "Abonnements",
+      "likes": "J’aime",
+      "posts": "Publications"
+    }
+  },
   "share": {
     "action": {
       "cancel": "Annuler",
@@ -113,6 +132,10 @@
       "notFound": {
         "body": "Le lien est peut-être erroné, ou la publication n’existe plus.",
         "title": "Publication introuvable"
+      },
+      "profileNotFound": {
+        "body": "Le lien est peut-être erroné, ou ce compte n’existe plus.",
+        "title": "Compte introuvable"
       },
       "removed": {
         "body": "Cette publication a été supprimée pour non-respect des règles de la communauté.",

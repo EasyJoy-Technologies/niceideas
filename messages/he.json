@@ -8,10 +8,20 @@
     },
     "tagline": "שתפו את ה-Nice Ideas שלכם בכל זמן ובכל מקום!"
   },
-  "home": {
-    "landing": {
-      "comingSoon": "אנחנו משלימים את ההכנות האחרונות. האתר המלא ייפתח בקרוב.",
-      "title": "רעיונות ששווה לשתף"
+  "discover": {
+    "title": "גילוי"
+  },
+  "feed": {
+    "article": "מאמר",
+    "audios": "{count, plural, one {קטע שמע אחד} two {שני קטעי שמע} other {# קטעי שמע}}",
+    "empty": "אין כאן עדיין כלום.",
+    "images": "{count, plural, one {תמונה אחת} two {שתי תמונות} other {# תמונות}}",
+    "more": "הצגת עוד",
+    "readingTime": "{minutes} דק׳ קריאה",
+    "tab": {
+      "all": "הכול",
+      "articles": "מאמרים",
+      "images": "תמונות"
     }
   },
   "info": {
@@ -64,6 +74,15 @@
       "title": "{brand} — שתפו את הרעיונות שלכם"
     }
   },
+  "profile": {
+    "joined": "הצטרפות: {date}",
+    "stats": {
+      "followers": "עוקבים",
+      "following": "נעקבים",
+      "likes": "לייקים",
+      "posts": "פוסטים"
+    }
+  },
   "share": {
     "action": {
       "cancel": "ביטול",
@@ -113,6 +132,10 @@
       "notFound": {
         "body": "ייתכן שהקישור שגוי, או שהפוסט כבר לא קיים.",
         "title": "הפוסט לא נמצא"
+      },
+      "profileNotFound": {
+        "body": "ייתכן שהקישור שגוי או שהחשבון כבר לא קיים.",
+        "title": "החשבון לא נמצא"
       },
       "removed": {
         "body": "הפוסט הוסר כי הפר את הנחיות הקהילה.",

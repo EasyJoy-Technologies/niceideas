@@ -8,10 +8,20 @@
     },
     "tagline": "Dela dina Nice Ideas när och var du vill!"
   },
-  "home": {
-    "landing": {
-      "comingSoon": "Vi lägger sista handen vid allt. Hela webbplatsen öppnar snart.",
-      "title": "Idéer värda att dela"
+  "discover": {
+    "title": "Upptäck"
+  },
+  "feed": {
+    "article": "Artikel",
+    "audios": "{count, plural, one {# ljudklipp} other {# ljudklipp}}",
+    "empty": "Här finns inget än.",
+    "images": "{count, plural, one {# bild} other {# bilder}}",
+    "more": "Visa fler",
+    "readingTime": "{minutes} min läsning",
+    "tab": {
+      "all": "Allt",
+      "articles": "Artiklar",
+      "images": "Bilder"
     }
   },
   "info": {
@@ -64,6 +74,15 @@
       "title": "{brand} – dela dina idéer"
     }
   },
+  "profile": {
+    "joined": "Gick med {date}",
+    "stats": {
+      "followers": "Följare",
+      "following": "Följer",
+      "likes": "Gillningar",
+      "posts": "Inlägg"
+    }
+  },
   "share": {
     "action": {
       "cancel": "Avbryt",
@@ -113,6 +132,10 @@
       "notFound": {
         "body": "Länken kan vara fel, eller så finns inlägget inte längre.",
         "title": "Inlägget hittades inte"
+      },
+      "profileNotFound": {
+        "body": "Länken kan vara fel, eller så finns kontot inte längre.",
+        "title": "Kontot hittades inte"
       },
       "removed": {
         "body": "Inlägget har tagits bort eftersom det bröt mot gemenskapsriktlinjerna.",

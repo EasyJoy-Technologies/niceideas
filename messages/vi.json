@@ -8,10 +8,20 @@
     },
     "tagline": "Chia sẻ Nice Ideas của bạn mọi lúc, mọi nơi!"
   },
-  "home": {
-    "landing": {
-      "comingSoon": "Chúng tôi đang hoàn tất những bước chuẩn bị cuối cùng. Trang web đầy đủ sẽ sớm ra mắt.",
-      "title": "Những ý tưởng đáng để chia sẻ"
+  "discover": {
+    "title": "Khám phá"
+  },
+  "feed": {
+    "article": "Bài viết",
+    "audios": "{count, plural, other {# đoạn âm thanh}}",
+    "empty": "Chưa có gì ở đây.",
+    "images": "{count, plural, other {# hình ảnh}}",
+    "more": "Xem thêm",
+    "readingTime": "{minutes} phút đọc",
+    "tab": {
+      "all": "Tất cả",
+      "articles": "Bài viết dài",
+      "images": "Hình ảnh"
     }
   },
   "info": {
@@ -64,6 +74,15 @@
       "title": "{brand} — chia sẻ ý tưởng của bạn"
     }
   },
+  "profile": {
+    "joined": "Tham gia {date}",
+    "stats": {
+      "followers": "Người theo dõi",
+      "following": "Đang theo dõi",
+      "likes": "Lượt thích",
+      "posts": "Bài đăng"
+    }
+  },
   "share": {
     "action": {
       "cancel": "Hủy",
@@ -113,6 +132,10 @@
       "notFound": {
         "body": "Liên kết có thể sai hoặc bài viết không còn tồn tại.",
         "title": "Không tìm thấy bài viết"
+      },
+      "profileNotFound": {
+        "body": "Có thể liên kết bị sai, hoặc tài khoản này không còn tồn tại.",
+        "title": "Không tìm thấy tài khoản"
       },
       "removed": {
         "body": "Bài viết này đã bị gỡ do vi phạm nguyên tắc cộng đồng.",

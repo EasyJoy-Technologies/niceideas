@@ -8,10 +8,20 @@
     },
     "tagline": "Share your Nice Ideas anytime, anywhere!"
   },
-  "home": {
-    "landing": {
-      "comingSoon": "We're getting things ready. The full site opens soon.",
-      "title": "Ideas worth sharing"
+  "discover": {
+    "title": "Discover"
+  },
+  "feed": {
+    "article": "Article",
+    "audios": "{count, plural, one {# audio clip} other {# audio clips}}",
+    "empty": "Nothing here yet.",
+    "images": "{count, plural, one {# image} other {# images}}",
+    "more": "Show more",
+    "readingTime": "{minutes} min read",
+    "tab": {
+      "all": "All",
+      "articles": "Articles",
+      "images": "Images"
     }
   },
   "info": {
@@ -64,6 +74,15 @@
       "title": "{brand} — share your ideas"
     }
   },
+  "profile": {
+    "joined": "Joined {date}",
+    "stats": {
+      "followers": "Followers",
+      "following": "Following",
+      "likes": "Likes",
+      "posts": "Posts"
+    }
+  },
   "share": {
     "action": {
       "cancel": "Cancel",
@@ -113,6 +132,10 @@
       "notFound": {
         "body": "The link may be wrong, or the post no longer exists.",
         "title": "Post not found"
+      },
+      "profileNotFound": {
+        "body": "The link may be wrong, or this account no longer exists.",
+        "title": "Account not found"
       },
       "removed": {
         "body": "This post was removed for breaking the community guidelines.",

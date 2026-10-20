@@ -8,10 +8,20 @@
     },
     "tagline": "የእርስዎን Nice Ideas በማንኛውም ጊዜ፣ በማንኛውም ቦታ ያጋሩ!"
   },
-  "home": {
-    "landing": {
-      "comingSoon": "የመጨረሻ ዝግጅቶችን እያጠናቀቅን ነው። ሙሉው ድረ-ገጽ በቅርቡ ይከፈታል።",
-      "title": "ሊጋሩ የሚገባቸው ሀሳቦች"
+  "discover": {
+    "title": "ያስሱ"
+  },
+  "feed": {
+    "article": "ጽሑፍ",
+    "audios": "{count, plural, one {# የድምጽ ቅንጥብ} other {# የድምጽ ቅንጥቦች}}",
+    "empty": "እዚህ ገና ምንም የለም።",
+    "images": "{count, plural, one {# ምስል} other {# ምስሎች}}",
+    "more": "ተጨማሪ አሳይ",
+    "readingTime": "{minutes} ደቂቃ ንባብ",
+    "tab": {
+      "all": "ሁሉም",
+      "articles": "ጽሑፎች",
+      "images": "ምስሎች"
     }
   },
   "info": {
@@ -64,6 +74,15 @@
       "title": "{brand} — ሀሳቦችዎን ያጋሩ"
     }
   },
+  "profile": {
+    "joined": "ከ{date} ጀምሮ አባል",
+    "stats": {
+      "followers": "ተከታዮች",
+      "following": "የሚከተላቸው",
+      "likes": "መውደዶች",
+      "posts": "ልጥፎች"
+    }
+  },
   "share": {
     "action": {
       "cancel": "ሰርዝ",
@@ -113,6 +132,10 @@
       "notFound": {
         "body": "አገናኙ የተሳሳተ ሊሆን ይችላል፣ ወይም ልጥፉ ከእንግዲህ የለም።",
         "title": "ልጥፉ አልተገኘም"
+      },
+      "profileNotFound": {
+        "body": "አገናኙ ስህተት ሊሆን ይችላል፣ ወይም ይህ መለያ ከእንግዲህ የለም።",
+        "title": "መለያው አልተገኘም"
       },
       "removed": {
         "body": "ይህ ልጥፍ የማህበረሰብ መመሪያዎችን በመጣሱ ተወግዷል።",

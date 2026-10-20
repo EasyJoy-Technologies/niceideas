@@ -8,10 +8,20 @@
     },
     "tagline": "Shiriki Nice Ideas zako wakati wowote, mahali popote!"
   },
-  "home": {
-    "landing": {
-      "comingSoon": "Tunakamilisha maandalizi ya mwisho. Tovuti kamili itafunguliwa hivi karibuni.",
-      "title": "Mawazo yanayostahili kushirikiwa"
+  "discover": {
+    "title": "Gundua"
+  },
+  "feed": {
+    "article": "Makala",
+    "audios": "{count, plural, one {sauti #} other {sauti #}}",
+    "empty": "Bado hakuna kitu hapa.",
+    "images": "{count, plural, one {picha #} other {picha #}}",
+    "more": "Onyesha zaidi",
+    "readingTime": "Dakika {minutes} za kusoma",
+    "tab": {
+      "all": "Zote",
+      "articles": "Makala",
+      "images": "Picha"
     }
   },
   "info": {
@@ -64,6 +74,15 @@
       "title": "{brand} — shiriki mawazo yako"
     }
   },
+  "profile": {
+    "joined": "Alijiunga {date}",
+    "stats": {
+      "followers": "Wafuasi",
+      "following": "Anaofuata",
+      "likes": "Vipendwa",
+      "posts": "Machapisho"
+    }
+  },
   "share": {
     "action": {
       "cancel": "Ghairi",
@@ -113,6 +132,10 @@
       "notFound": {
         "body": "Huenda kiungo si sahihi, au chapisho halipo tena.",
         "title": "Chapisho halijapatikana"
+      },
+      "profileNotFound": {
+        "body": "Huenda kiungo si sahihi, au akaunti hii haipo tena.",
+        "title": "Akaunti haikupatikana"
       },
       "removed": {
         "body": "Chapisho hili limeondolewa kwa kukiuka miongozo ya jumuiya.",

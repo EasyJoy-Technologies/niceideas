@@ -62,13 +62,15 @@
     d.body.append(el);
     setTimeout(() => el.remove(), 2200);
   };
-  const url = d.querySelector('link[rel="canonical"]')?.href || location.href;
+  const pageUrl = d.querySelector('link[rel="canonical"]')?.href || location.href;
   for (const btn of d.querySelectorAll("button.ni-share")) {
     if (!navigator.share && !navigator.clipboard) continue;
     btn.hidden = false;
     btn.addEventListener("click", async () => {
+      // Feed cards share their own post; the post page shares itself.
+      const url = btn.dataset.url ? new URL(btn.dataset.url, location.origin).href : pageUrl;
       if (navigator.share) {
-        try { await navigator.share({ title: d.title, url }); } catch { /* dismissed */ }
+        try { await navigator.share(btn.dataset.url ? { url } : { title: d.title, url }); } catch { /* dismissed */ }
         return;
       }
       try { await navigator.clipboard.writeText(url); toast(labels.copiedLabel || url); } catch { toast(url); }

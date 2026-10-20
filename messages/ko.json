@@ -8,10 +8,20 @@
     },
     "tagline": "언제 어디서나 나의 Nice Ideas를 공유하세요!"
   },
-  "home": {
-    "landing": {
-      "comingSoon": "마무리 준비 중입니다. 전체 사이트가 곧 열립니다.",
-      "title": "나누고 싶은 아이디어"
+  "discover": {
+    "title": "발견"
+  },
+  "feed": {
+    "article": "긴 글",
+    "audios": "{count, plural, other {오디오 #개}}",
+    "empty": "아직 아무것도 없어요.",
+    "images": "{count, plural, other {이미지 #장}}",
+    "more": "더 보기",
+    "readingTime": "{minutes}분 분량",
+    "tab": {
+      "all": "전체",
+      "articles": "긴 글",
+      "images": "이미지"
     }
   },
   "info": {
@@ -64,6 +74,15 @@
       "title": "{brand} — 아이디어를 공유하세요"
     }
   },
+  "profile": {
+    "joined": "{date}에 가입",
+    "stats": {
+      "followers": "팔로워",
+      "following": "팔로잉",
+      "likes": "좋아요",
+      "posts": "게시물"
+    }
+  },
   "share": {
     "action": {
       "cancel": "취소",
@@ -113,6 +132,10 @@
       "notFound": {
         "body": "링크가 잘못되었거나 게시물이 더 이상 존재하지 않습니다.",
         "title": "게시물을 찾을 수 없습니다"
+      },
+      "profileNotFound": {
+        "body": "링크가 잘못되었거나 계정이 더 이상 존재하지 않아요.",
+        "title": "계정을 찾을 수 없어요"
       },
       "removed": {
         "body": "이 게시물은 커뮤니티 가이드라인 위반으로 삭제되었습니다.",

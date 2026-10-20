@@ -7,7 +7,7 @@ export const RESERVED_HANDLES: ReadonlySet<string> = new Set([
   "admin", "administrator", "api", "app", "about", "account", "auth", "explore", "discover", "help",
   "home", "login", "logout", "me", "media", "moderator", "niceideas", "nicematrix", "nicenote",
   "official", "p", "post", "posts", "privacy", "root", "search", "settings", "signup", "staff",
-  "status", "support", "system", "terms", "timeline", "user", "users", "www",
+  "status", "support", "system", "terms", "timeline", "u", "user", "users", "www",
 ]);
 
 export const HANDLE_PATTERN = /^[a-z0-9_]{3,30}$/;

@@ -8,10 +8,20 @@
     },
     "tagline": "隨時隨地分享你的好主意！"
   },
-  "home": {
-    "landing": {
-      "comingSoon": "我們正在做最後的準備，完整網站即將開放。",
-      "title": "值得分享的想法"
+  "discover": {
+    "title": "探索"
+  },
+  "feed": {
+    "article": "長文",
+    "audios": "{count, plural, other {# 段音訊}}",
+    "empty": "這裡還沒有內容。",
+    "images": "{count, plural, other {# 張圖片}}",
+    "more": "查看更多",
+    "readingTime": "閱讀約 {minutes} 分鐘",
+    "tab": {
+      "all": "全部",
+      "articles": "長文",
+      "images": "圖片"
     }
   },
   "info": {
@@ -64,6 +74,15 @@
       "title": "{brand}——分享你的想法"
     }
   },
+  "profile": {
+    "joined": "{date}加入",
+    "stats": {
+      "followers": "粉絲",
+      "following": "追蹤中",
+      "likes": "獲讚",
+      "posts": "貼文"
+    }
+  },
   "share": {
     "action": {
       "cancel": "取消",
@@ -113,6 +132,10 @@
       "notFound": {
         "body": "連結可能有誤，或這則內容已不存在。",
         "title": "找不到這則內容"
+      },
+      "profileNotFound": {
+        "body": "連結可能有誤，或該帳號已不存在。",
+        "title": "找不到這個帳號"
       },
       "removed": {
         "body": "這則內容因違反社群守則已被移除。",

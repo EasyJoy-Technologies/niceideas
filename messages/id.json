@@ -8,10 +8,20 @@
     },
     "tagline": "Bagikan Nice Ideas-mu kapan saja, di mana saja!"
   },
-  "home": {
-    "landing": {
-      "comingSoon": "Kami sedang menyelesaikan persiapan. Situs lengkap segera dibuka.",
-      "title": "Ide yang layak dibagikan"
+  "discover": {
+    "title": "Jelajahi"
+  },
+  "feed": {
+    "article": "Artikel",
+    "audios": "{count, plural, other {# klip audio}}",
+    "empty": "Belum ada apa pun di sini.",
+    "images": "{count, plural, other {# gambar}}",
+    "more": "Tampilkan lainnya",
+    "readingTime": "{minutes} menit baca",
+    "tab": {
+      "all": "Semua",
+      "articles": "Artikel",
+      "images": "Gambar"
     }
   },
   "info": {
@@ -64,6 +74,15 @@
       "title": "{brand} — bagikan idemu"
     }
   },
+  "profile": {
+    "joined": "Bergabung {date}",
+    "stats": {
+      "followers": "Pengikut",
+      "following": "Mengikuti",
+      "likes": "Suka",
+      "posts": "Postingan"
+    }
+  },
   "share": {
     "action": {
       "cancel": "Batal",
@@ -113,6 +132,10 @@
       "notFound": {
         "body": "Tautan mungkin salah, atau postingan sudah tidak ada.",
         "title": "Postingan tidak ditemukan"
+      },
+      "profileNotFound": {
+        "body": "Tautannya mungkin salah, atau akun ini sudah tidak ada.",
+        "title": "Akun tidak ditemukan"
       },
       "removed": {
         "body": "Postingan ini dihapus karena melanggar pedoman komunitas.",

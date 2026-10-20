@@ -48,5 +48,21 @@
   ],
   "share.comments.name": [
     "de"
+  ],
+  "feed.article": [
+    "fr"
+  ],
+  "feed.images": [
+    "fr"
+  ],
+  "feed.tab.articles": [
+    "fr"
+  ],
+  "feed.tab.images": [
+    "fr"
+  ],
+  "profile.stats.likes": [
+    "de",
+    "nl"
   ]
 }
