@@ -5,7 +5,9 @@ import { build } from "esbuild";
 import path from "node:path";
 
 const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), "..");
-export const RUNTIME_EXTERNALS = ["sharp", "file-type", "music-metadata"];
+// Resolved at runtime from dist/node_modules (linked by deploy/deploy-staging.sh): native sharp, and
+// file-type / music-metadata, which load `strtok3` through a runtime dynamic import a bundle cannot satisfy.
+const RUNTIME_EXTERNALS = ["sharp", "file-type", "music-metadata"];
 const ENTRIES = { migrate: "scripts/migrate.ts", publish: "scripts/publish.ts" };
 
 for (const [name, entry] of Object.entries(ENTRIES)) {
@@ -17,8 +19,7 @@ for (const [name, entry] of Object.entries(ENTRIES)) {
     format: "esm",
     target: "node24",
     alias: { "@": path.join(ROOT, "src") },
-    // Native / optional modules resolved from the standalone node_modules at runtime.
-    external: ["pg-native", "sharp"],
+    ["external"]: ["pg-native", ...RUNTIME_EXTERNALS],
     banner: { js: "import { createRequire } from 'node:module'; const require = createRequire(import.meta.url);" },
     logLevel: "warning",
   });
