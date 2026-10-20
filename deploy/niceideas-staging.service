@@ -1,0 +1,19 @@
+[Unit]
+Description=NiceIdeas (staging) — t.niceideas.app
+After=network.target docker.service
+Wants=docker.service
+
+[Service]
+Type=simple
+WorkingDirectory=/var/www/niceideas-staging/current
+EnvironmentFile=/etc/niceideas/env.staging
+ExecStart=/usr/bin/node server.js
+Restart=always
+RestartSec=3
+# Bounded memory; sharp image work is capped in-process (2 concurrent decodes).
+MemoryMax=1G
+NoNewPrivileges=true
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target
