@@ -29,10 +29,11 @@ function articleBlock(ctx: ChromeContext, item: FeedItem): string {
   if (item.images) facts.push(t("feed.images", { count: item.images }));
   if (item.audios) facts.push(t("feed.audios", { count: item.audios }));
   const cover = item.cover ? coverImage(item.cover) : "";
+  // The "Article" label shares the facts line (one row less per card).
   return (
-    `<a class="ni-fc-article" href="/p/${post.slug}">${cover}<div class="ni-fc-t"><div class="ni-fc-kind">${escapeHtml(t("feed.article"))}</div>` +
+    `<a class="ni-fc-article" href="/p/${post.slug}">${cover}<div class="ni-fc-t">` +
     `<h3>${escapeHtml(cardTitle(post))}</h3>${post.summary ? `<p>${escapeHtml(post.summary)}</p>` : ""}` +
-    `<div class="ni-fc-rt">${escapeHtml(facts.join(" · "))}</div></div></a>`
+    `<div class="ni-fc-rt"><span class="ni-fc-kind">${escapeHtml(t("feed.article"))}</span> · ${escapeHtml(facts.join(" · "))}</div></div></a>`
   );
 }
 
@@ -42,7 +43,7 @@ function shortBlock(item: FeedItem): string {
   return `<div class="ni-body ni-fc-text">${renderDocumentHtml(doc, NO_MEDIA, publicUrl)}</div>`;
 }
 
-/** Timeline / profile card (approved v2 design): author, body, source badge, like / comment / share. */
+/** Timeline / profile card (approved v2 design, compacted 2026-10-20): author, body, like / comment / share + source badge. */
 export function feedCard(ctx: ChromeContext, item: FeedItem): string {
   const { t } = ctx.intl;
   const { post } = item;
@@ -50,18 +51,20 @@ export function feedCard(ctx: ChromeContext, item: FeedItem): string {
   const href = profilePath(post.author_handle);
   const at = post.published_at;
   const head =
-    `<div class="ni-fc-head"><a href="${href}" tabindex="-1">${avatarHtml(name, post.author_avatar, 40)}</a><div class="ni-who">` +
+    `<div class="ni-fc-head"><a href="${href}" tabindex="-1">${avatarHtml(name, post.author_avatar, 36)}</a><div class="ni-who">` +
     `<a class="ni-name" href="${href}">${escapeHtml(name)}</a> <span class="ni-meta">@${escapeHtml(post.author_handle)}<i class="ni-dot"></i>` +
     `<a href="/p/${post.slug}"><time datetime="${at.toISOString()}" data-rel>${escapeHtml(ctx.intl.format.dateTime(at, { dateStyle: "medium" }))}</time></a></span></div></div>`;
   const body = post.kind === "short" && !item.cover ? shortBlock(item) : articleBlock(ctx, item);
   const badge = sourceBadge(post.source);
   const source = badge
-    ? `<div class="ni-fc-src"><a href="${escapeHtml(badge.href)}" target="_blank" rel="noopener"><img src="${badge.icon}" width="14" height="14" alt="">${escapeHtml(t("share.post.from", { app: t(`common.${badge.nameKey}`) }))}</a></div>`
+    ? `<a class="ni-fc-src" href="${escapeHtml(badge.href)}" target="_blank" rel="noopener"><img src="${badge.icon}" width="14" height="14" alt="">${escapeHtml(t("share.post.from", { app: t(`common.${badge.nameKey}`) }))}</a>`
     : "";
   const actions =
     `<div class="ni-actions ni-fc-actions"><button type="button" class="ni-act" data-like="post" data-id="${post.slug}" aria-pressed="${item.liked}" aria-label="${escapeHtml(t("share.action.like"))}">` +
     `${icon("heart")}<span>${post.like_count}</span></button>` +
     `<a class="ni-act" href="/p/${post.slug}#comments" aria-label="${escapeHtml(t("share.comments.title"))}">${icon("comment")}<span>${post.comment_count}</span></a>` +
-    `<button type="button" class="ni-act ni-share" data-url="/p/${post.slug}" hidden>${icon("share")}${escapeHtml(t("share.action.share"))}</button></div>`;
-  return `<article class="ni-card ni-fc">${head}${body}${source}${actions}</article>`;
+    `<button type="button" class="ni-act ni-share" data-url="/p/${post.slug}" hidden>${icon("share")}${escapeHtml(t("share.action.share"))}</button>` +
+    // Source badge sits at the end of the action row (one row less per card).
+    `<span class="ni-sp"></span>${source}</div>`;
+  return `<article class="ni-card ni-fc">${head}${body}${actions}</article>`;
 }

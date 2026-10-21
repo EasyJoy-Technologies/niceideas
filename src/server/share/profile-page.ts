@@ -23,7 +23,7 @@ export function renderProfilePage(ctx: ChromeContext, v: ProfileView): string {
   const joined = escapeHtml(t("profile.joined", { date: format.dateTime(p.created_at, { year: "numeric", month: "long" }) }));
   const card =
     `<section class="ni-card ni-prof"><div class="ni-prof-banner"></div><div class="ni-prof-in">` +
-    `${avatarHtml(name, p.avatar_url, 104, "ni-avatar ni-prof-ava")}<h1>${escapeHtml(name)}</h1><div class="ni-meta">@${escapeHtml(p.handle)}</div>` +
+    `${avatarHtml(name, p.avatar_url, 80, "ni-avatar ni-prof-ava")}<h1>${escapeHtml(name)}</h1><div class="ni-meta">@${escapeHtml(p.handle)}</div>` +
     (p.bio ? `<p class="ni-prof-bio">${escapeHtml(p.bio)}</p>` : "") +
     `<div class="ni-prof-facts"><span>${icon("calendar")}${joined}</span></div>` +
     `<div class="ni-prof-stats">${stat(v.stats.posts, "posts")}${stat(v.stats.following, "following")}${stat(v.stats.followers, "followers")}${stat(v.stats.likes, "likes")}</div>` +
