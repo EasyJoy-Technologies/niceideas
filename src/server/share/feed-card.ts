@@ -54,8 +54,10 @@ export function feedCard(ctx: ChromeContext, item: FeedItem): string {
   const href = profilePath(post.author_handle);
   const at = post.published_at;
   const badge = sourceBadge(post.source);
+  // Phones show the app icon only (label in title / aria-label); wider screens add the text.
+  const from = badge ? escapeHtml(t("share.post.from", { app: t(`common.${badge.nameKey}`) })) : "";
   const source = badge
-    ? `<a class="ni-fc-src" href="${escapeHtml(badge.href)}" target="_blank" rel="noopener"><img src="${badge.icon}" width="14" height="14" alt="">${escapeHtml(t("share.post.from", { app: t(`common.${badge.nameKey}`) }))}</a>`
+    ? `<a class="ni-fc-src" href="${escapeHtml(badge.href)}" target="_blank" rel="noopener" title="${from}" aria-label="${from}"><img src="${badge.icon}" width="14" height="14" alt=""><span>${from}</span></a>`
     : "";
   const head =
     `<div class="ni-fc-head"><a href="${href}" tabindex="-1" aria-hidden="true">${avatarHtml(name, post.author_avatar, 42)}</a><div class="ni-who">` +
