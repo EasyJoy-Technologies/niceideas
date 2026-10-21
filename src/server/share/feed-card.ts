@@ -59,7 +59,7 @@ export function feedCard(ctx: ChromeContext, item: FeedItem): string {
     : "";
   const head =
     `<div class="ni-fc-head"><a href="${href}" tabindex="-1" aria-hidden="true">${avatarHtml(name, post.author_avatar, 42)}</a><div class="ni-who">` +
-    `<a class="ni-name" href="${href}">${escapeHtml(name)}</a><span class="ni-meta">@${escapeHtml(post.author_handle)}<i class="ni-dot"></i>` +
+    `<a class="ni-name" href="${href}">${escapeHtml(name)}</a><span class="ni-meta"><span class="ni-handle">@${escapeHtml(post.author_handle)}</span><i class="ni-dot"></i>` +
     `<a href="/p/${post.slug}"><time datetime="${at.toISOString()}" data-rel>${escapeHtml(ctx.intl.format.dateTime(at, { dateStyle: "medium" }))}</time></a></span></div>${source}</div>`;
   const body = post.kind === "short" && !item.cover ? shortBlock(item) : articleBlock(ctx, item);
   const actions =
