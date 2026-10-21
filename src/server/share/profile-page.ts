@@ -33,5 +33,6 @@ export function renderProfilePage(ctx: ChromeContext, v: ProfileView): string {
     title: `${title} · ${GLOSSARY.brand}`,
     head: pageHead({ url: siteUrl(base), title, description: p.bio || t("common.tagline"), type: "profile", image: p.avatar_url }),
     main: `<main class="ni-main ni-feed-main">${feedList(ctx, v.page, base, v.tab, card)}</main>`,
+    side: true,
   });
 }

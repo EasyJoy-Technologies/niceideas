@@ -66,6 +66,6 @@ export function feedCard(ctx: ChromeContext, item: FeedItem): string {
     // Source badge sits at the end of the action row (one row less per card).
     `<span class="ni-sp"></span>${source}</div>`;
   // Avatar column on the left; name line, body and actions share the content column.
-  const avatar = `<a class="ni-fc-ava" href="${href}" tabindex="-1" aria-hidden="true">${avatarHtml(name, post.author_avatar, 44)}</a>`;
+  const avatar = `<a class="ni-fc-ava" href="${href}" tabindex="-1" aria-hidden="true">${avatarHtml(name, post.author_avatar, 48)}</a>`;
   return `<article class="ni-fc">${avatar}<div class="ni-fc-main">${head}${body}${actions}</div></article>`;
 }

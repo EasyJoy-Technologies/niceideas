@@ -141,8 +141,14 @@ a { color: inherit; text-decoration: none; }
   .ni-main { margin-top: 0; padding: 0; }
   .ni-post { border-radius: 0; box-shadow: none; padding: 1.25rem 1rem 0.75rem; }
   .ni-title { font-size: 1.625rem; }
-  .ni-ftr { margin-top: 1.5rem; }
-  .ni-ftr-in { padding: 1.375rem 1rem 2rem; }
+  /* Compact phone footer: logo + tagline on one line, links, then © · version + language. */
+  .ni-ftr { margin-top: 1rem; }
+  .ni-ftr-in { padding: 0.875rem 1rem 1rem; gap: 0.5rem; }
+  .ni-ftr-brand { display: flex; align-items: center; gap: 0.625rem; min-width: 0; }
+  .ni-ftr-brand .ni-brand img { height: 1.25rem; }
+  .ni-ftr-brand p { margin: 0; font-size: 0.75rem; min-width: 0; }
+  .ni-ftr-links { gap: 0.25rem 1rem; font-size: 0.75rem; }
+  .ni-ftr-meta { border-top: 0; padding-top: 0; }
 }
 
 /* information pages */

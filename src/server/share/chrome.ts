@@ -1,10 +1,8 @@
 import { GLOSSARY } from "@/i18n/glossary";
 import { LOCALES } from "@/i18n/locales";
 import { escapeHtml } from "@/server/render/escape";
-import { APP_VERSION } from "@/server/version";
 import { icon } from "./icons";
 import { LANG_PARAM, type PageIntl } from "./locale";
-import { INFO_PAGES } from "./info-content";
 
 /** Page context shared by every server-rendered page. */
 export type ChromeContext = {
@@ -20,7 +18,7 @@ const MARK_SRC = "/brand/mark.svg";
 
 const autonym = (code: string) => new Intl.DisplayNames([code], { type: "language" }).of(code) ?? code;
 
-function brand(ctx: ChromeContext, heightRem: number, compact = false): string {
+export function brand(ctx: ChromeContext, heightRem: number, compact = false): string {
   const w = ((LOCKUP.width / LOCKUP.height) * heightRem * 16).toFixed(0);
   // Phones show the mark only (header room for 40 languages); the footer keeps the full lockup.
   const phone = compact ? `<source media="(max-width: 47.99rem)" srcset="${MARK_SRC}" width="${heightRem * 16}" height="${heightRem * 16}">` : "";
@@ -29,7 +27,7 @@ function brand(ctx: ChromeContext, heightRem: number, compact = false): string {
 }
 
 /** No-JS language menu; links re-render the same page with `?hl=`. */
-function languageMenu(ctx: ChromeContext): string {
+export function languageMenu(ctx: ChromeContext): string {
   const { t, locale } = ctx.intl;
   const items = LOCALES.map((code) => {
     const current = code === locale ? ' aria-current="true"' : "";
@@ -54,21 +52,4 @@ export function siteHeader(ctx: ChromeContext): string {
   const label = escapeHtml(t("discover.title"));
   const discover = ctx.restricted ? "" : `<a class="ni-hdr-nav" href="/discover" aria-label="${label}"${current}>${icon("compass")}<span>${label}</span></a>`;
   return `<header class="ni-hdr"><div class="ni-hdr-in">${brand(ctx, 1.875, true)}<span class="ni-sp"></span>${discover}${languageMenu(ctx)}${join}</div></header>`;
-}
-
-/** Footer per approved v2 design: brand + tagline, site links, © · version + language. */
-export function siteFooter(ctx: ChromeContext): string {
-  const { t } = ctx.intl;
-  // Mainland-China visitors get no in-site links (plan §4.2).
-  const links = ctx.restricted
-    ? ""
-    : `<nav class="ni-ftr-links">${INFO_PAGES.map((p) => `<a href="/${p}">${escapeHtml(t(`info.${p}.title`, { brand: GLOSSARY.brand }))}</a>`).join("")}</nav>`;
-  const year = new Date().getUTCFullYear();
-  const meta =
-    `<div class="ni-ftr-meta"><span>© ${year} ${GLOSSARY.brand} · ${escapeHtml(t("common.footer.version", { version: APP_VERSION }))}</span>` +
-    `${languageMenu(ctx)}</div>`;
-  return (
-    `<footer class="ni-ftr"><div class="ni-ftr-in"><div class="ni-ftr-brand">${brand(ctx, 1.625)}` +
-    `<p>${escapeHtml(t("common.tagline"))}</p></div>${links}${meta}</div></footer>`
-  );
 }

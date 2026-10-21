@@ -15,5 +15,6 @@ export function renderDiscoverPage(ctx: ChromeContext, tab: FeedTab, page: FeedP
     title: `${title} · ${GLOSSARY.brand}`,
     head: pageHead({ url: siteUrl("/discover"), title: `${title} · ${GLOSSARY.brand}`, description: t("common.tagline"), type: "website", image: null }),
     main: `<main class="ni-main ni-feed-main">${heading}${feedList(ctx, page, base, tab)}</main>`,
+    side: true,
   });
 }
