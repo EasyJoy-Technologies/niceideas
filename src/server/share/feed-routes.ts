@@ -6,6 +6,7 @@ import { followingAmong } from "@/server/db/repos/follows";
 import { findProfileByHandle } from "@/server/db/repos/profiles";
 import { searchProfiles } from "@/server/db/repos/search";
 import { peekVisitorKey } from "@/server/interactions/visitor";
+import { composeBox, composeError } from "./compose-box";
 import { loadDiscoverAside, renderDiscoverAside } from "./discover-aside";
 import { renderDiscoverPage, type FeedPageKind } from "./discover-page";
 import { feedTab, tabFilter } from "./feed-list";
@@ -53,7 +54,8 @@ async function feedResponse(request: Request, want: FeedPageKind): Promise<Respo
       loadDiscoverAside(db, ctx.viewer?.user_id ?? null),
     ]);
     const aside = await renderDiscoverAside(ctx, db, asideData);
-    return htmlResponse(renderDiscoverPage(ctx, tab, page, base, aside, kind), 200);
+    const compose = kind === "home" ? composeBox(ctx, composeError(url)) : "";
+    return htmlResponse(renderDiscoverPage(ctx, tab, page, base, aside, kind, compose), 200);
   });
 }
 

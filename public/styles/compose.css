@@ -1,0 +1,16 @@
+/* Compose card (signed-in home). */
+.ni-compose { display: flex; gap: 0.75rem; padding: 1rem 1.125rem; }
+.ni-compose-f { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 0.375rem; }
+.ni-compose-title, .ni-compose textarea { width: 100%; border: 0; background: transparent; color: var(--ni-color-text-primary); font: inherit; resize: vertical; padding: 0.25rem 0; }
+.ni-compose-title { font-weight: 650; font-size: 1rem; }
+.ni-compose textarea { font-size: 1.0625rem; line-height: 1.55; min-height: 4.5rem; }
+.ni-compose-title:focus, .ni-compose textarea:focus { outline: none; }
+.ni-compose-title::placeholder, .ni-compose textarea::placeholder { color: #9ca3af; }
+.ni-compose-row { display: flex; align-items: center; gap: 0.5rem; border-top: 1px solid #f3f4f6; padding-top: 0.625rem; }
+.ni-ib { position: relative; display: grid; place-items: center; width: 2.25rem; height: 2.25rem; border-radius: 0.625rem; color: var(--ni-color-primary); cursor: pointer; }
+.ni-ib:hover, .ni-ib:focus-within { background: var(--ni-color-surface-2); }
+.ni-ib input { position: absolute; inset: 0; opacity: 0; cursor: pointer; }
+.ni-compose-files { font-size: 0.8125rem; color: var(--ni-color-text-secondary); }
+.ni-compose-err { margin: 0; padding: 0.5rem 0.75rem; border-radius: 0.625rem; background: #fef2f2; color: var(--ni-color-danger, #dc2626); font-size: 0.875rem; }
+.ni-compose button[disabled] { opacity: 0.6; cursor: progress; }
+@media (max-width: 47.99rem) { .ni-compose { border-radius: 0; box-shadow: none; padding: 0.875rem 1rem; } }

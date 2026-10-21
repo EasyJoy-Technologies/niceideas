@@ -35,6 +35,21 @@
     },
     "tagline": "隨時隨地分享你的好主意！"
   },
+  "compose": {
+    "addImages": "新增圖片（最多 {max} 張）",
+    "error": {
+      "empty": "請寫點內容或新增圖片。",
+      "failed": "發布失敗，請重試。",
+      "rate_limited": "發布太頻繁了，請稍後再試。",
+      "too_large": "圖片太大了。",
+      "too_much": "內容太長了，請縮短文字或減少圖片。",
+      "unsupported": "不支援這種檔案，請選擇圖片。"
+    },
+    "imagesChosen": "已選圖片：{count}",
+    "placeholder": "有什麼好主意？",
+    "publish": "發布",
+    "titlePlaceholder": "標題（選填，填寫後發布為長文）"
+  },
   "discover": {
     "title": "探索"
   },

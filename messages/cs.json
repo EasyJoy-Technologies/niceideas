@@ -35,6 +35,21 @@
     },
     "tagline": "Sdílejte své Nice Ideas kdykoli a kdekoli!"
   },
+  "compose": {
+    "addImages": "Přidat obrázky (až {max})",
+    "error": {
+      "empty": "Napište něco nebo přidejte obrázek.",
+      "failed": "Zveřejnění se nezdařilo. Zkuste to znovu.",
+      "rate_limited": "Zveřejňujete příliš rychle. Chvíli počkejte.",
+      "too_large": "Obrázek je příliš velký.",
+      "too_much": "Je to příliš dlouhé. Zkraťte text nebo použijte méně obrázků.",
+      "unsupported": "Tento typ souboru není podporován. Vyberte obrázek."
+    },
+    "imagesChosen": "Obrázky: {count}",
+    "placeholder": "Jaký máte dobrý nápad?",
+    "publish": "Zveřejnit",
+    "titlePlaceholder": "Název (volitelný, udělá z příspěvku článek)"
+  },
   "discover": {
     "title": "Objevovat"
   },

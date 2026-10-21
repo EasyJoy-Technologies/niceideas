@@ -35,6 +35,21 @@
     },
     "tagline": "Chia sẻ Nice Ideas của bạn mọi lúc, mọi nơi!"
   },
+  "compose": {
+    "addImages": "Thêm hình ảnh (tối đa {max})",
+    "error": {
+      "empty": "Hãy viết gì đó hoặc thêm hình ảnh.",
+      "failed": "Không thể đăng. Vui lòng thử lại.",
+      "rate_limited": "Bạn đăng quá nhanh. Vui lòng đợi một chút.",
+      "too_large": "Có hình ảnh quá lớn.",
+      "too_much": "Quá dài. Hãy rút ngắn văn bản hoặc bớt hình ảnh.",
+      "unsupported": "Không hỗ trợ loại tệp này. Hãy chọn hình ảnh."
+    },
+    "imagesChosen": "Hình ảnh: {count}",
+    "placeholder": "Bạn có ý tưởng hay nào?",
+    "publish": "Đăng",
+    "titlePlaceholder": "Tiêu đề (không bắt buộc, sẽ thành bài viết dài)"
+  },
   "discover": {
     "title": "Khám phá"
   },

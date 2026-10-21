@@ -35,6 +35,21 @@
     },
     "tagline": "Kongsi Nice Ideas anda bila-bila masa, di mana-mana sahaja!"
   },
+  "compose": {
+    "addImages": "Tambah imej (maksimum {max})",
+    "error": {
+      "empty": "Tulis sesuatu atau tambah imej.",
+      "failed": "Tidak dapat menyiar. Sila cuba lagi.",
+      "rate_limited": "Anda menyiar terlalu cepat. Sila tunggu sebentar.",
+      "too_large": "Satu imej terlalu besar.",
+      "too_much": "Terlalu panjang. Pendekkan teks atau kurangkan imej.",
+      "unsupported": "Jenis fail ini tidak disokong. Sila pilih imej."
+    },
+    "imagesChosen": "Imej: {count}",
+    "placeholder": "Apakah idea baik anda?",
+    "publish": "Siar",
+    "titlePlaceholder": "Tajuk (pilihan, menjadikannya artikel)"
+  },
   "discover": {
     "title": "Teroka"
   },

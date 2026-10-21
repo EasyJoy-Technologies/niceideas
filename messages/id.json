@@ -35,6 +35,21 @@
     },
     "tagline": "Bagikan Nice Ideas-mu kapan saja, di mana saja!"
   },
+  "compose": {
+    "addImages": "Tambahkan gambar (maks. {max})",
+    "error": {
+      "empty": "Tulis sesuatu atau tambahkan gambar.",
+      "failed": "Gagal memposting. Silakan coba lagi.",
+      "rate_limited": "Kamu memposting terlalu cepat. Tunggu sebentar.",
+      "too_large": "Ada gambar yang terlalu besar.",
+      "too_much": "Terlalu panjang. Persingkat teks atau kurangi gambar.",
+      "unsupported": "Jenis file ini tidak didukung. Pilih gambar."
+    },
+    "imagesChosen": "Gambar: {count}",
+    "placeholder": "Apa ide bagusmu?",
+    "publish": "Posting",
+    "titlePlaceholder": "Judul (opsional, menjadikannya artikel)"
+  },
   "discover": {
     "title": "Jelajahi"
   },

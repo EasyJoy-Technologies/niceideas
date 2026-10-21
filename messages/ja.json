@@ -35,6 +35,21 @@
     },
     "tagline": "いつでもどこでも、あなたの Nice Ideas をシェアしよう！"
   },
+  "compose": {
+    "addImages": "画像を追加（最大 {max} 枚）",
+    "error": {
+      "empty": "何か書くか、画像を追加してください。",
+      "failed": "投稿できませんでした。もう一度お試しください。",
+      "rate_limited": "投稿のペースが速すぎます。少し待ってください。",
+      "too_large": "画像が大きすぎます。",
+      "too_much": "長すぎます。文章を短くするか、画像を減らしてください。",
+      "unsupported": "このファイル形式には対応していません。画像を選んでください。"
+    },
+    "imagesChosen": "選択した画像：{count}",
+    "placeholder": "どんなアイデアがありますか？",
+    "publish": "投稿",
+    "titlePlaceholder": "タイトル（任意。入力すると記事になります）"
+  },
   "discover": {
     "title": "発見"
   },

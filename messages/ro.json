@@ -35,6 +35,21 @@
     },
     "tagline": "Împărtășește-ți Nice Ideas oricând, oriunde!"
   },
+  "compose": {
+    "addImages": "Adaugă imagini (maximum {max})",
+    "error": {
+      "empty": "Scrie ceva sau adaugă o imagine.",
+      "failed": "Nu s-a putut publica. Încearcă din nou.",
+      "rate_limited": "Publici prea repede. Așteaptă puțin.",
+      "too_large": "O imagine este prea mare.",
+      "too_much": "E prea lung. Scurtează textul sau folosește mai puține imagini.",
+      "unsupported": "Acest tip de fișier nu este acceptat. Alege o imagine."
+    },
+    "imagesChosen": "Imagini: {count}",
+    "placeholder": "Care e ideea ta bună?",
+    "publish": "Publică",
+    "titlePlaceholder": "Titlu (opțional, devine articol)"
+  },
   "discover": {
     "title": "Descoperă"
   },

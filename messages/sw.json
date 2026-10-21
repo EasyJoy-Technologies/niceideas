@@ -35,6 +35,21 @@
     },
     "tagline": "Shiriki Nice Ideas zako wakati wowote, mahali popote!"
   },
+  "compose": {
+    "addImages": "Ongeza picha (hadi {max})",
+    "error": {
+      "empty": "Andika kitu au ongeza picha.",
+      "failed": "Imeshindwa kuchapisha. Tafadhali jaribu tena.",
+      "rate_limited": "Unachapisha haraka mno. Subiri kidogo.",
+      "too_large": "Picha moja ni kubwa mno.",
+      "too_much": "Ni ndefu mno. Fupisha maandishi au tumia picha chache.",
+      "unsupported": "Aina hii ya faili haitumiki. Chagua picha."
+    },
+    "imagesChosen": "Picha: {count}",
+    "placeholder": "Wazo lako zuri ni lipi?",
+    "publish": "Chapisha",
+    "titlePlaceholder": "Kichwa (si lazima, hufanya iwe makala)"
+  },
   "discover": {
     "title": "Gundua"
   },

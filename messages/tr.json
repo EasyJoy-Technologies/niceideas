@@ -35,6 +35,21 @@
     },
     "tagline": "Nice Ideas'larını her zaman, her yerde paylaş!"
   },
+  "compose": {
+    "addImages": "Görsel ekle (en fazla {max})",
+    "error": {
+      "empty": "Bir şeyler yaz veya görsel ekle.",
+      "failed": "Paylaşılamadı. Lütfen tekrar dene.",
+      "rate_limited": "Çok hızlı paylaşıyorsun. Lütfen biraz bekle.",
+      "too_large": "Bir görsel çok büyük.",
+      "too_much": "Çok uzun. Metni kısalt veya daha az görsel kullan.",
+      "unsupported": "Bu dosya türü desteklenmiyor. Lütfen bir görsel seç."
+    },
+    "imagesChosen": "Görseller: {count}",
+    "placeholder": "Güzel fikrin ne?",
+    "publish": "Paylaş",
+    "titlePlaceholder": "Başlık (isteğe bağlı, makaleye dönüştürür)"
+  },
   "discover": {
     "title": "Keşfet"
   },

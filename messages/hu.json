@@ -35,6 +35,21 @@
     },
     "tagline": "Oszd meg a Nice Ideas-eidet bármikor, bárhol!"
   },
+  "compose": {
+    "addImages": "Képek hozzáadása (legfeljebb {max})",
+    "error": {
+      "empty": "Írj valamit, vagy adj hozzá egy képet.",
+      "failed": "A közzététel nem sikerült. Próbáld újra.",
+      "rate_limited": "Túl gyorsan teszel közzé. Várj egy kicsit.",
+      "too_large": "Egy kép túl nagy.",
+      "too_much": "Ez túl hosszú. Rövidítsd a szöveget, vagy használj kevesebb képet.",
+      "unsupported": "Ez a fájltípus nem támogatott. Válassz egy képet."
+    },
+    "imagesChosen": "Képek: {count}",
+    "placeholder": "Mi a jó ötleted?",
+    "publish": "Közzététel",
+    "titlePlaceholder": "Cím (nem kötelező, cikké teszi)"
+  },
   "discover": {
     "title": "Felfedezés"
   },

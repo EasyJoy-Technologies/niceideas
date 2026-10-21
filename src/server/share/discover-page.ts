@@ -9,7 +9,7 @@ import { pageHead, siteUrl } from "./page-head";
 export type FeedPageKind = "discover" | "home";
 
 /** Discover (every public post) or the signed-in home timeline (own + followed authors), newest first. */
-export function renderDiscoverPage(ctx: ChromeContext, tab: FeedTab, page: FeedPage, base: string, aside = "", kind: FeedPageKind = "discover"): string {
+export function renderDiscoverPage(ctx: ChromeContext, tab: FeedTab, page: FeedPage, base: string, aside = "", kind: FeedPageKind = "discover", compose = ""): string {
   const { t } = ctx.intl;
   const title = t(kind === "home" ? "nav.home" : "discover.title");
   const heading = `<div class="ni-feed-h"><h1>${escapeHtml(title)}</h1>${feedTabs(ctx, base, tab, "seg")}</div>`;
@@ -17,7 +17,7 @@ export function renderDiscoverPage(ctx: ChromeContext, tab: FeedTab, page: FeedP
   return renderPage(ctx, {
     title: `${title} · ${GLOSSARY.brand}`,
     head: pageHead({ url: siteUrl(kind === "home" ? "/" : "/discover"), title: `${title} · ${GLOSSARY.brand}`, description: t("common.tagline"), type: "website", image: null }),
-    main: `<main class="ni-main ni-feed-main">${heading}${empty || feedList(ctx, page, base, tab)}</main>`,
+    main: `<main class="ni-main ni-feed-main">${heading}${compose}${empty || feedList(ctx, page, base, tab)}</main>`,
     side: true,
     aside,
   });

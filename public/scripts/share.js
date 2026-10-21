@@ -33,6 +33,14 @@
   d.addEventListener("click", (e) => closeMenus(e.target.closest?.(MENUS)));
   d.addEventListener("keydown", (e) => { if (e.key === "Escape") closeMenus(null); });
 
+  // Compose: chosen image count; no double submit.
+  for (const form of d.querySelectorAll("form.ni-compose")) {
+    const files = form.querySelector('input[type="file"]');
+    const out = form.querySelector("[data-compose-files]");
+    files?.addEventListener("change", () => { if (out) out.textContent = files.files.length ? out.dataset.composeFiles.replace("{n}", String(files.files.length)) : ""; });
+    form.addEventListener("submit", () => { const b = form.querySelector('button[type="submit"]'); if (b) b.disabled = true; });
+  }
+
   let box;
   const lightbox = (src, alt) => {
     if (!box) {

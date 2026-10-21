@@ -35,6 +35,21 @@
     },
     "tagline": "Raba Nice Ideas ɗinka a kowane lokaci, a ko'ina!"
   },
+  "compose": {
+    "addImages": "Ƙara hotuna (har zuwa {max})",
+    "error": {
+      "empty": "Rubuta wani abu ko ƙara hoto.",
+      "failed": "An kasa wallafawa. Da fatan za a sake gwadawa.",
+      "rate_limited": "Kana wallafawa da sauri sosai. Jira ɗan lokaci.",
+      "too_large": "Wani hoto ya yi girma sosai.",
+      "too_much": "Ya yi tsawo sosai. Taƙaita rubutu ko rage hotuna.",
+      "unsupported": "Ba a goyi bayan irin wannan fayil ba. Zaɓi hoto."
+    },
+    "imagesChosen": "Hotuna: {count}",
+    "placeholder": "Mene ne kyakkyawan ra'ayinka?",
+    "publish": "Wallafa",
+    "titlePlaceholder": "Take (na zaɓi ne, yana mai da shi maƙala)"
+  },
   "discover": {
     "title": "Bincika"
   },

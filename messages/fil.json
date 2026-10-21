@@ -35,6 +35,21 @@
     },
     "tagline": "Ibahagi ang iyong Nice Ideas kahit kailan, kahit saan!"
   },
+  "compose": {
+    "addImages": "Magdagdag ng mga larawan (hanggang {max})",
+    "error": {
+      "empty": "Magsulat ng kahit ano o magdagdag ng larawan.",
+      "failed": "Hindi ma-post. Pakisubukang muli.",
+      "rate_limited": "Masyado kang mabilis mag-post. Maghintay sandali.",
+      "too_large": "Masyadong malaki ang isang larawan.",
+      "too_much": "Masyadong mahaba. Paikliin ang text o bawasan ang mga larawan.",
+      "unsupported": "Hindi suportado ang ganitong file. Pumili ng larawan."
+    },
+    "imagesChosen": "Mga larawan: {count}",
+    "placeholder": "Ano ang magandang ideya mo?",
+    "publish": "I-post",
+    "titlePlaceholder": "Pamagat (opsyonal, gagawin itong artikulo)"
+  },
   "discover": {
     "title": "Tuklasin"
   },

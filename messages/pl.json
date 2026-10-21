@@ -35,6 +35,21 @@
     },
     "tagline": "Dziel się swoimi Nice Ideas zawsze i wszędzie!"
   },
+  "compose": {
+    "addImages": "Dodaj obrazy (maks. {max})",
+    "error": {
+      "empty": "Napisz coś lub dodaj obraz.",
+      "failed": "Nie udało się opublikować. Spróbuj ponownie.",
+      "rate_limited": "Publikujesz zbyt szybko. Poczekaj chwilę.",
+      "too_large": "Obraz jest za duży.",
+      "too_much": "To za długie. Skróć tekst lub użyj mniej obrazów.",
+      "unsupported": "Ten typ pliku nie jest obsługiwany. Wybierz obraz."
+    },
+    "imagesChosen": "Obrazy: {count}",
+    "placeholder": "Jaki masz dobry pomysł?",
+    "publish": "Opublikuj",
+    "titlePlaceholder": "Tytuł (opcjonalny, zmienia wpis w artykuł)"
+  },
   "discover": {
     "title": "Odkrywaj"
   },

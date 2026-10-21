@@ -35,6 +35,21 @@
     },
     "tagline": "随时随地分享你的好主意！"
   },
+  "compose": {
+    "addImages": "添加图片（最多 {max} 张）",
+    "error": {
+      "empty": "请写点内容或添加图片。",
+      "failed": "发布失败，请重试。",
+      "rate_limited": "发布太频繁了，请稍后再试。",
+      "too_large": "图片太大了。",
+      "too_much": "内容太长了，请缩短文字或减少图片。",
+      "unsupported": "不支持这种文件，请选择图片。"
+    },
+    "imagesChosen": "已选图片：{count}",
+    "placeholder": "有什么好主意？",
+    "publish": "发布",
+    "titlePlaceholder": "标题（可选，填写后发布为长文）"
+  },
   "discover": {
     "title": "发现"
   },

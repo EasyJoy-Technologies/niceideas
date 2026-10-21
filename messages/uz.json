@@ -35,6 +35,21 @@
     },
     "tagline": "Nice Ideas’laringizni istalgan vaqtda, istalgan joyda ulashing!"
   },
+  "compose": {
+    "addImages": "Rasm qo‘shish (ko‘pi bilan {max})",
+    "error": {
+      "empty": "Biror narsa yozing yoki rasm qo‘shing.",
+      "failed": "Joylab bo‘lmadi. Qayta urinib ko‘ring.",
+      "rate_limited": "Juda tez joylayapsiz. Biroz kuting.",
+      "too_large": "Rasmlardan biri juda katta.",
+      "too_much": "Juda uzun. Matnni qisqartiring yoki kamroq rasm qo‘shing.",
+      "unsupported": "Bu fayl turi qo‘llab-quvvatlanmaydi. Rasm tanlang."
+    },
+    "imagesChosen": "Rasmlar: {count}",
+    "placeholder": "Qanday yaxshi g‘oyangiz bor?",
+    "publish": "Joylash",
+    "titlePlaceholder": "Sarlavha (ixtiyoriy, maqolaga aylantiradi)"
+  },
   "discover": {
     "title": "Kashf etish"
   },
