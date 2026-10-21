@@ -43,29 +43,29 @@ function shortBlock(item: FeedItem): string {
   return `<div class="ni-body ni-fc-text">${renderDocumentHtml(doc, NO_MEDIA, publicUrl)}</div>`;
 }
 
-/** Feed item (approved v2 design, compacted 2026-10-20): avatar column + name line, body, like / comment / share + source badge. */
+/**
+ * Timeline / profile card (approved v2 design): author row (avatar, name / @handle · time,
+ * source badge at its end), body, like / comment / share.
+ */
 export function feedCard(ctx: ChromeContext, item: FeedItem): string {
   const { t } = ctx.intl;
   const { post } = item;
   const name = post.author_name || `@${post.author_handle}`;
   const href = profilePath(post.author_handle);
   const at = post.published_at;
-  const head =
-    `<div class="ni-fc-head"><a class="ni-name" href="${href}">${escapeHtml(name)}</a><span class="ni-meta">@${escapeHtml(post.author_handle)}<i class="ni-dot"></i>` +
-    `<a href="/p/${post.slug}"><time datetime="${at.toISOString()}" data-rel>${escapeHtml(ctx.intl.format.dateTime(at, { dateStyle: "medium" }))}</time></a></span></div>`;
-  const body = post.kind === "short" && !item.cover ? shortBlock(item) : articleBlock(ctx, item);
   const badge = sourceBadge(post.source);
   const source = badge
     ? `<a class="ni-fc-src" href="${escapeHtml(badge.href)}" target="_blank" rel="noopener"><img src="${badge.icon}" width="14" height="14" alt="">${escapeHtml(t("share.post.from", { app: t(`common.${badge.nameKey}`) }))}</a>`
     : "";
+  const head =
+    `<div class="ni-fc-head"><a href="${href}" tabindex="-1" aria-hidden="true">${avatarHtml(name, post.author_avatar, 42)}</a><div class="ni-who">` +
+    `<a class="ni-name" href="${href}">${escapeHtml(name)}</a><span class="ni-meta">@${escapeHtml(post.author_handle)}<i class="ni-dot"></i>` +
+    `<a href="/p/${post.slug}"><time datetime="${at.toISOString()}" data-rel>${escapeHtml(ctx.intl.format.dateTime(at, { dateStyle: "medium" }))}</time></a></span></div>${source}</div>`;
+  const body = post.kind === "short" && !item.cover ? shortBlock(item) : articleBlock(ctx, item);
   const actions =
     `<div class="ni-actions ni-fc-actions"><button type="button" class="ni-act" data-like="post" data-id="${post.slug}" aria-pressed="${item.liked}" aria-label="${escapeHtml(t("share.action.like"))}">` +
     `${icon("heart")}<span>${post.like_count}</span></button>` +
     `<a class="ni-act" href="/p/${post.slug}#comments" aria-label="${escapeHtml(t("share.comments.title"))}">${icon("comment")}<span>${post.comment_count}</span></a>` +
-    `<button type="button" class="ni-act ni-share" data-url="/p/${post.slug}" hidden>${icon("share")}${escapeHtml(t("share.action.share"))}</button>` +
-    // Source badge sits at the end of the action row (one row less per card).
-    `<span class="ni-sp"></span>${source}</div>`;
-  // Avatar column on the left; name line, body and actions share the content column.
-  const avatar = `<a class="ni-fc-ava" href="${href}" tabindex="-1" aria-hidden="true">${avatarHtml(name, post.author_avatar, 48)}</a>`;
-  return `<article class="ni-fc">${avatar}<div class="ni-fc-main">${head}${body}${actions}</div></article>`;
+    `<button type="button" class="ni-act ni-share" data-url="/p/${post.slug}" hidden>${icon("share")}${escapeHtml(t("share.action.share"))}</button></div>`;
+  return `<article class="ni-card ni-fc">${head}${body}${actions}</article>`;
 }

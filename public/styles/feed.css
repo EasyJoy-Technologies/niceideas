@@ -1,49 +1,47 @@
-/* Feed pages (discover, profile): approved v2 timeline / profile design, signed-out view. */
-.ni-feed-main { display: flex; flex-direction: column; gap: 0.5rem; max-width: 40rem; margin-top: 1rem; }
+/* Feed pages (discover, profile): approved v2 timeline / profile cards, signed-out view. Wide-screen columns: shell.css. */
+.ni-feed-main { display: flex; flex-direction: column; gap: 0.625rem; max-width: 40rem; margin-top: 1rem; }
 .ni-feed-h { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 0 0.25rem 0.125rem; }
 .ni-feed-h h1 { font-size: 1.25rem; margin: 0; }
 .ni-seg { display: flex; background: #f1f5f9; border-radius: 0.75rem; padding: 0.1875rem; font-size: 0.8125rem; font-weight: 600; color: var(--ni-color-text-secondary); }
 .ni-seg a { padding: 0.375rem 0.875rem; border-radius: 0.5625rem; }
 .ni-seg a[aria-current] { background: var(--ni-color-surface); color: var(--ni-color-text-primary); box-shadow: 0 1px 2px rgb(0 0 0 / 0.06); }
+.ni-feed-empty { margin: 0; padding: 2.5rem 1.5rem; text-align: center; color: var(--ni-color-text-secondary); }
 .ni-feed-more { align-self: center; margin-top: 0.25rem; }
 
-/* feed: one surface, items split by hairlines (X / Bluesky / Mastodon style) */
-.ni-feed { overflow: hidden; }
-.ni-feed-empty { margin: 0; padding: 2.5rem 1.5rem; text-align: center; color: var(--ni-color-text-secondary); }
-/* Avatar top lines up with the name line; room above / below each hairline. */
-.ni-fc { display: grid; grid-template-columns: 3rem minmax(0, 1fr); align-items: start; gap: 0.75rem; padding: 1rem 1.25rem 0.5rem 1rem; }
-.ni-fc + .ni-fc, .ni-prof + .ni-fc, .ni-prof + .ni-feed-empty { border-top: 1px solid var(--ni-color-border); }
-.ni-fc-ava { display: block; line-height: 0; }
-.ni-fc-ava .ni-avatar { width: 3rem; height: 3rem; font-size: 1.1875rem; }
-.ni-fc-head { display: flex; align-items: baseline; gap: 0.375rem; min-width: 0; font-size: 0.9375rem; line-height: 1.25; }
-.ni-fc-head .ni-name { flex: none; max-width: 60%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.ni-fc-head .ni-meta { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+/* card: author row (avatar, name / @handle · time, source badge at the end), body, actions */
+.ni-fc { padding: 0.875rem 1.125rem 0.25rem; }
+.ni-fc-head { display: flex; align-items: center; gap: 0.625rem; }
+.ni-fc-head .ni-who { flex: 1; min-width: 0; font-size: 0.875rem; line-height: 1.35; }
+.ni-fc-head .ni-name { margin-inline-end: 0.375rem; }
 .ni-fc-head .ni-name:hover, .ni-fc-head .ni-meta a:hover { text-decoration: underline; }
-.ni-fc-text { margin-top: 0.25rem; font-size: 0.96875rem; line-height: 1.55; }
-.ni-fc-article { margin-top: 0.625rem; display: block; border: 1px solid var(--ni-color-border); border-radius: 0.875rem; overflow: hidden; }
+.ni-fc-text { margin-top: 0.5rem; font-size: 0.96875rem; line-height: 1.6; }
+.ni-fc-article { margin-top: 0.625rem; display: block; border: 1px solid var(--ni-color-border); border-radius: 1rem; overflow: hidden; }
 .ni-fc-article:hover { border-color: var(--ni-color-secondary); }
-/* Cover about as tall as the text block below it (~7rem: title + 2-line summary + facts). */
-.ni-fc-article img { display: block; width: 100%; height: 7rem; object-fit: cover; }
-.ni-fc-t { padding: 0.5rem 0.75rem 0.625rem; }
+/* Cover about as tall as the text block below it (~7.5rem: title + 2-line summary + facts). */
+.ni-fc-article img { display: block; width: 100%; height: 7.5rem; object-fit: cover; }
+.ni-fc-t { padding: 0.625rem 0.875rem 0.75rem; }
 .ni-fc-kind { font-weight: 700; color: var(--ni-color-primary); }
 .ni-fc-t h3 {
-  margin: 0 0 0.125rem; font-size: 1rem; line-height: 1.35; letter-spacing: -0.01em; overflow-wrap: anywhere;
+  margin: 0 0 0.25rem; font-size: 1.0625rem; line-height: 1.35; letter-spacing: -0.01em; overflow-wrap: anywhere;
   display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
 }
 .ni-fc-t p {
-  margin: 0; color: var(--ni-color-text-secondary); font-size: 0.875rem; line-height: 1.5;
+  margin: 0; color: var(--ni-color-text-secondary); font-size: 0.875rem; line-height: 1.55;
   display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
 }
-.ni-fc-rt { margin-top: 0.25rem; font-size: 0.75rem; color: #9ca3af; }
-.ni-fc-src { display: inline-flex; align-items: center; gap: 0.25rem; min-width: 0; padding-inline-end: 0.625rem; color: #9a3412; font-size: 0.75rem; font-weight: 600; white-space: nowrap; }
+.ni-fc-rt { margin-top: 0.375rem; font-size: 0.75rem; color: #9ca3af; }
+/* Long localized labels shrink with an ellipsis instead of pushing the name. */
+.ni-fc-src { display: inline-flex; align-items: center; gap: 0.3125rem; flex: 0 1 auto; max-width: 45%; min-width: 0; color: var(--ni-color-text-secondary); font-size: 0.75rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .ni-fc-src:hover { text-decoration: underline; }
-.ni-fc-src img { width: 0.875rem; height: 0.875rem; border-radius: 0.25rem; }
-/* Wraps (badge to its own line) only when a long localized label does not fit. */
-.ni-fc-actions { margin: 0.5rem -0.625rem 0; padding-top: 0; border-top: 0; flex-wrap: wrap; }
-.ni-fc-actions .ni-act { height: 2rem; }
+.ni-fc-src img { flex: none; width: 0.875rem; height: 0.875rem; border-radius: 0.25rem; }
+.ni-fc-actions { margin: 0.375rem -0.625rem 0; padding-top: 0; border-top: 0; }
 
-/* profile header (top of the feed surface) */
-.ni-prof-ava { width: 5rem; height: 5rem; font-size: 2rem; }
+/* avatars */
+.ni-av-42 { width: 2.625rem; height: 2.625rem; font-size: 1.0625rem; }
+.ni-av-80 { width: 5rem; height: 5rem; font-size: 2rem; }
+
+/* profile card */
+.ni-prof { overflow: hidden; }
 .ni-prof-banner { height: 7.5rem; background: linear-gradient(135deg, #ede9fe 0%, #ddd6fe 55%, #c4b5fd 100%); }
 .ni-prof-in { padding: 0 1.25rem 0.875rem; }
 .ni-prof-ava { margin-top: -2.25rem; border: 4px solid var(--ni-color-surface); box-sizing: content-box; }
@@ -69,10 +67,10 @@
   .ni-feed-h { padding: 0.625rem 1rem 0.25rem; flex-wrap: wrap; gap: 0.5rem; }
   .ni-seg a { padding: 0.375rem 0.625rem; }
   .ni-tabs { overflow-x: auto; }
-  .ni-feed { border-radius: 0; box-shadow: none; }
-  .ni-fc { grid-template-columns: 2.75rem minmax(0, 1fr); gap: 0.625rem; padding: 0.875rem 1rem 0.375rem 0.875rem; }
-  .ni-fc-ava .ni-avatar { width: 2.75rem; height: 2.75rem; font-size: 1.125rem; }
-  .ni-fc-article img { height: 6.5rem; }
+  .ni-fc, .ni-prof, .ni-feed-empty { border-radius: 0; box-shadow: none; }
+  .ni-fc { padding: 0.75rem 1rem 0.125rem; }
+  .ni-av-42 { width: 2.5rem; height: 2.5rem; }
+  .ni-fc-article img { height: 7rem; }
   .ni-prof-banner { height: 5.5rem; }
   .ni-prof-in { padding: 0 1rem 0.75rem; }
   .ni-feed-more { margin-bottom: 0.5rem; }
