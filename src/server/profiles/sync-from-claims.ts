@@ -24,8 +24,12 @@ export function handleFromUsername(username: string): string | null {
  */
 export async function syncProfileFromClaims(db: Db, profile: Profile, claims: JWTPayload): Promise<Profile> {
   const patch: { display_name?: string; avatar_url?: string; handle?: string } = {};
-  const handle = handleFromUsername(claimString(claims, "username"));
+  const username = claimString(claims, "username");
+  const handle = handleFromUsername(username);
   if (handle && handle !== profile.handle) patch.handle = handle;
+  // Diagnostics only (no personal data): why the handle did or did not follow the username.
+  const outcome = !username ? "no_username" : !handle ? "unusable" : patch.handle ? "updated" : "unchanged";
+  console.info(JSON.stringify({ event: "handle_sync", result: outcome }));
   if (!profile.display_name) {
     const name = claimString(claims, "name") || claimString(claims, "nickname") || claimString(claims, "username");
     if (name) patch.display_name = Array.from(name).slice(0, MAX_NAME).join("");
