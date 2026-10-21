@@ -49,5 +49,7 @@ export function siteHeader(ctx: ChromeContext): string {
   const current = ctx.path === "/discover" || ctx.path === "/" ? ' aria-current="page"' : "";
   const label = escapeHtml(ctx.intl.t("discover.title"));
   const discover = ctx.restricted ? "" : `<a class="ni-hdr-nav" href="/discover" aria-label="${label}"${current}>${icon("compass")}<span>${label}</span></a>`;
-  return `<header class="ni-hdr"><div class="ni-hdr-in">${brand(ctx, 1.875, true)}<span class="ni-sp"></span>${discover}${languageMenu(ctx)}${headerAccount(ctx)}</div></header>`;
+  const searchLabel = escapeHtml(ctx.intl.t("search.title"));
+  const search = ctx.restricted ? "" : `<a class="ni-hdr-nav ni-hdr-search" href="/search" aria-label="${searchLabel}"${ctx.path === "/search" ? ' aria-current="page"' : ""}>${icon("search")}</a>`;
+  return `<header class="ni-hdr"><div class="ni-hdr-in">${brand(ctx, 1.875, true)}<span class="ni-sp"></span>${discover}${search}${languageMenu(ctx)}${headerAccount(ctx)}</div></header>`;
 }

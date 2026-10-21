@@ -106,6 +106,16 @@
       "posts": "帖子"
     }
   },
+  "search": {
+    "empty": "没有找到与“{query}”相关的结果。",
+    "hint": "搜索帖子和用户。",
+    "placeholder": "搜索 {brand}",
+    "tab": {
+      "people": "用户",
+      "posts": "帖子"
+    },
+    "title": "搜索"
+  },
   "share": {
     "action": {
       "cancel": "取消",

@@ -106,6 +106,16 @@
       "posts": "Příspěvky"
     }
   },
+  "search": {
+    "empty": "Pro „{query}“ nebyly nalezeny žádné výsledky.",
+    "hint": "Hledejte příspěvky a lidi.",
+    "placeholder": "Hledat na {brand}",
+    "tab": {
+      "people": "Lidé",
+      "posts": "Příspěvky"
+    },
+    "title": "Hledat"
+  },
   "share": {
     "action": {
       "cancel": "Zrušit",

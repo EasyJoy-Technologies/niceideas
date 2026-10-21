@@ -106,6 +106,16 @@
       "posts": "Mga post"
     }
   },
+  "search": {
+    "empty": "Walang resulta para sa “{query}”.",
+    "hint": "Maghanap ng mga post at tao.",
+    "placeholder": "Maghanap sa {brand}",
+    "tab": {
+      "people": "Mga tao",
+      "posts": "Mga post"
+    },
+    "title": "Maghanap"
+  },
   "share": {
     "action": {
       "cancel": "Kanselahin",

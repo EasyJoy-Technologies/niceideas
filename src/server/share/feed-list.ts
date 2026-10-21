@@ -19,7 +19,7 @@ export function tabFilter(tab: FeedTab): FeedFilter {
   return {};
 }
 
-const tabHref = (base: string, tab: FeedTab) => (tab === "all" ? base : `${base}?tab=${tab}`);
+const tabHref = (base: string, tab: FeedTab) => (tab === "all" ? base : `${base}${base.includes("?") ? "&" : "?"}tab=${tab}`);
 
 /** Tab strip: underlined tabs (profile card) or a segmented control (feed heading). */
 export function feedTabs(ctx: ChromeContext, base: string, current: FeedTab, style: "tabs" | "seg"): string {
@@ -36,6 +36,7 @@ export function feedList(ctx: ChromeContext, page: FeedPage, base: string, tab: 
   if (page.items.length === 0) return `<p class="ni-card ni-feed-empty">${escapeHtml(t("feed.empty"))}</p>`;
   const cards = page.items.map((item) => feedCard(ctx, item)).join("");
   if (!page.next) return cards;
-  const href = `${tabHref(base, tab)}${tab === "all" ? "?" : "&"}before=${encodeURIComponent(page.next)}`;
+  const first = tabHref(base, tab);
+  const href = `${first}${first.includes("?") ? "&" : "?"}before=${encodeURIComponent(page.next)}`;
   return `${cards}<a class="ni-btn ni-btn-ghost ni-feed-more" href="${escapeHtml(href)}">${escapeHtml(t("feed.more"))}</a>`;
 }

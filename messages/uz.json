@@ -106,6 +106,16 @@
       "posts": "Postlar"
     }
   },
+  "search": {
+    "empty": "“{query}” bo‘yicha hech narsa topilmadi.",
+    "hint": "Postlar va odamlarni qidiring.",
+    "placeholder": "{brand} da qidirish",
+    "tab": {
+      "people": "Odamlar",
+      "posts": "Postlar"
+    },
+    "title": "Qidirish"
+  },
   "share": {
     "action": {
       "cancel": "Bekor qilish",

@@ -106,6 +106,16 @@
       "posts": "פוסטים"
     }
   },
+  "search": {
+    "empty": "לא נמצאו תוצאות עבור „{query}”.",
+    "hint": "חפשו פוסטים ואנשים.",
+    "placeholder": "חיפוש ב־{brand}",
+    "tab": {
+      "people": "אנשים",
+      "posts": "פוסטים"
+    },
+    "title": "חיפוש"
+  },
   "share": {
     "action": {
       "cancel": "ביטול",

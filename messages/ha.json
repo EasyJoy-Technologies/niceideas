@@ -106,6 +106,16 @@
       "posts": "Rubuce-rubuce"
     }
   },
+  "search": {
+    "empty": "Babu sakamako don “{query}”.",
+    "hint": "Bincika rubuce-rubuce da mutane.",
+    "placeholder": "Bincika a {brand}",
+    "tab": {
+      "people": "Mutane",
+      "posts": "Rubuce-rubuce"
+    },
+    "title": "Bincika"
+  },
   "share": {
     "action": {
       "cancel": "Soke",

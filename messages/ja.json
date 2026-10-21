@@ -106,6 +106,16 @@
       "posts": "投稿"
     }
   },
+  "search": {
+    "empty": "「{query}」に一致する結果はありません。",
+    "hint": "投稿やユーザーを検索できます。",
+    "placeholder": "{brand} を検索",
+    "tab": {
+      "people": "ユーザー",
+      "posts": "投稿"
+    },
+    "title": "検索"
+  },
   "share": {
     "action": {
       "cancel": "キャンセル",

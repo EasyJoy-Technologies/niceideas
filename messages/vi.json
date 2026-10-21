@@ -106,6 +106,16 @@
       "posts": "Bài đăng"
     }
   },
+  "search": {
+    "empty": "Không có kết quả cho “{query}”.",
+    "hint": "Tìm bài đăng và mọi người.",
+    "placeholder": "Tìm kiếm trên {brand}",
+    "tab": {
+      "people": "Mọi người",
+      "posts": "Bài đăng"
+    },
+    "title": "Tìm kiếm"
+  },
   "share": {
     "action": {
       "cancel": "Hủy",

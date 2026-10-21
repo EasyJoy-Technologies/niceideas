@@ -106,6 +106,16 @@
       "posts": "ልጥፎች"
     }
   },
+  "search": {
+    "empty": "ለ“{query}” ምንም ውጤት አልተገኘም።",
+    "hint": "ልጥፎችን እና ሰዎችን ይፈልጉ።",
+    "placeholder": "በ{brand} ውስጥ ፈልግ",
+    "tab": {
+      "people": "ሰዎች",
+      "posts": "ልጥፎች"
+    },
+    "title": "ፈልግ"
+  },
   "share": {
     "action": {
       "cancel": "ሰርዝ",

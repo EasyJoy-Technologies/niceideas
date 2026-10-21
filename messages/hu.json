@@ -106,6 +106,16 @@
       "posts": "Bejegyzések"
     }
   },
+  "search": {
+    "empty": "Nincs találat erre: „{query}”.",
+    "hint": "Keress bejegyzéseket és személyeket.",
+    "placeholder": "Keresés: {brand}",
+    "tab": {
+      "people": "Személyek",
+      "posts": "Bejegyzések"
+    },
+    "title": "Keresés"
+  },
   "share": {
     "action": {
       "cancel": "Mégse",

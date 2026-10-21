@@ -106,6 +106,16 @@
       "posts": "Publicaciones"
     }
   },
+  "search": {
+    "empty": "No hay resultados para «{query}».",
+    "hint": "Busca publicaciones y personas.",
+    "placeholder": "Buscar en {brand}",
+    "tab": {
+      "people": "Personas",
+      "posts": "Publicaciones"
+    },
+    "title": "Buscar"
+  },
   "share": {
     "action": {
       "cancel": "Cancelar",

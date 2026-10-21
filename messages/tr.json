@@ -106,6 +106,16 @@
       "posts": "Gönderiler"
     }
   },
+  "search": {
+    "empty": "“{query}” için sonuç bulunamadı.",
+    "hint": "Gönderi ve kişi ara.",
+    "placeholder": "{brand}’da ara",
+    "tab": {
+      "people": "Kişiler",
+      "posts": "Gönderiler"
+    },
+    "title": "Ara"
+  },
   "share": {
     "action": {
       "cancel": "İptal",

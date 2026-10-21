@@ -106,6 +106,16 @@
       "posts": "Berichten"
     }
   },
+  "search": {
+    "empty": "Geen resultaten voor ‘{query}’.",
+    "hint": "Zoek naar berichten en mensen.",
+    "placeholder": "Zoeken op {brand}",
+    "tab": {
+      "people": "Mensen",
+      "posts": "Berichten"
+    },
+    "title": "Zoeken"
+  },
   "share": {
     "action": {
       "cancel": "Annuleren",

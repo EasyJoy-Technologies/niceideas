@@ -3,11 +3,13 @@ import { silentSignInTarget } from "@/server/auth/web/sign-in-flow";
 import { getDb } from "@/server/db";
 import { profileStats } from "@/server/db/repos/feed";
 import { findProfileByHandle } from "@/server/db/repos/profiles";
+import { searchProfiles } from "@/server/db/repos/search";
 import { peekVisitorKey } from "@/server/interactions/visitor";
 import { renderDiscoverPage } from "./discover-page";
 import { feedTab, tabFilter } from "./feed-list";
 import { loadFeed, parseCursor } from "./load-feed";
 import { renderProfilePage } from "./profile-page";
+import { renderSearchPage, type SearchType, type SearchView } from "./search-page";
 import { htmlResponse, pageContext } from "./respond";
 import { renderStatusPage } from "./status-page";
 
@@ -51,5 +53,23 @@ export async function profileResponse(request: Request, rawHandle: string): Prom
       loadFeed(db, { ...tabFilter(tab), authorId: profile.user_id }, parseCursor(url.searchParams.get("before")), peekVisitorKey(request.headers)),
     ]);
     return htmlResponse(renderProfilePage({ ...ctx, path: `/@${handle}` }, { profile, stats, tab, page }), 200);
+  });
+}
+
+const SEARCH_MAX = 100;
+const PEOPLE_LIMIT = 30;
+
+/** Site search `/search?q=&type=posts|people` (site page: 451 in mainland China via src/proxy.ts). */
+export async function searchResponse(request: Request): Promise<Response> {
+  return guarded(request, async () => {
+    const ctx = await pageContext(request, "site");
+    const url = new URL(request.url);
+    const query = (url.searchParams.get("q") ?? "").replace(/\s+/g, " ").trim().slice(0, SEARCH_MAX);
+    const type: SearchType = url.searchParams.get("type") === "people" ? "people" : "posts";
+    const db = getDb();
+    const view: SearchView = { query, type, posts: null, people: null };
+    if (query && type === "people") view.people = await searchProfiles(db, query, PEOPLE_LIMIT);
+    if (query && type === "posts") view.posts = await loadFeed(db, { query }, parseCursor(url.searchParams.get("before")), peekVisitorKey(request.headers));
+    return htmlResponse(renderSearchPage(ctx, view), 200);
   });
 }

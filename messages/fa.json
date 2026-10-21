@@ -106,6 +106,16 @@
       "posts": "پست‌ها"
     }
   },
+  "search": {
+    "empty": "نتیجه‌ای برای «{query}» پیدا نشد.",
+    "hint": "پست‌ها و افراد را جستجو کنید.",
+    "placeholder": "جستجو در {brand}",
+    "tab": {
+      "people": "افراد",
+      "posts": "پست‌ها"
+    },
+    "title": "جستجو"
+  },
   "share": {
     "action": {
       "cancel": "لغو",

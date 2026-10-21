@@ -63,6 +63,8 @@ export interface PostTable {
   like_count: Generated<number>;
   comment_count: Generated<number>;
   comments_mode: Generated<CommentsMode>;
+  /** Title + plain body text (site search). */
+  search_text: Generated<string>;
 }
 
 export interface PostRevisionTable {

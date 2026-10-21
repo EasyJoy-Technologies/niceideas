@@ -106,6 +106,16 @@
       "posts": "पोस्ट"
     }
   },
+  "search": {
+    "empty": "“{query}” के लिए कोई नतीजा नहीं मिला।",
+    "hint": "पोस्ट और लोग खोजें।",
+    "placeholder": "{brand} पर खोजें",
+    "tab": {
+      "people": "लोग",
+      "posts": "पोस्ट"
+    },
+    "title": "खोजें"
+  },
   "share": {
     "action": {
       "cancel": "रद्द करें",

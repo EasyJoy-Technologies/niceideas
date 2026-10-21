@@ -106,6 +106,16 @@
       "posts": "貼文"
     }
   },
+  "search": {
+    "empty": "找不到與「{query}」相關的結果。",
+    "hint": "搜尋貼文和使用者。",
+    "placeholder": "搜尋 {brand}",
+    "tab": {
+      "people": "使用者",
+      "posts": "貼文"
+    },
+    "title": "搜尋"
+  },
   "share": {
     "action": {
       "cancel": "取消",

@@ -106,6 +106,16 @@
       "posts": "Postingan"
     }
   },
+  "search": {
+    "empty": "Tidak ada hasil untuk “{query}”.",
+    "hint": "Cari postingan dan orang.",
+    "placeholder": "Cari di {brand}",
+    "tab": {
+      "people": "Orang",
+      "posts": "Postingan"
+    },
+    "title": "Cari"
+  },
   "share": {
     "action": {
       "cancel": "Batal",

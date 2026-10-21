@@ -106,6 +106,16 @@
       "posts": "Post"
     }
   },
+  "search": {
+    "empty": "Nessun risultato per “{query}”.",
+    "hint": "Cerca post e persone.",
+    "placeholder": "Cerca su {brand}",
+    "tab": {
+      "people": "Persone",
+      "posts": "Post"
+    },
+    "title": "Cerca"
+  },
   "share": {
     "action": {
       "cancel": "Annulla",

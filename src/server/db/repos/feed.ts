@@ -5,7 +5,11 @@ import type { Post, PostKind, PostRevision } from "../schema";
 /** Keyset position in a newest-first feed. */
 export type FeedCursor = { at: Date; id: string };
 
-export type FeedFilter = { authorId?: string; kind?: PostKind; withCover?: boolean };
+/** `query`: case-insensitive substring of the post text (site search). */
+export type FeedFilter = { authorId?: string; kind?: PostKind; withCover?: boolean; query?: string };
+
+/** LIKE pattern matching `text` literally anywhere. */
+export const containsPattern = (text: string) => `%${text.replace(/[\\%_]/g, (c) => `\\${c}`)}%`;
 
 export type FeedRow = Post & { author_handle: string; author_name: string; author_avatar: string | null };
 
@@ -21,6 +25,7 @@ export async function listFeed(db: Db, filter: FeedFilter, cursor: FeedCursor | 
   if (filter.authorId) q = q.where("post.author_id", "=", filter.authorId);
   if (filter.kind) q = q.where("post.kind", "=", filter.kind);
   if (filter.withCover) q = q.where("post.cover_media_id", "is not", null);
+  if (filter.query) q = q.where("post.search_text", "ilike", containsPattern(filter.query));
   if (cursor) q = q.where(sql<boolean>`(post.published_at, post.id) < (${cursor.at}, ${cursor.id}::uuid)`);
   return q.orderBy("post.published_at", "desc").orderBy("post.id", "desc").limit(limit).execute();
 }

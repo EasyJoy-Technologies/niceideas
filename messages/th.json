@@ -106,6 +106,16 @@
       "posts": "โพสต์"
     }
   },
+  "search": {
+    "empty": "ไม่พบผลลัพธ์สำหรับ “{query}”",
+    "hint": "ค้นหาโพสต์และผู้คน",
+    "placeholder": "ค้นหาใน {brand}",
+    "tab": {
+      "people": "ผู้คน",
+      "posts": "โพสต์"
+    },
+    "title": "ค้นหา"
+  },
   "share": {
     "action": {
       "cancel": "ยกเลิก",

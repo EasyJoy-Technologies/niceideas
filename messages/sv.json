@@ -106,6 +106,16 @@
       "posts": "Inlägg"
     }
   },
+  "search": {
+    "empty": "Inga resultat för ”{query}”.",
+    "hint": "Sök efter inlägg och personer.",
+    "placeholder": "Sök på {brand}",
+    "tab": {
+      "people": "Personer",
+      "posts": "Inlägg"
+    },
+    "title": "Sök"
+  },
   "share": {
     "action": {
       "cancel": "Avbryt",

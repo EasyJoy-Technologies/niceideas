@@ -106,6 +106,16 @@
       "posts": "Machapisho"
     }
   },
+  "search": {
+    "empty": "Hakuna matokeo ya “{query}”.",
+    "hint": "Tafuta machapisho na watu.",
+    "placeholder": "Tafuta kwenye {brand}",
+    "tab": {
+      "people": "Watu",
+      "posts": "Machapisho"
+    },
+    "title": "Tafuta"
+  },
   "share": {
     "action": {
       "cancel": "Ghairi",

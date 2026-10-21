@@ -106,6 +106,16 @@
       "posts": "Postări"
     }
   },
+  "search": {
+    "empty": "Niciun rezultat pentru „{query}”.",
+    "hint": "Caută postări și persoane.",
+    "placeholder": "Caută pe {brand}",
+    "tab": {
+      "people": "Persoane",
+      "posts": "Postări"
+    },
+    "title": "Caută"
+  },
   "share": {
     "action": {
       "cancel": "Anulează",

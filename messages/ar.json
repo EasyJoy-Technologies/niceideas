@@ -106,6 +106,16 @@
       "posts": "المنشورات"
     }
   },
+  "search": {
+    "empty": "لا توجد نتائج لـ «{query}».",
+    "hint": "ابحث في المنشورات والأشخاص.",
+    "placeholder": "ابحث في {brand}",
+    "tab": {
+      "people": "الأشخاص",
+      "posts": "المنشورات"
+    },
+    "title": "بحث"
+  },
   "share": {
     "action": {
       "cancel": "إلغاء",

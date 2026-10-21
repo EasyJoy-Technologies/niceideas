@@ -106,6 +106,16 @@
       "posts": "게시물"
     }
   },
+  "search": {
+    "empty": "‘{query}’에 대한 결과가 없어요.",
+    "hint": "게시물과 사용자를 검색해 보세요.",
+    "placeholder": "{brand} 검색",
+    "tab": {
+      "people": "사용자",
+      "posts": "게시물"
+    },
+    "title": "검색"
+  },
   "share": {
     "action": {
       "cancel": "취소",
