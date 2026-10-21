@@ -1,0 +1,21 @@
+[Unit]
+Description=NiceIdeas (production) — niceideas.app
+After=network.target postgresql.service
+Wants=postgresql.service
+
+[Service]
+Type=simple
+WorkingDirectory=/var/www/niceideas/current
+EnvironmentFile=/etc/niceideas/env.production
+# Workers on one port (deploy/cluster.mjs); per-worker DB pool = DB_POOL_MAX. WEB_CONCURRENCY comes from the env file.
+ExecStart=/usr/bin/node cluster.mjs
+Restart=always
+RestartSec=3
+# prod2 is shared (Discourse, NiceSpace, mail): keep NiceIdeas bounded.
+MemoryHigh=700M
+MemoryMax=900M
+NoNewPrivileges=true
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

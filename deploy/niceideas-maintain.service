@@ -1,0 +1,11 @@
+[Unit]
+Description=NiceIdeas (production) daily maintenance — purge expired posts / unused media
+After=network.target postgresql.service
+
+[Service]
+Type=oneshot
+WorkingDirectory=/var/www/niceideas/current
+EnvironmentFile=/etc/niceideas/env.production
+ExecStart=/usr/bin/node dist/maintain.mjs
+NoNewPrivileges=true
+PrivateTmp=true

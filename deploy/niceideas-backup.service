@@ -1,0 +1,8 @@
+[Unit]
+Description=NiceIdeas (production) daily database backup (pg_dump, 14 kept locally)
+After=postgresql.service
+
+[Service]
+Type=oneshot
+EnvironmentFile=/etc/niceideas/env.production
+ExecStart=/bin/bash -c 'set -euo pipefail; d=/var/backups/niceideas; install -d -m 700 $d; f=$d/niceideas-$(date -u +%%Y%%m%%dT%%H%%M%%SZ).sql.gz; pg_dump --no-owner "$DATABASE_URL" | gzip -6 > $f.tmp && mv $f.tmp $f && chmod 600 $f; ls -1t $d/niceideas-*.sql.gz | tail -n +15 | xargs -r rm -f'
