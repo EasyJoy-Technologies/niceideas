@@ -1,4 +1,8 @@
 {
+  "aside": {
+    "hot": "Shahararrun maƙalu",
+    "suggested": "Marubutan da za a bi"
+  },
   "auth": {
     "accountMenu": "Menu na asusu",
     "error": {
@@ -46,6 +50,13 @@
       "articles": "Makaloli",
       "images": "Hotuna"
     }
+  },
+  "follow": {
+    "follow": "Bi",
+    "following": "Kana bi"
+  },
+  "home": {
+    "empty": "Bi wasu marubuta kuma sabbin rubuce-rubucensu za su bayyana a nan."
   },
   "info": {
     "about": {
@@ -96,6 +107,9 @@
       "description": "Gajerun tunani da dogayen rubuce-rubuce masu hotuna da sauti, ana raba su ta hanyar haɗi ɗaya.",
       "title": "{brand} — raba raʼayoyinka"
     }
+  },
+  "nav": {
+    "home": "Gida"
   },
   "profile": {
     "joined": "Ya shiga {date}",

@@ -1,4 +1,8 @@
 {
+  "aside": {
+    "hot": "人気の記事",
+    "suggested": "おすすめの作者"
+  },
   "auth": {
     "accountMenu": "アカウントメニュー",
     "error": {
@@ -46,6 +50,13 @@
       "articles": "長文",
       "images": "画像"
     }
+  },
+  "follow": {
+    "follow": "フォロー",
+    "following": "フォロー中"
+  },
+  "home": {
+    "empty": "作者をフォローすると、新しい投稿がここに表示されます。"
   },
   "info": {
     "about": {
@@ -96,6 +107,9 @@
       "description": "短いつぶやきも長文も、画像や音声と一緒にリンクひとつでシェアできます。",
       "title": "{brand} — アイデアをシェアしよう"
     }
+  },
+  "nav": {
+    "home": "ホーム"
   },
   "profile": {
     "joined": "{date}から利用",

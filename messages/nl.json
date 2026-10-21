@@ -1,4 +1,8 @@
 {
+  "aside": {
+    "hot": "Populaire artikelen",
+    "suggested": "Auteurs om te volgen"
+  },
   "auth": {
     "accountMenu": "Accountmenu",
     "error": {
@@ -46,6 +50,13 @@
       "articles": "Artikelen",
       "images": "Afbeeldingen"
     }
+  },
+  "follow": {
+    "follow": "Volgen",
+    "following": "Volgend"
+  },
+  "home": {
+    "empty": "Volg een paar auteurs, dan verschijnen hun nieuwe berichten hier."
   },
   "info": {
     "about": {
@@ -96,6 +107,9 @@
       "description": "Korte gedachten en lange verhalen met afbeeldingen en audio, gedeeld via één link.",
       "title": "{brand} – deel je ideeën"
     }
+  },
+  "nav": {
+    "home": "Start"
   },
   "profile": {
     "joined": "Lid sinds {date}",

@@ -1,4 +1,8 @@
 {
+  "aside": {
+    "hot": "热门长文",
+    "suggested": "推荐作者"
+  },
   "auth": {
     "accountMenu": "账号菜单",
     "error": {
@@ -46,6 +50,13 @@
       "articles": "长文",
       "images": "图片"
     }
+  },
+  "follow": {
+    "follow": "关注",
+    "following": "已关注"
+  },
+  "home": {
+    "empty": "关注一些作者，他们的新帖会出现在这里。"
   },
   "info": {
     "about": {
@@ -96,6 +107,9 @@
       "description": "短想法与长图文，配图配音频，一个链接即可分享。",
       "title": "{brand}——分享你的想法"
     }
+  },
+  "nav": {
+    "home": "首页"
   },
   "profile": {
     "joined": "{date}加入",

@@ -1,7 +1,8 @@
 import { languageMenu, brand, type ChromeContext } from "./chrome";
 import { accountMenu, signInCard } from "./account-menu";
 import { escapeHtml } from "@/server/render/escape";
-import { icon } from "./icons";
+import { icon, type IconName } from "./icons";
+import { profilePath } from "./profile-bits";
 import { copyright, infoLinks } from "./site-footer";
 
 /**
@@ -10,9 +11,14 @@ import { copyright, infoLinks } from "./site-footer";
  * Mainland-China visitors never reach these pages (451), so no restricted variant.
  */
 export function siteRail(ctx: ChromeContext): string {
-  const label = escapeHtml(ctx.intl.t("discover.title"));
-  const current = ctx.path === "/discover" || ctx.path === "/" ? ' aria-current="page"' : "";
-  const nav = ctx.restricted ? "" : `<a class="ni-rail-nav" href="/discover"${current}>${icon("compass")}<span>${label}</span></a>`;
+  const item = (href: string, ico: IconName, key: string, on: boolean) =>
+    `<a class="ni-rail-nav" href="${href}"${on ? ' aria-current="page"' : ""}>${icon(ico)}<span>${escapeHtml(ctx.intl.t(key))}</span></a>`;
+  const signedIn = !!ctx.viewer;
+  const nav = ctx.restricted
+    ? ""
+    : (signedIn ? item("/", "home", "nav.home", ctx.path === "/") : "") +
+      item("/discover", "compass", "discover.title", ctx.path === "/discover" || (!signedIn && ctx.path === "/")) +
+      (signedIn ? item(profilePath(ctx.viewer!.handle), "person", "auth.myProfile", ctx.path === profilePath(ctx.viewer!.handle)) : "");
   const bottom = ctx.viewer ? accountMenu(ctx, "rail") : signInCard(ctx);
   return `<nav class="ni-rail">${brand(ctx, 1.75)}${nav}<div class="ni-col-foot">${bottom}</div></nav>`;
 }

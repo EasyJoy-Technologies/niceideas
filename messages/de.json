@@ -1,4 +1,8 @@
 {
+  "aside": {
+    "hot": "Beliebte Artikel",
+    "suggested": "Autoren zum Folgen"
+  },
   "auth": {
     "accountMenu": "Kontomenü",
     "error": {
@@ -46,6 +50,13 @@
       "articles": "Artikel",
       "images": "Bilder"
     }
+  },
+  "follow": {
+    "follow": "Folgen",
+    "following": "Folge ich"
+  },
+  "home": {
+    "empty": "Folge Autoren, dann erscheinen ihre neuen Beiträge hier."
   },
   "info": {
     "about": {
@@ -96,6 +107,9 @@
       "description": "Kurze Gedanken und lange Texte mit Bildern und Audio, geteilt über einen einzigen Link.",
       "title": "{brand} – teile deine Ideen"
     }
+  },
+  "nav": {
+    "home": "Startseite"
   },
   "profile": {
     "joined": "Dabei seit {date}",

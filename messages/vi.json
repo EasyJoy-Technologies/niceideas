@@ -1,4 +1,8 @@
 {
+  "aside": {
+    "hot": "Bài viết nổi bật",
+    "suggested": "Tác giả nên theo dõi"
+  },
   "auth": {
     "accountMenu": "Menu tài khoản",
     "error": {
@@ -46,6 +50,13 @@
       "articles": "Bài viết dài",
       "images": "Hình ảnh"
     }
+  },
+  "follow": {
+    "follow": "Theo dõi",
+    "following": "Đang theo dõi"
+  },
+  "home": {
+    "empty": "Hãy theo dõi vài tác giả, bài đăng mới của họ sẽ hiện ở đây."
   },
   "info": {
     "about": {
@@ -96,6 +107,9 @@
       "description": "Suy nghĩ ngắn và bài viết dài kèm hình ảnh, âm thanh, chia sẻ chỉ bằng một đường liên kết.",
       "title": "{brand} — chia sẻ ý tưởng của bạn"
     }
+  },
+  "nav": {
+    "home": "Trang chủ"
   },
   "profile": {
     "joined": "Tham gia {date}",

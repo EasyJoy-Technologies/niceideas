@@ -1,4 +1,8 @@
 {
+  "aside": {
+    "hot": "Makala maarufu",
+    "suggested": "Waandishi wa kufuata"
+  },
   "auth": {
     "accountMenu": "Menyu ya akaunti",
     "error": {
@@ -46,6 +50,13 @@
       "articles": "Makala",
       "images": "Picha"
     }
+  },
+  "follow": {
+    "follow": "Fuata",
+    "following": "Unafuata"
+  },
+  "home": {
+    "empty": "Fuata waandishi kadhaa na machapisho yao mapya yataonekana hapa."
   },
   "info": {
     "about": {
@@ -96,6 +107,9 @@
       "description": "Mawazo mafupi na makala marefu yenye picha na sauti, yanashirikiwa kwa kiungo kimoja.",
       "title": "{brand} — shiriki mawazo yako"
     }
+  },
+  "nav": {
+    "home": "Nyumbani"
   },
   "profile": {
     "joined": "Alijiunga {date}",

@@ -6,7 +6,7 @@ import type { Post, PostKind, PostRevision } from "../schema";
 export type FeedCursor = { at: Date; id: string };
 
 /** `query`: case-insensitive substring of the post text (site search). */
-export type FeedFilter = { authorId?: string; kind?: PostKind; withCover?: boolean; query?: string };
+export type FeedFilter = { authorId?: string; kind?: PostKind; withCover?: boolean; query?: string; /** Home timeline: own posts + followed authors. */ followerId?: string };
 
 /** LIKE pattern matching `text` literally anywhere. */
 export const containsPattern = (text: string) => `%${text.replace(/[\\%_]/g, (c) => `\\${c}`)}%`;
@@ -23,6 +23,10 @@ export async function listFeed(db: Db, filter: FeedFilter, cursor: FeedCursor | 
     .where("post.status", "=", "active")
     .where("profile.status", "=", "active");
   if (filter.authorId) q = q.where("post.author_id", "=", filter.authorId);
+  if (filter.followerId) {
+    const me = filter.followerId;
+    q = q.where((eb) => eb.or([eb("post.author_id", "=", me), eb("post.author_id", "in", eb.selectFrom("follow").select("followee_id").where("follower_id", "=", me))]));
+  }
   if (filter.kind) q = q.where("post.kind", "=", filter.kind);
   if (filter.withCover) q = q.where("post.cover_media_id", "is not", null);
   if (filter.query) q = q.where("post.search_text", "ilike", containsPattern(filter.query));

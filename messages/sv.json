@@ -1,4 +1,8 @@
 {
+  "aside": {
+    "hot": "Populära artiklar",
+    "suggested": "Skribenter att följa"
+  },
   "auth": {
     "accountMenu": "Kontomeny",
     "error": {
@@ -46,6 +50,13 @@
       "articles": "Artiklar",
       "images": "Bilder"
     }
+  },
+  "follow": {
+    "follow": "Följ",
+    "following": "Följer"
+  },
+  "home": {
+    "empty": "Följ några skribenter så dyker deras nya inlägg upp här."
   },
   "info": {
     "about": {
@@ -96,6 +107,9 @@
       "description": "Korta tankar och längre texter med bilder och ljud, delade via en enda länk.",
       "title": "{brand} – dela dina idéer"
     }
+  },
+  "nav": {
+    "home": "Hem"
   },
   "profile": {
     "joined": "Gick med {date}",

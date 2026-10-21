@@ -85,3 +85,6 @@
   .ni-prof-in { padding: 0 1rem 0.75rem; }
   .ni-feed-more { margin-bottom: 0.5rem; }
 }
+/* Avatar + follow button share the row under the banner. */
+.ni-prof-row { display: flex; align-items: flex-end; justify-content: space-between; gap: 0.75rem; }
+.ni-prof-row .ni-follow { margin-bottom: 0.25rem; }

@@ -1,4 +1,8 @@
 {
+  "aside": {
+    "hot": "熱門長文",
+    "suggested": "推薦作者"
+  },
   "auth": {
     "accountMenu": "帳號選單",
     "error": {
@@ -46,6 +50,13 @@
       "articles": "長文",
       "images": "圖片"
     }
+  },
+  "follow": {
+    "follow": "追蹤",
+    "following": "已追蹤"
+  },
+  "home": {
+    "empty": "追蹤一些作者，他們的新貼文會出現在這裡。"
   },
   "info": {
     "about": {
@@ -96,6 +107,9 @@
       "description": "短想法與長圖文，搭配圖片與音訊，一個連結即可分享。",
       "title": "{brand}——分享你的想法"
     }
+  },
+  "nav": {
+    "home": "首頁"
   },
   "profile": {
     "joined": "{date}加入",

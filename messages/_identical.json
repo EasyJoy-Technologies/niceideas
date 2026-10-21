@@ -59,5 +59,9 @@
   "profile.stats.likes": [
     "de",
     "nl"
+  ],
+  "nav.home": [
+    "it",
+    "fil"
   ]
 }

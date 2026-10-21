@@ -1,4 +1,8 @@
 {
+  "aside": {
+    "hot": "Articoli popolari",
+    "suggested": "Autori da seguire"
+  },
   "auth": {
     "accountMenu": "Menu account",
     "error": {
@@ -46,6 +50,13 @@
       "articles": "Articoli",
       "images": "Immagini"
     }
+  },
+  "follow": {
+    "follow": "Segui",
+    "following": "Segui già"
+  },
+  "home": {
+    "empty": "Segui alcuni autori e i loro nuovi post appariranno qui."
   },
   "info": {
     "about": {
@@ -96,6 +107,9 @@
       "description": "Pensieri brevi e letture lunghe con immagini e audio, condivisi con un unico link.",
       "title": "{brand} – condividi le tue idee"
     }
+  },
+  "nav": {
+    "home": "Home"
   },
   "profile": {
     "joined": "Iscritto da {date}",

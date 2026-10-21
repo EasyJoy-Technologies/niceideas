@@ -1,4 +1,8 @@
 {
+  "aside": {
+    "hot": "Mga sikat na artikulo",
+    "suggested": "Mga author na puwedeng i-follow"
+  },
   "auth": {
     "accountMenu": "Menu ng account",
     "error": {
@@ -46,6 +50,13 @@
       "articles": "Mga artikulo",
       "images": "Mga larawan"
     }
+  },
+  "follow": {
+    "follow": "I-follow",
+    "following": "Fina-follow"
+  },
+  "home": {
+    "empty": "Mag-follow ng ilang author at lalabas dito ang mga bago nilang post."
   },
   "info": {
     "about": {
@@ -96,6 +107,9 @@
       "description": "Maiikling kaisipan at mahahabang sulatin na may larawan at audio, ibinabahagi sa iisang link.",
       "title": "{brand} — ibahagi ang iyong mga ideya"
     }
+  },
+  "nav": {
+    "home": "Home"
   },
   "profile": {
     "joined": "Sumali noong {date}",

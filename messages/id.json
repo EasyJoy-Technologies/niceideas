@@ -1,4 +1,8 @@
 {
+  "aside": {
+    "hot": "Artikel populer",
+    "suggested": "Penulis untuk diikuti"
+  },
   "auth": {
     "accountMenu": "Menu akun",
     "error": {
@@ -46,6 +50,13 @@
       "articles": "Artikel",
       "images": "Gambar"
     }
+  },
+  "follow": {
+    "follow": "Ikuti",
+    "following": "Mengikuti"
+  },
+  "home": {
+    "empty": "Ikuti beberapa penulis dan postingan baru mereka akan muncul di sini."
   },
   "info": {
     "about": {
@@ -96,6 +107,9 @@
       "description": "Pemikiran singkat dan tulisan panjang dengan gambar dan audio, dibagikan lewat satu tautan.",
       "title": "{brand} — bagikan idemu"
     }
+  },
+  "nav": {
+    "home": "Beranda"
   },
   "profile": {
     "joined": "Bergabung {date}",

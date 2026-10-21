@@ -1,4 +1,8 @@
 {
+  "aside": {
+    "hot": "인기 글",
+    "suggested": "추천 작성자"
+  },
   "auth": {
     "accountMenu": "계정 메뉴",
     "error": {
@@ -46,6 +50,13 @@
       "articles": "긴 글",
       "images": "이미지"
     }
+  },
+  "follow": {
+    "follow": "팔로우",
+    "following": "팔로잉"
+  },
+  "home": {
+    "empty": "작성자를 팔로우하면 새 게시물이 여기에 표시돼요."
   },
   "info": {
     "about": {
@@ -96,6 +107,9 @@
       "description": "짧은 생각과 긴 글을 이미지, 오디오와 함께 링크 하나로 공유하세요.",
       "title": "{brand} — 아이디어를 공유하세요"
     }
+  },
+  "nav": {
+    "home": "홈"
   },
   "profile": {
     "joined": "{date}에 가입",

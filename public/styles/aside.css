@@ -21,3 +21,8 @@
   .ni-back { display: inline-flex; align-items: center; gap: 0.5rem; margin: 0 0 0.75rem; padding: 0.25rem; font-weight: 700; font-size: 1.0625rem; }
   .ni-back:hover { color: var(--ni-color-primary); }
 }
+.ni-sug { display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem 0; }
+.ni-sug > a { flex: 1; min-width: 0; display: flex; align-items: center; gap: 0.625rem; }
+.ni-sug .ni-who { min-width: 0; display: flex; flex-direction: column; line-height: 1.3; font-size: 0.875rem; }
+.ni-sug .ni-name, .ni-sug .ni-meta { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.ni-mini-text { padding: 0.5rem 0; }

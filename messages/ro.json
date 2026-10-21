@@ -1,4 +1,8 @@
 {
+  "aside": {
+    "hot": "Articole populare",
+    "suggested": "Autori de urmărit"
+  },
   "auth": {
     "accountMenu": "Meniul contului",
     "error": {
@@ -46,6 +50,13 @@
       "articles": "Articole",
       "images": "Imagini"
     }
+  },
+  "follow": {
+    "follow": "Urmărește",
+    "following": "Urmărești"
+  },
+  "home": {
+    "empty": "Urmărește câțiva autori și postările lor noi vor apărea aici."
   },
   "info": {
     "about": {
@@ -96,6 +107,9 @@
       "description": "Gânduri scurte și texte lungi cu imagini și audio, distribuite printr-un singur link.",
       "title": "{brand} – împărtășește-ți ideile"
     }
+  },
+  "nav": {
+    "home": "Acasă"
   },
   "profile": {
     "joined": "Membru din {date}",

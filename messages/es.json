@@ -1,4 +1,8 @@
 {
+  "aside": {
+    "hot": "Artículos populares",
+    "suggested": "Autores para seguir"
+  },
   "auth": {
     "accountMenu": "Menú de la cuenta",
     "error": {
@@ -46,6 +50,13 @@
       "articles": "Artículos",
       "images": "Imágenes"
     }
+  },
+  "follow": {
+    "follow": "Seguir",
+    "following": "Siguiendo"
+  },
+  "home": {
+    "empty": "Sigue a algunos autores y sus nuevas publicaciones aparecerán aquí."
   },
   "info": {
     "about": {
@@ -96,6 +107,9 @@
       "description": "Pensamientos breves y lecturas largas con imágenes y audio, compartidos en un solo enlace.",
       "title": "{brand}: comparte tus ideas"
     }
+  },
+  "nav": {
+    "home": "Inicio"
   },
   "profile": {
     "joined": "Se unió en {date}",

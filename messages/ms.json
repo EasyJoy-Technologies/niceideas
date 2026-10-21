@@ -1,4 +1,8 @@
 {
+  "aside": {
+    "hot": "Artikel popular",
+    "suggested": "Penulis untuk diikuti"
+  },
   "auth": {
     "accountMenu": "Menu akaun",
     "error": {
@@ -46,6 +50,13 @@
       "articles": "Artikel",
       "images": "Imej"
     }
+  },
+  "follow": {
+    "follow": "Ikut",
+    "following": "Mengikuti"
+  },
+  "home": {
+    "empty": "Ikuti beberapa penulis dan siaran baharu mereka akan muncul di sini."
   },
   "info": {
     "about": {
@@ -96,6 +107,9 @@
       "description": "Fikiran ringkas dan tulisan panjang dengan imej dan audio, dikongsi melalui satu pautan.",
       "title": "{brand} — kongsi idea anda"
     }
+  },
+  "nav": {
+    "home": "Laman utama"
   },
   "profile": {
     "joined": "Menyertai {date}",

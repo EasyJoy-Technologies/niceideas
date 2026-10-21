@@ -1,4 +1,8 @@
 {
+  "aside": {
+    "hot": "Popularne artykuły",
+    "suggested": "Autorzy do obserwowania"
+  },
   "auth": {
     "accountMenu": "Menu konta",
     "error": {
@@ -46,6 +50,13 @@
       "articles": "Artykuły",
       "images": "Zdjęcia"
     }
+  },
+  "follow": {
+    "follow": "Obserwuj",
+    "following": "Obserwujesz"
+  },
+  "home": {
+    "empty": "Obserwuj autorów, a ich nowe wpisy pojawią się tutaj."
   },
   "info": {
     "about": {
@@ -96,6 +107,9 @@
       "description": "Krótkie myśli i dłuższe teksty ze zdjęciami i dźwiękiem, udostępniane jednym linkiem.",
       "title": "{brand} – dziel się pomysłami"
     }
+  },
+  "nav": {
+    "home": "Główna"
   },
   "profile": {
     "joined": "Dołączył(a): {date}",

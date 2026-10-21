@@ -1,4 +1,8 @@
 {
+  "aside": {
+    "hot": "Popüler makaleler",
+    "suggested": "Takip edilecek yazarlar"
+  },
   "auth": {
     "accountMenu": "Hesap menüsü",
     "error": {
@@ -46,6 +50,13 @@
       "articles": "Makaleler",
       "images": "Görseller"
     }
+  },
+  "follow": {
+    "follow": "Takip et",
+    "following": "Takip ediliyor"
+  },
+  "home": {
+    "empty": "Birkaç yazarı takip et, yeni gönderileri burada görünsün."
   },
   "info": {
     "about": {
@@ -96,6 +107,9 @@
       "description": "Görsel ve sesli kısa düşünceler ve uzun yazılar, tek bir bağlantıyla paylaşılır.",
       "title": "{brand} — fikirlerini paylaş"
     }
+  },
+  "nav": {
+    "home": "Ana sayfa"
   },
   "profile": {
     "joined": "{date} tarihinde katıldı",

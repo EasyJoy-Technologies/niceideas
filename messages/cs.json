@@ -1,4 +1,8 @@
 {
+  "aside": {
+    "hot": "Oblíbené články",
+    "suggested": "Autoři ke sledování"
+  },
   "auth": {
     "accountMenu": "Nabídka účtu",
     "error": {
@@ -46,6 +50,13 @@
       "articles": "Články",
       "images": "Obrázky"
     }
+  },
+  "follow": {
+    "follow": "Sledovat",
+    "following": "Sledujete"
+  },
+  "home": {
+    "empty": "Začněte sledovat autory a jejich nové příspěvky se objeví tady."
   },
   "info": {
     "about": {
@@ -96,6 +107,9 @@
       "description": "Krátké myšlenky i dlouhé texty s obrázky a zvukem, sdílené jedním odkazem.",
       "title": "{brand} – sdílejte své nápady"
     }
+  },
+  "nav": {
+    "home": "Domů"
   },
   "profile": {
     "joined": "Připojil(a) se {date}",

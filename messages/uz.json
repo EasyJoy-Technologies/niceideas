@@ -1,4 +1,8 @@
 {
+  "aside": {
+    "hot": "Mashhur maqolalar",
+    "suggested": "Kuzatishga arziydigan mualliflar"
+  },
   "auth": {
     "accountMenu": "Hisob menyusi",
     "error": {
@@ -46,6 +50,13 @@
       "articles": "Maqolalar",
       "images": "Rasmlar"
     }
+  },
+  "follow": {
+    "follow": "Kuzatish",
+    "following": "Kuzatilmoqda"
+  },
+  "home": {
+    "empty": "Bir nechta muallifni kuzating, ularning yangi postlari shu yerda chiqadi."
   },
   "info": {
     "about": {
@@ -96,6 +107,9 @@
       "description": "Qisqa fikrlar va uzun matnlar rasm va audio bilan bitta havola orqali ulashiladi.",
       "title": "{brand} — gʻoyalaringizni ulashing"
     }
+  },
+  "nav": {
+    "home": "Bosh sahifa"
   },
   "profile": {
     "joined": "{date} dan beri aʼzo",

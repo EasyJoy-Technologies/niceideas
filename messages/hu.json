@@ -1,4 +1,8 @@
 {
+  "aside": {
+    "hot": "Népszerű cikkek",
+    "suggested": "Követhető szerzők"
+  },
   "auth": {
     "accountMenu": "Fiókmenü",
     "error": {
@@ -46,6 +50,13 @@
       "articles": "Cikkek",
       "images": "Képek"
     }
+  },
+  "follow": {
+    "follow": "Követés",
+    "following": "Követed"
+  },
+  "home": {
+    "empty": "Kövess szerzőket, és az új bejegyzéseik itt jelennek meg."
   },
   "info": {
     "about": {
@@ -96,6 +107,9 @@
       "description": "Rövid gondolatok és hosszabb írások képekkel és hanggal, egyetlen linken megosztva.",
       "title": "{brand} – oszd meg az ötleteidet"
     }
+  },
+  "nav": {
+    "home": "Kezdőlap"
   },
   "profile": {
     "joined": "Csatlakozott: {date}",

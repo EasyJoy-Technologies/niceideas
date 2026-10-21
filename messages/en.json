@@ -1,4 +1,8 @@
 {
+  "aside": {
+    "hot": "Popular articles",
+    "suggested": "Authors to follow"
+  },
   "auth": {
     "accountMenu": "Account menu",
     "error": {
@@ -46,6 +50,13 @@
       "articles": "Articles",
       "images": "Images"
     }
+  },
+  "follow": {
+    "follow": "Follow",
+    "following": "Following"
+  },
+  "home": {
+    "empty": "Follow some authors and their new posts will show up here."
   },
   "info": {
     "about": {
@@ -96,6 +107,9 @@
       "description": "Short thoughts and long reads with images and audio, shared as a single link.",
       "title": "{brand} — share your ideas"
     }
+  },
+  "nav": {
+    "home": "Home"
   },
   "profile": {
     "joined": "Joined {date}",
