@@ -6,7 +6,7 @@ const globalForDb = globalThis as unknown as { __niceideasDb?: Db };
 /** Process-wide database handle (one pool per process, survives dev HMR). */
 export function getDb(): Db {
   if (!globalForDb.__niceideasDb) {
-    globalForDb.__niceideasDb = createDb(getConfig().DATABASE_URL);
+    globalForDb.__niceideasDb = createDb(getConfig().DATABASE_URL, getConfig().DB_POOL_MAX);
   }
   return globalForDb.__niceideasDb;
 }

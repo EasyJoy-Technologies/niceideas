@@ -6,6 +6,7 @@ import * as m0004 from "./0004_web_sessions";
 import * as m0005 from "./0005_search";
 import * as m0006 from "./0006_notifications";
 import * as m0007 from "./0007_api_clients";
+import * as m0008 from "./0008_pow_used";
 
 /**
  * Static registry (bundler-friendly; no filesystem scanning at runtime).
@@ -19,6 +20,7 @@ const MIGRATIONS: Record<string, Migration> = {
   "0005_search": m0005,
   "0006_notifications": m0006,
   "0007_api_clients": m0007,
+  "0008_pow_used": m0008,
 };
 
 export const migrationProvider: MigrationProvider = {

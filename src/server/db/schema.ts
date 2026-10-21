@@ -215,6 +215,11 @@ export interface WebSessionTable {
   expires_at: Timestamp;
 }
 
+export interface PowUsedTable {
+  challenge: string;
+  expires_at: Timestamp;
+}
+
 export interface Database {
   profile: ProfileTable;
   post: PostTable;
@@ -232,6 +237,7 @@ export interface Database {
   visitor_ban: VisitorBanTable;
   account_event: AccountEventTable;
   web_session: WebSessionTable;
+  pow_used: PowUsedTable;
 }
 
 export type Profile = Selectable<ProfileTable>;

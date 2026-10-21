@@ -23,6 +23,7 @@ mkdir -p "$REL/.next"
 cp -a .next/static "$REL/.next/static"
 cp -a public "$REL/public"
 cp -a dist "$REL/dist"
+cp deploy/cluster.mjs "$REL/cluster.mjs"
 rm -rf .next/standalone dist
 # The standalone tracer copies a few repo files (dynamic fs paths); none are used at runtime.
 rm -rf "$REL/docs" "$REL/src" "$REL/tests"

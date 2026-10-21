@@ -13,6 +13,7 @@ import { feedTab, tabFilter } from "./feed-list";
 import { loadFeed, parseCursor } from "./load-feed";
 import { renderProfilePage } from "./profile-page";
 import { renderSearchPage, type SearchType, type SearchView } from "./search-page";
+import { cachedPage } from "./page-cache";
 import { htmlResponse, pageContext } from "./respond";
 import { renderStatusPage } from "./status-page";
 
@@ -43,19 +44,20 @@ export async function homeResponse(request: Request): Promise<Response> {
 async function feedResponse(request: Request, want: FeedPageKind): Promise<Response> {
   return guarded(request, async () => {
     const ctx = await pageContext(request, "site");
-    const db = getDb();
-    const kind: FeedPageKind = want === "home" && ctx.viewer ? "home" : "discover";
-    const base = kind === "home" ? "/" : "/discover";
-    const url = new URL(request.url);
-    const tab = feedTab(url);
-    const filter = kind === "home" ? { ...tabFilter(tab), followerId: ctx.viewer!.user_id } : tabFilter(tab);
-    const [page, asideData] = await Promise.all([
-      loadFeed(db, filter, parseCursor(url.searchParams.get("before")), peekVisitorKey(request.headers)),
-      loadDiscoverAside(db, ctx.viewer?.user_id ?? null),
-    ]);
-    const aside = await renderDiscoverAside(ctx, db, asideData);
-    const compose = kind === "home" ? composeBox(ctx, composeError(url)) : "";
-    return htmlResponse(renderDiscoverPage(ctx, tab, page, base, aside, kind, compose), 200);
+    return cachedPage(request, ctx, async () => {
+      const db = getDb();
+      const kind: FeedPageKind = want === "home" && ctx.viewer ? "home" : "discover";
+      const base = kind === "home" ? "/" : "/discover";
+      const url = new URL(request.url);
+      const tab = feedTab(url);
+      const filter = kind === "home" ? { ...tabFilter(tab), followerId: ctx.viewer!.user_id } : tabFilter(tab);
+      const [page, asideData] = await Promise.all([
+        loadFeed(db, filter, parseCursor(url.searchParams.get("before")), peekVisitorKey(request.headers)),
+        loadDiscoverAside(db, ctx.viewer?.user_id ?? null),
+      ]);
+      const compose = kind === "home" ? composeBox(ctx, composeError(url)) : "";
+      return { html: renderDiscoverPage(ctx, tab, page, base, renderDiscoverAside(ctx, asideData), kind, compose), status: 200 };
+    });
   });
 }
 
@@ -64,20 +66,21 @@ export async function profileResponse(request: Request, rawHandle: string): Prom
   return guarded(request, async () => {
     const handle = rawHandle.toLowerCase();
     const ctx = await pageContext(request, "site");
-    const db = getDb();
-    const profile = HANDLE.test(handle) ? await findProfileByHandle(db, handle) : undefined;
-    if (!profile || profile.status !== "active") return htmlResponse(renderStatusPage({ ...ctx, path: `/@${handle}` }, "profileNotFound"), 404);
-    const url = new URL(request.url);
-    const tab = feedTab(url);
-    const [stats, page, asideData, followed] = await Promise.all([
-      profileStats(db, profile.user_id),
-      loadFeed(db, { ...tabFilter(tab), authorId: profile.user_id }, parseCursor(url.searchParams.get("before")), peekVisitorKey(request.headers)),
-      loadDiscoverAside(db, ctx.viewer?.user_id ?? null),
-      ctx.viewer ? followingAmong(db, ctx.viewer.user_id, [profile.user_id]) : Promise.resolve(new Set<string>()),
-    ]);
     const pctx = { ...ctx, path: `/@${handle}` };
-    const aside = await renderDiscoverAside(pctx, db, asideData);
-    return htmlResponse(renderProfilePage(pctx, { profile, stats, tab, page, following: followed.has(profile.user_id) }, aside), 200);
+    return cachedPage(request, pctx, async () => {
+      const db = getDb();
+      const profile = HANDLE.test(handle) ? await findProfileByHandle(db, handle) : undefined;
+      if (!profile || profile.status !== "active") return { html: renderStatusPage(pctx, "profileNotFound"), status: 404 };
+      const url = new URL(request.url);
+      const tab = feedTab(url);
+      const [stats, page, asideData, followed] = await Promise.all([
+        profileStats(db, profile.user_id),
+        loadFeed(db, { ...tabFilter(tab), authorId: profile.user_id }, parseCursor(url.searchParams.get("before")), peekVisitorKey(request.headers)),
+        loadDiscoverAside(db, ctx.viewer?.user_id ?? null),
+        ctx.viewer ? followingAmong(db, ctx.viewer.user_id, [profile.user_id]) : Promise.resolve(new Set<string>()),
+      ]);
+      return { html: renderProfilePage(pctx, { profile, stats, tab, page, following: followed.has(profile.user_id) }, renderDiscoverAside(pctx, asideData)), status: 200 };
+    });
   });
 }
 

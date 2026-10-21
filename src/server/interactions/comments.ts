@@ -47,7 +47,7 @@ export async function createAnonymousComment(db: Db, slug: string, visitor: Visi
   const post = await interactivePost(db, slug);
   if (post.comments_mode === "closed") throw forbidden("comments.closed");
   if (post.comments_mode === "signed_in") throw forbidden("comments.signed_in_only");
-  if (!verifyProof(input.challenge, input.nonce)) throw new ApiError("comment.proof_invalid", 422);
+  if (!(await verifyProof(db, input.challenge, input.nonce))) throw new ApiError("comment.proof_invalid", 422);
 
   const cfg = limits();
   if ((await countCommentsSince(db, "visitor_key", visitor.key, 600)) >= cfg.RATE_ANON_COMMENTS_PER_10MIN) throw rateLimited(600);

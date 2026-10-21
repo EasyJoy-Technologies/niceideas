@@ -1,5 +1,6 @@
 import type { Db } from "@/server/db/client";
 import { purgeExpiredIdempotency } from "@/server/db/repos/idempotency";
+import { purgeSpentChallenges } from "@/server/db/repos/pow";
 import { purgeExpiredSessions } from "@/server/db/repos/sessions";
 import { deleteMediaRows, deletePosts, listDeletableMedia, listExpiredPosts, listStrayPublicMedia, mediaOfPosts, purgeExpiredBans } from "@/server/db/repos/maintenance";
 import { mediaKeys } from "@/server/media/keys";
@@ -10,16 +11,16 @@ import type { MediaStores } from "@/server/storage/types";
 export const MEDIA_GRACE_DAYS = 7;
 const BATCH = 200;
 
-export type MaintenanceReport = { postsPurged: number; mediaDeleted: number; strayPublicWithdrawn: number; idempotencyPurged: number; bansExpired: number; sessionsExpired: number };
+export type MaintenanceReport = { postsPurged: number; mediaDeleted: number; strayPublicWithdrawn: number; idempotencyPurged: number; bansExpired: number; sessionsExpired: number; challengesExpired: number };
 
 /**
  * Daily job (plan §10): physically deletes posts past their 30-day retention,
  * then media no post uses any more (objects first, rows after), re-runs failed
- * public-bucket withdrawals, and drops expired idempotency keys, bans and web sessions.
+ * public-bucket withdrawals, and drops expired idempotency keys, bans, web sessions and spent PoW challenges.
  * Safe to re-run; each step is idempotent.
  */
 export async function runMaintenance(db: Db, stores: MediaStores): Promise<MaintenanceReport> {
-  const report: MaintenanceReport = { postsPurged: 0, mediaDeleted: 0, strayPublicWithdrawn: 0, idempotencyPurged: 0, bansExpired: 0, sessionsExpired: 0 };
+  const report: MaintenanceReport = { postsPurged: 0, mediaDeleted: 0, strayPublicWithdrawn: 0, idempotencyPurged: 0, bansExpired: 0, sessionsExpired: 0, challengesExpired: 0 };
 
   for (;;) {
     const posts = (await listExpiredPosts(db, BATCH)).map((p) => p.id);
@@ -39,6 +40,7 @@ export async function runMaintenance(db: Db, stores: MediaStores): Promise<Maint
   report.idempotencyPurged = await purgeExpiredIdempotency(db);
   report.bansExpired = await purgeExpiredBans(db);
   report.sessionsExpired = await purgeExpiredSessions(db);
+  report.challengesExpired = await purgeSpentChallenges(db);
   return report;
 }
 

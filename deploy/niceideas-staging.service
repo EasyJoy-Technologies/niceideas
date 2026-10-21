@@ -7,11 +7,13 @@ Wants=docker.service
 Type=simple
 WorkingDirectory=/var/www/niceideas-staging/current
 EnvironmentFile=/etc/niceideas/env.staging
-ExecStart=/usr/bin/node server.js
+# Several workers on one port (deploy/cluster.mjs); per-worker DB pool = DB_POOL_MAX.
+Environment=WEB_CONCURRENCY=4
+ExecStart=/usr/bin/node cluster.mjs
 Restart=always
 RestartSec=3
-# Bounded memory; sharp image work is capped in-process (2 concurrent decodes).
-MemoryMax=1G
+# Bounded memory for all workers; sharp image work is capped per worker (2 concurrent decodes).
+MemoryMax=3G
 NoNewPrivileges=true
 PrivateTmp=true
 

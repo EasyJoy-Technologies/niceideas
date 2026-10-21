@@ -21,6 +21,9 @@ export async function startAppContext() {
   const pg = await startTestDb();
   process.env.DATABASE_URL = pg.url;
   process.env.APP_ENV = "test";
+  // Caches are exercised by their own tests; elsewhere every request reads fresh data.
+  process.env.PAGE_CACHE_SECONDS = "0";
+  process.env.ASIDE_CACHE_SECONDS = "0";
   resetConfigForTests();
   const issuer = await createTestIssuer();
   setAuthContextForTests({
