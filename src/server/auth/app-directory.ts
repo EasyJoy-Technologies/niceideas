@@ -21,7 +21,12 @@ const TIMEOUT_MS = 5_000;
 const httpDirectory: AppDirectory = async (clientId) => {
   const url = `${getConfig().APP_DIRECTORY_URL.replace(/\/+$/, "")}/v1/oauth/apps/${encodeURIComponent(clientId)}`;
   const res = await fetch(url, { headers: { accept: "application/json" }, signal: AbortSignal.timeout(TIMEOUT_MS) });
-  if (res.status === 404) return null;
+  if (res.status === 404) {
+    // Only "no such app" means unknown; a missing route (directory not deployed yet) is an outage.
+    const body = (await res.json().catch(() => null)) as { error?: { message_key?: string } } | null;
+    if (body?.error?.message_key === "route.not_found") throw new Error("app directory route not found");
+    return null;
+  }
   if (!res.ok) throw new Error(`app directory ${res.status}`);
   const parsed = entry.safeParse(await res.json());
   if (!parsed.success || parsed.data.clientId !== clientId) throw new Error("app directory: malformed entry");
