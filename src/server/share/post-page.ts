@@ -11,6 +11,7 @@ import type { SharePost } from "./load-post";
 import { commentsSection, reportDialog } from "./comments-section";
 import type { PageInteractions } from "./load-interactions";
 import { postActions } from "./post-actions";
+import { avatarHtml } from "./profile-bits";
 import { sourceBadge } from "./sources";
 
 /** Edits within this window after publishing are not shown as "edited". */
@@ -48,13 +49,10 @@ function cardHead(ctx: ChromeContext, data: SharePost, url: string): string {
 function authorBlock(ctx: ChromeContext, data: SharePost): string {
   const a = data.author;
   const name = a.display_name || `@${a.handle}`;
-  const avatar = a.avatar_url
-    ? `<img class="ni-avatar" src="${escapeHtml(a.avatar_url)}" width="44" height="44" alt="">`
-    : `<span class="ni-avatar" aria-hidden="true">${escapeHtml(Array.from(name.replace(/^@/, ""))[0]?.toUpperCase() ?? "")}</span>`;
   const handle = a.display_name ? `<span>@${escapeHtml(a.handle)}</span><i class="ni-dot"></i>` : "";
   const at = data.post.published_at;
   const time = `<time datetime="${at.toISOString()}">${escapeHtml(ctx.intl.format.dateTime(at, { dateStyle: "medium", timeStyle: "short" }))}</time>`;
-  return `<div class="ni-author">${avatar}<div class="ni-who"><div class="ni-name">${escapeHtml(name)}</div><div class="ni-meta">${handle}${time}</div></div></div>`;
+  return `<div class="ni-author">${avatarHtml(name, a.avatar_url, 52)}<div class="ni-who"><div class="ni-name">${escapeHtml(name)}</div><div class="ni-meta">${handle}${time}</div></div></div>`;
 }
 
 function sourceBlock(ctx: ChromeContext, data: SharePost): string {
@@ -76,6 +74,12 @@ function editedBlock(ctx: ChromeContext, data: SharePost): string {
   return `<div class="ni-edited">${escapeHtml(before)}${time}${escapeHtml(after)}</div>`;
 }
 
+/** Source badge and "edited" note after the body (keeps the top of the post compact). */
+function postFoot(ctx: ChromeContext, data: SharePost): string {
+  const inner = sourceBlock(ctx, data) + editedBlock(ctx, data);
+  return inner ? `<div class="ni-post-foot">${inner}</div>` : "";
+}
+
 /** Server-rendered post page (plan §6, §16): complete without JS. */
 export function renderPostPage(ctx: ChromeContext, data: SharePost, social: PageInteractions): string {
   const { post, document } = data;
@@ -84,8 +88,8 @@ export function renderPostPage(ctx: ChromeContext, data: SharePost, social: Page
   const body = renderDocumentHtml(document, data.media, publicUrl);
   const main =
     `<main class="ni-main"><article class="ni-post${post.kind === "short" ? " ni-short" : ""}">` +
-    `${authorBlock(ctx, data)}${sourceBlock(ctx, data)}${title}<div class="ni-body">${body}</div>` +
-    `${editedBlock(ctx, data)}${postActions(ctx, post, social.liked)}</article>` +
+    `${authorBlock(ctx, data)}${title}<div class="ni-body">${body}</div>` +
+    `${postFoot(ctx, data)}${postActions(ctx, post, social.liked)}</article>` +
     `${commentsSection(ctx, post, social, ctx.path)}${reportDialog(ctx, post.slug)}</main>`;
   const card = shareCard(post);
   // WeChat's in-app browser picks the first sizeable <img> as the thumbnail.

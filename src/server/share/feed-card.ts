@@ -43,7 +43,7 @@ function shortBlock(item: FeedItem): string {
   return `<div class="ni-body ni-fc-text">${renderDocumentHtml(doc, NO_MEDIA, publicUrl)}</div>`;
 }
 
-/** Timeline / profile card (approved v2 design, compacted 2026-10-20): author, body, like / comment / share + source badge. */
+/** Feed item (approved v2 design, compacted 2026-10-20): avatar column + name line, body, like / comment / share + source badge. */
 export function feedCard(ctx: ChromeContext, item: FeedItem): string {
   const { t } = ctx.intl;
   const { post } = item;
@@ -51,9 +51,8 @@ export function feedCard(ctx: ChromeContext, item: FeedItem): string {
   const href = profilePath(post.author_handle);
   const at = post.published_at;
   const head =
-    `<div class="ni-fc-head"><a href="${href}" tabindex="-1">${avatarHtml(name, post.author_avatar, 36)}</a><div class="ni-who">` +
-    `<a class="ni-name" href="${href}">${escapeHtml(name)}</a> <span class="ni-meta">@${escapeHtml(post.author_handle)}<i class="ni-dot"></i>` +
-    `<a href="/p/${post.slug}"><time datetime="${at.toISOString()}" data-rel>${escapeHtml(ctx.intl.format.dateTime(at, { dateStyle: "medium" }))}</time></a></span></div></div>`;
+    `<div class="ni-fc-head"><a class="ni-name" href="${href}">${escapeHtml(name)}</a><span class="ni-meta">@${escapeHtml(post.author_handle)}<i class="ni-dot"></i>` +
+    `<a href="/p/${post.slug}"><time datetime="${at.toISOString()}" data-rel>${escapeHtml(ctx.intl.format.dateTime(at, { dateStyle: "medium" }))}</time></a></span></div>`;
   const body = post.kind === "short" && !item.cover ? shortBlock(item) : articleBlock(ctx, item);
   const badge = sourceBadge(post.source);
   const source = badge
@@ -66,5 +65,7 @@ export function feedCard(ctx: ChromeContext, item: FeedItem): string {
     `<button type="button" class="ni-act ni-share" data-url="/p/${post.slug}" hidden>${icon("share")}${escapeHtml(t("share.action.share"))}</button>` +
     // Source badge sits at the end of the action row (one row less per card).
     `<span class="ni-sp"></span>${source}</div>`;
-  return `<article class="ni-card ni-fc">${head}${body}${actions}</article>`;
+  // Avatar column on the left; name line, body and actions share the content column.
+  const avatar = `<a class="ni-fc-ava" href="${href}" tabindex="-1" aria-hidden="true">${avatarHtml(name, post.author_avatar, 44)}</a>`;
+  return `<article class="ni-fc">${avatar}<div class="ni-fc-main">${head}${body}${actions}</div></article>`;
 }

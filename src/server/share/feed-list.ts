@@ -30,12 +30,18 @@ export function feedTabs(ctx: ChromeContext, base: string, current: FeedTab, sty
   return `<nav class="ni-${style}">${links}</nav>`;
 }
 
-/** Cards of one page plus a no-JS "load more" link (keyset cursor). */
-export function feedList(ctx: ChromeContext, page: FeedPage, base: string, tab: FeedTab): string {
+/**
+ * One page of items on a single surface, separated by hairlines (no card per
+ * item), plus a no-JS "load more" link. `lead` goes on top of the same surface
+ * (the profile header).
+ */
+export function feedList(ctx: ChromeContext, page: FeedPage, base: string, tab: FeedTab, lead = ""): string {
   const { t } = ctx.intl;
-  if (page.items.length === 0) return `<p class="ni-card ni-feed-empty">${escapeHtml(t("feed.empty"))}</p>`;
-  const cards = page.items.map((item) => feedCard(ctx, item)).join("");
-  if (!page.next) return cards;
+  const items = page.items.length
+    ? page.items.map((item) => feedCard(ctx, item)).join("")
+    : `<p class="ni-feed-empty">${escapeHtml(t("feed.empty"))}</p>`;
+  const list = `<section class="ni-card ni-feed">${lead}${items}</section>`;
+  if (!page.next) return list;
   const href = `${tabHref(base, tab)}${tab === "all" ? "?" : "&"}before=${encodeURIComponent(page.next)}`;
-  return `${cards}<a class="ni-btn ni-btn-ghost ni-feed-more" href="${escapeHtml(href)}">${escapeHtml(t("feed.more"))}</a>`;
+  return `${list}<a class="ni-btn ni-btn-ghost ni-feed-more" href="${escapeHtml(href)}">${escapeHtml(t("feed.more"))}</a>`;
 }
