@@ -111,7 +111,8 @@
       "title": "コメント"
     },
     "header": {
-      "join": "{brand} に参加"
+      "join": "{brand} に参加",
+      "joinShort": "参加"
     },
     "language": "言語",
     "post": {

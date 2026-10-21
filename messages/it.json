@@ -111,7 +111,8 @@
       "title": "Commenti"
     },
     "header": {
-      "join": "Unisciti a {brand}"
+      "join": "Unisciti a {brand}",
+      "joinShort": "Unisciti"
     },
     "language": "Lingua",
     "post": {

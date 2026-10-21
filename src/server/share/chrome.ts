@@ -16,12 +16,15 @@ export type ChromeContext = {
 };
 
 const LOCKUP = { src: "/brand/lockup.svg", width: 876, height: 168 };
+const MARK_SRC = "/brand/mark.svg";
 
 const autonym = (code: string) => new Intl.DisplayNames([code], { type: "language" }).of(code) ?? code;
 
-function brand(ctx: ChromeContext, heightRem: number): string {
+function brand(ctx: ChromeContext, heightRem: number, compact = false): string {
   const w = ((LOCKUP.width / LOCKUP.height) * heightRem * 16).toFixed(0);
-  const img = `<img src="${LOCKUP.src}" alt="${GLOSSARY.brand}" width="${w}" height="${heightRem * 16}">`;
+  // Phones show the mark only (header room for 40 languages); the footer keeps the full lockup.
+  const phone = compact ? `<source media="(max-width: 47.99rem)" srcset="${MARK_SRC}" width="${heightRem * 16}" height="${heightRem * 16}">` : "";
+  const img = `<picture>${phone}<img src="${LOCKUP.src}" alt="${GLOSSARY.brand}" width="${w}" height="${heightRem * 16}"></picture>`;
   return ctx.restricted ? `<span class="ni-brand">${img}</span>` : `<a class="ni-brand" href="/">${img}</a>`;
 }
 
@@ -40,13 +43,17 @@ function languageMenu(ctx: ChromeContext): string {
 }
 
 export function siteHeader(ctx: ChromeContext): string {
+  const { t } = ctx.intl;
+  // Phones get the short label (CSS swaps them); the long one stays the accessible name.
+  const long = t("share.header.join", { brand: GLOSSARY.brand });
   const join = ctx.restricted
     ? ""
-    : `<a class="ni-btn ni-btn-primary" href="/">${escapeHtml(ctx.intl.t("share.header.join", { brand: GLOSSARY.brand }))}</a>`;
-  // Mainland-China visitors get no in-site navigation (plan §4.2).
+    : `<a class="ni-btn ni-btn-primary" href="/" aria-label="${escapeHtml(long)}"><span class="ni-wide">${escapeHtml(long)}</span><span class="ni-narrow" aria-hidden="true">${escapeHtml(t("share.header.joinShort"))}</span></a>`;
+  // Mainland-China visitors get no in-site navigation (plan §4.2). Phones show the icon only.
   const current = ctx.path === "/discover" || ctx.path === "/" ? ' aria-current="page"' : "";
-  const discover = ctx.restricted ? "" : `<a class="ni-hdr-nav" href="/discover"${current}>${escapeHtml(ctx.intl.t("discover.title"))}</a>`;
-  return `<header class="ni-hdr"><div class="ni-hdr-in">${brand(ctx, 1.875)}<span class="ni-sp"></span>${discover}${languageMenu(ctx)}${join}</div></header>`;
+  const label = escapeHtml(t("discover.title"));
+  const discover = ctx.restricted ? "" : `<a class="ni-hdr-nav" href="/discover" aria-label="${label}"${current}>${icon("compass")}<span>${label}</span></a>`;
+  return `<header class="ni-hdr"><div class="ni-hdr-in">${brand(ctx, 1.875, true)}<span class="ni-sp"></span>${discover}${languageMenu(ctx)}${join}</div></header>`;
 }
 
 /** Footer per approved v2 design: brand + tagline, site links, © · version + language. */

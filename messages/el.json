@@ -111,7 +111,8 @@
       "title": "Σχόλια"
     },
     "header": {
-      "join": "Γίνε μέλος του {brand}"
+      "join": "Γίνε μέλος του {brand}",
+      "joinShort": "Εγγραφή"
     },
     "language": "Γλώσσα",
     "post": {

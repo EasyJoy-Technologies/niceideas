@@ -111,7 +111,8 @@
       "title": "Maoni"
     },
     "header": {
-      "join": "Jiunge na {brand}"
+      "join": "Jiunge na {brand}",
+      "joinShort": "Jiunge"
     },
     "language": "Lugha",
     "post": {

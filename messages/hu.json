@@ -111,7 +111,8 @@
       "title": "Hozzászólások"
     },
     "header": {
-      "join": "Csatlakozás: {brand}"
+      "join": "Csatlakozás: {brand}",
+      "joinShort": "Csatlakozás"
     },
     "language": "Nyelv",
     "post": {

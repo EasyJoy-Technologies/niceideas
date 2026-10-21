@@ -111,7 +111,8 @@
       "title": "Comentarios"
     },
     "header": {
-      "join": "Únete a {brand}"
+      "join": "Únete a {brand}",
+      "joinShort": "Unirse"
     },
     "language": "Idioma",
     "post": {

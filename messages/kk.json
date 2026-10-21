@@ -111,7 +111,8 @@
       "title": "Пікірлер"
     },
     "header": {
-      "join": "{brand} қатарына қосылу"
+      "join": "{brand} қатарына қосылу",
+      "joinShort": "Қосылу"
     },
     "language": "Тіл",
     "post": {

@@ -111,7 +111,8 @@
       "title": "Sharhi"
     },
     "header": {
-      "join": "Shiga {brand}"
+      "join": "Shiga {brand}",
+      "joinShort": "Shiga"
     },
     "language": "Harshe",
     "post": {

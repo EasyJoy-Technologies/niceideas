@@ -111,7 +111,8 @@
       "title": "Reacties"
     },
     "header": {
-      "join": "Word lid van {brand}"
+      "join": "Word lid van {brand}",
+      "joinShort": "Aanmelden"
     },
     "language": "Taal",
     "post": {

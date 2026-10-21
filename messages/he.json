@@ -111,7 +111,8 @@
       "title": "תגובות"
     },
     "header": {
-      "join": "הצטרפות ל-{brand}"
+      "join": "הצטרפות ל-{brand}",
+      "joinShort": "הצטרפות"
     },
     "language": "שפה",
     "post": {

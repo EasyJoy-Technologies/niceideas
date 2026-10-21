@@ -111,7 +111,8 @@
       "title": "মন্তব্য"
     },
     "header": {
-      "join": "{brand}-এ যোগ দিন"
+      "join": "{brand}-এ যোগ দিন",
+      "joinShort": "যোগ দিন"
     },
     "language": "ভাষা",
     "post": {

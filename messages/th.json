@@ -111,7 +111,8 @@
       "title": "ความคิดเห็น"
     },
     "header": {
-      "join": "เข้าร่วม {brand}"
+      "join": "เข้าร่วม {brand}",
+      "joinShort": "เข้าร่วม"
     },
     "language": "ภาษา",
     "post": {

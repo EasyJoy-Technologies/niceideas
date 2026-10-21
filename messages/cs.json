@@ -111,7 +111,8 @@
       "title": "Komentáře"
     },
     "header": {
-      "join": "Připojit se k {brand}"
+      "join": "Připojit se k {brand}",
+      "joinShort": "Připojit se"
     },
     "language": "Jazyk",
     "post": {

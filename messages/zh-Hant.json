@@ -111,7 +111,8 @@
       "title": "留言"
     },
     "header": {
-      "join": "加入 {brand}"
+      "join": "加入 {brand}",
+      "joinShort": "加入"
     },
     "language": "語言",
     "post": {

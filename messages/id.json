@@ -111,7 +111,8 @@
       "title": "Komentar"
     },
     "header": {
-      "join": "Gabung ke {brand}"
+      "join": "Gabung ke {brand}",
+      "joinShort": "Gabung"
     },
     "language": "Bahasa",
     "post": {

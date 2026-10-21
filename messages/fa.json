@@ -111,7 +111,8 @@
       "title": "نظرها"
     },
     "header": {
-      "join": "به {brand} بپیوندید"
+      "join": "به {brand} بپیوندید",
+      "joinShort": "عضویت"
     },
     "language": "زبان",
     "post": {

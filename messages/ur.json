@@ -111,7 +111,8 @@
       "title": "تبصرے"
     },
     "header": {
-      "join": "{brand} میں شامل ہوں"
+      "join": "{brand} میں شامل ہوں",
+      "joinShort": "شامل ہوں"
     },
     "language": "زبان",
     "post": {

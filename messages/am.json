@@ -111,7 +111,8 @@
       "title": "አስተያየቶች"
     },
     "header": {
-      "join": "{brand}ን ይቀላቀሉ"
+      "join": "{brand}ን ይቀላቀሉ",
+      "joinShort": "ይቀላቀሉ"
     },
     "language": "ቋንቋ",
     "post": {

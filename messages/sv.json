@@ -111,7 +111,8 @@
       "title": "Kommentarer"
     },
     "header": {
-      "join": "Gå med i {brand}"
+      "join": "Gå med i {brand}",
+      "joinShort": "Gå med"
     },
     "language": "Språk",
     "post": {

@@ -111,7 +111,8 @@
       "title": "Комментарии"
     },
     "header": {
-      "join": "Присоединиться к {brand}"
+      "join": "Присоединиться к {brand}",
+      "joinShort": "Войти"
     },
     "language": "Язык",
     "post": {

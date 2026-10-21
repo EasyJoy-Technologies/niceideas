@@ -111,7 +111,8 @@
       "title": "មតិ"
     },
     "header": {
-      "join": "ចូលរួម {brand}"
+      "join": "ចូលរួម {brand}",
+      "joinShort": "ចូលរួម"
     },
     "language": "ភាសា",
     "post": {

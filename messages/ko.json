@@ -111,7 +111,8 @@
       "title": "댓글"
     },
     "header": {
-      "join": "{brand} 가입하기"
+      "join": "{brand} 가입하기",
+      "joinShort": "가입"
     },
     "language": "언어",
     "post": {

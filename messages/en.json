@@ -111,7 +111,8 @@
       "title": "Comments"
     },
     "header": {
-      "join": "Join {brand}"
+      "join": "Join {brand}",
+      "joinShort": "Join"
     },
     "language": "Language",
     "post": {

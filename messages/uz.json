@@ -111,7 +111,8 @@
       "title": "Izohlar"
     },
     "header": {
-      "join": "{brand} ga qo‘shiling"
+      "join": "{brand} ga qo‘shiling",
+      "joinShort": "Qoʻshilish"
     },
     "language": "Til",
     "post": {

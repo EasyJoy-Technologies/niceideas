@@ -111,7 +111,8 @@
       "title": "Comentarii"
     },
     "header": {
-      "join": "Alătură-te {brand}"
+      "join": "Alătură-te {brand}",
+      "joinShort": "Alătură-te"
     },
     "language": "Limbă",
     "post": {

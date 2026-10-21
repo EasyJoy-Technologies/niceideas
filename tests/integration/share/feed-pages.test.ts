@@ -93,7 +93,7 @@ describe("discover and profile pages", () => {
   it("feeds have no in-site header link for mainland-China visitors", async () => {
     // The page itself is blocked by the proxy marker + rewrite (see share-page.test.ts).
     expect((await discover("", { "cf-ipcountry": "CN" })).html).not.toContain("ni-hdr-nav");
-    expect((await discover()).html).toContain('class="ni-hdr-nav" href="/discover" aria-current="page"');
+    expect((await discover()).html).toContain('class="ni-hdr-nav" href="/discover" aria-label="Discover" aria-current="page"');
   });
 
   it("estimates reading time for latin and CJK text", () => {

@@ -111,7 +111,8 @@
       "title": "Yorumlar"
     },
     "header": {
-      "join": "{brand} topluluğuna katıl"
+      "join": "{brand} topluluğuna katıl",
+      "joinShort": "Katıl"
     },
     "language": "Dil",
     "post": {

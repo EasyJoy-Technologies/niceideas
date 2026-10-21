@@ -111,7 +111,8 @@
       "title": "التعليقات"
     },
     "header": {
-      "join": "انضم إلى {brand}"
+      "join": "انضم إلى {brand}",
+      "joinShort": "انضم"
     },
     "language": "اللغة",
     "post": {

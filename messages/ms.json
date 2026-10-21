@@ -111,7 +111,8 @@
       "title": "Ulasan"
     },
     "header": {
-      "join": "Sertai {brand}"
+      "join": "Sertai {brand}",
+      "joinShort": "Sertai"
     },
     "language": "Bahasa",
     "post": {

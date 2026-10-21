@@ -111,7 +111,8 @@
       "title": "Mga komento"
     },
     "header": {
-      "join": "Sumali sa {brand}"
+      "join": "Sumali sa {brand}",
+      "joinShort": "Sumali"
     },
     "language": "Wika",
     "post": {

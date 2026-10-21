@@ -111,7 +111,8 @@
       "title": "Bình luận"
     },
     "header": {
-      "join": "Tham gia {brand}"
+      "join": "Tham gia {brand}",
+      "joinShort": "Tham gia"
     },
     "language": "Ngôn ngữ",
     "post": {

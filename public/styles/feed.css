@@ -55,8 +55,9 @@
 .ni-tabs a { padding: 0.625rem 0.875rem; font-weight: 600; font-size: 0.875rem; color: var(--ni-color-text-secondary); border-bottom: 2px solid transparent; }
 .ni-tabs a[aria-current] { color: var(--ni-color-text-primary); border-color: var(--ni-color-primary); }
 
-/* header navigation */
-.ni-hdr-nav { font-size: 0.875rem; font-weight: 600; color: var(--ni-color-text-secondary); padding: 0 0.5rem; }
+/* header navigation (icon + label; icon only on phones) */
+.ni-hdr-nav { display: inline-flex; align-items: center; gap: 0.375rem; height: 2rem; font-size: 0.875rem; font-weight: 600; color: var(--ni-color-text-secondary); padding: 0 0.5rem; border-radius: 0.5rem; }
+.ni-hdr-nav .ni-i { width: 1.125rem; height: 1.125rem; }
 .ni-hdr-nav:hover, .ni-hdr-nav[aria-current] { color: var(--ni-color-primary); }
 
 @media (max-width: 47.99rem) {
