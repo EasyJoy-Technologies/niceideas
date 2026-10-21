@@ -45,3 +45,15 @@ export async function countClientPostsSince(db: Db, apiClientId: string, seconds
     .executeTakeFirst();
   return Number(row?.n ?? 0);
 }
+
+/** Posts one user published through one third-party app within the window. */
+export async function countAppUserPostsSince(db: Db, apiClientId: string, authorId: string, seconds: number): Promise<number> {
+  const row = await db
+    .selectFrom("post")
+    .select((eb) => eb.fn.countAll<string>().as("n"))
+    .where("api_client_id", "=", apiClientId)
+    .where("author_id", "=", authorId)
+    .where("published_at", ">", since(seconds))
+    .executeTakeFirst();
+  return Number(row?.n ?? 0);
+}

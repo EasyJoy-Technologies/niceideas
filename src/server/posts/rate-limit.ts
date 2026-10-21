@@ -1,6 +1,7 @@
 import { getConfig } from "@/server/config/env";
 import type { Db } from "@/server/db/client";
-import { countClientPostsSince, countMediaSince, countPostsSince, countRevisionsSince } from "@/server/db/repos/counters";
+import { findApiClientById } from "@/server/db/repos/api-clients";
+import { countAppUserPostsSince, countClientPostsSince, countMediaSince, countPostsSince, countRevisionsSince } from "@/server/db/repos/counters";
 import { rateLimited } from "@/server/http/errors";
 
 const HOUR = 3600;
@@ -26,7 +27,10 @@ export async function assertCanUploadMedia(db: Db, userId: string): Promise<void
   if ((await countMediaSince(db, userId, HOUR)) >= getConfig().RATE_MEDIA_PER_HOUR) throw limited(HOUR);
 }
 
-/** Per-client ceiling for third-party apps (on top of the per-user limits). */
-export async function assertClientBudget(db: Db, apiClientId: string): Promise<void> {
-  if ((await countClientPostsSince(db, apiClientId, HOUR)) >= getConfig().RATE_CLIENT_POSTS_PER_HOUR) throw limited(HOUR);
+/** External apps (on top of the per-user limits): per app × user, and per app overall (local override or default). */
+export async function assertClientBudget(db: Db, apiClientId: string, userId: string): Promise<void> {
+  const cfg = getConfig();
+  if ((await countAppUserPostsSince(db, apiClientId, userId, HOUR)) >= cfg.RATE_APP_USER_POSTS_PER_HOUR) throw limited(HOUR);
+  const perApp = (await findApiClientById(db, apiClientId))?.posts_per_hour ?? cfg.RATE_CLIENT_POSTS_PER_HOUR;
+  if ((await countClientPostsSince(db, apiClientId, HOUR)) >= perApp) throw limited(HOUR);
 }

@@ -1,36 +1,32 @@
-// External API client registry CLI (plan §9). Server-side only. Bundled to dist/clients.mjs.
+// External app policy CLI (plan §9). Apps are discovered automatically from the NiceMatrix
+// app directory; this only manages local policy. Server-side only. Bundled to dist/clients.mjs.
 //
 //   list
-//   register --client-id <logto id> --key <source key> --name <display name> --homepage <https url> [--icon <https url>]
-//   disable <client id> | enable <client id>
+//   block <client id> [note…] | unblock <client id>
+//   limit <client id> <posts per hour | default>
 import { getDb } from "../src/server/db";
-import { listApiClients, setApiClientStatus, upsertApiClient } from "../src/server/db/repos/api-clients";
+import { listApiClients, setApiClientRate, setApiClientStatus } from "../src/server/db/repos/api-clients";
 
-const argv = process.argv.slice(2);
-const flag = (n: string) => {
-  const i = argv.indexOf(`--${n}`);
-  return i === -1 ? undefined : argv[i + 1];
-};
+const [command, id, ...rest] = process.argv.slice(2);
 const fail = (m: string): never => {
   console.error(m);
   process.exit(2);
 };
 const db = getDb();
 try {
-  const [command, id] = argv;
   if (command === "list") {
-    for (const c of await listApiClients(db)) console.log(JSON.stringify({ clientId: c.client_id, key: c.source_key, name: c.name, status: c.status, homepage: c.homepage_url, icon: c.icon_url }));
-  } else if (command === "register") {
-    const key = flag("key") ?? fail("--key is required");
-    if (!/^[a-z0-9-]{2,32}$/.test(key)) fail("--key: 2-32 of a-z 0-9 -");
-    const homepage = flag("homepage") ?? fail("--homepage is required");
-    const icon = flag("icon") ?? null;
-    if (!homepage.startsWith("https://") || (icon && !icon.startsWith("https://"))) fail("urls must be https://");
-    const c = await upsertApiClient(db, { clientId: flag("client-id") ?? fail("--client-id is required"), sourceKey: key, name: flag("name") ?? fail("--name is required"), homepageUrl: homepage, iconUrl: icon });
-    console.log(JSON.stringify({ registered: c.client_id, source: `api:${c.source_key}` }));
-  } else if (command === "disable" || command === "enable") {
-    console.log((await setApiClientStatus(db, id ?? fail("client id required"), command === "disable" ? "disabled" : "active")) ? "ok" : "no such client");
-  } else fail("usage: clients.mjs list | register … | disable <id> | enable <id>");
+    for (const c of await listApiClients(db)) {
+      console.log(JSON.stringify({ clientId: c.client_id, name: c.name, directory: c.dir_status, local: c.status, postsPerHour: c.posts_per_hour, note: c.note, fetchedAt: c.fetched_at }));
+    }
+  } else if (command === "block" || command === "unblock") {
+    const ok = await setApiClientStatus(db, id ?? fail("client id required"), command === "block" ? "disabled" : "active", command === "block" ? rest.join(" ").slice(0, 500) : undefined);
+    console.log(ok ? "ok" : "no such client (it appears after its first API call)");
+  } else if (command === "limit") {
+    const v = rest[0] ?? fail("limit <client id> <n|default>");
+    const n = v === "default" ? null : Number.parseInt(v, 10);
+    if (n !== null && !(n > 0)) fail("posts per hour must be a positive integer or 'default'");
+    console.log((await setApiClientRate(db, id ?? fail("client id required"), n)) ? "ok" : "no such client");
+  } else fail("usage: clients.mjs list | block <id> [note] | unblock <id> | limit <id> <n|default>");
 } finally {
   await db.destroy();
 }

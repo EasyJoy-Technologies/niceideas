@@ -178,12 +178,18 @@ export interface ApiClientTable {
   id: Generated<string>;
   client_id: string;
   name: string;
+  /** Local policy: `disabled` = blocked on NiceIdeas. */
   status: Generated<"active" | "disabled">;
   rate_tier: Generated<string>;
   created_at: CreatedAt;
-  source_key: string;
-  homepage_url: string;
-  icon_url: string | null;
+  /** From the NiceMatrix app directory. */
+  website_url: string | null;
+  logo_url: string | null;
+  dir_status: Generated<"active" | "suspended">;
+  fetched_at: Timestamp | null;
+  note: Generated<string>;
+  /** Per-app hourly post ceiling; null = RATE_CLIENT_POSTS_PER_HOUR. */
+  posts_per_hour: number | null;
 }
 
 export interface IdempotencyTable {

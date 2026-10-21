@@ -14,8 +14,12 @@ const schema = z.object({
   FIRST_PARTY_AUDIENCES: z
     .string()
     .default("https://api.nicematrix.com=nicenote_intl,https://apiv3.ej-mobile.cn=nicenote_cn"),
-  /** Logto API resource of the third-party API (plan §9); client_ids must be registered in api_client. */
+  /** Logto API resource of the third-party API (plan §9). */
   THIRD_PARTY_AUDIENCE: z.url().default("https://api.niceideas.app"),
+  /** NiceMatrix platform API serving the third-party app directory (GET /v1/oauth/apps/{clientId}). */
+  APP_DIRECTORY_URL: z.url().default("https://api.nicematrix.com"),
+  /** Posts per hour per (third-party app × user). */
+  RATE_APP_USER_POSTS_PER_HOUR: z.coerce.number().int().positive().default(20),
   /** Per-process cache of anonymous public pages, seconds (0 = off). */
   PAGE_CACHE_SECONDS: z.coerce.number().int().min(0).max(300).default(10),
   /** Per-process cache of the right-column panels (suggested authors, popular articles), seconds (0 = off). */

@@ -47,7 +47,7 @@ export async function createPost(
   if (found) return found;
 
   await assertCanCreatePost(db, principal.userId);
-  if (principal.apiClientId) await assertClientBudget(db, principal.apiClientId);
+  if (principal.apiClientId) await assertClientBudget(db, principal.apiClientId, principal.userId);
   const media = await resolveDocumentMedia(db, principal.userId, input.document);
   await projectMediaPublic(stores, media, cacheControl);
 

@@ -63,10 +63,8 @@ function sourceBlock(ctx: ChromeContext, data: SharePost): string {
   const badge = sourceBadge(data.post.source);
   if (!badge) return "";
   const app = badgeAppName(ctx.intl.t, badge);
-  return (
-    `<a class="ni-source" href="${escapeHtml(badge.href)}" target="_blank" rel="noopener">` +
-    `<img src="${badge.icon}" width="18" height="18" alt="">${escapeHtml(ctx.intl.t("share.post.from", { app }))}${icon("outLink")}</a>`
-  );
+  const inner = `<img src="${escapeHtml(badge.icon)}" width="18" height="18" alt="">${escapeHtml(ctx.intl.t("share.post.from", { app }))}`;
+  return badge.href ? `<a class="ni-source" href="${escapeHtml(badge.href)}" target="_blank" rel="noopener">${inner}${icon("outLink")}</a>` : `<span class="ni-source">${inner}</span>`;
 }
 
 function editedBlock(ctx: ChromeContext, data: SharePost): string {
