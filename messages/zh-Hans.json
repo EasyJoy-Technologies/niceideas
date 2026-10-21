@@ -126,6 +126,16 @@
   "nav": {
     "home": "首页"
   },
+  "notifications": {
+    "comment": "{name} 评论了你的帖子",
+    "empty": "还没有通知。有人点赞、评论或关注你时会显示在这里。",
+    "follow": "{name} 关注了你",
+    "like": "{name} 赞了你的帖子",
+    "reply": "{name} 回复了你的评论",
+    "someone": "有人",
+    "title": "通知",
+    "unread": "未读通知：{count}"
+  },
   "profile": {
     "joined": "{date}加入",
     "stats": {

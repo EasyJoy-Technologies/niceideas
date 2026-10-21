@@ -126,6 +126,16 @@
   "nav": {
     "home": "Bosh sahifa"
   },
+  "notifications": {
+    "comment": "{name} postingizga izoh qoldirdi",
+    "empty": "Hozircha bildirishnoma yo‘q. Layklar, izohlar va yangi kuzatuvchilar shu yerda chiqadi.",
+    "follow": "{name} sizni kuzata boshladi",
+    "like": "{name} postingizni yoqtirdi",
+    "reply": "{name} izohingizga javob berdi",
+    "someone": "Kimdir",
+    "title": "Bildirishnomalar",
+    "unread": "O‘qilmagan bildirishnomalar: {count}"
+  },
   "profile": {
     "joined": "{date} dan beri aʼzo",
     "stats": {

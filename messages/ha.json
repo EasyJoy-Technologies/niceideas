@@ -126,6 +126,16 @@
   "nav": {
     "home": "Gida"
   },
+  "notifications": {
+    "comment": "{name} ya yi sharhi a kan rubutunka",
+    "empty": "Babu sanarwa tukuna. Abubuwan da aka so, sharhi da sabbin mabiya za su bayyana a nan.",
+    "follow": "{name} ya fara bin ka",
+    "like": "{name} ya so rubutunka",
+    "reply": "{name} ya amsa sharhinka",
+    "someone": "Wani",
+    "title": "Sanarwa",
+    "unread": "Sanarwar da ba a karanta ba: {count}"
+  },
   "profile": {
     "joined": "Ya shiga {date}",
     "stats": {

@@ -126,6 +126,16 @@
   "nav": {
     "home": "Kezdőlap"
   },
+  "notifications": {
+    "comment": "{name} hozzászólt a bejegyzésedhez",
+    "empty": "Még nincs értesítés. Itt jelennek meg a kedvelések, hozzászólások és új követők.",
+    "follow": "{name} követni kezdett",
+    "like": "{name} kedvelte a bejegyzésedet",
+    "reply": "{name} válaszolt a hozzászólásodra",
+    "someone": "Valaki",
+    "title": "Értesítések",
+    "unread": "Olvasatlan értesítések: {count}"
+  },
   "profile": {
     "joined": "Csatlakozott: {date}",
     "stats": {

@@ -126,6 +126,16 @@
   "nav": {
     "home": "Início"
   },
+  "notifications": {
+    "comment": "{name} comentou sua publicação",
+    "empty": "Nenhuma notificação ainda. Curtidas, comentários e novos seguidores aparecerão aqui.",
+    "follow": "{name} começou a seguir você",
+    "like": "{name} curtiu sua publicação",
+    "reply": "{name} respondeu ao seu comentário",
+    "someone": "Alguém",
+    "title": "Notificações",
+    "unread": "Notificações não lidas: {count}"
+  },
   "profile": {
     "joined": "Entrou em {date}",
     "stats": {

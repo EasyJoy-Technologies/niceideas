@@ -126,6 +126,16 @@
   "nav": {
     "home": "Nyumbani"
   },
+  "notifications": {
+    "comment": "{name} ametoa maoni kwenye chapisho lako",
+    "empty": "Hakuna arifa bado. Vipendwa, maoni na wafuasi wapya wataonekana hapa.",
+    "follow": "{name} ameanza kukufuata",
+    "like": "{name} amependa chapisho lako",
+    "reply": "{name} amejibu maoni yako",
+    "someone": "Mtu fulani",
+    "title": "Arifa",
+    "unread": "Arifa ambazo hazijasomwa: {count}"
+  },
   "profile": {
     "joined": "Alijiunga {date}",
     "stats": {

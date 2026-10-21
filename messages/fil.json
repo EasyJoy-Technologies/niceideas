@@ -126,6 +126,16 @@
   "nav": {
     "home": "Home"
   },
+  "notifications": {
+    "comment": "Nag-comment si {name} sa post mo",
+    "empty": "Wala pang notification. Dito lalabas ang mga like, comment at bagong follower.",
+    "follow": "Fina-follow ka na ni {name}",
+    "like": "Ni-like ni {name} ang post mo",
+    "reply": "Sumagot si {name} sa comment mo",
+    "someone": "May isang tao",
+    "title": "Mga notification",
+    "unread": "Mga hindi pa nababasang notification: {count}"
+  },
   "profile": {
     "joined": "Sumali noong {date}",
     "stats": {

@@ -35,6 +35,7 @@ export interface ProfileTable {
   status: Generated<ProfileStatus>;
   created_at: CreatedAt;
   updated_at: DefaultedTimestamp;
+  notifications_seen_at: DefaultedTimestamp;
 }
 
 export interface PostTable {

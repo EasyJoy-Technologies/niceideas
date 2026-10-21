@@ -126,6 +126,16 @@
   "nav": {
     "home": "Acasă"
   },
+  "notifications": {
+    "comment": "{name} a comentat la postarea ta",
+    "empty": "Nicio notificare încă. Aprecierile, comentariile și urmăritorii noi vor apărea aici.",
+    "follow": "{name} te urmărește",
+    "like": "{name} a apreciat postarea ta",
+    "reply": "{name} a răspuns la comentariul tău",
+    "someone": "Cineva",
+    "title": "Notificări",
+    "unread": "Notificări necitite: {count}"
+  },
   "profile": {
     "joined": "Membru din {date}",
     "stats": {

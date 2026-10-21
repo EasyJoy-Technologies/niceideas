@@ -126,6 +126,16 @@
   "nav": {
     "home": "首頁"
   },
+  "notifications": {
+    "comment": "{name} 留言回應你的貼文",
+    "empty": "還沒有通知。有人按讚、留言或追蹤你時會顯示在這裡。",
+    "follow": "{name} 開始追蹤你",
+    "like": "{name} 對你的貼文按讚",
+    "reply": "{name} 回覆了你的留言",
+    "someone": "有人",
+    "title": "通知",
+    "unread": "未讀通知：{count}"
+  },
   "profile": {
     "joined": "{date}加入",
     "stats": {

@@ -5,7 +5,7 @@ const ALPHABET = "abcdefghijkmnpqrstuvwxyz23456789";
 /** Handles that can never be claimed (routes, brand, staff impersonation). */
 export const RESERVED_HANDLES: ReadonlySet<string> = new Set([
   "admin", "administrator", "api", "app", "about", "account", "auth", "explore", "discover", "help",
-  "home", "login", "logout", "me", "media", "moderator", "niceideas", "nicematrix", "nicenote",
+  "home", "login", "logout", "me", "media", "moderator", "notifications", "niceideas", "nicematrix", "nicenote",
   "official", "p", "post", "posts", "privacy", "root", "search", "settings", "signup", "staff",
   "status", "support", "system", "terms", "timeline", "u", "user", "users", "www",
 ]);

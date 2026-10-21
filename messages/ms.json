@@ -126,6 +126,16 @@
   "nav": {
     "home": "Laman utama"
   },
+  "notifications": {
+    "comment": "{name} mengulas siaran anda",
+    "empty": "Belum ada pemberitahuan. Suka, komen dan pengikut baharu akan dipaparkan di sini.",
+    "follow": "{name} mula mengikuti anda",
+    "like": "{name} menyukai siaran anda",
+    "reply": "{name} membalas komen anda",
+    "someone": "Seseorang",
+    "title": "Pemberitahuan",
+    "unread": "Pemberitahuan belum dibaca: {count}"
+  },
   "profile": {
     "joined": "Menyertai {date}",
     "stats": {

@@ -126,6 +126,16 @@
   "nav": {
     "home": "홈"
   },
+  "notifications": {
+    "comment": "{name}님이 회원님의 게시물에 댓글을 남겼어요",
+    "empty": "아직 알림이 없어요. 좋아요, 댓글, 새 팔로워가 여기에 표시돼요.",
+    "follow": "{name}님이 회원님을 팔로우해요",
+    "like": "{name}님이 회원님의 게시물을 좋아해요",
+    "reply": "{name}님이 회원님의 댓글에 답글을 남겼어요",
+    "someone": "누군가",
+    "title": "알림",
+    "unread": "읽지 않은 알림: {count}"
+  },
   "profile": {
     "joined": "{date}에 가입",
     "stats": {

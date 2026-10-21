@@ -126,6 +126,16 @@
   "nav": {
     "home": "Trang chủ"
   },
+  "notifications": {
+    "comment": "{name} đã bình luận về bài đăng của bạn",
+    "empty": "Chưa có thông báo. Lượt thích, bình luận và người theo dõi mới sẽ hiện ở đây.",
+    "follow": "{name} đã theo dõi bạn",
+    "like": "{name} đã thích bài đăng của bạn",
+    "reply": "{name} đã trả lời bình luận của bạn",
+    "someone": "Ai đó",
+    "title": "Thông báo",
+    "unread": "Thông báo chưa đọc: {count}"
+  },
   "profile": {
     "joined": "Tham gia {date}",
     "stats": {

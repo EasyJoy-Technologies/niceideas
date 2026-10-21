@@ -126,6 +126,16 @@
   "nav": {
     "home": "Accueil"
   },
+  "notifications": {
+    "comment": "{name} a commenté votre publication",
+    "empty": "Aucune notification pour l’instant. Les j’aime, commentaires et nouveaux abonnés apparaîtront ici.",
+    "follow": "{name} vous suit",
+    "like": "{name} a aimé votre publication",
+    "reply": "{name} a répondu à votre commentaire",
+    "someone": "Quelqu’un",
+    "title": "Notifications",
+    "unread": "Notifications non lues : {count}"
+  },
   "profile": {
     "joined": "Membre depuis {date}",
     "stats": {

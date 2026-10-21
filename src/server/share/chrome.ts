@@ -3,6 +3,7 @@ import { LOCALES } from "@/i18n/locales";
 import type { Profile } from "@/server/db/schema";
 import { escapeHtml } from "@/server/render/escape";
 import { headerAccount } from "./account-menu";
+import { unreadBadge } from "./site-columns";
 import { icon } from "./icons";
 import { LANG_PARAM, type PageIntl } from "./locale";
 
@@ -13,6 +14,8 @@ export type ChromeContext = {
   restricted: boolean;
   /** Signed-in profile (web session), if any. Never set for mainland-China visitors. */
   viewer?: Profile | null;
+  /** Unread notifications of the viewer (badge). */
+  unread?: number;
   /** Path of the current page (language links stay on it). */
   path: string;
 };
@@ -51,5 +54,7 @@ export function siteHeader(ctx: ChromeContext): string {
   const discover = ctx.restricted ? "" : `<a class="ni-hdr-nav" href="/discover" aria-label="${label}"${current}>${icon("compass")}<span>${label}</span></a>`;
   const searchLabel = escapeHtml(ctx.intl.t("search.title"));
   const search = ctx.restricted ? "" : `<a class="ni-hdr-nav ni-hdr-search" href="/search" aria-label="${searchLabel}"${ctx.path === "/search" ? ' aria-current="page"' : ""}>${icon("search")}</a>`;
-  return `<header class="ni-hdr"><div class="ni-hdr-in">${brand(ctx, 1.875, true)}<span class="ni-sp"></span>${discover}${search}${languageMenu(ctx)}${headerAccount(ctx)}</div></header>`;
+  const bellLabel = escapeHtml(ctx.intl.t("notifications.title"));
+  const bell = ctx.viewer && !ctx.restricted ? `<a class="ni-hdr-nav" href="/notifications" aria-label="${bellLabel}"${ctx.path === "/notifications" ? ' aria-current="page"' : ""}>${icon("bell")}${unreadBadge(ctx)}</a>` : "";
+  return `<header class="ni-hdr"><div class="ni-hdr-in">${brand(ctx, 1.875, true)}<span class="ni-sp"></span>${discover}${search}${bell}${languageMenu(ctx)}${headerAccount(ctx)}</div></header>`;
 }

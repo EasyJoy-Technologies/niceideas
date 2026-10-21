@@ -126,6 +126,16 @@
   "nav": {
     "home": "Hem"
   },
+  "notifications": {
+    "comment": "{name} kommenterade ditt inlägg",
+    "empty": "Inga aviseringar än. Gillningar, kommentarer och nya följare visas här.",
+    "follow": "{name} följer dig",
+    "like": "{name} gillade ditt inlägg",
+    "reply": "{name} svarade på din kommentar",
+    "someone": "Någon",
+    "title": "Aviseringar",
+    "unread": "Olästa aviseringar: {count}"
+  },
   "profile": {
     "joined": "Gick med {date}",
     "stats": {

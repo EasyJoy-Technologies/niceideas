@@ -2,6 +2,9 @@ import { sessionProfile } from "@/server/auth/web/session";
 import { webAuthSettings } from "@/server/auth/web/settings";
 import { getConfig } from "@/server/config/env";
 import { getDb } from "@/server/db";
+import type { Db } from "@/server/db/client";
+import type { Profile } from "@/server/db/schema";
+import { listNotifications } from "@/server/db/repos/notifications";
 import { countryFromHeaders, decideAccess, logRegionDecision, type AccessClass } from "@/server/region/region-policy";
 import type { ChromeContext } from "./chrome";
 import { pageIntl, requestLocale } from "./locale";
@@ -33,6 +36,11 @@ function contentSecurityPolicy(): string {
   ].join("; ");
 }
 
+/** Badge count (capped; shown as "99+"). */
+async function unreadNotifications(db: Db, viewer: Profile): Promise<number> {
+  return (await listNotifications(db, viewer.user_id, viewer.notifications_seen_at, 100)).length;
+}
+
 /**
  * Page context of a server-rendered page. Blocking of `site` pages in mainland China
  * happens in `src/proxy.ts`; here the decision only selects the restricted chrome.
@@ -42,7 +50,8 @@ export async function pageContext(request: Request, access: AccessClass = "share
   const decision = decideAccess({ country: countryFromHeaders(request.headers), access, mode: getConfig().REGION_POLICY_CN });
   logRegionDecision(path, access, decision);
   const viewer = decision.restricted ? null : await sessionProfile(getDb(), request.headers).catch(() => null);
-  return { intl: await pageIntl(requestLocale(request)), restricted: decision.restricted, path, viewer };
+  const unread = viewer ? await unreadNotifications(getDb(), viewer).catch(() => 0) : 0;
+  return { intl: await pageIntl(requestLocale(request)), restricted: decision.restricted, path, viewer, unread };
 }
 
 /** HTML response; output varies by language and region, so shared caches must not store it. */

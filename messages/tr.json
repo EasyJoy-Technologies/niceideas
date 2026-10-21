@@ -126,6 +126,16 @@
   "nav": {
     "home": "Ana sayfa"
   },
+  "notifications": {
+    "comment": "{name} gönderine yorum yaptı",
+    "empty": "Henüz bildirim yok. Beğeniler, yorumlar ve yeni takipçiler burada görünür.",
+    "follow": "{name} seni takip etmeye başladı",
+    "like": "{name} gönderini beğendi",
+    "reply": "{name} yorumuna yanıt verdi",
+    "someone": "Biri",
+    "title": "Bildirimler",
+    "unread": "Okunmamış bildirimler: {count}"
+  },
   "profile": {
     "joined": "{date} tarihinde katıldı",
     "stats": {

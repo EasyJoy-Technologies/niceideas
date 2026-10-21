@@ -126,6 +126,16 @@
   "nav": {
     "home": "Startseite"
   },
+  "notifications": {
+    "comment": "{name} hat deinen Beitrag kommentiert",
+    "empty": "Noch keine Mitteilungen. Likes, Kommentare und neue Follower erscheinen hier.",
+    "follow": "{name} folgt dir jetzt",
+    "like": "{name} gefällt dein Beitrag",
+    "reply": "{name} hat auf deinen Kommentar geantwortet",
+    "someone": "Jemand",
+    "title": "Mitteilungen",
+    "unread": "Ungelesene Mitteilungen: {count}"
+  },
   "profile": {
     "joined": "Dabei seit {date}",
     "stats": {

@@ -126,6 +126,16 @@
   "nav": {
     "home": "Domů"
   },
+  "notifications": {
+    "comment": "{name} okomentoval(a) váš příspěvek",
+    "empty": "Zatím žádná oznámení. Zobrazí se tu lajky, komentáře a noví sledující.",
+    "follow": "{name} vás začal(a) sledovat",
+    "like": "{name} se líbí váš příspěvek",
+    "reply": "{name} odpověděl(a) na váš komentář",
+    "someone": "Někdo",
+    "title": "Oznámení",
+    "unread": "Nepřečtená oznámení: {count}"
+  },
   "profile": {
     "joined": "Připojil(a) se {date}",
     "stats": {

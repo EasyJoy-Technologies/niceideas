@@ -126,6 +126,16 @@
   "nav": {
     "home": "Beranda"
   },
+  "notifications": {
+    "comment": "{name} mengomentari postinganmu",
+    "empty": "Belum ada notifikasi. Suka, komentar, dan pengikut baru akan muncul di sini.",
+    "follow": "{name} mulai mengikutimu",
+    "like": "{name} menyukai postinganmu",
+    "reply": "{name} membalas komentarmu",
+    "someone": "Seseorang",
+    "title": "Notifikasi",
+    "unread": "Notifikasi belum dibaca: {count}"
+  },
   "profile": {
     "joined": "Bergabung {date}",
     "stats": {

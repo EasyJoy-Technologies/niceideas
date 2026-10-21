@@ -126,6 +126,16 @@
   "nav": {
     "home": "Start"
   },
+  "notifications": {
+    "comment": "{name} reageerde op je bericht",
+    "empty": "Nog geen meldingen. Likes, reacties en nieuwe volgers verschijnen hier.",
+    "follow": "{name} volgt je nu",
+    "like": "{name} vindt je bericht leuk",
+    "reply": "{name} antwoordde op je reactie",
+    "someone": "Iemand",
+    "title": "Meldingen",
+    "unread": "Ongelezen meldingen: {count}"
+  },
   "profile": {
     "joined": "Lid sinds {date}",
     "stats": {

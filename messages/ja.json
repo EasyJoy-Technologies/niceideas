@@ -126,6 +126,16 @@
   "nav": {
     "home": "ホーム"
   },
+  "notifications": {
+    "comment": "{name}さんがあなたの投稿にコメントしました",
+    "empty": "通知はまだありません。いいね、コメント、新しいフォロワーがここに表示されます。",
+    "follow": "{name}さんがあなたをフォローしました",
+    "like": "{name}さんがあなたの投稿にいいねしました",
+    "reply": "{name}さんがあなたのコメントに返信しました",
+    "someone": "誰か",
+    "title": "通知",
+    "unread": "未読の通知：{count}"
+  },
   "profile": {
     "joined": "{date}から利用",
     "stats": {

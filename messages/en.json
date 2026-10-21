@@ -126,6 +126,16 @@
   "nav": {
     "home": "Home"
   },
+  "notifications": {
+    "comment": "{name} commented on your post",
+    "empty": "No notifications yet. Likes, comments and new followers will show up here.",
+    "follow": "{name} followed you",
+    "like": "{name} liked your post",
+    "reply": "{name} replied to your comment",
+    "someone": "Someone",
+    "title": "Notifications",
+    "unread": "Unread notifications: {count}"
+  },
   "profile": {
     "joined": "Joined {date}",
     "stats": {

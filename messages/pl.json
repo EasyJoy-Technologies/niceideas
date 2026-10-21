@@ -126,6 +126,16 @@
   "nav": {
     "home": "Główna"
   },
+  "notifications": {
+    "comment": "{name} skomentował(a) Twój wpis",
+    "empty": "Brak powiadomień. Tutaj pojawią się polubienia, komentarze i nowi obserwujący.",
+    "follow": "{name} obserwuje Cię",
+    "like": "{name} polubił(a) Twój wpis",
+    "reply": "{name} odpowiedział(a) na Twój komentarz",
+    "someone": "Ktoś",
+    "title": "Powiadomienia",
+    "unread": "Nieprzeczytane powiadomienia: {count}"
+  },
   "profile": {
     "joined": "Dołączył(a): {date}",
     "stats": {

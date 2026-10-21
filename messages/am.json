@@ -126,6 +126,16 @@
   "nav": {
     "home": "መነሻ"
   },
+  "notifications": {
+    "comment": "{name} በልጥፍዎ ላይ አስተያየት ሰጡ",
+    "empty": "እስካሁን ምንም ማሳወቂያ የለም። መውደዶች፣ አስተያየቶች እና አዲስ ተከታዮች እዚህ ይታያሉ።",
+    "follow": "{name} እርስዎን መከተል ጀመሩ",
+    "like": "{name} ልጥፍዎን ወደዱት",
+    "reply": "{name} ለአስተያየትዎ ምላሽ ሰጡ",
+    "someone": "አንድ ሰው",
+    "title": "ማሳወቂያዎች",
+    "unread": "ያልተነበቡ ማሳወቂያዎች፦ {count}"
+  },
   "profile": {
     "joined": "ከ{date} ጀምሮ አባል",
     "stats": {
