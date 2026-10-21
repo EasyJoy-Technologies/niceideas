@@ -82,6 +82,15 @@ describe("discover and profile pages", () => {
     expect(missing.status).toBe(404);
     expect(missing.html).toContain("Account not found");
     expect((await profile("../etc")).status).toBe(404);
+    expect((await profile("..")).status).toBe(404);
+  });
+
+  it("serves handles containing dots (NiceMatrix usernames)", async () => {
+    await ctx.db.updateTable("profile").set({ handle: "dot.ted_user" }).where("user_id", "=", "feed-author").execute();
+    const { status, html } = await profile("Dot.Ted_User");
+    expect(status).toBe(200);
+    expect(html).toContain("@dot.ted_user");
+    await ctx.db.updateTable("profile").set({ handle }).where("user_id", "=", "feed-author").execute();
   });
 
   it("withdrawn posts leave the feeds", async () => {
