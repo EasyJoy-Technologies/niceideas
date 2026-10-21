@@ -126,6 +126,9 @@
       "report": "Jelentés",
       "share": "Megosztás"
     },
+    "aside": {
+      "moreArticles": "A szerző további cikkei"
+    },
     "comments": {
       "anonHint": "Névtelen látogatóként szólsz hozzá.",
       "anonTag": "Névtelen",

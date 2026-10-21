@@ -126,6 +126,9 @@
       "report": "신고",
       "share": "공유"
     },
+    "aside": {
+      "moreArticles": "작성자의 다른 글"
+    },
     "comments": {
       "anonHint": "익명 방문자로 댓글을 남깁니다.",
       "anonTag": "익명",

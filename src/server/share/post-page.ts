@@ -10,7 +10,10 @@ import { icon } from "./icons";
 import type { SharePost } from "./load-post";
 import { commentsSection, reportDialog } from "./comments-section";
 import type { PageInteractions } from "./load-interactions";
+import type { PostAside } from "./load-post-aside";
 import { postActions } from "./post-actions";
+import { renderPostAside } from "./post-aside";
+import { directionOf } from "@/i18n/locales";
 import { avatarHtml } from "./profile-bits";
 import { sourceBadge } from "./sources";
 
@@ -80,14 +83,19 @@ function postFoot(ctx: ChromeContext, data: SharePost): string {
   return inner ? `<div class="ni-post-foot">${inner}</div>` : "";
 }
 
+/** Wide screens: back to Discover above the article. */
+function backLink(ctx: ChromeContext): string {
+  return `<a class="ni-back" href="/discover"><span aria-hidden="true">${directionOf(ctx.intl.locale) === "rtl" ? "→" : "←"}</span>${escapeHtml(ctx.intl.t("discover.title"))}</a>`;
+}
+
 /** Server-rendered post page (plan §6, §16): complete without JS. */
-export function renderPostPage(ctx: ChromeContext, data: SharePost, social: PageInteractions): string {
+export function renderPostPage(ctx: ChromeContext, data: SharePost, social: PageInteractions, aside: PostAside | null = null): string {
   const { post, document } = data;
   const url = postUrl(post.slug);
   const title = post.title ? `<h1 class="ni-title">${escapeHtml(post.title)}</h1>` : "";
   const body = renderDocumentHtml(document, data.media, publicUrl);
   const main =
-    `<main class="ni-main"><article class="ni-post${post.kind === "short" ? " ni-short" : ""}">` +
+    `<main class="ni-main">${aside ? backLink(ctx) : ""}<article class="ni-post${post.kind === "short" ? " ni-short" : ""}">` +
     `${authorBlock(ctx, data)}${title}<div class="ni-body">${body}</div>` +
     `${postFoot(ctx, data)}${postActions(ctx, post, social.liked)}</article>` +
     `${commentsSection(ctx, post, social, ctx.path)}${reportDialog(ctx, post.slug)}</main>`;
@@ -98,5 +106,8 @@ export function renderPostPage(ctx: ChromeContext, data: SharePost, social: Page
     title: `${card.title} · ${GLOSSARY.brand}`,
     head: cardHead(ctx, data, url),
     main: wx + main,
+    // Wide-screen shell only outside mainland China (no site navigation there, plan §4.2).
+    side: !!aside,
+    aside: aside ? renderPostAside(ctx, aside) : undefined,
   });
 }

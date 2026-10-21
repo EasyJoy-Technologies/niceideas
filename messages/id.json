@@ -126,6 +126,9 @@
       "report": "Laporkan",
       "share": "Bagikan"
     },
+    "aside": {
+      "moreArticles": "Artikel lain dari penulis"
+    },
     "comments": {
       "anonHint": "Kamu berkomentar sebagai pengunjung anonim.",
       "anonTag": "Anonim",

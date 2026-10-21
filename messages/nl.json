@@ -126,6 +126,9 @@
       "report": "Melden",
       "share": "Delen"
     },
+    "aside": {
+      "moreArticles": "Meer artikelen van de auteur"
+    },
     "comments": {
       "anonHint": "Je reageert als anonieme bezoeker.",
       "anonTag": "Anoniem",

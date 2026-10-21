@@ -126,6 +126,9 @@
       "report": "Anmäl",
       "share": "Dela"
     },
+    "aside": {
+      "moreArticles": "Fler artiklar av skribenten"
+    },
     "comments": {
       "anonHint": "Du kommenterar som anonym besökare.",
       "anonTag": "Anonym",

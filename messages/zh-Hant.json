@@ -126,6 +126,9 @@
       "report": "檢舉",
       "share": "分享"
     },
+    "aside": {
+      "moreArticles": "作者的其他長文"
+    },
     "comments": {
       "anonHint": "你將以匿名訪客身分發表。",
       "anonTag": "匿名",

@@ -126,6 +126,9 @@
       "report": "Nahlásit",
       "share": "Sdílet"
     },
+    "aside": {
+      "moreArticles": "Další články autora"
+    },
     "comments": {
       "anonHint": "Komentujete jako anonymní návštěvník.",
       "anonTag": "Anonym",

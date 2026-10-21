@@ -126,6 +126,9 @@
       "report": "Ripoti",
       "share": "Shiriki"
     },
+    "aside": {
+      "moreArticles": "Makala zaidi za mwandishi"
+    },
     "comments": {
       "anonHint": "Unatoa maoni kama mgeni asiyejulikana.",
       "anonTag": "Bila jina",

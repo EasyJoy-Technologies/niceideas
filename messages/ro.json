@@ -126,6 +126,9 @@
       "report": "Raportează",
       "share": "Distribuie"
     },
+    "aside": {
+      "moreArticles": "Alte articole ale autorului"
+    },
     "comments": {
       "anonHint": "Comentezi ca vizitator anonim.",
       "anonTag": "Anonim",

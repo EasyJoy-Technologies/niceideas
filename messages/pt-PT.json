@@ -126,6 +126,9 @@
       "report": "Denunciar",
       "share": "Partilhar"
     },
+    "aside": {
+      "moreArticles": "Mais artigos do autor"
+    },
     "comments": {
       "anonHint": "Vai comentar como visitante anónimo.",
       "anonTag": "Anónimo",

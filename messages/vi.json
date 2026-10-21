@@ -126,6 +126,9 @@
       "report": "Báo cáo",
       "share": "Chia sẻ"
     },
+    "aside": {
+      "moreArticles": "Bài viết khác của tác giả"
+    },
     "comments": {
       "anonHint": "Bạn đang bình luận với tư cách khách ẩn danh.",
       "anonTag": "Ẩn danh",

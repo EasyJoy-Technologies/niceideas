@@ -126,6 +126,9 @@
       "report": "報告",
       "share": "共有"
     },
+    "aside": {
+      "moreArticles": "この作者のほかの記事"
+    },
     "comments": {
       "anonHint": "匿名の訪問者としてコメントします。",
       "anonTag": "匿名",

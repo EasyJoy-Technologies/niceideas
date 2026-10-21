@@ -126,6 +126,9 @@
       "report": "Şikayet et",
       "share": "Paylaş"
     },
+    "aside": {
+      "moreArticles": "Yazarın diğer makaleleri"
+    },
     "comments": {
       "anonHint": "Anonim ziyaretçi olarak yorum yapıyorsun.",
       "anonTag": "Anonim",

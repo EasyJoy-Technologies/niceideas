@@ -126,6 +126,9 @@
       "report": "ሪፖርት አድርግ",
       "share": "አጋራ"
     },
+    "aside": {
+      "moreArticles": "የደራሲው ሌሎች ጽሑፎች"
+    },
     "comments": {
       "anonHint": "እንደ ማንነቱ ያልታወቀ ጎብኚ አስተያየት እየሰጡ ነው።",
       "anonTag": "ስም-አልባ",

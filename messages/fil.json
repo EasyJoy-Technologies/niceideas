@@ -126,6 +126,9 @@
       "report": "I-report",
       "share": "Ibahagi"
     },
+    "aside": {
+      "moreArticles": "Iba pang artikulo ng author"
+    },
     "comments": {
       "anonHint": "Magkokomento ka bilang di-kilalang bisita.",
       "anonTag": "Di-kilala",

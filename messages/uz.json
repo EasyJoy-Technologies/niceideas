@@ -126,6 +126,9 @@
       "report": "Shikoyat qilish",
       "share": "Ulashish"
     },
+    "aside": {
+      "moreArticles": "Muallifning boshqa maqolalari"
+    },
     "comments": {
       "anonHint": "Siz anonim mehmon sifatida izoh qoldiryapsiz.",
       "anonTag": "Anonim",
