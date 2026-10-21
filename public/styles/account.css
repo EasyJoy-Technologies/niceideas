@@ -28,3 +28,5 @@
 .ni-btn-soft { background: var(--ni-color-surface-2); color: var(--ni-color-primary); }
 .ni-btn-soft:hover { background: #ede9fe; }
 .ni-follow-sm .ni-btn { height: 2rem; padding: 0 0.75rem; font-size: 0.8125rem; }
+.ni-author .ni-follow { margin-inline-start: auto; align-self: center; }
+.ni-follow-wide .ni-btn { width: 100%; height: 2.25rem; }

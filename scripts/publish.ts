@@ -2,7 +2,7 @@
 // Deploy: bundled to dist/publish.mjs (scripts/build-tools.mjs); reads the service env (DATABASE_URL, storage, …).
 //
 //   node dist/publish.mjs publish --user <id> [--name <display name>] [--source nicenote_intl|nicenote_cn]
-//        [--ref <sourceRef>] [--title <t>] (--text <s> | --markdown <file> | --image <file>[::caption] | --audio <file>[::title])...
+//        [--ref <sourceRef>] [--title <t>] (--text <s> | --markdown <file> | --todo "[x] a;;b" | --image <file>[::caption] | --audio <file>[::title])...
 //   node dist/publish.mjs withdraw --user <id> --id <postId> [--source …]
 import { readFileSync } from "node:fs";
 import { randomUUID } from "node:crypto";
@@ -25,6 +25,8 @@ function parseArgs(argv: string[]) {
     const [file, extra] = value.split("::");
     if (flag === "--text") blocks.push({ kind: "text", text: value, markdown: false });
     else if (flag === "--markdown") blocks.push({ kind: "text", text: readFileSync(value, "utf8"), markdown: true });
+    // --todo "[x] done;;open item" (items split by ";;", "[x] " marks done)
+    else if (flag === "--todo") blocks.push({ kind: "todo", items: value.split(";;").map((s) => s.trim()).filter(Boolean).map((s) => ({ text: s.replace(/^\[x\]\s*/i, ""), checked: /^\[x\]/i.test(s) })) });
     else if (flag === "--image") blocks.push({ kind: "image", path: file, caption: extra });
     else if (flag === "--audio") blocks.push({ kind: "audio", path: file, title: extra });
     else flags.set(flag.slice(2), value);
@@ -43,7 +45,7 @@ const db = getDb();
 const rt = { db, stores: getMediaStores(), cacheControl: cfg.MEDIA_CACHE_CONTROL, retentionDays: cfg.POST_RETENTION_DAYS };
 try {
   if (command === "publish") {
-    if (blocks.length === 0) fail("add at least one --text / --markdown / --image / --audio");
+    if (blocks.length === 0) fail("add at least one --text / --markdown / --todo / --image / --audio");
     const out = await publishFromTool(rt, { userId, displayName: flags.get("name"), source, sourceRef: flags.get("ref") ?? `cli-${randomUUID()}`, title: flags.get("title"), blocks });
     console.log(JSON.stringify(out));
   } else if (command === "withdraw") {

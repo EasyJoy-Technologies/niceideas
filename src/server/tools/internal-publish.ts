@@ -22,6 +22,7 @@ import { removeTempDir, spoolBody } from "@/server/util/temp-file";
  */
 export type ToolInput =
   | { kind: "text"; text: string; markdown: boolean }
+  | { kind: "todo"; items: { text: string; checked: boolean }[] }
   | { kind: "image"; path: string; caption?: string }
   | { kind: "audio"; path: string; title?: string };
 
@@ -56,6 +57,7 @@ export async function publishFromTool(rt: ToolRuntime, input: PublishInput): Pro
   const blocks: DocBlock[] = [];
   for (const b of input.blocks) {
     if (b.kind === "text") blocks.push({ type: "text", format: b.markdown ? "markdown" : "plain", text: b.text });
+    else if (b.kind === "todo") blocks.push({ type: "todo", items: b.items });
     else if (b.kind === "image") blocks.push({ type: "image", mediaId: await uploadFile(rt, input.userId, b.path), ...(b.caption ? { caption: b.caption } : {}) });
     else blocks.push({ type: "audio", mediaId: await uploadFile(rt, input.userId, b.path), ...(b.title ? { title: b.title } : {}) });
   }

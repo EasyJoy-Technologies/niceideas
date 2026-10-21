@@ -5,7 +5,7 @@ import { findMediaByIds } from "@/server/db/repos/media";
 
 const MORE_LIMIT = 3;
 
-export type PostAside = { author: Profile; stats: ProfileStats; more: { post: FeedRow; cover: Media | null }[] };
+export type PostAside = { author: Profile; stats: ProfileStats; more: { post: FeedRow; cover: Media | null }[]; following?: boolean };
 
 /** Right column of a post page on wide screens: author card + the author's other articles. */
 export async function loadPostAside(db: Db, author: Profile, currentPostId: string): Promise<PostAside> {

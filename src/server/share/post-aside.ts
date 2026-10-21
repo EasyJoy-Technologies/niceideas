@@ -4,6 +4,7 @@ import type { Media } from "@/server/db/schema";
 import { escapeHtml } from "@/server/render/escape";
 import type { ChromeContext } from "./chrome";
 import type { PostAside } from "./load-post-aside";
+import { followButton } from "./follow-button";
 import { avatarHtml, profilePath } from "./profile-bits";
 
 /** Smallest webp rendition (list thumbnails). */
@@ -25,7 +26,8 @@ export function renderPostAside(ctx: ChromeContext, a: PostAside): string {
     `<section class="ni-card ni-author-card"><a class="ni-author-top" href="${href}">${avatarHtml(name, p.avatar_url, 52)}` +
     `<span class="ni-who"><span class="ni-name">${escapeHtml(name)}</span><span class="ni-meta">@${escapeHtml(p.handle)}</span></span></a>` +
     (p.bio ? `<p>${escapeHtml(p.bio)}</p>` : "") +
-    `<div class="ni-author-stats">${stat(a.stats.posts, "posts")}${stat(a.stats.followers, "followers")}${stat(a.stats.likes, "likes")}</div></section>`;
+    `<div class="ni-author-stats">${stat(a.stats.posts, "posts")}${stat(a.stats.followers, "followers")}${stat(a.stats.likes, "likes")}</div>` +
+    `${followButton(ctx, p.handle, !!a.following, "ni-follow-wide")}</section>`;
   if (!a.more.length) return card;
   const items = a.more
     .map(({ post, cover }) => {

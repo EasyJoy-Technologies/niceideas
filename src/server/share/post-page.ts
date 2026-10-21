@@ -6,6 +6,7 @@ import { escapeHtml } from "@/server/render/escape";
 import { shareCard } from "./card";
 import type { ChromeContext } from "./chrome";
 import { renderPage } from "./document";
+import { followButton } from "./follow-button";
 import { icon } from "./icons";
 import type { SharePost } from "./load-post";
 import { commentsSection, reportDialog } from "./comments-section";
@@ -49,13 +50,13 @@ function cardHead(ctx: ChromeContext, data: SharePost, url: string): string {
   ].join("");
 }
 
-function authorBlock(ctx: ChromeContext, data: SharePost): string {
+function authorBlock(ctx: ChromeContext, data: SharePost, following: boolean): string {
   const a = data.author;
   const name = a.display_name || `@${a.handle}`;
   const handle = a.display_name ? `<span>@${escapeHtml(a.handle)}</span><i class="ni-dot"></i>` : "";
   const at = data.post.published_at;
   const time = `<time datetime="${at.toISOString()}">${escapeHtml(ctx.intl.format.dateTime(at, { dateStyle: "medium", timeStyle: "short" }))}</time>`;
-  return `<div class="ni-author">${avatarHtml(name, a.avatar_url, 52)}<div class="ni-who"><div class="ni-name">${escapeHtml(name)}</div><div class="ni-meta">${handle}${time}</div></div></div>`;
+  return `<div class="ni-author">${avatarHtml(name, a.avatar_url, 52)}<div class="ni-who"><div class="ni-name">${escapeHtml(name)}</div><div class="ni-meta">${handle}${time}</div></div>${followButton(ctx, a.handle, following, "ni-follow-sm")}</div>`;
 }
 
 function sourceBlock(ctx: ChromeContext, data: SharePost): string {
@@ -89,14 +90,14 @@ function backLink(ctx: ChromeContext): string {
 }
 
 /** Server-rendered post page (plan §6, §16): complete without JS. */
-export function renderPostPage(ctx: ChromeContext, data: SharePost, social: PageInteractions, aside: PostAside | null = null): string {
+export function renderPostPage(ctx: ChromeContext, data: SharePost, social: PageInteractions, aside: PostAside | null = null, following = false): string {
   const { post, document } = data;
   const url = postUrl(post.slug);
   const title = post.title ? `<h1 class="ni-title">${escapeHtml(post.title)}</h1>` : "";
   const body = renderDocumentHtml(document, data.media, publicUrl);
   const main =
     `<main class="ni-main">${aside ? backLink(ctx) : ""}<article class="ni-post${post.kind === "short" ? " ni-short" : ""}">` +
-    `${authorBlock(ctx, data)}${title}<div class="ni-body">${body}</div>` +
+    `${authorBlock(ctx, data, following)}${title}<div class="ni-body">${body}</div>` +
     `${postFoot(ctx, data)}${postActions(ctx, post, social.liked)}</article>` +
     `${commentsSection(ctx, post, social, ctx.path)}${reportDialog(ctx, post.slug)}</main>`;
   const card = shareCard(post);
