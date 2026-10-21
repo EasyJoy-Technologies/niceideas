@@ -16,7 +16,7 @@ export function siteRail(ctx: ChromeContext): string {
   return `<nav class="ni-rail">${brand(ctx, 1.75)}${nav}<div class="ni-rail-foot">${languageMenu(ctx)}</div></nav>`;
 }
 
-/** Right column: join card (tagline + join), site links, © · version. */
+/** Right column: join card (tagline + join), site links, ©. */
 export function siteAside(ctx: ChromeContext): string {
   const { t } = ctx.intl;
   const join = ctx.restricted
@@ -24,6 +24,6 @@ export function siteAside(ctx: ChromeContext): string {
     : `<a class="ni-btn ni-btn-primary" href="/">${escapeHtml(t("share.header.join", { brand: GLOSSARY.brand }))}</a>`;
   return (
     `<aside class="ni-aside"><section class="ni-card ni-aside-card"><h2>${escapeHtml(t("common.tagline"))}</h2>${join}</section>` +
-    `${infoLinks(ctx, "ni-aside-links")}${copyright(ctx)}</aside>`
+    `${infoLinks(ctx, "ni-aside-links")}${copyright()}</aside>`
   );
 }

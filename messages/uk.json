@@ -3,9 +3,6 @@
     "brand": {
       "nicenote": "NiceNote"
     },
-    "footer": {
-      "version": "Версія {version}"
-    },
     "tagline": "Діліться своїми Nice Ideas будь-коли й будь-де!"
   },
   "discover": {

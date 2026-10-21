@@ -3,9 +3,6 @@
     "brand": {
       "nicenote": "NiceNote"
     },
-    "footer": {
-      "version": "버전 {version}"
-    },
     "tagline": "언제 어디서나 나의 Nice Ideas를 공유하세요!"
   },
   "discover": {

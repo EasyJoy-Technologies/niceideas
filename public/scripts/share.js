@@ -25,6 +25,13 @@
     t.title = fmt.format(at);
   }
 
+  // Language menus (<details>): a click outside or Esc closes them.
+  const closeMenus = (except) => {
+    for (const m of d.querySelectorAll("details.ni-lang[open]")) if (m !== except) m.open = false;
+  };
+  d.addEventListener("click", (e) => closeMenus(e.target.closest?.("details.ni-lang")));
+  d.addEventListener("keydown", (e) => { if (e.key === "Escape") closeMenus(null); });
+
   let box;
   const lightbox = (src, alt) => {
     if (!box) {
