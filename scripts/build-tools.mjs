@@ -8,7 +8,7 @@ const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), "..")
 // Resolved at runtime from dist/node_modules (linked by deploy/deploy-staging.sh): native sharp, and
 // file-type / music-metadata, which load `strtok3` through a runtime dynamic import a bundle cannot satisfy.
 const RUNTIME_EXTERNALS = ["sharp", "file-type", "music-metadata"];
-const ENTRIES = { migrate: "scripts/migrate.ts", publish: "scripts/publish.ts", maintain: "scripts/maintain.ts", moderate: "scripts/moderate.ts" };
+const ENTRIES = { migrate: "scripts/migrate.ts", publish: "scripts/publish.ts", maintain: "scripts/maintain.ts", moderate: "scripts/moderate.ts", clients: "scripts/clients.ts" };
 
 for (const [name, entry] of Object.entries(ENTRIES)) {
   await build({

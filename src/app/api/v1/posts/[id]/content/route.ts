@@ -1,4 +1,4 @@
-import { authenticateFirstParty } from "@/server/auth/authenticate";
+import { authenticateApi } from "@/server/auth/authenticate";
 import { apiRoute } from "@/server/http/api-route";
 import { jsonOk } from "@/server/http/json";
 import { readJson } from "@/server/http/read-json";
@@ -9,7 +9,7 @@ import { syncPost } from "@/server/posts/sync-post";
 
 /** Edit sync: new document + note update time. Same content → `changed: false`. */
 export const PUT = apiRoute<RouteContext<"/api/v1/posts/[id]/content">>("posts.sync", "publish_api", async (request, ctx) => {
-  const principal = await authenticateFirstParty(request);
+  const principal = await authenticateApi(request, "posts:write");
   const input = parseContentRequest(await readJson(request));
   const { db, stores, cacheControl } = postRuntime();
   const result = await syncPost(db, stores, principal, { postId: (await ctx.params).id, ...input }, cacheControl);

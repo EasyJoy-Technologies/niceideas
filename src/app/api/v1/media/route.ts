@@ -1,4 +1,4 @@
-import { authenticateFirstParty } from "@/server/auth/authenticate";
+import { authenticateApi } from "@/server/auth/authenticate";
 import { getDb } from "@/server/db";
 import { ApiError, badRequest } from "@/server/http/errors";
 import { apiRoute } from "@/server/http/api-route";
@@ -19,7 +19,7 @@ const SHA256 = /^[0-9a-f]{64}$/;
  * Same owner + same hash → returns the existing media (200) without re-upload work.
  */
 export const POST = apiRoute("media.upload", "publish_api", async (request) => {
-  const principal = await authenticateFirstParty(request);
+  const principal = await authenticateApi(request, "media:write");
   const declared = (request.headers.get("x-content-sha256") ?? "").toLowerCase();
   if (!SHA256.test(declared)) throw badRequest("media.sha256_required");
   if (!request.body) throw badRequest("media.empty_body");

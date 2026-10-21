@@ -5,6 +5,7 @@ import { getDb } from "@/server/db";
 import type { Db } from "@/server/db/client";
 import type { Profile } from "@/server/db/schema";
 import { listNotifications } from "@/server/db/repos/notifications";
+import { ensureSourceRegistry } from "./source-registry";
 import { countryFromHeaders, decideAccess, logRegionDecision, type AccessClass } from "@/server/region/region-policy";
 import type { ChromeContext } from "./chrome";
 import { pageIntl, requestLocale } from "./locale";
@@ -49,6 +50,7 @@ export async function pageContext(request: Request, access: AccessClass = "share
   const path = new URL(request.url).pathname;
   const decision = decideAccess({ country: countryFromHeaders(request.headers), access, mode: getConfig().REGION_POLICY_CN });
   logRegionDecision(path, access, decision);
+  await ensureSourceRegistry(getDb()).catch(() => undefined);
   const viewer = decision.restricted ? null : await sessionProfile(getDb(), request.headers).catch(() => null);
   const unread = viewer ? await unreadNotifications(getDb(), viewer).catch(() => 0) : 0;
   return { intl: await pageIntl(requestLocale(request)), restricted: decision.restricted, path, viewer, unread };

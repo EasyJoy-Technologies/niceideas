@@ -35,5 +35,7 @@ export async function startAppContext() {
     await closeDbForTests();
     await pg.stop();
   };
-  return { ...pg, stop, stores, tokenFor };
+  /** Any claims (third-party tokens etc.), signed by the test issuer. */
+  const signRaw = (claims: Record<string, unknown>) => issuer.sign(claims);
+  return { ...pg, stop, stores, tokenFor, signRaw };
 }

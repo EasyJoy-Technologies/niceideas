@@ -7,9 +7,11 @@ import type { FirstPartyPolicy } from "./first-party";
 export type Principal = {
   userId: string;
   clientId: string;
-  kind: "first_party";
-  /** Publication source implied by the token audience. */
+  kind: "first_party" | "third_party";
+  /** Publication source implied by the token audience (third party: `api:<key>`). */
   source: PostSource;
+  /** Registered third-party client (third party only). */
+  apiClientId?: string;
 };
 
 /**

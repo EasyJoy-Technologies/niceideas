@@ -1,4 +1,4 @@
-import { authenticateFirstParty } from "@/server/auth/authenticate";
+import { authenticateApi } from "@/server/auth/authenticate";
 import { getDb } from "@/server/db";
 import { apiRoute } from "@/server/http/api-route";
 import { jsonOk } from "@/server/http/json";
@@ -7,7 +7,7 @@ import { toProfileDto } from "@/server/profiles/profile-dto";
 
 /** Current caller's profile (created on first call). */
 export const GET = apiRoute("me.get", "site_api", async (request) => {
-  const principal = await authenticateFirstParty(request);
+  const principal = await authenticateApi(request, "posts:read");
   const profile = await ensureProfile(getDb(), principal.userId);
   return jsonOk({ profile: toProfileDto(profile) });
 });

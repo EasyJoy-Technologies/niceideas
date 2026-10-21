@@ -181,6 +181,9 @@ export interface ApiClientTable {
   status: Generated<"active" | "disabled">;
   rate_tier: Generated<string>;
   created_at: CreatedAt;
+  source_key: string;
+  homepage_url: string;
+  icon_url: string | null;
 }
 
 export interface IdempotencyTable {
@@ -242,3 +245,4 @@ export type NewMedia = Insertable<MediaTable>;
 export type Comment = Selectable<CommentTable>;
 export type NewComment = Insertable<CommentTable>;
 export type Report = Selectable<ReportTable>;
+export type ApiClient = Selectable<ApiClientTable>;

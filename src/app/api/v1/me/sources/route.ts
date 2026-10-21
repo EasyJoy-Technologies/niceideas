@@ -1,4 +1,4 @@
-import { authenticateFirstParty } from "@/server/auth/authenticate";
+import { assertFirstParty, authenticateApi } from "@/server/auth/authenticate";
 import { listLiveBySources } from "@/server/db/repos/posts";
 import { apiRoute } from "@/server/http/api-route";
 import { badRequest } from "@/server/http/errors";
@@ -11,7 +11,8 @@ import { postRuntime } from "@/server/posts/runtime";
  * `?source=nicenote` covers both regions: one person may publish from either app.
  */
 export const GET = apiRoute("me.sources", "publish_api", async (request) => {
-  const principal = await authenticateFirstParty(request);
+  const principal = await authenticateApi(request, "posts:read");
+  assertFirstParty(principal);
   if (new URL(request.url).searchParams.get("source") !== "nicenote") throw badRequest("request.invalid", { param: "source" });
   const rows = await listLiveBySources(postRuntime().db, principal.userId, ["nicenote_intl", "nicenote_cn"]);
   return jsonOk({

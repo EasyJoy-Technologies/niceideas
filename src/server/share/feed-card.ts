@@ -7,7 +7,7 @@ import type { ChromeContext } from "./chrome";
 import { icon } from "./icons";
 import type { FeedItem } from "./load-feed";
 import { avatarHtml, profilePath } from "./profile-bits";
-import { sourceBadge } from "./sources";
+import { badgeAppName, sourceBadge } from "./sources";
 
 const COVER_SIZES = "(min-width: 48rem) 37rem, 100vw";
 const NO_MEDIA: ReadonlyMap<string, Media> = new Map();
@@ -55,7 +55,7 @@ export function feedCard(ctx: ChromeContext, item: FeedItem): string {
   const at = post.published_at;
   const badge = sourceBadge(post.source);
   // Phones show the app icon only (label in title / aria-label); wider screens add the text.
-  const from = badge ? escapeHtml(t("share.post.from", { app: t(`common.${badge.nameKey}`) })) : "";
+  const from = badge ? escapeHtml(t("share.post.from", { app: badgeAppName(t, badge) })) : "";
   const source = badge
     ? `<a class="ni-fc-src" href="${escapeHtml(badge.href)}" target="_blank" rel="noopener" title="${from}" aria-label="${from}"><img src="${badge.icon}" width="14" height="14" alt=""><span>${from}</span></a>`
     : "";

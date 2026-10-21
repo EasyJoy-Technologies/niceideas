@@ -14,6 +14,10 @@ const schema = z.object({
   FIRST_PARTY_AUDIENCES: z
     .string()
     .default("https://api.nicematrix.com=nicenote_intl,https://apiv3.ej-mobile.cn=nicenote_cn"),
+  /** Logto API resource of the third-party API (plan §9); client_ids must be registered in api_client. */
+  THIRD_PARTY_AUDIENCE: z.url().default("https://api.niceideas.app"),
+  /** Posts per hour per third-party client, across all its users (the per-user limits apply too). */
+  RATE_CLIENT_POSTS_PER_HOUR: z.coerce.number().int().positive().default(2000),
   /** Logto client_ids allowed to call first-party APIs. Empty = no first-party access (fail closed). */
   FIRST_PARTY_CLIENT_IDS: z.string().default(""),
 

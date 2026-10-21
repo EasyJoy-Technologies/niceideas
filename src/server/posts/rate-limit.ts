@@ -1,6 +1,6 @@
 import { getConfig } from "@/server/config/env";
 import type { Db } from "@/server/db/client";
-import { countMediaSince, countPostsSince, countRevisionsSince } from "@/server/db/repos/counters";
+import { countClientPostsSince, countMediaSince, countPostsSince, countRevisionsSince } from "@/server/db/repos/counters";
 import { rateLimited } from "@/server/http/errors";
 
 const HOUR = 3600;
@@ -24,4 +24,9 @@ export async function assertCanCreateRevision(db: Db, userId: string): Promise<v
 
 export async function assertCanUploadMedia(db: Db, userId: string): Promise<void> {
   if ((await countMediaSince(db, userId, HOUR)) >= getConfig().RATE_MEDIA_PER_HOUR) throw limited(HOUR);
+}
+
+/** Per-client ceiling for third-party apps (on top of the per-user limits). */
+export async function assertClientBudget(db: Db, apiClientId: string): Promise<void> {
+  if ((await countClientPostsSince(db, apiClientId, HOUR)) >= getConfig().RATE_CLIENT_POSTS_PER_HOUR) throw limited(HOUR);
 }

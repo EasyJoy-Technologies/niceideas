@@ -10,7 +10,7 @@ import { projectMediaPublic, recordMediaPublic } from "@/server/media/publicatio
 import type { MediaStores } from "@/server/storage/types";
 import { derivedFields } from "./derived-fields";
 import { resolveDocumentMedia } from "./media-refs";
-import { assertCanCreatePost } from "./rate-limit";
+import { assertCanCreatePost, assertClientBudget } from "./rate-limit";
 import { generateSlug } from "./slug";
 
 export type CreatePostInput = {
@@ -47,6 +47,7 @@ export async function createPost(
   if (found) return found;
 
   await assertCanCreatePost(db, principal.userId);
+  if (principal.apiClientId) await assertClientBudget(db, principal.apiClientId);
   const media = await resolveDocumentMedia(db, principal.userId, input.document);
   await projectMediaPublic(stores, media, cacheControl);
 
@@ -59,6 +60,7 @@ export async function createPost(
           slug: generateSlug(),
           author_id: principal.userId,
           source: principal.source,
+          api_client_id: principal.apiClientId ?? null,
           source_ref: input.sourceRef,
           sync_mode: input.syncMode ?? "follow",
           ...fields,

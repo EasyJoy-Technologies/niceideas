@@ -16,7 +16,7 @@ import { postActions } from "./post-actions";
 import { renderPostAside } from "./post-aside";
 import { directionOf } from "@/i18n/locales";
 import { avatarHtml } from "./profile-bits";
-import { sourceBadge } from "./sources";
+import { badgeAppName, sourceBadge } from "./sources";
 
 /** Edits within this window after publishing are not shown as "edited". */
 const EDIT_GRACE_MS = 60_000;
@@ -62,7 +62,7 @@ function authorBlock(ctx: ChromeContext, data: SharePost, following: boolean): s
 function sourceBlock(ctx: ChromeContext, data: SharePost): string {
   const badge = sourceBadge(data.post.source);
   if (!badge) return "";
-  const app = ctx.intl.t(`common.${badge.nameKey}`);
+  const app = badgeAppName(ctx.intl.t, badge);
   return (
     `<a class="ni-source" href="${escapeHtml(badge.href)}" target="_blank" rel="noopener">` +
     `<img src="${badge.icon}" width="18" height="18" alt="">${escapeHtml(ctx.intl.t("share.post.from", { app }))}${icon("outLink")}</a>`

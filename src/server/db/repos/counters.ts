@@ -34,3 +34,14 @@ export async function countMediaSince(db: Db, ownerId: string, seconds: number):
     .executeTakeFirst();
   return Number(row?.n ?? 0);
 }
+
+/** Posts published through one third-party client within the window (all its users). */
+export async function countClientPostsSince(db: Db, apiClientId: string, seconds: number): Promise<number> {
+  const row = await db
+    .selectFrom("post")
+    .select((eb) => eb.fn.countAll<string>().as("n"))
+    .where("api_client_id", "=", apiClientId)
+    .where("published_at", ">", since(seconds))
+    .executeTakeFirst();
+  return Number(row?.n ?? 0);
+}
