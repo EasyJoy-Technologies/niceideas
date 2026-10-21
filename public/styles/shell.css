@@ -30,6 +30,9 @@
   .ni-aside-links { display: flex; flex-wrap: wrap; gap: 0.25rem 0.75rem; }
   .ni-aside-links a:hover { color: var(--ni-color-primary); }
   .ni-aside-meta { display: flex; align-items: center; justify-content: space-between; gap: 0.5rem; }
-  .ni-aside-meta .ni-lang summary { height: 2rem; border: 1px solid var(--ni-color-border); background: var(--ni-color-surface); }
+  /* Language switch reads like the neighbouring site links: no border, same size and colour. */
+  .ni-aside-meta .ni-lang summary { height: 1.5rem; padding: 0; gap: 0.25rem; font-size: inherit; color: inherit; }
+  .ni-aside-meta .ni-lang summary:hover, .ni-aside-meta .ni-lang[open] summary { background: none; color: var(--ni-color-primary); }
+  .ni-aside-meta .ni-lang summary .ni-i { width: 0.875rem; height: 0.875rem; }
   .ni-aside .ni-lang ul { top: auto; bottom: calc(100% + 0.375rem); inset-inline: 0 auto; }
 }
