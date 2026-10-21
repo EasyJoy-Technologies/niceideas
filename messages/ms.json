@@ -183,12 +183,10 @@
   "settings": {
     "bio": "Bio",
     "error": {
-      "handle_invalid": "Nama pengguna itu tidak sah atau tidak tersedia.",
-      "handle_taken": "Nama pengguna itu sudah digunakan.",
       "too_long": "Nama atau bio terlalu panjang."
     },
     "handle": "Nama pengguna",
-    "handleHint": "3–30 aksara: huruf kecil, angka dan garis bawah. Jika ditukar, pautan ke alamat profil lama tidak akan berfungsi.",
+    "handleHint": "Nama pengguna anda diambil daripada akaun NiceMatrix anda. Untuk menukarnya, edit di sana; ia akan dikemas kini di sini apabila anda log masuk seterusnya.",
     "name": "Nama",
     "save": "Simpan",
     "saved": "Disimpan.",

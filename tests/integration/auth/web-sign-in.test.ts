@@ -64,6 +64,23 @@ describe("web sign-in", () => {
     expect(page).toContain('action="/auth/sign-out"');
   });
 
+  it("takes the handle from the NiceMatrix username at every sign-in; unusable or taken usernames keep the current one", async () => {
+    const handle = async () => (await ctx.db.selectFrom("profile").select("handle").where("user_id", "=", "web-user").executeTakeFirstOrThrow()).handle;
+    claims = { username: "Xiang_Lin" };
+    await signIn();
+    expect(await handle()).toBe("xiang_lin");
+    claims = { username: "admin" };
+    await signIn();
+    expect(await handle()).toBe("xiang_lin");
+    await ctx.db.insertInto("profile").values({ user_id: "holder", handle: "taken_name", display_name: "", bio: "" }).execute();
+    claims = { username: "taken_name" };
+    expect((await signIn()).status).toBe(303);
+    expect(await handle()).toBe("xiang_lin");
+    claims = { username: "renamed_1" };
+    await signIn();
+    expect(await handle()).toBe("renamed_1");
+  });
+
   it("rejects a callback without the matching flow cookie or with a bad code", async () => {
     await signInRoute(new Request(`${BASE}/auth/sign-in`));
     expect((await callbackRoute(new Request(`${BASE}/auth/callback?code=good&state=${lastAuthorize!.state}`))).status).toBe(400);

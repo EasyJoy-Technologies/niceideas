@@ -9,7 +9,7 @@ export type OidcProvider = {
   endSessionUrl(): Promise<string>;
 };
 
-type Discovery = { issuer: string; authorization_endpoint: string; token_endpoint: string; end_session_endpoint: string; jwks_uri: string };
+type Discovery = { issuer: string; authorization_endpoint: string; token_endpoint: string; end_session_endpoint: string; jwks_uri: string; userinfo_endpoint?: string };
 
 const SCOPE = "openid profile";
 const TIMEOUT_MS = 8_000;
@@ -46,18 +46,31 @@ export function logtoProvider(s: WebAuthSettings): OidcProvider {
         body: new URLSearchParams({ grant_type: "authorization_code", code, redirect_uri: redirectUri, code_verifier: verifier }),
       });
       if (!res.ok) throw new Error(`token exchange failed: ${res.status}`);
-      const { id_token: idToken } = (await res.json()) as { id_token?: string };
+      const { id_token: idToken, access_token: accessToken } = (await res.json()) as { id_token?: string; access_token?: string };
       if (!idToken) throw new Error("token response without id_token");
       keys ??= createRemoteJWKSet(new URL(d.jwks_uri), { timeoutDuration: 5_000, cooldownDuration: 30_000 });
       const { payload } = await jwtVerify(idToken, keys, { issuer: d.issuer, audience: s.clientId, clockTolerance: 5 });
       if (payload.nonce !== nonce) throw new Error("id_token nonce mismatch");
-      return payload;
+      if (typeof payload.username === "string" || !accessToken || !d.userinfo_endpoint) return payload;
+      return { ...payload, ...(await usernameFromUserinfo(d.userinfo_endpoint, accessToken, payload.sub)) };
     },
     async endSessionUrl() {
       const d = await discover();
       return `${d.end_session_endpoint}?${new URLSearchParams({ client_id: s.clientId, post_logout_redirect_uri: `${s.baseUrl}/` })}`;
     },
   };
+}
+
+/** The NiceMatrix username when the ID token lacks it; best effort (sign-in never fails on it). */
+async function usernameFromUserinfo(endpoint: string, accessToken: string, sub: string | undefined): Promise<{ username?: string }> {
+  try {
+    const r = await fetch(endpoint, { headers: { authorization: `Bearer ${accessToken}` }, signal: AbortSignal.timeout(TIMEOUT_MS) });
+    if (!r.ok) return {};
+    const info = (await r.json()) as { sub?: string; username?: unknown };
+    return info.sub === sub && typeof info.username === "string" ? { username: info.username } : {};
+  } catch {
+    return {};
+  }
 }
 
 let provider: OidcProvider | null = null;

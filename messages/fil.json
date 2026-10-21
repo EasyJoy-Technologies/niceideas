@@ -183,12 +183,10 @@
   "settings": {
     "bio": "Bio",
     "error": {
-      "handle_invalid": "Hindi valid o hindi available ang username na iyan.",
-      "handle_taken": "May gumagamit na ng username na iyan.",
       "too_long": "Masyadong mahaba ang pangalan o bio."
     },
     "handle": "Username",
-    "handleHint": "3–30 character: maliliit na titik, numero at underscore. Kapag binago, hindi na gagana ang mga link sa lumang address ng profile mo.",
+    "handleHint": "Ang username mo ay mula sa iyong NiceMatrix account. Para palitan ito, i-edit doon; maa-update ito rito sa susunod mong pag-sign in.",
     "name": "Pangalan",
     "save": "I-save",
     "saved": "Na-save.",

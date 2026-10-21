@@ -27,7 +27,6 @@ export async function saveSettings(request: Request): Promise<Response> {
     const form = await request.formData();
     const r = await updateOwnProfile(db, viewer, {
       displayName: String(form.get("displayName") ?? ""),
-      handle: String(form.get("handle") ?? viewer.handle),
       bio: String(form.get("bio") ?? ""),
     });
     return see(`/settings?n=${r.ok ? "saved" : r.error}`);

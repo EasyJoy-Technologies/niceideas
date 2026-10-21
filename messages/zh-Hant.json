@@ -183,12 +183,10 @@
   "settings": {
     "bio": "簡介",
     "error": {
-      "handle_invalid": "使用者名稱格式不正確或無法使用。",
-      "handle_taken": "這個使用者名稱已被使用。",
       "too_long": "名稱或簡介太長了。"
     },
     "handle": "使用者名稱",
-    "handleHint": "3–30 個字元，只能使用小寫字母、數字和底線。修改後舊的主頁連結將失效。",
+    "handleHint": "使用者名稱來自你的 NiceMatrix 帳號。如需修改，請在 NiceMatrix 帳號中修改，下次登入時這裡會自動更新。",
     "name": "名稱",
     "save": "儲存",
     "saved": "已儲存。",

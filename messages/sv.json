@@ -183,12 +183,10 @@
   "settings": {
     "bio": "Om mig",
     "error": {
-      "handle_invalid": "Användarnamnet är ogiltigt eller inte tillgängligt.",
-      "handle_taken": "Användarnamnet är upptaget.",
       "too_long": "Namnet eller beskrivningen är för lång."
     },
     "handle": "Användarnamn",
-    "handleHint": "3–30 tecken: gemener, siffror och understreck. Om du ändrar det slutar länkar till din gamla profiladress att fungera.",
+    "handleHint": "Ditt användarnamn kommer från ditt NiceMatrix-konto. Ändra det där – det uppdateras här nästa gång du loggar in.",
     "name": "Namn",
     "save": "Spara",
     "saved": "Sparat.",

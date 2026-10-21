@@ -183,12 +183,10 @@
   "settings": {
     "bio": "Bemutatkozás",
     "error": {
-      "handle_invalid": "Ez a felhasználónév érvénytelen vagy nem elérhető.",
-      "handle_taken": "Ez a felhasználónév foglalt.",
       "too_long": "A név vagy a bemutatkozás túl hosszú."
     },
     "handle": "Felhasználónév",
-    "handleHint": "3–30 karakter: kisbetűk, számjegyek és aláhúzásjelek. Módosítás után a régi profilcímre mutató linkek nem működnek.",
+    "handleHint": "A felhasználóneved a NiceMatrix-fiókodból származik. A módosításhoz ott szerkeszd; itt a következő bejelentkezéskor frissül.",
     "name": "Név",
     "save": "Mentés",
     "saved": "Mentve.",

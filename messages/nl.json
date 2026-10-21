@@ -183,12 +183,10 @@
   "settings": {
     "bio": "Bio",
     "error": {
-      "handle_invalid": "Die gebruikersnaam is ongeldig of niet beschikbaar.",
-      "handle_taken": "Die gebruikersnaam is al in gebruik.",
       "too_long": "De naam of bio is te lang."
     },
     "handle": "Gebruikersnaam",
-    "handleHint": "3–30 tekens: kleine letters, cijfers en underscores. Na een wijziging werken links naar je oude profieladres niet meer.",
+    "handleHint": "Je gebruikersnaam komt van je NiceMatrix-account. Wijzig hem daar; hij wordt hier bijgewerkt wanneer je opnieuw inlogt.",
     "name": "Naam",
     "save": "Opslaan",
     "saved": "Opgeslagen.",

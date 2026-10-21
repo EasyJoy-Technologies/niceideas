@@ -183,12 +183,10 @@
   "settings": {
     "bio": "Bio",
     "error": {
-      "handle_invalid": "Questo nome utente non è valido o non è disponibile.",
-      "handle_taken": "Questo nome utente è già in uso.",
       "too_long": "Il nome o la bio sono troppo lunghi."
     },
     "handle": "Nome utente",
-    "handleHint": "Da 3 a 30 caratteri: lettere minuscole, cifre e trattini bassi. Se lo cambi, i link al vecchio indirizzo del profilo smettono di funzionare.",
+    "handleHint": "Il tuo nome utente proviene dal tuo account NiceMatrix. Per cambiarlo, modificalo lì: verrà aggiornato qui al prossimo accesso.",
     "name": "Nome",
     "save": "Salva",
     "saved": "Salvato.",

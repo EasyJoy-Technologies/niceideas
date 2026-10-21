@@ -1,6 +1,8 @@
 import type { JWTPayload } from "jose";
 import type { Db } from "@/server/db/client";
 import type { Profile } from "@/server/db/schema";
+import { isUniqueViolation } from "@/server/db/repos/profiles";
+import { isValidHandle } from "./handles";
 
 const MAX_NAME = 50;
 
@@ -9,12 +11,21 @@ function claimString(claims: JWTPayload, key: string): string {
   return typeof v === "string" ? v.trim() : "";
 }
 
+/** NiceMatrix (Logto) username → handle; null when it cannot be one (missing, too long, other characters, reserved). */
+export function handleFromUsername(username: string): string | null {
+  const h = username.toLowerCase();
+  return isValidHandle(h) ? h : null;
+}
+
 /**
- * Fills an empty display name / avatar from the NiceMatrix ID token at web
- * sign-in (plan §3). Values the user already has on NiceIdeas are never overwritten.
+ * Web sign-in (plan §3): the handle follows the NiceMatrix username (re-synced at every
+ * sign-in; users without a usable username keep their generated handle). An empty
+ * display name / avatar is filled from the ID token; values set on NiceIdeas are kept.
  */
 export async function syncProfileFromClaims(db: Db, profile: Profile, claims: JWTPayload): Promise<Profile> {
-  const patch: { display_name?: string; avatar_url?: string } = {};
+  const patch: { display_name?: string; avatar_url?: string; handle?: string } = {};
+  const handle = handleFromUsername(claimString(claims, "username"));
+  if (handle && handle !== profile.handle) patch.handle = handle;
   if (!profile.display_name) {
     const name = claimString(claims, "name") || claimString(claims, "nickname") || claimString(claims, "username");
     if (name) patch.display_name = Array.from(name).slice(0, MAX_NAME).join("");
@@ -24,5 +35,16 @@ export async function syncProfileFromClaims(db: Db, profile: Profile, claims: JW
     if (/^https:\/\/[^\s"'<>]{1,500}$/.test(picture)) patch.avatar_url = picture;
   }
   if (Object.keys(patch).length === 0) return profile;
-  return db.updateTable("profile").set({ ...patch, updated_at: new Date() }).where("user_id", "=", profile.user_id).returningAll().executeTakeFirstOrThrow();
+  const save = (p: typeof patch) =>
+    db.updateTable("profile").set({ ...p, updated_at: new Date() }).where("user_id", "=", profile.user_id).returningAll().executeTakeFirstOrThrow();
+  try {
+    return await save(patch);
+  } catch (err) {
+    if (!patch.handle || !isUniqueViolation(err, "profile_handle_key")) throw err;
+    // Another profile still holds the handle (an older generated or renamed one): keep ours for now.
+    console.warn(JSON.stringify({ event: "handle_sync", result: "taken" }));
+    const { handle: _taken, ...rest } = patch;
+    void _taken;
+    return Object.keys(rest).length ? save(rest) : profile;
+  }
 }

@@ -183,12 +183,10 @@
   "settings": {
     "bio": "O‘zim haqimda",
     "error": {
-      "handle_invalid": "Bu foydalanuvchi nomi noto‘g‘ri yoki band.",
-      "handle_taken": "Bu foydalanuvchi nomi allaqachon olingan.",
       "too_long": "Ism yoki tavsif juda uzun."
     },
     "handle": "Foydalanuvchi nomi",
-    "handleHint": "3–30 belgi: kichik lotin harflari, raqamlar va pastki chiziq. O‘zgartirilsa, eski profil manziliga havolalar ishlamay qoladi.",
+    "handleHint": "Foydalanuvchi nomi NiceMatrix hisobingizdan olinadi. Uni o‘zgartirish uchun o‘sha yerda tahrirlang — keyingi kirishda bu yerda ham yangilanadi.",
     "name": "Ism",
     "save": "Saqlash",
     "saved": "Saqlandi.",

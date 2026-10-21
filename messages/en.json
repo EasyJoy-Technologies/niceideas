@@ -183,12 +183,10 @@
   "settings": {
     "bio": "Bio",
     "error": {
-      "handle_invalid": "That username isn’t valid or isn’t available.",
-      "handle_taken": "That username is taken.",
       "too_long": "The name or bio is too long."
     },
     "handle": "Username",
-    "handleHint": "3–30 characters: lowercase letters, digits and underscores. Changing it breaks links to your old profile address.",
+    "handleHint": "Your username comes from your NiceMatrix account. To change it, edit it there; it updates here the next time you sign in.",
     "name": "Name",
     "save": "Save",
     "saved": "Saved.",

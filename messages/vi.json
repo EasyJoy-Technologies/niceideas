@@ -183,12 +183,10 @@
   "settings": {
     "bio": "Giới thiệu",
     "error": {
-      "handle_invalid": "Tên người dùng này không hợp lệ hoặc không khả dụng.",
-      "handle_taken": "Tên người dùng này đã có người dùng.",
       "too_long": "Tên hoặc phần giới thiệu quá dài."
     },
     "handle": "Tên người dùng",
-    "handleHint": "3–30 ký tự: chữ thường, chữ số và dấu gạch dưới. Nếu đổi, các liên kết tới địa chỉ hồ sơ cũ sẽ không còn hoạt động.",
+    "handleHint": "Tên người dùng lấy từ tài khoản NiceMatrix của bạn. Để thay đổi, hãy sửa ở đó; tên sẽ được cập nhật tại đây vào lần đăng nhập tiếp theo.",
     "name": "Tên",
     "save": "Lưu",
     "saved": "Đã lưu.",

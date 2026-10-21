@@ -183,12 +183,10 @@
   "settings": {
     "bio": "Descriere",
     "error": {
-      "handle_invalid": "Numele de utilizator nu este valid sau nu este disponibil.",
-      "handle_taken": "Numele de utilizator este deja folosit.",
       "too_long": "Numele sau descrierea sunt prea lungi."
     },
     "handle": "Nume de utilizator",
-    "handleHint": "3–30 de caractere: litere mici, cifre și liniuțe de subliniere. Dacă îl schimbi, linkurile către vechea adresă a profilului nu vor mai funcționa.",
+    "handleHint": "Numele de utilizator provine din contul tău NiceMatrix. Pentru a-l schimba, editează-l acolo; se va actualiza aici la următoarea conectare.",
     "name": "Nume",
     "save": "Salvează",
     "saved": "Salvat.",

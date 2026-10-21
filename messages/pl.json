@@ -183,12 +183,10 @@
   "settings": {
     "bio": "Bio",
     "error": {
-      "handle_invalid": "Ta nazwa użytkownika jest nieprawidłowa lub niedostępna.",
-      "handle_taken": "Ta nazwa użytkownika jest już zajęta.",
       "too_long": "Imię lub bio są za długie."
     },
     "handle": "Nazwa użytkownika",
-    "handleHint": "3–30 znaków: małe litery, cyfry i podkreślenia. Po zmianie linki do starego adresu profilu przestaną działać.",
+    "handleHint": "Nazwa użytkownika pochodzi z Twojego konta NiceMatrix. Aby ją zmienić, edytuj ją tam – zaktualizuje się tutaj przy następnym logowaniu.",
     "name": "Imię i nazwisko",
     "save": "Zapisz",
     "saved": "Zapisano.",

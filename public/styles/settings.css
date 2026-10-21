@@ -12,6 +12,7 @@
 .ni-handle-in input { border: 0; padding-inline: 0; }
 .ni-field input:focus, .ni-field textarea:focus, .ni-handle-in:focus-within { outline: none; border-color: var(--ni-color-primary); box-shadow: 0 0 0 3px rgb(124 58 237 / 0.12); }
 .ni-handle-in input:focus { box-shadow: none; }
+.ni-handle-ro, .ni-handle-ro input { background: var(--ni-color-neutral); color: var(--ni-color-text-secondary); }
 .ni-settings-row { display: flex; justify-content: flex-end; }
 .ni-ok { margin: 0; padding: 0.5rem 0.75rem; border-radius: 0.625rem; background: #f0fdf4; color: var(--ni-color-success, #15803d); font-size: 0.875rem; }
 @media (max-width: 47.99rem) { .ni-settings { border-radius: 0; box-shadow: none; padding: 1rem; } }
