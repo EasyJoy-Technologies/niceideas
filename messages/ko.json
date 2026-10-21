@@ -1,4 +1,29 @@
 {
+  "admin": {
+    "dismiss": "기각",
+    "done": "처리했어요.",
+    "failed": "처리하지 못했어요. 이미 처리됐을 수 있어요.",
+    "hideComment": "댓글 숨기기",
+    "kind": {
+      "comment": "댓글",
+      "post": "게시물"
+    },
+    "lookup": "게시물 찾기",
+    "lookupPlaceholder": "게시물 링크나 코드를 붙여 넣으세요",
+    "notFound": "게시물을 찾을 수 없어요.",
+    "queue": "미처리 신고",
+    "queueEmpty": "미처리 신고가 없어요.",
+    "reason": "사유(필수)",
+    "removePost": "게시물 삭제",
+    "restorePost": "게시물 복원",
+    "status": {
+      "active": "게시 중",
+      "author_deleting": "작성자 계정 삭제 중",
+      "removed": "삭제됨",
+      "unpublished": "작성자가 철회함"
+    },
+    "title": "콘텐츠 관리"
+  },
   "aside": {
     "hot": "인기 글",
     "suggested": "추천 작성자"

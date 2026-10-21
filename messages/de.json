@@ -1,4 +1,29 @@
 {
+  "admin": {
+    "dismiss": "Ablehnen",
+    "done": "Erledigt.",
+    "failed": "Das hat nicht geklappt – vielleicht wurde es schon bearbeitet.",
+    "hideComment": "Kommentar ausblenden",
+    "kind": {
+      "comment": "Kommentar",
+      "post": "Beitrag"
+    },
+    "lookup": "Beitrag suchen",
+    "lookupPlaceholder": "Link oder Code des Beitrags einfügen",
+    "notFound": "Beitrag nicht gefunden.",
+    "queue": "Offene Meldungen",
+    "queueEmpty": "Keine offenen Meldungen.",
+    "reason": "Grund (erforderlich)",
+    "removePost": "Beitrag entfernen",
+    "restorePost": "Beitrag wiederherstellen",
+    "status": {
+      "active": "Online",
+      "author_deleting": "Konto des Autors wird gelöscht",
+      "removed": "Entfernt",
+      "unpublished": "Vom Autor zurückgezogen"
+    },
+    "title": "Moderation"
+  },
   "aside": {
     "hot": "Beliebte Artikel",
     "suggested": "Autoren zum Folgen"

@@ -1,4 +1,29 @@
 {
+  "admin": {
+    "dismiss": "Elutasítás",
+    "done": "Kész.",
+    "failed": "Nem sikerült – lehet, hogy már kezelték.",
+    "hideComment": "Hozzászólás elrejtése",
+    "kind": {
+      "comment": "Hozzászólás",
+      "post": "Bejegyzés"
+    },
+    "lookup": "Bejegyzés keresése",
+    "lookupPlaceholder": "Illeszd be a bejegyzés linkjét vagy kódját",
+    "notFound": "A bejegyzés nem található.",
+    "queue": "Nyitott bejelentések",
+    "queueEmpty": "Nincs nyitott bejelentés.",
+    "reason": "Indok (kötelező)",
+    "removePost": "Bejegyzés eltávolítása",
+    "restorePost": "Bejegyzés visszaállítása",
+    "status": {
+      "active": "Elérhető",
+      "author_deleting": "A szerző fiókja törlés alatt",
+      "removed": "Eltávolítva",
+      "unpublished": "A szerző visszavonta"
+    },
+    "title": "Moderálás"
+  },
   "aside": {
     "hot": "Népszerű cikkek",
     "suggested": "Követhető szerzők"

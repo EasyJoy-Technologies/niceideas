@@ -1,0 +1,16 @@
+/* Moderation console (/admin). */
+.ni-admin { padding: 1rem 1.25rem; display: flex; flex-direction: column; gap: 0.75rem; }
+.ni-admin h2 { margin: 0; font-size: 1rem; display: flex; gap: 0.5rem; align-items: baseline; }
+.ni-admin-list { list-style: none; margin: 0; padding: 0; }
+.ni-admin-item { padding: 0.75rem 0; display: flex; flex-direction: column; gap: 0.375rem; font-size: 0.875rem; }
+.ni-admin-list .ni-admin-item + .ni-admin-item { border-top: 1px solid #f3f4f6; }
+.ni-admin-item p, .ni-admin-item blockquote { margin: 0; overflow-wrap: anywhere; }
+.ni-admin-item blockquote { padding-inline-start: 0.75rem; border-inline-start: 3px solid var(--ni-color-border); color: var(--ni-color-text-primary); }
+.ni-admin-detail { color: var(--ni-color-text-secondary); }
+.ni-admin-acts { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.ni-admin-act { display: flex; gap: 0.375rem; flex: 1 1 16rem; margin: 0; }
+.ni-admin-act input { flex: 1; min-width: 0; height: 2.25rem; padding: 0 0.625rem; border: 1px solid var(--ni-color-border); border-radius: var(--ni-radius-sm); font: inherit; }
+.ni-admin-act .ni-btn { height: 2.25rem; padding: 0 0.875rem; font-size: 0.8125rem; }
+.ni-btn-danger { background: #dc2626; color: #fff; }
+.ni-btn-danger:hover { background: #b91c1c; }
+@media (max-width: 47.99rem) { .ni-admin { border-radius: 0; box-shadow: none; } }

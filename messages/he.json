@@ -1,4 +1,29 @@
 {
+  "admin": {
+    "dismiss": "דחייה",
+    "done": "בוצע.",
+    "failed": "זה לא הצליח — ייתכן שכבר טופל.",
+    "hideComment": "הסתרת תגובה",
+    "kind": {
+      "comment": "תגובה",
+      "post": "פוסט"
+    },
+    "lookup": "חיפוש פוסט",
+    "lookupPlaceholder": "הדביקו קישור או קוד של פוסט",
+    "notFound": "הפוסט לא נמצא.",
+    "queue": "דיווחים פתוחים",
+    "queueEmpty": "אין דיווחים פתוחים.",
+    "reason": "סיבה (חובה)",
+    "removePost": "הסרת פוסט",
+    "restorePost": "שחזור פוסט",
+    "status": {
+      "active": "פורסם",
+      "author_deleting": "חשבון הכותב בתהליך מחיקה",
+      "removed": "הוסר",
+      "unpublished": "נמשך על ידי הכותב"
+    },
+    "title": "ניהול תוכן"
+  },
   "aside": {
     "hot": "מאמרים פופולריים",
     "suggested": "כותבים שכדאי לעקוב אחריהם"

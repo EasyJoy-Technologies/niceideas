@@ -23,6 +23,8 @@ const schema = z.object({
   LOGTO_WEB_APP_SECRET: z.string().min(16).optional(),
   /** Silent sign-in (prompt=none) on the first site-page visit of a signed-out browser (SSO with other NiceMatrix sites). */
   WEB_SILENT_SSO: z.enum(["on", "off"]).default("off"),
+  /** Platform moderators (web admin page): comma-separated NiceMatrix user ids. Empty = nobody. */
+  ADMIN_USER_IDS: z.string().default(""),
   /** Web session lifetime (sliding), days. */
   WEB_SESSION_DAYS: z.coerce.number().int().positive().default(30),
 

@@ -1,4 +1,29 @@
 {
+  "admin": {
+    "dismiss": "Afwijzen",
+    "done": "Gedaan.",
+    "failed": "Dat lukte niet — misschien is het al afgehandeld.",
+    "hideComment": "Reactie verbergen",
+    "kind": {
+      "comment": "Reactie",
+      "post": "Bericht"
+    },
+    "lookup": "Bericht zoeken",
+    "lookupPlaceholder": "Plak de link of code van het bericht",
+    "notFound": "Bericht niet gevonden.",
+    "queue": "Openstaande meldingen",
+    "queueEmpty": "Geen openstaande meldingen.",
+    "reason": "Reden (verplicht)",
+    "removePost": "Bericht verwijderen",
+    "restorePost": "Bericht herstellen",
+    "status": {
+      "active": "Online",
+      "author_deleting": "Account van de auteur wordt verwijderd",
+      "removed": "Verwijderd",
+      "unpublished": "Ingetrokken door de auteur"
+    },
+    "title": "Moderatie"
+  },
   "aside": {
     "hot": "Populaire artikelen",
     "suggested": "Auteurs om te volgen"

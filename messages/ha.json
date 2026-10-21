@@ -1,4 +1,29 @@
 {
+  "admin": {
+    "dismiss": "Watsar",
+    "done": "An gama.",
+    "failed": "Bai yi nasara ba — wataƙila an riga an kula da shi.",
+    "hideComment": "Ɓoye sharhi",
+    "kind": {
+      "comment": "Sharhi",
+      "post": "Rubutu"
+    },
+    "lookup": "Nemo rubutu",
+    "lookupPlaceholder": "Liƙa hanyar haɗi ko lambar rubutu",
+    "notFound": "Ba a sami rubutun ba.",
+    "queue": "Rahotanni a buɗe",
+    "queueEmpty": "Babu rahotanni a buɗe.",
+    "reason": "Dalili (wajibi)",
+    "removePost": "Cire rubutu",
+    "restorePost": "Maido da rubutu",
+    "status": {
+      "active": "Yana nan",
+      "author_deleting": "Ana share asusun marubuci",
+      "removed": "An cire",
+      "unpublished": "Marubuci ya janye"
+    },
+    "title": "Kula da abun ciki"
+  },
   "aside": {
     "hot": "Shahararrun maƙalu",
     "suggested": "Marubutan da za a bi"

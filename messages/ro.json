@@ -1,4 +1,29 @@
 {
+  "admin": {
+    "dismiss": "Respinge",
+    "done": "Gata.",
+    "failed": "Nu a mers — poate a fost deja rezolvat.",
+    "hideComment": "Ascunde comentariul",
+    "kind": {
+      "comment": "Comentariu",
+      "post": "Postare"
+    },
+    "lookup": "Găsește o postare",
+    "lookupPlaceholder": "Lipește linkul sau codul postării",
+    "notFound": "Postarea nu a fost găsită.",
+    "queue": "Raportări deschise",
+    "queueEmpty": "Nicio raportare deschisă.",
+    "reason": "Motiv (obligatoriu)",
+    "removePost": "Elimină postarea",
+    "restorePost": "Restabilește postarea",
+    "status": {
+      "active": "Publicată",
+      "author_deleting": "Contul autorului se șterge",
+      "removed": "Eliminată",
+      "unpublished": "Retrasă de autor"
+    },
+    "title": "Moderare"
+  },
   "aside": {
     "hot": "Articole populare",
     "suggested": "Autori de urmărit"

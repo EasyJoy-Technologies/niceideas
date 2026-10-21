@@ -1,4 +1,29 @@
 {
+  "admin": {
+    "dismiss": "Kataa",
+    "done": "Imekamilika.",
+    "failed": "Haikufaulu — huenda tayari imeshughulikiwa.",
+    "hideComment": "Ficha maoni",
+    "kind": {
+      "comment": "Maoni",
+      "post": "Chapisho"
+    },
+    "lookup": "Tafuta chapisho",
+    "lookupPlaceholder": "Bandika kiungo au msimbo wa chapisho",
+    "notFound": "Chapisho halikupatikana.",
+    "queue": "Ripoti zilizo wazi",
+    "queueEmpty": "Hakuna ripoti zilizo wazi.",
+    "reason": "Sababu (inahitajika)",
+    "removePost": "Ondoa chapisho",
+    "restorePost": "Rejesha chapisho",
+    "status": {
+      "active": "Hewani",
+      "author_deleting": "Akaunti ya mwandishi inafutwa",
+      "removed": "Limeondolewa",
+      "unpublished": "Limeondolewa na mwandishi"
+    },
+    "title": "Udhibiti wa maudhui"
+  },
   "aside": {
     "hot": "Makala maarufu",
     "suggested": "Waandishi wa kufuata"

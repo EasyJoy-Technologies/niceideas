@@ -1,4 +1,29 @@
 {
+  "admin": {
+    "dismiss": "ውድቅ አድርግ",
+    "done": "ተከናውኗል።",
+    "failed": "አልተሳካም — ምናልባት አስቀድሞ ተስተናግዷል።",
+    "hideComment": "አስተያየቱን ደብቅ",
+    "kind": {
+      "comment": "አስተያየት",
+      "post": "ልጥፍ"
+    },
+    "lookup": "ልጥፍ ፈልግ",
+    "lookupPlaceholder": "የልጥፉን አገናኝ ወይም ኮድ ይለጥፉ",
+    "notFound": "ልጥፉ አልተገኘም።",
+    "queue": "ክፍት ሪፖርቶች",
+    "queueEmpty": "ምንም ክፍት ሪፖርት የለም።",
+    "reason": "ምክንያት (ግዴታ)",
+    "removePost": "ልጥፉን አስወግድ",
+    "restorePost": "ልጥፉን መልስ",
+    "status": {
+      "active": "በቀጥታ ላይ",
+      "author_deleting": "የደራሲው መለያ በመሰረዝ ላይ ነው",
+      "removed": "ተወግዷል",
+      "unpublished": "ደራሲው መልሶታል"
+    },
+    "title": "የይዘት ቁጥጥር"
+  },
   "aside": {
     "hot": "ታዋቂ ጽሑፎች",
     "suggested": "ሊከተሏቸው የሚገቡ ደራሲዎች"

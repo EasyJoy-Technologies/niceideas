@@ -1,4 +1,29 @@
 {
+  "admin": {
+    "dismiss": "Bác bỏ",
+    "done": "Đã xong.",
+    "failed": "Không thành công — có thể đã được xử lý.",
+    "hideComment": "Ẩn bình luận",
+    "kind": {
+      "comment": "Bình luận",
+      "post": "Bài đăng"
+    },
+    "lookup": "Tìm bài đăng",
+    "lookupPlaceholder": "Dán liên kết hoặc mã bài đăng",
+    "notFound": "Không tìm thấy bài đăng.",
+    "queue": "Báo cáo chưa xử lý",
+    "queueEmpty": "Không có báo cáo chưa xử lý.",
+    "reason": "Lý do (bắt buộc)",
+    "removePost": "Gỡ bài đăng",
+    "restorePost": "Khôi phục bài đăng",
+    "status": {
+      "active": "Đang hiển thị",
+      "author_deleting": "Tài khoản tác giả đang bị xóa",
+      "removed": "Đã gỡ",
+      "unpublished": "Tác giả đã thu hồi"
+    },
+    "title": "Kiểm duyệt"
+  },
   "aside": {
     "hot": "Bài viết nổi bật",
     "suggested": "Tác giả nên theo dõi"

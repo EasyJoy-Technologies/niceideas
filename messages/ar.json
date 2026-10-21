@@ -1,4 +1,29 @@
 {
+  "admin": {
+    "dismiss": "رفض",
+    "done": "تم.",
+    "failed": "تعذّر ذلك، ربما عولج من قبل.",
+    "hideComment": "إخفاء التعليق",
+    "kind": {
+      "comment": "تعليق",
+      "post": "منشور"
+    },
+    "lookup": "البحث عن منشور",
+    "lookupPlaceholder": "الصق رابط المنشور أو رمزه",
+    "notFound": "لم يُعثر على المنشور.",
+    "queue": "البلاغات المفتوحة",
+    "queueEmpty": "لا توجد بلاغات مفتوحة.",
+    "reason": "السبب (مطلوب)",
+    "removePost": "إزالة المنشور",
+    "restorePost": "استعادة المنشور",
+    "status": {
+      "active": "منشور حاليًا",
+      "author_deleting": "حساب الكاتب قيد الحذف",
+      "removed": "أزيل",
+      "unpublished": "سحبه الكاتب"
+    },
+    "title": "الإشراف"
+  },
   "aside": {
     "hot": "مقالات شائعة",
     "suggested": "كتّاب مقترحون"

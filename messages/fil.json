@@ -1,4 +1,29 @@
 {
+  "admin": {
+    "dismiss": "I-dismiss",
+    "done": "Tapos na.",
+    "failed": "Hindi nagawa — baka naasikaso na.",
+    "hideComment": "Itago ang comment",
+    "kind": {
+      "comment": "Comment",
+      "post": "Post"
+    },
+    "lookup": "Maghanap ng post",
+    "lookupPlaceholder": "I-paste ang link o code ng post",
+    "notFound": "Hindi nakita ang post.",
+    "queue": "Mga bukas na report",
+    "queueEmpty": "Walang bukas na report.",
+    "reason": "Dahilan (kailangan)",
+    "removePost": "Alisin ang post",
+    "restorePost": "Ibalik ang post",
+    "status": {
+      "active": "Live",
+      "author_deleting": "Binubura ang account ng author",
+      "removed": "Inalis",
+      "unpublished": "Binawi ng author"
+    },
+    "title": "Moderasyon"
+  },
   "aside": {
     "hot": "Mga sikat na artikulo",
     "suggested": "Mga author na puwedeng i-follow"

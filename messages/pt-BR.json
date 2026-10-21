@@ -1,4 +1,29 @@
 {
+  "admin": {
+    "dismiss": "Descartar",
+    "done": "Feito.",
+    "failed": "Não deu certo — talvez já tenha sido tratado.",
+    "hideComment": "Ocultar comentário",
+    "kind": {
+      "comment": "Comentário",
+      "post": "Publicação"
+    },
+    "lookup": "Encontrar uma publicação",
+    "lookupPlaceholder": "Cole o link ou o código da publicação",
+    "notFound": "Publicação não encontrada.",
+    "queue": "Denúncias abertas",
+    "queueEmpty": "Nenhuma denúncia aberta.",
+    "reason": "Motivo (obrigatório)",
+    "removePost": "Remover publicação",
+    "restorePost": "Restaurar publicação",
+    "status": {
+      "active": "No ar",
+      "author_deleting": "Conta do autor sendo excluída",
+      "removed": "Removida",
+      "unpublished": "Retirada pelo autor"
+    },
+    "title": "Moderação"
+  },
   "aside": {
     "hot": "Artigos populares",
     "suggested": "Autores para seguir"

@@ -83,5 +83,19 @@
   ],
   "notifications.title": [
     "fr"
+  ],
+  "admin.title": [
+    "de"
+  ],
+  "admin.kind.post": [
+    "it",
+    "fil",
+    "uz"
+  ],
+  "admin.kind.comment": [
+    "fil"
+  ],
+  "admin.status.active": [
+    "fil"
   ]
 }

@@ -1,4 +1,29 @@
 {
+  "admin": {
+    "dismiss": "Tolak",
+    "done": "Selesai.",
+    "failed": "Gagal — mungkin sudah ditangani.",
+    "hideComment": "Sembunyikan komentar",
+    "kind": {
+      "comment": "Komentar",
+      "post": "Postingan"
+    },
+    "lookup": "Cari postingan",
+    "lookupPlaceholder": "Tempel tautan atau kode postingan",
+    "notFound": "Postingan tidak ditemukan.",
+    "queue": "Laporan terbuka",
+    "queueEmpty": "Tidak ada laporan terbuka.",
+    "reason": "Alasan (wajib)",
+    "removePost": "Hapus postingan",
+    "restorePost": "Pulihkan postingan",
+    "status": {
+      "active": "Tayang",
+      "author_deleting": "Akun penulis sedang dihapus",
+      "removed": "Dihapus",
+      "unpublished": "Ditarik oleh penulis"
+    },
+    "title": "Moderasi"
+  },
   "aside": {
     "hot": "Artikel populer",
     "suggested": "Penulis untuk diikuti"

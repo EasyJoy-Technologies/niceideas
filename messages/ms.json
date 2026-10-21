@@ -1,4 +1,29 @@
 {
+  "admin": {
+    "dismiss": "Tolak",
+    "done": "Selesai.",
+    "failed": "Tidak berjaya — mungkin sudah dikendalikan.",
+    "hideComment": "Sembunyikan komen",
+    "kind": {
+      "comment": "Komen",
+      "post": "Siaran"
+    },
+    "lookup": "Cari siaran",
+    "lookupPlaceholder": "Tampal pautan atau kod siaran",
+    "notFound": "Siaran tidak ditemui.",
+    "queue": "Laporan terbuka",
+    "queueEmpty": "Tiada laporan terbuka.",
+    "reason": "Sebab (wajib)",
+    "removePost": "Alih keluar siaran",
+    "restorePost": "Pulihkan siaran",
+    "status": {
+      "active": "Disiarkan",
+      "author_deleting": "Akaun penulis sedang dipadamkan",
+      "removed": "Dialih keluar",
+      "unpublished": "Ditarik balik oleh penulis"
+    },
+    "title": "Penyederhanaan"
+  },
   "aside": {
     "hot": "Artikel popular",
     "suggested": "Penulis untuk diikuti"

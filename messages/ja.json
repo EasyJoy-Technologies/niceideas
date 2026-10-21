@@ -1,4 +1,29 @@
 {
+  "admin": {
+    "dismiss": "却下",
+    "done": "完了しました。",
+    "failed": "処理できませんでした。すでに対応済みの可能性があります。",
+    "hideComment": "コメントを非表示",
+    "kind": {
+      "comment": "コメント",
+      "post": "投稿"
+    },
+    "lookup": "投稿を探す",
+    "lookupPlaceholder": "投稿のリンクまたはコードを貼り付け",
+    "notFound": "投稿が見つかりません。",
+    "queue": "未対応の通報",
+    "queueEmpty": "未対応の通報はありません。",
+    "reason": "理由（必須）",
+    "removePost": "投稿を削除",
+    "restorePost": "投稿を復元",
+    "status": {
+      "active": "公開中",
+      "author_deleting": "作者のアカウント削除中",
+      "removed": "削除済み",
+      "unpublished": "作者が取り下げ"
+    },
+    "title": "モデレーション"
+  },
   "aside": {
     "hot": "人気の記事",
     "suggested": "おすすめの作者"

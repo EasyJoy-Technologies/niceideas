@@ -1,4 +1,5 @@
 import { GLOSSARY } from "@/i18n/glossary";
+import { isAdmin } from "@/server/admin/admins";
 import { escapeHtml } from "@/server/render/escape";
 import type { ChromeContext } from "./chrome";
 import { icon } from "./icons";
@@ -13,6 +14,7 @@ function menuItems(ctx: ChromeContext): string {
   return (
     `<ul><li><a href="${profilePath(v.handle)}">${icon("person")}${escapeHtml(t("auth.myProfile"))}</a></li>` +
     `<li><a href="/settings">${icon("settings")}${escapeHtml(t("settings.title"))}</a></li>` +
+    (isAdmin(v) ? `<li><a href="/admin">${icon("restricted")}${escapeHtml(t("admin.title"))}</a></li>` : "") +
     `<li><form method="post" action="/auth/sign-out"><button type="submit">${icon("signOut")}${escapeHtml(t("auth.signOut"))}</button></form></li></ul>`
   );
 }

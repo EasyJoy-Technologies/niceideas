@@ -1,4 +1,29 @@
 {
+  "admin": {
+    "dismiss": "Odrzuć",
+    "done": "Gotowe.",
+    "failed": "Nie udało się — możliwe, że już to obsłużono.",
+    "hideComment": "Ukryj komentarz",
+    "kind": {
+      "comment": "Komentarz",
+      "post": "Wpis"
+    },
+    "lookup": "Znajdź wpis",
+    "lookupPlaceholder": "Wklej link lub kod wpisu",
+    "notFound": "Nie znaleziono wpisu.",
+    "queue": "Otwarte zgłoszenia",
+    "queueEmpty": "Brak otwartych zgłoszeń.",
+    "reason": "Powód (wymagany)",
+    "removePost": "Usuń wpis",
+    "restorePost": "Przywróć wpis",
+    "status": {
+      "active": "Opublikowany",
+      "author_deleting": "Konto autora jest usuwane",
+      "removed": "Usunięty",
+      "unpublished": "Wycofany przez autora"
+    },
+    "title": "Moderacja"
+  },
   "aside": {
     "hot": "Popularne artykuły",
     "suggested": "Autorzy do obserwowania"

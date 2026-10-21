@@ -1,4 +1,29 @@
 {
+  "admin": {
+    "dismiss": "Rad etish",
+    "done": "Bajarildi.",
+    "failed": "Bo‘lmadi — ehtimol allaqachon ko‘rib chiqilgan.",
+    "hideComment": "Izohni yashirish",
+    "kind": {
+      "comment": "Izoh",
+      "post": "Post"
+    },
+    "lookup": "Post topish",
+    "lookupPlaceholder": "Post havolasi yoki kodini qo‘ying",
+    "notFound": "Post topilmadi.",
+    "queue": "Ochiq shikoyatlar",
+    "queueEmpty": "Ochiq shikoyatlar yo‘q.",
+    "reason": "Sabab (majburiy)",
+    "removePost": "Postni olib tashlash",
+    "restorePost": "Postni tiklash",
+    "status": {
+      "active": "E’lon qilingan",
+      "author_deleting": "Muallif hisobi o‘chirilmoqda",
+      "removed": "Olib tashlangan",
+      "unpublished": "Muallif qaytarib olgan"
+    },
+    "title": "Moderatsiya"
+  },
   "aside": {
     "hot": "Mashhur maqolalar",
     "suggested": "Kuzatishga arziydigan mualliflar"

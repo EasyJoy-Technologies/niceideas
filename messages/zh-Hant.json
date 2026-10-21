@@ -1,4 +1,29 @@
 {
+  "admin": {
+    "dismiss": "駁回",
+    "done": "已處理。",
+    "failed": "操作失敗，可能已被處理過。",
+    "hideComment": "隱藏留言",
+    "kind": {
+      "comment": "留言",
+      "post": "貼文"
+    },
+    "lookup": "尋找貼文",
+    "lookupPlaceholder": "貼上貼文連結或代碼",
+    "notFound": "找不到這則貼文。",
+    "queue": "待處理檢舉",
+    "queueEmpty": "沒有待處理的檢舉。",
+    "reason": "處理原因（必填）",
+    "removePost": "下架貼文",
+    "restorePost": "恢復貼文",
+    "status": {
+      "active": "正常",
+      "author_deleting": "作者註銷中",
+      "removed": "已下架",
+      "unpublished": "作者已撤回"
+    },
+    "title": "內容審核"
+  },
   "aside": {
     "hot": "熱門長文",
     "suggested": "推薦作者"

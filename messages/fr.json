@@ -1,4 +1,29 @@
 {
+  "admin": {
+    "dismiss": "Rejeter",
+    "done": "C’est fait.",
+    "failed": "Échec : l’élément a peut-être déjà été traité.",
+    "hideComment": "Masquer le commentaire",
+    "kind": {
+      "comment": "Commentaire",
+      "post": "Publication"
+    },
+    "lookup": "Trouver une publication",
+    "lookupPlaceholder": "Collez le lien ou le code de la publication",
+    "notFound": "Publication introuvable.",
+    "queue": "Signalements ouverts",
+    "queueEmpty": "Aucun signalement ouvert.",
+    "reason": "Motif (obligatoire)",
+    "removePost": "Retirer la publication",
+    "restorePost": "Rétablir la publication",
+    "status": {
+      "active": "En ligne",
+      "author_deleting": "Compte de l’auteur en cours de suppression",
+      "removed": "Retirée par la modération",
+      "unpublished": "Retirée par l’auteur"
+    },
+    "title": "Modération"
+  },
   "aside": {
     "hot": "Articles populaires",
     "suggested": "Auteurs à suivre"

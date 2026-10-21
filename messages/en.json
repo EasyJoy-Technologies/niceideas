@@ -1,4 +1,29 @@
 {
+  "admin": {
+    "dismiss": "Dismiss",
+    "done": "Done.",
+    "failed": "That didn’t work — it may already have been handled.",
+    "hideComment": "Hide comment",
+    "kind": {
+      "comment": "Comment",
+      "post": "Post"
+    },
+    "lookup": "Find a post",
+    "lookupPlaceholder": "Paste a post link or code",
+    "notFound": "Post not found.",
+    "queue": "Open reports",
+    "queueEmpty": "No open reports.",
+    "reason": "Reason (required)",
+    "removePost": "Remove post",
+    "restorePost": "Restore post",
+    "status": {
+      "active": "Live",
+      "author_deleting": "Author account being deleted",
+      "removed": "Removed",
+      "unpublished": "Withdrawn by the author"
+    },
+    "title": "Moderation"
+  },
   "aside": {
     "hot": "Popular articles",
     "suggested": "Authors to follow"

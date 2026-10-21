@@ -1,4 +1,29 @@
 {
+  "admin": {
+    "dismiss": "Avvisa",
+    "done": "Klart.",
+    "failed": "Det gick inte – det kan redan vara hanterat.",
+    "hideComment": "Dölj kommentar",
+    "kind": {
+      "comment": "Kommentar",
+      "post": "Inlägg"
+    },
+    "lookup": "Hitta ett inlägg",
+    "lookupPlaceholder": "Klistra in inläggets länk eller kod",
+    "notFound": "Inlägget hittades inte.",
+    "queue": "Öppna anmälningar",
+    "queueEmpty": "Inga öppna anmälningar.",
+    "reason": "Anledning (obligatorisk)",
+    "removePost": "Ta bort inlägg",
+    "restorePost": "Återställ inlägg",
+    "status": {
+      "active": "Publicerat",
+      "author_deleting": "Skribentens konto raderas",
+      "removed": "Borttaget",
+      "unpublished": "Återkallat av skribenten"
+    },
+    "title": "Moderering"
+  },
   "aside": {
     "hot": "Populära artiklar",
     "suggested": "Skribenter att följa"

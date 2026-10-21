@@ -1,4 +1,29 @@
 {
+  "admin": {
+    "dismiss": "驳回",
+    "done": "已处理。",
+    "failed": "操作失败，可能已被处理过。",
+    "hideComment": "隐藏评论",
+    "kind": {
+      "comment": "评论",
+      "post": "帖子"
+    },
+    "lookup": "查找帖子",
+    "lookupPlaceholder": "粘贴帖子链接或代码",
+    "notFound": "没有找到这个帖子。",
+    "queue": "待处理举报",
+    "queueEmpty": "没有待处理的举报。",
+    "reason": "处理原因（必填）",
+    "removePost": "下架帖子",
+    "restorePost": "恢复帖子",
+    "status": {
+      "active": "正常",
+      "author_deleting": "作者注销中",
+      "removed": "已下架",
+      "unpublished": "作者已撤回"
+    },
+    "title": "内容审核"
+  },
   "aside": {
     "hot": "热门长文",
     "suggested": "推荐作者"

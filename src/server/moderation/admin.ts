@@ -11,7 +11,7 @@ import type { MediaStores } from "@/server/storage/types";
 /**
  * Platform moderation (plan §11, §16.2). Every action is written to
  * `moderation_action` with the operator and reason. Used by the server-side
- * moderation CLI now and by the admin web UI later; no HTTP surface yet.
+ * moderation CLI and the web admin page (/admin, ADMIN_USER_IDS only).
  */
 export type Operator = { actorId: string; reason: string };
 export type ModerationRuntime = { db: Db; stores: MediaStores; cacheControl: string; retentionDays: number };
