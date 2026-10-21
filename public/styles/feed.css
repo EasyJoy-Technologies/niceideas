@@ -12,7 +12,7 @@
 .ni-fc { padding: 0.875rem 1.125rem 0.25rem; }
 .ni-fc-head { display: flex; align-items: center; gap: 0.625rem; }
 /* One line: name, @handle, time (never wraps), source badge at the end. */
-.ni-fc-head .ni-who { flex: 1; min-width: 0; display: flex; align-items: baseline; gap: 0.375rem; font-size: 0.875rem; line-height: 1.35; white-space: nowrap; }
+.ni-fc-head .ni-who { flex: 1 1 auto; min-width: 0; display: flex; align-items: baseline; gap: 0.375rem; font-size: 0.875rem; line-height: 1.35; white-space: nowrap; }
 .ni-fc-head .ni-name { flex: none; max-width: 50%; overflow: hidden; text-overflow: ellipsis; }
 .ni-fc-head .ni-meta { flex: 0 1 auto; min-width: 0; display: flex; align-items: center; }
 .ni-fc-head .ni-meta a { flex: none; }
