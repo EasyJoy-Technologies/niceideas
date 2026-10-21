@@ -62,7 +62,10 @@
 
 @media (max-width: 47.99rem) {
   .ni-feed-main { gap: 0.375rem; margin-top: 0; }
-  .ni-feed-h { padding: 0.625rem 1rem 0.25rem; }
+  /* Long tab labels (es, nl, pl, el, kk …) wrap under the title instead of overflowing. */
+  .ni-feed-h { padding: 0.625rem 1rem 0.25rem; flex-wrap: wrap; gap: 0.5rem; }
+  .ni-seg a { padding: 0.375rem 0.625rem; }
+  .ni-tabs { overflow-x: auto; }
   .ni-fc, .ni-prof, .ni-feed-empty { border-radius: 0; box-shadow: none; }
   .ni-fc { padding: 0.75rem 1rem 0.125rem; }
   .ni-fc-article img { height: 7rem; }
