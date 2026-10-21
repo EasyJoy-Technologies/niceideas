@@ -10,7 +10,8 @@ export const RESERVED_HANDLES: ReadonlySet<string> = new Set([
   "status", "support", "system", "terms", "timeline", "u", "user", "users", "www",
 ]);
 
-export const HANDLE_PATTERN = /^[a-z0-9_]{3,30}$/;
+/** Lowercased NiceMatrix username: 1–64 of a-z, 0-9, underscore (Logto allows up to 128). */
+export const HANDLE_PATTERN = /^[a-z0-9_]{1,64}$/;
 
 export function isValidHandle(handle: string): boolean {
   return HANDLE_PATTERN.test(handle) && !RESERVED_HANDLES.has(handle);

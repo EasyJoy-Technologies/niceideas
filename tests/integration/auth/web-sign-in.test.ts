@@ -79,6 +79,12 @@ describe("web sign-in", () => {
     claims = { username: "renamed_1" };
     await signIn();
     expect(await handle()).toBe("renamed_1");
+    claims = { username: "XK" };
+    await signIn();
+    expect(await handle()).toBe("xk");
+    claims = { username: "a".repeat(65) };
+    await signIn();
+    expect(await handle()).toBe("xk");
   });
 
   it("rejects a callback without the matching flow cookie or with a bad code", async () => {

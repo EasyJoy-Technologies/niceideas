@@ -5,6 +5,7 @@ import { profileStats } from "@/server/db/repos/feed";
 import { followingAmong } from "@/server/db/repos/follows";
 import { findProfileByHandle } from "@/server/db/repos/profiles";
 import { searchProfiles } from "@/server/db/repos/search";
+import { HANDLE_PATTERN } from "@/server/profiles/handles";
 import { peekVisitorKey } from "@/server/interactions/visitor";
 import { composeBox, composeError } from "./compose-box";
 import { loadDiscoverAside, renderDiscoverAside } from "./discover-aside";
@@ -17,7 +18,7 @@ import { cachedPage } from "./page-cache";
 import { htmlResponse, pageContext } from "./respond";
 import { renderStatusPage } from "./status-page";
 
-const HANDLE = /^[a-z0-9_]{3,30}$/;
+const HANDLE = HANDLE_PATTERN;
 
 async function guarded(request: Request, render: () => Promise<Response>): Promise<Response> {
   // Signed-out browser, first site-page visit: try SSO with other NiceMatrix sites (prompt=none) once.
