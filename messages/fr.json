@@ -1,4 +1,30 @@
 {
+  "auth": {
+    "accountMenu": "Menu du compte",
+    "error": {
+      "deleting": {
+        "body": "La suppression de ce compte a été demandée. Annulez la demande pour continuer à l’utiliser.",
+        "title": "Ce compte est en cours de suppression"
+      },
+      "disabled": {
+        "body": "Veuillez réessayer plus tard.",
+        "title": "La connexion n’est pas disponible pour le moment"
+      },
+      "expired": {
+        "body": "La connexion a pris trop de temps ou a été lancée dans un autre navigateur. Veuillez réessayer.",
+        "title": "La connexion a expiré"
+      },
+      "failed": {
+        "body": "Un problème est survenu lors de la connexion. Veuillez réessayer.",
+        "title": "Connexion impossible"
+      },
+      "retry": "Réessayer"
+    },
+    "myProfile": "Mon profil",
+    "prompt": "Connectez-vous pour suivre des auteurs, partager vos idées et être averti des réponses.",
+    "signIn": "Se connecter",
+    "signOut": "Se déconnecter"
+  },
   "common": {
     "brand": {
       "nicenote": "NiceNote"

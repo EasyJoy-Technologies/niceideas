@@ -1,4 +1,30 @@
 {
+  "auth": {
+    "accountMenu": "Account menu",
+    "error": {
+      "deleting": {
+        "body": "Deletion of this account was requested. Cancel the request to keep using it.",
+        "title": "This account is being deleted"
+      },
+      "disabled": {
+        "body": "Please try again later.",
+        "title": "Sign-in isn't available right now"
+      },
+      "expired": {
+        "body": "The sign-in took too long or was started in another browser. Please try again.",
+        "title": "Sign-in expired"
+      },
+      "failed": {
+        "body": "Something went wrong while signing in. Please try again.",
+        "title": "Couldn't sign you in"
+      },
+      "retry": "Try again"
+    },
+    "myProfile": "My profile",
+    "prompt": "Sign in to follow authors, share your ideas and get notified of replies.",
+    "signIn": "Sign in",
+    "signOut": "Sign out"
+  },
   "common": {
     "brand": {
       "nicenote": "NiceNote"

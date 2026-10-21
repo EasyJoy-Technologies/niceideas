@@ -1,4 +1,30 @@
 {
+  "auth": {
+    "accountMenu": "Hisob menyusi",
+    "error": {
+      "deleting": {
+        "body": "Bu hisobni o‘chirish so‘ralgan. Undan foydalanishni davom ettirish uchun so‘rovni bekor qiling.",
+        "title": "Bu hisob o‘chirilmoqda"
+      },
+      "disabled": {
+        "body": "Keyinroq qayta urinib ko‘ring.",
+        "title": "Hozir kirish imkoni yo‘q"
+      },
+      "expired": {
+        "body": "Kirish juda uzoq davom etdi yoki boshqa brauzerda boshlangan. Qayta urinib ko‘ring.",
+        "title": "Kirish muddati tugadi"
+      },
+      "failed": {
+        "body": "Kirishda xatolik yuz berdi. Qayta urinib ko‘ring.",
+        "title": "Kirib bo‘lmadi"
+      },
+      "retry": "Qayta urinish"
+    },
+    "myProfile": "Mening profilim",
+    "prompt": "Mualliflarni kuzatish, g‘oyalaringizni ulashish va javoblar haqida bildirishnoma olish uchun kiring.",
+    "signIn": "Kirish",
+    "signOut": "Chiqish"
+  },
   "common": {
     "brand": {
       "nicenote": "NiceNote"

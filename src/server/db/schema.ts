@@ -201,6 +201,14 @@ export interface AccountEventTable {
   processed_at: CreatedAt;
 }
 
+export interface WebSessionTable {
+  id_hash: string;
+  user_id: string;
+  created_at: CreatedAt;
+  last_seen_at: DefaultedTimestamp;
+  expires_at: Timestamp;
+}
+
 export interface Database {
   profile: ProfileTable;
   post: PostTable;
@@ -217,6 +225,7 @@ export interface Database {
   comment_like: CommentLikeTable;
   visitor_ban: VisitorBanTable;
   account_event: AccountEventTable;
+  web_session: WebSessionTable;
 }
 
 export type Profile = Selectable<ProfileTable>;

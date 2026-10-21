@@ -1,4 +1,30 @@
 {
+  "auth": {
+    "accountMenu": "Menu akun",
+    "error": {
+      "deleting": {
+        "body": "Penghapusan akun ini telah diminta. Batalkan permintaan untuk terus menggunakannya.",
+        "title": "Akun ini sedang dihapus"
+      },
+      "disabled": {
+        "body": "Silakan coba lagi nanti.",
+        "title": "Masuk sedang tidak tersedia"
+      },
+      "expired": {
+        "body": "Proses masuk terlalu lama atau dimulai di browser lain. Silakan coba lagi.",
+        "title": "Sesi masuk kedaluwarsa"
+      },
+      "failed": {
+        "body": "Terjadi kesalahan saat masuk. Silakan coba lagi.",
+        "title": "Tidak dapat masuk"
+      },
+      "retry": "Coba lagi"
+    },
+    "myProfile": "Profil saya",
+    "prompt": "Masuk untuk mengikuti penulis, membagikan ide, dan mendapat notifikasi balasan.",
+    "signIn": "Masuk",
+    "signOut": "Keluar"
+  },
   "common": {
     "brand": {
       "nicenote": "NiceNote"

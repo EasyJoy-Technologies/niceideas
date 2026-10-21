@@ -1,6 +1,8 @@
 import { GLOSSARY } from "@/i18n/glossary";
 import { LOCALES } from "@/i18n/locales";
+import type { Profile } from "@/server/db/schema";
 import { escapeHtml } from "@/server/render/escape";
+import { headerAccount } from "./account-menu";
 import { icon } from "./icons";
 import { LANG_PARAM, type PageIntl } from "./locale";
 
@@ -9,6 +11,8 @@ export type ChromeContext = {
   intl: PageIntl;
   /** Mainland-China visitor: no in-site navigation at all (plan §4.2). */
   restricted: boolean;
+  /** Signed-in profile (web session), if any. Never set for mainland-China visitors. */
+  viewer?: Profile | null;
   /** Path of the current page (language links stay on it). */
   path: string;
 };
@@ -41,15 +45,9 @@ export function languageMenu(ctx: ChromeContext): string {
 }
 
 export function siteHeader(ctx: ChromeContext): string {
-  const { t } = ctx.intl;
-  // Phones get the short label (CSS swaps them); the long one stays the accessible name.
-  const long = t("share.header.join", { brand: GLOSSARY.brand });
-  const join = ctx.restricted
-    ? ""
-    : `<a class="ni-btn ni-btn-primary" href="/" aria-label="${escapeHtml(long)}"><span class="ni-wide">${escapeHtml(long)}</span><span class="ni-narrow" aria-hidden="true">${escapeHtml(t("share.header.joinShort"))}</span></a>`;
   // Mainland-China visitors get no in-site navigation (plan §4.2). Phones show the icon only.
   const current = ctx.path === "/discover" || ctx.path === "/" ? ' aria-current="page"' : "";
-  const label = escapeHtml(t("discover.title"));
+  const label = escapeHtml(ctx.intl.t("discover.title"));
   const discover = ctx.restricted ? "" : `<a class="ni-hdr-nav" href="/discover" aria-label="${label}"${current}>${icon("compass")}<span>${label}</span></a>`;
-  return `<header class="ni-hdr"><div class="ni-hdr-in">${brand(ctx, 1.875, true)}<span class="ni-sp"></span>${discover}${languageMenu(ctx)}${join}</div></header>`;
+  return `<header class="ni-hdr"><div class="ni-hdr-in">${brand(ctx, 1.875, true)}<span class="ni-sp"></span>${discover}${languageMenu(ctx)}${headerAccount(ctx)}</div></header>`;
 }

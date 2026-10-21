@@ -1,4 +1,5 @@
 import { randomUUID } from "node:crypto";
+import { silentSignInTarget } from "@/server/auth/web/sign-in-flow";
 import { getDb } from "@/server/db";
 import { profileStats } from "@/server/db/repos/feed";
 import { findProfileByHandle } from "@/server/db/repos/profiles";
@@ -12,7 +13,10 @@ import { renderStatusPage } from "./status-page";
 
 const HANDLE = /^[a-z0-9_]{3,30}$/;
 
-async function guarded(render: () => Promise<Response>): Promise<Response> {
+async function guarded(request: Request, render: () => Promise<Response>): Promise<Response> {
+  // Signed-out browser, first site-page visit: try SSO with other NiceMatrix sites (prompt=none) once.
+  const silent = silentSignInTarget(request);
+  if (silent) return new Response(null, { status: 303, headers: { Location: silent, "Cache-Control": "no-store" } });
   try {
     return await render();
   } catch (err) {
@@ -23,7 +27,7 @@ async function guarded(render: () => Promise<Response>): Promise<Response> {
 
 /** Discover (also the signed-out home page). Site page: 451 in mainland China via src/proxy.ts. */
 export async function discoverResponse(request: Request): Promise<Response> {
-  return guarded(async () => {
+  return guarded(request, async () => {
     const ctx = await pageContext(request, "site");
     const url = new URL(request.url);
     const tab = feedTab(url);
@@ -34,7 +38,7 @@ export async function discoverResponse(request: Request): Promise<Response> {
 
 /** Public profile; `/@handle` is rewritten here by src/proxy.ts. */
 export async function profileResponse(request: Request, rawHandle: string): Promise<Response> {
-  return guarded(async () => {
+  return guarded(request, async () => {
     const handle = rawHandle.toLowerCase();
     const ctx = await pageContext(request, "site");
     const db = getDb();

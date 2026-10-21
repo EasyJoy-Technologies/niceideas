@@ -1,3 +1,4 @@
+import { deleteSessionsOfUser } from "@/server/db/repos/sessions";
 import { createHmac, timingSafeEqual } from "node:crypto";
 import { z } from "zod";
 import type { Db } from "@/server/db/client";
@@ -64,6 +65,7 @@ export async function applyAccountEvent(rt: AccountRuntime, e: AccountEvent): Pr
   if (e.event === "deletion_requested") {
     // Cooling-off starts: everything goes offline at once (pages answer 410).
     await setProfileStatus(rt.db, e.userId, "deleting");
+    await deleteSessionsOfUser(rt.db, e.userId);
     const posts = await switchAuthorPosts(rt.db, e.userId, "active", "author_deleting");
     await withdrawUnreferencedMedia(rt.db, rt.stores, await currentMediaIds(rt.db, posts));
   } else if (e.event === "deletion_cancelled") {

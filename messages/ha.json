@@ -1,4 +1,30 @@
 {
+  "auth": {
+    "accountMenu": "Menu na asusu",
+    "error": {
+      "deleting": {
+        "body": "An nemi a share wannan asusun. Soke buƙatar don ci gaba da amfani da shi.",
+        "title": "Ana share wannan asusun"
+      },
+      "disabled": {
+        "body": "Da fatan za a sake gwadawa nan gaba.",
+        "title": "Ba za a iya shiga yanzu ba"
+      },
+      "expired": {
+        "body": "Shigar ya ɗauki lokaci mai tsawo ko an fara shi a wani mai bincike. Da fatan za a sake gwadawa.",
+        "title": "Lokacin shiga ya ƙare"
+      },
+      "failed": {
+        "body": "Wani abu ya faru yayin shiga. Da fatan za a sake gwadawa.",
+        "title": "An kasa shigar da kai"
+      },
+      "retry": "Sake gwadawa"
+    },
+    "myProfile": "Bayanan martaba na",
+    "prompt": "Shiga don bin marubuta, raba ra'ayoyinka da samun sanarwar amsoshi.",
+    "signIn": "Shiga",
+    "signOut": "Fita"
+  },
   "common": {
     "brand": {
       "nicenote": "NiceNote"

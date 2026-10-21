@@ -1,4 +1,30 @@
 {
+  "auth": {
+    "accountMenu": "Menu da conta",
+    "error": {
+      "deleting": {
+        "body": "Foi pedida a eliminação desta conta. Cancele o pedido para continuar a utilizá-la.",
+        "title": "Esta conta está a ser eliminada"
+      },
+      "disabled": {
+        "body": "Tente novamente mais tarde.",
+        "title": "O início de sessão não está disponível de momento"
+      },
+      "expired": {
+        "body": "O início de sessão demorou demasiado ou foi iniciado noutro navegador. Tente novamente.",
+        "title": "O início de sessão expirou"
+      },
+      "failed": {
+        "body": "Ocorreu um erro ao iniciar sessão. Tente novamente.",
+        "title": "Não foi possível iniciar sessão"
+      },
+      "retry": "Tentar novamente"
+    },
+    "myProfile": "O meu perfil",
+    "prompt": "Inicie sessão para seguir autores, partilhar as suas ideias e receber avisos de respostas.",
+    "signIn": "Iniciar sessão",
+    "signOut": "Terminar sessão"
+  },
   "common": {
     "brand": {
       "nicenote": "NiceNote"

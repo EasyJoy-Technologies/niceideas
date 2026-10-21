@@ -1,4 +1,30 @@
 {
+  "auth": {
+    "accountMenu": "Fiókmenü",
+    "error": {
+      "deleting": {
+        "body": "Kérték a fiók törlését. Vond vissza a kérést, hogy továbbra is használhasd.",
+        "title": "Ez a fiók törlés alatt áll"
+      },
+      "disabled": {
+        "body": "Próbáld újra később.",
+        "title": "A bejelentkezés most nem érhető el"
+      },
+      "expired": {
+        "body": "A bejelentkezés túl sokáig tartott, vagy egy másik böngészőben indult. Próbáld újra.",
+        "title": "A bejelentkezés lejárt"
+      },
+      "failed": {
+        "body": "Hiba történt a bejelentkezéskor. Próbáld újra.",
+        "title": "Nem sikerült bejelentkezni"
+      },
+      "retry": "Újra"
+    },
+    "myProfile": "Saját profil",
+    "prompt": "Jelentkezz be, hogy követhesd a szerzőket, megoszthasd az ötleteidet, és értesítést kapj a válaszokról.",
+    "signIn": "Bejelentkezés",
+    "signOut": "Kijelentkezés"
+  },
   "common": {
     "brand": {
       "nicenote": "NiceNote"

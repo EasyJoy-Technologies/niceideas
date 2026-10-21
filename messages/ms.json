@@ -1,4 +1,30 @@
 {
+  "auth": {
+    "accountMenu": "Menu akaun",
+    "error": {
+      "deleting": {
+        "body": "Pemadaman akaun ini telah diminta. Batalkan permintaan untuk terus menggunakannya.",
+        "title": "Akaun ini sedang dipadamkan"
+      },
+      "disabled": {
+        "body": "Sila cuba lagi kemudian.",
+        "title": "Log masuk tidak tersedia buat masa ini"
+      },
+      "expired": {
+        "body": "Log masuk mengambil masa terlalu lama atau dimulakan dalam pelayar lain. Sila cuba lagi.",
+        "title": "Log masuk telah tamat tempoh"
+      },
+      "failed": {
+        "body": "Berlaku masalah semasa log masuk. Sila cuba lagi.",
+        "title": "Tidak dapat log masuk"
+      },
+      "retry": "Cuba lagi"
+    },
+    "myProfile": "Profil saya",
+    "prompt": "Log masuk untuk mengikuti penulis, berkongsi idea anda dan menerima pemberitahuan balasan.",
+    "signIn": "Log masuk",
+    "signOut": "Log keluar"
+  },
   "common": {
     "brand": {
       "nicenote": "NiceNote"

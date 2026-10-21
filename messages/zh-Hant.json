@@ -1,4 +1,30 @@
 {
+  "auth": {
+    "accountMenu": "帳號選單",
+    "error": {
+      "deleting": {
+        "body": "此帳號已申請註銷。撤銷註銷申請後即可繼續使用。",
+        "title": "此帳號正在註銷"
+      },
+      "disabled": {
+        "body": "請稍後再試。",
+        "title": "暫時無法登入"
+      },
+      "expired": {
+        "body": "登入耗時太久，或是在另一個瀏覽器中發起的。請重新登入。",
+        "title": "登入已逾時"
+      },
+      "failed": {
+        "body": "登入時發生問題，請重試。",
+        "title": "登入失敗"
+      },
+      "retry": "重試"
+    },
+    "myProfile": "我的主頁",
+    "prompt": "登入後可以追蹤作者、分享想法、收到回覆通知。",
+    "signIn": "登入 / 註冊",
+    "signOut": "登出"
+  },
   "common": {
     "brand": {
       "nicenote": "樂趣記事本"

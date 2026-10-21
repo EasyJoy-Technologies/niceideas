@@ -17,6 +17,15 @@ const schema = z.object({
   /** Logto client_ids allowed to call first-party APIs. Empty = no first-party access (fail closed). */
   FIRST_PARTY_CLIENT_IDS: z.string().default(""),
 
+  /** Web sign-in (Logto "Traditional Web" app; secret stays server-side). Unset id/secret = sign-in disabled. */
+  LOGTO_WEB_ISSUER: z.url().optional(),
+  LOGTO_WEB_APP_ID: z.string().min(1).optional(),
+  LOGTO_WEB_APP_SECRET: z.string().min(16).optional(),
+  /** Silent sign-in (prompt=none) on the first site-page visit of a signed-out browser (SSO with other NiceMatrix sites). */
+  WEB_SILENT_SSO: z.enum(["on", "off"]).default("off"),
+  /** Web session lifetime (sliding), days. */
+  WEB_SESSION_DAYS: z.coerce.number().int().positive().default(30),
+
   /** Object storage: `local` (development/tests) or `s3` (Cloudflare R2). */
   STORAGE_DRIVER: z.enum(["local", "s3"]).default("local"),
   LOCAL_STORAGE_DIR: z.string().default("./var/storage"),

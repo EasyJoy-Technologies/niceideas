@@ -1,29 +1,26 @@
-import { GLOSSARY } from "@/i18n/glossary";
+import { languageMenu, brand, type ChromeContext } from "./chrome";
+import { accountMenu, signInCard } from "./account-menu";
 import { escapeHtml } from "@/server/render/escape";
-import { brand, languageMenu, type ChromeContext } from "./chrome";
 import { icon } from "./icons";
 import { copyright, infoLinks } from "./site-footer";
 
 /**
- * Left rail of the wide-screen app shell (approved v2 design, signed-out view):
- * brand, navigation, language. Signed-in items (home, notifications, my profile,
- * settings, post) join once web sign-in ships. Mainland-China visitors: no navigation.
+ * Left column of the wide-screen shell (v3 design): brand, navigation; at the
+ * bottom the account row (signed in) or the sign-in card (signed out).
+ * Mainland-China visitors never reach these pages (451), so no restricted variant.
  */
 export function siteRail(ctx: ChromeContext): string {
   const label = escapeHtml(ctx.intl.t("discover.title"));
   const current = ctx.path === "/discover" || ctx.path === "/" ? ' aria-current="page"' : "";
   const nav = ctx.restricted ? "" : `<a class="ni-rail-nav" href="/discover"${current}>${icon("compass")}<span>${label}</span></a>`;
-  return `<nav class="ni-rail">${brand(ctx, 1.75)}${nav}<div class="ni-rail-foot">${languageMenu(ctx)}</div></nav>`;
+  const bottom = ctx.viewer ? accountMenu(ctx, "rail") : signInCard(ctx);
+  return `<nav class="ni-rail">${brand(ctx, 1.75)}${nav}<div class="ni-col-foot">${bottom}</div></nav>`;
 }
 
-/** Right column: join card (tagline + join), site links, ©. */
-export function siteAside(ctx: ChromeContext): string {
-  const { t } = ctx.intl;
-  const join = ctx.restricted
-    ? ""
-    : `<a class="ni-btn ni-btn-primary" href="/">${escapeHtml(t("share.header.join", { brand: GLOSSARY.brand }))}</a>`;
+/** Right column (v3 design): discovery panels on top; site links, language and © pinned to the bottom. */
+export function siteAside(ctx: ChromeContext, panels = ""): string {
   return (
-    `<aside class="ni-aside"><section class="ni-card ni-aside-card"><h2>${escapeHtml(t("common.tagline"))}</h2>${join}</section>` +
-    `${infoLinks(ctx, "ni-aside-links")}${copyright()}</aside>`
+    `<aside class="ni-aside">${panels}<div class="ni-col-foot">${infoLinks(ctx, "ni-aside-links")}` +
+    `<div class="ni-aside-meta">${languageMenu(ctx)}${copyright()}</div></div></aside>`
   );
 }

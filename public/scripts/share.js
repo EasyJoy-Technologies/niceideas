@@ -25,11 +25,12 @@
     t.title = fmt.format(at);
   }
 
-  // Language menus (<details>): a click outside or Esc closes them.
+  // Pop-up menus (<details>: language, account): a click outside or Esc closes them.
+  const MENUS = "details.ni-lang, details.ni-menu";
   const closeMenus = (except) => {
-    for (const m of d.querySelectorAll("details.ni-lang[open]")) if (m !== except) m.open = false;
+    for (const m of d.querySelectorAll(MENUS)) if (m.open && m !== except) m.open = false;
   };
-  d.addEventListener("click", (e) => closeMenus(e.target.closest?.("details.ni-lang")));
+  d.addEventListener("click", (e) => closeMenus(e.target.closest?.(MENUS)));
   d.addEventListener("keydown", (e) => { if (e.key === "Escape") closeMenus(null); });
 
   let box;

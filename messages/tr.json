@@ -1,4 +1,30 @@
 {
+  "auth": {
+    "accountMenu": "Hesap menüsü",
+    "error": {
+      "deleting": {
+        "body": "Bu hesabın silinmesi istendi. Kullanmaya devam etmek için isteği iptal et.",
+        "title": "Bu hesap siliniyor"
+      },
+      "disabled": {
+        "body": "Lütfen daha sonra tekrar dene.",
+        "title": "Giriş şu anda kullanılamıyor"
+      },
+      "expired": {
+        "body": "Giriş çok uzun sürdü veya başka bir tarayıcıda başlatıldı. Lütfen tekrar dene.",
+        "title": "Girişin süresi doldu"
+      },
+      "failed": {
+        "body": "Giriş yapılırken bir sorun oluştu. Lütfen tekrar dene.",
+        "title": "Giriş yapılamadı"
+      },
+      "retry": "Tekrar dene"
+    },
+    "myProfile": "Profilim",
+    "prompt": "Yazarları takip etmek, fikirlerini paylaşmak ve yanıt bildirimleri almak için giriş yap.",
+    "signIn": "Giriş yap",
+    "signOut": "Çıkış yap"
+  },
   "common": {
     "brand": {
       "nicenote": "NiceNote"

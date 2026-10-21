@@ -1,4 +1,30 @@
 {
+  "auth": {
+    "accountMenu": "Menu account",
+    "error": {
+      "deleting": {
+        "body": "È stata richiesta l’eliminazione di questo account. Annulla la richiesta per continuare a usarlo.",
+        "title": "Questo account è in fase di eliminazione"
+      },
+      "disabled": {
+        "body": "Riprova più tardi.",
+        "title": "L’accesso non è disponibile al momento"
+      },
+      "expired": {
+        "body": "L’accesso ha richiesto troppo tempo o è stato avviato in un altro browser. Riprova.",
+        "title": "Accesso scaduto"
+      },
+      "failed": {
+        "body": "Si è verificato un problema durante l’accesso. Riprova.",
+        "title": "Impossibile accedere"
+      },
+      "retry": "Riprova"
+    },
+    "myProfile": "Il mio profilo",
+    "prompt": "Accedi per seguire gli autori, condividere le tue idee e ricevere notifiche delle risposte.",
+    "signIn": "Accedi",
+    "signOut": "Esci"
+  },
   "common": {
     "brand": {
       "nicenote": "NiceNote"

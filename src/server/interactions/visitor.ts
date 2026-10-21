@@ -1,5 +1,6 @@
 import { createHmac, randomBytes } from "node:crypto";
 import { getConfig } from "@/server/config/env";
+import { readCookie, serializeCookie } from "@/server/http/cookies";
 
 /** Long-lived random browser id (no personal data); only its keyed hash is stored. */
 export const VISITOR_COOKIE = "ni_vid";
@@ -13,14 +14,6 @@ function secret(): string {
 
 function keyed(kind: string, value: string): string {
   return createHmac("sha256", secret()).update(`${kind}:${value}`).digest("base64url").slice(0, 32);
-}
-
-function cookieValue(header: string | null, name: string): string | null {
-  for (const part of header?.split(";") ?? []) {
-    const [k, ...v] = part.trim().split("=");
-    if (k === name) return v.join("=");
-  }
-  return null;
 }
 
 /** Visitor of an interaction request: hashed browser id and network address. */
@@ -43,17 +36,16 @@ export function ipHash(headers: Headers): string {
 
 /** Reads the visitor without issuing a cookie (page rendering). */
 export function peekVisitorKey(headers: Headers): string | null {
-  const vid = cookieValue(headers.get("cookie"), VISITOR_COOKIE);
+  const vid = readCookie(headers.get("cookie"), VISITOR_COOKIE);
   return vid && VID.test(vid) ? `v:${keyed("vid", vid)}` : null;
 }
 
 export function visitorOf(request: Request): Visitor {
-  let vid = cookieValue(request.headers.get("cookie"), VISITOR_COOKIE);
+  let vid = readCookie(request.headers.get("cookie"), VISITOR_COOKIE);
   let setCookie: string | null = null;
   if (!vid || !VID.test(vid)) {
     vid = randomBytes(16).toString("base64url");
-    const secure = new URL(getConfig().PUBLIC_BASE_URL).protocol === "https:" ? "; Secure" : "";
-    setCookie = `${VISITOR_COOKIE}=${vid}; Path=/; Max-Age=${VISITOR_MAX_AGE}; HttpOnly; SameSite=Lax${secure}`;
+    setCookie = serializeCookie(VISITOR_COOKIE, vid, { maxAge: VISITOR_MAX_AGE });
   }
   return { key: `v:${keyed("vid", vid)}`, ipHash: ipHash(request.headers), setCookie };
 }

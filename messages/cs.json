@@ -1,4 +1,30 @@
 {
+  "auth": {
+    "accountMenu": "Nabídka účtu",
+    "error": {
+      "deleting": {
+        "body": "Bylo požádáno o zrušení tohoto účtu. Zrušte žádost, abyste ho mohli dál používat.",
+        "title": "Tento účet se ruší"
+      },
+      "disabled": {
+        "body": "Zkuste to prosím později.",
+        "title": "Přihlášení teď není k dispozici"
+      },
+      "expired": {
+        "body": "Přihlášení trvalo příliš dlouho nebo bylo zahájeno v jiném prohlížeči. Zkuste to znovu.",
+        "title": "Platnost přihlášení vypršela"
+      },
+      "failed": {
+        "body": "Při přihlašování se něco pokazilo. Zkuste to znovu.",
+        "title": "Přihlášení se nezdařilo"
+      },
+      "retry": "Zkusit znovu"
+    },
+    "myProfile": "Můj profil",
+    "prompt": "Přihlaste se, abyste mohli sledovat autory, sdílet své nápady a dostávat oznámení o odpovědích.",
+    "signIn": "Přihlásit se",
+    "signOut": "Odhlásit se"
+  },
   "common": {
     "brand": {
       "nicenote": "NiceNote"

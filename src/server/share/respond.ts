@@ -1,7 +1,15 @@
+import { sessionProfile } from "@/server/auth/web/session";
+import { webAuthSettings } from "@/server/auth/web/settings";
 import { getConfig } from "@/server/config/env";
+import { getDb } from "@/server/db";
 import { countryFromHeaders, decideAccess, logRegionDecision, type AccessClass } from "@/server/region/region-policy";
 import type { ChromeContext } from "./chrome";
 import { pageIntl, requestLocale } from "./locale";
+
+function signInOrigin(): string {
+  const s = webAuthSettings();
+  return s ? ` ${new URL(s.issuer).origin}` : "";
+}
 
 /**
  * Server-rendered pages carry no inline script or style: everything is same-origin,
@@ -19,7 +27,8 @@ function contentSecurityPolicy(): string {
     "connect-src 'self'",
     "object-src 'none'",
     "base-uri 'none'",
-    "form-action 'self'",
+    // Sign-out posts here and is redirected to the NiceMatrix sign-out page.
+    `form-action 'self'${signInOrigin()}`,
     "frame-ancestors 'none'",
   ].join("; ");
 }
@@ -32,7 +41,8 @@ export async function pageContext(request: Request, access: AccessClass = "share
   const path = new URL(request.url).pathname;
   const decision = decideAccess({ country: countryFromHeaders(request.headers), access, mode: getConfig().REGION_POLICY_CN });
   logRegionDecision(path, access, decision);
-  return { intl: await pageIntl(requestLocale(request)), restricted: decision.restricted, path };
+  const viewer = decision.restricted ? null : await sessionProfile(getDb(), request.headers).catch(() => null);
+  return { intl: await pageIntl(requestLocale(request)), restricted: decision.restricted, path, viewer };
 }
 
 /** HTML response; output varies by language and region, so shared caches must not store it. */

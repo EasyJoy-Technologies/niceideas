@@ -1,4 +1,30 @@
 {
+  "auth": {
+    "accountMenu": "Menu ng account",
+    "error": {
+      "deleting": {
+        "body": "Hiniling na burahin ang account na ito. Kanselahin ang kahilingan para patuloy itong magamit.",
+        "title": "Binubura ang account na ito"
+      },
+      "disabled": {
+        "body": "Pakisubukang muli mamaya.",
+        "title": "Hindi available ang pag-sign in ngayon"
+      },
+      "expired": {
+        "body": "Masyadong natagalan ang pag-sign in o sinimulan ito sa ibang browser. Pakisubukang muli.",
+        "title": "Nag-expire ang pag-sign in"
+      },
+      "failed": {
+        "body": "Nagkaproblema habang nagsa-sign in. Pakisubukang muli.",
+        "title": "Hindi ka ma-sign in"
+      },
+      "retry": "Subukang muli"
+    },
+    "myProfile": "Aking profile",
+    "prompt": "Mag-sign in para i-follow ang mga author, ibahagi ang iyong mga ideya at maabisuhan sa mga reply.",
+    "signIn": "Mag-sign in",
+    "signOut": "Mag-sign out"
+  },
   "common": {
     "brand": {
       "nicenote": "NiceNote"

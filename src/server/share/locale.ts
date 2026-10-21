@@ -2,24 +2,17 @@ import { createFormatter, createTranslator, type AbstractIntlMessages } from "ne
 import { isLocale, LOCALE_COOKIE, type Locale } from "@/i18n/locales";
 import { loadMessages } from "@/i18n/messages";
 import { resolveLocale } from "@/i18n/resolve";
+import { readCookie } from "@/server/http/cookies";
 
 /** Query parameter that renders a share page in another language (no cookie, no redirect). */
 export const LANG_PARAM = "hl";
-
-function cookieValue(header: string | null, name: string): string | null {
-  for (const part of header?.split(";") ?? []) {
-    const [k, ...v] = part.trim().split("=");
-    if (k === name) return decodeURIComponent(v.join("="));
-  }
-  return null;
-}
 
 /** Visitor language for server-rendered pages: `?hl` → cookie → Accept-Language → default. */
 export function requestLocale(request: Request): Locale {
   const explicit = new URL(request.url).searchParams.get(LANG_PARAM);
   if (isLocale(explicit)) return explicit;
   return resolveLocale({
-    cookieLocale: cookieValue(request.headers.get("cookie"), LOCALE_COOKIE),
+    cookieLocale: readCookie(request.headers.get("cookie"), LOCALE_COOKIE),
     acceptLanguage: request.headers.get("accept-language"),
   });
 }

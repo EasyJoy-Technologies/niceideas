@@ -1,4 +1,30 @@
 {
+  "auth": {
+    "accountMenu": "Kontomenü",
+    "error": {
+      "deleting": {
+        "body": "Die Löschung dieses Kontos wurde beantragt. Widerrufe den Antrag, um es weiter zu nutzen.",
+        "title": "Dieses Konto wird gelöscht"
+      },
+      "disabled": {
+        "body": "Bitte versuche es später erneut.",
+        "title": "Anmeldung derzeit nicht verfügbar"
+      },
+      "expired": {
+        "body": "Die Anmeldung hat zu lange gedauert oder wurde in einem anderen Browser gestartet. Bitte versuche es erneut.",
+        "title": "Anmeldung abgelaufen"
+      },
+      "failed": {
+        "body": "Bei der Anmeldung ist etwas schiefgelaufen. Bitte versuche es erneut.",
+        "title": "Anmeldung fehlgeschlagen"
+      },
+      "retry": "Erneut versuchen"
+    },
+    "myProfile": "Mein Profil",
+    "prompt": "Melde dich an, um Autoren zu folgen, deine Ideen zu teilen und über Antworten benachrichtigt zu werden.",
+    "signIn": "Anmelden",
+    "signOut": "Abmelden"
+  },
   "common": {
     "brand": {
       "nicenote": "NiceNote"

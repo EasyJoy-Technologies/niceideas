@@ -1,4 +1,30 @@
 {
+  "auth": {
+    "accountMenu": "账号菜单",
+    "error": {
+      "deleting": {
+        "body": "该账号已申请注销。撤销注销申请后即可继续使用。",
+        "title": "该账号正在注销"
+      },
+      "disabled": {
+        "body": "请稍后再试。",
+        "title": "暂时无法登录"
+      },
+      "expired": {
+        "body": "登录耗时太久，或是在另一个浏览器中发起的。请重新登录。",
+        "title": "登录已过期"
+      },
+      "failed": {
+        "body": "登录时出了点问题，请重试。",
+        "title": "登录失败"
+      },
+      "retry": "重试"
+    },
+    "myProfile": "我的主页",
+    "prompt": "登录后可以关注作者、分享想法、收到回复通知。",
+    "signIn": "登录 / 注册",
+    "signOut": "退出登录"
+  },
   "common": {
     "brand": {
       "nicenote": "乐趣记事本"

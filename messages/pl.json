@@ -1,4 +1,30 @@
 {
+  "auth": {
+    "accountMenu": "Menu konta",
+    "error": {
+      "deleting": {
+        "body": "Złożono prośbę o usunięcie tego konta. Anuluj ją, aby dalej z niego korzystać.",
+        "title": "To konto jest usuwane"
+      },
+      "disabled": {
+        "body": "Spróbuj ponownie później.",
+        "title": "Logowanie jest teraz niedostępne"
+      },
+      "expired": {
+        "body": "Logowanie trwało zbyt długo lub zostało rozpoczęte w innej przeglądarce. Spróbuj ponownie.",
+        "title": "Logowanie wygasło"
+      },
+      "failed": {
+        "body": "Podczas logowania coś poszło nie tak. Spróbuj ponownie.",
+        "title": "Nie udało się zalogować"
+      },
+      "retry": "Spróbuj ponownie"
+    },
+    "myProfile": "Mój profil",
+    "prompt": "Zaloguj się, aby obserwować autorów, dzielić się pomysłami i otrzymywać powiadomienia o odpowiedziach.",
+    "signIn": "Zaloguj się",
+    "signOut": "Wyloguj się"
+  },
   "common": {
     "brand": {
       "nicenote": "NiceNote"

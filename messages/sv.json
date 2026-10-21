@@ -1,4 +1,30 @@
 {
+  "auth": {
+    "accountMenu": "Kontomeny",
+    "error": {
+      "deleting": {
+        "body": "Radering av kontot har begärts. Avbryt begäran för att fortsätta använda det.",
+        "title": "Kontot håller på att raderas"
+      },
+      "disabled": {
+        "body": "Försök igen senare.",
+        "title": "Inloggning är inte tillgänglig just nu"
+      },
+      "expired": {
+        "body": "Inloggningen tog för lång tid eller startades i en annan webbläsare. Försök igen.",
+        "title": "Inloggningen har gått ut"
+      },
+      "failed": {
+        "body": "Något gick fel vid inloggningen. Försök igen.",
+        "title": "Det gick inte att logga in"
+      },
+      "retry": "Försök igen"
+    },
+    "myProfile": "Min profil",
+    "prompt": "Logga in för att följa skribenter, dela dina idéer och få aviseringar om svar.",
+    "signIn": "Logga in",
+    "signOut": "Logga ut"
+  },
   "common": {
     "brand": {
       "nicenote": "NiceNote"

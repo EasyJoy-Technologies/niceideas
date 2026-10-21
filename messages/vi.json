@@ -1,4 +1,30 @@
 {
+  "auth": {
+    "accountMenu": "Menu tài khoản",
+    "error": {
+      "deleting": {
+        "body": "Đã có yêu cầu xóa tài khoản này. Hủy yêu cầu để tiếp tục sử dụng.",
+        "title": "Tài khoản này đang bị xóa"
+      },
+      "disabled": {
+        "body": "Vui lòng thử lại sau.",
+        "title": "Hiện không thể đăng nhập"
+      },
+      "expired": {
+        "body": "Quá trình đăng nhập mất quá lâu hoặc được bắt đầu trên trình duyệt khác. Vui lòng thử lại.",
+        "title": "Phiên đăng nhập đã hết hạn"
+      },
+      "failed": {
+        "body": "Đã xảy ra lỗi khi đăng nhập. Vui lòng thử lại.",
+        "title": "Không thể đăng nhập"
+      },
+      "retry": "Thử lại"
+    },
+    "myProfile": "Hồ sơ của tôi",
+    "prompt": "Đăng nhập để theo dõi tác giả, chia sẻ ý tưởng và nhận thông báo khi có phản hồi.",
+    "signIn": "Đăng nhập",
+    "signOut": "Đăng xuất"
+  },
   "common": {
     "brand": {
       "nicenote": "NiceNote"

@@ -1,4 +1,30 @@
 {
+  "auth": {
+    "accountMenu": "Menu da conta",
+    "error": {
+      "deleting": {
+        "body": "A exclusão desta conta foi solicitada. Cancele a solicitação para continuar usando-a.",
+        "title": "Esta conta está sendo excluída"
+      },
+      "disabled": {
+        "body": "Tente novamente mais tarde.",
+        "title": "O login não está disponível agora"
+      },
+      "expired": {
+        "body": "O login demorou demais ou foi iniciado em outro navegador. Tente novamente.",
+        "title": "O login expirou"
+      },
+      "failed": {
+        "body": "Algo deu errado ao entrar. Tente novamente.",
+        "title": "Não foi possível entrar"
+      },
+      "retry": "Tentar de novo"
+    },
+    "myProfile": "Meu perfil",
+    "prompt": "Entre para seguir autores, compartilhar suas ideias e receber avisos de respostas.",
+    "signIn": "Entrar",
+    "signOut": "Sair"
+  },
   "common": {
     "brand": {
       "nicenote": "NiceNote"

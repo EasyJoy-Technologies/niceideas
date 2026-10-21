@@ -1,4 +1,30 @@
 {
+  "auth": {
+    "accountMenu": "Menyu ya akaunti",
+    "error": {
+      "deleting": {
+        "body": "Ombi la kufuta akaunti hii limetumwa. Ghairi ombi ili uendelee kuitumia.",
+        "title": "Akaunti hii inafutwa"
+      },
+      "disabled": {
+        "body": "Tafadhali jaribu tena baadaye.",
+        "title": "Kuingia hakupatikani kwa sasa"
+      },
+      "expired": {
+        "body": "Kuingia kulichukua muda mrefu sana au kulianzishwa kwenye kivinjari kingine. Tafadhali jaribu tena.",
+        "title": "Muda wa kuingia umeisha"
+      },
+      "failed": {
+        "body": "Hitilafu imetokea wakati wa kuingia. Tafadhali jaribu tena.",
+        "title": "Imeshindwa kukuingiza"
+      },
+      "retry": "Jaribu tena"
+    },
+    "myProfile": "Wasifu wangu",
+    "prompt": "Ingia ili kufuatilia waandishi, kushiriki mawazo yako na kupata arifa za majibu.",
+    "signIn": "Ingia",
+    "signOut": "Toka"
+  },
   "common": {
     "brand": {
       "nicenote": "NiceNote"

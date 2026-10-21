@@ -1,4 +1,30 @@
 {
+  "auth": {
+    "accountMenu": "Meniul contului",
+    "error": {
+      "deleting": {
+        "body": "S-a cerut ștergerea acestui cont. Anulează cererea ca să-l folosești în continuare.",
+        "title": "Acest cont este în curs de ștergere"
+      },
+      "disabled": {
+        "body": "Încearcă din nou mai târziu.",
+        "title": "Conectarea nu este disponibilă acum"
+      },
+      "expired": {
+        "body": "Conectarea a durat prea mult sau a fost pornită în alt browser. Încearcă din nou.",
+        "title": "Conectarea a expirat"
+      },
+      "failed": {
+        "body": "Ceva n-a mers bine la conectare. Încearcă din nou.",
+        "title": "Nu te-am putut conecta"
+      },
+      "retry": "Încearcă din nou"
+    },
+    "myProfile": "Profilul meu",
+    "prompt": "Conectează-te ca să urmărești autori, să îți împărtășești ideile și să primești notificări despre răspunsuri.",
+    "signIn": "Conectează-te",
+    "signOut": "Deconectează-te"
+  },
   "common": {
     "brand": {
       "nicenote": "NiceNote"

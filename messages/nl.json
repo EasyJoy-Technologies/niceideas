@@ -1,4 +1,30 @@
 {
+  "auth": {
+    "accountMenu": "Accountmenu",
+    "error": {
+      "deleting": {
+        "body": "Verwijdering van dit account is aangevraagd. Annuleer de aanvraag om het te blijven gebruiken.",
+        "title": "Dit account wordt verwijderd"
+      },
+      "disabled": {
+        "body": "Probeer het later opnieuw.",
+        "title": "Inloggen is nu niet beschikbaar"
+      },
+      "expired": {
+        "body": "Het inloggen duurde te lang of is in een andere browser gestart. Probeer het opnieuw.",
+        "title": "Inloggen verlopen"
+      },
+      "failed": {
+        "body": "Er ging iets mis bij het inloggen. Probeer het opnieuw.",
+        "title": "Inloggen mislukt"
+      },
+      "retry": "Opnieuw proberen"
+    },
+    "myProfile": "Mijn profiel",
+    "prompt": "Log in om auteurs te volgen, je ideeën te delen en meldingen van reacties te krijgen.",
+    "signIn": "Inloggen",
+    "signOut": "Uitloggen"
+  },
   "common": {
     "brand": {
       "nicenote": "NiceNote"
