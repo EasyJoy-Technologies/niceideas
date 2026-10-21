@@ -1,6 +1,6 @@
-import { sql } from "kysely";
+import { sql, type RawBuilder, type SelectQueryBuilder } from "kysely";
 import type { Db } from "../client";
-import type { Post, PostKind, PostRevision } from "../schema";
+import type { Database, Post, PostKind, PostRevision } from "../schema";
 
 /** Keyset position in a newest-first feed. */
 export type FeedCursor = { at: Date; id: string };
@@ -15,23 +15,58 @@ export type FeedRow = Post & { author_handle: string; author_name: string; autho
 
 /** Live posts newest first (indexes: post_timeline_idx / post_author_published_idx). */
 export async function listFeed(db: Db, filter: FeedFilter, cursor: FeedCursor | null, limit: number): Promise<FeedRow[]> {
-  let q = db
-    .selectFrom("post")
+  if (filter.followerId) return listHomeFeed(db, filter.followerId, filter, cursor, limit);
+  let q = db.selectFrom("post");
+  if (filter.authorId) q = q.where("post.author_id", "=", filter.authorId);
+  if (filter.query) q = q.where("post.search_text", "ilike", containsPattern(filter.query));
+  return withAuthor(q.where(feedConditions(filter, cursor))).orderBy("post.published_at", "desc").orderBy("post.id", "desc").limit(limit).execute();
+}
+
+/**
+ * Home timeline: own posts + followed authors. Reads the newest `limit` posts of each
+ * author through post_author_published_idx and merges them, so the cost depends on the
+ * number of followed authors, not on how rare their posts are in the global timeline.
+ */
+async function listHomeFeed(db: Db, me: string, filter: FeedFilter, cursor: FeedCursor | null, limit: number): Promise<FeedRow[]> {
+  const authors = db
+    .selectFrom("follow")
+    .select("followee_id as a")
+    .where("follower_id", "=", me)
+    .unionAll(db.selectNoFrom(sql<string>`${me}::text`.as("a")))
+    .as("au");
+  return db
+    .selectFrom(authors)
+    .innerJoinLateral(
+      (eb) => eb.selectFrom("post").whereRef("post.author_id", "=", "au.a").where(feedConditions(filter, cursor)).selectAll("post").orderBy("post.published_at", "desc").orderBy("post.id", "desc").limit(limit).as("post"),
+      (join) => join.onTrue(),
+    )
     .innerJoin("profile", "profile.user_id", "post.author_id")
     .selectAll("post")
     .select(["profile.handle as author_handle", "profile.display_name as author_name", "profile.avatar_url as author_avatar"])
-    .where("post.status", "=", "active")
+    .where("profile.status", "=", "active")
+    .orderBy("post.published_at", "desc")
+    .orderBy("post.id", "desc")
+    .limit(limit)
+    .execute();
+}
+
+type PostQuery = SelectQueryBuilder<Database, "post", object>;
+
+/** Conditions shared by every feed: live posts, kind / cover tabs, keyset cursor. */
+function feedConditions(filter: FeedFilter, cursor: FeedCursor | null): RawBuilder<boolean> {
+  const parts: RawBuilder<unknown>[] = [sql`post.status = 'active'`];
+  if (filter.kind) parts.push(sql`post.kind = ${filter.kind}`);
+  if (filter.withCover) parts.push(sql`post.cover_media_id IS NOT NULL`);
+  if (cursor) parts.push(sql`(post.published_at, post.id) < (${cursor.at}, ${cursor.id}::uuid)`);
+  return sql<boolean>`(${sql.join(parts, sql` AND `)})`;
+}
+
+function withAuthor(q: PostQuery) {
+  return q
+    .innerJoin("profile", "profile.user_id", "post.author_id")
+    .selectAll("post")
+    .select(["profile.handle as author_handle", "profile.display_name as author_name", "profile.avatar_url as author_avatar"])
     .where("profile.status", "=", "active");
-  if (filter.authorId) q = q.where("post.author_id", "=", filter.authorId);
-  if (filter.followerId) {
-    const me = filter.followerId;
-    q = q.where((eb) => eb.or([eb("post.author_id", "=", me), eb("post.author_id", "in", eb.selectFrom("follow").select("followee_id").where("follower_id", "=", me))]));
-  }
-  if (filter.kind) q = q.where("post.kind", "=", filter.kind);
-  if (filter.withCover) q = q.where("post.cover_media_id", "is not", null);
-  if (filter.query) q = q.where("post.search_text", "ilike", containsPattern(filter.query));
-  if (cursor) q = q.where(sql<boolean>`(post.published_at, post.id) < (${cursor.at}, ${cursor.id}::uuid)`);
-  return q.orderBy("post.published_at", "desc").orderBy("post.id", "desc").limit(limit).execute();
 }
 
 export async function findRevisions(db: Db, ids: string[]): Promise<PostRevision[]> {
