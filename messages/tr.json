@@ -145,6 +145,20 @@
     },
     "title": "Ara"
   },
+  "settings": {
+    "bio": "Hakkında",
+    "error": {
+      "handle_invalid": "Bu kullanıcı adı geçersiz veya kullanılamıyor.",
+      "handle_taken": "Bu kullanıcı adı alınmış.",
+      "too_long": "Ad veya hakkında metni çok uzun."
+    },
+    "handle": "Kullanıcı adı",
+    "handleHint": "3–30 karakter: küçük harf, rakam ve alt çizgi. Değiştirirsen eski profil adresine giden bağlantılar çalışmaz.",
+    "name": "Ad",
+    "save": "Kaydet",
+    "saved": "Kaydedildi.",
+    "title": "Ayarlar"
+  },
   "share": {
     "action": {
       "cancel": "İptal",

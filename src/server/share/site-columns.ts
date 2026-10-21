@@ -18,7 +18,8 @@ export function siteRail(ctx: ChromeContext): string {
     ? ""
     : (signedIn ? item("/", "home", "nav.home", ctx.path === "/") : "") +
       item("/discover", "compass", "discover.title", ctx.path === "/discover" || (!signedIn && ctx.path === "/")) +
-      (signedIn ? item(profilePath(ctx.viewer!.handle), "person", "auth.myProfile", ctx.path === profilePath(ctx.viewer!.handle)) : "");
+      (signedIn ? item(profilePath(ctx.viewer!.handle), "person", "auth.myProfile", ctx.path === profilePath(ctx.viewer!.handle)) : "") +
+      (signedIn ? item("/settings", "settings", "settings.title", ctx.path === "/settings") : "");
   const bottom = ctx.viewer ? accountMenu(ctx, "rail") : signInCard(ctx);
   return `<nav class="ni-rail">${brand(ctx, 1.75)}${nav}<div class="ni-col-foot">${bottom}</div></nav>`;
 }

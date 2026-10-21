@@ -12,6 +12,7 @@ function menuItems(ctx: ChromeContext): string {
   const v = ctx.viewer!;
   return (
     `<ul><li><a href="${profilePath(v.handle)}">${icon("person")}${escapeHtml(t("auth.myProfile"))}</a></li>` +
+    `<li><a href="/settings">${icon("settings")}${escapeHtml(t("settings.title"))}</a></li>` +
     `<li><form method="post" action="/auth/sign-out"><button type="submit">${icon("signOut")}${escapeHtml(t("auth.signOut"))}</button></form></li></ul>`
   );
 }

@@ -145,6 +145,20 @@
     },
     "title": "Suchen"
   },
+  "settings": {
+    "bio": "Bio",
+    "error": {
+      "handle_invalid": "Dieser Benutzername ist ungültig oder nicht verfügbar.",
+      "handle_taken": "Dieser Benutzername ist bereits vergeben.",
+      "too_long": "Name oder Bio ist zu lang."
+    },
+    "handle": "Benutzername",
+    "handleHint": "3–30 Zeichen: Kleinbuchstaben, Ziffern und Unterstriche. Eine Änderung macht Links zur alten Profiladresse ungültig.",
+    "name": "Name",
+    "save": "Speichern",
+    "saved": "Gespeichert.",
+    "title": "Einstellungen"
+  },
   "share": {
     "action": {
       "cancel": "Abbrechen",

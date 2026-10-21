@@ -145,6 +145,20 @@
     },
     "title": "Tafuta"
   },
+  "settings": {
+    "bio": "Wasifu",
+    "error": {
+      "handle_invalid": "Jina hilo la mtumiaji si sahihi au halipatikani.",
+      "handle_taken": "Jina hilo la mtumiaji tayari linatumika.",
+      "too_long": "Jina au wasifu ni mrefu mno."
+    },
+    "handle": "Jina la mtumiaji",
+    "handleHint": "Herufi 3–30: herufi ndogo, tarakimu na mistari ya chini. Ukilibadilisha, viungo vya anwani yako ya zamani ya wasifu havitafanya kazi.",
+    "name": "Jina",
+    "save": "Hifadhi",
+    "saved": "Imehifadhiwa.",
+    "title": "Mipangilio"
+  },
   "share": {
     "action": {
       "cancel": "Ghairi",

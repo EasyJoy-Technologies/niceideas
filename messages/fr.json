@@ -145,6 +145,20 @@
     },
     "title": "Rechercher"
   },
+  "settings": {
+    "bio": "Bio",
+    "error": {
+      "handle_invalid": "Ce nom d’utilisateur n’est pas valide ou pas disponible.",
+      "handle_taken": "Ce nom d’utilisateur est déjà pris.",
+      "too_long": "Le nom ou la bio est trop long."
+    },
+    "handle": "Nom d’utilisateur",
+    "handleHint": "3 à 30 caractères : lettres minuscules, chiffres et tirets bas. Le modifier casse les liens vers l’ancienne adresse de votre profil.",
+    "name": "Nom",
+    "save": "Enregistrer",
+    "saved": "Enregistré.",
+    "title": "Paramètres"
+  },
   "share": {
     "action": {
       "cancel": "Annuler",

@@ -63,5 +63,22 @@
   "nav.home": [
     "it",
     "fil"
+  ],
+  "settings.bio": [
+    "fr",
+    "pt-BR",
+    "de",
+    "it",
+    "nl",
+    "pl",
+    "id",
+    "ms",
+    "fil"
+  ],
+  "settings.name": [
+    "de"
+  ],
+  "settings.handle": [
+    "fil"
   ]
 }

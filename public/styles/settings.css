@@ -1,0 +1,17 @@
+/* Settings form. */
+.ni-settings { padding: 1.25rem 1.5rem; display: flex; flex-direction: column; gap: 1rem; }
+.ni-field { display: flex; flex-direction: column; gap: 0.375rem; font-size: 0.875rem; font-weight: 600; }
+.ni-field small { font-weight: 400; color: var(--ni-color-text-secondary); font-size: 0.75rem; }
+.ni-field input, .ni-field textarea, .ni-handle-in {
+  width: 100%; border: 1px solid var(--ni-color-border); border-radius: var(--ni-radius-sm); background: var(--ni-color-surface);
+  font: 400 0.9375rem/1.5 var(--ni-font-sans); color: var(--ni-color-text-primary); padding: 0.5rem 0.75rem;
+}
+.ni-field textarea { resize: vertical; }
+.ni-handle-in { display: flex; align-items: center; gap: 0.125rem; padding-block: 0; }
+.ni-handle-in span { color: var(--ni-color-text-secondary); }
+.ni-handle-in input { border: 0; padding-inline: 0; }
+.ni-field input:focus, .ni-field textarea:focus, .ni-handle-in:focus-within { outline: none; border-color: var(--ni-color-primary); box-shadow: 0 0 0 3px rgb(124 58 237 / 0.12); }
+.ni-handle-in input:focus { box-shadow: none; }
+.ni-settings-row { display: flex; justify-content: flex-end; }
+.ni-ok { margin: 0; padding: 0.5rem 0.75rem; border-radius: 0.625rem; background: #f0fdf4; color: var(--ni-color-success, #15803d); font-size: 0.875rem; }
+@media (max-width: 47.99rem) { .ni-settings { border-radius: 0; box-shadow: none; padding: 1rem; } }

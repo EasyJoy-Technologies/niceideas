@@ -145,6 +145,20 @@
     },
     "title": "Sök"
   },
+  "settings": {
+    "bio": "Om mig",
+    "error": {
+      "handle_invalid": "Användarnamnet är ogiltigt eller inte tillgängligt.",
+      "handle_taken": "Användarnamnet är upptaget.",
+      "too_long": "Namnet eller beskrivningen är för lång."
+    },
+    "handle": "Användarnamn",
+    "handleHint": "3–30 tecken: gemener, siffror och understreck. Om du ändrar det slutar länkar till din gamla profiladress att fungera.",
+    "name": "Namn",
+    "save": "Spara",
+    "saved": "Sparat.",
+    "title": "Inställningar"
+  },
   "share": {
     "action": {
       "cancel": "Avbryt",

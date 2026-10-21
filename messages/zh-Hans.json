@@ -145,6 +145,20 @@
     },
     "title": "搜索"
   },
+  "settings": {
+    "bio": "简介",
+    "error": {
+      "handle_invalid": "用户名格式不正确或不可用。",
+      "handle_taken": "这个用户名已被占用。",
+      "too_long": "名字或简介太长了。"
+    },
+    "handle": "用户名",
+    "handleHint": "3–30 个字符，只能用小写字母、数字和下划线。修改后旧的主页链接将失效。",
+    "name": "名字",
+    "save": "保存",
+    "saved": "已保存。",
+    "title": "设置"
+  },
   "share": {
     "action": {
       "cancel": "取消",

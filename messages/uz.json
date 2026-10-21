@@ -145,6 +145,20 @@
     },
     "title": "Qidirish"
   },
+  "settings": {
+    "bio": "O‘zim haqimda",
+    "error": {
+      "handle_invalid": "Bu foydalanuvchi nomi noto‘g‘ri yoki band.",
+      "handle_taken": "Bu foydalanuvchi nomi allaqachon olingan.",
+      "too_long": "Ism yoki tavsif juda uzun."
+    },
+    "handle": "Foydalanuvchi nomi",
+    "handleHint": "3–30 belgi: kichik lotin harflari, raqamlar va pastki chiziq. O‘zgartirilsa, eski profil manziliga havolalar ishlamay qoladi.",
+    "name": "Ism",
+    "save": "Saqlash",
+    "saved": "Saqlandi.",
+    "title": "Sozlamalar"
+  },
   "share": {
     "action": {
       "cancel": "Bekor qilish",

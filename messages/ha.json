@@ -145,6 +145,20 @@
     },
     "title": "Bincika"
   },
+  "settings": {
+    "bio": "Bayani",
+    "error": {
+      "handle_invalid": "Wannan sunan mai amfani bai dace ba ko babu shi.",
+      "handle_taken": "An riga an ɗauki wannan sunan mai amfani.",
+      "too_long": "Suna ko bayanin ya yi tsawo sosai."
+    },
+    "handle": "Sunan mai amfani",
+    "handleHint": "Haruffa 3–30: ƙananan haruffa, lambobi da layin ƙasa. Idan ka canza shi, hanyoyin zuwa tsohon adireshin bayananka ba za su yi aiki ba.",
+    "name": "Suna",
+    "save": "Ajiye",
+    "saved": "An ajiye.",
+    "title": "Saituna"
+  },
   "share": {
     "action": {
       "cancel": "Soke",

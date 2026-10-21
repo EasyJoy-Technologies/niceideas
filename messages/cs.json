@@ -145,6 +145,20 @@
     },
     "title": "Hledat"
   },
+  "settings": {
+    "bio": "O mně",
+    "error": {
+      "handle_invalid": "Toto uživatelské jméno není platné nebo není k dispozici.",
+      "handle_taken": "Toto uživatelské jméno je obsazené.",
+      "too_long": "Jméno nebo popis je příliš dlouhý."
+    },
+    "handle": "Uživatelské jméno",
+    "handleHint": "3–30 znaků: malá písmena, číslice a podtržítka. Po změně přestanou fungovat odkazy na starou adresu profilu.",
+    "name": "Jméno",
+    "save": "Uložit",
+    "saved": "Uloženo.",
+    "title": "Nastavení"
+  },
   "share": {
     "action": {
       "cancel": "Zrušit",

@@ -145,6 +145,20 @@
     },
     "title": "Buscar"
   },
+  "settings": {
+    "bio": "Biografía",
+    "error": {
+      "handle_invalid": "Ese nombre de usuario no es válido o no está disponible.",
+      "handle_taken": "Ese nombre de usuario ya está en uso.",
+      "too_long": "El nombre o la biografía son demasiado largos."
+    },
+    "handle": "Nombre de usuario",
+    "handleHint": "De 3 a 30 caracteres: minúsculas, números y guiones bajos. Si lo cambias, los enlaces a tu perfil anterior dejarán de funcionar.",
+    "name": "Nombre",
+    "save": "Guardar",
+    "saved": "Guardado.",
+    "title": "Ajustes"
+  },
   "share": {
     "action": {
       "cancel": "Cancelar",

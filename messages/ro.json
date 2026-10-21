@@ -145,6 +145,20 @@
     },
     "title": "Caută"
   },
+  "settings": {
+    "bio": "Descriere",
+    "error": {
+      "handle_invalid": "Numele de utilizator nu este valid sau nu este disponibil.",
+      "handle_taken": "Numele de utilizator este deja folosit.",
+      "too_long": "Numele sau descrierea sunt prea lungi."
+    },
+    "handle": "Nume de utilizator",
+    "handleHint": "3–30 de caractere: litere mici, cifre și liniuțe de subliniere. Dacă îl schimbi, linkurile către vechea adresă a profilului nu vor mai funcționa.",
+    "name": "Nume",
+    "save": "Salvează",
+    "saved": "Salvat.",
+    "title": "Setări"
+  },
   "share": {
     "action": {
       "cancel": "Anulează",

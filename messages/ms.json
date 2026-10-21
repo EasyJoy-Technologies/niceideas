@@ -145,6 +145,20 @@
     },
     "title": "Cari"
   },
+  "settings": {
+    "bio": "Bio",
+    "error": {
+      "handle_invalid": "Nama pengguna itu tidak sah atau tidak tersedia.",
+      "handle_taken": "Nama pengguna itu sudah digunakan.",
+      "too_long": "Nama atau bio terlalu panjang."
+    },
+    "handle": "Nama pengguna",
+    "handleHint": "3–30 aksara: huruf kecil, angka dan garis bawah. Jika ditukar, pautan ke alamat profil lama tidak akan berfungsi.",
+    "name": "Nama",
+    "save": "Simpan",
+    "saved": "Disimpan.",
+    "title": "Tetapan"
+  },
   "share": {
     "action": {
       "cancel": "Batal",
