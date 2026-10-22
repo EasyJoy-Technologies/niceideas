@@ -1,0 +1,138 @@
+<!doctype html><html lang="zh-Hans"><head><meta charset="utf-8"><title>niceideas 管理后台 · 设计稿</title>
+<style>
+/* Admin is an internal tool: neutral, dense, system font. Not the public site's style. */
+*{box-sizing:border-box}body{margin:0;background:#e9ecf0;font:13px/1.45 -apple-system,"Segoe UI",Roboto,"PingFang SC","Noto Sans SC",sans-serif;color:#1f2328}
+.sheet{font-size:20px;margin:28px 40px 4px}.note{margin:0 40px 18px;color:#57606a;max-width:980px}
+.cap{font-weight:600;color:#57606a;margin:0 0 6px;font-size:12px;letter-spacing:.02em}
+.row{display:flex;gap:28px;padding:0 40px 32px;flex-wrap:wrap;align-items:flex-start}
+.app{width:1280px;height:760px;background:#f6f7f9;border:1px solid #d0d7de;border-radius:6px;display:grid;grid-template-columns:200px 1fr;overflow:hidden;box-shadow:0 2px 10px rgba(0,0,0,.06)}
+.nav{background:#1f2328;color:#c9d1d9;display:flex;flex-direction:column}
+.nav .brand{padding:14px 16px;color:#fff;font-weight:700;font-size:14px;border-bottom:1px solid #30363d}.nav .brand small{display:block;font-weight:400;color:#8b949e;font-size:11px}
+.nav a{display:flex;justify-content:space-between;padding:8px 16px;color:inherit;text-decoration:none}.nav a.on{background:#30363d;color:#fff;box-shadow:inset 3px 0 #7c3aed}
+.nav .grp{padding:14px 16px 4px;font-size:11px;color:#8b949e;text-transform:uppercase;letter-spacing:.06em}
+.badge{background:#da3633;color:#fff;border-radius:9px;padding:0 6px;font-size:11px;line-height:18px}.badge.g{background:#484f58}
+.nav .foot{margin-top:auto;padding:12px 16px;border-top:1px solid #30363d;font-size:12px;color:#8b949e}
+.main{display:flex;flex-direction:column;min-width:0}
+.top{height:48px;background:#fff;border-bottom:1px solid #d0d7de;display:flex;align-items:center;gap:12px;padding:0 16px}
+.top h1{font-size:15px;margin:0}.top .s{flex:1}
+input,select{font:inherit;border:1px solid #d0d7de;border-radius:4px;padding:5px 8px;background:#fff;color:inherit}
+.top input{width:320px}
+.tabs{display:flex;gap:2px;padding:8px 16px 0;background:#fff;border-bottom:1px solid #d0d7de}.tabs span{padding:6px 10px;border-bottom:2px solid transparent;color:#57606a}.tabs .on{border-color:#7c3aed;color:#1f2328;font-weight:600}
+.split{flex:1;display:grid;grid-template-columns:1fr 420px;min-height:0}
+table{width:100%;border-collapse:collapse;background:#fff}th,td{text-align:left;padding:7px 10px;border-bottom:1px solid #eaeef2;vertical-align:top}
+th{font-size:11px;color:#57606a;font-weight:600;background:#f6f8fa;text-transform:uppercase;letter-spacing:.04em}
+tr.sel td{background:#f3f0ff}.muted{color:#57606a}.mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px}
+.tag{display:inline-block;border-radius:3px;padding:0 5px;font-size:11px;line-height:17px;border:1px solid #d0d7de;background:#f6f8fa;color:#57606a}
+.tag.r{background:#ffebe9;border-color:#ffcecb;color:#cf222e}.tag.y{background:#fff8c5;border-color:#eed888;color:#7d4e00}.tag.g{background:#dafbe1;border-color:#aceebb;color:#116329}.tag.b{background:#ddf4ff;border-color:#b6e3ff;color:#0969da}
+.pane{border-left:1px solid #d0d7de;background:#fff;overflow:hidden;display:flex;flex-direction:column}
+.pane h2{font-size:13px;margin:0;padding:10px 14px;border-bottom:1px solid #eaeef2;display:flex;justify-content:space-between}
+.sec{padding:10px 14px;border-bottom:1px solid #eaeef2}.sec h3{margin:0 0 6px;font-size:11px;color:#57606a;text-transform:uppercase;letter-spacing:.04em}
+.quote{border-left:3px solid #d0d7de;padding:6px 10px;background:#f6f8fa;border-radius:0 4px 4px 0}
+.kv{display:grid;grid-template-columns:90px 1fr;gap:3px 8px}.kv b{font-weight:400;color:#57606a}
+.btn{display:inline-block;border:1px solid #d0d7de;background:#f6f8fa;border-radius:4px;padding:5px 12px;font-weight:600;white-space:nowrap}
+.btn.d{background:#cf222e;border-color:#cf222e;color:#fff}.btn.p{background:#7c3aed;border-color:#7c3aed;color:#fff}.btn.sm{padding:2px 8px;font-weight:500;font-size:12px}
+.chips span{display:inline-block;border:1px solid #d0d7de;border-radius:12px;padding:1px 9px;margin:0 4px 4px 0;font-size:12px;background:#fff}
+.acts{padding:12px 14px;margin-top:auto;border-top:1px solid #d0d7de;background:#f6f8fa}
+.acts input:not([type=checkbox]){width:100%;margin:6px 0 8px}.chk input{width:auto;margin:0}
+.chk{display:flex;gap:6px;align-items:center;margin:4px 0}
+.content{padding:16px;overflow:hidden;display:flex;flex-direction:column;gap:14px}
+.box{background:#fff;border:1px solid #d0d7de;border-radius:6px}.box h2{font-size:13px;margin:0;padding:9px 12px;border-bottom:1px solid #eaeef2;display:flex;justify-content:space-between;align-items:center}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.phone{width:390px;height:760px;background:#f6f7f9;border:1px solid #d0d7de;border-radius:18px;overflow:hidden;display:flex;flex-direction:column;position:relative}
+.phone .top{height:46px}.phone .card{background:#fff;border-bottom:1px solid #eaeef2;padding:10px 14px}
+.sheetm{position:absolute;left:0;right:0;bottom:0;background:#fff;border-top:1px solid #d0d7de;border-radius:12px 12px 0 0;padding:12px 14px;box-shadow:0 -6px 18px rgba(0,0,0,.12)}
+.opt{background:#fff;border:1px solid #d0d7de;border-radius:6px;padding:14px 16px;width:400px;font-size:13px;line-height:1.7}
+</style></head><body>
+<h1 class="sheet">⑤ 管理后台 — 设计稿</h1>
+<p class="note">后台是内部工具，不沿用前台的视觉风格：中性灰、系统字体、信息密集、表格为主，桌面优先，手机能应急处理。只给 <span class="mono">ADMIN_USER_IDS</span> 名单里的人看，<span class="mono">noindex</span>，不进站内导航（账号菜单里有入口）。所有处置都必须写原因，并记入审计日志。</p>
+
+<div class="row"><div>
+<div class="cap">桌面 · 举报队列（左侧列表，右侧详情和处理）</div>
+<div class="app">
+ <nav class="nav"><div class="brand">niceideas 后台<small>staging · v1.0.57</small></div>
+  <div class="grp">内容</div><a class="on">举报队列 <span class="badge">7</span></a><a>帖子</a><a>评论</a>
+  <div class="grp">用户与访客</div><a>封禁 <span class="badge g">3</span></a><a>用户</a>
+  <div class="grp">平台</div><a>接入应用</a><a>审计日志</a>
+  <div class="foot">林 · 管理员<br>← 返回网站</div></nav>
+ <div class="main">
+  <div class="top"><h1>举报队列</h1><span class="s"></span><input placeholder="粘贴帖子链接、代码或 @handle"><select><option>全部原因</option></select><select><option>最早优先</option></select></div>
+  <div class="tabs"><span class="on">待处理 7</span><span>已处理</span><span>已驳回</span></div>
+  <div class="split">
+   <div style="overflow:hidden"><table>
+    <tr><th style="width:26px"></th><th>对象</th><th>原因</th><th>举报</th><th>作者</th><th>最早举报</th></tr>
+    <tr class="sel"><td>💬</td><td>“这种东西也好意思发？加我微信领…”<div class="muted mono">/p/k3x9qa · 评论</div></td><td><span class="tag r">垃圾广告</span></td><td>3</td><td class="muted">匿名访客</td><td class="muted">12 分钟前</td></tr>
+    <tr><td>📄</td><td>秋天的第一场散步<div class="muted mono">/p/a8f2kd · 长文章</div></td><td><span class="tag y">侵权</span></td><td>1</td><td>@lin</td><td class="muted">1 小时前</td></tr>
+    <tr><td>📝</td><td>周末在河边拍到的晚霞，颜色比夏天还热闹…<div class="muted mono">/p/m2q7rs · 短内容 · 2 图</div></td><td><span class="tag y">不适宜内容</span></td><td>2</td><td>@momo</td><td class="muted">3 小时前</td></tr>
+    <tr><td>💬</td><td>“你写的都是错的”<div class="muted mono">/p/a8f2kd · 评论</div></td><td><span class="tag">骚扰</span></td><td>1</td><td>@river</td><td class="muted">昨天</td></tr>
+    <tr><td>📄</td><td>独立开发第一年复盘<div class="muted mono">/p/z1w0ty · 长文章 · 来自 OmniFire</div></td><td><span class="tag">其他</span></td><td>1</td><td>@hk</td><td class="muted">昨天</td></tr>
+   </table><p class="muted" style="padding:8px 10px">同一对象的多条举报合并为一行，“举报”列为次数。</p></div>
+   <aside class="pane">
+    <h2>评论 · 3 条举报 <a class="muted mono">/p/k3x9qa ↗</a></h2>
+    <div class="sec"><h3>被举报内容</h3><div class="quote">这种东西也好意思发？加我微信领福利 vx: ******</div>
+     <div class="kv" style="margin-top:8px"><b>发布者</b><span>匿名访客“福利哥” <span class="tag">访客 7f3a…</span> <span class="tag">IP 哈希 c91e…</span></span><b>所在帖子</b><span>秋天的第一场散步 · @lin</span><b>发布时间</b><span>今天 09:41</span><b>该访客</b><span>近 7 天 14 条评论，被举报 5 次</span></div></div>
+    <div class="sec"><h3>举报（3）</h3><div class="kv"><b>垃圾广告</b><span>“刷屏广告” · 访客 · 12 分钟前</span><b>垃圾广告</b><span>— · @momo · 10 分钟前</span><b>骚扰</b><span>— · 访客 · 6 分钟前</span></div></div>
+    <div class="acts"><b>处理</b>
+     <div class="chips" style="margin-top:6px"><span>垃圾广告</span><span>违反社区准则</span><span>侵犯他人权利</span><span>重复举报</span></div>
+     <input placeholder="处理原因（必填，会写入审计日志）" value="垃圾广告">
+     <label class="chk"><input type="checkbox" checked> 同时封禁该访客 <select><option>7 天</option><option>30 天</option><option>永久</option></select></label>
+     <label class="chk"><input type="checkbox"> 按 IP 哈希封禁（可能误伤同一网络的人）</label>
+     <label class="chk"><input type="checkbox" checked> 隐藏该访客的其他评论（11 条）</label>
+     <div style="display:flex;gap:8px;margin-top:8px"><span class="btn d">隐藏评论</span><span class="btn">驳回举报</span><span class="s" style="flex:1"></span><span class="muted" style="align-self:center">J / K 切换</span></div></div>
+   </aside>
+  </div></div></div>
+</div></div>
+
+<div class="row"><div>
+<div class="cap">桌面 · 帖子详情（查找结果；也可从队列点进来）</div>
+<div class="app" style="height:640px">
+ <nav class="nav"><div class="brand">niceideas 后台<small>staging · v1.0.57</small></div><div class="grp">内容</div><a>举报队列 <span class="badge">7</span></a><a class="on">帖子</a><a>评论</a><div class="grp">用户与访客</div><a>封禁 <span class="badge g">3</span></a><a>用户</a><div class="grp">平台</div><a>接入应用</a><a>审计日志</a><div class="foot">林 · 管理员<br>← 返回网站</div></nav>
+ <div class="main"><div class="top"><h1>帖子 /p/a8f2kd</h1><span class="s"></span><input value="https://niceideas.app/p/a8f2kd"></div>
+  <div class="content"><div class="grid2">
+   <div class="box"><h2>秋天的第一场散步 <span class="tag g">正常</span></h2><div class="sec" style="border:0"><div class="kv"><b>作者</b><span>@lin · 林 · 用户 ybksi0v7ysgi</span><b>类型</b><span>长文章 · 2 图 · 1 音频 · 1,240 字</span><b>来源</b><span>乐趣记事本（第一方）</span><b>发布</b><span>2026-10-21 15:02 · 修改 2 次</span><b>可见性</b><span>公开 · 中国大陆网络可访问</span><b>互动</b><span>👍 18 · 💬 6（隐藏 1）</span></div>
+    <p class="muted" style="margin:10px 0 0">走路的时候，大脑会进入一种松弛但专注的状态，零散的念头会慢慢连起来……</p></div></div>
+   <div class="box"><h2>处置</h2><div class="sec" style="border:0">
+    <div class="kv"><b>评论</b><span><select><option>所有人可评论</option><option>仅登录用户</option><option>关闭评论</option></select></span></div>
+    <input style="width:100%;margin:10px 0 8px" placeholder="处理原因（必填）"><div style="display:flex;gap:8px"><span class="btn d">下架帖子</span><span class="btn">保存评论设置</span></div>
+    <p class="muted" style="margin:10px 0 0">下架后作者能看到原因；30 天后物理删除，期间可恢复。</p></div></div></div>
+   <div class="box"><h2>处置记录</h2><table><tr><th>时间</th><th>操作</th><th>处理人</th><th>原因</th></tr><tr><td class="muted">昨天 22:10</td><td><span class="tag">隐藏评论</span></td><td>林</td><td>人身攻击</td></tr><tr><td class="muted">昨天 21:58</td><td><span class="tag">驳回举报</span></td><td>林</td><td>正常引用，未侵权</td></tr></table></div>
+  </div></div></div>
+</div></div>
+
+<div class="row"><div>
+<div class="cap">桌面 · 封禁、接入应用、审计日志（同一套表格布局，各为一页）</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;width:1280px">
+ <div class="box"><h2>封禁 <span class="muted">3 个生效中</span></h2><table><tr><th>对象</th><th>原因</th><th>到期</th><th></th></tr>
+  <tr><td><span class="tag">访客</span> <span class="mono">7f3a…e2</span></td><td>垃圾广告</td><td class="muted">7 天后</td><td><span class="btn sm">解除</span></td></tr>
+  <tr><td><span class="tag r">IP 哈希</span> <span class="mono">c91e…04</span></td><td>批量刷屏</td><td class="muted">永久</td><td><span class="btn sm">解除</span></td></tr>
+  <tr><td><span class="tag">访客</span> <span class="mono">a01b…9c</span></td><td>骚扰</td><td class="muted">23 天后</td><td><span class="btn sm">解除</span></td></tr></table></div>
+ <div class="box"><h2>接入应用 <span class="muted">资料来自 NiceMatrix 应用目录</span></h2><table><tr><th>应用</th><th>目录状态</th><th>本站</th><th>近 7 天发帖</th><th></th></tr>
+  <tr><td>乐趣记事本<div class="muted">第一方</div></td><td><span class="tag b">第一方</span></td><td><span class="tag g">允许</span></td><td>1,204</td><td></td></tr>
+  <tr><td>OmniFire<div class="muted mono">i1f3oe9k…</div></td><td><span class="tag g">正常</span></td><td><span class="tag g">允许</span></td><td>37</td><td><span class="btn sm">在本站停用</span></td></tr>
+  <tr><td>SpamBot Pro<div class="muted mono">x9q2…</div></td><td><span class="tag y">已暂停</span></td><td><span class="tag r">已停用</span></td><td>0</td><td><span class="btn sm">恢复</span></td></tr></table></div>
+ <div class="box" style="grid-column:1/3"><h2>审计日志 <span><select><option>全部操作</option></select> <select><option>全部处理人</option></select></span></h2><table><tr><th>时间</th><th>处理人</th><th>操作</th><th>对象</th><th>原因</th></tr>
+  <tr><td class="muted mono">10-22 09:55</td><td>林</td><td><span class="tag r">隐藏评论</span></td><td class="mono">/p/k3x9qa #c-41</td><td>垃圾广告</td></tr>
+  <tr><td class="muted mono">10-22 09:55</td><td>林</td><td><span class="tag r">封禁</span></td><td class="mono">访客 7f3a…e2 · 7 天</td><td>垃圾广告</td></tr>
+  <tr><td class="muted mono">10-21 22:10</td><td>林</td><td><span class="tag">评论设置</span></td><td class="mono">/p/a8f2kd → 仅登录用户</td><td>评论区争吵</td></tr></table></div>
+</div></div></div>
+
+<div class="row"><div>
+<div class="cap">手机 · 举报队列（应急处理）</div>
+<div class="phone"><div class="top"><span>☰</span><h1>举报队列</h1><span class="s"></span><span class="badge">7</span></div>
+ <div class="card"><div><span class="tag r">垃圾广告</span> <span class="muted">评论 · 3 次 · 12 分钟前</span></div><div class="quote" style="margin-top:6px">这种东西也好意思发？加我微信领福利…</div></div>
+ <div class="card"><div><span class="tag y">侵权</span> <span class="muted">长文章 · 1 次 · 1 小时前</span></div><div style="margin-top:4px">秋天的第一场散步 <span class="muted">@lin</span></div></div>
+ <div class="card"><div><span class="tag y">不适宜内容</span> <span class="muted">短内容 · 2 次 · 3 小时前</span></div><div style="margin-top:4px">周末在河边拍到的晚霞… <span class="muted">@momo</span></div></div>
+ <div class="sheetm"><b>评论 · 3 条举报</b><div class="quote" style="margin:8px 0">这种东西也好意思发？加我微信领福利 vx: ******</div><div class="chips"><span>垃圾广告</span><span>违反社区准则</span><span>重复举报</span></div><input style="width:100%;margin:4px 0 6px" placeholder="处理原因（必填）" value="垃圾广告"><label class="chk"><input type="checkbox" checked> 同时封禁该访客 7 天</label><div style="display:flex;gap:8px;margin-top:8px"><span class="btn d" style="flex:1;text-align:center">隐藏评论</span><span class="btn" style="flex:1;text-align:center">驳回</span></div></div>
+</div></div>
+<div class="opt"><b>范围（和现有 /admin 的差别）</b><br>
+· 现在只有一页：举报列表 + 按链接查帖子。改成左侧导航的多页后台。<br>
+· <b>举报队列</b>：同一对象的举报合并；右侧看详情、处理，不用离开列表；常用原因一键填入。<br>
+· <b>评论</b>：可隐藏/删除；匿名评论者可按访客标识或 IP 哈希封禁（计划 §16.2 已定，后端已有，界面未做）。<br>
+· <b>帖子</b>：下架/恢复、改评论设置（所有人/仅登录/关闭），带处置记录。<br>
+· <b>封禁</b>：列表、到期时间、解除。<br>
+· <b>用户</b>：按 handle 查用户，看帖子数、被举报次数；本期<b>不做</b>封号（账号属于 NiceMatrix ID）。<br>
+· <b>接入应用</b>：显示 NiceMatrix 目录里的状态，可在本站单独停用某个应用。<br>
+· <b>审计日志</b>：所有处置，可按操作和处理人筛选。<br><br>
+<b>不做</b>：运营数据看板、内容推荐位、批量操作（以后有需要再加）。<br>
+<b>技术</b>：服务端直出，不开 JS 也能用；J/K 快捷键是增强。后台文案同样 40 种语言。</div>
+</div>
+</body></html>
