@@ -9,7 +9,9 @@ NiceMatrix developer guide; this page covers only what is specific to NiceIdeas.
 - `iss` = `https://id.nicematrix.com/oidc` (staging `https://id-staging.nicematrix.com/oidc`), ES384, `exp` checked.
 - `aud` must be exactly `https://api.niceideas.app` (resource display name: **NiceIdeas**).
 - No registration on NiceIdeas: the app is recognised through the NiceMatrix app directory
-  (`GET {platform}/v1/oauth/apps/{clientId}`; cached ≤ 5 min, last known entry used ≤ 1 h if the directory is unreachable).
+  (`GET {platform}/v1/oauth/apps/{clientId}` → `{ ok: true, data: { clientId, name, logoUrl, websiteUrl, privacyUrl, termsUrl, status } }`;
+  only `404 oauth_app.not_found` means "not an third-party app", any other failure counts as unreachable;
+  cached ≤ 5 min, last known entry used ≤ 1 h if the directory is unreachable).
 - Users may grant only some of the requested scopes; every endpoint checks its own scope.
 
 ## Scopes and exact boundaries
