@@ -58,7 +58,7 @@
     "brand": {
       "nicenote": "NiceNote"
     },
-    "tagline": "Deel je Nice Ideas, altijd en overal!"
+    "tagline": "Deel je nice ideas, altijd en overal!"
   },
   "compose": {
     "addImages": "Afbeeldingen toevoegen (max. {max})",
@@ -100,11 +100,13 @@
   },
   "info": {
     "about": {
-      "p1": "{brand} is de plek om je Nice Ideas te delen — korte gedachten, lange teksten, foto’s en audio — met één link.",
+      "p1": "{brand} is de plek om je nice ideas te delen — korte gedachten, lange teksten, foto’s en audio — met één link.",
       "p2": "Iedereen kan een gedeelde link openen, met of zonder account. Berichten kunnen rechtstreeks uit apps zoals NiceNote komen of op het web geschreven worden.",
       "p3": "Je berichten blijven van jou: je kunt ze altijd bewerken of intrekken, en ingetrokken berichten worden na 30 dagen definitief verwijderd.",
       "title": "Over"
     },
+    "effective": "Van kracht sinds {date}",
+    "footerMenu": "Over ons en voorwaarden",
     "guidelines": {
       "intro": "Help {brand} een vriendelijke plek voor ideeën te houden. Berichten en reacties mogen niet:",
       "item1": "de wet of de rechten van anderen schenden, waaronder auteursrecht en privacy;",
@@ -126,21 +128,12 @@
       "title": "Help"
     },
     "privacy": {
-      "item1": "We bewaren wat je publiceert en het basisprofiel van je NiceMatrix-account: naam, avatar en gebruikersnaam.",
-      "item2": "Locatie- en cameragegevens worden uit afbeeldingen verwijderd voordat ze worden gepubliceerd.",
-      "item3": "Bij anonieme reacties en likes bewaren we alleen een eenrichtingshash van je netwerkadres, om misbruik te voorkomen.",
-      "item4": "We verkopen je gegevens niet.",
-      "item5": "Ingetrokken berichten worden binnen 30 dagen verwijderd. Als je je account verwijdert, worden ook je berichten en reacties verwijderd.",
       "title": "Privacybeleid"
     },
     "terms": {
-      "item1": "Door {brand} te gebruiken ga je akkoord met deze voorwaarden en de communityrichtlijnen.",
-      "item2": "Wat je plaatst is van jou. Je staat {brand} toe het op te slaan, te tonen en te leveren zodat je links werken.",
-      "item3": "Je bent verantwoordelijk voor wat je plaatst en moet het recht hebben het te delen.",
-      "item4": "We kunnen inhoud verwijderen of accounts opschorten die deze voorwaarden schenden.",
-      "item5": "{brand} wordt geleverd zoals het is. We doen ons best het beschikbaar te houden, maar kunnen niet beloven dat het nooit onderbroken wordt.",
       "title": "Gebruiksvoorwaarden"
-    }
+    },
+    "toc": "Op deze pagina"
   },
   "meta": {
     "site": {

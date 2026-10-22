@@ -58,7 +58,7 @@
     "brand": {
       "nicenote": "NiceNote"
     },
-    "tagline": "Shiriki Nice Ideas zako wakati wowote, mahali popote!"
+    "tagline": "Shiriki nice ideas zako wakati wowote, mahali popote!"
   },
   "compose": {
     "addImages": "Ongeza picha (hadi {max})",
@@ -100,11 +100,13 @@
   },
   "info": {
     "about": {
-      "p1": "{brand} ni mahali pa kushiriki Nice Ideas zako — mawazo mafupi, maandishi marefu, picha na sauti — kwa kiungo kimoja.",
+      "p1": "{brand} ni mahali pa kushiriki nice ideas zako — mawazo mafupi, maandishi marefu, picha na sauti — kwa kiungo kimoja.",
       "p2": "Mtu yeyote anaweza kufungua kiungo kilichoshirikiwa, akiwa na akaunti au la. Machapisho yanaweza kutoka moja kwa moja kwenye programu kama NiceNote au kuandikwa kwenye wavuti.",
       "p3": "Machapisho yako yanabaki kuwa yako: unaweza kuyahariri au kuyaondoa wakati wowote, na yaliyoondolewa hufutwa kabisa baada ya siku 30.",
       "title": "Kuhusu"
     },
+    "effective": "Inatumika kuanzia {date}",
+    "footerMenu": "Kuhusu na masharti",
     "guidelines": {
       "intro": "Saidia {brand} ibaki mahali pa kirafiki kwa mawazo. Machapisho na maoni hayapaswi:",
       "item1": "kuvunja sheria au haki za wengine, zikiwemo hakimiliki na faragha;",
@@ -126,21 +128,12 @@
       "title": "Msaada"
     },
     "privacy": {
-      "item1": "Tunahifadhi unachochapisha na wasifu wa msingi wa akaunti yako ya NiceMatrix: jina, picha ya wasifu na jina la mtumiaji.",
-      "item2": "Data ya mahali na ya kamera huondolewa kwenye picha kabla ya kuchapishwa.",
-      "item3": "Kwa maoni na vipendwa visivyo na jina, tunahifadhi tu hashi ya njia moja ya anwani yako ya mtandao, ili kuzuia matumizi mabaya.",
-      "item4": "Hatuuzi data yako.",
-      "item5": "Machapisho yaliyoondolewa hufutwa ndani ya siku 30. Ukifuta akaunti yako, machapisho na maoni yako pia hufutwa.",
       "title": "Sera ya faragha"
     },
     "terms": {
-      "item1": "Kwa kutumia {brand} unakubali masharti haya na miongozo ya jumuiya.",
-      "item2": "Unachochapisha ni chako. Unairuhusu {brand} kukihifadhi, kukionyesha na kukiwasilisha ili viungo vyako vifanye kazi.",
-      "item3": "Unawajibika kwa unachochapisha na lazima uwe na haki ya kukishiriki.",
-      "item4": "Tunaweza kuondoa maudhui au kusimamisha akaunti zinazokiuka masharti haya.",
-      "item5": "{brand} inatolewa kama ilivyo. Tunajitahidi kuiweka ipatikane lakini hatuwezi kuahidi kwamba haitakatika kamwe.",
       "title": "Masharti ya matumizi"
-    }
+    },
+    "toc": "Kwenye ukurasa huu"
   },
   "meta": {
     "site": {

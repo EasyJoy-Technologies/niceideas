@@ -58,7 +58,7 @@
     "brand": {
       "nicenote": "NiceNote"
     },
-    "tagline": "Nice Ideas’laringizni istalgan vaqtda, istalgan joyda ulashing!"
+    "tagline": "nice ideas’laringizni istalgan vaqtda, istalgan joyda ulashing!"
   },
   "compose": {
     "addImages": "Rasm qo‘shish (ko‘pi bilan {max})",
@@ -100,11 +100,13 @@
   },
   "info": {
     "about": {
-      "p1": "{brand} — Nice Ideas’laringizni — qisqa fikrlar, uzun matnlar, rasmlar va audioni — bitta havola orqali ulashish joyi.",
+      "p1": "{brand} — nice ideas’laringizni — qisqa fikrlar, uzun matnlar, rasmlar va audioni — bitta havola orqali ulashish joyi.",
       "p2": "Ulashilgan havolani hisobi bor yoki yo‘q har kim ochishi mumkin. Postlar NiceNote kabi ilovalardan to‘g‘ridan-to‘g‘ri kelishi yoki vebda yozilishi mumkin.",
       "p3": "Postlaringiz o‘zingizniki bo‘lib qoladi: ularni istalgan vaqtda tahrirlash yoki qaytarib olish mumkin, qaytarib olingan postlar 30 kundan keyin butunlay o‘chiriladi.",
       "title": "Biz haqimizda"
     },
+    "effective": "{date} dan kuchga kirgan",
+    "footerMenu": "Biz haqimizda va shartlar",
     "guidelines": {
       "intro": "{brand} g‘oyalar uchun samimiy joy bo‘lib qolishiga yordam bering. Postlar va izohlarda quyidagilar bo‘lmasligi kerak:",
       "item1": "qonunni yoki boshqalarning huquqlarini, jumladan mualliflik huquqi va shaxsiy hayot daxlsizligini buzish;",
@@ -126,21 +128,12 @@
       "title": "Yordam"
     },
     "privacy": {
-      "item1": "Siz e’lon qilgan narsalarni va NiceMatrix hisobingizning asosiy profilini — ism, avatar va foydalanuvchi nomini — saqlaymiz.",
-      "item2": "Rasmlar e’lon qilinishidan oldin ulardan joylashuv va kamera ma’lumotlari olib tashlanadi.",
-      "item3": "Anonim izohlar va yoqtirishlar uchun suiiste’molning oldini olish maqsadida faqat tarmoq manzilingizning bir tomonlama xeshini saqlaymiz.",
-      "item4": "Ma’lumotlaringizni sotmaymiz.",
-      "item5": "Qaytarib olingan postlar 30 kun ichida o‘chiriladi. Hisobingizni o‘chirsangiz, postlaringiz va izohlaringiz ham o‘chiriladi.",
       "title": "Maxfiylik siyosati"
     },
     "terms": {
-      "item1": "{brand} dan foydalanib, siz ushbu shartlar va hamjamiyat qoidalariga rozilik bildirasiz.",
-      "item2": "Joylagan narsangiz sizniki. Havolalaringiz ishlashi uchun {brand} ga uni saqlash, ko‘rsatish va yetkazishga ruxsat berasiz.",
-      "item3": "Joylagan narsangiz uchun o‘zingiz javobgarsiz va uni ulashish huquqiga ega bo‘lishingiz kerak.",
-      "item4": "Ushbu shartlarni buzgan kontentni olib tashlashimiz yoki hisoblarni to‘xtatib qo‘yishimiz mumkin.",
-      "item5": "{brand} “boricha” taqdim etiladi. Uni ishlab turishi uchun harakat qilamiz, ammo hech qachon uzilish bo‘lmasligini kafolatlay olmaymiz.",
       "title": "Foydalanish shartlari"
-    }
+    },
+    "toc": "Ushbu sahifada"
   },
   "meta": {
     "site": {

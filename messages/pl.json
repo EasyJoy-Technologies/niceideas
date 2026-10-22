@@ -58,7 +58,7 @@
     "brand": {
       "nicenote": "NiceNote"
     },
-    "tagline": "Dziel się swoimi Nice Ideas zawsze i wszędzie!"
+    "tagline": "Dziel się swoimi nice ideas zawsze i wszędzie!"
   },
   "compose": {
     "addImages": "Dodaj obrazy (maks. {max})",
@@ -100,11 +100,13 @@
   },
   "info": {
     "about": {
-      "p1": "{brand} to miejsce, w którym dzielisz się swoimi Nice Ideas — krótkimi myślami, długimi tekstami, zdjęciami i nagraniami — za pomocą jednego linku.",
+      "p1": "{brand} to miejsce, w którym dzielisz się swoimi nice ideas — krótkimi myślami, długimi tekstami, zdjęciami i nagraniami — za pomocą jednego linku.",
       "p2": "Każdy może otworzyć udostępniony link, z kontem lub bez. Wpisy mogą pochodzić bezpośrednio z aplikacji takich jak NiceNote albo powstawać w przeglądarce.",
       "p3": "Twoje wpisy pozostają Twoje: możesz je w każdej chwili edytować lub wycofać, a wycofane wpisy są trwale usuwane po 30 dniach.",
       "title": "O nas"
     },
+    "effective": "Obowiązuje od {date}",
+    "footerMenu": "O serwisie i warunki",
     "guidelines": {
       "intro": "Pomóż utrzymać {brand} jako przyjazne miejsce dla pomysłów. Wpisy i komentarze nie mogą:",
       "item1": "łamać prawa ani naruszać praw innych osób, w tym praw autorskich i prywatności;",
@@ -126,21 +128,12 @@
       "title": "Pomoc"
     },
     "privacy": {
-      "item1": "Przechowujemy to, co publikujesz, oraz podstawowy profil Twojego konta NiceMatrix: nazwę, awatar i nazwę użytkownika.",
-      "item2": "Przed publikacją usuwamy z obrazów dane o lokalizacji i aparacie.",
-      "item3": "W przypadku anonimowych komentarzy i polubień przechowujemy tylko jednokierunkowy skrót Twojego adresu sieciowego, aby zapobiegać nadużyciom.",
-      "item4": "Nie sprzedajemy Twoich danych.",
-      "item5": "Wycofane wpisy są usuwane w ciągu 30 dni. Po usunięciu konta usuwane są też Twoje wpisy i komentarze.",
       "title": "Polityka prywatności"
     },
     "terms": {
-      "item1": "Korzystając z {brand}, akceptujesz te warunki i zasady społeczności.",
-      "item2": "To, co publikujesz, należy do Ciebie. Pozwalasz {brand} przechowywać, wyświetlać i dostarczać te treści, aby Twoje linki działały.",
-      "item3": "Odpowiadasz za to, co publikujesz, i musisz mieć prawo do udostępniania tych treści.",
-      "item4": "Możemy usuwać treści lub zawieszać konta naruszające te warunki.",
-      "item5": "{brand} jest udostępniany w obecnej postaci. Dbamy o jego dostępność, ale nie możemy zagwarantować, że nigdy nie wystąpią przerwy.",
       "title": "Warunki korzystania"
-    }
+    },
+    "toc": "Na tej stronie"
   },
   "meta": {
     "site": {

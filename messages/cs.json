@@ -58,7 +58,7 @@
     "brand": {
       "nicenote": "NiceNote"
     },
-    "tagline": "Sdílejte své Nice Ideas kdykoli a kdekoli!"
+    "tagline": "Sdílejte své nice ideas kdykoli a kdekoli!"
   },
   "compose": {
     "addImages": "Přidat obrázky (až {max})",
@@ -100,11 +100,13 @@
   },
   "info": {
     "about": {
-      "p1": "{brand} je místo, kde můžete sdílet své Nice Ideas — krátké myšlenky, dlouhé texty, fotky i zvuk — jediným odkazem.",
+      "p1": "{brand} je místo, kde můžete sdílet své nice ideas — krátké myšlenky, dlouhé texty, fotky i zvuk — jediným odkazem.",
       "p2": "Sdílený odkaz může otevřít kdokoli, s účtem i bez něj. Příspěvky mohou přicházet přímo z aplikací, jako je NiceNote, nebo vznikat na webu.",
       "p3": "Vaše příspěvky zůstávají vaše: můžete je kdykoli upravit nebo stáhnout a stažené příspěvky se po 30 dnech trvale smažou.",
       "title": "O nás"
     },
+    "effective": "Účinné od {date}",
+    "footerMenu": "O službě a podmínky",
     "guidelines": {
       "intro": "Pomozte udržet {brand} přátelským místem pro nápady. Příspěvky a komentáře nesmí:",
       "item1": "porušovat zákon ani práva druhých, včetně autorských práv a soukromí;",
@@ -126,21 +128,12 @@
       "title": "Nápověda"
     },
     "privacy": {
-      "item1": "Ukládáme, co zveřejníte, a základní profil vašeho účtu NiceMatrix: jméno, avatar a uživatelské jméno.",
-      "item2": "Před zveřejněním odstraníme z obrázků údaje o poloze a fotoaparátu.",
-      "item3": "U anonymních komentářů a lajků uchováváme jen jednosměrný hash vaší síťové adresy, abychom zabránili zneužití.",
-      "item4": "Vaše data neprodáváme.",
-      "item5": "Stažené příspěvky se smažou do 30 dnů. Když smažete účet, smažou se i vaše příspěvky a komentáře.",
       "title": "Zásady ochrany soukromí"
     },
     "terms": {
-      "item1": "Používáním {brand} souhlasíte s těmito podmínkami a s pravidly komunity.",
-      "item2": "Co zveřejníte, patří vám. Umožňujete {brand} obsah ukládat, zobrazovat a doručovat, aby vaše odkazy fungovaly.",
-      "item3": "Za své příspěvky odpovídáte a musíte mít právo je sdílet.",
-      "item4": "Obsah nebo účty porušující tyto podmínky můžeme odstranit či pozastavit.",
-      "item5": "{brand} je poskytován tak, jak je. Snažíme se o jeho dostupnost, ale nemůžeme zaručit, že nikdy nedojde k výpadku.",
       "title": "Podmínky použití"
-    }
+    },
+    "toc": "Na této stránce"
   },
   "meta": {
     "site": {

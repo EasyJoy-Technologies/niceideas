@@ -58,7 +58,7 @@
     "brand": {
       "nicenote": "NiceNote"
     },
-    "tagline": "Partagez vos Nice Ideas, où que vous soyez, quand vous voulez !"
+    "tagline": "Partagez vos nice ideas, où que vous soyez, quand vous voulez !"
   },
   "compose": {
     "addImages": "Ajouter des images (jusqu’à {max})",
@@ -100,11 +100,13 @@
   },
   "info": {
     "about": {
-      "p1": "{brand} est l’endroit où partager vos Nice Ideas — pensées courtes, textes longs, photos et audio — en un seul lien.",
+      "p1": "{brand} est l’endroit où partager vos nice ideas — pensées courtes, textes longs, photos et audio — en un seul lien.",
       "p2": "Tout le monde peut ouvrir un lien partagé, avec ou sans compte. Les publications peuvent venir d’applications comme NiceNote ou être rédigées sur le web.",
       "p3": "Vos publications restent les vôtres : vous pouvez les modifier ou les retirer à tout moment, et les publications retirées sont définitivement supprimées au bout de 30 jours.",
       "title": "À propos"
     },
+    "effective": "En vigueur depuis le {date}",
+    "footerMenu": "À propos et conditions",
     "guidelines": {
       "intro": "Aidez-nous à faire de {brand} un lieu bienveillant pour les idées. Les publications et commentaires ne doivent pas :",
       "item1": "enfreindre la loi ou les droits d’autrui, y compris le droit d’auteur et la vie privée ;",
@@ -126,21 +128,12 @@
       "title": "Aide"
     },
     "privacy": {
-      "item1": "Nous conservons ce que vous publiez et le profil de base de votre compte NiceMatrix : nom, avatar et nom d’utilisateur.",
-      "item2": "Les données de localisation et d’appareil photo sont retirées des images avant leur publication.",
-      "item3": "Pour les commentaires et « j’aime » anonymes, nous ne conservons qu’un hachage à sens unique de votre adresse réseau, afin d’éviter les abus.",
-      "item4": "Nous ne vendons pas vos données.",
-      "item5": "Les publications retirées sont supprimées sous 30 jours. Si vous supprimez votre compte, vos publications et commentaires sont aussi supprimés.",
       "title": "Politique de confidentialité"
     },
     "terms": {
-      "item1": "En utilisant {brand}, vous acceptez ces conditions et les règles de la communauté.",
-      "item2": "Ce que vous publiez vous appartient. Vous autorisez {brand} à le stocker, l’afficher et le diffuser pour que vos liens fonctionnent.",
-      "item3": "Vous êtes responsable de ce que vous publiez et devez avoir le droit de le partager.",
-      "item4": "Nous pouvons supprimer du contenu ou suspendre des comptes qui enfreignent ces conditions.",
-      "item5": "{brand} est fourni en l’état. Nous faisons le nécessaire pour qu’il reste disponible, sans pouvoir garantir l’absence d’interruption.",
       "title": "Conditions d’utilisation"
-    }
+    },
+    "toc": "Sur cette page"
   },
   "meta": {
     "site": {

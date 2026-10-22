@@ -58,7 +58,7 @@
     "brand": {
       "nicenote": "NiceNote"
     },
-    "tagline": "Raba Nice Ideas ɗinka a kowane lokaci, a ko'ina!"
+    "tagline": "Raba nice ideas ɗinka a kowane lokaci, a ko'ina!"
   },
   "compose": {
     "addImages": "Ƙara hotuna (har zuwa {max})",
@@ -100,11 +100,13 @@
   },
   "info": {
     "about": {
-      "p1": "{brand} wuri ne na raba Nice Ideas ɗinka — gajerun tunani, dogayen rubuce-rubuce, hotuna da sauti — da hanyar haɗi ɗaya.",
+      "p1": "{brand} wuri ne na raba nice ideas ɗinka — gajerun tunani, dogayen rubuce-rubuce, hotuna da sauti — da hanyar haɗi ɗaya.",
       "p2": "Kowa zai iya buɗe hanyar haɗin da aka raba, ko yana da asusu ko babu. Rubuce-rubuce za su iya zuwa kai tsaye daga manhajoji kamar NiceNote ko a rubuta su a yanar gizo.",
       "p3": "Rubuce-rubucenka naka ne: za ka iya gyara su ko janye su a kowane lokaci, kuma ana goge waɗanda aka janye har abada bayan kwana 30.",
       "title": "Game da mu"
     },
+    "effective": "Yana aiki daga {date}",
+    "footerMenu": "Game da mu da sharuɗɗa",
     "guidelines": {
       "intro": "Taimaka wajen ganin {brand} ya kasance wuri mai kyau ga ra'ayoyi. Rubuce-rubuce da sharhi ba za su:",
       "item1": "karya doka ko take haƙƙin wasu ba, ciki har da haƙƙin mallaka da sirri;",
@@ -126,21 +128,12 @@
       "title": "Taimako"
     },
     "privacy": {
-      "item1": "Muna adana abin da ka wallafa da bayanan asali na asusunka na NiceMatrix: suna, hoton bayanin martaba da sunan mai amfani.",
-      "item2": "Ana cire bayanan wuri da na kyamara daga hotuna kafin a wallafa su.",
-      "item3": "Don sharhi da so marasa suna, muna adana hash na hanya ɗaya kawai na adireshin hanyar sadarwarka, don hana cin zarafi.",
-      "item4": "Ba ma sayar da bayananka.",
-      "item5": "Ana goge rubuce-rubucen da aka janye cikin kwana 30. Idan ka goge asusunka, ana goge rubuce-rubucenka da sharhinka ma.",
       "title": "Manufar sirri"
     },
     "terms": {
-      "item1": "Ta amfani da {brand} ka amince da waɗannan sharuɗɗa da ƙa'idojin al'umma.",
-      "item2": "Abin da ka wallafa naka ne. Ka ba {brand} izinin adana shi, nuna shi da isar da shi don hanyoyin haɗinka su yi aiki.",
-      "item3": "Kai ke da alhakin abin da ka wallafa, kuma dole ne kana da haƙƙin raba shi.",
-      "item4": "Za mu iya cire abubuwa ko dakatar da asusun da suka karya waɗannan sharuɗɗa.",
-      "item5": "Ana bayar da {brand} yadda yake. Muna ƙoƙarin ganin yana aiki, amma ba za mu iya tabbatar da cewa ba zai taɓa tsayawa ba.",
       "title": "Sharuɗɗan amfani"
-    }
+    },
+    "toc": "A wannan shafin"
   },
   "meta": {
     "site": {

@@ -58,7 +58,7 @@
     "brand": {
       "nicenote": "NiceNote"
     },
-    "tagline": "Dela dina Nice Ideas när och var du vill!"
+    "tagline": "Dela dina nice ideas när och var du vill!"
   },
   "compose": {
     "addImages": "Lägg till bilder (högst {max})",
@@ -100,11 +100,13 @@
   },
   "info": {
     "about": {
-      "p1": "{brand} är platsen där du delar dina Nice Ideas – korta tankar, långa texter, foton och ljud – med en enda länk.",
+      "p1": "{brand} är platsen där du delar dina nice ideas – korta tankar, långa texter, foton och ljud – med en enda länk.",
       "p2": "Vem som helst kan öppna en delad länk, med eller utan konto. Inlägg kan komma direkt från appar som NiceNote eller skrivas på webben.",
       "p3": "Dina inlägg förblir dina: du kan redigera eller dra tillbaka dem när som helst, och tillbakadragna inlägg raderas permanent efter 30 dagar.",
       "title": "Om"
     },
+    "effective": "Gäller från {date}",
+    "footerMenu": "Om oss och villkor",
     "guidelines": {
       "intro": "Hjälp till att hålla {brand} en vänlig plats för idéer. Inlägg och kommentarer får inte:",
       "item1": "bryta mot lagen eller andras rättigheter, inklusive upphovsrätt och integritet;",
@@ -126,21 +128,12 @@
       "title": "Hjälp"
     },
     "privacy": {
-      "item1": "Vi sparar det du publicerar och grundprofilen för ditt NiceMatrix-konto: namn, profilbild och användarnamn.",
-      "item2": "Plats- och kamerauppgifter tas bort från bilder innan de publiceras.",
-      "item3": "För anonyma kommentarer och gillningar sparar vi bara en envägshash av din nätverksadress, för att förhindra missbruk.",
-      "item4": "Vi säljer inte dina uppgifter.",
-      "item5": "Tillbakadragna inlägg raderas inom 30 dagar. Om du raderar ditt konto raderas även dina inlägg och kommentarer.",
       "title": "Integritetspolicy"
     },
     "terms": {
-      "item1": "Genom att använda {brand} godkänner du dessa villkor och gemenskapsriktlinjerna.",
-      "item2": "Det du publicerar är ditt. Du tillåter {brand} att lagra, visa och leverera det så att dina länkar fungerar.",
-      "item3": "Du ansvarar för det du publicerar och måste ha rätt att dela det.",
-      "item4": "Vi kan ta bort innehåll eller stänga av konton som bryter mot villkoren.",
-      "item5": "{brand} tillhandahålls i befintligt skick. Vi arbetar för att hålla tjänsten tillgänglig men kan inte lova att den aldrig avbryts.",
       "title": "Användarvillkor"
-    }
+    },
+    "toc": "På den här sidan"
   },
   "meta": {
     "site": {

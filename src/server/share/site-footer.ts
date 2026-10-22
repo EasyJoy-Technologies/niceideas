@@ -7,7 +7,8 @@ import { INFO_PAGES } from "./info-content";
 export function infoLinks(ctx: ChromeContext, cls: string): string {
   if (ctx.restricted) return "";
   const { t } = ctx.intl;
-  return `<nav class="${cls}">${INFO_PAGES.map((p) => `<a href="/${p}">${escapeHtml(t(`info.${p}.title`, { brand: GLOSSARY.brand }))}</a>`).join("")}</nav>`;
+  const link = (p: string) => `<a href="/${p}"${ctx.path === `/${p}` ? ' aria-current="page"' : ""}>${escapeHtml(t(`info.${p}.title`, { brand: GLOSSARY.brand }))}</a>`;
+  return `<nav class="${cls}">${INFO_PAGES.map(link).join("")}</nav>`;
 }
 
 export function copyright(): string {

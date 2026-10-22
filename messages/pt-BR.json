@@ -58,7 +58,7 @@
     "brand": {
       "nicenote": "NiceNote"
     },
-    "tagline": "Compartilhe suas Nice Ideas a qualquer hora, em qualquer lugar!"
+    "tagline": "Compartilhe suas nice ideas a qualquer hora, em qualquer lugar!"
   },
   "compose": {
     "addImages": "Adicionar imagens (até {max})",
@@ -100,11 +100,13 @@
   },
   "info": {
     "about": {
-      "p1": "O {brand} é o lugar para compartilhar suas Nice Ideas — pensamentos curtos, textos longos, fotos e áudio — com um só link.",
+      "p1": "O {brand} é o lugar para compartilhar suas nice ideas — pensamentos curtos, textos longos, fotos e áudio — com um só link.",
       "p2": "Qualquer pessoa pode abrir um link compartilhado, com ou sem conta. As publicações podem vir de apps como o NiceNote ou ser escritas na web.",
       "p3": "Suas publicações continuam sendo suas: você pode editá-las ou retirá-las quando quiser, e as retiradas são excluídas definitivamente após 30 dias.",
       "title": "Sobre"
     },
+    "effective": "Em vigor desde {date}",
+    "footerMenu": "Sobre e termos",
     "guidelines": {
       "intro": "Ajude a manter o {brand} um lugar acolhedor para ideias. Publicações e comentários não podem:",
       "item1": "violar a lei ou os direitos de outras pessoas, incluindo direitos autorais e privacidade;",
@@ -126,21 +128,12 @@
       "title": "Ajuda"
     },
     "privacy": {
-      "item1": "Guardamos o que você publica e o perfil básico da sua conta NiceMatrix: nome, avatar e nome de usuário.",
-      "item2": "Dados de localização e da câmera são removidos das imagens antes da publicação.",
-      "item3": "Em comentários e curtidas anônimos, guardamos apenas um hash unidirecional do seu endereço de rede, para evitar abusos.",
-      "item4": "Não vendemos seus dados.",
-      "item5": "Publicações retiradas são excluídas em até 30 dias. Ao excluir sua conta, suas publicações e comentários também são excluídos.",
       "title": "Política de privacidade"
     },
     "terms": {
-      "item1": "Ao usar o {brand}, você concorda com estes termos e com as diretrizes da comunidade.",
-      "item2": "O que você publica é seu. Você permite que o {brand} armazene, exiba e entregue o conteúdo para que seus links funcionem.",
-      "item3": "Você é responsável pelo que publica e precisa ter o direito de compartilhar.",
-      "item4": "Podemos remover conteúdo ou suspender contas que violem estes termos.",
-      "item5": "O {brand} é fornecido no estado em que se encontra. Trabalhamos para mantê-lo disponível, mas não podemos garantir que nunca haverá interrupções.",
       "title": "Termos de uso"
-    }
+    },
+    "toc": "Nesta página"
   },
   "meta": {
     "site": {

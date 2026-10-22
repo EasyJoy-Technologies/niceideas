@@ -3,5 +3,5 @@
  * Messages reference them through ICU placeholders such as `{brand}`.
  */
 export const GLOSSARY = {
-  brand: "NiceIdeas",
+  brand: "niceideas",
 } as const;

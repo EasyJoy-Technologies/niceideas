@@ -20,7 +20,7 @@ export type ChromeContext = {
   path: string;
 };
 
-const LOCKUP = { src: "/brand/lockup.svg", width: 876, height: 168 };
+const LOCKUP = { src: "/brand/lockup.svg", width: 918, height: 168 };
 const MARK_SRC = "/brand/mark.svg";
 
 const autonym = (code: string) => new Intl.DisplayNames([code], { type: "language" }).of(code) ?? code;

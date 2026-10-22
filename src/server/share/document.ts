@@ -18,6 +18,11 @@ export type PageDocument = {
   aside?: string;
   /** Current search query (prefills the right-column search box). */
   query?: string;
+  /** Replacement header / footer (already escaped); default: site header and footer. */
+  header?: string;
+  footer?: string;
+  /** Extra same-origin stylesheets (paths under /styles). */
+  stylesheets?: string[];
 };
 
 const asset = (path: string) => `${path}?v=${APP_VERSION}`;
@@ -44,7 +49,7 @@ export function renderPage(ctx: ChromeContext, page: PageDocument): string {
     `<link rel="apple-touch-icon" href="/brand/apple-touch-icon.png"><meta name="theme-color" content="#ffffff">` +
     `<link rel="stylesheet" href="${asset("/styles/fonts.css")}"><link rel="stylesheet" href="${asset("/styles/tokens.css")}">` +
     `<link rel="stylesheet" href="${asset("/styles/post-body.css")}"><link rel="stylesheet" href="${asset("/styles/share-page.css")}"><link rel="stylesheet" href="${asset("/styles/interact.css")}"><link rel="stylesheet" href="${asset("/styles/feed.css")}"><link rel="stylesheet" href="${asset("/styles/account.css")}"><link rel="stylesheet" href="${asset("/styles/search.css")}">${ctx.viewer ? `<link rel="stylesheet" href="${asset("/styles/compose.css")}"><link rel="stylesheet" href="${asset("/styles/settings.css")}"><link rel="stylesheet" href="${asset("/styles/notifications.css")}"><link rel="stylesheet" href="${asset("/styles/admin.css")}">` : ""}${page.side ? `<link rel="stylesheet" href="${asset("/styles/shell.css")}"><link rel="stylesheet" href="${asset("/styles/aside.css")}">` : ""}` +
-    `${page.head ?? ""}<script src="${asset("/scripts/share.js")}" defer></script><script src="${asset("/scripts/interact.js")}" defer></script></head>` +
-    `<body ${data}>${siteHeader(ctx)}${main}${siteFooter(ctx, page.side)}</body></html>`
+    `${(page.stylesheets ?? []).map((s) => `<link rel="stylesheet" href="${asset(s)}">`).join("")}${page.head ?? ""}<script src="${asset("/scripts/share.js")}" defer></script><script src="${asset("/scripts/interact.js")}" defer></script></head>` +
+    `<body ${data}>${page.header ?? siteHeader(ctx)}${main}${page.footer ?? siteFooter(ctx, page.side)}</body></html>`
   );
 }

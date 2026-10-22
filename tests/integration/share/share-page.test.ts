@@ -126,7 +126,26 @@ describe("information pages", () => {
     expect(res.status).toBe(200);
     const html = await res.text();
     expect(html).toContain('<h1 class="ni-title">Nutzungsbedingungen</h1>');
-    expect(html).toContain("<li>");
+    expect(html).toContain('class="ni-toc"');
+    expect(html).toContain('<section id="s1">');
+    expect(html).toContain("support@nicematrix.ca");
+    expect(html).toContain('<a href="/terms" aria-current="page">');
+    expect(html).not.toMatch(/TO CONFIRM|待确认/);
+    // v4.1: no back button (the logo links home); phone footer links in a pop-up menu.
+    expect(html).toContain('<a class="ni-brand" href="/">');
+    expect(html).not.toContain("ni-btn-primary");
+    expect(html).toContain('<details class="ni-menu ni-info-more"><summary>Über uns &amp; Bedingungen</summary>');
+  });
+
+  it("serves every legal document in every locale without placeholders", async () => {
+    const { LOCALES } = await import("@/i18n/locales");
+    const { LEGAL_DOCS, loadLegalDocument } = await import("@/server/legal/legal-docs");
+    for (const doc of LEGAL_DOCS)
+      for (const locale of LOCALES) {
+        const d = loadLegalDocument(doc, locale);
+        expect(d.sections.length).toBe(doc === "terms" ? 18 : 16);
+        expect(d.summaryHtml).toContain("<strong>");
+      }
   });
 });
 

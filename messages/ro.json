@@ -58,7 +58,7 @@
     "brand": {
       "nicenote": "NiceNote"
     },
-    "tagline": "Împărtășește-ți Nice Ideas oricând, oriunde!"
+    "tagline": "Împărtășește-ți nice ideas oricând, oriunde!"
   },
   "compose": {
     "addImages": "Adaugă imagini (maximum {max})",
@@ -100,11 +100,13 @@
   },
   "info": {
     "about": {
-      "p1": "{brand} este locul unde îți împărtășești Nice Ideas — gânduri scurte, texte lungi, fotografii și audio — printr-un singur link.",
+      "p1": "{brand} este locul unde îți împărtășești nice ideas — gânduri scurte, texte lungi, fotografii și audio — printr-un singur link.",
       "p2": "Oricine poate deschide un link distribuit, cu sau fără cont. Postările pot veni direct din aplicații precum NiceNote sau pot fi scrise pe web.",
       "p3": "Postările tale rămân ale tale: le poți edita sau retrage oricând, iar cele retrase sunt șterse definitiv după 30 de zile.",
       "title": "Despre"
     },
+    "effective": "În vigoare de la {date}",
+    "footerMenu": "Despre și termeni",
     "guidelines": {
       "intro": "Ajută-ne să păstrăm {brand} un loc prietenos pentru idei. Postările și comentariile nu au voie:",
       "item1": "să încalce legea sau drepturile altora, inclusiv drepturile de autor și viața privată;",
@@ -126,21 +128,12 @@
       "title": "Ajutor"
     },
     "privacy": {
-      "item1": "Păstrăm ce publici și profilul de bază al contului tău NiceMatrix: nume, avatar și nume de utilizator.",
-      "item2": "Datele de localizare și ale camerei sunt eliminate din imagini înainte de publicare.",
-      "item3": "Pentru comentariile și aprecierile anonime păstrăm doar un hash unidirecțional al adresei tale de rețea, pentru a preveni abuzurile.",
-      "item4": "Nu îți vindem datele.",
-      "item5": "Postările retrase sunt șterse în cel mult 30 de zile. Dacă îți ștergi contul, postările și comentariile tale sunt șterse și ele.",
       "title": "Politica de confidențialitate"
     },
     "terms": {
-      "item1": "Folosind {brand}, accepți acești termeni și regulile comunității.",
-      "item2": "Ce publici îți aparține. Permiți {brand} să stocheze, să afișeze și să livreze conținutul, ca linkurile tale să funcționeze.",
-      "item3": "Ești responsabil pentru ce publici și trebuie să ai dreptul să distribui acel conținut.",
-      "item4": "Putem elimina conținut sau suspenda conturi care încalcă acești termeni.",
-      "item5": "{brand} este oferit ca atare. Ne străduim să îl menținem disponibil, dar nu putem garanta că nu va fi niciodată întrerupt.",
       "title": "Termeni de utilizare"
-    }
+    },
+    "toc": "Pe această pagină"
   },
   "meta": {
     "site": {

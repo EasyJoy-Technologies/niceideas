@@ -1,9 +1,9 @@
-"""Builds the final NiceIdeas brand kit (Logo J "petal i", chosen 2026-10-19 21:47).
+"""Builds the final niceideas brand kit (Logo J "petal i", 2026-10-19; lowercase Nunito wordmark, 2026-10-21).
 
 Outputs
 - docs/design/brand/final/*.svg      master SVGs (mark, mono, lockups, app icon)
 - public/brand/*                     web exports (favicon, touch icon, PWA icons, OG defaults, header lockup)
-Run: python build_brand.py   (needs fonttools + uharfbuzz; rasterizes with rsvg-convert)
+Run: python build_brand.py   (needs fonttools + uharfbuzz + pillow; rasterizes with rsvg-convert)
 """
 import pathlib, subprocess, io
 from wordmark import wordmark, to_svg_group
@@ -23,15 +23,16 @@ def mark(cx, cy, size, colors=NN, dot=PURPLE):
                   for i, c in enumerate(colors))
     return out + f'<circle cx="{cx:.2f}" cy="{cy:.2f}" r="{0.17*scale:.2f}" fill="{dot}"/>'
 
-def svg(w, h, body, title="NiceIdeas"):
+def svg(w, h, body, title="niceideas"):
     return (f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {w:g} {h:g}" width="{w:g}" height="{h:g}" '
             f'role="img" aria-label="{title}"><title>{title}</title>{body}</svg>\n')
 
 def lockup(ink, accent, bg=None, mark_colors=NN, dot=PURPLE):
-    """Horizontal lockup: mark height 1.6 x cap height, gap 0.42 x mark."""
-    parts, ww, cap, desc = wordmark(100.0)
+    """Horizontal lockup: mark height 1.45 x cap height, gap 0.28 x mark."""
+    # Mark : cap height = 1.45 (v4 sheet: mark 1em, Nunito cap 0.705em); gap 0.28 x mark.
     m = 168.0
-    gap = 0.30 * m
+    parts, ww, cap, desc = wordmark(m / 1.45)
+    gap = 0.28 * m
     pad = 0
     w, h = m + gap + ww, m
     ty = (m - cap) / 2

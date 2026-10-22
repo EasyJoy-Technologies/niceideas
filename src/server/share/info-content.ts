@@ -14,7 +14,8 @@ const qa = (n: number): InfoSection => ({ kind: "qa", q: `q${n}`, a: `a${n}` });
 export const INFO_LAYOUT: Record<InfoPage, InfoSection[]> = {
   about: [p("p1"), p("p2"), p("p3")],
   guidelines: [p("intro"), list("item1", "item2", "item3", "item4"), p("outro")],
-  terms: [list("item1", "item2", "item3", "item4", "item5")],
-  privacy: [list("item1", "item2", "item3", "item4", "item5")],
+  // Full text in content/legal (src/server/legal/legal-docs.ts).
+  terms: [],
+  privacy: [],
   help: [qa(1), qa(2), qa(3), qa(4)],
 };

@@ -22,6 +22,7 @@ cp -a .next/standalone/. "$REL/"
 mkdir -p "$REL/.next"
 cp -a .next/static "$REL/.next/static"
 cp -a public "$REL/public"
+cp -a content "$REL/content"
 cp -a dist "$REL/dist"
 cp deploy/cluster.mjs "$REL/cluster.mjs"
 rm -rf .next/standalone dist

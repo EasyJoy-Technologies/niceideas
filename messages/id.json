@@ -58,7 +58,7 @@
     "brand": {
       "nicenote": "NiceNote"
     },
-    "tagline": "Bagikan Nice Ideas-mu kapan saja, di mana saja!"
+    "tagline": "Bagikan nice ideas-mu kapan saja, di mana saja!"
   },
   "compose": {
     "addImages": "Tambahkan gambar (maks. {max})",
@@ -100,11 +100,13 @@
   },
   "info": {
     "about": {
-      "p1": "{brand} adalah tempat untuk membagikan Nice Ideas-mu — pemikiran singkat, tulisan panjang, foto, dan audio — dalam satu tautan.",
+      "p1": "{brand} adalah tempat untuk membagikan nice ideas-mu — pemikiran singkat, tulisan panjang, foto, dan audio — dalam satu tautan.",
       "p2": "Siapa pun bisa membuka tautan yang dibagikan, punya akun atau tidak. Postingan bisa langsung datang dari aplikasi seperti NiceNote atau ditulis di web.",
       "p3": "Postinganmu tetap milikmu: kamu bisa mengedit atau menariknya kapan saja, dan postingan yang ditarik dihapus permanen setelah 30 hari.",
       "title": "Tentang"
     },
+    "effective": "Berlaku sejak {date}",
+    "footerMenu": "Tentang & ketentuan",
     "guidelines": {
       "intro": "Bantu jaga {brand} tetap ramah bagi ide-ide. Postingan dan komentar tidak boleh:",
       "item1": "melanggar hukum atau hak orang lain, termasuk hak cipta dan privasi;",
@@ -126,21 +128,12 @@
       "title": "Bantuan"
     },
     "privacy": {
-      "item1": "Kami menyimpan apa yang kamu publikasikan dan profil dasar akun NiceMatrix-mu: nama, avatar, dan nama pengguna.",
-      "item2": "Data lokasi dan kamera dihapus dari gambar sebelum dipublikasikan.",
-      "item3": "Untuk komentar dan suka anonim, kami hanya menyimpan hash satu arah dari alamat jaringanmu untuk mencegah penyalahgunaan.",
-      "item4": "Kami tidak menjual datamu.",
-      "item5": "Postingan yang ditarik dihapus dalam 30 hari. Jika kamu menghapus akun, postingan dan komentarmu juga dihapus.",
       "title": "Kebijakan privasi"
     },
     "terms": {
-      "item1": "Dengan menggunakan {brand}, kamu menyetujui ketentuan ini dan pedoman komunitas.",
-      "item2": "Apa yang kamu posting adalah milikmu. Kamu mengizinkan {brand} menyimpan, menampilkan, dan mengirimkannya agar tautanmu berfungsi.",
-      "item3": "Kamu bertanggung jawab atas apa yang kamu posting dan harus berhak membagikannya.",
-      "item4": "Kami dapat menghapus konten atau menangguhkan akun yang melanggar ketentuan ini.",
-      "item5": "{brand} disediakan apa adanya. Kami berupaya menjaganya tetap tersedia, tetapi tidak bisa menjamin tidak akan pernah terganggu.",
       "title": "Ketentuan penggunaan"
-    }
+    },
+    "toc": "Di halaman ini"
   },
   "meta": {
     "site": {
