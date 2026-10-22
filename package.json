@@ -1,6 +1,6 @@
 {
   "name": "niceideas",
-  "version": "1.0.54",
+  "version": "1.0.55",
   "private": true,
   "scripts": {
     "dev": "node scripts/build-client.mjs && next dev -p 3000",

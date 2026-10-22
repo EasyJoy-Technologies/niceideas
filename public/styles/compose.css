@@ -41,12 +41,13 @@
 .ProseMirror-gapcursor { display: none; }
 
 /* media previews: inline (article), tray under the text (short) */
-.ni-media { position: relative; }
+.ni-media { position: relative; max-width: 100%; }
+.ni-ed .ni-media-img { width: fit-content; }
 .ni-media-img img { display: block; max-width: 100%; max-height: 22rem; border-radius: var(--ni-radius-md); background: var(--ni-color-surface-2); }
-.ni-media-aud { display: flex; align-items: center; gap: 0.625rem; padding: 0.5rem 2.5rem 0.5rem 0.75rem; border: 1px solid var(--ni-color-border); border-radius: var(--ni-radius-md); font-size: 0.875rem; color: var(--ni-color-text-secondary); }
-.ni-media-aud .ni-i { color: var(--ni-color-primary); }
+.ni-media-aud { min-width: 0; overflow: hidden; display: flex; align-items: center; gap: 0.625rem; padding: 0.5rem 2.5rem 0.5rem 0.75rem; border: 1px solid var(--ni-color-border); border-radius: var(--ni-radius-md); font-size: 0.875rem; color: var(--ni-color-text-secondary); }
+.ni-media-aud > .ni-i { color: var(--ni-color-primary); }
 .ni-media-aud span { flex: 0 1 auto; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.ni-media-aud audio { flex: 1 1 10rem; min-width: 0; height: 2rem; }
+.ni-media-aud audio { flex: 1 1 10rem; width: 100%; min-width: 0; max-width: 100%; height: 2rem; }
 .ni-media-x { position: absolute; top: 0.375rem; inset-inline-end: 0.375rem; width: 1.5rem; height: 1.5rem; border: 0; border-radius: 50%; background: rgb(0 0 0 / 0.55); color: #fff; display: grid; place-items: center; cursor: pointer; }
 .ni-media-aud .ni-media-x { top: 50%; transform: translateY(-50%); }
 .ni-media-x .ni-i { width: 0.875rem; height: 0.875rem; stroke-width: 2.4; }
@@ -84,6 +85,16 @@
   .ni-compose { border-radius: 0; box-shadow: none; padding: 0.875rem 0.875rem 0.625rem; }
   .ni-phone-hide { display: none !important; }
   .ni-phone-only { display: revert !important; }
-  .ni-tb { min-width: 1.75rem; padding: 0 0.1875rem; }
-  .ni-compose-seg span { padding: 0.25rem 0.5rem; }
+  .ni-compose-bar { gap: 0; }
+  .ni-tb { min-width: 1.75rem; padding: 0 0.125rem; }
+  .ni-tb-sep[data-only="long"] { display: none !important; }
+  .ni-tb-sep { margin: 0 0.125rem; }
+  .ni-compose-seg { font-size: 0.75rem; margin-inline-end: 0.25rem; }
+  .ni-compose-seg span { padding: 0.25rem 0.4375rem; }
+  .ni-compose-bar .ni-btn { padding: 0 0.75rem; }
+  .ni-media-aud span { display: none; }
+}
+@media (max-width: 23.5rem) {
+  .ni-tb { min-width: 1.625rem; }
+  .ni-compose-seg span { padding: 0.25rem 0.375rem; }
 }

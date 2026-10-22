@@ -15,8 +15,9 @@ export type EditorOptions = {
 };
 
 function initialDoc(text: string): JSONContent {
-  const lines = text.replace(/\r\n/g, "\n").split("\n");
-  return { type: "doc", content: lines.map((l) => ({ type: "paragraph", content: l ? [{ type: "text", text: l }] : [] })) };
+  // One paragraph per non-empty line (blank lines in a textarea only separate paragraphs).
+  const lines = text.replace(/\r\n/g, "\n").split("\n").filter((l) => l.trim());
+  return { type: "doc", content: lines.map((l) => ({ type: "paragraph", content: [{ type: "text", text: l }] })) };
 }
 
 /** Rich editor of the compose box (Tiptap; no injected CSS: the page CSP allows same-origin styles only). */
