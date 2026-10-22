@@ -61,6 +61,6 @@ h1.sheet{font-size:22px;margin:28px 40px 4px}p.note{margin:0 40px 18px;color:var
 .page{min-height:100vh;display:flex;flex-direction:column}.page .iwrap{flex:1 0 auto;width:100%;padding-bottom:8px;align-items:start}
 .home{color:inherit;text-decoration:none}
 .m .ifoot{margin-top:24px}.m .ifoot .in{flex-direction:row;align-items:center;gap:10px;padding:12px 16px;position:relative}
-.m .fbtn{border:1px solid var(--b);border-radius:999px;padding:5px 12px;color:var(--t2);font-size:13px}.m .fbtn b{font-weight:400;font-size:11px;margin-left:2px}.m .fbtn.on{color:var(--p);border-color:#DDD6FE;background:var(--p2)}
+.m .fbtn{padding:5px 2px;color:var(--t2);font-size:13px}.m .fbtn b{font-weight:400;font-size:11px;margin-left:2px}.m .fbtn.on{color:var(--p)}
 .fmenu{position:absolute;right:16px;bottom:52px;background:#fff;border:1px solid var(--b);border-radius:12px;box-shadow:0 8px 24px rgba(0,0,0,.1);padding:6px;width:168px;font-size:14px}
 .fmenu div{padding:9px 12px;border-radius:8px;color:var(--t)}.fmenu div.on{background:var(--p2);color:var(--p);font-weight:600}
