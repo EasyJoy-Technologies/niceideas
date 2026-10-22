@@ -17,12 +17,12 @@ R6_CSS = """
 .tools{display:flex;align-items:center;gap:2px;padding-inline-start:10px;margin-inline-start:2px;border-inline-start:1px solid #eceef1}
 .tb .thm{margin:0;position:relative}.tb .thm>span{width:34px;height:34px}
 .tb .thm .pop{top:calc(100% + 8px);bottom:auto;right:0;left:auto}.tb .thm .pop.lp{width:200px}
-.ut{display:flex;gap:4px;padding:6px 0 8px;margin-top:auto}.ut+.me{margin-top:0}
-.ub{position:relative;flex:1;display:flex;align-items:center;gap:8px;padding:8px 10px;border-radius:8px;color:#4b5563;font-size:13px;white-space:nowrap}
+.ut{position:relative;display:flex;gap:4px;padding:10px 0 4px;margin-top:auto;border-top:1px solid #f0f1f3}.ut+.me{margin-top:0;border-top:0;padding-top:6px}
+.ub{position:static;flex:1;display:flex;align-items:center;gap:8px;padding:8px 10px;border-radius:8px;color:#4b5563;font-size:13px;white-space:nowrap}
 .ub:hover,.ub.open{background:#f3f4f6}.ub .ic{width:18px;height:18px;flex:none}
-.ub .pop{position:absolute;bottom:calc(100% + 6px);left:0;width:190px;background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:6px;box-shadow:0 12px 32px rgba(17,24,39,.14);z-index:5}
-.ub .pop div{display:flex;gap:10px;align-items:center;padding:7px 10px;border-radius:8px}.ub .pop div.on{background:#f5f3ff;color:#6d28d9;font-weight:600}.ub .pop em{margin-inline-start:auto;display:inline-grid}
-.dk .tools{border-color:#262a33}.dk .ub{color:#aab0bb}.dk .ub.open,.dk .ub:hover{background:#222631}
+.ub .pop{position:absolute;bottom:calc(100% + 4px);left:0;right:0;background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:6px;box-shadow:0 12px 32px rgba(17,24,39,.14);z-index:5}
+.ub .pop .h{font-size:11.5px;color:#9ca3af;padding:4px 10px 2px}.ub .pop .mo{color:#6d28d9;font-weight:500}.ub .pop div{display:flex;gap:10px;align-items:center;padding:7px 10px;border-radius:8px}.ub .pop div.on{background:#f5f3ff;color:#6d28d9;font-weight:600}.ub .pop em{margin-inline-start:auto;display:inline-grid}
+.dk .tools,.dk .ut{border-color:#262a33}.dk .ub .pop .mo{color:#c4b5fd}.dk .ub{color:#aab0bb}.dk .ub.open,.dk .ub:hover{background:#222631}
 .dk .ub .pop{background:#171a21;border-color:#262a33}.dk .ub .pop div.on{background:#241f36;color:#c4b5fd}
 """
 
@@ -53,7 +53,7 @@ def option1(html, cur="auto", lang_open=False, theme_open=False, ring=False):
     return account(html)
 
 
-def option2(html, cur="auto", theme_open=False, ring=False):
+def option2(html, cur="auto", theme_open=False, ring=False, lang_open=False):
     """A tool row (language, theme with labels) directly above the account row."""
     icon = {"auto": HALF, "light": SUN, "dark": MOON}[cur]
     label = {"auto": "跟随系统", "light": "浅色", "dark": "深色"}[cur]
@@ -62,8 +62,11 @@ def option2(html, cur="auto", theme_open=False, ring=False):
         rows = "".join(f'<div class="{"on" if k == cur else ""}">{i}{n}{f"<em>{CHECK}</em>" if k == cur else ""}</div>'
                        for k, i, n in (("auto", HALF, "跟随系统"), ("light", SUN, "浅色"), ("dark", MOON, "深色")))
         pop = f'<div class="pop">{rows}</div>'
-    row = (f'<div class="ut{" ring" if ring else ""}"><span class="ub">{GLOBE}简体中文</span>'
-           f'<span class="ub{" open" if theme_open else ""}">{icon}{label}{pop}</span></div>')
+    if lang_open:
+        rows = "".join(f'<div class="{"on" if n == "简体中文" else ""}">{n}{f"<em>{CHECK}</em>" if n == "简体中文" else ""}</div>' for n in LANGS)
+        pop = f'<div class="pop"><div class="h">语言 · 共 40 种</div>{rows}<div class="mo">更多语言…</div></div>'
+    row = (f'<div class="ut{" ring" if ring else ""}"><span class="ub{" open" if lang_open else ""}">{GLOBE}简体中文{pop if lang_open else ""}</span>'
+           f'<span class="ub{" open" if theme_open else ""}">{icon}{label}{pop if theme_open else ""}</span></div>')
     html = account(html)
     return html.replace('<div class="me">', row + '<div class="me">', 1)
 
@@ -85,6 +88,10 @@ def main():
     write("r6-opt1-reports.html", "方案一 · 举报队列", n1, option1(report_queue()))
     write("r6-opt2-light.html", "方案二 · 账号行上方（浅色）", n2, option2(variant_a(), ring=True))
     write("r6-opt2-open.html", "方案二 · 外观菜单展开", n2, option2(variant_a(), theme_open=True))
+    write("r6-opt2-lang.html", "方案二 · 语言菜单展开", n2, option2(variant_a(), lang_open=True))
+    write("r6-opt2-dark.html", "方案二 · 深色", n2, option2(variant_a(), "dark"), dark=True)
+    write("r6-opt2-reports.html", "方案二 · 举报队列", n2, option2(report_queue()))
+    write("r6-opt2-reports-dark.html", "方案二 · 举报队列 · 深色", n2, option2(report_queue(), "dark", theme_open=True), dark=True)
 
 
 if __name__ == "__main__":

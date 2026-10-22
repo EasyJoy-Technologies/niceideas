@@ -1,0 +1,113 @@
+<!doctype html><html lang="zh-Hans"><head><meta charset="utf-8"><title>方案二 · 举报队列 · 深色</title><style>
+*{box-sizing:border-box}html,body{margin:0}
+body{background:#e8eaee;font:14px/1.5 Inter,-apple-system,"Segoe UI",Roboto,"PingFang SC","Noto Sans SC","WenQuanYi Zen Hei",sans-serif;color:#1f2937}
+.sheet{font-size:22px;margin:28px 40px 4px}.note{margin:0 40px 18px;color:#6b7280;max-width:1100px}
+.cap{font-weight:600;color:#6b7280;margin:0 0 8px;font-size:12px;letter-spacing:.02em}
+.row{display:flex;gap:28px;padding:0 40px 36px;flex-wrap:wrap;align-items:flex-start}
+.ic{flex:none;vertical-align:-3px}
+.ch{display:block;width:100%;height:auto}.ax{font-size:10px;fill:#9ca3af}.dn{font-size:18px;font-weight:700;fill:#1f2937}
+.muted{color:#6b7280}.mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px}
+.up{color:#15803d}.dnv{color:#dc2626}
+.tag{display:inline-block;border-radius:999px;padding:0 8px;font-size:11.5px;line-height:20px;background:#f3f4f6;color:#4b5563;white-space:nowrap}
+.tag.r{background:#fef2f2;color:#b91c1c}.tag.y{background:#fffbeb;color:#b45309}.tag.g{background:#f0fdf4;color:#15803d}.tag.b{background:#eff6ff;color:#1d4ed8}.tag.v{background:#f5f3ff;color:#6d28d9}
+.btn{display:inline-flex;align-items:center;gap:6px;border:1px solid #e5e7eb;background:#fff;border-radius:8px;padding:6px 12px;font-weight:600;font-size:13px;white-space:nowrap;color:#374151}
+.btn.p{background:#7c3aed;border-color:#7c3aed;color:#fff}.btn.d{background:#dc2626;border-color:#dc2626;color:#fff}.btn.sm{padding:3px 9px;font-size:12px;font-weight:500}
+.seg{display:inline-flex;border:1px solid #e5e7eb;border-radius:8px;overflow:hidden;background:#fff}.seg span{padding:5px 11px;font-size:12.5px;color:#4b5563;border-left:1px solid #e5e7eb}.seg span:first-child{border:0}.seg .on{background:#f5f3ff;color:#6d28d9;font-weight:600}
+input,select{font:inherit;font-size:13px;border:1px solid #e5e7eb;border-radius:8px;padding:6px 10px;background:#fff;color:inherit}
+table{width:100%;border-collapse:collapse}th,td{text-align:left;padding:9px 12px;border-bottom:1px solid #f0f1f3;vertical-align:middle}
+th{font-size:12px;color:#6b7280;font-weight:500;background:#fafafb}td.n,th.n{text-align:right;font-variant-numeric:tabular-nums}
+.lg{display:grid;grid-template-columns:10px 1fr auto 40px;gap:8px;align-items:center;font-size:13px;margin:5px 0}.lg i{width:10px;height:10px;border-radius:3px}.lg b{font-weight:600;font-variant-numeric:tabular-nums}.lg em{font-style:normal;color:#6b7280;text-align:right}
+.hb{display:grid;grid-template-columns:120px 1fr 64px;gap:10px;align-items:center;font-size:13px;margin:7px 0}.hb div{background:#f3f4f6;border-radius:4px;height:8px;overflow:hidden}.hb i{display:block;height:100%;border-radius:4px}.hb b{text-align:right;font-weight:600;font-variant-numeric:tabular-nums}
+.newdata{display:inline-flex;align-items:center;gap:4px;font-size:11.5px;color:#b45309;background:#fffbeb;border:1px dashed #f59e0b;border-radius:999px;padding:0 8px;line-height:20px;font-weight:500}
+.dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:#16a34a;margin-right:6px}.dot.y{background:#f59e0b}.dot.r{background:#dc2626}
+.opt{background:#fff;border:1px solid #e5e7eb;border-radius:10px;padding:16px 18px;width:420px;font-size:13.5px;line-height:1.75}
+.opt h3{margin:0 0 6px;font-size:15px}
+
+.kl{font-size:12.5px;color:#6b7280;display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.kv{display:flex;align-items:flex-end;justify-content:space-between;margin:4px 0 2px}.kv b{font-size:26px;font-weight:700;letter-spacing:-.01em;font-variant-numeric:tabular-nums}
+.kd{font-size:12px}
+.tdi{width:30px;height:30px;border-radius:8px;display:grid;place-items:center;background:#f3f4f6;color:#4b5563}.tdi.r{background:#fef2f2;color:#dc2626}.tdi.y{background:#fffbeb;color:#d97706}.tdi.g{background:#f0fdf4;color:#16a34a}
+.lnk{color:#6d28d9;font-weight:600;font-size:12.5px;white-space:nowrap}
+.srcb{display:flex;gap:18px;align-items:center}
+.li{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:#4b5563;margin-right:12px}.li i{width:9px;height:9px;border-radius:2px}
+.tt{max-width:340px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-weight:500}
+.hl{display:grid;grid-template-columns:14px 72px 1fr;align-items:center;font-size:13px;padding:5px 0}
+
+.app{width:1440px;background:#f7f8fa;border:1px solid #e5e7eb;border-radius:12px;display:grid;grid-template-columns:232px 1fr;overflow:hidden;box-shadow:0 4px 20px rgba(17,24,39,.06)}
+.sb{background:#fff;border-right:1px solid #eceef1;padding:14px 12px;display:flex;flex-direction:column;gap:1px}
+.brand{display:flex;align-items:center;gap:10px;padding:4px 6px 14px;font-weight:700;font-size:17px;letter-spacing:-.01em;line-height:1.15}.brand small{display:block;font-weight:500;color:#9ca3af;font-size:11.5px;letter-spacing:0}.brand .mk{flex:none}
+.ng{font-size:11.5px;color:#9ca3af;padding:12px 10px 4px}
+.ni{display:flex;align-items:center;gap:11px;padding:8px 10px;border-radius:8px;color:#4b5563;font-size:14px;line-height:20px}.ni .ic{width:18px;height:18px}.ni span:first-of-type{flex:1}.ni.on{background:#f5f3ff;color:#6d28d9;font-weight:600}
+.bd{background:#dc2626;color:#fff;border-radius:999px;font-size:11px;padding:0 6px;line-height:18px}
+.me{margin-top:auto;display:flex;align-items:center;gap:9px;padding:10px 8px;border-top:1px solid #f0f1f3;font-size:13px}.av{width:30px;height:30px;border-radius:50%;background:#ede9fe;color:#6d28d9;display:grid;place-items:center;font-weight:700}
+.mn{display:flex;flex-direction:column;min-width:0}
+.tb{height:58px;display:flex;align-items:center;gap:12px;padding:0 24px;background:#fff;border-bottom:1px solid #eceef1}.tb h1{margin:0;font-size:18px}.tb .s{flex:1}
+.srch{display:flex;align-items:center;gap:8px;border:1px solid #e5e7eb;border-radius:8px;padding:6px 10px;width:300px;color:#9ca3af;font-size:13px}
+.ct{padding:20px 24px;display:grid;grid-template-columns:repeat(12,1fr);gap:16px;align-content:start}
+.cd{background:#fff;border:1px solid #eceef1;border-radius:12px;padding:16px 18px;min-width:0}
+.cd h2{font-size:14px;margin:0 0 12px;display:flex;align-items:center;justify-content:space-between;gap:8px}
+.k6{grid-column:span 12;display:grid;grid-template-columns:repeat(6,1fr);gap:16px}
+.kpi{background:#fff;border:1px solid #eceef1;border-radius:12px;padding:14px 16px}
+.td{display:grid;grid-template-columns:30px 1fr auto auto;gap:12px;align-items:center;padding:9px 0;border-bottom:1px solid #f3f4f6;font-size:13px}.td:last-child{border:0}
+.tbl{padding:0;overflow:hidden}.tbl h2{padding:16px 18px 0}
+
+.brand{display:flex;align-items:center;gap:2px;position:relative}.brand>div{flex:1}.thm{position:relative}.thm.lng{margin-inline-start:auto;position:static}
+.thm .pop.lp{width:auto;left:4px;right:4px;top:calc(100% - 4px)}.thm .pop .mo{color:#6d28d9;font-weight:500}
+.acm{position:relative}.acm>span{width:28px;height:28px;border-radius:8px;display:grid;place-items:center;color:#6b7280}.acm.open>span{background:#f3f4f6}
+.acm .apop{position:absolute;bottom:calc(100% + 8px);right:-6px;width:170px;background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:6px;box-shadow:0 12px 32px rgba(17,24,39,.14);z-index:5}
+.acm .apop div{display:flex;gap:10px;align-items:center;padding:7px 10px;border-radius:8px;font-size:13px}.acm .apop .sepl{height:1px;padding:0;margin:4px 6px;background:#f0f1f3}
+.thm>span{width:32px;height:32px;border-radius:8px;display:grid;place-items:center;color:#6b7280}.thm>span .ic{width:18px;height:18px}.thm:hover>span,.thm.open>span{background:#f3f4f6}
+.thm.open>span{color:#6d28d9}
+.thm .pop{position:absolute;top:calc(100% + 8px);right:0;width:180px;background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:6px;box-shadow:0 12px 32px rgba(17,24,39,.14);z-index:5}
+.thm .pop div{display:flex;gap:10px;align-items:center;padding:7px 10px;border-radius:8px;font-size:13px}
+.thm .pop div.on{background:#f5f3ff;color:#6d28d9;font-weight:600}.thm .pop div em{margin-inline-start:auto;display:inline-grid}
+.thm .pop .h{font-size:11.5px;color:#9ca3af;padding:4px 10px 2px}
+.ring{outline:2px dashed #f59e0b;outline-offset:3px;border-radius:10px}
+/* report queue */
+.rq{grid-column:span 12;display:grid;grid-template-columns:1fr 410px;gap:16px;align-items:start}
+.rq .cd{padding:0;overflow:hidden}
+.flt{display:flex;gap:8px;align-items:center;padding:12px 16px;border-bottom:1px solid #f0f1f3}.flt .s{flex:1}
+.tabsr{display:flex;gap:18px;padding:0 16px;border-bottom:1px solid #f0f1f3;font-size:13px}.tabsr span{padding:10px 0;color:#6b7280}.tabsr .on{color:#6d28d9;font-weight:600;box-shadow:inset 0 -2px #7c3aed}
+tr.sel td{background:#faf8ff}tr.sel td:first-child{box-shadow:inset 3px 0 #7c3aed}
+.obj{font-weight:500;max-width:330px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.det h3{font-size:11.5px;color:#9ca3af;font-weight:600;margin:0 0 8px;text-transform:uppercase;letter-spacing:.04em}
+.det .sec{padding:14px 16px;border-bottom:1px solid #f0f1f3}
+.quote{border-inline-start:3px solid #e5e7eb;padding:8px 12px;background:#fafafb;border-radius:0 8px 8px 0}
+.kvg{display:grid;grid-template-columns:76px 1fr;gap:6px 10px;font-size:13px}.kvg b{font-weight:400;color:#6b7280}
+.chips span{display:inline-block;border:1px solid #e5e7eb;border-radius:999px;padding:2px 10px;margin:0 6px 6px 0;font-size:12px;background:#fff}
+.chk{display:flex;gap:8px;align-items:center;margin:6px 0;font-size:13px}.chk input{margin:0}
+.acts{padding:14px 16px;background:#fafafb}
+
+body.dk{background:#2b2f36}.dk .sheet{color:#f3f4f6}.dk .note,.dk .cap{color:#c9cdd4}
+.dk .app{background:#0f1115;border-color:#262a33;color:#e6e8ec}
+.dk .sb,.dk .tb,.dk .cd,.dk .kpi,.dk .thm .pop,.dk .chips span{background:#171a21;border-color:#262a33;color:#e6e8ec}
+.dk .sb{border-inline-end-color:#262a33}.dk .tb{border-bottom-color:#262a33}.dk .me{border-top-color:#262a33}
+.dk .ni{color:#aab0bb}.dk .ni.on{background:#241f36;color:#c4b5fd}
+.dk .muted,.dk .kl,.dk .ng,.dk th,.dk .brand small{color:#9aa1ad}
+.dk th{background:#1b1f27}.dk td,.dk th,.dk .td,.dk .flt,.dk .tabsr,.dk .det .sec{border-color:#232730}
+.dk .srch,.dk input,.dk select,.dk .seg,.dk .btn{background:#1b1f27;border-color:#2a2f3a;color:#d1d5db}
+.dk .seg span{border-color:#2a2f3a;color:#aab0bb}.dk .seg .on{background:#241f36;color:#c4b5fd}
+.dk .btn.p{background:#7c3aed;border-color:#7c3aed;color:#fff}.dk .btn.d{background:#dc2626;border-color:#dc2626;color:#fff}
+.dk line[stroke="#eef0f3"]{stroke:#262a33}.dk .ax{fill:#6b7280}.dk .dn{fill:#e6e8ec}
+.dk .hb div{background:#232730}.dk .tdi{background:#222631;color:#aab0bb}.dk .tdi.r{background:#3a1717;color:#f87171}.dk .tdi.y{background:#33270e;color:#fbbf24}.dk .tdi.g{background:#10291a;color:#4ade80}
+.dk .tag{background:#232730;color:#c9cdd4}.dk .tag.r{background:#3a1717;color:#fca5a5}.dk .tag.y{background:#33270e;color:#fcd34d}.dk .tag.g{background:#10291a;color:#86efac}.dk .tag.b{background:#14223d;color:#93c5fd}.dk .tag.v{background:#241f36;color:#c4b5fd}
+.dk .newdata{background:#33270e;color:#fcd34d;border-color:#b45309}
+.dk .lnk{color:#c4b5fd}.dk .up{color:#4ade80}.dk .dnv{color:#f87171}
+.dk .av{background:#2a2440;color:#c4b5fd}
+.dk .acm .apop{background:#171a21;border-color:#262a33}.dk .acm.open>span{background:#222631}.dk .acm .apop .sepl{background:#262a33}.dk .thm .pop .mo{color:#c4b5fd}.dk .thm.open>span{background:#222631;color:#c4b5fd}.dk .thm .pop div.on{background:#241f36;color:#c4b5fd}
+.dk tr.sel td{background:#1d1a2b}.dk .quote{background:#1b1f27;border-color:#2a2f3a}.dk .acts{background:#14171d}
+.dk .brand>div{color:#f3f4f6}
+
+.brand{gap:12px;padding:6px 8px 18px;font-size:20px;line-height:1.1}.brand .mk{width:36px;height:36px}
+.brand small{font-size:12px;margin-top:3px}
+.tools{display:flex;align-items:center;gap:2px;padding-inline-start:10px;margin-inline-start:2px;border-inline-start:1px solid #eceef1}
+.tb .thm{margin:0;position:relative}.tb .thm>span{width:34px;height:34px}
+.tb .thm .pop{top:calc(100% + 8px);bottom:auto;right:0;left:auto}.tb .thm .pop.lp{width:200px}
+.ut{position:relative;display:flex;gap:4px;padding:10px 0 4px;margin-top:auto;border-top:1px solid #f0f1f3}.ut+.me{margin-top:0;border-top:0;padding-top:6px}
+.ub{position:static;flex:1;display:flex;align-items:center;gap:8px;padding:8px 10px;border-radius:8px;color:#4b5563;font-size:13px;white-space:nowrap}
+.ub:hover,.ub.open{background:#f3f4f6}.ub .ic{width:18px;height:18px;flex:none}
+.ub .pop{position:absolute;bottom:calc(100% + 4px);left:0;right:0;background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:6px;box-shadow:0 12px 32px rgba(17,24,39,.14);z-index:5}
+.ub .pop .h{font-size:11.5px;color:#9ca3af;padding:4px 10px 2px}.ub .pop .mo{color:#6d28d9;font-weight:500}.ub .pop div{display:flex;gap:10px;align-items:center;padding:7px 10px;border-radius:8px}.ub .pop div.on{background:#f5f3ff;color:#6d28d9;font-weight:600}.ub .pop em{margin-inline-start:auto;display:inline-grid}
+.dk .tools,.dk .ut{border-color:#262a33}.dk .ub .pop .mo{color:#c4b5fd}.dk .ub{color:#aab0bb}.dk .ub.open,.dk .ub:hover{background:#222631}
+.dk .ub .pop{background:#171a21;border-color:#262a33}.dk .ub .pop div.on{background:#241f36;color:#c4b5fd}
+</style></head><body class="dk"><h1 class="sheet">方案二 · 举报队列 · 深色</h1><p class="note">方案二：语言和外观带文字，放在账号行上面一行，和导航项同样的样式。</p><div class="row"><div><div class="app"><aside class="sb"><div class="brand"><img class="mk" src="../../../../public/brand/mark.svg" width="26" height="26" alt=""><div>niceideas<small>管理后台 · 生产</small></div></div><a class="ni" title="概览"><svg class="ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg><span>概览</span></a><div class="ng">数据</div><a class="ni" title="数据统计"><svg class="ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V11M10 20V5M16 20v-8M21 20H3"/></svg><span>数据统计</span></a><div class="ng">内容</div><a class="ni" title="帖子"><svg class="ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V8zM14 3v5h5"/></svg><span>帖子</span></a><a class="ni" title="评论"><svg class="ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/></svg><span>评论</span></a><a class="ni" title="媒体"><svg class="ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4zM4 16l5-5 4 4 3-3 4 4"/></svg><span>媒体</span></a><div class="ng">审核</div><a class="ni on" title="举报队列"><svg class="ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21V4M5 4h11l-2 4 2 4H5"/></svg><span>举报队列</span><span class="bd">7</span></a><a class="ni" title="封禁"><svg class="ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18zM5.6 5.6l12.8 12.8"/></svg><span>封禁</span></a><a class="ni" title="审计日志"><svg class="ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6h13M8 12h13M8 18h13M3 6h1M3 12h1M3 18h1"/></svg><span>审计日志</span></a><div class="ng">用户</div><a class="ni" title="用户"><svg class="ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8M22 21v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8"/></svg><span>用户</span></a><div class="ng">平台</div><a class="ni" title="接入应用"><svg class="ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 2v6M15 2v6M6 8h12v4a6 6 0 0 1-12 0zM12 18v4"/></svg><span>接入应用</span></a><a class="ni" title="系统状态"><svg class="ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4h18v6H3zM3 14h18v6H3zM7 7h1M7 17h1"/></svg><span>系统状态</span></a><a class="ni" title="设置"><svg class="ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h9M17 6h3M4 12h3M11 12h9M4 18h11M19 18h1M15 4v4M9 10v4M17 16v4"/></svg><span>设置</span></a><a class="ni" title="管理员"><svg class="ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/></svg><span>管理员</span></a><div class="ut"><span class="ub"><svg class="ic" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>简体中文</span><span class="ub open"><svg class="ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg>深色<div class="pop"><div class=""><svg class="ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="8.5"/><path d="M12 3.5v17a8.5 8.5 0 0 0 0-17z" fill="currentColor" stroke="none"/></svg>跟随系统</div><div class=""><svg class="ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>浅色</div><div class="on"><svg class="ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg>深色<em><svg class="ic" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></em></div></div></span></div><div class="me"><div class="av">林</div><div style="flex:1">林<div class="muted" style="font-size:11.5px">管理员</div></div><span class="acm"><span><svg class="ic" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><circle cx="5" cy="12" r="1.7"/><circle cx="12" cy="12" r="1.7"/><circle cx="19" cy="12" r="1.7"/></svg></span></span></div></aside><div class="mn"><div class="tb"><h1>举报队列</h1><span class="s"></span><div class="srch"><svg class="ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4a7 7 0 1 0 0 14 7 7 0 0 0 0-14zM21 21l-5-5"/></svg>粘贴帖子链接、代码或 @handle</div></div><div class="ct"><div class="rq"><div class="cd"><div class="tabsr"><span class="on">待处理 7</span><span>已处理</span><span>已驳回</span></div><div class="flt"><select><option>全部原因</option></select><select><option>帖子和评论</option></select><span class="s"></span><select><option>最早优先</option></select></div><table><tr><th></th><th>对象</th><th>原因</th><th class="n">举报</th><th>作者</th><th>最早举报</th></tr><tr class="sel"><td style="width:28px">💬</td><td><div class="obj">“加我微信领福利，vx: ******”</div><div class="muted mono">/p/k3x9qa · 评论</div></td><td><span class="tag r">垃圾信息</span></td><td class="n">3</td><td>匿名访客</td><td class="muted">12 分钟前</td></tr><tr class=""><td style="width:28px">📄</td><td><div class="obj">秋天的第一场散步</div><div class="muted mono">/p/a8f2kd · 长文章</div></td><td><span class="tag y">违法或有害</span></td><td class="n">1</td><td>@lin</td><td class="muted">1 小时前</td></tr><tr class=""><td style="width:28px">📝</td><td><div class="obj">周末在河边拍到的晚霞，颜色比夏天还热闹…</div><div class="muted mono">/p/m2q7rs · 短内容 · 2 图</div></td><td><span class="tag y">违法或有害</span></td><td class="n">2</td><td>@momo</td><td class="muted">3 小时前</td></tr><tr class=""><td style="width:28px">💬</td><td><div class="obj">“你写的都是错的，别误导人”</div><div class="muted mono">/p/a8f2kd · 评论</div></td><td><span class="tag ">骚扰或仇恨</span></td><td class="n">1</td><td>@river</td><td class="muted">昨天</td></tr><tr class=""><td style="width:28px">📄</td><td><div class="obj">独立开发第一年复盘：收入、失误和下一步</div><div class="muted mono">/p/z1w0ty · 长文章 · 来自 OmniFire</div></td><td><span class="tag ">其他</span></td><td class="n">1</td><td>@hk</td><td class="muted">昨天</td></tr></table><p class="muted" style="padding:10px 16px;margin:0;font-size:12px">同一对象的多条举报合并为一行。J / K 上下切换。</p></div><div class="cd det"><div class="sec" style="display:flex;justify-content:space-between;align-items:center"><b>评论 · 3 条举报</b><a class="lnk">打开帖子 ↗</a></div><div class="sec"><h3>被举报内容</h3><div class="quote">这种东西也好意思发？加我微信领福利 vx: ******</div><div class="kvg" style="margin-top:12px"><b>发布者</b><span>匿名访客“福利哥” <span class="tag">访客 7f3a…</span></span><b>所在帖子</b><span>秋天的第一场散步 · @lin</span><b>发布时间</b><span>今天 09:41</span><b>该访客</b><span>近 7 天 14 条评论，被举报 5 次</span></div></div><div class="sec"><h3>举报（3）</h3><div class="kvg"><b>垃圾信息</b><span>“刷屏广告” · 访客 · 12 分钟前</span><b>垃圾信息</b><span>— · @momo · 10 分钟前</span><b>骚扰或仇恨</b><span>— · 访客 · 6 分钟前</span></div></div><div class="acts"><h3 style="font-size:11.5px;color:#9ca3af;margin:0 0 8px">处理</h3><div class="chips"><span>垃圾信息</span><span>违反社区准则</span><span>侵犯他人权利</span><span>重复举报</span></div><input style="width:100%;margin:2px 0 8px" value="垃圾信息" placeholder="处理原因（必填，会记入审计日志）"><label class="chk"><input type="checkbox" checked> 同时封禁该访客 <select><option>7 天</option></select></label><label class="chk"><input type="checkbox"> 按 IP 哈希封禁（可能误伤同一网络的人）</label><label class="chk"><input type="checkbox" checked> 隐藏该访客的其他评论（11 条）</label><div style="display:flex;gap:8px;margin-top:12px"><span class="btn d">隐藏评论</span><span class="btn">驳回举报</span></div></div></div></div></div></div></div></div></div></body></html>
