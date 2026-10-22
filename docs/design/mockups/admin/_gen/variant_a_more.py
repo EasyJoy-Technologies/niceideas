@@ -18,10 +18,13 @@ MOON = ('<svg class="ic" width="16" height="16" viewBox="0 0 24 24" fill="none" 
 CHECK = '<svg class="ic" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>'
 
 MORE_CSS = """
-.thm{position:relative;margin-inline-start:auto}
+.brand{display:flex;align-items:center}.brand>div{flex:1}.thm{position:relative;margin-inline-start:auto}
+.acm{position:relative}.acm>span{width:28px;height:28px;border-radius:8px;display:grid;place-items:center;color:#6b7280}.acm.open>span{background:#f3f4f6}
+.acm .apop{position:absolute;bottom:calc(100% + 8px);right:-6px;width:170px;background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:6px;box-shadow:0 12px 32px rgba(17,24,39,.14);z-index:5}
+.acm .apop div{display:flex;gap:10px;align-items:center;padding:7px 10px;border-radius:8px;font-size:13px}.acm .apop .sepl{height:1px;padding:0;margin:4px 6px;background:#f0f1f3}
 .thm>span{width:30px;height:30px;border-radius:8px;display:grid;place-items:center;color:#6b7280;border:1px solid #e5e7eb;background:#fff}
 .thm.open>span{color:#6d28d9;border-color:#c4b5fd}
-.thm .pop{position:absolute;bottom:calc(100% + 8px);left:-120px;width:180px;background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:6px;box-shadow:0 12px 32px rgba(17,24,39,.14);z-index:5}
+.thm .pop{position:absolute;top:calc(100% + 8px);right:0;width:180px;background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:6px;box-shadow:0 12px 32px rgba(17,24,39,.14);z-index:5}
 .thm .pop div{display:flex;gap:10px;align-items:center;padding:7px 10px;border-radius:8px;font-size:13px}
 .thm .pop div.on{background:#f5f3ff;color:#6d28d9;font-weight:600}.thm .pop div em{margin-inline-start:auto;display:inline-grid}
 .thm .pop .h{font-size:11.5px;color:#9ca3af;padding:4px 10px 2px}
@@ -59,7 +62,7 @@ body.dk{background:#2b2f36}.dk .sheet{color:#f3f4f6}.dk .note,.dk .cap{color:#c9
 .dk .newdata{background:#33270e;color:#fcd34d;border-color:#b45309}
 .dk .lnk{color:#c4b5fd}.dk .up{color:#4ade80}.dk .dnv{color:#f87171}
 .dk .av{background:#2a2440;color:#c4b5fd}
-.dk .thm.open>span{border-color:#7c3aed;color:#c4b5fd}.dk .thm .pop div.on{background:#241f36;color:#c4b5fd}
+.dk .acm .apop{background:#171a21;border-color:#262a33}.dk .acm.open>span{background:#222631}.dk .acm .apop .sepl{background:#262a33}.dk .thm.open>span{border-color:#7c3aed;color:#c4b5fd}.dk .thm .pop div.on{background:#241f36;color:#c4b5fd}
 .dk tr.sel td{background:#1d1a2b}.dk .quote{background:#1b1f27;border-color:#2a2f3a}.dk .acts{background:#14171d}
 .dk .brand>div{color:#f3f4f6}
 """
@@ -75,9 +78,26 @@ def theme_menu(cur, open_, ring=False):
     return f'<span class="thm{" open" if open_ else ""}{" ring" if ring else ""}" title="外观"><span>{icon}</span>{pop}</span>'
 
 
-def with_theme(html, cur, open_, ring=False):
-    # Replace the "back to site" icon in the sidebar account row with the theme button.
-    return html.replace(ic("ext") + "</div></aside>", theme_menu(cur, open_, ring) + "</div></aside>", 1)
+MORE = ('<svg class="ic" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><circle cx="5" cy="12" r="1.7"/>'
+        '<circle cx="12" cy="12" r="1.7"/><circle cx="19" cy="12" r="1.7"/></svg>')
+ACCT_POP = ('<div class="apop"><div>' + ic("ext") + '返回网站</div><div>' + ic("users") + '我的主页</div>'
+            '<div class="sepl"></div><div>' + ic("out") + '退出登录</div></div>')
+
+
+def brand_row(cur, open_, ring=False):
+    return ('<div class="brand">' + MARK + '<div>niceideas<small>管理后台 · 生产</small></div>' + theme_menu(cur, open_, ring) + '</div>')
+
+
+def with_theme(html, cur, open_, ring=False, acct_open=False):
+    # Theme switch at the top of the sidebar (brand row); the account row keeps the account menu ("…").
+    old_brand = '<div class="brand">' + MARK + '<div>niceideas<small>管理后台 · 生产</small></div></div>'
+    assert old_brand in html
+    html = html.replace(old_brand, brand_row(cur, open_, ring), 1)
+    acct = f'<span class="acm{" open" if acct_open else ""}"><span>{MORE}</span>{ACCT_POP if acct_open else ""}</span>'
+    for old in (ic("ext") + "</div></aside>", theme_menu("auto", False) + "</div></aside>"):
+        if old in html:
+            return html.replace(old, acct + "</div></aside>", 1)
+    raise AssertionError("account row not found")
 
 
 def report_queue():
@@ -124,15 +144,15 @@ def write(name, title, body, dark=False):
 
 
 def main():
-    note = '<p class="note">方案 A。外观按钮在侧栏底部头像那一行最右边（虚线框），点开是下拉菜单；和前台用同一个设置。</p>'
+    note = '<p class="note">方案 A。外观按钮在左栏顶部 logo 行最右边（虚线框），点开是下拉菜单，和前台用同一个设置；底部账号行只放账号菜单（⋯）。</p>'
     write("a-dashboard-light.html", "方案 A · 概览 · 浅色",
           f'<h1 class="sheet">方案 A · 概览（浅色）</h1>{note}<div class="row"><div>{with_theme(variant_a(), "auto", False, True)}</div></div>')
     write("a-dashboard-dark.html", "方案 A · 概览 · 深色",
           f'<h1 class="sheet">方案 A · 概览（深色，外观菜单展开）</h1>{note}<div class="row"><div>{with_theme(variant_a(), "dark", True)}</div></div>', dark=True)
     write("a-reports-light.html", "方案 A · 举报队列",
-          f'<h1 class="sheet">方案 A · 举报队列（浅色）</h1><p class="note">左边列表，右边详情和处理，不用离开列表。</p><div class="row"><div>{report_queue()}</div></div>')
+          f'<h1 class="sheet">方案 A · 举报队列（浅色，账号菜单展开）</h1><p class="note">左边列表，右边详情和处理。底部账号行的“⋯”是账号菜单。</p><div class="row"><div>{with_theme(report_queue(), "auto", False, False, True)}</div></div>')
     write("a-reports-dark.html", "方案 A · 举报队列 · 深色",
-          f'<h1 class="sheet">方案 A · 举报队列（深色）</h1><p class="note">同一页面的深色效果。</p><div class="row"><div>{report_queue()}</div></div>', dark=True)
+          f'<h1 class="sheet">方案 A · 举报队列（深色）</h1><p class="note">同一页面的深色效果。</p><div class="row"><div>{with_theme(report_queue(), "dark", False)}</div></div>', dark=True)
 
 
 if __name__ == "__main__":
