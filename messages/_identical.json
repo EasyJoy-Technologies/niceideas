@@ -1,4 +1,18 @@
 {
+  "admin.kind.comment": [
+    "fil"
+  ],
+  "admin.kind.post": [
+    "it",
+    "fil",
+    "uz"
+  ],
+  "admin.status.active": [
+    "fil"
+  ],
+  "admin.title": [
+    "de"
+  ],
   "common.brand.nicenote": [
     "am",
     "ar",
@@ -38,11 +52,20 @@
     "uz",
     "vi"
   ],
-  "info.help.title": [
+  "compose.fmt.code": [
     "nl"
   ],
-  "share.comments.name": [
-    "de"
+  "compose.fmt.link": [
+    "de",
+    "fil",
+    "it",
+    "nl",
+    "pl",
+    "pt-BR",
+    "ro"
+  ],
+  "compose.mode.long": [
+    "fr"
   ],
   "feed.article": [
     "fr"
@@ -56,13 +79,19 @@
   "feed.tab.images": [
     "fr"
   ],
-  "profile.stats.likes": [
-    "de",
+  "info.help.title": [
     "nl"
   ],
   "nav.home": [
     "it",
     "fil"
+  ],
+  "notifications.title": [
+    "fr"
+  ],
+  "profile.stats.likes": [
+    "de",
+    "nl"
   ],
   "settings.bio": [
     "fr",
@@ -75,27 +104,13 @@
     "ms",
     "fil"
   ],
-  "settings.name": [
-    "de"
-  ],
   "settings.handle": [
     "fil"
   ],
-  "notifications.title": [
-    "fr"
-  ],
-  "admin.title": [
+  "settings.name": [
     "de"
   ],
-  "admin.kind.post": [
-    "it",
-    "fil",
-    "uz"
-  ],
-  "admin.kind.comment": [
-    "fil"
-  ],
-  "admin.status.active": [
-    "fil"
+  "share.comments.name": [
+    "de"
   ]
 }

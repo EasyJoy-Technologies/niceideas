@@ -37,10 +37,25 @@ function articleBlock(ctx: ChromeContext, item: FeedItem): string {
   );
 }
 
-/** Short posts show in full (text and to-do blocks only; they never carry media). */
+/**
+ * Short posts show in full: text / to-do, then images as thumbnails (opening the
+ * lightbox) and audio players, in document order (compose v2 design).
+ */
 function shortBlock(item: FeedItem): string {
-  const doc = { ...item.document, blocks: item.document.blocks.filter((b) => b.type === "text" || b.type === "todo") };
-  return `<div class="ni-body ni-fc-text">${renderDocumentHtml(doc, NO_MEDIA, publicUrl)}</div>`;
+  const text = { ...item.document, blocks: item.document.blocks.filter((b) => b.type === "text" || b.type === "todo") };
+  const thumbs = item.document.blocks
+    .flatMap((b) => (b.type === "image" ? [item.media.get(b.mediaId)] : []))
+    .flatMap((m) => (m && m.variants.kind === "image" ? [m.variants] : []))
+    .map((v) => {
+      const small = v.webp[0] ?? v.fallback;
+      const large = v.webp.at(-1) ?? v.fallback;
+      return `<a class="ni-zoom" href="${publicUrl(large.key)}" data-lightbox><img src="${publicUrl(small.key)}" width="${small.width}" height="${small.height}" alt="" loading="lazy" decoding="async"></a>`;
+    })
+    .join("");
+  const audios = { ...item.document, blocks: item.document.blocks.filter((b) => b.type === "audio") };
+  const body = text.blocks.length ? renderDocumentHtml(text, NO_MEDIA, publicUrl) : "";
+  const media = (thumbs ? `<div class="ni-fc-thumbs">${thumbs}</div>` : "") + (audios.blocks.length ? renderDocumentHtml(audios, item.media, publicUrl) : "");
+  return `<div class="ni-body ni-fc-text">${body}${media}</div>`;
 }
 
 /**
@@ -65,7 +80,7 @@ export function feedCard(ctx: ChromeContext, item: FeedItem): string {
     `<div class="ni-fc-head"><a href="${href}" tabindex="-1" aria-hidden="true">${avatarHtml(name, post.author_avatar, 42)}</a><div class="ni-who">` +
     `<a class="ni-name" href="${href}">${escapeHtml(name)}</a><span class="ni-meta"><span class="ni-handle">@${escapeHtml(post.author_handle)}</span><i class="ni-dot"></i>` +
     `<a href="/p/${post.slug}"><time datetime="${at.toISOString()}" data-rel>${escapeHtml(ctx.intl.format.dateTime(at, { dateStyle: "medium" }))}</time></a></span></div>${source}</div>`;
-  const body = post.kind === "short" && !item.cover ? shortBlock(item) : articleBlock(ctx, item);
+  const body = post.kind === "short" ? shortBlock(item) : articleBlock(ctx, item);
   const actions =
     `<div class="ni-actions ni-fc-actions"><button type="button" class="ni-act" data-like="post" data-id="${post.slug}" aria-pressed="${item.liked}" aria-label="${escapeHtml(t("share.action.like"))}">` +
     `${icon("heart")}<span>${post.like_count}</span></button>` +

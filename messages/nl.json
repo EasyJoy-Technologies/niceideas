@@ -61,19 +61,44 @@
     "tagline": "Deel je nice ideas, altijd en overal!"
   },
   "compose": {
+    "addAudio": "Audio toevoegen (max. {max})",
     "addImages": "Afbeeldingen toevoegen (max. {max})",
     "error": {
       "empty": "Schrijf iets of voeg een afbeelding toe.",
       "failed": "Plaatsen mislukt. Probeer het opnieuw.",
       "rate_limited": "Je plaatst te snel. Wacht even.",
-      "too_large": "Een afbeelding is te groot.",
+      "short_too_long": "Korte berichten hebben maximaal {max} tekens. Schakel over naar ‘{article}’ om meer te schrijven.",
+      "too_large": "Een bestand is te groot.",
       "too_much": "Dat is te lang. Kort de tekst in of gebruik minder afbeeldingen.",
-      "unsupported": "Dit bestandstype wordt niet ondersteund. Kies een afbeelding."
+      "unsupported": "Dit bestandstype wordt niet ondersteund. Kies een afbeelding of audiobestand."
     },
-    "imagesChosen": "Afbeeldingen: {count}",
+    "fmt": {
+      "bold": "Vet",
+      "bulletList": "Lijst met opsommingstekens",
+      "code": "Inline code",
+      "codeBlock": "Codeblok",
+      "divider": "Scheidingslijn",
+      "heading": "Kop",
+      "heading3": "Subkop",
+      "italic": "Cursief",
+      "link": "Link",
+      "more": "Meer opmaak",
+      "orderedList": "Genummerde lijst",
+      "quote": "Citaat",
+      "strike": "Doorhalen",
+      "taskList": "Takenlijst"
+    },
+    "linkPrompt": "Linkadres (laat leeg om de link te verwijderen)",
+    "mode": {
+      "label": "Soort bericht",
+      "long": "Artikel",
+      "short": "Kort"
+    },
     "placeholder": "Wat is je goede idee?",
+    "posting": "Bezig met plaatsen…",
     "publish": "Plaatsen",
-    "titlePlaceholder": "Titel (optioneel, maakt er een artikel van)"
+    "remove": "Verwijderen",
+    "title": "Titel"
   },
   "discover": {
     "title": "Ontdekken"

@@ -61,19 +61,44 @@
     "tagline": "Sdílejte své nice ideas kdykoli a kdekoli!"
   },
   "compose": {
+    "addAudio": "Přidat zvuk (max. {max})",
     "addImages": "Přidat obrázky (až {max})",
     "error": {
       "empty": "Napište něco nebo přidejte obrázek.",
       "failed": "Zveřejnění se nezdařilo. Zkuste to znovu.",
       "rate_limited": "Zveřejňujete příliš rychle. Chvíli počkejte.",
-      "too_large": "Obrázek je příliš velký.",
+      "short_too_long": "Krátké příspěvky mají nejvýše {max} znaků. Pro delší text přepněte na „{article}“.",
+      "too_large": "Soubor je příliš velký.",
       "too_much": "Je to příliš dlouhé. Zkraťte text nebo použijte méně obrázků.",
-      "unsupported": "Tento typ souboru není podporován. Vyberte obrázek."
+      "unsupported": "Tento typ souboru není podporován. Vyberte obrázek nebo zvukový soubor."
     },
-    "imagesChosen": "Obrázky: {count}",
+    "fmt": {
+      "bold": "Tučně",
+      "bulletList": "Odrážkový seznam",
+      "code": "Kód v textu",
+      "codeBlock": "Blok kódu",
+      "divider": "Oddělovač",
+      "heading": "Nadpis",
+      "heading3": "Podnadpis",
+      "italic": "Kurzíva",
+      "link": "Odkaz",
+      "more": "Další formátování",
+      "orderedList": "Číslovaný seznam",
+      "quote": "Citace",
+      "strike": "Přeškrtnutí",
+      "taskList": "Seznam úkolů"
+    },
+    "linkPrompt": "Adresa odkazu (ponechte prázdné pro odebrání odkazu)",
+    "mode": {
+      "label": "Typ příspěvku",
+      "long": "Článek",
+      "short": "Krátký"
+    },
     "placeholder": "Jaký máte dobrý nápad?",
+    "posting": "Publikuje se…",
     "publish": "Zveřejnit",
-    "titlePlaceholder": "Název (volitelný, udělá z příspěvku článek)"
+    "remove": "Odebrat",
+    "title": "Název"
   },
   "discover": {
     "title": "Objevovat"

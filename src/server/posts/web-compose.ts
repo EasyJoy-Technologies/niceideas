@@ -2,48 +2,89 @@ import { randomUUID } from "node:crypto";
 import type { Principal } from "@/server/auth/principal";
 import type { Db } from "@/server/db/client";
 import type { Post } from "@/server/db/schema";
-import type { DocBlock } from "@/server/documents/schema";
+import { documentPlainText, SHORT_MAX_CHARS } from "@/server/documents/derive";
+import type { DocBlock, PostDocument } from "@/server/documents/schema";
 import { parseDocument } from "@/server/documents/validate";
 import { badRequest } from "@/server/http/errors";
-import { ingestUpload } from "@/server/media/ingest";
+import { ingestUpload, type MediaLimits } from "@/server/media/ingest";
 import { mediaLimitsFromConfig } from "@/server/media/limits";
 import type { MediaStores } from "@/server/storage/types";
 import { removeTempDir, spoolBody } from "@/server/util/temp-file";
 import { createPost } from "./create-post";
 import { assertCanUploadMedia } from "./rate-limit";
+import { editorBlocks, type DraftBlock } from "./web-compose-doc";
 
 /** Web compose limits (the API allows more; the form keeps posts light). */
 export const WEB_MAX_IMAGES = 10;
+export const WEB_MAX_AUDIOS = 10;
 export const WEB_MAX_TEXT = 20_000;
 
-export type WebComposeInput = { title: string; text: string; images: File[] };
+/** "short": short post (≤ SHORT_MAX_CHARS, media under the text); "long": article. null: derived (older form). */
+export type ComposeMode = "short" | "long";
+export type WebComposeInput = { mode: ComposeMode | null; title: string; blocks: DraftBlock[]; files: File[] };
 
-/** Reads the compose form; ignores empty file inputs. */
+const filesOf = (form: FormData, name: string) => form.getAll(name).filter((f): f is File => typeof f !== "string" && f.size > 0);
+
+/**
+ * Reads the compose form. With JS: `doc` (editor JSON) + `media` files referenced by index.
+ * Without JS: plain `text`, then `images`, then `audios`.
+ */
 export function readComposeForm(form: FormData): WebComposeInput {
-  const images = form.getAll("images").filter((f): f is File => typeof f !== "string" && f.size > 0);
-  return { title: String(form.get("title") ?? "").trim(), text: String(form.get("text") ?? "").trim(), images };
+  const m = String(form.get("mode") ?? "");
+  const mode: ComposeMode | null = m === "short" || m === "long" ? m : null;
+  const title = mode === "short" ? "" : String(form.get("title") ?? "").trim();
+  const doc = form.get("doc");
+  if (typeof doc === "string" && doc) return { mode, title, blocks: editorBlocks(doc), files: filesOf(form, "media") };
+  const images = filesOf(form, "images");
+  const audios = filesOf(form, "audios");
+  const text = String(form.get("text") ?? "").trim();
+  const blocks: DraftBlock[] = text ? [{ type: "text", format: "plain", text }] : [];
+  images.forEach((_, i) => blocks.push({ type: "media", kind: "image", file: i }));
+  audios.forEach((_, i) => blocks.push({ type: "media", kind: "audio", file: images.length + i }));
+  return { mode, title, blocks, files: [...images, ...audios] };
 }
 
-/** Publishes a web post (source `web`, no badge): text, then images; a title makes it an article. */
+/** Rejects empty / oversized drafts before any upload is processed. */
+function checkDraft(input: WebComposeInput): void {
+  const media = input.blocks.flatMap((b) => (b.type === "media" ? [b] : []));
+  const text = input.blocks.flatMap((b) => (b.type === "media" ? [] : [b]));
+  if (text.length === 0 && media.length === 0) throw badRequest("compose.empty");
+  const files = media.map((b) => b.file);
+  if (files.some((f) => f >= input.files.length) || new Set(files).size !== files.length) throw badRequest("compose.invalid");
+  const images = media.filter((b) => b.kind === "image").length;
+  if (images > WEB_MAX_IMAGES || media.length - images > WEB_MAX_AUDIOS) throw badRequest("compose.too_much");
+  const plain = documentPlainText({ version: 1, blocks: text } as PostDocument);
+  if (plain.length > WEB_MAX_TEXT) throw badRequest("compose.too_much");
+  if (input.mode === "short" && Array.from(plain).length > SHORT_MAX_CHARS) throw badRequest("compose.short_too_long");
+}
+
+async function ingestFile(db: Db, stores: MediaStores, userId: string, file: File, limits: MediaLimits) {
+  await assertCanUploadMedia(db, userId);
+  const upload = await spoolBody(file.stream(), Math.max(limits.maxImageBytes, limits.maxAudioBytes));
+  try {
+    return (await ingestUpload(db, stores.privateStore, { ownerId: userId, upload, declaredSha256: upload.sha256, limits })).media;
+  } finally {
+    await removeTempDir(upload.dir);
+  }
+}
+
+/** Publishes a web post (source `web`, no badge) with media in place; the chosen mode sets the kind. */
 export async function publishFromWeb(db: Db, stores: MediaStores, userId: string, input: WebComposeInput, cacheControl: string): Promise<Post> {
-  if (!input.text && input.images.length === 0) throw badRequest("compose.empty");
-  if (input.images.length > WEB_MAX_IMAGES || input.text.length > WEB_MAX_TEXT) throw badRequest("compose.too_much");
-  const blocks: DocBlock[] = [];
-  if (input.text) blocks.push({ type: "text", format: "plain", text: input.text });
+  checkDraft(input);
   const limits = mediaLimitsFromConfig();
-  for (const file of input.images) {
-    await assertCanUploadMedia(db, userId);
-    const upload = await spoolBody(file.stream(), limits.maxImageBytes);
-    try {
-      const { media } = await ingestUpload(db, stores.privateStore, { ownerId: userId, upload, declaredSha256: upload.sha256, limits });
-      if (media.kind !== "image") throw badRequest("compose.images_only");
-      blocks.push({ type: "image", mediaId: media.id });
-    } finally {
-      await removeTempDir(upload.dir);
+  const blocks: DocBlock[] = [];
+  for (const b of input.blocks) {
+    if (b.type !== "media") {
+      blocks.push(b);
+      continue;
     }
+    const media = await ingestFile(db, stores, userId, input.files[b.file], limits);
+    if (media.kind !== b.kind) throw badRequest("compose.media_mismatch");
+    blocks.push(b.kind === "image" ? { type: "image", mediaId: media.id } : { type: "audio", mediaId: media.id });
   }
   const document = parseDocument({ version: 1, ...(input.title ? { title: input.title } : {}), blocks });
   const principal: Principal = { userId, clientId: "web", kind: "first_party", source: "web" };
-  const result = await createPost(db, stores, principal, { document, sourceRef: `web-${randomUUID()}`, sourceUpdatedAt: null }, cacheControl);
+  const kind = input.mode === "short" ? "short" : input.mode === "long" ? "article" : undefined;
+  const result = await createPost(db, stores, principal, { document, sourceRef: `web-${randomUUID()}`, sourceUpdatedAt: null, kind }, cacheControl);
   return result.post;
 }

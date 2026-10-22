@@ -61,19 +61,44 @@
     "tagline": "隨時隨地分享你的好主意！"
   },
   "compose": {
+    "addAudio": "新增音訊（最多 {max} 個）",
     "addImages": "新增圖片（最多 {max} 張）",
     "error": {
       "empty": "請寫點內容或新增圖片。",
       "failed": "發布失敗，請重試。",
       "rate_limited": "發布太頻繁了，請稍後再試。",
-      "too_large": "圖片太大了。",
+      "short_too_long": "短內容最多 {max} 個字。想寫更多，請切換到「{article}」。",
+      "too_large": "檔案太大了。",
       "too_much": "內容太長了，請縮短文字或減少圖片。",
-      "unsupported": "不支援這種檔案，請選擇圖片。"
+      "unsupported": "不支援這種檔案類型，請選擇圖片或音訊。"
     },
-    "imagesChosen": "已選圖片：{count}",
+    "fmt": {
+      "bold": "粗體",
+      "bulletList": "項目符號清單",
+      "code": "行內程式碼",
+      "codeBlock": "程式碼區塊",
+      "divider": "分隔線",
+      "heading": "標題",
+      "heading3": "小標題",
+      "italic": "斜體",
+      "link": "連結",
+      "more": "更多格式",
+      "orderedList": "編號清單",
+      "quote": "引用",
+      "strike": "刪除線",
+      "taskList": "待辦清單"
+    },
+    "linkPrompt": "連結網址（留空則移除連結）",
+    "mode": {
+      "label": "內容類型",
+      "long": "長文章",
+      "short": "短內容"
+    },
     "placeholder": "有什麼好主意？",
+    "posting": "發布中…",
     "publish": "發布",
-    "titlePlaceholder": "標題（選填，填寫後發布為長文）"
+    "remove": "移除",
+    "title": "標題"
   },
   "discover": {
     "title": "探索"

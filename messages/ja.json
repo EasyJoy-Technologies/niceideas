@@ -61,19 +61,44 @@
     "tagline": "いつでもどこでも、あなたの nice ideas をシェアしよう！"
   },
   "compose": {
+    "addAudio": "音声を追加（最大 {max} 件）",
     "addImages": "画像を追加（最大 {max} 枚）",
     "error": {
       "empty": "何か書くか、画像を追加してください。",
       "failed": "投稿できませんでした。もう一度お試しください。",
       "rate_limited": "投稿のペースが速すぎます。少し待ってください。",
-      "too_large": "画像が大きすぎます。",
+      "short_too_long": "短文は {max} 文字までです。もっと書くときは「{article}」に切り替えてください。",
+      "too_large": "ファイルが大きすぎます。",
       "too_much": "長すぎます。文章を短くするか、画像を減らしてください。",
-      "unsupported": "このファイル形式には対応していません。画像を選んでください。"
+      "unsupported": "このファイル形式には対応していません。画像か音声を選んでください。"
     },
-    "imagesChosen": "選択した画像：{count}",
+    "fmt": {
+      "bold": "太字",
+      "bulletList": "箇条書き",
+      "code": "インラインコード",
+      "codeBlock": "コードブロック",
+      "divider": "区切り線",
+      "heading": "見出し",
+      "heading3": "小見出し",
+      "italic": "斜体",
+      "link": "リンク",
+      "more": "その他の書式",
+      "orderedList": "番号付きリスト",
+      "quote": "引用",
+      "strike": "取り消し線",
+      "taskList": "チェックリスト"
+    },
+    "linkPrompt": "リンク先（空にするとリンクを解除）",
+    "mode": {
+      "label": "投稿の種類",
+      "long": "長文",
+      "short": "短文"
+    },
     "placeholder": "どんなアイデアがありますか？",
+    "posting": "投稿中…",
     "publish": "投稿",
-    "titlePlaceholder": "タイトル（任意。入力すると記事になります）"
+    "remove": "削除",
+    "title": "タイトル"
   },
   "discover": {
     "title": "発見"

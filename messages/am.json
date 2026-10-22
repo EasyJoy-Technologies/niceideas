@@ -61,19 +61,44 @@
     "tagline": "የእርስዎን nice ideas በማንኛውም ጊዜ፣ በማንኛውም ቦታ ያጋሩ!"
   },
   "compose": {
+    "addAudio": "ድምፅ ያክሉ (እስከ {max})",
     "addImages": "ምስሎችን ያክሉ (እስከ {max})",
     "error": {
       "empty": "የሆነ ነገር ይጻፉ ወይም ምስል ያክሉ።",
       "failed": "መለጠፍ አልተቻለም። እባክዎ እንደገና ይሞክሩ።",
       "rate_limited": "በጣም በፍጥነት እየለጠፉ ነው። እባክዎ ትንሽ ይጠብቁ።",
-      "too_large": "አንድ ምስል በጣም ትልቅ ነው።",
+      "short_too_long": "አጭር ልጥፎች ቢበዛ {max} ቁምፊዎች ናቸው። ተጨማሪ ለመጻፍ ወደ “{article}” ይቀይሩ።",
+      "too_large": "አንድ ፋይል በጣም ትልቅ ነው።",
       "too_much": "በጣም ረጅም ነው። ጽሑፉን ያሳጥሩ ወይም ጥቂት ምስሎች ይጠቀሙ።",
-      "unsupported": "ይህ የፋይል አይነት አይደገፍም። እባክዎ ምስል ይምረጡ።"
+      "unsupported": "ይህ የፋይል ዓይነት አይደገፍም። ምስል ወይም የድምፅ ፋይል ይምረጡ።"
     },
-    "imagesChosen": "ምስሎች፦ {count}",
+    "fmt": {
+      "bold": "ደማቅ",
+      "bulletList": "ነጥብ ያለው ዝርዝር",
+      "code": "በመስመር ውስጥ ኮድ",
+      "codeBlock": "የኮድ ክፍል",
+      "divider": "መለያ መስመር",
+      "heading": "ርዕስ",
+      "heading3": "ንዑስ ርዕስ",
+      "italic": "ሰያፍ",
+      "link": "አገናኝ",
+      "more": "ተጨማሪ ቅርጸት",
+      "orderedList": "ቁጥር ያለው ዝርዝር",
+      "quote": "ጥቅስ",
+      "strike": "የተሰረዘ",
+      "taskList": "የሥራ ዝርዝር"
+    },
+    "linkPrompt": "የአገናኝ አድራሻ (አገናኙን ለማስወገድ ባዶ ይተዉት)",
+    "mode": {
+      "label": "የልጥፍ ዓይነት",
+      "long": "ጽሑፍ",
+      "short": "አጭር"
+    },
     "placeholder": "ጥሩ ሀሳብዎ ምንድን ነው?",
+    "posting": "በመለጠፍ ላይ…",
     "publish": "ለጥፍ",
-    "titlePlaceholder": "ርዕስ (አማራጭ፣ ጽሑፍ ያደርገዋል)"
+    "remove": "አስወግድ",
+    "title": "ርዕስ"
   },
   "discover": {
     "title": "ያስሱ"

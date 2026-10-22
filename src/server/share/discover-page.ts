@@ -20,5 +20,6 @@ export function renderDiscoverPage(ctx: ChromeContext, tab: FeedTab, page: FeedP
     main: `<main class="ni-main ni-feed-main">${heading}${compose}${empty || feedList(ctx, page, base, tab)}</main>`,
     side: true,
     aside,
+    scripts: compose ? ["/scripts/compose.js"] : [],
   });
 }

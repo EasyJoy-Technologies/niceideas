@@ -61,19 +61,44 @@
     "tagline": "Raba nice ideas ɗinka a kowane lokaci, a ko'ina!"
   },
   "compose": {
+    "addAudio": "Ƙara sauti (har zuwa {max})",
     "addImages": "Ƙara hotuna (har zuwa {max})",
     "error": {
       "empty": "Rubuta wani abu ko ƙara hoto.",
       "failed": "An kasa wallafawa. Da fatan za a sake gwadawa.",
       "rate_limited": "Kana wallafawa da sauri sosai. Jira ɗan lokaci.",
-      "too_large": "Wani hoto ya yi girma sosai.",
+      "short_too_long": "Gajerun saƙonni suna da iyakar haruffa {max}. Canja zuwa “{article}” don rubuta ƙari.",
+      "too_large": "Wani fayil ya yi girma da yawa.",
       "too_much": "Ya yi tsawo sosai. Taƙaita rubutu ko rage hotuna.",
-      "unsupported": "Ba a goyi bayan irin wannan fayil ba. Zaɓi hoto."
+      "unsupported": "Ba a tallafa wa wannan nau'in fayil ba. Zaɓi hoto ko fayil na sauti."
     },
-    "imagesChosen": "Hotuna: {count}",
+    "fmt": {
+      "bold": "Mai kauri",
+      "bulletList": "Jerin ɗigo",
+      "code": "Lambar shiri a cikin layi",
+      "codeBlock": "Tubalin lambar shiri",
+      "divider": "Mai raba sashe",
+      "heading": "Kanu",
+      "heading3": "Ƙaramin kanu",
+      "italic": "Mai karkata",
+      "link": "Hanyar haɗi",
+      "more": "Ƙarin tsari",
+      "orderedList": "Jerin lambobi",
+      "quote": "Ambato",
+      "strike": "Layin sokewa",
+      "taskList": "Jerin ayyuka"
+    },
+    "linkPrompt": "Adireshin hanyar haɗi (bar shi babu komai don cire hanyar haɗi)",
+    "mode": {
+      "label": "Nau'in saƙo",
+      "long": "Makala",
+      "short": "Gajere"
+    },
     "placeholder": "Mene ne kyakkyawan ra'ayinka?",
+    "posting": "Ana wallafawa…",
     "publish": "Wallafa",
-    "titlePlaceholder": "Take (na zaɓi ne, yana mai da shi maƙala)"
+    "remove": "Cire",
+    "title": "Take"
   },
   "discover": {
     "title": "Bincika"

@@ -61,19 +61,44 @@
     "tagline": "Bagikan nice ideas-mu kapan saja, di mana saja!"
   },
   "compose": {
+    "addAudio": "Tambah audio (maks. {max})",
     "addImages": "Tambahkan gambar (maks. {max})",
     "error": {
       "empty": "Tulis sesuatu atau tambahkan gambar.",
       "failed": "Gagal memposting. Silakan coba lagi.",
       "rate_limited": "Kamu memposting terlalu cepat. Tunggu sebentar.",
-      "too_large": "Ada gambar yang terlalu besar.",
+      "short_too_long": "Postingan pendek maksimal {max} karakter. Beralih ke “{article}” untuk menulis lebih banyak.",
+      "too_large": "Ada file yang terlalu besar.",
       "too_much": "Terlalu panjang. Persingkat teks atau kurangi gambar.",
-      "unsupported": "Jenis file ini tidak didukung. Pilih gambar."
+      "unsupported": "Jenis file ini tidak didukung. Pilih gambar atau file audio."
     },
-    "imagesChosen": "Gambar: {count}",
+    "fmt": {
+      "bold": "Tebal",
+      "bulletList": "Daftar berpoin",
+      "code": "Kode sebaris",
+      "codeBlock": "Blok kode",
+      "divider": "Pemisah",
+      "heading": "Judul bagian",
+      "heading3": "Subjudul",
+      "italic": "Miring",
+      "link": "Tautan",
+      "more": "Format lainnya",
+      "orderedList": "Daftar bernomor",
+      "quote": "Kutipan",
+      "strike": "Coret",
+      "taskList": "Daftar tugas"
+    },
+    "linkPrompt": "Alamat tautan (kosongkan untuk menghapus tautan)",
+    "mode": {
+      "label": "Jenis postingan",
+      "long": "Artikel",
+      "short": "Pendek"
+    },
     "placeholder": "Apa ide bagusmu?",
+    "posting": "Memposting…",
     "publish": "Posting",
-    "titlePlaceholder": "Judul (opsional, menjadikannya artikel)"
+    "remove": "Hapus",
+    "title": "Judul"
   },
   "discover": {
     "title": "Jelajahi"

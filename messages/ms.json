@@ -61,19 +61,44 @@
     "tagline": "Kongsi nice ideas anda bila-bila masa, di mana-mana sahaja!"
   },
   "compose": {
+    "addAudio": "Tambah audio (hingga {max})",
     "addImages": "Tambah imej (maksimum {max})",
     "error": {
       "empty": "Tulis sesuatu atau tambah imej.",
       "failed": "Tidak dapat menyiar. Sila cuba lagi.",
       "rate_limited": "Anda menyiar terlalu cepat. Sila tunggu sebentar.",
-      "too_large": "Satu imej terlalu besar.",
+      "short_too_long": "Siaran pendek terhad kepada {max} aksara. Tukar kepada “{article}” untuk menulis lebih banyak.",
+      "too_large": "Satu fail terlalu besar.",
       "too_much": "Terlalu panjang. Pendekkan teks atau kurangkan imej.",
-      "unsupported": "Jenis fail ini tidak disokong. Sila pilih imej."
+      "unsupported": "Jenis fail ini tidak disokong. Pilih imej atau fail audio."
     },
-    "imagesChosen": "Imej: {count}",
+    "fmt": {
+      "bold": "Tebal",
+      "bulletList": "Senarai bertitik",
+      "code": "Kod sebaris",
+      "codeBlock": "Blok kod",
+      "divider": "Pembahagi",
+      "heading": "Tajuk bahagian",
+      "heading3": "Subtajuk",
+      "italic": "Condong",
+      "link": "Pautan",
+      "more": "Lagi pemformatan",
+      "orderedList": "Senarai bernombor",
+      "quote": "Petikan",
+      "strike": "Garis lorek",
+      "taskList": "Senarai tugasan"
+    },
+    "linkPrompt": "Alamat pautan (biarkan kosong untuk membuang pautan)",
+    "mode": {
+      "label": "Jenis siaran",
+      "long": "Artikel",
+      "short": "Pendek"
+    },
     "placeholder": "Apakah idea baik anda?",
+    "posting": "Menyiarkan…",
     "publish": "Siar",
-    "titlePlaceholder": "Tajuk (pilihan, menjadikannya artikel)"
+    "remove": "Buang",
+    "title": "Tajuk"
   },
   "discover": {
     "title": "Teroka"

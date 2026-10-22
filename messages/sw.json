@@ -61,19 +61,44 @@
     "tagline": "Shiriki nice ideas zako wakati wowote, mahali popote!"
   },
   "compose": {
+    "addAudio": "Ongeza sauti (hadi {max})",
     "addImages": "Ongeza picha (hadi {max})",
     "error": {
       "empty": "Andika kitu au ongeza picha.",
       "failed": "Imeshindwa kuchapisha. Tafadhali jaribu tena.",
       "rate_limited": "Unachapisha haraka mno. Subiri kidogo.",
-      "too_large": "Picha moja ni kubwa mno.",
+      "short_too_long": "Machapisho mafupi yana herufi zisizozidi {max}. Badilisha kuwa “{article}” ili kuandika zaidi.",
+      "too_large": "Faili moja ni kubwa mno.",
       "too_much": "Ni ndefu mno. Fupisha maandishi au tumia picha chache.",
-      "unsupported": "Aina hii ya faili haitumiki. Chagua picha."
+      "unsupported": "Aina hii ya faili haitumiki. Chagua picha au faili ya sauti."
     },
-    "imagesChosen": "Picha: {count}",
+    "fmt": {
+      "bold": "Herufi nzito",
+      "bulletList": "Orodha ya vitone",
+      "code": "Msimbo ndani ya mstari",
+      "codeBlock": "Kizuizi cha msimbo",
+      "divider": "Kitenganishi",
+      "heading": "Kichwa cha sehemu",
+      "heading3": "Kichwa kidogo",
+      "italic": "Herufi za mlalo",
+      "link": "Kiungo",
+      "more": "Uumbizaji zaidi",
+      "orderedList": "Orodha ya namba",
+      "quote": "Nukuu",
+      "strike": "Mstari katikati",
+      "taskList": "Orodha ya kazi"
+    },
+    "linkPrompt": "Anwani ya kiungo (acha tupu ili kuondoa kiungo)",
+    "mode": {
+      "label": "Aina ya chapisho",
+      "long": "Makala",
+      "short": "Fupi"
+    },
     "placeholder": "Wazo lako zuri ni lipi?",
+    "posting": "Inachapisha…",
     "publish": "Chapisha",
-    "titlePlaceholder": "Kichwa (si lazima, hufanya iwe makala)"
+    "remove": "Ondoa",
+    "title": "Kichwa"
   },
   "discover": {
     "title": "Gundua"

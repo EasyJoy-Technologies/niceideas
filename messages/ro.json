@@ -61,19 +61,44 @@
     "tagline": "Împărtășește-ți nice ideas oricând, oriunde!"
   },
   "compose": {
+    "addAudio": "Adaugă audio (până la {max})",
     "addImages": "Adaugă imagini (maximum {max})",
     "error": {
       "empty": "Scrie ceva sau adaugă o imagine.",
       "failed": "Nu s-a putut publica. Încearcă din nou.",
       "rate_limited": "Publici prea repede. Așteaptă puțin.",
-      "too_large": "O imagine este prea mare.",
+      "short_too_long": "Postările scurte au cel mult {max} de caractere. Comută la „{article}” pentru a scrie mai mult.",
+      "too_large": "Un fișier este prea mare.",
       "too_much": "E prea lung. Scurtează textul sau folosește mai puține imagini.",
-      "unsupported": "Acest tip de fișier nu este acceptat. Alege o imagine."
+      "unsupported": "Acest tip de fișier nu este acceptat. Alege o imagine sau un fișier audio."
     },
-    "imagesChosen": "Imagini: {count}",
+    "fmt": {
+      "bold": "Aldin",
+      "bulletList": "Listă cu buline",
+      "code": "Cod în linie",
+      "codeBlock": "Bloc de cod",
+      "divider": "Linie despărțitoare",
+      "heading": "Titlu de secțiune",
+      "heading3": "Subtitlu",
+      "italic": "Cursiv",
+      "link": "Link",
+      "more": "Mai multe formatări",
+      "orderedList": "Listă numerotată",
+      "quote": "Citat",
+      "strike": "Tăiat",
+      "taskList": "Listă de sarcini"
+    },
+    "linkPrompt": "Adresa linkului (lasă gol pentru a elimina linkul)",
+    "mode": {
+      "label": "Tip de postare",
+      "long": "Articol",
+      "short": "Scurtă"
+    },
     "placeholder": "Care e ideea ta bună?",
+    "posting": "Se publică…",
     "publish": "Publică",
-    "titlePlaceholder": "Titlu (opțional, devine articol)"
+    "remove": "Elimină",
+    "title": "Titlu"
   },
   "discover": {
     "title": "Descoperă"

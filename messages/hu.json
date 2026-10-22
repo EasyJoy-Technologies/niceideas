@@ -61,19 +61,44 @@
     "tagline": "Oszd meg a nice ideas-eidet bármikor, bárhol!"
   },
   "compose": {
+    "addAudio": "Hang hozzáadása (legfeljebb {max})",
     "addImages": "Képek hozzáadása (legfeljebb {max})",
     "error": {
       "empty": "Írj valamit, vagy adj hozzá egy képet.",
       "failed": "A közzététel nem sikerült. Próbáld újra.",
       "rate_limited": "Túl gyorsan teszel közzé. Várj egy kicsit.",
-      "too_large": "Egy kép túl nagy.",
+      "short_too_long": "A rövid bejegyzések legfeljebb {max} karakteresek. Válts „{article}” módra, ha többet írnál.",
+      "too_large": "Egy fájl túl nagy.",
       "too_much": "Ez túl hosszú. Rövidítsd a szöveget, vagy használj kevesebb képet.",
-      "unsupported": "Ez a fájltípus nem támogatott. Válassz egy képet."
+      "unsupported": "Ez a fájltípus nem támogatott. Válassz képet vagy hangfájlt."
     },
-    "imagesChosen": "Képek: {count}",
+    "fmt": {
+      "bold": "Félkövér",
+      "bulletList": "Felsorolás",
+      "code": "Beágyazott kód",
+      "codeBlock": "Kódblokk",
+      "divider": "Elválasztó",
+      "heading": "Címsor",
+      "heading3": "Alcím",
+      "italic": "Dőlt",
+      "link": "Hivatkozás",
+      "more": "További formázás",
+      "orderedList": "Számozott lista",
+      "quote": "Idézet",
+      "strike": "Áthúzott",
+      "taskList": "Feladatlista"
+    },
+    "linkPrompt": "Hivatkozás címe (hagyd üresen a hivatkozás eltávolításához)",
+    "mode": {
+      "label": "Bejegyzés típusa",
+      "long": "Cikk",
+      "short": "Rövid"
+    },
     "placeholder": "Mi a jó ötleted?",
+    "posting": "Közzététel…",
     "publish": "Közzététel",
-    "titlePlaceholder": "Cím (nem kötelező, cikké teszi)"
+    "remove": "Eltávolítás",
+    "title": "Cím"
   },
   "discover": {
     "title": "Felfedezés"

@@ -21,6 +21,11 @@
 .ni-fc-head .ni-dot { flex: none; }
 .ni-fc-head .ni-name:hover, .ni-fc-head .ni-meta a:hover { text-decoration: underline; }
 .ni-fc-text { margin-top: 0.5rem; font-size: 0.96875rem; line-height: 1.6; }
+.ni-fc-text.ni-body { gap: 0.625rem; }
+.ni-fc-thumbs { display: flex; flex-wrap: wrap; gap: 0.375rem; }
+.ni-fc-thumbs a { display: block; }
+.ni-fc-thumbs img { display: block; width: 7.5rem; height: 7.5rem; object-fit: cover; border-radius: 0.75rem; background: var(--ni-color-surface-2); }
+.ni-fc-text .ni-audio { padding: 0.625rem 0.75rem; }
 .ni-fc-article { margin-top: 0.625rem; display: block; border: 1px solid var(--ni-color-border); border-radius: 1rem; overflow: hidden; }
 .ni-fc-article:hover { border-color: var(--ni-color-secondary); }
 /* Cover about as tall as the text block below it (~7.5rem: title + 2-line summary + facts). */

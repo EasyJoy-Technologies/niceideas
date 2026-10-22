@@ -61,19 +61,44 @@
     "tagline": "Dziel się swoimi nice ideas zawsze i wszędzie!"
   },
   "compose": {
+    "addAudio": "Dodaj audio (maks. {max})",
     "addImages": "Dodaj obrazy (maks. {max})",
     "error": {
       "empty": "Napisz coś lub dodaj obraz.",
       "failed": "Nie udało się opublikować. Spróbuj ponownie.",
       "rate_limited": "Publikujesz zbyt szybko. Poczekaj chwilę.",
-      "too_large": "Obraz jest za duży.",
+      "short_too_long": "Krótkie wpisy mogą mieć najwyżej {max} znaków. Przełącz na „{article}”, aby napisać więcej.",
+      "too_large": "Plik jest za duży.",
       "too_much": "To za długie. Skróć tekst lub użyj mniej obrazów.",
-      "unsupported": "Ten typ pliku nie jest obsługiwany. Wybierz obraz."
+      "unsupported": "Ten typ pliku nie jest obsługiwany. Wybierz obraz lub plik audio."
     },
-    "imagesChosen": "Obrazy: {count}",
+    "fmt": {
+      "bold": "Pogrubienie",
+      "bulletList": "Lista punktowana",
+      "code": "Kod w tekście",
+      "codeBlock": "Blok kodu",
+      "divider": "Linia oddzielająca",
+      "heading": "Nagłówek",
+      "heading3": "Podtytuł",
+      "italic": "Kursywa",
+      "link": "Link",
+      "more": "Więcej formatowania",
+      "orderedList": "Lista numerowana",
+      "quote": "Cytat",
+      "strike": "Przekreślenie",
+      "taskList": "Lista zadań"
+    },
+    "linkPrompt": "Adres linku (zostaw puste, aby usunąć link)",
+    "mode": {
+      "label": "Rodzaj wpisu",
+      "long": "Artykuł",
+      "short": "Krótki"
+    },
     "placeholder": "Jaki masz dobry pomysł?",
+    "posting": "Publikowanie…",
     "publish": "Opublikuj",
-    "titlePlaceholder": "Tytuł (opcjonalny, zmienia wpis w artykuł)"
+    "remove": "Usuń",
+    "title": "Tytuł"
   },
   "discover": {
     "title": "Odkrywaj"

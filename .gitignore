@@ -24,3 +24,6 @@ next-env.d.ts
 
 # Local storage driver data
 /var/
+
+# Generated browser bundles (scripts/build-client.mjs)
+/public/scripts/compose.js

@@ -5,6 +5,7 @@ import { likedAmong, POST_LIKE } from "@/server/db/repos/likes";
 import { findMediaByIds } from "@/server/db/repos/media";
 import { documentPlainText } from "@/server/documents/derive";
 import { documentSchema, type PostDocument } from "@/server/documents/schema";
+import { documentMediaIds } from "@/server/documents/validate";
 
 export const FEED_PAGE_SIZE = 20;
 
@@ -12,6 +13,8 @@ export type FeedItem = {
   post: FeedRow;
   document: PostDocument;
   cover: Media | null;
+  /** Media of short posts (shown in full under the text); empty for articles. */
+  media: ReadonlyMap<string, Media>;
   liked: boolean;
   /** Article facts shown under the summary. */
   readingMinutes: number;
@@ -43,16 +46,19 @@ export async function loadFeed(db: Db, filter: FeedFilter, cursor: FeedCursor | 
   const page = rows.slice(0, FEED_PAGE_SIZE);
   const revisions = new Map((await findRevisions(db, page.flatMap((p) => (p.current_revision_id ? [p.current_revision_id] : [])))).map((r) => [r.id, r]));
   const covers = new Map((await findMediaByIds(db, page.flatMap((p) => (p.cover_media_id ? [p.cover_media_id] : [])))).map((m) => [m.id, m]));
+  const documents = new Map(page.map((p) => [p.id, p.current_revision_id ? revisions.get(p.current_revision_id) : undefined] as const).flatMap(([id, r]) => (r ? [[id, documentSchema.parse(r.document)] as const] : [])));
+  const shortMediaIds = page.filter((p) => p.kind === "short").flatMap((p) => (documents.get(p.id) ? documentMediaIds(documents.get(p.id)!) : []));
+  const media = new Map((await findMediaByIds(db, shortMediaIds)).map((m) => [m.id, m]));
   const liked = visitorKey ? await likedAmong(db, POST_LIKE, page.map((p) => p.id), visitorKey) : new Set<string>();
   const items: FeedItem[] = [];
   for (const post of page) {
-    const revision = post.current_revision_id ? revisions.get(post.current_revision_id) : undefined;
-    if (!revision) continue;
-    const document = documentSchema.parse(revision.document);
+    const document = documents.get(post.id);
+    if (!document) continue;
     items.push({
       post,
       document,
       cover: post.cover_media_id ? covers.get(post.cover_media_id) ?? null : null,
+      media: post.kind === "short" ? media : new Map(),
       liked: liked.has(post.id),
       readingMinutes: readingMinutes(documentPlainText(document)),
       images: document.blocks.filter((b) => b.type === "image").length,

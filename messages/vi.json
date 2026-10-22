@@ -61,19 +61,44 @@
     "tagline": "Chia sẻ nice ideas của bạn mọi lúc, mọi nơi!"
   },
   "compose": {
+    "addAudio": "Thêm âm thanh (tối đa {max})",
     "addImages": "Thêm hình ảnh (tối đa {max})",
     "error": {
       "empty": "Hãy viết gì đó hoặc thêm hình ảnh.",
       "failed": "Không thể đăng. Vui lòng thử lại.",
       "rate_limited": "Bạn đăng quá nhanh. Vui lòng đợi một chút.",
-      "too_large": "Có hình ảnh quá lớn.",
+      "short_too_long": "Bài ngắn tối đa {max} ký tự. Chuyển sang “{article}” để viết thêm.",
+      "too_large": "Một tệp quá lớn.",
       "too_much": "Quá dài. Hãy rút ngắn văn bản hoặc bớt hình ảnh.",
-      "unsupported": "Không hỗ trợ loại tệp này. Hãy chọn hình ảnh."
+      "unsupported": "Không hỗ trợ loại tệp này. Hãy chọn ảnh hoặc tệp âm thanh."
     },
-    "imagesChosen": "Hình ảnh: {count}",
+    "fmt": {
+      "bold": "In đậm",
+      "bulletList": "Danh sách dấu đầu dòng",
+      "code": "Mã trong dòng",
+      "codeBlock": "Khối mã",
+      "divider": "Đường phân cách",
+      "heading": "Tiêu đề mục",
+      "heading3": "Tiêu đề phụ",
+      "italic": "In nghiêng",
+      "link": "Liên kết",
+      "more": "Định dạng khác",
+      "orderedList": "Danh sách đánh số",
+      "quote": "Trích dẫn",
+      "strike": "Gạch ngang",
+      "taskList": "Danh sách việc cần làm"
+    },
+    "linkPrompt": "Địa chỉ liên kết (để trống để xóa liên kết)",
+    "mode": {
+      "label": "Loại bài đăng",
+      "long": "Bài viết",
+      "short": "Ngắn"
+    },
     "placeholder": "Bạn có ý tưởng hay nào?",
+    "posting": "Đang đăng…",
     "publish": "Đăng",
-    "titlePlaceholder": "Tiêu đề (không bắt buộc, sẽ thành bài viết dài)"
+    "remove": "Xóa",
+    "title": "Tiêu đề"
   },
   "discover": {
     "title": "Khám phá"

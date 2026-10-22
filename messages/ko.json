@@ -61,19 +61,44 @@
     "tagline": "언제 어디서나 나의 nice ideas를 공유하세요!"
   },
   "compose": {
+    "addAudio": "오디오 추가 (최대 {max}개)",
     "addImages": "이미지 추가(최대 {max}장)",
     "error": {
       "empty": "내용을 쓰거나 이미지를 추가해 주세요.",
       "failed": "게시하지 못했어요. 다시 시도해 주세요.",
       "rate_limited": "너무 빨리 게시하고 있어요. 잠시 기다려 주세요.",
-      "too_large": "이미지가 너무 커요.",
+      "short_too_long": "짧은 글은 최대 {max}자까지 쓸 수 있어요. 더 쓰려면 ‘{article}’로 바꿔 주세요.",
+      "too_large": "파일이 너무 커요.",
       "too_much": "너무 길어요. 글을 줄이거나 이미지를 줄여 주세요.",
-      "unsupported": "지원하지 않는 파일 형식이에요. 이미지를 선택해 주세요."
+      "unsupported": "지원하지 않는 파일 형식이에요. 이미지나 오디오 파일을 선택해 주세요."
     },
-    "imagesChosen": "선택한 이미지: {count}",
+    "fmt": {
+      "bold": "굵게",
+      "bulletList": "글머리 기호 목록",
+      "code": "인라인 코드",
+      "codeBlock": "코드 블록",
+      "divider": "구분선",
+      "heading": "제목",
+      "heading3": "소제목",
+      "italic": "기울임꼴",
+      "link": "링크",
+      "more": "서식 더 보기",
+      "orderedList": "번호 목록",
+      "quote": "인용",
+      "strike": "취소선",
+      "taskList": "체크리스트"
+    },
+    "linkPrompt": "링크 주소 (비워 두면 링크가 삭제됩니다)",
+    "mode": {
+      "label": "글 유형",
+      "long": "긴 글",
+      "short": "짧은 글"
+    },
     "placeholder": "어떤 좋은 아이디어가 있나요?",
+    "posting": "게시하는 중…",
     "publish": "게시",
-    "titlePlaceholder": "제목(선택, 입력하면 글로 게시돼요)"
+    "remove": "삭제",
+    "title": "제목"
   },
   "discover": {
     "title": "발견"

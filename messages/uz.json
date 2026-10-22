@@ -61,19 +61,44 @@
     "tagline": "nice ideas’laringizni istalgan vaqtda, istalgan joyda ulashing!"
   },
   "compose": {
+    "addAudio": "Audio qo‘shish ({max} tagacha)",
     "addImages": "Rasm qo‘shish (ko‘pi bilan {max})",
     "error": {
       "empty": "Biror narsa yozing yoki rasm qo‘shing.",
       "failed": "Joylab bo‘lmadi. Qayta urinib ko‘ring.",
       "rate_limited": "Juda tez joylayapsiz. Biroz kuting.",
-      "too_large": "Rasmlardan biri juda katta.",
+      "short_too_long": "Qisqa postlar ko‘pi bilan {max} belgidan iborat. Ko‘proq yozish uchun “{article}” rejimiga o‘ting.",
+      "too_large": "Fayl juda katta.",
       "too_much": "Juda uzun. Matnni qisqartiring yoki kamroq rasm qo‘shing.",
-      "unsupported": "Bu fayl turi qo‘llab-quvvatlanmaydi. Rasm tanlang."
+      "unsupported": "Bu fayl turi qo‘llab-quvvatlanmaydi. Rasm yoki audio fayl tanlang."
     },
-    "imagesChosen": "Rasmlar: {count}",
+    "fmt": {
+      "bold": "Qalin",
+      "bulletList": "Belgili ro‘yxat",
+      "code": "Qator ichidagi kod",
+      "codeBlock": "Kod bloki",
+      "divider": "Ajratgich",
+      "heading": "Bo‘lim sarlavhasi",
+      "heading3": "Kichik sarlavha",
+      "italic": "Kursiv",
+      "link": "Havola",
+      "more": "Boshqa formatlash",
+      "orderedList": "Raqamli ro‘yxat",
+      "quote": "Iqtibos",
+      "strike": "Ustidan chizilgan",
+      "taskList": "Vazifalar ro‘yxati"
+    },
+    "linkPrompt": "Havola manzili (havolani olib tashlash uchun bo‘sh qoldiring)",
+    "mode": {
+      "label": "Post turi",
+      "long": "Maqola",
+      "short": "Qisqa"
+    },
     "placeholder": "Qanday yaxshi g‘oyangiz bor?",
+    "posting": "Joylanmoqda…",
     "publish": "Joylash",
-    "titlePlaceholder": "Sarlavha (ixtiyoriy, maqolaga aylantiradi)"
+    "remove": "Olib tashlash",
+    "title": "Sarlavha"
   },
   "discover": {
     "title": "Kashf etish"

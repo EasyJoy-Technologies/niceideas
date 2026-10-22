@@ -61,19 +61,44 @@
     "tagline": "Share your nice ideas anytime, anywhere!"
   },
   "compose": {
+    "addAudio": "Add audio (up to {max})",
     "addImages": "Add images (up to {max})",
     "error": {
       "empty": "Write something or add an image.",
       "failed": "Couldn’t post. Please try again.",
       "rate_limited": "You’re posting too fast. Please wait a moment.",
-      "too_large": "An image is too large.",
+      "short_too_long": "Short posts are limited to {max} characters. Switch to “{article}” to write more.",
+      "too_large": "A file is too large.",
       "too_much": "That’s too long. Shorten the text or use fewer images.",
-      "unsupported": "This file type isn’t supported. Please choose an image."
+      "unsupported": "This file type isn’t supported. Please choose an image or audio file."
     },
-    "imagesChosen": "Images: {count}",
+    "fmt": {
+      "bold": "Bold",
+      "bulletList": "Bulleted list",
+      "code": "Inline code",
+      "codeBlock": "Code block",
+      "divider": "Divider",
+      "heading": "Heading",
+      "heading3": "Subheading",
+      "italic": "Italic",
+      "link": "Link",
+      "more": "More formatting",
+      "orderedList": "Numbered list",
+      "quote": "Quote",
+      "strike": "Strikethrough",
+      "taskList": "Checklist"
+    },
+    "linkPrompt": "Link address (leave empty to remove the link)",
+    "mode": {
+      "label": "Post type",
+      "long": "Article",
+      "short": "Short"
+    },
     "placeholder": "What’s your nice idea?",
+    "posting": "Posting…",
     "publish": "Post",
-    "titlePlaceholder": "Title (optional, makes it an article)"
+    "remove": "Remove",
+    "title": "Title"
   },
   "discover": {
     "title": "Discover"

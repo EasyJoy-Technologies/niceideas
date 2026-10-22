@@ -61,19 +61,44 @@
     "tagline": "Partagez vos nice ideas, où que vous soyez, quand vous voulez !"
   },
   "compose": {
+    "addAudio": "Ajouter un audio (jusqu’à {max})",
     "addImages": "Ajouter des images (jusqu’à {max})",
     "error": {
       "empty": "Écrivez quelque chose ou ajoutez une image.",
       "failed": "Impossible de publier. Veuillez réessayer.",
       "rate_limited": "Vous publiez trop vite. Patientez un instant.",
-      "too_large": "Une image est trop volumineuse.",
+      "short_too_long": "Les publications courtes sont limitées à {max} caractères. Passez à « {article} » pour écrire davantage.",
+      "too_large": "Un fichier est trop volumineux.",
       "too_much": "C’est trop long. Raccourcissez le texte ou utilisez moins d’images.",
-      "unsupported": "Ce type de fichier n’est pas pris en charge. Choisissez une image."
+      "unsupported": "Ce type de fichier n’est pas pris en charge. Choisissez une image ou un fichier audio."
     },
-    "imagesChosen": "Images : {count}",
+    "fmt": {
+      "bold": "Gras",
+      "bulletList": "Liste à puces",
+      "code": "Code en ligne",
+      "codeBlock": "Bloc de code",
+      "divider": "Séparateur",
+      "heading": "Titre de section",
+      "heading3": "Sous-titre",
+      "italic": "Italique",
+      "link": "Lien",
+      "more": "Plus de mise en forme",
+      "orderedList": "Liste numérotée",
+      "quote": "Citation",
+      "strike": "Barré",
+      "taskList": "Liste de tâches"
+    },
+    "linkPrompt": "Adresse du lien (laisser vide pour supprimer le lien)",
+    "mode": {
+      "label": "Type de publication",
+      "long": "Article",
+      "short": "Court"
+    },
     "placeholder": "Quelle est votre bonne idée ?",
+    "posting": "Publication…",
     "publish": "Publier",
-    "titlePlaceholder": "Titre (facultatif, en fait un article)"
+    "remove": "Retirer",
+    "title": "Titre"
   },
   "discover": {
     "title": "Découvrir"

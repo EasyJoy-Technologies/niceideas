@@ -61,19 +61,44 @@
     "tagline": "Dela dina nice ideas när och var du vill!"
   },
   "compose": {
+    "addAudio": "Lägg till ljud (upp till {max})",
     "addImages": "Lägg till bilder (högst {max})",
     "error": {
       "empty": "Skriv något eller lägg till en bild.",
       "failed": "Det gick inte att publicera. Försök igen.",
       "rate_limited": "Du publicerar för snabbt. Vänta en stund.",
-      "too_large": "En bild är för stor.",
+      "short_too_long": "Korta inlägg får ha högst {max} tecken. Byt till ”{article}” för att skriva mer.",
+      "too_large": "En fil är för stor.",
       "too_much": "Det är för långt. Korta texten eller använd färre bilder.",
-      "unsupported": "Filtypen stöds inte. Välj en bild."
+      "unsupported": "Den här filtypen stöds inte. Välj en bild eller en ljudfil."
     },
-    "imagesChosen": "Bilder: {count}",
+    "fmt": {
+      "bold": "Fetstil",
+      "bulletList": "Punktlista",
+      "code": "Kod i text",
+      "codeBlock": "Kodblock",
+      "divider": "Avdelare",
+      "heading": "Rubrik",
+      "heading3": "Underrubrik",
+      "italic": "Kursiv",
+      "link": "Länk",
+      "more": "Mer formatering",
+      "orderedList": "Numrerad lista",
+      "quote": "Citat",
+      "strike": "Genomstruken",
+      "taskList": "Checklista"
+    },
+    "linkPrompt": "Länkadress (lämna tomt för att ta bort länken)",
+    "mode": {
+      "label": "Typ av inlägg",
+      "long": "Artikel",
+      "short": "Kort"
+    },
     "placeholder": "Vad är din goda idé?",
+    "posting": "Publicerar…",
     "publish": "Publicera",
-    "titlePlaceholder": "Rubrik (valfritt, gör inlägget till en artikel)"
+    "remove": "Ta bort",
+    "title": "Rubrik"
   },
   "discover": {
     "title": "Upptäck"

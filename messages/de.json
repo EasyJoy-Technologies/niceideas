@@ -61,19 +61,44 @@
     "tagline": "Teile deine nice ideas – jederzeit und überall!"
   },
   "compose": {
+    "addAudio": "Audio hinzufügen (bis zu {max})",
     "addImages": "Bilder hinzufügen (bis zu {max})",
     "error": {
       "empty": "Schreib etwas oder füge ein Bild hinzu.",
       "failed": "Veröffentlichen fehlgeschlagen. Bitte versuche es erneut.",
       "rate_limited": "Du veröffentlichst zu schnell. Bitte warte einen Moment.",
-      "too_large": "Ein Bild ist zu groß.",
+      "short_too_long": "Kurze Beiträge haben höchstens {max} Zeichen. Wechsle zu „{article}“, um mehr zu schreiben.",
+      "too_large": "Eine Datei ist zu groß.",
       "too_much": "Das ist zu lang. Kürze den Text oder verwende weniger Bilder.",
-      "unsupported": "Dieser Dateityp wird nicht unterstützt. Bitte wähle ein Bild."
+      "unsupported": "Dieser Dateityp wird nicht unterstützt. Wähle ein Bild oder eine Audiodatei."
     },
-    "imagesChosen": "Bilder: {count}",
+    "fmt": {
+      "bold": "Fett",
+      "bulletList": "Aufzählung",
+      "code": "Inline-Code",
+      "codeBlock": "Codeblock",
+      "divider": "Trennlinie",
+      "heading": "Überschrift",
+      "heading3": "Zwischenüberschrift",
+      "italic": "Kursiv",
+      "link": "Link",
+      "more": "Weitere Formatierung",
+      "orderedList": "Nummerierte Liste",
+      "quote": "Zitat",
+      "strike": "Durchgestrichen",
+      "taskList": "Checkliste"
+    },
+    "linkPrompt": "Linkadresse (leer lassen, um den Link zu entfernen)",
+    "mode": {
+      "label": "Beitragsart",
+      "long": "Artikel",
+      "short": "Kurz"
+    },
     "placeholder": "Was ist deine Nice Idea?",
+    "posting": "Wird veröffentlicht…",
     "publish": "Veröffentlichen",
-    "titlePlaceholder": "Titel (optional, macht daraus einen Artikel)"
+    "remove": "Entfernen",
+    "title": "Titel"
   },
   "discover": {
     "title": "Entdecken"

@@ -61,19 +61,44 @@
     "tagline": "Ibahagi ang iyong nice ideas kahit kailan, kahit saan!"
   },
   "compose": {
+    "addAudio": "Magdagdag ng audio (hanggang {max})",
     "addImages": "Magdagdag ng mga larawan (hanggang {max})",
     "error": {
       "empty": "Magsulat ng kahit ano o magdagdag ng larawan.",
       "failed": "Hindi ma-post. Pakisubukang muli.",
       "rate_limited": "Masyado kang mabilis mag-post. Maghintay sandali.",
-      "too_large": "Masyadong malaki ang isang larawan.",
+      "short_too_long": "Hanggang {max} karakter lang ang maikling post. Lumipat sa “{article}” para magsulat pa.",
+      "too_large": "Masyadong malaki ang isang file.",
       "too_much": "Masyadong mahaba. Paikliin ang text o bawasan ang mga larawan.",
-      "unsupported": "Hindi suportado ang ganitong file. Pumili ng larawan."
+      "unsupported": "Hindi suportado ang ganitong uri ng file. Pumili ng larawan o audio file."
     },
-    "imagesChosen": "Mga larawan: {count}",
+    "fmt": {
+      "bold": "Makapal",
+      "bulletList": "Listahang may bullet",
+      "code": "Code sa linya",
+      "codeBlock": "Bloke ng code",
+      "divider": "Panghati",
+      "heading": "Pamagat ng seksiyon",
+      "heading3": "Maliit na pamagat",
+      "italic": "Pahilig",
+      "link": "Link",
+      "more": "Iba pang format",
+      "orderedList": "Listahang may numero",
+      "quote": "Sipi",
+      "strike": "May guhit sa gitna",
+      "taskList": "Listahan ng gagawin"
+    },
+    "linkPrompt": "Address ng link (iwanang blangko para alisin ang link)",
+    "mode": {
+      "label": "Uri ng post",
+      "long": "Artikulo",
+      "short": "Maikli"
+    },
     "placeholder": "Ano ang magandang ideya mo?",
+    "posting": "Ipinopost…",
     "publish": "I-post",
-    "titlePlaceholder": "Pamagat (opsyonal, gagawin itong artikulo)"
+    "remove": "Alisin",
+    "title": "Pamagat"
   },
   "discover": {
     "title": "Tuklasin"
