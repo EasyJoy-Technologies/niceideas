@@ -14,7 +14,7 @@ function section(ctx: ChromeContext, page: InfoPage, s: InfoSection): string {
   return `<h2>${t(s.q)}</h2><p>${t(s.a)}</p>`;
 }
 
-/** Terms / privacy: effective date, summary, table of contents (wide: side column; phones: drop-down), sections. */
+/** Terms / privacy: effective date (plain text: share.js rewrites every <time datetime>), summary, table of contents (wide: side column; phones: drop-down), sections. */
 function legalBody(ctx: ChromeContext, page: LegalDoc, title: string): string {
   const { t, locale } = ctx.intl;
   const doc = loadLegalDocument(page, locale);
@@ -25,7 +25,7 @@ function legalBody(ctx: ChromeContext, page: LegalDoc, title: string): string {
   return (
     `<div class="ni-info-wrap ni-has-toc"><nav class="ni-toc" aria-label="${tocLabel}"><div class="ni-toc-h">${tocLabel}</div><ol>${links}</ol></nav>` +
     `<main class="ni-info-main"><article class="ni-post ni-info ni-legal"><h1 class="ni-title">${escapeHtml(title)}</h1>` +
-    `<div class="ni-legal-meta"><time datetime="${LEGAL_EFFECTIVE_DATE}" class="ni-pill">${escapeHtml(t("info.effective", { date }))}</time></div>` +
+    `<div class="ni-legal-meta"><span class="ni-pill">${escapeHtml(t("info.effective", { date }))}</span></div>` +
     `<div class="ni-legal-sum">${doc.summaryHtml}</div>` +
     `<details class="ni-toc-m"><summary>${tocLabel}</summary><ol>${links}</ol></details>` +
     `<div class="ni-text">${sections}</div></article></main></div>`

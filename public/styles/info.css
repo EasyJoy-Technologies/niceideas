@@ -28,6 +28,7 @@
 .ni-legal .ni-text th { background: var(--ni-color-surface-2); text-align: start; }
 
 .ni-info-ftr .ni-ftr-in { align-items: center; gap: 0.75rem 1.25rem; padding: 1.25rem; }
+.ni-info-ftr .ni-brand img { height: 1.25rem; }
 .ni-info-ftr .ni-ftr-in > span { font-size: 0.8125rem; color: var(--ni-color-text-secondary); }
 .ni-info-ftr .ni-ftr-links a[aria-current] { color: var(--ni-color-primary); font-weight: 600; }
 .ni-info-more { display: none; }
@@ -48,7 +49,10 @@
   .ni-info-wrap.ni-has-toc { display: block; max-width: 45rem; }
   .ni-toc { display: none; }
   .ni-toc-m { display: block; margin-top: 1rem; border: 1px solid var(--ni-color-border); border-radius: var(--ni-radius-sm); font-size: 0.875rem; }
-  .ni-toc-m summary { cursor: pointer; padding: 0.625rem 0.875rem; color: var(--ni-color-text-secondary); }
+  .ni-toc-m summary { cursor: pointer; padding: 0.625rem 0.875rem; color: var(--ni-color-text-secondary); list-style: none; display: flex; justify-content: space-between; }
+  .ni-toc-m summary::-webkit-details-marker { display: none; }
+  .ni-toc-m summary::after { content: "\25BE"; }
+  .ni-toc-m[open] summary::after { content: "\25B4"; }
   .ni-toc-m ol { padding: 0 0.5rem 0.5rem; }
   .ni-toc-m a { display: block; padding: 0.375rem 0.5rem; border-radius: 0.5rem; }
   .ni-toc-m a:hover { background: var(--ni-color-surface-2); color: var(--ni-color-primary); }

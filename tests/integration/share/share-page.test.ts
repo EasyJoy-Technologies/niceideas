@@ -133,6 +133,7 @@ describe("information pages", () => {
     expect(html).not.toMatch(/TO CONFIRM|待确认/);
     // v4.1: no back button (the logo links home); phone footer links in a pop-up menu.
     expect(html).toContain('<a class="ni-brand" href="/">');
+    expect(html).toMatch(/<span class="ni-pill">[^<]*21[^<]*<\/span>/);
     expect(html).not.toContain("ni-btn-primary");
     expect(html).toContain('<details class="ni-menu ni-info-more"><summary>Über uns &amp; Bedingungen</summary>');
   });
