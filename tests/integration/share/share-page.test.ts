@@ -10,6 +10,7 @@ import { GET as regionRoute } from "@/app/status/region/route";
 import { config as proxyConfig, proxy } from "@/proxy";
 import { REGION_BLOCK_HEADER, SITE_PATH_EXCLUSIONS } from "@/server/region/region-header";
 import { GET as termsRoute } from "@/app/terms/route";
+import { GET as langRoute } from "@/app/api/web/lang/route";
 import { startAppContext } from "../../helpers/app-context";
 import { jsonRequest, params } from "../../helpers/api";
 import { jpegWithExif, sha256 } from "../../helpers/media-fixtures";
@@ -74,6 +75,21 @@ describe("share page /p/<slug>", () => {
     expect(await (await page(short.slug, { cookie: "ni_locale=zh-Hant" })).text()).toContain("來自 樂趣記事本");
     const ar = await (await page(short.slug, {}, "?hl=ar")).text();
     expect(ar).toContain('<html lang="ar" dir="rtl">');
+  });
+
+  it("remembers a language menu choice in a cookie and returns to the same page", async () => {
+    const html = await (await termsRoute(new Request("http://localhost:3000/terms", { headers: { "accept-language": "en" } }))).text();
+    expect(html).toContain('href="/api/web/lang?hl=de&amp;next=%2Fterms"');
+    const res = langRoute(new Request("http://localhost:3000/api/web/lang?hl=de&next=%2Fterms"));
+    expect(res.status).toBe(303);
+    expect(res.headers.get("location")).toBe("/terms");
+    expect(res.headers.get("set-cookie")).toMatch(/^ni_locale=de; Path=\/; Max-Age=31536000/);
+    const next = await (await termsRoute(new Request("http://localhost:3000/terms", { headers: { "accept-language": "en", cookie: "ni_locale=de" } }))).text();
+    expect(next).toContain('<h1 class="ni-title">Nutzungsbedingungen</h1>');
+    for (const bad of ["https://evil.test/", "//evil.test", "/\\evil.test"]) {
+      expect(langRoute(new Request(`http://localhost:3000/api/web/lang?hl=de&next=${encodeURIComponent(bad)}`)).headers.get("location")).toBe("/");
+    }
+    expect(langRoute(new Request("http://localhost:3000/api/web/lang?hl=xx&next=%2F")).headers.get("set-cookie")).toBeNull();
   });
 
   it("uses cover-based share images for posts with images", async () => {

@@ -46,7 +46,8 @@ function moreMenu(ctx: ChromeContext): string {
   const { t } = ctx.intl;
   const items = MORE.map((f) => `<li class="${phone(f).trim()}"${only(f)}><button type="button" data-cmd="${f.cmd}">${icon(f.icon)}${escapeHtml(t(`compose.fmt.${f.cmd}`))}</button></li>`).join("");
   const label = escapeHtml(t("compose.fmt.more"));
-  return `<details class="ni-menu ni-tb-more ni-ed-only"><summary class="ni-tb" aria-label="${label}" title="${label}">${icon("more")}</summary><ul>${items}</ul></details>`;
+  // Wide screens, short post: every item is article-only or phone-only, so the menu is hidden (data-only).
+  return `<details class="ni-menu ni-tb-more ni-ed-only" data-only="long"><summary class="ni-tb" aria-label="${label}" title="${label}">${icon("more")}</summary><ul>${items}</ul></details>`;
 }
 
 function mediaButton(ctx: ChromeContext, kind: "images" | "audios"): string {

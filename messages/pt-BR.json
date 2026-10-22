@@ -75,7 +75,7 @@
     "fmt": {
       "bold": "Negrito",
       "bulletList": "Lista com marcadores",
-      "code": "Código embutido",
+      "code": "Código em linha",
       "codeBlock": "Bloco de código",
       "divider": "Divisor",
       "heading": "Título de seção",

@@ -78,7 +78,7 @@
       "code": "Codice in linea",
       "codeBlock": "Blocco di codice",
       "divider": "Separatore",
-      "heading": "Intestazione",
+      "heading": "Titolo di sezione",
       "heading3": "Sottotitolo",
       "italic": "Corsivo",
       "link": "Link",
@@ -86,7 +86,7 @@
       "orderedList": "Elenco numerato",
       "quote": "Citazione",
       "strike": "Barrato",
-      "taskList": "Lista di cose da fare"
+      "taskList": "Lista di controllo"
     },
     "linkPrompt": "Indirizzo del link (lascia vuoto per rimuovere il link)",
     "mode": {

@@ -61,7 +61,7 @@
     "tagline": "شارك nice ideas الخاصة بك في أي وقت ومن أي مكان!"
   },
   "compose": {
-    "addAudio": "أضف صوتًا (حتى {max})",
+    "addAudio": "أضف ملفًا صوتيًا (حتى {max})",
     "addImages": "إضافة صور (حتى {max})",
     "error": {
       "empty": "اكتب شيئًا أو أضف صورة.",

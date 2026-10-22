@@ -113,6 +113,7 @@ function setup(form: HTMLFormElement): void {
           tray.add(ids);
         }
       }
+      form.querySelector("details.ni-tb-more")?.removeAttribute("open");
       showError(null);
       updateCount();
     });

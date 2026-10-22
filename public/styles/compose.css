@@ -85,6 +85,8 @@
   .ni-compose { border-radius: 0; box-shadow: none; padding: 0.875rem 0.875rem 0.625rem; }
   .ni-phone-hide { display: none !important; }
   .ni-phone-only { display: revert !important; }
+  /* Phones keep "…" in short posts too: it holds italic, link and checklist there. */
+  .ni-compose-js .ni-tb-more.ni-ed-only { display: inline-block !important; }
   .ni-compose-bar { gap: 0; }
   .ni-tb { min-width: 1.75rem; padding: 0 0.125rem; }
   .ni-tb-sep[data-only="long"] { display: none !important; }

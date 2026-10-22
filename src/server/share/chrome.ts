@@ -33,13 +33,13 @@ export function brand(ctx: ChromeContext, heightRem: number, compact = false): s
   return ctx.restricted ? `<span class="ni-brand">${img}</span>` : `<a class="ni-brand" href="/">${img}</a>`;
 }
 
-/** No-JS language menu; links re-render the same page with `?hl=`. */
+/** No-JS language menu; a choice is remembered (cookie, /api/web/lang) and returns to the same page. */
 export function languageMenu(ctx: ChromeContext): string {
   const { t, locale } = ctx.intl;
   const items = LOCALES.map((code) => {
     const current = code === locale ? ' aria-current="true"' : "";
-    const href = `${ctx.path}?${LANG_PARAM}=${encodeURIComponent(code)}`;
-    return `<li><a href="${escapeHtml(href)}" hreflang="${code}" lang="${code}"${current}>${escapeHtml(autonym(code))}</a></li>`;
+    const href = `/api/web/lang?${LANG_PARAM}=${encodeURIComponent(code)}&next=${encodeURIComponent(ctx.path)}`;
+    return `<li><a href="${escapeHtml(href)}" hreflang="${code}" lang="${code}" rel="nofollow"${current}>${escapeHtml(autonym(code))}</a></li>`;
   }).join("");
   return (
     `<details class="ni-lang"><summary aria-label="${escapeHtml(t("share.language"))}">${icon("globe")}` +

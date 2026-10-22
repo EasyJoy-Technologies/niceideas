@@ -61,7 +61,7 @@
     "tagline": "Partagez vos nice ideas, où que vous soyez, quand vous voulez !"
   },
   "compose": {
-    "addAudio": "Ajouter un audio (jusqu’à {max})",
+    "addAudio": "Ajouter un fichier audio (jusqu’à {max})",
     "addImages": "Ajouter des images (jusqu’à {max})",
     "error": {
       "empty": "Écrivez quelque chose ou ajoutez une image.",
