@@ -22,8 +22,8 @@ MORE_CSS = """
 .acm{position:relative}.acm>span{width:28px;height:28px;border-radius:8px;display:grid;place-items:center;color:#6b7280}.acm.open>span{background:#f3f4f6}
 .acm .apop{position:absolute;bottom:calc(100% + 8px);right:-6px;width:170px;background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:6px;box-shadow:0 12px 32px rgba(17,24,39,.14);z-index:5}
 .acm .apop div{display:flex;gap:10px;align-items:center;padding:7px 10px;border-radius:8px;font-size:13px}.acm .apop .sepl{height:1px;padding:0;margin:4px 6px;background:#f0f1f3}
-.thm>span{width:30px;height:30px;border-radius:8px;display:grid;place-items:center;color:#6b7280;border:1px solid #e5e7eb;background:#fff}
-.thm.open>span{color:#6d28d9;border-color:#c4b5fd}
+.thm>span{width:32px;height:32px;border-radius:8px;display:grid;place-items:center;color:#6b7280}.thm>span .ic{width:18px;height:18px}.thm:hover>span,.thm.open>span{background:#f3f4f6}
+.thm.open>span{color:#6d28d9}
 .thm .pop{position:absolute;top:calc(100% + 8px);right:0;width:180px;background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:6px;box-shadow:0 12px 32px rgba(17,24,39,.14);z-index:5}
 .thm .pop div{display:flex;gap:10px;align-items:center;padding:7px 10px;border-radius:8px;font-size:13px}
 .thm .pop div.on{background:#f5f3ff;color:#6d28d9;font-weight:600}.thm .pop div em{margin-inline-start:auto;display:inline-grid}
@@ -48,7 +48,7 @@ tr.sel td{background:#faf8ff}tr.sel td:first-child{box-shadow:inset 3px 0 #7c3ae
 DARK_CSS = """
 body.dk{background:#2b2f36}.dk .sheet{color:#f3f4f6}.dk .note,.dk .cap{color:#c9cdd4}
 .dk .app{background:#0f1115;border-color:#262a33;color:#e6e8ec}
-.dk .sb,.dk .tb,.dk .cd,.dk .kpi,.dk .thm>span,.dk .thm .pop,.dk .chips span{background:#171a21;border-color:#262a33;color:#e6e8ec}
+.dk .sb,.dk .tb,.dk .cd,.dk .kpi,.dk .thm .pop,.dk .chips span{background:#171a21;border-color:#262a33;color:#e6e8ec}
 .dk .sb{border-inline-end-color:#262a33}.dk .tb{border-bottom-color:#262a33}.dk .me{border-top-color:#262a33}
 .dk .ni{color:#aab0bb}.dk .ni.on{background:#241f36;color:#c4b5fd}
 .dk .muted,.dk .kl,.dk .ng,.dk th,.dk .brand small{color:#9aa1ad}
@@ -62,7 +62,7 @@ body.dk{background:#2b2f36}.dk .sheet{color:#f3f4f6}.dk .note,.dk .cap{color:#c9
 .dk .newdata{background:#33270e;color:#fcd34d;border-color:#b45309}
 .dk .lnk{color:#c4b5fd}.dk .up{color:#4ade80}.dk .dnv{color:#f87171}
 .dk .av{background:#2a2440;color:#c4b5fd}
-.dk .acm .apop{background:#171a21;border-color:#262a33}.dk .acm.open>span{background:#222631}.dk .acm .apop .sepl{background:#262a33}.dk .thm.open>span{border-color:#7c3aed;color:#c4b5fd}.dk .thm .pop div.on{background:#241f36;color:#c4b5fd}
+.dk .acm .apop{background:#171a21;border-color:#262a33}.dk .acm.open>span{background:#222631}.dk .acm .apop .sepl{background:#262a33}.dk .thm.open>span{background:#222631;color:#c4b5fd}.dk .thm .pop div.on{background:#241f36;color:#c4b5fd}
 .dk tr.sel td{background:#1d1a2b}.dk .quote{background:#1b1f27;border-color:#2a2f3a}.dk .acts{background:#14171d}
 .dk .brand>div{color:#f3f4f6}
 """

@@ -8,16 +8,16 @@ from parts import (KPIS, NEW, SHARED_CSS, countries_block, health_rows, interact
                    referrers_block, source_block, src_legend_inline, todo_rows, top_posts_table, traffic_chart)
 
 OUT = sys.argv[1]
-MARK = '<svg width="22" height="22" viewBox="0 0 24 24"><g fill="#7c3aed"><circle cx="12" cy="5" r="3.2"/><circle cx="18.5" cy="12" r="3.2" fill="#a78bfa"/><circle cx="12" cy="19" r="3.2" fill="#c4b5fd"/><circle cx="5.5" cy="12" r="3.2" fill="#8b5cf6"/></g></svg>'
+MARK = '<img class="mk" src="../../../../public/brand/mark.svg" width="26" height="26" alt="">'
 RANGE = '<span class="seg"><span>今天</span><span class="on">7 天</span><span>30 天</span><span>90 天</span><span>自定义</span></span>'
 
 # ---------------- Variant A: white sidebar + card grid ----------------
 A_CSS = """
 .app{width:1440px;background:#f7f8fa;border:1px solid #e5e7eb;border-radius:12px;display:grid;grid-template-columns:232px 1fr;overflow:hidden;box-shadow:0 4px 20px rgba(17,24,39,.06)}
 .sb{background:#fff;border-right:1px solid #eceef1;padding:14px 12px;display:flex;flex-direction:column;gap:1px}
-.brand{display:flex;align-items:center;gap:9px;padding:4px 8px 14px;font-weight:700;font-size:15px}.brand small{display:block;font-weight:500;color:#9ca3af;font-size:11px}
+.brand{display:flex;align-items:center;gap:10px;padding:4px 6px 14px;font-weight:700;font-size:17px;letter-spacing:-.01em;line-height:1.15}.brand small{display:block;font-weight:500;color:#9ca3af;font-size:11.5px;letter-spacing:0}.brand .mk{flex:none}
 .ng{font-size:11.5px;color:#9ca3af;padding:12px 10px 4px}
-.ni{display:flex;align-items:center;gap:10px;padding:7px 10px;border-radius:8px;color:#4b5563;font-size:13.5px}.ni span:first-of-type{flex:1}.ni.on{background:#f5f3ff;color:#6d28d9;font-weight:600}
+.ni{display:flex;align-items:center;gap:11px;padding:8px 10px;border-radius:8px;color:#4b5563;font-size:14px;line-height:20px}.ni .ic{width:18px;height:18px}.ni span:first-of-type{flex:1}.ni.on{background:#f5f3ff;color:#6d28d9;font-weight:600}
 .bd{background:#dc2626;color:#fff;border-radius:999px;font-size:11px;padding:0 6px;line-height:18px}
 .me{margin-top:auto;display:flex;align-items:center;gap:9px;padding:10px 8px;border-top:1px solid #f0f1f3;font-size:13px}.av{width:30px;height:30px;border-radius:50%;background:#ede9fe;color:#6d28d9;display:grid;place-items:center;font-weight:700}
 .mn{display:flex;flex-direction:column;min-width:0}
