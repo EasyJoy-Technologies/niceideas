@@ -18,7 +18,8 @@ MOON = ('<svg class="ic" width="16" height="16" viewBox="0 0 24 24" fill="none" 
 CHECK = '<svg class="ic" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>'
 
 MORE_CSS = """
-.brand{display:flex;align-items:center}.brand>div{flex:1}.thm{position:relative;margin-inline-start:auto}
+.brand{display:flex;align-items:center;gap:2px;position:relative}.brand>div{flex:1}.thm{position:relative}.thm.lng{margin-inline-start:auto;position:static}
+.thm .pop.lp{width:auto;left:4px;right:4px;top:calc(100% - 4px)}.thm .pop .mo{color:#6d28d9;font-weight:500}
 .acm{position:relative}.acm>span{width:28px;height:28px;border-radius:8px;display:grid;place-items:center;color:#6b7280}.acm.open>span{background:#f3f4f6}
 .acm .apop{position:absolute;bottom:calc(100% + 8px);right:-6px;width:170px;background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:6px;box-shadow:0 12px 32px rgba(17,24,39,.14);z-index:5}
 .acm .apop div{display:flex;gap:10px;align-items:center;padding:7px 10px;border-radius:8px;font-size:13px}.acm .apop .sepl{height:1px;padding:0;margin:4px 6px;background:#f0f1f3}
@@ -62,7 +63,7 @@ body.dk{background:#2b2f36}.dk .sheet{color:#f3f4f6}.dk .note,.dk .cap{color:#c9
 .dk .newdata{background:#33270e;color:#fcd34d;border-color:#b45309}
 .dk .lnk{color:#c4b5fd}.dk .up{color:#4ade80}.dk .dnv{color:#f87171}
 .dk .av{background:#2a2440;color:#c4b5fd}
-.dk .acm .apop{background:#171a21;border-color:#262a33}.dk .acm.open>span{background:#222631}.dk .acm .apop .sepl{background:#262a33}.dk .thm.open>span{background:#222631;color:#c4b5fd}.dk .thm .pop div.on{background:#241f36;color:#c4b5fd}
+.dk .acm .apop{background:#171a21;border-color:#262a33}.dk .acm.open>span{background:#222631}.dk .acm .apop .sepl{background:#262a33}.dk .thm .pop .mo{color:#c4b5fd}.dk .thm.open>span{background:#222631;color:#c4b5fd}.dk .thm .pop div.on{background:#241f36;color:#c4b5fd}
 .dk tr.sel td{background:#1d1a2b}.dk .quote{background:#1b1f27;border-color:#2a2f3a}.dk .acts{background:#14171d}
 .dk .brand>div{color:#f3f4f6}
 """
@@ -84,15 +85,29 @@ ACCT_POP = ('<div class="apop"><div>' + ic("ext") + '返回网站</div><div>' + 
             '<div class="sepl"></div><div>' + ic("out") + '退出登录</div></div>')
 
 
-def brand_row(cur, open_, ring=False):
-    return ('<div class="brand">' + MARK + '<div>niceideas<small>管理后台 · 生产</small></div>' + theme_menu(cur, open_, ring) + '</div>')
+GLOBE = ('<svg class="ic" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">'
+         '<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>')
+LANGS = ("简体中文", "繁體中文", "English", "日本語", "한국어", "Español", "Français")
 
 
-def with_theme(html, cur, open_, ring=False, acct_open=False):
+def lang_menu(open_, ring=False):
+    pop = ""
+    if open_:
+        rows = "".join(f'<div class="{"on" if n == "简体中文" else ""}">{n}{f"<em>{CHECK}</em>" if n == "简体中文" else ""}</div>' for n in LANGS)
+        pop = f'<div class="pop lp"><div class="h">语言 · 共 40 种</div>{rows}<div class="mo">更多语言…</div></div>'
+    return f'<span class="thm lng{" open" if open_ else ""}{" ring" if ring else ""}" title="语言"><span>{GLOBE}</span>{pop}</span>'
+
+
+def brand_row(cur, open_, ring=False, lang_open=False):
+    return ('<div class="brand">' + MARK + '<div>niceideas<small>管理后台 · 生产</small></div>'
+            + lang_menu(lang_open, ring) + theme_menu(cur, open_, ring) + '</div>')
+
+
+def with_theme(html, cur, open_, ring=False, acct_open=False, lang_open=False):
     # Theme switch at the top of the sidebar (brand row); the account row keeps the account menu ("…").
     old_brand = '<div class="brand">' + MARK + '<div>niceideas<small>管理后台 · 生产</small></div></div>'
     assert old_brand in html
-    html = html.replace(old_brand, brand_row(cur, open_, ring), 1)
+    html = html.replace(old_brand, brand_row(cur, open_, ring, lang_open), 1)
     acct = f'<span class="acm{" open" if acct_open else ""}"><span>{MORE}</span>{ACCT_POP if acct_open else ""}</span>'
     for old in (ic("ext") + "</div></aside>", theme_menu("auto", False) + "</div></aside>"):
         if old in html:
@@ -144,11 +159,13 @@ def write(name, title, body, dark=False):
 
 
 def main():
-    note = '<p class="note">方案 A。外观按钮在左栏顶部 logo 行最右边（虚线框），点开是下拉菜单，和前台用同一个设置；底部账号行只放账号菜单（⋯）。</p>'
+    note = '<p class="note">方案 A。语言和外观按钮在左栏顶部 logo 行最右边（虚线框），点开是下拉菜单，和前台用同一个设置；底部账号行只放账号菜单（⋯）。</p>'
     write("a-dashboard-light.html", "方案 A · 概览 · 浅色",
           f'<h1 class="sheet">方案 A · 概览（浅色）</h1>{note}<div class="row"><div>{with_theme(variant_a(), "auto", False, True)}</div></div>')
     write("a-dashboard-dark.html", "方案 A · 概览 · 深色",
           f'<h1 class="sheet">方案 A · 概览（深色，外观菜单展开）</h1>{note}<div class="row"><div>{with_theme(variant_a(), "dark", True)}</div></div>', dark=True)
+    write("a-dashboard-lang.html", "方案 A · 概览 · 语言菜单",
+          f'<h1 class="sheet">方案 A · 概览（语言菜单展开）</h1><p class="note">左栏顶部：语言（地球）+ 外观，和前台用同一个设置。</p><div class="row"><div>{with_theme(variant_a(), "auto", False, False, False, True)}</div></div>')
     write("a-reports-light.html", "方案 A · 举报队列",
           f'<h1 class="sheet">方案 A · 举报队列（浅色，账号菜单展开）</h1><p class="note">左边列表，右边详情和处理。底部账号行的“⋯”是账号菜单。</p><div class="row"><div>{with_theme(report_queue(), "auto", False, False, True)}</div></div>')
     write("a-reports-dark.html", "方案 A · 举报队列 · 深色",
