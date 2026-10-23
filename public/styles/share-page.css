@@ -29,6 +29,9 @@ a { color: inherit; text-decoration: none; }
 }
 .ni-btn-primary { background: var(--ni-color-btn); color: #fff; }
 .ni-btn-primary:hover { background: var(--ni-color-btn-hover); }
+/* Shared by the site and the admin console. */
+.ni-btn-sm { height: 2rem; padding: 0 0.75rem; font-size: 0.8125rem; }
+.ni-btn-ghost { background: transparent; color: var(--ni-color-text-primary); border: 1px solid var(--ni-color-border); }
 
 /* header */
 .ni-hdr {

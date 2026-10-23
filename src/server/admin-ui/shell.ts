@@ -70,7 +70,7 @@ export type AdminPage = { section: AdminSection; title: string; tools?: string; 
 /** Full admin console document (own shell, not the site's); readable and usable without JS. */
 export function renderAdmin(ctx: AdminContext, page: AdminPage): string {
   const { locale, t } = ctx.intl;
-  const css = ["/styles/fonts.css", "/styles/tokens.css", "/styles/share-page.css", "/styles/account.css", "/styles/nav.css", "/styles/admin.css"]
+  const css = ["/styles/fonts.css", "/styles/tokens.css", "/styles/share-page.css", "/styles/account.css", "/styles/search.css", "/styles/nav.css", "/styles/admin.css"]
     .map((s) => `<link rel="stylesheet" href="${asset(s)}">`)
     .join("");
   const readOnly = ctx.role === "viewer" ? `<span class="ad-pill">${escapeHtml(t("admin.readOnly"))}</span>` : "";

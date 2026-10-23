@@ -3,8 +3,6 @@
 .ni-act[aria-pressed="true"] { color: var(--ni-color-like); }
 .ni-act[aria-pressed="true"] .ni-i { fill: var(--ni-color-like); stroke: var(--ni-color-like); }
 .ni-act:disabled { opacity: 0.6; cursor: default; }
-.ni-btn-sm { height: 2rem; padding: 0 0.75rem; font-size: 0.8125rem; }
-.ni-btn-ghost { background: transparent; color: var(--ni-color-text-primary); border: 1px solid var(--ni-color-border); }
 .ni-link { border: 0; background: none; padding: 0; color: var(--ni-color-primary); font: 600 0.8125rem/1.4 var(--ni-font-sans); cursor: pointer; }
 
 .ni-comments { margin-top: 1.25rem; padding: 1.5rem 1.75rem; }
