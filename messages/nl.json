@@ -1,28 +1,179 @@
 {
   "admin": {
+    "action": {
+      "ban": "Verbannen",
+      "comments_mode": "Reactie-instellingen gewijzigd",
+      "delete_comment": "Reactie verwijderd",
+      "dismiss_report": "Melding afgewezen",
+      "hide_comment": "Reactie verborgen",
+      "remove": "Bericht verwijderd",
+      "resolve_report": "Melding opgelost",
+      "restore": "Bericht hersteld",
+      "restore_comment": "Reactie hersteld",
+      "unban": "Verbanning opgeheven"
+    },
+    "backToSite": "Terug naar site",
+    "ban": {
+      "byIp": "Netwerkadres verbannen (kan anderen op hetzelfde netwerk treffen)",
+      "days": "{count, plural, one {# dag} other {# dagen}}",
+      "duration": "Duur van de verbanning",
+      "empty": "Geen actieve verbanningen.",
+      "forever": "Permanent",
+      "ip": "Netwerkadres",
+      "unban": "Verbanning opheffen",
+      "visitor": "Browser",
+      "with": "Deze bezoeker ook verbannen"
+    },
+    "chart": {
+      "postsBySource": "Nieuwe berichten per bron · 30 dagen"
+    },
+    "col": {
+      "action": "Actie",
+      "actor": "Door",
+      "author": "Auteur",
+      "comment": "Reactie",
+      "comments": "Reacties",
+      "ends": "Eindigt",
+      "firstReported": "Eerste melding",
+      "handled": "Behandeld",
+      "item": "Item",
+      "likes": "Likes",
+      "likes7": "Likes (7 dagen)",
+      "post": "Bericht",
+      "published": "Gepubliceerd",
+      "reason": "Reden",
+      "reporter": "Gemeld door",
+      "reports": "Meldingen",
+      "source": "Bron",
+      "status": "Status",
+      "time": "Tijd",
+      "type": "Type"
+    },
+    "commentStatus": {
+      "deleted": "Verwijderd",
+      "hidden": "Verborgen",
+      "visible": "Zichtbaar"
+    },
+    "comments": {
+      "search": "Zoeken in reactietekst"
+    },
+    "console": "Beheer",
+    "detail": {
+      "at": "Geplaatst",
+      "author": "Geplaatst door",
+      "handle": "Actie ondernemen",
+      "openPost": "Bericht openen",
+      "post": "In bericht",
+      "reported": "Gemelde inhoud",
+      "reports": "Meldingen ({count})",
+      "select": "Selecteer een melding om de details te bekijken.",
+      "visitor": "Deze bezoeker",
+      "visitorRecent": "{count, plural, one {# reactie} other {# reacties}} in de afgelopen 7 dagen",
+      "visitorReporter": "Bezoeker"
+    },
     "dismiss": "Afwijzen",
     "done": "Gedaan.",
+    "env": {
+      "development": "Ontwikkeling",
+      "production": "Productie",
+      "staging": "Staging"
+    },
     "failed": "Dat lukte niet — misschien is het al afgehandeld.",
+    "filter": {
+      "all": "Alle",
+      "both": "Berichten en reacties"
+    },
+    "group": {
+      "content": "Inhoud",
+      "moderation": "Moderatie"
+    },
+    "health": {
+      "db": "Database",
+      "media": "Media-opslag",
+      "posts": "Actieve berichten",
+      "site": "Website",
+      "title": "Systeem"
+    },
     "hideComment": "Reactie verbergen",
     "kind": {
       "comment": "Reactie",
       "post": "Bericht"
     },
-    "lookup": "Bericht zoeken",
-    "lookupPlaceholder": "Plak de link of code van het bericht",
-    "notFound": "Bericht niet gevonden.",
-    "queue": "Openstaande meldingen",
+    "kpi": {
+      "authors": "Actieve auteurs",
+      "comments": "Reacties",
+      "likes": "Likes",
+      "posts": "Nieuwe berichten",
+      "reports": "Meldingen",
+      "users": "Nieuwe gebruikers",
+      "vsPrev": "t.o.v. de vorige 7 dagen"
+    },
+    "nav": {
+      "audit": "Auditlog",
+      "bans": "Verbanningen",
+      "comments": "Reacties",
+      "overview": "Overzicht",
+      "posts": "Berichten",
+      "reports": "Meldingenwachtrij"
+    },
+    "pager": {
+      "next": "Volgende",
+      "prev": "Vorige"
+    },
+    "posts": {
+      "search": "@gebruikersnaam, berichtcode of tekst"
+    },
+    "preset": {
+      "duplicate": "Dubbele melding",
+      "guidelines": "Schendt de communityrichtlijnen",
+      "noViolation": "Geen overtreding gevonden",
+      "rights": "Schendt de rechten van anderen",
+      "spam": "Spam"
+    },
     "queueEmpty": "Geen openstaande meldingen.",
+    "readOnly": "Alleen lezen",
     "reason": "Reden (verplicht)",
     "removePost": "Bericht verwijderen",
+    "restoreComment": "Reactie herstellen",
     "restorePost": "Bericht herstellen",
+    "role": {
+      "admin": "Beheerder",
+      "moderator": "Moderator",
+      "viewer": "Alleen-lezen"
+    },
+    "source": {
+      "api": "Apps van derden",
+      "cn": "{app} (China)",
+      "intl": "{app} (internationaal)",
+      "web": "Web"
+    },
     "status": {
       "active": "Online",
       "author_deleting": "Account van de auteur wordt verwijderd",
       "removed": "Verwijderd",
       "unpublished": "Ingetrokken door de auteur"
     },
-    "title": "Moderatie"
+    "tab": {
+      "dismissed": "Afgewezen",
+      "open": "Open",
+      "resolved": "Opgelost"
+    },
+    "title": "Moderatie",
+    "todo": {
+      "bans": "Verbanningen die binnen 7 dagen eindigen",
+      "bansSub": "Eindigen automatisch",
+      "handle": "Behandelen",
+      "hidden": "Verborgen reacties",
+      "hiddenSub": "Herstel per ongeluk verborgen reacties",
+      "none": "Niets te doen",
+      "oldest": "Oudste: {time}",
+      "reports": "Openstaande meldingen",
+      "title": "Te doen",
+      "view": "Bekijken"
+    },
+    "top": {
+      "title": "Meest gelikete · 7 dagen"
+    }
   },
   "aside": {
     "hot": "Populaire artikelen",

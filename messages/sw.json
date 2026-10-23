@@ -1,28 +1,179 @@
 {
   "admin": {
+    "action": {
+      "ban": "Imepigwa marufuku",
+      "comments_mode": "Mipangilio ya maoni imebadilishwa",
+      "delete_comment": "Maoni yamefutwa",
+      "dismiss_report": "Ripoti imefutwa",
+      "hide_comment": "Maoni yamefichwa",
+      "remove": "Chapisho limeondolewa",
+      "resolve_report": "Ripoti imeshughulikiwa",
+      "restore": "Chapisho limerejeshwa",
+      "restore_comment": "Maoni yamerejeshwa",
+      "unban": "Marufuku imeondolewa"
+    },
+    "backToSite": "Rudi kwenye tovuti",
+    "ban": {
+      "byIp": "Piga marufuku kwa anwani ya mtandao (inaweza kuathiri wengine kwenye mtandao huo)",
+      "days": "{count, plural, one {siku #} other {siku #}}",
+      "duration": "Muda wa marufuku",
+      "empty": "Hakuna marufuku yanayotumika.",
+      "forever": "Ya kudumu",
+      "ip": "Anwani ya mtandao",
+      "unban": "Ondoa marufuku",
+      "visitor": "Kivinjari",
+      "with": "Pia piga marufuku mtembeleaji huyu"
+    },
+    "chart": {
+      "postsBySource": "Machapisho mapya kwa chanzo · siku 30"
+    },
+    "col": {
+      "action": "Kitendo",
+      "actor": "Na",
+      "author": "Mwandishi",
+      "comment": "Maoni",
+      "comments": "Maoni",
+      "ends": "Inaisha",
+      "firstReported": "Ripoti ya kwanza",
+      "handled": "Muda wa kushughulikiwa",
+      "item": "Kipengele",
+      "likes": "Mapendekezo",
+      "likes7": "Mapendekezo (siku 7)",
+      "post": "Chapisho",
+      "published": "Tarehe ya kuchapishwa",
+      "reason": "Sababu",
+      "reporter": "Aliyeripoti",
+      "reports": "Idadi ya ripoti",
+      "source": "Chanzo",
+      "status": "Hali",
+      "time": "Muda",
+      "type": "Aina"
+    },
+    "commentStatus": {
+      "deleted": "Limefutwa",
+      "hidden": "Limefichwa",
+      "visible": "Linaonekana"
+    },
+    "comments": {
+      "search": "Tafuta maandishi ya maoni"
+    },
+    "console": "Dashibodi ya Msimamizi",
+    "detail": {
+      "at": "Wakati wa kuchapishwa",
+      "author": "Ilichapishwa na",
+      "handle": "Chukua hatua",
+      "openPost": "Fungua chapisho",
+      "post": "Katika chapisho",
+      "reported": "Maudhui yaliyoripotiwa",
+      "reports": "Ripoti ({count})",
+      "select": "Chagua ripoti ili kuona maelezo.",
+      "visitor": "Mtembeleaji huyu",
+      "visitorRecent": "{count, plural, one {maoni #} other {maoni #}} katika siku 7 zilizopita",
+      "visitorReporter": "Mtembeleaji"
+    },
     "dismiss": "Kataa",
     "done": "Imekamilika.",
+    "env": {
+      "development": "Uendelezaji",
+      "production": "Uzalishaji",
+      "staging": "Majaribio"
+    },
     "failed": "Haikufaulu — huenda tayari imeshughulikiwa.",
+    "filter": {
+      "all": "Yote",
+      "both": "Machapisho na maoni"
+    },
+    "group": {
+      "content": "Maudhui",
+      "moderation": "Usimamizi"
+    },
+    "health": {
+      "db": "Hifadhidata",
+      "media": "Hifadhi ya media",
+      "posts": "Machapisho hai",
+      "site": "Tovuti",
+      "title": "Mfumo"
+    },
     "hideComment": "Ficha maoni",
     "kind": {
       "comment": "Maoni",
       "post": "Chapisho"
     },
-    "lookup": "Tafuta chapisho",
-    "lookupPlaceholder": "Bandika kiungo au msimbo wa chapisho",
-    "notFound": "Chapisho halikupatikana.",
-    "queue": "Ripoti zilizo wazi",
+    "kpi": {
+      "authors": "Waandishi hai",
+      "comments": "Maoni",
+      "likes": "Mapendekezo",
+      "posts": "Machapisho mapya",
+      "reports": "Ripoti",
+      "users": "Watumiaji wapya",
+      "vsPrev": "ikilinganishwa na siku 7 zilizopita"
+    },
+    "nav": {
+      "audit": "Rekodi ya ukaguzi",
+      "bans": "Marufuku",
+      "comments": "Maoni",
+      "overview": "Muhtasari",
+      "posts": "Machapisho",
+      "reports": "Foleni ya ripoti"
+    },
+    "pager": {
+      "next": "Inayofuata",
+      "prev": "Iliyotangulia"
+    },
+    "posts": {
+      "search": "@jina, msimbo wa chapisho au maandishi"
+    },
+    "preset": {
+      "duplicate": "Ripoti inayojirudia",
+      "guidelines": "Inakiuka miongozo ya jamii",
+      "noViolation": "Hakuna ukiukwaji uliopatikana",
+      "rights": "Inakiuka haki za wengine",
+      "spam": "Taka"
+    },
     "queueEmpty": "Hakuna ripoti zilizo wazi.",
+    "readOnly": "Kusoma tu",
     "reason": "Sababu (inahitajika)",
     "removePost": "Ondoa chapisho",
+    "restoreComment": "Rejesha maoni",
     "restorePost": "Rejesha chapisho",
+    "role": {
+      "admin": "Msimamizi Mkuu",
+      "moderator": "Msimamizi",
+      "viewer": "Mwanachama wa kusoma tu"
+    },
+    "source": {
+      "api": "Programu za wahusika wengine",
+      "cn": "{app} (Uchina)",
+      "intl": "{app} (kimataifa)",
+      "web": "Wavuti"
+    },
     "status": {
       "active": "Hewani",
       "author_deleting": "Akaunti ya mwandishi inafutwa",
       "removed": "Limeondolewa",
       "unpublished": "Limeondolewa na mwandishi"
     },
-    "title": "Udhibiti wa maudhui"
+    "tab": {
+      "dismissed": "Imefutwa",
+      "open": "Wazi",
+      "resolved": "Imeshughulikiwa"
+    },
+    "title": "Udhibiti wa maudhui",
+    "todo": {
+      "bans": "Marufuku yanayoisha ndani ya siku 7",
+      "bansSub": "Yanaisha kiotomatiki",
+      "handle": "Shughulikia",
+      "hidden": "Maoni yaliyofichwa",
+      "hiddenSub": "Rejesha yaliyofichwa kimakosa",
+      "none": "Hakuna linalosubiri",
+      "oldest": "Kongwe zaidi: {time}",
+      "reports": "Ripoti zilizo wazi",
+      "title": "Yanayosubiri",
+      "view": "Tazama"
+    },
+    "top": {
+      "title": "Yanayopendwa zaidi · siku 7"
+    }
   },
   "aside": {
     "hot": "Makala maarufu",

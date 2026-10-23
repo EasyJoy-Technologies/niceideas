@@ -1,28 +1,179 @@
 {
   "admin": {
+    "action": {
+      "ban": "Memblokir",
+      "comments_mode": "Mengubah pengaturan komentar",
+      "delete_comment": "Menghapus komentar",
+      "dismiss_report": "Menolak laporan",
+      "hide_comment": "Menyembunyikan komentar",
+      "remove": "Menurunkan postingan",
+      "resolve_report": "Menyelesaikan laporan",
+      "restore": "Memulihkan postingan",
+      "restore_comment": "Memulihkan komentar",
+      "unban": "Membuka blokir"
+    },
+    "backToSite": "Kembali ke situs",
+    "ban": {
+      "byIp": "Blokir berdasarkan alamat jaringan (bisa berdampak pada pengguna lain di jaringan yang sama)",
+      "days": "{count, plural, other {# hari}}",
+      "duration": "Durasi pemblokiran",
+      "empty": "Tidak ada pemblokiran yang berlaku.",
+      "forever": "Permanen",
+      "ip": "Alamat jaringan",
+      "unban": "Buka blokir",
+      "visitor": "Browser",
+      "with": "Blokir pengunjung ini juga"
+    },
+    "chart": {
+      "postsBySource": "Postingan baru per sumber · 30 hari"
+    },
+    "col": {
+      "action": "Tindakan",
+      "actor": "Oleh",
+      "author": "Penulis",
+      "comment": "Komentar",
+      "comments": "Komentar",
+      "ends": "Berakhir",
+      "firstReported": "Pertama dilaporkan",
+      "handled": "Waktu penanganan",
+      "item": "Item",
+      "likes": "Suka",
+      "likes7": "Suka (7 hari)",
+      "post": "Postingan",
+      "published": "Waktu publikasi",
+      "reason": "Alasan",
+      "reporter": "Dilaporkan oleh",
+      "reports": "Jumlah laporan",
+      "source": "Sumber",
+      "status": "Status",
+      "time": "Waktu",
+      "type": "Jenis"
+    },
+    "commentStatus": {
+      "deleted": "Dihapus",
+      "hidden": "Tersembunyi",
+      "visible": "Terlihat"
+    },
+    "comments": {
+      "search": "Cari isi komentar"
+    },
+    "console": "Admin",
+    "detail": {
+      "at": "Waktu posting",
+      "author": "Diposting oleh",
+      "handle": "Tindak lanjuti",
+      "openPost": "Buka postingan",
+      "post": "Dalam postingan",
+      "reported": "Konten yang dilaporkan",
+      "reports": "Laporan ({count})",
+      "select": "Pilih laporan untuk melihat detailnya.",
+      "visitor": "Pengunjung ini",
+      "visitorRecent": "{count, plural, other {# komentar dalam 7 hari terakhir}}",
+      "visitorReporter": "Pengunjung"
+    },
     "dismiss": "Tolak",
     "done": "Selesai.",
+    "env": {
+      "development": "Pengembangan",
+      "production": "Produksi",
+      "staging": "Staging"
+    },
     "failed": "Gagal — mungkin sudah ditangani.",
+    "filter": {
+      "all": "Semua",
+      "both": "Postingan dan komentar"
+    },
+    "group": {
+      "content": "Konten",
+      "moderation": "Moderasi"
+    },
+    "health": {
+      "db": "Basis data",
+      "media": "Penyimpanan media",
+      "posts": "Postingan aktif",
+      "site": "Situs web",
+      "title": "Sistem"
+    },
     "hideComment": "Sembunyikan komentar",
     "kind": {
       "comment": "Komentar",
       "post": "Postingan"
     },
-    "lookup": "Cari postingan",
-    "lookupPlaceholder": "Tempel tautan atau kode postingan",
-    "notFound": "Postingan tidak ditemukan.",
-    "queue": "Laporan terbuka",
+    "kpi": {
+      "authors": "Penulis aktif",
+      "comments": "Komentar",
+      "likes": "Suka",
+      "posts": "Postingan baru",
+      "reports": "Laporan",
+      "users": "Pengguna baru",
+      "vsPrev": "vs. 7 hari sebelumnya"
+    },
+    "nav": {
+      "audit": "Log audit",
+      "bans": "Pemblokiran",
+      "comments": "Komentar",
+      "overview": "Ringkasan",
+      "posts": "Postingan",
+      "reports": "Antrean laporan"
+    },
+    "pager": {
+      "next": "Berikutnya",
+      "prev": "Sebelumnya"
+    },
+    "posts": {
+      "search": "@nama pengguna, kode postingan, atau teks"
+    },
+    "preset": {
+      "duplicate": "Laporan duplikat",
+      "guidelines": "Melanggar panduan komunitas",
+      "noViolation": "Tidak ditemukan pelanggaran",
+      "rights": "Melanggar hak orang lain",
+      "spam": "Spam"
+    },
     "queueEmpty": "Tidak ada laporan terbuka.",
+    "readOnly": "Hanya baca",
     "reason": "Alasan (wajib)",
     "removePost": "Hapus postingan",
+    "restoreComment": "Pulihkan komentar",
     "restorePost": "Pulihkan postingan",
+    "role": {
+      "admin": "Admin",
+      "moderator": "Moderator",
+      "viewer": "Anggota hanya-baca"
+    },
+    "source": {
+      "api": "Aplikasi pihak ketiga",
+      "cn": "{app} (Cina)",
+      "intl": "{app} (internasional)",
+      "web": "Web"
+    },
     "status": {
       "active": "Tayang",
       "author_deleting": "Akun penulis sedang dihapus",
       "removed": "Dihapus",
       "unpublished": "Ditarik oleh penulis"
     },
-    "title": "Moderasi"
+    "tab": {
+      "dismissed": "Ditolak",
+      "open": "Belum ditangani",
+      "resolved": "Terselesaikan"
+    },
+    "title": "Moderasi",
+    "todo": {
+      "bans": "Pemblokiran yang berakhir dalam 7 hari",
+      "bansSub": "Akan berakhir otomatis",
+      "handle": "Tangani",
+      "hidden": "Komentar tersembunyi",
+      "hiddenSub": "Pulihkan jika disembunyikan secara tidak sengaja",
+      "none": "Tidak ada yang menunggu",
+      "oldest": "Tertua: {time}",
+      "reports": "Laporan belum ditangani",
+      "title": "Perlu ditindaklanjuti",
+      "view": "Lihat"
+    },
+    "top": {
+      "title": "Paling disukai · 7 hari"
+    }
   },
   "aside": {
     "hot": "Artikel populer",

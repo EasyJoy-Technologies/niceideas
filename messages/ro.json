@@ -1,28 +1,179 @@
 {
   "admin": {
+    "action": {
+      "ban": "Interzis",
+      "comments_mode": "Setări comentarii modificate",
+      "delete_comment": "Comentariu șters",
+      "dismiss_report": "Raportare respinsă",
+      "hide_comment": "Comentariu ascuns",
+      "remove": "Postare eliminată",
+      "resolve_report": "Raportare rezolvată",
+      "restore": "Postare restaurată",
+      "restore_comment": "Comentariu restaurat",
+      "unban": "Interdicție ridicată"
+    },
+    "backToSite": "Înapoi la site",
+    "ban": {
+      "byIp": "Interzice adresa de rețea (poate afecta și alte persoane din aceeași rețea)",
+      "days": "{count, plural, one {# zi} few {# zile} other {# de zile}}",
+      "duration": "Durata interdicției",
+      "empty": "Nu există interdicții active.",
+      "forever": "Permanent",
+      "ip": "Adresă de rețea",
+      "unban": "Ridică interdicția",
+      "visitor": "Browser",
+      "with": "Interzice și acest vizitator"
+    },
+    "chart": {
+      "postsBySource": "Postări noi pe sursă · 30 de zile"
+    },
+    "col": {
+      "action": "Acțiune",
+      "actor": "De către",
+      "author": "Autor",
+      "comment": "Comentariu",
+      "comments": "Comentarii",
+      "ends": "Expiră",
+      "firstReported": "Prima raportare",
+      "handled": "Gestionată",
+      "item": "Element",
+      "likes": "Aprecieri",
+      "likes7": "Aprecieri (7 zile)",
+      "post": "Postare",
+      "published": "Publicată",
+      "reason": "Motiv",
+      "reporter": "Raportat de",
+      "reports": "Raportări",
+      "source": "Sursă",
+      "status": "Stare",
+      "time": "Oră",
+      "type": "Tip"
+    },
+    "commentStatus": {
+      "deleted": "Șters",
+      "hidden": "Ascuns",
+      "visible": "Vizibil"
+    },
+    "comments": {
+      "search": "Caută în textul comentariului"
+    },
+    "console": "Administrare",
+    "detail": {
+      "at": "Publicat",
+      "author": "Publicat de",
+      "handle": "Acționează",
+      "openPost": "Deschide postarea",
+      "post": "În postarea",
+      "reported": "Conținut raportat",
+      "reports": "Raportări ({count})",
+      "select": "Selectează o raportare pentru a vedea detaliile.",
+      "visitor": "Acest vizitator",
+      "visitorRecent": "{count, plural, one {# comentariu} few {# comentarii} other {# de comentarii}} în ultimele 7 zile",
+      "visitorReporter": "Vizitator"
+    },
     "dismiss": "Respinge",
     "done": "Gata.",
+    "env": {
+      "development": "Dezvoltare",
+      "production": "Producție",
+      "staging": "Testare"
+    },
     "failed": "Nu a mers — poate a fost deja rezolvat.",
+    "filter": {
+      "all": "Toate",
+      "both": "Postări și comentarii"
+    },
+    "group": {
+      "content": "Conținut",
+      "moderation": "Moderare"
+    },
+    "health": {
+      "db": "Bază de date",
+      "media": "Stocare media",
+      "posts": "Postări active",
+      "site": "Site web",
+      "title": "Sistem"
+    },
     "hideComment": "Ascunde comentariul",
     "kind": {
       "comment": "Comentariu",
       "post": "Postare"
     },
-    "lookup": "Găsește o postare",
-    "lookupPlaceholder": "Lipește linkul sau codul postării",
-    "notFound": "Postarea nu a fost găsită.",
-    "queue": "Raportări deschise",
+    "kpi": {
+      "authors": "Autori activi",
+      "comments": "Comentarii",
+      "likes": "Aprecieri",
+      "posts": "Postări noi",
+      "reports": "Raportări",
+      "users": "Utilizatori noi",
+      "vsPrev": "față de ultimele 7 zile"
+    },
+    "nav": {
+      "audit": "Jurnal de audit",
+      "bans": "Interdicții",
+      "comments": "Comentarii",
+      "overview": "Prezentare generală",
+      "posts": "Postări",
+      "reports": "Coadă de raportări"
+    },
+    "pager": {
+      "next": "Următor",
+      "prev": "Anterior"
+    },
+    "posts": {
+      "search": "@utilizator, cod de postare sau text"
+    },
+    "preset": {
+      "duplicate": "Raportare duplicat",
+      "guidelines": "Încalcă regulile comunității",
+      "noViolation": "Nu s-a găsit nicio încălcare",
+      "rights": "Încalcă drepturile altora",
+      "spam": "Spam"
+    },
     "queueEmpty": "Nicio raportare deschisă.",
+    "readOnly": "Doar vizualizare",
     "reason": "Motiv (obligatoriu)",
     "removePost": "Elimină postarea",
+    "restoreComment": "Restaurează comentariul",
     "restorePost": "Restabilește postarea",
+    "role": {
+      "admin": "Administrator",
+      "moderator": "Moderator",
+      "viewer": "Doar vizualizare"
+    },
+    "source": {
+      "api": "Aplicații terțe",
+      "cn": "{app} (China)",
+      "intl": "{app} (internațional)",
+      "web": "Web"
+    },
     "status": {
       "active": "Publicată",
       "author_deleting": "Contul autorului se șterge",
       "removed": "Eliminată",
       "unpublished": "Retrasă de autor"
     },
-    "title": "Moderare"
+    "tab": {
+      "dismissed": "Respinse",
+      "open": "Deschise",
+      "resolved": "Rezolvate"
+    },
+    "title": "Moderare",
+    "todo": {
+      "bans": "Interdicții care expiră în 7 zile",
+      "bansSub": "Se termină automat",
+      "handle": "Gestionează",
+      "hidden": "Comentarii ascunse",
+      "hiddenSub": "Restaurează-le pe cele ascunse din greșeală",
+      "none": "Nimic în așteptare",
+      "oldest": "Cea mai veche: {time}",
+      "reports": "Raportări deschise",
+      "title": "De făcut",
+      "view": "Vizualizează"
+    },
+    "top": {
+      "title": "Cele mai apreciate · 7 zile"
+    }
   },
   "aside": {
     "hot": "Articole populare",

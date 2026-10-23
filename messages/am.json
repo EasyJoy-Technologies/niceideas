@@ -1,28 +1,179 @@
 {
   "admin": {
+    "action": {
+      "ban": "ተገድቧል",
+      "comments_mode": "የአስተያየት ቅንብሮች ተቀይረዋል",
+      "delete_comment": "አስተያየት ተሰርዟል",
+      "dismiss_report": "ሪፖርት ተሰርዟል",
+      "hide_comment": "አስተያየት ተደብቋል",
+      "remove": "ልጥፍ ተወግዷል",
+      "resolve_report": "ሪፖርት ተፍቷል",
+      "restore": "ልጥፍ ተመልሷል",
+      "restore_comment": "አስተያየት ተመልሷል",
+      "unban": "እገዳ ተነስቷል"
+    },
+    "backToSite": "ወደ ድረ-ገጹ ተመለስ",
+    "ban": {
+      "byIp": "በአውታረ መረብ አድራሻ ያግዱ (በዚያው አውታረ መረብ ላሉ ሌሎች ላይ ተፅዕኖ ሊያሳድር ይችላል)",
+      "days": "{count, plural, one {# ቀን} other {# ቀናት}}",
+      "duration": "የእገዳ ጊዜ",
+      "empty": "ምንም ገባር እገዳ የለም።",
+      "forever": "ቋሚ",
+      "ip": "የአውታረ መረብ አድራሻ",
+      "unban": "እገዳውን አንሳ",
+      "visitor": "አሳሽ",
+      "with": "ይህንንም ጎብኝ አግዱ"
+    },
+    "chart": {
+      "postsBySource": "አዳዲስ ልጥፎች በምንጭ · 30 ቀናት"
+    },
+    "col": {
+      "action": "ድርጊት",
+      "actor": "በ",
+      "author": "ደራሲ",
+      "comment": "አስተያየት",
+      "comments": "አስተያየቶች",
+      "ends": "ያበቃል",
+      "firstReported": "የመጀመሪያ ሪፖርት",
+      "handled": "የተስተናገደበት ጊዜ",
+      "item": "ንጥል",
+      "likes": "ላይኮች",
+      "likes7": "ላይኮች (7 ቀናት)",
+      "post": "ልጥፍ",
+      "published": "የታተመበት ጊዜ",
+      "reason": "ምክንያት",
+      "reporter": "ሪፖርት አድራጊ",
+      "reports": "የሪፖርቶች ቁጥር",
+      "source": "ምንጭ",
+      "status": "ሁኔታ",
+      "time": "ጊዜ",
+      "type": "ዓይነት"
+    },
+    "commentStatus": {
+      "deleted": "የተሰረዘ",
+      "hidden": "የተደበቀ",
+      "visible": "የሚታይ"
+    },
+    "comments": {
+      "search": "የአስተያየት ጽሑፍ ፍለጋ"
+    },
+    "console": "አስተዳደር",
+    "detail": {
+      "at": "የታተመበት ጊዜ",
+      "author": "አውጪ",
+      "handle": "እርምጃ ይውሰዱ",
+      "openPost": "ልጥፉን ይክፈቱ",
+      "post": "በልጥፉ ውስጥ",
+      "reported": "የተሪፖርተ ይዘት",
+      "reports": "ሪፖርቶች ({count})",
+      "select": "ዝርዝሮችን ለማየት ሪፖርት ይምረጡ።",
+      "visitor": "ይህ ጎብኝ",
+      "visitorRecent": "{count, plural, one {# አስተያየት} other {# አስተያየቶች}} ባለፉት 7 ቀናት",
+      "visitorReporter": "ጎብኝ"
+    },
     "dismiss": "ውድቅ አድርግ",
     "done": "ተከናውኗል።",
+    "env": {
+      "development": "ልማት",
+      "production": "ምርት",
+      "staging": "ሙከራ"
+    },
     "failed": "አልተሳካም — ምናልባት አስቀድሞ ተስተናግዷል።",
+    "filter": {
+      "all": "ሁሉም",
+      "both": "ልጥፎች እና አስተያየቶች"
+    },
+    "group": {
+      "content": "ይዘት",
+      "moderation": "ቁጥጥር"
+    },
+    "health": {
+      "db": "የውሂብ ጎታ",
+      "media": "የሚዲያ ማከማቻ",
+      "posts": "ገባር ልጥፎች",
+      "site": "ድረ-ገጽ",
+      "title": "ስርዓት"
+    },
     "hideComment": "አስተያየቱን ደብቅ",
     "kind": {
       "comment": "አስተያየት",
       "post": "ልጥፍ"
     },
-    "lookup": "ልጥፍ ፈልግ",
-    "lookupPlaceholder": "የልጥፉን አገናኝ ወይም ኮድ ይለጥፉ",
-    "notFound": "ልጥፉ አልተገኘም።",
-    "queue": "ክፍት ሪፖርቶች",
+    "kpi": {
+      "authors": "ንቁ ደራሲዎች",
+      "comments": "አስተያየቶች",
+      "likes": "ላይኮች",
+      "posts": "አዳዲስ ልጥፎች",
+      "reports": "ሪፖርቶች",
+      "users": "አዲስ ተጠቃሚዎች",
+      "vsPrev": "ካለፉት 7 ቀናት ጋር ሲነፃፀር"
+    },
+    "nav": {
+      "audit": "የቁጥጥር ምዝገባ",
+      "bans": "እገዳዎች",
+      "comments": "አስተያየቶች",
+      "overview": "አጠቃላይ እይታ",
+      "posts": "ልጥፎች",
+      "reports": "የሪፖርት ተራ"
+    },
+    "pager": {
+      "next": "ቀጣይ",
+      "prev": "የቀደመ"
+    },
+    "posts": {
+      "search": "@ተጠቃሚ ስም፣ የልጥፍ ኮድ ወይም ጽሑፍ"
+    },
+    "preset": {
+      "duplicate": "የተደጋገመ ሪፖርት",
+      "guidelines": "የማህበረሰብ መመሪያዎችን መጣስ",
+      "noViolation": "ምንም ጥፋት አልተገኘም",
+      "rights": "የሌሎችን መብት መጣስ",
+      "spam": "አላስፈላጊ መልዕክት"
+    },
     "queueEmpty": "ምንም ክፍት ሪፖርት የለም።",
+    "readOnly": "ለማንበብ ብቻ",
     "reason": "ምክንያት (ግዴታ)",
     "removePost": "ልጥፉን አስወግድ",
+    "restoreComment": "አስተያየቱን መልስ",
     "restorePost": "ልጥፉን መልስ",
+    "role": {
+      "admin": "አስተዳዳሪ",
+      "moderator": "ገምጋሚ",
+      "viewer": "ለማንበብ ብቻ አባል"
+    },
+    "source": {
+      "api": "የሶስተኛ ወገን መተግበሪያዎች",
+      "cn": "{app} (ቻይና)",
+      "intl": "{app} (ዓለም አቀፍ)",
+      "web": "ድረ-ገጽ"
+    },
     "status": {
       "active": "በቀጥታ ላይ",
       "author_deleting": "የደራሲው መለያ በመሰረዝ ላይ ነው",
       "removed": "ተወግዷል",
       "unpublished": "ደራሲው መልሶታል"
     },
-    "title": "የይዘት ቁጥጥር"
+    "tab": {
+      "dismissed": "የተሰረዙ",
+      "open": "ክፍት",
+      "resolved": "የተፈቱ"
+    },
+    "title": "የይዘት ቁጥጥር",
+    "todo": {
+      "bans": "በ7 ቀናት ውስጥ የሚያልቁ እገዳዎች",
+      "bansSub": "በራስ-ሰር ያበቃል",
+      "handle": "ያስተናግዱ",
+      "hidden": "የተደበቁ አስተያየቶች",
+      "hiddenSub": "በስህተት የተደበቁትን መልስ",
+      "none": "የሚጠበቅ ነገር የለም",
+      "oldest": "ከሁሉም ያነሰ: {time}",
+      "reports": "ክፍት ሪፖርቶች",
+      "title": "የሚፈፀሙ",
+      "view": "ይዩ"
+    },
+    "top": {
+      "title": "በጣም የተመረጡ · 7 ቀናት"
+    }
   },
   "aside": {
     "hot": "ታዋቂ ጽሑፎች",

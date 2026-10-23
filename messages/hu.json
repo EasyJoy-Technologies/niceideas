@@ -1,28 +1,179 @@
 {
   "admin": {
+    "action": {
+      "ban": "Kitiltva",
+      "comments_mode": "Megjegyzés-beállítások módosítva",
+      "delete_comment": "Megjegyzés törölve",
+      "dismiss_report": "Bejelentés elutasítva",
+      "hide_comment": "Megjegyzés elrejtve",
+      "remove": "Bejegyzés eltávolítva",
+      "resolve_report": "Bejelentés megoldva",
+      "restore": "Bejegyzés visszaállítva",
+      "restore_comment": "Megjegyzés visszaállítva",
+      "unban": "Kitiltás feloldva"
+    },
+    "backToSite": "Vissza az oldalra",
+    "ban": {
+      "byIp": "Hálózati cím kitiltása (érinthet másokat is ugyanazon a hálózaton)",
+      "days": "{count, plural, one {# nap} other {# nap}}",
+      "duration": "Kitiltás hossza",
+      "empty": "Nincs érvényben lévő kitiltás.",
+      "forever": "Végleges",
+      "ip": "Hálózati cím",
+      "unban": "Kitiltás feloldása",
+      "visitor": "Böngésző",
+      "with": "A látogató kitiltása is"
+    },
+    "chart": {
+      "postsBySource": "Új bejegyzések forrás szerint · 30 nap"
+    },
+    "col": {
+      "action": "Művelet",
+      "actor": "Végezte",
+      "author": "Szerző",
+      "comment": "Megjegyzés",
+      "comments": "Megjegyzések",
+      "ends": "Lejár",
+      "firstReported": "Első bejelentés",
+      "handled": "Kezelve",
+      "item": "Elem",
+      "likes": "Kedvelések",
+      "likes7": "Kedvelések (7 nap)",
+      "post": "Bejegyzés",
+      "published": "Közzétéve",
+      "reason": "Ok",
+      "reporter": "Bejelentő",
+      "reports": "Bejelentések",
+      "source": "Forrás",
+      "status": "Állapot",
+      "time": "Időpont",
+      "type": "Típus"
+    },
+    "commentStatus": {
+      "deleted": "Törölve",
+      "hidden": "Elrejtve",
+      "visible": "Látható"
+    },
+    "comments": {
+      "search": "Megjegyzés szövegében keresés"
+    },
+    "console": "Admin",
+    "detail": {
+      "at": "Közzétéve",
+      "author": "Közzétette",
+      "handle": "Intézkedés",
+      "openPost": "Bejegyzés megnyitása",
+      "post": "A bejegyzésben",
+      "reported": "Bejelentett tartalom",
+      "reports": "Bejelentések ({count})",
+      "select": "Válasszon egy bejelentést a részletek megtekintéséhez.",
+      "visitor": "Ez a látogató",
+      "visitorRecent": "{count, plural, one {# megjegyzés} other {# megjegyzés}} az elmúlt 7 napban",
+      "visitorReporter": "Látogató"
+    },
     "dismiss": "Elutasítás",
     "done": "Kész.",
+    "env": {
+      "development": "Fejlesztés",
+      "production": "Élő",
+      "staging": "Teszt"
+    },
     "failed": "Nem sikerült – lehet, hogy már kezelték.",
+    "filter": {
+      "all": "Összes",
+      "both": "Bejegyzések és megjegyzések"
+    },
+    "group": {
+      "content": "Tartalom",
+      "moderation": "Moderálás"
+    },
+    "health": {
+      "db": "Adatbázis",
+      "media": "Médiatárhely",
+      "posts": "Élő bejegyzések",
+      "site": "Weboldal",
+      "title": "Rendszer"
+    },
     "hideComment": "Hozzászólás elrejtése",
     "kind": {
       "comment": "Hozzászólás",
       "post": "Bejegyzés"
     },
-    "lookup": "Bejegyzés keresése",
-    "lookupPlaceholder": "Illeszd be a bejegyzés linkjét vagy kódját",
-    "notFound": "A bejegyzés nem található.",
-    "queue": "Nyitott bejelentések",
+    "kpi": {
+      "authors": "Aktív szerzők",
+      "comments": "Megjegyzések",
+      "likes": "Kedvelések",
+      "posts": "Új bejegyzések",
+      "reports": "Bejelentések",
+      "users": "Új felhasználók",
+      "vsPrev": "az előző 7 naphoz képest"
+    },
+    "nav": {
+      "audit": "Naplózás",
+      "bans": "Kitiltások",
+      "comments": "Megjegyzések",
+      "overview": "Áttekintés",
+      "posts": "Bejegyzések",
+      "reports": "Bejelentési sor"
+    },
+    "pager": {
+      "next": "Következő",
+      "prev": "Előző"
+    },
+    "posts": {
+      "search": "@felhasználónév, bejegyzéskód vagy szöveg"
+    },
+    "preset": {
+      "duplicate": "Duplikált bejelentés",
+      "guidelines": "Megsérti a közösségi irányelveket",
+      "noViolation": "Nem található szabálysértés",
+      "rights": "Megsérti mások jogait",
+      "spam": "Spam"
+    },
     "queueEmpty": "Nincs nyitott bejelentés.",
+    "readOnly": "Csak olvasható",
     "reason": "Indok (kötelező)",
     "removePost": "Bejegyzés eltávolítása",
+    "restoreComment": "Megjegyzés visszaállítása",
     "restorePost": "Bejegyzés visszaállítása",
+    "role": {
+      "admin": "Rendszergazda",
+      "moderator": "Moderátor",
+      "viewer": "Csak olvasó"
+    },
+    "source": {
+      "api": "Külső alkalmazások",
+      "cn": "{app} (Kína)",
+      "intl": "{app} (nemzetközi)",
+      "web": "Web"
+    },
     "status": {
       "active": "Elérhető",
       "author_deleting": "A szerző fiókja törlés alatt",
       "removed": "Eltávolítva",
       "unpublished": "A szerző visszavonta"
     },
-    "title": "Moderálás"
+    "tab": {
+      "dismissed": "Elutasított",
+      "open": "Nyitott",
+      "resolved": "Megoldott"
+    },
+    "title": "Moderálás",
+    "todo": {
+      "bans": "7 napon belül lejáró kitiltások",
+      "bansSub": "Automatikusan megszűnnek",
+      "handle": "Kezelés",
+      "hidden": "Elrejtett megjegyzések",
+      "hiddenSub": "Állítsa vissza a véletlenül elrejtetteket",
+      "none": "Nincs függőben",
+      "oldest": "Legrégebbi: {time}",
+      "reports": "Nyitott bejelentések",
+      "title": "Teendők",
+      "view": "Megnézés"
+    },
+    "top": {
+      "title": "Legtöbb kedvelés · 7 nap"
+    }
   },
   "aside": {
     "hot": "Népszerű cikkek",

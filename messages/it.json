@@ -1,28 +1,179 @@
 {
   "admin": {
+    "action": {
+      "ban": "Bannato",
+      "comments_mode": "Impostazioni commenti modificate",
+      "delete_comment": "Commento eliminato",
+      "dismiss_report": "Segnalazione respinta",
+      "hide_comment": "Commento nascosto",
+      "remove": "Post rimosso",
+      "resolve_report": "Segnalazione risolta",
+      "restore": "Post ripristinato",
+      "restore_comment": "Commento ripristinato",
+      "unban": "Ban rimosso"
+    },
+    "backToSite": "Torna al sito",
+    "ban": {
+      "byIp": "Banna l’indirizzo di rete (potrebbe interessare altri sulla stessa rete)",
+      "days": "{count, plural, one {# giorno} other {# giorni}}",
+      "duration": "Durata del ban",
+      "empty": "Nessun ban attivo.",
+      "forever": "Permanente",
+      "ip": "Indirizzo di rete",
+      "unban": "Rimuovi ban",
+      "visitor": "Browser",
+      "with": "Banna anche questo visitatore"
+    },
+    "chart": {
+      "postsBySource": "Nuovi post per origine · 30 giorni"
+    },
+    "col": {
+      "action": "Azione",
+      "actor": "Da",
+      "author": "Autore",
+      "comment": "Commento",
+      "comments": "Commenti",
+      "ends": "Scade",
+      "firstReported": "Prima segnalazione",
+      "handled": "Gestito",
+      "item": "Elemento",
+      "likes": "Mi piace",
+      "likes7": "Mi piace (7 giorni)",
+      "post": "Post",
+      "published": "Pubblicato",
+      "reason": "Motivo",
+      "reporter": "Segnalato da",
+      "reports": "Segnalazioni",
+      "source": "Origine",
+      "status": "Stato",
+      "time": "Ora",
+      "type": "Tipo"
+    },
+    "commentStatus": {
+      "deleted": "Eliminato",
+      "hidden": "Nascosto",
+      "visible": "Visibile"
+    },
+    "comments": {
+      "search": "Cerca nel testo del commento"
+    },
+    "console": "Amministrazione",
+    "detail": {
+      "at": "Pubblicato",
+      "author": "Pubblicato da",
+      "handle": "Agisci",
+      "openPost": "Apri post",
+      "post": "Nel post",
+      "reported": "Contenuto segnalato",
+      "reports": "Segnalazioni ({count})",
+      "select": "Seleziona una segnalazione per vedere i dettagli.",
+      "visitor": "Questo visitatore",
+      "visitorRecent": "{count, plural, one {# commento} other {# commenti}} negli ultimi 7 giorni",
+      "visitorReporter": "Visitatore"
+    },
     "dismiss": "Archivia",
     "done": "Fatto.",
+    "env": {
+      "development": "Sviluppo",
+      "production": "Produzione",
+      "staging": "Staging"
+    },
     "failed": "Non è riuscito: forse è già stato gestito.",
+    "filter": {
+      "all": "Tutte",
+      "both": "Post e commenti"
+    },
+    "group": {
+      "content": "Contenuti",
+      "moderation": "Moderazione"
+    },
+    "health": {
+      "db": "Database",
+      "media": "Archiviazione media",
+      "posts": "Post attivi",
+      "site": "Sito web",
+      "title": "Sistema"
+    },
     "hideComment": "Nascondi commento",
     "kind": {
       "comment": "Commento",
       "post": "Post"
     },
-    "lookup": "Trova un post",
-    "lookupPlaceholder": "Incolla il link o il codice del post",
-    "notFound": "Post non trovato.",
-    "queue": "Segnalazioni aperte",
+    "kpi": {
+      "authors": "Autori attivi",
+      "comments": "Commenti",
+      "likes": "Mi piace",
+      "posts": "Nuovi post",
+      "reports": "Segnalazioni",
+      "users": "Nuovi utenti",
+      "vsPrev": "rispetto ai 7 giorni precedenti"
+    },
+    "nav": {
+      "audit": "Registro di controllo",
+      "bans": "Ban",
+      "comments": "Commenti",
+      "overview": "Panoramica",
+      "posts": "Post",
+      "reports": "Coda segnalazioni"
+    },
+    "pager": {
+      "next": "Successivo",
+      "prev": "Precedente"
+    },
+    "posts": {
+      "search": "@utente, codice o testo del post"
+    },
+    "preset": {
+      "duplicate": "Segnalazione duplicata",
+      "guidelines": "Viola le linee guida della community",
+      "noViolation": "Nessuna violazione riscontrata",
+      "rights": "Viola i diritti di terzi",
+      "spam": "Spam"
+    },
     "queueEmpty": "Nessuna segnalazione aperta.",
+    "readOnly": "Solo lettura",
     "reason": "Motivo (obbligatorio)",
     "removePost": "Rimuovi post",
+    "restoreComment": "Ripristina commento",
     "restorePost": "Ripristina post",
+    "role": {
+      "admin": "Amministratore",
+      "moderator": "Moderatore",
+      "viewer": "Solo lettura"
+    },
+    "source": {
+      "api": "App di terze parti",
+      "cn": "{app} (Cina)",
+      "intl": "{app} (internazionale)",
+      "web": "Web"
+    },
     "status": {
       "active": "Pubblicato",
       "author_deleting": "Account dell’autore in eliminazione",
       "removed": "Rimosso",
       "unpublished": "Ritirato dall’autore"
     },
-    "title": "Moderazione"
+    "tab": {
+      "dismissed": "Respinte",
+      "open": "Aperte",
+      "resolved": "Risolte"
+    },
+    "title": "Moderazione",
+    "todo": {
+      "bans": "Ban in scadenza entro 7 giorni",
+      "bansSub": "Terminano automaticamente",
+      "handle": "Gestisci",
+      "hidden": "Commenti nascosti",
+      "hiddenSub": "Ripristina quelli nascosti per errore",
+      "none": "Nessuna in attesa",
+      "oldest": "Più vecchia: {time}",
+      "reports": "Segnalazioni aperte",
+      "title": "Da fare",
+      "view": "Visualizza"
+    },
+    "top": {
+      "title": "Più apprezzati · 7 giorni"
+    }
   },
   "aside": {
     "hot": "Articoli popolari",

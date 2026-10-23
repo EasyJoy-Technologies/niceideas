@@ -1,5 +1,6 @@
 import { afterAll, beforeAll, describe, expect, it } from "vitest";
 import { GET as adminGet, POST as adminPost } from "@/app/admin/route";
+import { GET as sectionGet } from "@/app/admin/[section]/route";
 import { POST as createRoute } from "@/app/api/v1/posts/route";
 import { startSession } from "@/server/auth/web/session";
 import { resetConfigForTests } from "@/server/config/env";
@@ -31,6 +32,8 @@ afterAll(async () => {
 });
 
 const get = (cookie: string, q = "") => adminGet(new Request(`${BASE}/admin${q}`, { headers: { "accept-language": "en", cookie: `${cookie}; ni_sso=1` } }));
+const section = (cookie: string, name: string, q = "") =>
+  sectionGet(new Request(`${BASE}/admin/${name}${q}`, { headers: { "accept-language": "en", cookie: `${cookie}; ni_sso=1` } }), { params: Promise.resolve({ section: name }) });
 const act = (cookie: string, fields: Record<string, string>) =>
   adminPost(new Request(`${BASE}/admin`, { method: "POST", body: new URLSearchParams(fields), headers: { origin: BASE, cookie, "content-type": "application/x-www-form-urlencoded" } }));
 
@@ -43,7 +46,7 @@ describe("admin console", () => {
 
   it("lists open reports and takes a reported post down with an audited reason", async () => {
     await ctx.db.insertInto("report").values({ post_id: postId, reason: "spam", detail: "buy now", reporter_key: "v:x", ip_hash: "h" }).execute();
-    const html = await (await get(adminCookie)).text();
+    const html = await (await section(adminCookie, "reports")).text();
     expect(html).toContain("Spam or scam");
     expect(html).toContain("buy now");
     const report = await ctx.db.selectFrom("report").select("id").executeTakeFirstOrThrow();
@@ -56,11 +59,46 @@ describe("admin console", () => {
     expect(audit.every((a) => a.actor_id === "mod-1")).toBe(true);
   });
 
-  it("finds a post by link and restores it", async () => {
-    const html = await (await get(adminCookie, `?post=${encodeURIComponent(`https://t.niceideas.app/p/${slug}`)}`)).text();
+  it("lists posts by status and restores one", async () => {
+    const html = await (await section(adminCookie, "posts", `?s=removed&q=${slug}`)).text();
+    expect(html).toContain(`/p/${slug}`);
     expect(html).toContain("Restore post");
-    await act(adminCookie, { action: "restore-post", target: slug, reason: "appeal ok" });
+    await act(adminCookie, { action: "restore-post", target: slug, reason: "appeal ok", back: "/admin/posts?s=removed" });
     const post = await ctx.db.selectFrom("post").select("status").where("id", "=", postId).executeTakeFirstOrThrow();
     expect(post.status).toBe("active");
+  });
+
+  it("merges reports on one comment, hides it with a ban and closes them all", async () => {
+    const c = await ctx.db.insertInto("comment").values({ post_id: postId, body: "buy cheap pills", visitor_key: "vk-1", ip_hash: "ip-1", anon_name: "spammer" }).returning("id").executeTakeFirstOrThrow();
+    for (const k of ["a", "b", "c"]) await ctx.db.insertInto("report").values({ post_id: postId, comment_id: c.id, reason: "spam", detail: "", reporter_key: `v:${k}`, ip_hash: k }).execute();
+    const html = await (await section(adminCookie, "reports")).text();
+    expect(html).toContain("buy cheap pills");
+    expect(html).toMatch(/class="ad-rr-n">3</);
+    expect(html).toContain("Also ban this visitor");
+    const first = await ctx.db.selectFrom("report").select("id").where("comment_id", "=", c.id).orderBy("created_at").executeTakeFirstOrThrow();
+    const res = await act(adminCookie, { action: "takedown", target: first.id, reason: "Spam", ban: "1", days: "7", back: "/admin/reports" });
+    expect(res.headers.get("location")).toBe("/admin/reports?n=done");
+    const open = await ctx.db.selectFrom("report").select("id").where("comment_id", "=", c.id).where("status", "=", "open").execute();
+    expect(open).toHaveLength(0);
+    const ban = await ctx.db.selectFrom("visitor_ban").selectAll().executeTakeFirstOrThrow();
+    expect([ban.kind, ban.key_hash]).toEqual(["visitor", "vk-1"]);
+    expect((await ctx.db.selectFrom("comment").select("status").where("id", "=", c.id).executeTakeFirstOrThrow()).status).toBe("hidden");
+    expect(await (await section(adminCookie, "bans")).text()).toContain("Lift ban");
+    expect(await (await section(adminCookie, "audit")).text()).toContain("Hid comment");
+    expect((await act(adminCookie, { action: "unban", target: "visitor:vk-1", reason: "appeal", back: "/admin/bans" })).headers.get("location")).toBe("/admin/bans?n=done");
+  });
+
+  it("renders the overview; viewers can read but not act; unknown sections 404", async () => {
+    const html = await (await get(adminCookie)).text();
+    expect(html).toContain("New posts");
+    expect(html).toContain('class="ad-chart"');
+    expect(html).toContain("ni-theme");
+    await ctx.db.insertInto("admin_member").values({ user_id: "plain-user", role: "viewer", created_by: "mod-1" }).execute();
+    const viewer = await (await section(userCookie, "posts")).text();
+    expect(viewer).toContain("Read only");
+    expect(viewer).not.toContain("ad-pop");
+    expect((await act(userCookie, { action: "remove-post", target: slug, reason: "x", back: "/admin/posts" })).headers.get("location")).toBe("/admin/posts?n=failed");
+    expect((await section(adminCookie, "nope")).status).toBe(404);
+    await ctx.db.deleteFrom("admin_member").execute();
   });
 });

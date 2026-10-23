@@ -1,28 +1,179 @@
 {
   "admin": {
+    "action": {
+      "ban": "ブロック",
+      "comments_mode": "コメント設定を変更",
+      "delete_comment": "コメントを削除",
+      "dismiss_report": "通報を却下",
+      "hide_comment": "コメントを非表示",
+      "remove": "投稿を削除",
+      "resolve_report": "通報を対応済みにする",
+      "restore": "投稿を復元",
+      "restore_comment": "コメントを復元",
+      "unban": "ブロックを解除"
+    },
+    "backToSite": "サイトに戻る",
+    "ban": {
+      "byIp": "ネットワークアドレスでブロック（同じネットワークの他のユーザーにも影響する場合があります）",
+      "days": "{count, plural, other {#日}}",
+      "duration": "ブロック期間",
+      "empty": "現在有効なブロックはありません。",
+      "forever": "無期限",
+      "ip": "ネットワークアドレス",
+      "unban": "ブロックを解除",
+      "visitor": "ブラウザー",
+      "with": "この訪問者もブロックする"
+    },
+    "chart": {
+      "postsBySource": "新規投稿（流入元別・過去30日）"
+    },
+    "col": {
+      "action": "操作",
+      "actor": "操作者",
+      "author": "投稿者",
+      "comment": "コメント",
+      "comments": "コメント",
+      "ends": "解除日時",
+      "firstReported": "最初の通報",
+      "handled": "対応日時",
+      "item": "対象",
+      "likes": "いいね",
+      "likes7": "いいね（7日間）",
+      "post": "投稿",
+      "published": "公開日時",
+      "reason": "理由",
+      "reporter": "通報者",
+      "reports": "通報数",
+      "source": "流入元",
+      "status": "ステータス",
+      "time": "日時",
+      "type": "種類"
+    },
+    "commentStatus": {
+      "deleted": "削除済み",
+      "hidden": "非表示",
+      "visible": "表示中"
+    },
+    "comments": {
+      "search": "コメント内容を検索"
+    },
+    "console": "管理",
+    "detail": {
+      "at": "投稿日時",
+      "author": "投稿者",
+      "handle": "対応する",
+      "openPost": "投稿を開く",
+      "post": "投稿元",
+      "reported": "通報された内容",
+      "reports": "通報（{count}）",
+      "select": "詳細を表示する通報を選択してください。",
+      "visitor": "この訪問者",
+      "visitorRecent": "{count, plural, other {過去7日間のコメント数：#件}}",
+      "visitorReporter": "訪問者"
+    },
     "dismiss": "却下",
     "done": "完了しました。",
+    "env": {
+      "development": "開発環境",
+      "production": "本番環境",
+      "staging": "ステージング環境"
+    },
     "failed": "処理できませんでした。すでに対応済みの可能性があります。",
+    "filter": {
+      "all": "すべて",
+      "both": "投稿とコメント"
+    },
+    "group": {
+      "content": "コンテンツ",
+      "moderation": "モデレーション"
+    },
+    "health": {
+      "db": "データベース",
+      "media": "メディアストレージ",
+      "posts": "公開中の投稿数",
+      "site": "ウェブサイト",
+      "title": "システム"
+    },
     "hideComment": "コメントを非表示",
     "kind": {
       "comment": "コメント",
       "post": "投稿"
     },
-    "lookup": "投稿を探す",
-    "lookupPlaceholder": "投稿のリンクまたはコードを貼り付け",
-    "notFound": "投稿が見つかりません。",
-    "queue": "未対応の通報",
+    "kpi": {
+      "authors": "アクティブな投稿者",
+      "comments": "コメント",
+      "likes": "いいね",
+      "posts": "新規投稿",
+      "reports": "通報",
+      "users": "新規ユーザー",
+      "vsPrev": "直前7日間との比較"
+    },
+    "nav": {
+      "audit": "操作ログ",
+      "bans": "ブロック",
+      "comments": "コメント",
+      "overview": "概要",
+      "posts": "投稿",
+      "reports": "通報キュー"
+    },
+    "pager": {
+      "next": "次へ",
+      "prev": "前へ"
+    },
+    "posts": {
+      "search": "@ユーザー名、投稿コードまたは本文"
+    },
+    "preset": {
+      "duplicate": "重複した通報",
+      "guidelines": "コミュニティガイドライン違反",
+      "noViolation": "違反は見つかりませんでした",
+      "rights": "権利侵害",
+      "spam": "スパム"
+    },
     "queueEmpty": "未対応の通報はありません。",
+    "readOnly": "読み取り専用",
     "reason": "理由（必須）",
     "removePost": "投稿を削除",
+    "restoreComment": "コメントを復元",
     "restorePost": "投稿を復元",
+    "role": {
+      "admin": "管理者",
+      "moderator": "モデレーター",
+      "viewer": "閲覧専用メンバー"
+    },
+    "source": {
+      "api": "サードパーティアプリ",
+      "cn": "{app}（中国版）",
+      "intl": "{app}（国際版）",
+      "web": "ウェブ"
+    },
     "status": {
       "active": "公開中",
       "author_deleting": "作者のアカウント削除中",
       "removed": "削除済み",
       "unpublished": "作者が取り下げ"
     },
-    "title": "モデレーション"
+    "tab": {
+      "dismissed": "却下済み",
+      "open": "未対応",
+      "resolved": "対応済み"
+    },
+    "title": "モデレーション",
+    "todo": {
+      "bans": "7日以内に解除されるブロック",
+      "bansSub": "期限到達で自動解除されます",
+      "handle": "対応",
+      "hidden": "非表示のコメント",
+      "hiddenSub": "誤って非表示にした場合は復元できます",
+      "none": "対応待ちはありません",
+      "oldest": "最も古い通報：{time}",
+      "reports": "未対応の通報",
+      "title": "対応待ち",
+      "view": "表示"
+    },
+    "top": {
+      "title": "人気の投稿・過去7日間"
+    }
   },
   "aside": {
     "hot": "人気の記事",

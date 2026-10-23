@@ -1,28 +1,179 @@
 {
   "admin": {
+    "action": {
+      "ban": "封鎖",
+      "comments_mode": "變更留言設定",
+      "delete_comment": "刪除留言",
+      "dismiss_report": "駁回檢舉",
+      "hide_comment": "隱藏留言",
+      "remove": "下架貼文",
+      "resolve_report": "處理檢舉",
+      "restore": "恢復貼文",
+      "restore_comment": "恢復留言",
+      "unban": "解除封鎖"
+    },
+    "backToSite": "返回網站",
+    "ban": {
+      "byIp": "依網路位址封鎖（可能誤封同網路的其他使用者）",
+      "days": "{count, plural, other {# 天}}",
+      "duration": "封鎖期限",
+      "empty": "目前沒有生效中的封鎖。",
+      "forever": "永久",
+      "ip": "網路位址",
+      "unban": "解除封鎖",
+      "visitor": "瀏覽器",
+      "with": "同時封鎖此訪客"
+    },
+    "chart": {
+      "postsBySource": "新增貼文來源 · 近 30 天"
+    },
+    "col": {
+      "action": "動作",
+      "actor": "操作人",
+      "author": "作者",
+      "comment": "留言",
+      "comments": "留言",
+      "ends": "到期時間",
+      "firstReported": "最早檢舉時間",
+      "handled": "處理時間",
+      "item": "項目",
+      "likes": "讚",
+      "likes7": "讚數（7 天）",
+      "post": "貼文",
+      "published": "發布時間",
+      "reason": "原因",
+      "reporter": "檢舉人",
+      "reports": "檢舉數",
+      "source": "來源",
+      "status": "狀態",
+      "time": "時間",
+      "type": "類型"
+    },
+    "commentStatus": {
+      "deleted": "已刪除",
+      "hidden": "已隱藏",
+      "visible": "顯示中"
+    },
+    "comments": {
+      "search": "搜尋留言內容"
+    },
+    "console": "管理後台",
+    "detail": {
+      "at": "發布時間",
+      "author": "發布者",
+      "handle": "處理",
+      "openPost": "開啟貼文",
+      "post": "所屬貼文",
+      "reported": "被檢舉內容",
+      "reports": "檢舉（{count}）",
+      "select": "請選擇一筆檢舉以查看詳情。",
+      "visitor": "此訪客",
+      "visitorRecent": "{count, plural, other {近 7 天共 # 則留言}}",
+      "visitorReporter": "訪客"
+    },
     "dismiss": "駁回",
     "done": "已處理。",
+    "env": {
+      "development": "開發環境",
+      "production": "正式環境",
+      "staging": "測試環境"
+    },
     "failed": "操作失敗，可能已被處理過。",
+    "filter": {
+      "all": "全部",
+      "both": "貼文與留言"
+    },
+    "group": {
+      "content": "內容",
+      "moderation": "審核"
+    },
+    "health": {
+      "db": "資料庫",
+      "media": "媒體儲存空間",
+      "posts": "上線貼文數",
+      "site": "網站",
+      "title": "系統狀態"
+    },
     "hideComment": "隱藏留言",
     "kind": {
       "comment": "留言",
       "post": "貼文"
     },
-    "lookup": "尋找貼文",
-    "lookupPlaceholder": "貼上貼文連結或代碼",
-    "notFound": "找不到這則貼文。",
-    "queue": "待處理檢舉",
+    "kpi": {
+      "authors": "活躍作者",
+      "comments": "留言",
+      "likes": "讚",
+      "posts": "新增貼文",
+      "reports": "檢舉",
+      "users": "新增使用者",
+      "vsPrev": "與前 7 天相比"
+    },
+    "nav": {
+      "audit": "稽核紀錄",
+      "bans": "封鎖",
+      "comments": "留言",
+      "overview": "總覽",
+      "posts": "貼文",
+      "reports": "檢舉佇列"
+    },
+    "pager": {
+      "next": "下一頁",
+      "prev": "上一頁"
+    },
+    "posts": {
+      "search": "@帳號、貼文代碼或文字"
+    },
+    "preset": {
+      "duplicate": "重複檢舉",
+      "guidelines": "違反社群規範",
+      "noViolation": "未發現違規",
+      "rights": "侵犯他人權益",
+      "spam": "垃圾訊息"
+    },
     "queueEmpty": "沒有待處理的檢舉。",
+    "readOnly": "只讀",
     "reason": "處理原因（必填）",
     "removePost": "下架貼文",
+    "restoreComment": "恢復留言",
     "restorePost": "恢復貼文",
+    "role": {
+      "admin": "管理員",
+      "moderator": "審核員",
+      "viewer": "只讀成員"
+    },
+    "source": {
+      "api": "第三方應用程式",
+      "cn": "{app}（中國版）",
+      "intl": "{app}（國際版）",
+      "web": "網頁"
+    },
     "status": {
       "active": "正常",
       "author_deleting": "作者註銷中",
       "removed": "已下架",
       "unpublished": "作者已撤回"
     },
-    "title": "內容審核"
+    "tab": {
+      "dismissed": "已駁回",
+      "open": "待處理",
+      "resolved": "已處理"
+    },
+    "title": "內容審核",
+    "todo": {
+      "bans": "7 天內到期的封鎖",
+      "bansSub": "將自動解除",
+      "handle": "處理",
+      "hidden": "已隱藏留言",
+      "hiddenSub": "可恢復誤隱藏的留言",
+      "none": "目前沒有待處理項目",
+      "oldest": "最早一筆：{time}",
+      "reports": "待處理檢舉",
+      "title": "待辦事項",
+      "view": "檢視"
+    },
+    "top": {
+      "title": "熱門貼文 · 近 7 天"
+    }
   },
   "aside": {
     "hot": "熱門長文",

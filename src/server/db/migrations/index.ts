@@ -10,6 +10,7 @@ import * as m0008 from "./0008_pow_used";
 import * as m0009 from "./0009_app_directory";
 import * as m0010 from "./0010_handle_length";
 import * as m0011 from "./0011_handle_dot";
+import * as m0012 from "./0012_admin_member";
 
 /**
  * Static registry (bundler-friendly; no filesystem scanning at runtime).
@@ -27,6 +28,7 @@ const MIGRATIONS: Record<string, Migration> = {
   "0009_app_directory": m0009,
   "0010_handle_length": m0010,
   "0011_handle_dot": m0011,
+  "0012_admin_member": m0012,
 };
 
 export const migrationProvider: MigrationProvider = {

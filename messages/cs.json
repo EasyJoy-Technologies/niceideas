@@ -1,28 +1,179 @@
 {
   "admin": {
+    "action": {
+      "ban": "Zakázán",
+      "comments_mode": "Změněna nastavení komentářů",
+      "delete_comment": "Komentář smazán",
+      "dismiss_report": "Nahlášení zamítnuto",
+      "hide_comment": "Komentář skryt",
+      "remove": "Příspěvek odstraněn",
+      "resolve_report": "Nahlášení vyřízeno",
+      "restore": "Příspěvek obnoven",
+      "restore_comment": "Komentář obnoven",
+      "unban": "Zákaz zrušen"
+    },
+    "backToSite": "Zpět na web",
+    "ban": {
+      "byIp": "Zakázat síťovou adresu (může ovlivnit ostatní ve stejné síti)",
+      "days": "{count, plural, one {# den} few {# dny} many {# dne} other {# dní}}",
+      "duration": "Délka zákazu",
+      "empty": "Žádné aktivní zákazy.",
+      "forever": "Trvalý",
+      "ip": "Síťová adresa",
+      "unban": "Zrušit zákaz",
+      "visitor": "Prohlížeč",
+      "with": "Zakázat také tohoto návštěvníka"
+    },
+    "chart": {
+      "postsBySource": "Nové příspěvky podle zdroje · 30 dní"
+    },
+    "col": {
+      "action": "Akce",
+      "actor": "Kým",
+      "author": "Autor",
+      "comment": "Komentář",
+      "comments": "Komentáře",
+      "ends": "Konec",
+      "firstReported": "První nahlášení",
+      "handled": "Vyřízeno",
+      "item": "Položka",
+      "likes": "Lajky",
+      "likes7": "Lajky (7 dní)",
+      "post": "Příspěvek",
+      "published": "Zveřejněno",
+      "reason": "Důvod",
+      "reporter": "Nahlásil",
+      "reports": "Nahlášení",
+      "source": "Zdroj",
+      "status": "Stav",
+      "time": "Čas",
+      "type": "Typ"
+    },
+    "commentStatus": {
+      "deleted": "Smazaný",
+      "hidden": "Skrytý",
+      "visible": "Viditelný"
+    },
+    "comments": {
+      "search": "Hledat v textu komentáře"
+    },
+    "console": "Administrace",
+    "detail": {
+      "at": "Zveřejněno",
+      "author": "Zveřejnil",
+      "handle": "Podniknout akci",
+      "openPost": "Otevřít příspěvek",
+      "post": "V příspěvku",
+      "reported": "Nahlášený obsah",
+      "reports": "Nahlášení ({count})",
+      "select": "Vyberte nahlášení a zobrazte si podrobnosti.",
+      "visitor": "Tento návštěvník",
+      "visitorRecent": "{count, plural, one {# komentář} few {# komentáře} many {# komentáře} other {# komentářů}} za posledních 7 dní",
+      "visitorReporter": "Návštěvník"
+    },
     "dismiss": "Zamítnout",
     "done": "Hotovo.",
+    "env": {
+      "development": "Vývoj",
+      "production": "Produkce",
+      "staging": "Staging"
+    },
     "failed": "Nepodařilo se — možná už to bylo vyřízeno.",
+    "filter": {
+      "all": "Vše",
+      "both": "Příspěvky a komentáře"
+    },
+    "group": {
+      "content": "Obsah",
+      "moderation": "Moderování"
+    },
+    "health": {
+      "db": "Databáze",
+      "media": "Úložiště médií",
+      "posts": "Aktivní příspěvky",
+      "site": "Web",
+      "title": "Systém"
+    },
     "hideComment": "Skrýt komentář",
     "kind": {
       "comment": "Komentář",
       "post": "Příspěvek"
     },
-    "lookup": "Najít příspěvek",
-    "lookupPlaceholder": "Vložte odkaz nebo kód příspěvku",
-    "notFound": "Příspěvek nenalezen.",
-    "queue": "Otevřená nahlášení",
+    "kpi": {
+      "authors": "Aktivní autoři",
+      "comments": "Komentáře",
+      "likes": "Lajky",
+      "posts": "Nové příspěvky",
+      "reports": "Nahlášení",
+      "users": "Noví uživatelé",
+      "vsPrev": "oproti předchozím 7 dnům"
+    },
+    "nav": {
+      "audit": "Protokol auditu",
+      "bans": "Zákazy",
+      "comments": "Komentáře",
+      "overview": "Přehled",
+      "posts": "Příspěvky",
+      "reports": "Fronta nahlášení"
+    },
+    "pager": {
+      "next": "Další",
+      "prev": "Předchozí"
+    },
+    "posts": {
+      "search": "@uživatel, kód příspěvku nebo text"
+    },
+    "preset": {
+      "duplicate": "Duplicitní nahlášení",
+      "guidelines": "Porušuje pravidla komunity",
+      "noViolation": "Nebylo zjištěno žádné porušení",
+      "rights": "Porušuje práva ostatních",
+      "spam": "Spam"
+    },
     "queueEmpty": "Žádná otevřená nahlášení.",
+    "readOnly": "Pouze ke čtení",
     "reason": "Důvod (povinný)",
     "removePost": "Odstranit příspěvek",
+    "restoreComment": "Obnovit komentář",
     "restorePost": "Obnovit příspěvek",
+    "role": {
+      "admin": "Administrátor",
+      "moderator": "Moderátor",
+      "viewer": "Pouze ke čtení"
+    },
+    "source": {
+      "api": "Aplikace třetích stran",
+      "cn": "{app} (Čína)",
+      "intl": "{app} (mezinárodní)",
+      "web": "Web"
+    },
     "status": {
       "active": "Zveřejněno",
       "author_deleting": "Účet autora se ruší",
       "removed": "Odstraněno",
       "unpublished": "Staženo autorem"
     },
-    "title": "Moderování"
+    "tab": {
+      "dismissed": "Zamítnutá",
+      "open": "Otevřená",
+      "resolved": "Vyřešená"
+    },
+    "title": "Moderování",
+    "todo": {
+      "bans": "Zákazy končící do 7 dnů",
+      "bansSub": "Končí automaticky",
+      "handle": "Vyřídit",
+      "hidden": "Skryté komentáře",
+      "hiddenSub": "Obnovte ty skryté omylem",
+      "none": "Nic nečeká",
+      "oldest": "Nejstarší: {time}",
+      "reports": "Otevřená nahlášení",
+      "title": "K vyřízení",
+      "view": "Zobrazit"
+    },
+    "top": {
+      "title": "Nejoblíbenější · 7 dní"
+    }
   },
   "aside": {
     "hot": "Oblíbené články",

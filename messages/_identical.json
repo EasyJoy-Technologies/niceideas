@@ -1,4 +1,114 @@
 {
+  "admin.ban.forever": [
+    "fr",
+    "nl",
+    "ro",
+    "sv"
+  ],
+  "admin.ban.visitor": [
+    "de",
+    "it",
+    "nl",
+    "ro",
+    "id",
+    "fil"
+  ],
+  "admin.col.action": [
+    "fr"
+  ],
+  "admin.col.item": [
+    "pt-BR",
+    "pt-PT",
+    "nl",
+    "id",
+    "ms",
+    "fil"
+  ],
+  "admin.col.likes": [
+    "de",
+    "nl"
+  ],
+  "admin.col.post": [
+    "it",
+    "pl",
+    "fil",
+    "uz"
+  ],
+  "admin.col.source": [
+    "fr"
+  ],
+  "admin.col.status": [
+    "pt-BR",
+    "de",
+    "nl",
+    "pl",
+    "sv",
+    "id",
+    "ms",
+    "fil"
+  ],
+  "admin.col.type": [
+    "fr",
+    "nl"
+  ],
+  "admin.commentStatus.visible": [
+    "es",
+    "fr"
+  ],
+  "admin.console": [
+    "hu",
+    "id",
+    "ms",
+    "fil"
+  ],
+  "admin.env.development": [
+    "ms",
+    "fil",
+    "th",
+    "vi",
+    "my",
+    "km"
+  ],
+  "admin.env.production": [
+    "fr",
+    "ms",
+    "fil",
+    "th",
+    "vi",
+    "km"
+  ],
+  "admin.env.staging": [
+    "de",
+    "it",
+    "nl",
+    "cs",
+    "sv",
+    "id",
+    "ms",
+    "fil",
+    "th",
+    "vi",
+    "my",
+    "km"
+  ],
+  "admin.group.moderation": [
+    "de"
+  ],
+  "admin.health.db": [
+    "it",
+    "nl",
+    "fil"
+  ],
+  "admin.health.site": [
+    "de",
+    "nl",
+    "fil"
+  ],
+  "admin.health.title": [
+    "de",
+    "pl",
+    "sv"
+  ],
   "admin.kind.comment": [
     "fil"
   ],
@@ -7,8 +117,83 @@
     "fil",
     "uz"
   ],
+  "admin.kpi.likes": [
+    "de",
+    "nl"
+  ],
+  "admin.preset.spam": [
+    "es",
+    "fr",
+    "pt-BR",
+    "pt-PT",
+    "de",
+    "it",
+    "nl",
+    "pl",
+    "ro",
+    "cs",
+    "hu",
+    "tr",
+    "id",
+    "ms",
+    "fil",
+    "vi",
+    "uz"
+  ],
+  "admin.role.admin": [
+    "de",
+    "pl",
+    "ro",
+    "fil",
+    "uz"
+  ],
+  "admin.role.moderator": [
+    "de",
+    "nl",
+    "pl",
+    "ro",
+    "sv",
+    "id",
+    "ms",
+    "fil",
+    "uz"
+  ],
+  "admin.source.cn": [
+    "es",
+    "pt-BR",
+    "pt-PT",
+    "de",
+    "nl",
+    "ro",
+    "ms",
+    "fil"
+  ],
+  "admin.source.intl": [
+    "fr",
+    "de"
+  ],
+  "admin.source.web": [
+    "es",
+    "fr",
+    "pt-BR",
+    "pt-PT",
+    "de",
+    "it",
+    "nl",
+    "ro",
+    "cs",
+    "hu",
+    "tr",
+    "id",
+    "ms",
+    "fil",
+    "vi"
+  ],
   "admin.status.active": [
     "fil"
+  ],
+  "admin.tab.open": [
+    "nl"
   ],
   "admin.title": [
     "de"

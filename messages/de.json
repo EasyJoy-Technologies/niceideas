@@ -1,28 +1,179 @@
 {
   "admin": {
+    "action": {
+      "ban": "Gesperrt",
+      "comments_mode": "Kommentareinstellungen geändert",
+      "delete_comment": "Kommentar gelöscht",
+      "dismiss_report": "Meldung abgelehnt",
+      "hide_comment": "Kommentar ausgeblendet",
+      "remove": "Beitrag entfernt",
+      "resolve_report": "Meldung bearbeitet",
+      "restore": "Beitrag wiederhergestellt",
+      "restore_comment": "Kommentar wiederhergestellt",
+      "unban": "Sperrung aufgehoben"
+    },
+    "backToSite": "Zurück zur Website",
+    "ban": {
+      "byIp": "Netzwerkadresse sperren (kann andere im selben Netzwerk betreffen)",
+      "days": "{count, plural, one {# Tag} other {# Tage}}",
+      "duration": "Sperrdauer",
+      "empty": "Keine aktiven Sperrungen.",
+      "forever": "Dauerhaft",
+      "ip": "Netzwerkadresse",
+      "unban": "Sperrung aufheben",
+      "visitor": "Browser",
+      "with": "Diesen Besucher ebenfalls sperren"
+    },
+    "chart": {
+      "postsBySource": "Neue Beiträge nach Quelle · 30 Tage"
+    },
+    "col": {
+      "action": "Aktion",
+      "actor": "Von",
+      "author": "Autor",
+      "comment": "Kommentar",
+      "comments": "Kommentare",
+      "ends": "Ende",
+      "firstReported": "Erste Meldung",
+      "handled": "Bearbeitet",
+      "item": "Element",
+      "likes": "Likes",
+      "likes7": "Likes (7 Tage)",
+      "post": "Beitrag",
+      "published": "Veröffentlicht",
+      "reason": "Grund",
+      "reporter": "Gemeldet von",
+      "reports": "Meldungen",
+      "source": "Quelle",
+      "status": "Status",
+      "time": "Zeit",
+      "type": "Typ"
+    },
+    "commentStatus": {
+      "deleted": "Gelöscht",
+      "hidden": "Ausgeblendet",
+      "visible": "Sichtbar"
+    },
+    "comments": {
+      "search": "Kommentartext durchsuchen"
+    },
+    "console": "Verwaltung",
+    "detail": {
+      "at": "Veröffentlicht",
+      "author": "Veröffentlicht von",
+      "handle": "Maßnahme ergreifen",
+      "openPost": "Beitrag öffnen",
+      "post": "Im Beitrag",
+      "reported": "Gemeldeter Inhalt",
+      "reports": "Meldungen ({count})",
+      "select": "Wähle eine Meldung, um Details zu sehen.",
+      "visitor": "Dieser Besucher",
+      "visitorRecent": "{count, plural, one {# Kommentar} other {# Kommentare}} in den letzten 7 Tagen",
+      "visitorReporter": "Besucher"
+    },
     "dismiss": "Ablehnen",
     "done": "Erledigt.",
+    "env": {
+      "development": "Entwicklung",
+      "production": "Produktion",
+      "staging": "Staging"
+    },
     "failed": "Das hat nicht geklappt – vielleicht wurde es schon bearbeitet.",
+    "filter": {
+      "all": "Alle",
+      "both": "Beiträge und Kommentare"
+    },
+    "group": {
+      "content": "Inhalt",
+      "moderation": "Moderation"
+    },
+    "health": {
+      "db": "Datenbank",
+      "media": "Medienspeicher",
+      "posts": "Aktive Beiträge",
+      "site": "Website",
+      "title": "System"
+    },
     "hideComment": "Kommentar ausblenden",
     "kind": {
       "comment": "Kommentar",
       "post": "Beitrag"
     },
-    "lookup": "Beitrag suchen",
-    "lookupPlaceholder": "Link oder Code des Beitrags einfügen",
-    "notFound": "Beitrag nicht gefunden.",
-    "queue": "Offene Meldungen",
+    "kpi": {
+      "authors": "Aktive Autoren",
+      "comments": "Kommentare",
+      "likes": "Likes",
+      "posts": "Neue Beiträge",
+      "reports": "Meldungen",
+      "users": "Neue Nutzer",
+      "vsPrev": "ggü. den letzten 7 Tagen"
+    },
+    "nav": {
+      "audit": "Audit-Protokoll",
+      "bans": "Sperrungen",
+      "comments": "Kommentare",
+      "overview": "Übersicht",
+      "posts": "Beiträge",
+      "reports": "Meldungswarteschlange"
+    },
+    "pager": {
+      "next": "Weiter",
+      "prev": "Zurück"
+    },
+    "posts": {
+      "search": "@Name, Beitragscode oder Text"
+    },
+    "preset": {
+      "duplicate": "Doppelte Meldung",
+      "guidelines": "Verstößt gegen die Community-Richtlinien",
+      "noViolation": "Kein Verstoß festgestellt",
+      "rights": "Verletzt die Rechte Dritter",
+      "spam": "Spam"
+    },
     "queueEmpty": "Keine offenen Meldungen.",
+    "readOnly": "Nur lesen",
     "reason": "Grund (erforderlich)",
     "removePost": "Beitrag entfernen",
+    "restoreComment": "Kommentar wiederherstellen",
     "restorePost": "Beitrag wiederherstellen",
+    "role": {
+      "admin": "Administrator",
+      "moderator": "Moderator",
+      "viewer": "Nur Lesezugriff"
+    },
+    "source": {
+      "api": "Drittanbieter-Apps",
+      "cn": "{app} (China)",
+      "intl": "{app} (international)",
+      "web": "Web"
+    },
     "status": {
       "active": "Online",
       "author_deleting": "Konto des Autors wird gelöscht",
       "removed": "Entfernt",
       "unpublished": "Vom Autor zurückgezogen"
     },
-    "title": "Moderation"
+    "tab": {
+      "dismissed": "Abgelehnt",
+      "open": "Offen",
+      "resolved": "Erledigt"
+    },
+    "title": "Moderation",
+    "todo": {
+      "bans": "Sperrungen, die in 7 Tagen enden",
+      "bansSub": "Enden automatisch",
+      "handle": "Bearbeiten",
+      "hidden": "Ausgeblendete Kommentare",
+      "hiddenSub": "Versehentlich ausgeblendete wiederherstellen",
+      "none": "Nichts ausstehend",
+      "oldest": "Älteste: {time}",
+      "reports": "Offene Meldungen",
+      "title": "Aufgaben",
+      "view": "Anzeigen"
+    },
+    "top": {
+      "title": "Meistgeliked · 7 Tage"
+    }
   },
   "aside": {
     "hot": "Beliebte Artikel",

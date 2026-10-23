@@ -1,28 +1,179 @@
 {
   "admin": {
+    "action": {
+      "ban": "Banned",
+      "comments_mode": "Changed comment settings",
+      "delete_comment": "Deleted comment",
+      "dismiss_report": "Dismissed report",
+      "hide_comment": "Hid comment",
+      "remove": "Removed post",
+      "resolve_report": "Resolved report",
+      "restore": "Restored post",
+      "restore_comment": "Restored comment",
+      "unban": "Lifted ban"
+    },
+    "backToSite": "Back to site",
+    "ban": {
+      "byIp": "Ban the network address (may affect others on the same network)",
+      "days": "{count, plural, one {# day} other {# days}}",
+      "duration": "Ban length",
+      "empty": "No bans in force.",
+      "forever": "Permanent",
+      "ip": "Network address",
+      "unban": "Lift ban",
+      "visitor": "Browser",
+      "with": "Also ban this visitor"
+    },
+    "chart": {
+      "postsBySource": "New posts by source · 30 days"
+    },
+    "col": {
+      "action": "Action",
+      "actor": "By",
+      "author": "Author",
+      "comment": "Comment",
+      "comments": "Comments",
+      "ends": "Ends",
+      "firstReported": "First reported",
+      "handled": "Handled",
+      "item": "Item",
+      "likes": "Likes",
+      "likes7": "Likes (7 days)",
+      "post": "Post",
+      "published": "Published",
+      "reason": "Reason",
+      "reporter": "Reported by",
+      "reports": "Reports",
+      "source": "Source",
+      "status": "Status",
+      "time": "Time",
+      "type": "Type"
+    },
+    "commentStatus": {
+      "deleted": "Deleted",
+      "hidden": "Hidden",
+      "visible": "Visible"
+    },
+    "comments": {
+      "search": "Search comment text"
+    },
+    "console": "Admin",
+    "detail": {
+      "at": "Posted",
+      "author": "Posted by",
+      "handle": "Take action",
+      "openPost": "Open post",
+      "post": "In post",
+      "reported": "Reported content",
+      "reports": "Reports ({count})",
+      "select": "Select a report to see the details.",
+      "visitor": "This visitor",
+      "visitorRecent": "{count, plural, one {# comment} other {# comments}} in the last 7 days",
+      "visitorReporter": "Visitor"
+    },
     "dismiss": "Dismiss",
     "done": "Done.",
+    "env": {
+      "development": "Development",
+      "production": "Production",
+      "staging": "Staging"
+    },
     "failed": "That didn’t work — it may already have been handled.",
+    "filter": {
+      "all": "All",
+      "both": "Posts and comments"
+    },
+    "group": {
+      "content": "Content",
+      "moderation": "Moderation"
+    },
+    "health": {
+      "db": "Database",
+      "media": "Media storage",
+      "posts": "Live posts",
+      "site": "Website",
+      "title": "System"
+    },
     "hideComment": "Hide comment",
     "kind": {
       "comment": "Comment",
       "post": "Post"
     },
-    "lookup": "Find a post",
-    "lookupPlaceholder": "Paste a post link or code",
-    "notFound": "Post not found.",
-    "queue": "Open reports",
+    "kpi": {
+      "authors": "Active authors",
+      "comments": "Comments",
+      "likes": "Likes",
+      "posts": "New posts",
+      "reports": "Reports",
+      "users": "New users",
+      "vsPrev": "vs. previous 7 days"
+    },
+    "nav": {
+      "audit": "Audit log",
+      "bans": "Bans",
+      "comments": "Comments",
+      "overview": "Overview",
+      "posts": "Posts",
+      "reports": "Report queue"
+    },
+    "pager": {
+      "next": "Next",
+      "prev": "Previous"
+    },
+    "posts": {
+      "search": "@handle, post code or text"
+    },
+    "preset": {
+      "duplicate": "Duplicate report",
+      "guidelines": "Breaks the community guidelines",
+      "noViolation": "No violation found",
+      "rights": "Infringes others' rights",
+      "spam": "Spam"
+    },
     "queueEmpty": "No open reports.",
+    "readOnly": "Read only",
     "reason": "Reason (required)",
     "removePost": "Remove post",
+    "restoreComment": "Restore comment",
     "restorePost": "Restore post",
+    "role": {
+      "admin": "Administrator",
+      "moderator": "Moderator",
+      "viewer": "Viewer"
+    },
+    "source": {
+      "api": "Third-party apps",
+      "cn": "{app} (China)",
+      "intl": "{app} (international)",
+      "web": "Web"
+    },
     "status": {
       "active": "Live",
       "author_deleting": "Author account being deleted",
       "removed": "Removed",
       "unpublished": "Withdrawn by the author"
     },
-    "title": "Moderation"
+    "tab": {
+      "dismissed": "Dismissed",
+      "open": "Open",
+      "resolved": "Resolved"
+    },
+    "title": "Moderation",
+    "todo": {
+      "bans": "Bans ending within 7 days",
+      "bansSub": "They end automatically",
+      "handle": "Handle",
+      "hidden": "Hidden comments",
+      "hiddenSub": "Restore any hidden by mistake",
+      "none": "Nothing waiting",
+      "oldest": "Oldest: {time}",
+      "reports": "Open reports",
+      "title": "To do",
+      "view": "View"
+    },
+    "top": {
+      "title": "Most liked · 7 days"
+    }
   },
   "aside": {
     "hot": "Popular articles",

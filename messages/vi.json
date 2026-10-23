@@ -1,28 +1,179 @@
 {
   "admin": {
+    "action": {
+      "ban": "Đã cấm",
+      "comments_mode": "Đã thay đổi cài đặt bình luận",
+      "delete_comment": "Xóa bình luận",
+      "dismiss_report": "Đã bác bỏ báo cáo",
+      "hide_comment": "Ẩn bình luận",
+      "remove": "Gỡ bài viết",
+      "resolve_report": "Đã xử lý báo cáo",
+      "restore": "Khôi phục bài viết",
+      "restore_comment": "Khôi phục bình luận",
+      "unban": "Đã gỡ cấm"
+    },
+    "backToSite": "Về trang chính",
+    "ban": {
+      "byIp": "Cấm theo địa chỉ mạng (có thể ảnh hưởng đến người khác dùng chung mạng)",
+      "days": "{count, plural, other {# ngày}}",
+      "duration": "Thời hạn cấm",
+      "empty": "Hiện không có lệnh cấm nào đang áp dụng.",
+      "forever": "Vĩnh viễn",
+      "ip": "Địa chỉ mạng",
+      "unban": "Gỡ cấm",
+      "visitor": "Trình duyệt",
+      "with": "Đồng thời cấm khách này"
+    },
+    "chart": {
+      "postsBySource": "Bài viết mới theo nguồn · 30 ngày"
+    },
+    "col": {
+      "action": "Hành động",
+      "actor": "Người thực hiện",
+      "author": "Tác giả",
+      "comment": "Bình luận",
+      "comments": "Bình luận",
+      "ends": "Hết hạn",
+      "firstReported": "Báo cáo đầu tiên",
+      "handled": "Thời gian xử lý",
+      "item": "Đối tượng",
+      "likes": "Lượt thích",
+      "likes7": "Lượt thích (7 ngày)",
+      "post": "Bài viết",
+      "published": "Ngày đăng",
+      "reason": "Lý do",
+      "reporter": "Người báo cáo",
+      "reports": "Số báo cáo",
+      "source": "Nguồn",
+      "status": "Trạng thái",
+      "time": "Thời gian",
+      "type": "Loại"
+    },
+    "commentStatus": {
+      "deleted": "Đã xóa",
+      "hidden": "Đã ẩn",
+      "visible": "Hiển thị"
+    },
+    "comments": {
+      "search": "Tìm nội dung bình luận"
+    },
+    "console": "Quản trị",
+    "detail": {
+      "at": "Thời gian đăng",
+      "author": "Người đăng",
+      "handle": "Xử lý",
+      "openPost": "Mở bài viết",
+      "post": "Trong bài viết",
+      "reported": "Nội dung bị báo cáo",
+      "reports": "Báo cáo ({count})",
+      "select": "Chọn một báo cáo để xem chi tiết.",
+      "visitor": "Khách này",
+      "visitorRecent": "{count, plural, other {# bình luận trong 7 ngày qua}}",
+      "visitorReporter": "Khách"
+    },
     "dismiss": "Bác bỏ",
     "done": "Đã xong.",
+    "env": {
+      "development": "Development",
+      "production": "Production",
+      "staging": "Staging"
+    },
     "failed": "Không thành công — có thể đã được xử lý.",
+    "filter": {
+      "all": "Tất cả",
+      "both": "Bài viết và bình luận"
+    },
+    "group": {
+      "content": "Nội dung",
+      "moderation": "Kiểm duyệt"
+    },
+    "health": {
+      "db": "Cơ sở dữ liệu",
+      "media": "Bộ nhớ media",
+      "posts": "Bài viết đang hoạt động",
+      "site": "Trang web",
+      "title": "Hệ thống"
+    },
     "hideComment": "Ẩn bình luận",
     "kind": {
       "comment": "Bình luận",
       "post": "Bài đăng"
     },
-    "lookup": "Tìm bài đăng",
-    "lookupPlaceholder": "Dán liên kết hoặc mã bài đăng",
-    "notFound": "Không tìm thấy bài đăng.",
-    "queue": "Báo cáo chưa xử lý",
+    "kpi": {
+      "authors": "Tác giả hoạt động",
+      "comments": "Bình luận",
+      "likes": "Lượt thích",
+      "posts": "Bài viết mới",
+      "reports": "Báo cáo",
+      "users": "Người dùng mới",
+      "vsPrev": "So với 7 ngày trước"
+    },
+    "nav": {
+      "audit": "Nhật ký hoạt động",
+      "bans": "Cấm",
+      "comments": "Bình luận",
+      "overview": "Tổng quan",
+      "posts": "Bài viết",
+      "reports": "Hàng đợi báo cáo"
+    },
+    "pager": {
+      "next": "Sau",
+      "prev": "Trước"
+    },
+    "posts": {
+      "search": "@tên người dùng, mã bài viết hoặc nội dung"
+    },
+    "preset": {
+      "duplicate": "Báo cáo trùng lặp",
+      "guidelines": "Vi phạm quy tắc cộng đồng",
+      "noViolation": "Không phát hiện vi phạm",
+      "rights": "Xâm phạm quyền của người khác",
+      "spam": "Spam"
+    },
     "queueEmpty": "Không có báo cáo chưa xử lý.",
+    "readOnly": "Chỉ xem",
     "reason": "Lý do (bắt buộc)",
     "removePost": "Gỡ bài đăng",
+    "restoreComment": "Khôi phục bình luận",
     "restorePost": "Khôi phục bài đăng",
+    "role": {
+      "admin": "Quản trị viên",
+      "moderator": "Người kiểm duyệt",
+      "viewer": "Thành viên chỉ xem"
+    },
+    "source": {
+      "api": "Ứng dụng bên thứ ba",
+      "cn": "{app} (Trung Quốc)",
+      "intl": "{app} (quốc tế)",
+      "web": "Web"
+    },
     "status": {
       "active": "Đang hiển thị",
       "author_deleting": "Tài khoản tác giả đang bị xóa",
       "removed": "Đã gỡ",
       "unpublished": "Tác giả đã thu hồi"
     },
-    "title": "Kiểm duyệt"
+    "tab": {
+      "dismissed": "Đã bác bỏ",
+      "open": "Chưa xử lý",
+      "resolved": "Đã xử lý"
+    },
+    "title": "Kiểm duyệt",
+    "todo": {
+      "bans": "Lệnh cấm hết hạn trong 7 ngày tới",
+      "bansSub": "Sẽ tự động được gỡ",
+      "handle": "Xử lý",
+      "hidden": "Bình luận đã ẩn",
+      "hiddenSub": "Có thể khôi phục nếu ẩn nhầm",
+      "none": "Không có gì cần xử lý",
+      "oldest": "Cũ nhất: {time}",
+      "reports": "Báo cáo chưa xử lý",
+      "title": "Cần xử lý",
+      "view": "Xem"
+    },
+    "top": {
+      "title": "Nhiều lượt thích nhất · 7 ngày"
+    }
   },
   "aside": {
     "hot": "Bài viết nổi bật",

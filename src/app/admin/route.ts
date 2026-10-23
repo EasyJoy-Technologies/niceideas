@@ -1,5 +1,5 @@
-import { adminAction, adminPage } from "@/server/share/admin-route";
+import { adminActionRoute, adminSectionPage } from "@/server/admin-ui/admin-routes";
 
 export const dynamic = "force-dynamic";
-export const GET = adminPage;
-export const POST = adminAction;
+export const GET = (request: Request) => adminSectionPage(request, "overview");
+export const POST = adminActionRoute;

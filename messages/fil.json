@@ -1,28 +1,179 @@
 {
   "admin": {
+    "action": {
+      "ban": "Na-ban",
+      "comments_mode": "Binago ang setting ng komento",
+      "delete_comment": "Binura ang komento",
+      "dismiss_report": "Itinatwa ang report",
+      "hide_comment": "Itinago ang komento",
+      "remove": "Tinanggal ang post",
+      "resolve_report": "Naresolba ang report",
+      "restore": "Naibalik ang post",
+      "restore_comment": "Naibalik ang komento",
+      "unban": "Naalis ang ban"
+    },
+    "backToSite": "Bumalik sa site",
+    "ban": {
+      "byIp": "I-ban ang network address (posibleng maapektuhan ang iba sa parehong network)",
+      "days": "{count, plural, one {# araw} other {# na araw}}",
+      "duration": "Tagal ng ban",
+      "empty": "Walang kasalukuyang ban.",
+      "forever": "Permanente",
+      "ip": "Address ng network",
+      "unban": "Alisin ang ban",
+      "visitor": "Browser",
+      "with": "I-ban din ang bisitang ito"
+    },
+    "chart": {
+      "postsBySource": "Mga bagong post ayon sa pinagmulan · 30 araw"
+    },
+    "col": {
+      "action": "Aksyon",
+      "actor": "Ginawa ni",
+      "author": "May-akda",
+      "comment": "Komento",
+      "comments": "Komento",
+      "ends": "Matatapos",
+      "firstReported": "Unang na-report",
+      "handled": "Oras na naasikaso",
+      "item": "Item",
+      "likes": "Like",
+      "likes7": "Like (7 araw)",
+      "post": "Post",
+      "published": "Naipost noong",
+      "reason": "Dahilan",
+      "reporter": "Nag-report",
+      "reports": "Bilang ng report",
+      "source": "Pinagmulan",
+      "status": "Status",
+      "time": "Oras",
+      "type": "Uri"
+    },
+    "commentStatus": {
+      "deleted": "Nabura",
+      "hidden": "Itinago",
+      "visible": "Nakikita"
+    },
+    "comments": {
+      "search": "Hanapin ang nilalaman ng komento"
+    },
+    "console": "Admin",
+    "detail": {
+      "at": "Na-post noong",
+      "author": "Na-post ni",
+      "handle": "Asikasuhin",
+      "openPost": "Buksan ang post",
+      "post": "Sa post",
+      "reported": "Na-report na content",
+      "reports": "Mga report ({count})",
+      "select": "Pumili ng report para makita ang mga detalye.",
+      "visitor": "Ang bisitang ito",
+      "visitorRecent": "{count, plural, one {# komento} other {# na komento}} sa nakaraang 7 araw",
+      "visitorReporter": "Bisita"
+    },
     "dismiss": "I-dismiss",
     "done": "Tapos na.",
+    "env": {
+      "development": "Development",
+      "production": "Production",
+      "staging": "Staging"
+    },
     "failed": "Hindi nagawa — baka naasikaso na.",
+    "filter": {
+      "all": "Lahat",
+      "both": "Mga post at komento"
+    },
+    "group": {
+      "content": "Nilalaman",
+      "moderation": "Pagmo-moderate"
+    },
+    "health": {
+      "db": "Database",
+      "media": "Imbakan ng media",
+      "posts": "Live na mga post",
+      "site": "Website",
+      "title": "Sistema"
+    },
     "hideComment": "Itago ang comment",
     "kind": {
       "comment": "Comment",
       "post": "Post"
     },
-    "lookup": "Maghanap ng post",
-    "lookupPlaceholder": "I-paste ang link o code ng post",
-    "notFound": "Hindi nakita ang post.",
-    "queue": "Mga bukas na report",
+    "kpi": {
+      "authors": "Aktibong mga author",
+      "comments": "Mga komento",
+      "likes": "Mga like",
+      "posts": "Mga bagong post",
+      "reports": "Mga report",
+      "users": "Mga bagong user",
+      "vsPrev": "kumpara sa nakaraang 7 araw"
+    },
+    "nav": {
+      "audit": "Talaan ng audit",
+      "bans": "Mga ban",
+      "comments": "Mga komento",
+      "overview": "Pangkalahatang-ideya",
+      "posts": "Mga post",
+      "reports": "Pila ng mga report"
+    },
+    "pager": {
+      "next": "Susunod",
+      "prev": "Nakaraan"
+    },
+    "posts": {
+      "search": "@handle, post code, o text"
+    },
+    "preset": {
+      "duplicate": "Duplicate na report",
+      "guidelines": "Lumalabag sa community guidelines",
+      "noViolation": "Walang nahanap na paglabag",
+      "rights": "Lumalabag sa karapatan ng iba",
+      "spam": "Spam"
+    },
     "queueEmpty": "Walang bukas na report.",
+    "readOnly": "Pagbabasa lang",
     "reason": "Dahilan (kailangan)",
     "removePost": "Alisin ang post",
+    "restoreComment": "Ibalik ang komento",
     "restorePost": "Ibalik ang post",
+    "role": {
+      "admin": "Administrator",
+      "moderator": "Moderator",
+      "viewer": "Miyembrong pagbabasa lang"
+    },
+    "source": {
+      "api": "Mga third-party app",
+      "cn": "{app} (China)",
+      "intl": "{app} (internasyonal)",
+      "web": "Web"
+    },
     "status": {
       "active": "Live",
       "author_deleting": "Binubura ang account ng author",
       "removed": "Inalis",
       "unpublished": "Binawi ng author"
     },
-    "title": "Moderasyon"
+    "tab": {
+      "dismissed": "Itinatwa",
+      "open": "Bukas",
+      "resolved": "Naresolba"
+    },
+    "title": "Moderasyon",
+    "todo": {
+      "bans": "Mga ban na matatapos sa loob ng 7 araw",
+      "bansSub": "Awtomatikong matatapos",
+      "handle": "Asikasuhin",
+      "hidden": "Mga itinagong komento",
+      "hiddenSub": "Maibabalik kung aksidenteng naitago",
+      "none": "Walang naghihintay",
+      "oldest": "Pinakaluma: {time}",
+      "reports": "Mga bukas na report",
+      "title": "Dapat gawin",
+      "view": "Tingnan"
+    },
+    "top": {
+      "title": "Pinaka-nagustuhan · 7 araw"
+    }
   },
   "aside": {
     "hot": "Mga sikat na artikulo",

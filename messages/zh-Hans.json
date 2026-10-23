@@ -1,28 +1,179 @@
 {
   "admin": {
+    "action": {
+      "ban": "封禁",
+      "comments_mode": "修改评论设置",
+      "delete_comment": "删除评论",
+      "dismiss_report": "驳回举报",
+      "hide_comment": "隐藏评论",
+      "remove": "下架帖子",
+      "resolve_report": "处理举报",
+      "restore": "恢复帖子",
+      "restore_comment": "恢复评论",
+      "unban": "解除封禁"
+    },
+    "backToSite": "返回网站",
+    "ban": {
+      "byIp": "按网络地址封禁（可能误伤同一网络的其他人）",
+      "days": "{count, plural, other {# 天}}",
+      "duration": "封禁时长",
+      "empty": "没有生效中的封禁。",
+      "forever": "永久",
+      "ip": "网络地址",
+      "unban": "解除封禁",
+      "visitor": "浏览器",
+      "with": "同时封禁该访客"
+    },
+    "chart": {
+      "postsBySource": "新帖子 · 按来源 · 近 30 天"
+    },
+    "col": {
+      "action": "操作",
+      "actor": "操作人",
+      "author": "作者",
+      "comment": "评论",
+      "comments": "评论",
+      "ends": "到期",
+      "firstReported": "最早举报",
+      "handled": "处理时间",
+      "item": "对象",
+      "likes": "点赞",
+      "likes7": "7 天点赞",
+      "post": "帖子",
+      "published": "发布时间",
+      "reason": "原因",
+      "reporter": "举报人",
+      "reports": "举报数",
+      "source": "来源",
+      "status": "状态",
+      "time": "时间",
+      "type": "类型"
+    },
+    "commentStatus": {
+      "deleted": "已删除",
+      "hidden": "已隐藏",
+      "visible": "可见"
+    },
+    "comments": {
+      "search": "搜索评论内容"
+    },
+    "console": "管理后台",
+    "detail": {
+      "at": "发布时间",
+      "author": "发布者",
+      "handle": "处理",
+      "openPost": "打开帖子",
+      "post": "所在帖子",
+      "reported": "被举报内容",
+      "reports": "举报（{count}）",
+      "select": "选择一条举报查看详情。",
+      "visitor": "该访客",
+      "visitorRecent": "近 7 天 {count, plural, other {# 条评论}}",
+      "visitorReporter": "访客"
+    },
     "dismiss": "驳回",
     "done": "已处理。",
+    "env": {
+      "development": "开发",
+      "production": "生产",
+      "staging": "测试"
+    },
     "failed": "操作失败，可能已被处理过。",
+    "filter": {
+      "all": "全部",
+      "both": "帖子和评论"
+    },
+    "group": {
+      "content": "内容",
+      "moderation": "审核"
+    },
+    "health": {
+      "db": "数据库",
+      "media": "媒体存储",
+      "posts": "在线帖子",
+      "site": "网站",
+      "title": "系统状态"
+    },
     "hideComment": "隐藏评论",
     "kind": {
       "comment": "评论",
       "post": "帖子"
     },
-    "lookup": "查找帖子",
-    "lookupPlaceholder": "粘贴帖子链接或代码",
-    "notFound": "没有找到这个帖子。",
-    "queue": "待处理举报",
+    "kpi": {
+      "authors": "发帖作者",
+      "comments": "评论",
+      "likes": "点赞",
+      "posts": "新帖子",
+      "reports": "举报",
+      "users": "新用户",
+      "vsPrev": "对比前 7 天"
+    },
+    "nav": {
+      "audit": "审计日志",
+      "bans": "封禁",
+      "comments": "评论",
+      "overview": "概览",
+      "posts": "帖子",
+      "reports": "举报队列"
+    },
+    "pager": {
+      "next": "下一页",
+      "prev": "上一页"
+    },
+    "posts": {
+      "search": "@用户名、帖子代码或文字"
+    },
+    "preset": {
+      "duplicate": "重复举报",
+      "guidelines": "违反社区准则",
+      "noViolation": "未发现违规",
+      "rights": "侵犯他人权利",
+      "spam": "垃圾信息"
+    },
     "queueEmpty": "没有待处理的举报。",
+    "readOnly": "只读",
     "reason": "处理原因（必填）",
     "removePost": "下架帖子",
+    "restoreComment": "恢复评论",
     "restorePost": "恢复帖子",
+    "role": {
+      "admin": "管理员",
+      "moderator": "审核员",
+      "viewer": "只读成员"
+    },
+    "source": {
+      "api": "第三方应用",
+      "cn": "{app} 国内版",
+      "intl": "{app} 国际版",
+      "web": "网页"
+    },
     "status": {
       "active": "正常",
       "author_deleting": "作者注销中",
       "removed": "已下架",
       "unpublished": "作者已撤回"
     },
-    "title": "内容审核"
+    "tab": {
+      "dismissed": "已驳回",
+      "open": "待处理",
+      "resolved": "已处理"
+    },
+    "title": "内容审核",
+    "todo": {
+      "bans": "7 天内到期的封禁",
+      "bansSub": "到期自动解除",
+      "handle": "处理",
+      "hidden": "已隐藏的评论",
+      "hiddenSub": "误隐藏的可以恢复",
+      "none": "暂无",
+      "oldest": "最早一条：{time}",
+      "reports": "待处理举报",
+      "title": "待处理",
+      "view": "查看"
+    },
+    "top": {
+      "title": "热门帖子 · 近 7 天"
+    }
   },
   "aside": {
     "hot": "热门长文",

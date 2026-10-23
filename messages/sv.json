@@ -1,28 +1,179 @@
 {
   "admin": {
+    "action": {
+      "ban": "Avstängd",
+      "comments_mode": "Kommentarsinställningar ändrade",
+      "delete_comment": "Kommentar borttagen",
+      "dismiss_report": "Rapport avvisad",
+      "hide_comment": "Kommentar dold",
+      "remove": "Inlägg borttaget",
+      "resolve_report": "Rapport löst",
+      "restore": "Inlägg återställt",
+      "restore_comment": "Kommentar återställd",
+      "unban": "Avstängning hävd"
+    },
+    "backToSite": "Tillbaka till sajten",
+    "ban": {
+      "byIp": "Stäng av nätverksadressen (kan påverka andra på samma nätverk)",
+      "days": "{count, plural, one {# dag} other {# dagar}}",
+      "duration": "Avstängningens längd",
+      "empty": "Inga aktiva avstängningar.",
+      "forever": "Permanent",
+      "ip": "Nätverksadress",
+      "unban": "Häv avstängning",
+      "visitor": "Webbläsare",
+      "with": "Stäng även av den här besökaren"
+    },
+    "chart": {
+      "postsBySource": "Nya inlägg per källa · 30 dagar"
+    },
+    "col": {
+      "action": "Åtgärd",
+      "actor": "Av",
+      "author": "Skribent",
+      "comment": "Kommentar",
+      "comments": "Kommentarer",
+      "ends": "Upphör",
+      "firstReported": "Första rapporten",
+      "handled": "Hanterad",
+      "item": "Objekt",
+      "likes": "Gillningar",
+      "likes7": "Gillningar (7 dagar)",
+      "post": "Inlägg",
+      "published": "Publicerat",
+      "reason": "Anledning",
+      "reporter": "Rapporterad av",
+      "reports": "Rapporter",
+      "source": "Källa",
+      "status": "Status",
+      "time": "Tid",
+      "type": "Typ"
+    },
+    "commentStatus": {
+      "deleted": "Borttagen",
+      "hidden": "Dold",
+      "visible": "Synlig"
+    },
+    "comments": {
+      "search": "Sök i kommentarstext"
+    },
+    "console": "Administration",
+    "detail": {
+      "at": "Publicerat",
+      "author": "Publicerat av",
+      "handle": "Vidta åtgärd",
+      "openPost": "Öppna inlägg",
+      "post": "I inlägget",
+      "reported": "Rapporterat innehåll",
+      "reports": "Rapporter ({count})",
+      "select": "Välj en rapport för att se detaljerna.",
+      "visitor": "Den här besökaren",
+      "visitorRecent": "{count, plural, one {# kommentar} other {# kommentarer}} under de senaste 7 dagarna",
+      "visitorReporter": "Besökare"
+    },
     "dismiss": "Avvisa",
     "done": "Klart.",
+    "env": {
+      "development": "Utveckling",
+      "production": "Produktion",
+      "staging": "Staging"
+    },
     "failed": "Det gick inte – det kan redan vara hanterat.",
+    "filter": {
+      "all": "Alla",
+      "both": "Inlägg och kommentarer"
+    },
+    "group": {
+      "content": "Innehåll",
+      "moderation": "Moderering"
+    },
+    "health": {
+      "db": "Databas",
+      "media": "Medielagring",
+      "posts": "Aktiva inlägg",
+      "site": "Webbplats",
+      "title": "System"
+    },
     "hideComment": "Dölj kommentar",
     "kind": {
       "comment": "Kommentar",
       "post": "Inlägg"
     },
-    "lookup": "Hitta ett inlägg",
-    "lookupPlaceholder": "Klistra in inläggets länk eller kod",
-    "notFound": "Inlägget hittades inte.",
-    "queue": "Öppna anmälningar",
+    "kpi": {
+      "authors": "Aktiva skribenter",
+      "comments": "Kommentarer",
+      "likes": "Gillningar",
+      "posts": "Nya inlägg",
+      "reports": "Rapporter",
+      "users": "Nya användare",
+      "vsPrev": "jämfört med föregående 7 dagar"
+    },
+    "nav": {
+      "audit": "Granskningslogg",
+      "bans": "Avstängningar",
+      "comments": "Kommentarer",
+      "overview": "Översikt",
+      "posts": "Inlägg",
+      "reports": "Rapportkö"
+    },
+    "pager": {
+      "next": "Nästa",
+      "prev": "Föregående"
+    },
+    "posts": {
+      "search": "@användarnamn, inläggskod eller text"
+    },
+    "preset": {
+      "duplicate": "Dubblettrapport",
+      "guidelines": "Bryter mot communityreglerna",
+      "noViolation": "Ingen överträdelse hittades",
+      "rights": "Kränker andras rättigheter",
+      "spam": "Skräppost"
+    },
     "queueEmpty": "Inga öppna anmälningar.",
+    "readOnly": "Skrivskyddad",
     "reason": "Anledning (obligatorisk)",
     "removePost": "Ta bort inlägg",
+    "restoreComment": "Återställ kommentar",
     "restorePost": "Återställ inlägg",
+    "role": {
+      "admin": "Administratör",
+      "moderator": "Moderator",
+      "viewer": "Granskare"
+    },
+    "source": {
+      "api": "Tredjepartsappar",
+      "cn": "{app} (Kina)",
+      "intl": "{app} (internationell)",
+      "web": "Webb"
+    },
     "status": {
       "active": "Publicerat",
       "author_deleting": "Skribentens konto raderas",
       "removed": "Borttaget",
       "unpublished": "Återkallat av skribenten"
     },
-    "title": "Moderering"
+    "tab": {
+      "dismissed": "Avvisade",
+      "open": "Öppna",
+      "resolved": "Lösta"
+    },
+    "title": "Moderering",
+    "todo": {
+      "bans": "Avstängningar som upphör inom 7 dagar",
+      "bansSub": "Upphör automatiskt",
+      "handle": "Hantera",
+      "hidden": "Dolda kommentarer",
+      "hiddenSub": "Återställ de som dolts av misstag",
+      "none": "Inget väntar",
+      "oldest": "Äldsta: {time}",
+      "reports": "Öppna rapporter",
+      "title": "Att göra",
+      "view": "Visa"
+    },
+    "top": {
+      "title": "Mest gillade · 7 dagar"
+    }
   },
   "aside": {
     "hot": "Populära artiklar",

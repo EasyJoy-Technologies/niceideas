@@ -1,28 +1,179 @@
 {
   "admin": {
+    "action": {
+      "ban": "An haramta",
+      "comments_mode": "An canza saitunan sharhi",
+      "delete_comment": "An share sharhi",
+      "dismiss_report": "An ƴanta rahoto",
+      "hide_comment": "An ɓoye sharhi",
+      "remove": "An cire saƙon",
+      "resolve_report": "An warware rahoto",
+      "restore": "An dawo da saƙon",
+      "restore_comment": "An dawo da sharhi",
+      "unban": "An cire hani"
+    },
+    "backToSite": "Koma shafin yanar gizo",
+    "ban": {
+      "byIp": "Haramta bisa adireshin cibiyar sadarwa (zai iya shafar wasu a wannan cibiyar sadarwar)",
+      "days": "{count, plural, one {rana #} other {kwanaki #}}",
+      "duration": "Tsawon lokacin hani",
+      "empty": "Babu haramta mai aiki a yanzu.",
+      "forever": "Na dindindin",
+      "ip": "Adireshin cibiyar sadarwa",
+      "unban": "Cire hani",
+      "visitor": "Burauza",
+      "with": "Haramta wannan baƙon shima"
+    },
+    "chart": {
+      "postsBySource": "Sabbin saƙonni bisa tushe · kwanaki 30"
+    },
+    "col": {
+      "action": "Aiki",
+      "actor": "Daga",
+      "author": "Marubuci",
+      "comment": "Sharhi",
+      "comments": "Sharhohi",
+      "ends": "Ƙarewa",
+      "firstReported": "Rahoto na farko",
+      "handled": "Lokacin da aka kula",
+      "item": "Abu",
+      "likes": "So",
+      "likes7": "So (kwanaki 7)",
+      "post": "Saƙo",
+      "published": "An buga",
+      "reason": "Dalili",
+      "reporter": "Mai bayar da rahoto",
+      "reports": "Yawan rahotanni",
+      "source": "Tushe",
+      "status": "Matsayi",
+      "time": "Lokaci",
+      "type": "Nauʼi"
+    },
+    "commentStatus": {
+      "deleted": "An share",
+      "hidden": "An ɓoye",
+      "visible": "Ana gani"
+    },
+    "comments": {
+      "search": "Nemo rubutun sharhi"
+    },
+    "console": "Shafin Gudanarwa",
+    "detail": {
+      "at": "Lokacin da aka buga",
+      "author": "Wanda ya buga",
+      "handle": "Ɗauki mataki",
+      "openPost": "Buɗe saƙon",
+      "post": "A cikin saƙon",
+      "reported": "Abun cikin da aka kai rahoto",
+      "reports": "Rahotanni ({count})",
+      "select": "Zaɓi rahoto don ganin cikakkun bayanai.",
+      "visitor": "Wannan baƙo",
+      "visitorRecent": "{count, plural, one {sharhi #} other {sharhohi #}} a cikin kwanaki 7 da suka gabata",
+      "visitorReporter": "Baƙo"
+    },
     "dismiss": "Watsar",
     "done": "An gama.",
+    "env": {
+      "development": "Haɓakawa",
+      "production": "Samar da gaske",
+      "staging": "Gwaji"
+    },
     "failed": "Bai yi nasara ba — wataƙila an riga an kula da shi.",
+    "filter": {
+      "all": "Duka",
+      "both": "Saƙonni da sharhohi"
+    },
+    "group": {
+      "content": "Abun ciki",
+      "moderation": "Kulawa"
+    },
+    "health": {
+      "db": "Maʼajiyar bayanai",
+      "media": "Maʼajiyar kafofin watsa labarai",
+      "posts": "Saƙonnin da ke kan layi",
+      "site": "Shafin yanar gizo",
+      "title": "Tsarin"
+    },
     "hideComment": "Ɓoye sharhi",
     "kind": {
       "comment": "Sharhi",
       "post": "Rubutu"
     },
-    "lookup": "Nemo rubutu",
-    "lookupPlaceholder": "Liƙa hanyar haɗi ko lambar rubutu",
-    "notFound": "Ba a sami rubutun ba.",
-    "queue": "Rahotanni a buɗe",
+    "kpi": {
+      "authors": "Marubuta masu aiki",
+      "comments": "Sharhohi",
+      "likes": "So",
+      "posts": "Sabbin saƙonni",
+      "reports": "Rahotanni",
+      "users": "Sabbin masu amfani",
+      "vsPrev": "idan an kwatanta da kwanaki 7 da suka gabata"
+    },
+    "nav": {
+      "audit": "Rikodin bincike",
+      "bans": "Hanawa",
+      "comments": "Sharhohi",
+      "overview": "Bayyani",
+      "posts": "Rubutattun saƙonni",
+      "reports": "Jerin rahotanni"
+    },
+    "pager": {
+      "next": "Na gaba",
+      "prev": "Na baya"
+    },
+    "posts": {
+      "search": "@suna, lambar saƙo ko rubutu"
+    },
+    "preset": {
+      "duplicate": "Rahoto na maimaita",
+      "guidelines": "Ya karya ƙaʼidojin alʼumma",
+      "noViolation": "Ba a samu keta ƙaʼida ba",
+      "rights": "Ya cin haƙƙin wasu",
+      "spam": "Saƙon banza"
+    },
     "queueEmpty": "Babu rahotanni a buɗe.",
+    "readOnly": "Karantawa kawai",
     "reason": "Dalili (wajibi)",
     "removePost": "Cire rubutu",
+    "restoreComment": "Dawo da sharhi",
     "restorePost": "Maido da rubutu",
+    "role": {
+      "admin": "Mai Gudanarwa",
+      "moderator": "Mai Kulawa",
+      "viewer": "Memba mai karantawa kawai"
+    },
+    "source": {
+      "api": "Manhajojin wasu kamfani",
+      "cn": "{app} (Sin)",
+      "intl": "{app} (ƴan duniya)",
+      "web": "Yanar gizo"
+    },
     "status": {
       "active": "Yana nan",
       "author_deleting": "Ana share asusun marubuci",
       "removed": "An cire",
       "unpublished": "Marubuci ya janye"
     },
-    "title": "Kula da abun ciki"
+    "tab": {
+      "dismissed": "An ƴanta",
+      "open": "Buɗe",
+      "resolved": "An warware"
+    },
+    "title": "Kula da abun ciki",
+    "todo": {
+      "bans": "Hanawar da za ta ƙare cikin kwanaki 7",
+      "bansSub": "Suna ƙarewa kai tsaye",
+      "handle": "Kula",
+      "hidden": "Sharhohin da aka ɓoye",
+      "hiddenSub": "Za a iya dawo da waɗanda aka ɓoye ba da gangan ba",
+      "none": "Babu abin da ake jira",
+      "oldest": "Mafi tsufa: {time}",
+      "reports": "Rahotannin da ake sauraro",
+      "title": "Abin da za a yi",
+      "view": "Duba"
+    },
+    "top": {
+      "title": "Mafi yawan so · kwanaki 7"
+    }
   },
   "aside": {
     "hot": "Shahararrun maƙalu",

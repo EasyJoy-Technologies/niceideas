@@ -1,28 +1,179 @@
 {
   "admin": {
+    "action": {
+      "ban": "Bloqueado",
+      "comments_mode": "Configurações de comentários alteradas",
+      "delete_comment": "Comentário eliminado",
+      "dismiss_report": "Denúncia rejeitada",
+      "hide_comment": "Comentário ocultado",
+      "remove": "Publicação removida",
+      "resolve_report": "Denúncia resolvida",
+      "restore": "Publicação restaurada",
+      "restore_comment": "Comentário restaurado",
+      "unban": "Bloqueio removido"
+    },
+    "backToSite": "Voltar ao site",
+    "ban": {
+      "byIp": "Bloquear o endereço de rede (pode afetar outras pessoas na mesma rede)",
+      "days": "{count, plural, one {# dia} other {# dias}}",
+      "duration": "Duração do bloqueio",
+      "empty": "Não há bloqueios em vigor.",
+      "forever": "Permanente",
+      "ip": "Endereço de rede",
+      "unban": "Remover bloqueio",
+      "visitor": "Navegador",
+      "with": "Bloquear também este visitante"
+    },
+    "chart": {
+      "postsBySource": "Novas publicações por origem · 30 dias"
+    },
+    "col": {
+      "action": "Ação",
+      "actor": "Por",
+      "author": "Autor",
+      "comment": "Comentário",
+      "comments": "Comentários",
+      "ends": "Termina",
+      "firstReported": "Primeira denúncia",
+      "handled": "Tratado",
+      "item": "Item",
+      "likes": "Gostos",
+      "likes7": "Gostos (7 dias)",
+      "post": "Publicação",
+      "published": "Publicado",
+      "reason": "Motivo",
+      "reporter": "Denunciado por",
+      "reports": "Denúncias",
+      "source": "Origem",
+      "status": "Estado",
+      "time": "Hora",
+      "type": "Tipo"
+    },
+    "commentStatus": {
+      "deleted": "Eliminado",
+      "hidden": "Oculto",
+      "visible": "Visível"
+    },
+    "comments": {
+      "search": "Procurar no texto do comentário"
+    },
+    "console": "Administração",
+    "detail": {
+      "at": "Publicado",
+      "author": "Publicado por",
+      "handle": "Tomar medidas",
+      "openPost": "Abrir publicação",
+      "post": "Na publicação",
+      "reported": "Conteúdo denunciado",
+      "reports": "Denúncias ({count})",
+      "select": "Selecione uma denúncia para ver os detalhes.",
+      "visitor": "Este visitante",
+      "visitorRecent": "{count, plural, one {# comentário} other {# comentários}} nos últimos 7 dias",
+      "visitorReporter": "Visitante"
+    },
     "dismiss": "Rejeitar",
     "done": "Feito.",
+    "env": {
+      "development": "Desenvolvimento",
+      "production": "Produção",
+      "staging": "Pré-produção"
+    },
     "failed": "Não foi possível — talvez já tenha sido tratado.",
+    "filter": {
+      "all": "Todas",
+      "both": "Publicações e comentários"
+    },
+    "group": {
+      "content": "Conteúdo",
+      "moderation": "Moderação"
+    },
+    "health": {
+      "db": "Base de dados",
+      "media": "Armazenamento de multimédia",
+      "posts": "Publicações ativas",
+      "site": "Sítio Web",
+      "title": "Sistema"
+    },
     "hideComment": "Ocultar comentário",
     "kind": {
       "comment": "Comentário",
       "post": "Publicação"
     },
-    "lookup": "Encontrar uma publicação",
-    "lookupPlaceholder": "Cole a ligação ou o código da publicação",
-    "notFound": "Publicação não encontrada.",
-    "queue": "Denúncias em aberto",
+    "kpi": {
+      "authors": "Autores ativos",
+      "comments": "Comentários",
+      "likes": "Gostos",
+      "posts": "Novas publicações",
+      "reports": "Denúncias",
+      "users": "Novos utilizadores",
+      "vsPrev": "vs. os 7 dias anteriores"
+    },
+    "nav": {
+      "audit": "Registo de auditoria",
+      "bans": "Bloqueios",
+      "comments": "Comentários",
+      "overview": "Resumo",
+      "posts": "Publicações",
+      "reports": "Fila de denúncias"
+    },
+    "pager": {
+      "next": "Seguinte",
+      "prev": "Anterior"
+    },
+    "posts": {
+      "search": "@utilizador, código ou texto da publicação"
+    },
+    "preset": {
+      "duplicate": "Denúncia duplicada",
+      "guidelines": "Viola as diretrizes da comunidade",
+      "noViolation": "Nenhuma infração encontrada",
+      "rights": "Infringe direitos de terceiros",
+      "spam": "Spam"
+    },
     "queueEmpty": "Não há denúncias em aberto.",
+    "readOnly": "Apenas leitura",
     "reason": "Motivo (obrigatório)",
     "removePost": "Remover publicação",
+    "restoreComment": "Restaurar comentário",
     "restorePost": "Repor publicação",
+    "role": {
+      "admin": "Administrador",
+      "moderator": "Moderador",
+      "viewer": "Apenas leitura"
+    },
+    "source": {
+      "api": "Aplicações de terceiros",
+      "cn": "{app} (China)",
+      "intl": "{app} (internacional)",
+      "web": "Web"
+    },
     "status": {
       "active": "Publicada",
       "author_deleting": "Conta do autor a ser eliminada",
       "removed": "Removida",
       "unpublished": "Retirada pelo autor"
     },
-    "title": "Moderação"
+    "tab": {
+      "dismissed": "Rejeitadas",
+      "open": "Em aberto",
+      "resolved": "Resolvidas"
+    },
+    "title": "Moderação",
+    "todo": {
+      "bans": "Bloqueios que terminam em 7 dias",
+      "bansSub": "Terminam automaticamente",
+      "handle": "Tratar",
+      "hidden": "Comentários ocultos",
+      "hiddenSub": "Restaure os que foram ocultados por engano",
+      "none": "Nada pendente",
+      "oldest": "Mais antiga: {time}",
+      "reports": "Denúncias em aberto",
+      "title": "Por tratar",
+      "view": "Ver"
+    },
+    "top": {
+      "title": "Mais gostados · 7 dias"
+    }
   },
   "aside": {
     "hot": "Artigos populares",

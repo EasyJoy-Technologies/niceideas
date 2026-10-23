@@ -174,6 +174,15 @@ export interface VisitorBanTable {
   expires_at: Timestamp | null;
 }
 
+export type AdminRole = "admin" | "moderator" | "viewer";
+
+export interface AdminMemberTable {
+  user_id: string;
+  role: AdminRole;
+  created_by: string;
+  created_at: CreatedAt;
+}
+
 export interface ApiClientTable {
   id: Generated<string>;
   client_id: string;
@@ -244,6 +253,7 @@ export interface Database {
   account_event: AccountEventTable;
   web_session: WebSessionTable;
   pow_used: PowUsedTable;
+  admin_member: AdminMemberTable;
 }
 
 export type Profile = Selectable<ProfileTable>;

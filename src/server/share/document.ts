@@ -31,7 +31,8 @@ export type PageDocument = {
   tabBar?: boolean;
 };
 
-const asset = (path: string) => `${path}?v=${APP_VERSION}`;
+/** Same-origin asset URL with the release as cache buster. */
+export const asset = (path: string) => `${path}?v=${APP_VERSION}`;
 
 /** Full HTML document of a server-rendered page: no framework JS, readable without JS. */
 export function renderPage(ctx: ChromeContext, page: PageDocument): string {
@@ -54,7 +55,7 @@ export function renderPage(ctx: ChromeContext, page: PageDocument): string {
     `<link rel="icon" href="/favicon.ico" sizes="48x48"><link rel="icon" href="/brand/favicon.svg" type="image/svg+xml">` +
     `<link rel="apple-touch-icon" href="/brand/apple-touch-icon.png">` +
     `<link rel="stylesheet" href="${asset("/styles/fonts.css")}"><link rel="stylesheet" href="${asset("/styles/tokens.css")}">` +
-    `<link rel="stylesheet" href="${asset("/styles/post-body.css")}"><link rel="stylesheet" href="${asset("/styles/share-page.css")}"><link rel="stylesheet" href="${asset("/styles/interact.css")}"><link rel="stylesheet" href="${asset("/styles/feed.css")}"><link rel="stylesheet" href="${asset("/styles/account.css")}"><link rel="stylesheet" href="${asset("/styles/search.css")}"><link rel="stylesheet" href="${asset("/styles/nav.css")}">${ctx.viewer ? `<link rel="stylesheet" href="${asset("/styles/compose.css")}"><link rel="stylesheet" href="${asset("/styles/settings.css")}"><link rel="stylesheet" href="${asset("/styles/notifications.css")}"><link rel="stylesheet" href="${asset("/styles/admin.css")}">` : ""}${page.side ? `<link rel="stylesheet" href="${asset("/styles/shell.css")}"><link rel="stylesheet" href="${asset("/styles/aside.css")}">` : ""}` +
+    `<link rel="stylesheet" href="${asset("/styles/post-body.css")}"><link rel="stylesheet" href="${asset("/styles/share-page.css")}"><link rel="stylesheet" href="${asset("/styles/interact.css")}"><link rel="stylesheet" href="${asset("/styles/feed.css")}"><link rel="stylesheet" href="${asset("/styles/account.css")}"><link rel="stylesheet" href="${asset("/styles/search.css")}"><link rel="stylesheet" href="${asset("/styles/nav.css")}">${ctx.viewer ? `<link rel="stylesheet" href="${asset("/styles/compose.css")}"><link rel="stylesheet" href="${asset("/styles/settings.css")}"><link rel="stylesheet" href="${asset("/styles/notifications.css")}">` : ""}${page.side ? `<link rel="stylesheet" href="${asset("/styles/shell.css")}"><link rel="stylesheet" href="${asset("/styles/aside.css")}">` : ""}` +
     `${(page.stylesheets ?? []).map((s) => `<link rel="stylesheet" href="${asset(s)}">`).join("")}${themeHead(ctx.theme, asset("/styles/dark.css"))}${page.head ?? ""}<script src="${asset("/scripts/share.js")}" defer></script><script src="${asset("/scripts/interact.js")}" defer></script>${(page.scripts ?? []).map((s) => `<script src="${asset(s)}" defer></script>`).join("")}</head>` +
     `<body ${data}>${page.header ?? siteHeader(ctx)}${main}${page.footer ?? siteFooter(ctx, page.side)}${(page.tabBar ?? !!page.side) ? phoneTabBar(ctx) : ""}</body></html>`
   );

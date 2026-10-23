@@ -1,28 +1,179 @@
 {
   "admin": {
+    "action": {
+      "ban": "נחסם",
+      "comments_mode": "הוגדרות התגובות שונו",
+      "delete_comment": "נמחקה תגובה",
+      "dismiss_report": "הדיווח נדחה",
+      "hide_comment": "הוסתרה תגובה",
+      "remove": "הוסר פוסט",
+      "resolve_report": "הדיווח טופל",
+      "restore": "שוחזר פוסט",
+      "restore_comment": "שוחזרה תגובה",
+      "unban": "הוסרה חסימה"
+    },
+    "backToSite": "חזרה לאתר",
+    "ban": {
+      "byIp": "חסימה לפי כתובת רשת (עלולה להשפיע על אחרים באותה רשת)",
+      "days": "{count, plural, one {יום אחד} two {# ימים} other {# ימים}}",
+      "duration": "אורך החסימה",
+      "empty": "אין חסימות פעילות.",
+      "forever": "קבוע",
+      "ip": "כתובת רשת",
+      "unban": "הסרת חסימה",
+      "visitor": "דפדפן",
+      "with": "חסימת המשתמש הזה גם כן"
+    },
+    "chart": {
+      "postsBySource": "פוסטים חדשים לפי מקור · 30 יום"
+    },
+    "col": {
+      "action": "פעולה",
+      "actor": "על ידי",
+      "author": "מחבר",
+      "comment": "תגובה",
+      "comments": "תגובות",
+      "ends": "מסתיים",
+      "firstReported": "דווח לראשונה",
+      "handled": "טופל",
+      "item": "פריט",
+      "likes": "לייקים",
+      "likes7": "לייקים (7 ימים)",
+      "post": "פוסט",
+      "published": "פורסם",
+      "reason": "סיבה",
+      "reporter": "דווח על ידי",
+      "reports": "דיווחים",
+      "source": "מקור",
+      "status": "סטטוס",
+      "time": "זמן",
+      "type": "סוג"
+    },
+    "commentStatus": {
+      "deleted": "נמחק",
+      "hidden": "מוסתר",
+      "visible": "גלוי"
+    },
+    "comments": {
+      "search": "חיפוש בטקסט התגובה"
+    },
+    "console": "ממשק ניהול",
+    "detail": {
+      "at": "תאריך פרסום",
+      "author": "פורסם על ידי",
+      "handle": "בצע פעולה",
+      "openPost": "פתיחת הפוסט",
+      "post": "בפוסט",
+      "reported": "התוכן שדווח",
+      "reports": "דיווחים ({count})",
+      "select": "בחרו דיווח כדי לראות פרטים.",
+      "visitor": "המשתמש הזה",
+      "visitorRecent": "{count, plural, one {תגובה אחת} two {# תגובות} other {# תגובות}} ב-7 הימים האחרונים",
+      "visitorReporter": "משתמש אנונימי"
+    },
     "dismiss": "דחייה",
     "done": "בוצע.",
+    "env": {
+      "development": "פיתוח",
+      "production": "ייצור",
+      "staging": "סטייג׳ינג"
+    },
     "failed": "זה לא הצליח — ייתכן שכבר טופל.",
+    "filter": {
+      "all": "הכול",
+      "both": "פוסטים ותגובות"
+    },
+    "group": {
+      "content": "תוכן",
+      "moderation": "פיקוח"
+    },
+    "health": {
+      "db": "מסד נתונים",
+      "media": "אחסון מדיה",
+      "posts": "פוסטים פעילים",
+      "site": "האתר",
+      "title": "מערכת"
+    },
     "hideComment": "הסתרת תגובה",
     "kind": {
       "comment": "תגובה",
       "post": "פוסט"
     },
-    "lookup": "חיפוש פוסט",
-    "lookupPlaceholder": "הדביקו קישור או קוד של פוסט",
-    "notFound": "הפוסט לא נמצא.",
-    "queue": "דיווחים פתוחים",
+    "kpi": {
+      "authors": "כותבים פעילים",
+      "comments": "תגובות",
+      "likes": "לייקים",
+      "posts": "פוסטים חדשים",
+      "reports": "דיווחים",
+      "users": "משתמשים חדשים",
+      "vsPrev": "לעומת 7 הימים הקודמים"
+    },
+    "nav": {
+      "audit": "יומן ביקורת",
+      "bans": "חסימות",
+      "comments": "תגובות",
+      "overview": "סקירה כללית",
+      "posts": "פוסטים",
+      "reports": "תור דיווחים"
+    },
+    "pager": {
+      "next": "הבא",
+      "prev": "הקודם"
+    },
+    "posts": {
+      "search": "@שם משתמש, קוד פוסט או טקסט"
+    },
+    "preset": {
+      "duplicate": "דיווח כפול",
+      "guidelines": "מפר את כללי הקהילה",
+      "noViolation": "לא נמצאה הפרה",
+      "rights": "מפר זכויות של אחרים",
+      "spam": "ספאם"
+    },
     "queueEmpty": "אין דיווחים פתוחים.",
+    "readOnly": "לקריאה בלבד",
     "reason": "סיבה (חובה)",
     "removePost": "הסרת פוסט",
+    "restoreComment": "שחזור תגובה",
     "restorePost": "שחזור פוסט",
+    "role": {
+      "admin": "מנהל מערכת",
+      "moderator": "מפקח",
+      "viewer": "משתמש לקריאה בלבד"
+    },
+    "source": {
+      "api": "אפליקציות צד שלישי",
+      "cn": "{app} (סין)",
+      "intl": "{app} (בין-לאומי)",
+      "web": "אתר"
+    },
     "status": {
       "active": "פורסם",
       "author_deleting": "חשבון הכותב בתהליך מחיקה",
       "removed": "הוסר",
       "unpublished": "נמשך על ידי הכותב"
     },
-    "title": "ניהול תוכן"
+    "tab": {
+      "dismissed": "נדחו",
+      "open": "פתוחים",
+      "resolved": "טופלו"
+    },
+    "title": "ניהול תוכן",
+    "todo": {
+      "bans": "חסימות שמסתיימות בתוך 7 ימים",
+      "bansSub": "מסתיימות אוטומטית",
+      "handle": "טיפול",
+      "hidden": "תגובות מוסתרות",
+      "hiddenSub": "ניתן לשחזר הסתרות בטעות",
+      "none": "אין דבר בהמתנה",
+      "oldest": "הישן ביותר: {time}",
+      "reports": "דיווחים פתוחים",
+      "title": "לטיפול",
+      "view": "צפייה"
+    },
+    "top": {
+      "title": "הפופולריים ביותר · 7 ימים"
+    }
   },
   "aside": {
     "hot": "מאמרים פופולריים",

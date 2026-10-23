@@ -23,6 +23,16 @@
   /* Derived surfaces and states (dark values: dark.css). */
   --ni-color-btn: #7c3aed;
   --ni-color-btn-hover: #6d28d9;
+  --ni-color-alert: #dc2626;
+  /* Data-vis series (admin charts): 1–6 trend cards, 7–8 extra stacks. */
+  --ni-chart-1: #7c3aed;
+  --ni-chart-2: #8b5cf6;
+  --ni-chart-3: #2563eb;
+  --ni-chart-4: #db2777;
+  --ni-chart-5: #0891b2;
+  --ni-chart-6: #d97706;
+  --ni-chart-7: #c4b5fd;
+  --ni-chart-8: #f59e0b;
   --ni-color-hover: #f3f4f6;
   --ni-color-divider: #f3f4f6;
   --ni-color-muted: #9ca3af;

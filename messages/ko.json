@@ -1,28 +1,179 @@
 {
   "admin": {
+    "action": {
+      "ban": "차단",
+      "comments_mode": "댓글 설정 변경",
+      "delete_comment": "댓글 삭제",
+      "dismiss_report": "신고 반려",
+      "hide_comment": "댓글 숨김",
+      "remove": "게시물 삭제 처리",
+      "resolve_report": "신고 처리 완료",
+      "restore": "게시물 복원",
+      "restore_comment": "댓글 복원",
+      "unban": "차단 해제"
+    },
+    "backToSite": "사이트로 돌아가기",
+    "ban": {
+      "byIp": "네트워크 주소로 차단 (같은 네트워크의 다른 사용자에게 영향을 줄 수 있음)",
+      "days": "{count, plural, other {#일}}",
+      "duration": "차단 기간",
+      "empty": "현재 적용 중인 차단이 없습니다.",
+      "forever": "영구",
+      "ip": "네트워크 주소",
+      "unban": "차단 해제",
+      "visitor": "브라우저",
+      "with": "이 방문자도 함께 차단"
+    },
+    "chart": {
+      "postsBySource": "신규 게시물 (유입 경로별 · 최근 30일)"
+    },
+    "col": {
+      "action": "작업",
+      "actor": "처리자",
+      "author": "작성자",
+      "comment": "댓글",
+      "comments": "댓글",
+      "ends": "해제일",
+      "firstReported": "최초 신고일",
+      "handled": "처리일",
+      "item": "대상",
+      "likes": "좋아요",
+      "likes7": "좋아요 (7일)",
+      "post": "게시물",
+      "published": "게시일",
+      "reason": "신고 이유",
+      "reporter": "신고자",
+      "reports": "신고 수",
+      "source": "유입 경로",
+      "status": "상태",
+      "time": "시간",
+      "type": "유형"
+    },
+    "commentStatus": {
+      "deleted": "삭제됨",
+      "hidden": "숨김",
+      "visible": "표시됨"
+    },
+    "comments": {
+      "search": "댓글 내용 검색"
+    },
+    "console": "관리자",
+    "detail": {
+      "at": "게시일",
+      "author": "작성자",
+      "handle": "처리하기",
+      "openPost": "게시물 열기",
+      "post": "원본 게시물",
+      "reported": "신고된 콘텐츠",
+      "reports": "신고 ({count})",
+      "select": "신고를 선택하면 상세 내용을 볼 수 있습니다.",
+      "visitor": "이 방문자",
+      "visitorRecent": "{count, plural, other {최근 7일간 댓글 #개}}",
+      "visitorReporter": "방문자"
+    },
     "dismiss": "기각",
     "done": "처리했어요.",
+    "env": {
+      "development": "개발",
+      "production": "운영",
+      "staging": "스테이징"
+    },
     "failed": "처리하지 못했어요. 이미 처리됐을 수 있어요.",
+    "filter": {
+      "all": "전체",
+      "both": "게시물 및 댓글"
+    },
+    "group": {
+      "content": "콘텐츠",
+      "moderation": "모더레이션"
+    },
+    "health": {
+      "db": "데이터베이스",
+      "media": "미디어 저장소",
+      "posts": "게시 중인 게시물",
+      "site": "웹사이트",
+      "title": "시스템"
+    },
     "hideComment": "댓글 숨기기",
     "kind": {
       "comment": "댓글",
       "post": "게시물"
     },
-    "lookup": "게시물 찾기",
-    "lookupPlaceholder": "게시물 링크나 코드를 붙여 넣으세요",
-    "notFound": "게시물을 찾을 수 없어요.",
-    "queue": "미처리 신고",
+    "kpi": {
+      "authors": "활성 작성자",
+      "comments": "댓글",
+      "likes": "좋아요",
+      "posts": "신규 게시물",
+      "reports": "신고",
+      "users": "신규 사용자",
+      "vsPrev": "이전 7일 대비"
+    },
+    "nav": {
+      "audit": "감사 로그",
+      "bans": "차단",
+      "comments": "댓글",
+      "overview": "개요",
+      "posts": "게시물",
+      "reports": "신고 대기열"
+    },
+    "pager": {
+      "next": "다음",
+      "prev": "이전"
+    },
+    "posts": {
+      "search": "@아이디, 게시물 코드 또는 내용"
+    },
+    "preset": {
+      "duplicate": "중복 신고",
+      "guidelines": "커뮤니티 가이드라인 위반",
+      "noViolation": "위반 사항 없음",
+      "rights": "권리 침해",
+      "spam": "스팸"
+    },
     "queueEmpty": "미처리 신고가 없어요.",
+    "readOnly": "읽기 전용",
     "reason": "사유(필수)",
     "removePost": "게시물 삭제",
+    "restoreComment": "댓글 복원",
     "restorePost": "게시물 복원",
+    "role": {
+      "admin": "관리자",
+      "moderator": "모더레이터",
+      "viewer": "읽기 전용 멤버"
+    },
+    "source": {
+      "api": "타사 앱",
+      "cn": "{app} (중국판)",
+      "intl": "{app} (국제판)",
+      "web": "웹"
+    },
     "status": {
       "active": "게시 중",
       "author_deleting": "작성자 계정 삭제 중",
       "removed": "삭제됨",
       "unpublished": "작성자가 철회함"
     },
-    "title": "콘텐츠 관리"
+    "tab": {
+      "dismissed": "반려됨",
+      "open": "대기 중",
+      "resolved": "처리됨"
+    },
+    "title": "콘텐츠 관리",
+    "todo": {
+      "bans": "7일 내 종료되는 차단",
+      "bansSub": "기간이 끝나면 자동으로 해제됩니다",
+      "handle": "처리",
+      "hidden": "숨겨진 댓글",
+      "hiddenSub": "잘못 숨겨진 댓글은 복원할 수 있습니다",
+      "none": "대기 중인 항목이 없습니다",
+      "oldest": "가장 오래된 신고: {time}",
+      "reports": "처리 대기 신고",
+      "title": "할 일",
+      "view": "보기"
+    },
+    "top": {
+      "title": "인기 게시물 · 최근 7일"
+    }
   },
   "aside": {
     "hot": "인기 글",

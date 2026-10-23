@@ -1,28 +1,179 @@
 {
   "admin": {
+    "action": {
+      "ban": "Banni",
+      "comments_mode": "Paramètres des commentaires modifiés",
+      "delete_comment": "Commentaire supprimé",
+      "dismiss_report": "Signalement rejeté",
+      "hide_comment": "Commentaire masqué",
+      "remove": "Publication retirée",
+      "resolve_report": "Signalement traité",
+      "restore": "Publication restaurée",
+      "restore_comment": "Commentaire restauré",
+      "unban": "Bannissement levé"
+    },
+    "backToSite": "Retour au site",
+    "ban": {
+      "byIp": "Bannir l’adresse réseau (peut affecter d’autres personnes sur le même réseau)",
+      "days": "{count, plural, one {# jour} other {# jours}}",
+      "duration": "Durée du bannissement",
+      "empty": "Aucun bannissement en vigueur.",
+      "forever": "Permanent",
+      "ip": "Adresse réseau",
+      "unban": "Lever le bannissement",
+      "visitor": "Navigateur",
+      "with": "Bannir aussi ce visiteur"
+    },
+    "chart": {
+      "postsBySource": "Nouvelles publications par source · 30 jours"
+    },
+    "col": {
+      "action": "Action",
+      "actor": "Par",
+      "author": "Auteur",
+      "comment": "Commentaire",
+      "comments": "Commentaires",
+      "ends": "Fin",
+      "firstReported": "Premier signalement",
+      "handled": "Traité",
+      "item": "Élément",
+      "likes": "Mentions J’aime",
+      "likes7": "Mentions J’aime (7 jours)",
+      "post": "Publication",
+      "published": "Publié",
+      "reason": "Motif",
+      "reporter": "Signalé par",
+      "reports": "Signalements",
+      "source": "Source",
+      "status": "Statut",
+      "time": "Heure",
+      "type": "Type"
+    },
+    "commentStatus": {
+      "deleted": "Supprimé",
+      "hidden": "Masqué",
+      "visible": "Visible"
+    },
+    "comments": {
+      "search": "Rechercher dans le texte des commentaires"
+    },
+    "console": "Administration",
+    "detail": {
+      "at": "Publié",
+      "author": "Publié par",
+      "handle": "Agir",
+      "openPost": "Ouvrir la publication",
+      "post": "Dans la publication",
+      "reported": "Contenu signalé",
+      "reports": "Signalements ({count})",
+      "select": "Sélectionnez un signalement pour voir les détails.",
+      "visitor": "Ce visiteur",
+      "visitorRecent": "{count, plural, one {# commentaire} other {# commentaires}} au cours des 7 derniers jours",
+      "visitorReporter": "Visiteur"
+    },
     "dismiss": "Rejeter",
     "done": "C’est fait.",
+    "env": {
+      "development": "Développement",
+      "production": "Production",
+      "staging": "Préproduction"
+    },
     "failed": "Échec : l’élément a peut-être déjà été traité.",
+    "filter": {
+      "all": "Tous",
+      "both": "Publications et commentaires"
+    },
+    "group": {
+      "content": "Contenu",
+      "moderation": "Modération"
+    },
+    "health": {
+      "db": "Base de données",
+      "media": "Stockage des médias",
+      "posts": "Publications en ligne",
+      "site": "Site web",
+      "title": "Système"
+    },
     "hideComment": "Masquer le commentaire",
     "kind": {
       "comment": "Commentaire",
       "post": "Publication"
     },
-    "lookup": "Trouver une publication",
-    "lookupPlaceholder": "Collez le lien ou le code de la publication",
-    "notFound": "Publication introuvable.",
-    "queue": "Signalements ouverts",
+    "kpi": {
+      "authors": "Auteurs actifs",
+      "comments": "Commentaires",
+      "likes": "Mentions J’aime",
+      "posts": "Nouvelles publications",
+      "reports": "Signalements",
+      "users": "Nouveaux utilisateurs",
+      "vsPrev": "vs les 7 jours précédents"
+    },
+    "nav": {
+      "audit": "Journal d’audit",
+      "bans": "Bannissements",
+      "comments": "Commentaires",
+      "overview": "Vue d’ensemble",
+      "posts": "Publications",
+      "reports": "File des signalements"
+    },
+    "pager": {
+      "next": "Suivant",
+      "prev": "Précédent"
+    },
+    "posts": {
+      "search": "@identifiant, code ou texte de la publication"
+    },
+    "preset": {
+      "duplicate": "Signalement en double",
+      "guidelines": "Enfreint les règles de la communauté",
+      "noViolation": "Aucune infraction constatée",
+      "rights": "Porte atteinte aux droits d’autrui",
+      "spam": "Spam"
+    },
     "queueEmpty": "Aucun signalement ouvert.",
+    "readOnly": "Lecture seule",
     "reason": "Motif (obligatoire)",
     "removePost": "Retirer la publication",
+    "restoreComment": "Restaurer le commentaire",
     "restorePost": "Rétablir la publication",
+    "role": {
+      "admin": "Administrateur",
+      "moderator": "Modérateur",
+      "viewer": "Lecture seule"
+    },
+    "source": {
+      "api": "Applications tierces",
+      "cn": "{app} (Chine)",
+      "intl": "{app} (international)",
+      "web": "Web"
+    },
     "status": {
       "active": "En ligne",
       "author_deleting": "Compte de l’auteur en cours de suppression",
       "removed": "Retirée par la modération",
       "unpublished": "Retirée par l’auteur"
     },
-    "title": "Modération"
+    "tab": {
+      "dismissed": "Rejetés",
+      "open": "Ouverts",
+      "resolved": "Résolus"
+    },
+    "title": "Modération",
+    "todo": {
+      "bans": "Bannissements se terminant dans 7 jours",
+      "bansSub": "Ils se terminent automatiquement",
+      "handle": "Traiter",
+      "hidden": "Commentaires masqués",
+      "hiddenSub": "Restaurez ceux masqués par erreur",
+      "none": "Rien en attente",
+      "oldest": "Le plus ancien : {time}",
+      "reports": "Signalements ouverts",
+      "title": "À faire",
+      "view": "Voir"
+    },
+    "top": {
+      "title": "Les plus aimées · 7 jours"
+    }
   },
   "aside": {
     "hot": "Articles populaires",

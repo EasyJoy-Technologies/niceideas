@@ -1,28 +1,179 @@
 {
   "admin": {
+    "action": {
+      "ban": "Disekat",
+      "comments_mode": "Tetapan komen diubah",
+      "delete_comment": "Padam komen",
+      "dismiss_report": "Laporan ditolak",
+      "hide_comment": "Sembunyikan komen",
+      "remove": "Turunkan hantaran",
+      "resolve_report": "Laporan diselesaikan",
+      "restore": "Pulihkan hantaran",
+      "restore_comment": "Pulihkan komen",
+      "unban": "Sekatan dibuka"
+    },
+    "backToSite": "Kembali ke laman",
+    "ban": {
+      "byIp": "Sekat mengikut alamat rangkaian (mungkin menjejaskan pengguna lain pada rangkaian yang sama)",
+      "days": "{count, plural, other {# hari}}",
+      "duration": "Tempoh sekatan",
+      "empty": "Tiada sekatan berkuat kuasa.",
+      "forever": "Kekal",
+      "ip": "Alamat rangkaian",
+      "unban": "Buka sekatan",
+      "visitor": "Pelayar",
+      "with": "Sekat pelawat ini juga"
+    },
+    "chart": {
+      "postsBySource": "Hantaran baharu mengikut sumber · 30 hari"
+    },
+    "col": {
+      "action": "Tindakan",
+      "actor": "Oleh",
+      "author": "Penulis",
+      "comment": "Komen",
+      "comments": "Komen",
+      "ends": "Tamat",
+      "firstReported": "Laporan pertama",
+      "handled": "Masa diuruskan",
+      "item": "Item",
+      "likes": "Suka",
+      "likes7": "Suka (7 hari)",
+      "post": "Hantaran",
+      "published": "Masa diterbitkan",
+      "reason": "Sebab",
+      "reporter": "Dilaporkan oleh",
+      "reports": "Jumlah laporan",
+      "source": "Sumber",
+      "status": "Status",
+      "time": "Masa",
+      "type": "Jenis"
+    },
+    "commentStatus": {
+      "deleted": "Dipadam",
+      "hidden": "Tersembunyi",
+      "visible": "Kelihatan"
+    },
+    "comments": {
+      "search": "Cari kandungan komen"
+    },
+    "console": "Admin",
+    "detail": {
+      "at": "Masa dihantar",
+      "author": "Dihantar oleh",
+      "handle": "Uruskan",
+      "openPost": "Buka hantaran",
+      "post": "Dalam hantaran",
+      "reported": "Kandungan yang dilaporkan",
+      "reports": "Laporan ({count})",
+      "select": "Pilih satu laporan untuk melihat butiran.",
+      "visitor": "Pelawat ini",
+      "visitorRecent": "{count, plural, other {# komen dalam 7 hari lepas}}",
+      "visitorReporter": "Pelawat"
+    },
     "dismiss": "Tolak",
     "done": "Selesai.",
+    "env": {
+      "development": "Development",
+      "production": "Production",
+      "staging": "Staging"
+    },
     "failed": "Tidak berjaya — mungkin sudah dikendalikan.",
+    "filter": {
+      "all": "Semua",
+      "both": "Hantaran dan komen"
+    },
+    "group": {
+      "content": "Kandungan",
+      "moderation": "Moderasi"
+    },
+    "health": {
+      "db": "Pangkalan data",
+      "media": "Penyimpanan media",
+      "posts": "Hantaran aktif",
+      "site": "Laman web",
+      "title": "Sistem"
+    },
     "hideComment": "Sembunyikan komen",
     "kind": {
       "comment": "Komen",
       "post": "Siaran"
     },
-    "lookup": "Cari siaran",
-    "lookupPlaceholder": "Tampal pautan atau kod siaran",
-    "notFound": "Siaran tidak ditemui.",
-    "queue": "Laporan terbuka",
+    "kpi": {
+      "authors": "Penulis aktif",
+      "comments": "Komen",
+      "likes": "Suka",
+      "posts": "Hantaran baharu",
+      "reports": "Laporan",
+      "users": "Pengguna baharu",
+      "vsPrev": "berbanding 7 hari sebelumnya"
+    },
+    "nav": {
+      "audit": "Log audit",
+      "bans": "Sekatan",
+      "comments": "Komen",
+      "overview": "Gambaran keseluruhan",
+      "posts": "Hantaran",
+      "reports": "Barisan laporan"
+    },
+    "pager": {
+      "next": "Seterusnya",
+      "prev": "Sebelumnya"
+    },
+    "posts": {
+      "search": "@nama pengguna, kod hantaran atau teks"
+    },
+    "preset": {
+      "duplicate": "Laporan berulang",
+      "guidelines": "Melanggar garis panduan komuniti",
+      "noViolation": "Tidak ditemui pelanggaran",
+      "rights": "Melanggar hak pihak lain",
+      "spam": "Spam"
+    },
     "queueEmpty": "Tiada laporan terbuka.",
+    "readOnly": "Baca sahaja",
     "reason": "Sebab (wajib)",
     "removePost": "Alih keluar siaran",
+    "restoreComment": "Pulihkan komen",
     "restorePost": "Pulihkan siaran",
+    "role": {
+      "admin": "Pentadbir",
+      "moderator": "Moderator",
+      "viewer": "Ahli baca sahaja"
+    },
+    "source": {
+      "api": "Aplikasi pihak ketiga",
+      "cn": "{app} (China)",
+      "intl": "{app} (antarabangsa)",
+      "web": "Web"
+    },
     "status": {
       "active": "Disiarkan",
       "author_deleting": "Akaun penulis sedang dipadamkan",
       "removed": "Dialih keluar",
       "unpublished": "Ditarik balik oleh penulis"
     },
-    "title": "Penyederhanaan"
+    "tab": {
+      "dismissed": "Ditolak",
+      "open": "Belum selesai",
+      "resolved": "Diselesaikan"
+    },
+    "title": "Penyederhanaan",
+    "todo": {
+      "bans": "Sekatan yang tamat dalam 7 hari",
+      "bansSub": "Akan ditamatkan secara automatik",
+      "handle": "Uruskan",
+      "hidden": "Komen tersembunyi",
+      "hiddenSub": "Boleh dipulihkan jika tersembunyi secara tidak sengaja",
+      "none": "Tiada apa-apa yang menunggu",
+      "oldest": "Paling lama: {time}",
+      "reports": "Laporan belum diselesaikan",
+      "title": "Perlu tindakan",
+      "view": "Lihat"
+    },
+    "top": {
+      "title": "Paling disukai · 7 hari"
+    }
   },
   "aside": {
     "hot": "Artikel popular",

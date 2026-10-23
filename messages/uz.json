@@ -1,28 +1,179 @@
 {
   "admin": {
+    "action": {
+      "ban": "Bloklandi",
+      "comments_mode": "Izoh sozlamalari o‘zgartirildi",
+      "delete_comment": "Izoh o‘chirildi",
+      "dismiss_report": "Shikoyat rad etildi",
+      "hide_comment": "Izoh yashirildi",
+      "remove": "Post olib tashlandi",
+      "resolve_report": "Shikoyat hal qilindi",
+      "restore": "Post tiklandi",
+      "restore_comment": "Izoh tiklandi",
+      "unban": "Blok olib tashlandi"
+    },
+    "backToSite": "Saytga qaytish",
+    "ban": {
+      "byIp": "Tarmoq manzili bo‘yicha bloklash (bitta tarmoqdagi boshqalarga ham ta’sir qilishi mumkin)",
+      "days": "{count, plural, one {# kun} other {# kun}}",
+      "duration": "Blok muddati",
+      "empty": "Faol bloklar yo‘q.",
+      "forever": "Doimiy",
+      "ip": "Tarmoq manzili",
+      "unban": "Blokni olib tashlash",
+      "visitor": "Brauzer",
+      "with": "Ushbu tashrifchini ham bloklash"
+    },
+    "chart": {
+      "postsBySource": "Manbaga ko‘ra yangi postlar · 30 kun"
+    },
+    "col": {
+      "action": "Amal",
+      "actor": "Bajargan",
+      "author": "Muallif",
+      "comment": "Izoh",
+      "comments": "Izohlar",
+      "ends": "Tugaydi",
+      "firstReported": "Birinchi shikoyat",
+      "handled": "Ko‘rib chiqilgan vaqt",
+      "item": "Obyekt",
+      "likes": "Layklar",
+      "likes7": "Layklar (7 kun)",
+      "post": "Post",
+      "published": "Chop etilgan",
+      "reason": "Sabab",
+      "reporter": "Shikoyat qilgan",
+      "reports": "Shikoyatlar soni",
+      "source": "Manba",
+      "status": "Holat",
+      "time": "Vaqt",
+      "type": "Turi"
+    },
+    "commentStatus": {
+      "deleted": "O‘chirilgan",
+      "hidden": "Yashirilgan",
+      "visible": "Ko‘rinadigan"
+    },
+    "comments": {
+      "search": "Izoh matnini qidirish"
+    },
+    "console": "Administrator paneli",
+    "detail": {
+      "at": "Joylangan vaqti",
+      "author": "Joylagan",
+      "handle": "Chora ko‘rish",
+      "openPost": "Postni ochish",
+      "post": "Ushbu postda",
+      "reported": "Shikoyat qilingan kontent",
+      "reports": "Shikoyatlar ({count})",
+      "select": "Tafsilotlarni ko‘rish uchun shikoyatni tanlang.",
+      "visitor": "Ushbu tashrifchi",
+      "visitorRecent": "So‘nggi 7 kunda {count, plural, one {# izoh} other {# izoh}}",
+      "visitorReporter": "Tashrifchi"
+    },
     "dismiss": "Rad etish",
     "done": "Bajarildi.",
+    "env": {
+      "development": "Ishlanma",
+      "production": "Ishlab chiqarish",
+      "staging": "Sinov muhiti"
+    },
     "failed": "Bo‘lmadi — ehtimol allaqachon ko‘rib chiqilgan.",
+    "filter": {
+      "all": "Barchasi",
+      "both": "Postlar va izohlar"
+    },
+    "group": {
+      "content": "Kontent",
+      "moderation": "Moderatsiya"
+    },
+    "health": {
+      "db": "Ma’lumotlar bazasi",
+      "media": "Media xotira",
+      "posts": "Faol postlar",
+      "site": "Vebsayt",
+      "title": "Tizim"
+    },
     "hideComment": "Izohni yashirish",
     "kind": {
       "comment": "Izoh",
       "post": "Post"
     },
-    "lookup": "Post topish",
-    "lookupPlaceholder": "Post havolasi yoki kodini qo‘ying",
-    "notFound": "Post topilmadi.",
-    "queue": "Ochiq shikoyatlar",
+    "kpi": {
+      "authors": "Faol mualliflar",
+      "comments": "Izohlar",
+      "likes": "Layklar",
+      "posts": "Yangi postlar",
+      "reports": "Shikoyatlar",
+      "users": "Yangi foydalanuvchilar",
+      "vsPrev": "Oldingi 7 kun bilan solishtirganda"
+    },
+    "nav": {
+      "audit": "Audit jurnali",
+      "bans": "Bloklar",
+      "comments": "Izohlar",
+      "overview": "Umumiy ko‘rinish",
+      "posts": "Postlar",
+      "reports": "Shikoyatlar navbati"
+    },
+    "pager": {
+      "next": "Keyingi",
+      "prev": "Oldingi"
+    },
+    "posts": {
+      "search": "@foydalanuvchi, post kodi yoki matn"
+    },
+    "preset": {
+      "duplicate": "Takroriy shikoyat",
+      "guidelines": "Jamoat qoidalarini buzish",
+      "noViolation": "Buzilish topilmadi",
+      "rights": "Boshqalarning huquqlarini buzish",
+      "spam": "Spam"
+    },
     "queueEmpty": "Ochiq shikoyatlar yo‘q.",
+    "readOnly": "Faqat ko‘rish uchun",
     "reason": "Sabab (majburiy)",
     "removePost": "Postni olib tashlash",
+    "restoreComment": "Izohni tiklash",
     "restorePost": "Postni tiklash",
+    "role": {
+      "admin": "Administrator",
+      "moderator": "Moderator",
+      "viewer": "Faqat ko‘ruvchi a’zo"
+    },
+    "source": {
+      "api": "Uchinchi tomon ilovalari",
+      "cn": "{app} (Xitoy)",
+      "intl": "{app} (xalqaro)",
+      "web": "Veb"
+    },
     "status": {
       "active": "E’lon qilingan",
       "author_deleting": "Muallif hisobi o‘chirilmoqda",
       "removed": "Olib tashlangan",
       "unpublished": "Muallif qaytarib olgan"
     },
-    "title": "Moderatsiya"
+    "tab": {
+      "dismissed": "Rad etilgan",
+      "open": "Ochiq",
+      "resolved": "Hal qilingan"
+    },
+    "title": "Moderatsiya",
+    "todo": {
+      "bans": "7 kun ichida tugaydigan bloklar",
+      "bansSub": "Avtomatik tarzda tugaydi",
+      "handle": "Ko‘rib chiqish",
+      "hidden": "Yashirilgan izohlar",
+      "hiddenSub": "Xato yashirilganlarni tiklash mumkin",
+      "none": "Kutilayotgan hech narsa yo‘q",
+      "oldest": "Eng eskisi: {time}",
+      "reports": "Ochiq shikoyatlar",
+      "title": "Bajarilishi kerak",
+      "view": "Ko‘rish"
+    },
+    "top": {
+      "title": "Eng ko‘p yoqtirilgan · 7 kun"
+    }
   },
   "aside": {
     "hot": "Mashhur maqolalar",

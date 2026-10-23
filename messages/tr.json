@@ -1,28 +1,179 @@
 {
   "admin": {
+    "action": {
+      "ban": "Yasaklandı",
+      "comments_mode": "Yorum ayarları değiştirildi",
+      "delete_comment": "Yorum silindi",
+      "dismiss_report": "Şikayet reddedildi",
+      "hide_comment": "Yorum gizlendi",
+      "remove": "Gönderi kaldırıldı",
+      "resolve_report": "Şikayet çözüldü",
+      "restore": "Gönderi geri yüklendi",
+      "restore_comment": "Yorum geri yüklendi",
+      "unban": "Yasak kaldırıldı"
+    },
+    "backToSite": "Siteye dön",
+    "ban": {
+      "byIp": "Ağ adresini yasakla (aynı ağdaki diğer kişileri de etkileyebilir)",
+      "days": "{count, plural, one {# gün} other {# gün}}",
+      "duration": "Yasaklama süresi",
+      "empty": "Geçerli bir yasaklama yok.",
+      "forever": "Süresiz",
+      "ip": "Ağ adresi",
+      "unban": "Yasağı kaldır",
+      "visitor": "Tarayıcı",
+      "with": "Bu ziyaretçiyi de yasakla"
+    },
+    "chart": {
+      "postsBySource": "Kaynağa göre yeni gönderiler · 30 gün"
+    },
+    "col": {
+      "action": "İşlem",
+      "actor": "İşlem yapan",
+      "author": "Yazar",
+      "comment": "Yorum",
+      "comments": "Yorumlar",
+      "ends": "Bitiş",
+      "firstReported": "İlk şikayet",
+      "handled": "İşlendi",
+      "item": "Öğe",
+      "likes": "Beğeniler",
+      "likes7": "Beğeniler (7 gün)",
+      "post": "Gönderi",
+      "published": "Yayınlandı",
+      "reason": "Neden",
+      "reporter": "Şikayet eden",
+      "reports": "Şikayetler",
+      "source": "Kaynak",
+      "status": "Durum",
+      "time": "Zaman",
+      "type": "Tür"
+    },
+    "commentStatus": {
+      "deleted": "Silindi",
+      "hidden": "Gizli",
+      "visible": "Görünür"
+    },
+    "comments": {
+      "search": "Yorum metninde ara"
+    },
+    "console": "Yönetim",
+    "detail": {
+      "at": "Paylaşım zamanı",
+      "author": "Paylaşan",
+      "handle": "İşlem yap",
+      "openPost": "Gönderiyi aç",
+      "post": "Gönderide",
+      "reported": "Şikayet edilen içerik",
+      "reports": "Şikayetler ({count})",
+      "select": "Ayrıntıları görmek için bir şikayet seçin.",
+      "visitor": "Bu ziyaretçi",
+      "visitorRecent": "Son 7 günde {count, plural, one {# yorum} other {# yorum}}",
+      "visitorReporter": "Ziyaretçi"
+    },
     "dismiss": "Reddet",
     "done": "Tamam.",
+    "env": {
+      "development": "Geliştirme",
+      "production": "Üretim",
+      "staging": "Hazırlık (staging)"
+    },
     "failed": "Olmadı — zaten işlenmiş olabilir.",
+    "filter": {
+      "all": "Tümü",
+      "both": "Gönderiler ve yorumlar"
+    },
+    "group": {
+      "content": "İçerik",
+      "moderation": "Moderasyon"
+    },
+    "health": {
+      "db": "Veritabanı",
+      "media": "Medya depolama",
+      "posts": "Aktif gönderiler",
+      "site": "Web sitesi",
+      "title": "Sistem"
+    },
     "hideComment": "Yorumu gizle",
     "kind": {
       "comment": "Yorum",
       "post": "Gönderi"
     },
-    "lookup": "Gönderi bul",
-    "lookupPlaceholder": "Gönderi bağlantısını veya kodunu yapıştır",
-    "notFound": "Gönderi bulunamadı.",
-    "queue": "Açık şikâyetler",
+    "kpi": {
+      "authors": "Aktif yazarlar",
+      "comments": "Yorumlar",
+      "likes": "Beğeniler",
+      "posts": "Yeni gönderiler",
+      "reports": "Şikayetler",
+      "users": "Yeni kullanıcılar",
+      "vsPrev": "önceki 7 güne göre"
+    },
+    "nav": {
+      "audit": "Denetim günlüğü",
+      "bans": "Yasaklamalar",
+      "comments": "Yorumlar",
+      "overview": "Genel bakış",
+      "posts": "Gönderiler",
+      "reports": "Şikayet kuyruğu"
+    },
+    "pager": {
+      "next": "Sonraki",
+      "prev": "Önceki"
+    },
+    "posts": {
+      "search": "@kullanıcı adı, gönderi kodu veya metin"
+    },
+    "preset": {
+      "duplicate": "Yinelenen şikayet",
+      "guidelines": "Topluluk kurallarını ihlal ediyor",
+      "noViolation": "İhlal bulunamadı",
+      "rights": "Başkalarının haklarını ihlal ediyor",
+      "spam": "Spam"
+    },
     "queueEmpty": "Açık şikâyet yok.",
+    "readOnly": "Salt okunur",
     "reason": "Gerekçe (zorunlu)",
     "removePost": "Gönderiyi kaldır",
+    "restoreComment": "Yorumu geri yükle",
     "restorePost": "Gönderiyi geri yükle",
+    "role": {
+      "admin": "Yönetici",
+      "moderator": "Moderatör",
+      "viewer": "Salt okunur"
+    },
+    "source": {
+      "api": "Üçüncü taraf uygulamalar",
+      "cn": "{app} (Çin)",
+      "intl": "{app} (uluslararası)",
+      "web": "Web"
+    },
     "status": {
       "active": "Yayında",
       "author_deleting": "Yazarın hesabı siliniyor",
       "removed": "Kaldırıldı",
       "unpublished": "Yazar geri çekti"
     },
-    "title": "Moderasyon"
+    "tab": {
+      "dismissed": "Reddedildi",
+      "open": "Açık",
+      "resolved": "Çözüldü"
+    },
+    "title": "Moderasyon",
+    "todo": {
+      "bans": "7 gün içinde sona erecek yasaklamalar",
+      "bansSub": "Otomatik olarak sona erer",
+      "handle": "İşleme al",
+      "hidden": "Gizlenmiş yorumlar",
+      "hiddenSub": "Yanlışlıkla gizlenenleri geri yükle",
+      "none": "Bekleyen yok",
+      "oldest": "En eski: {time}",
+      "reports": "Açık şikayetler",
+      "title": "Yapılacaklar",
+      "view": "Görüntüle"
+    },
+    "top": {
+      "title": "En beğenilenler · 7 gün"
+    }
   },
   "aside": {
     "hot": "Popüler makaleler",
