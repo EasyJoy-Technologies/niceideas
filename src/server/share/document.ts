@@ -2,9 +2,11 @@ import { directionOf } from "@/i18n/locales";
 import { escapeHtml } from "@/server/render/escape";
 import { APP_VERSION } from "@/server/version";
 import { siteHeader, type ChromeContext } from "./chrome";
-import { searchBox } from "./search-page";
+import { searchBox } from "./search-box";
 import { siteAside, siteRail } from "./site-columns";
 import { siteFooter } from "./site-footer";
+import { phoneTabBar } from "./tab-bar";
+import { themeHead } from "./theme";
 
 export type PageDocument = {
   title: string;
@@ -25,6 +27,8 @@ export type PageDocument = {
   stylesheets?: string[];
   /** Extra same-origin deferred scripts (paths under /scripts). */
   scripts?: string[];
+  /** Phone bottom tab bar; default: on for feed pages (`side`). The post page has its own action bar. */
+  tabBar?: boolean;
 };
 
 const asset = (path: string) => `${path}?v=${APP_VERSION}`;
@@ -48,10 +52,10 @@ export function renderPage(ctx: ChromeContext, page: PageDocument): string {
     `<!doctype html><html lang="${locale}" dir="${directionOf(locale)}"><head><meta charset="utf-8">` +
     `<meta name="viewport" content="width=device-width, initial-scale=1"><title>${escapeHtml(page.title)}</title>` +
     `<link rel="icon" href="/favicon.ico" sizes="48x48"><link rel="icon" href="/brand/favicon.svg" type="image/svg+xml">` +
-    `<link rel="apple-touch-icon" href="/brand/apple-touch-icon.png"><meta name="theme-color" content="#ffffff">` +
+    `<link rel="apple-touch-icon" href="/brand/apple-touch-icon.png">` +
     `<link rel="stylesheet" href="${asset("/styles/fonts.css")}"><link rel="stylesheet" href="${asset("/styles/tokens.css")}">` +
-    `<link rel="stylesheet" href="${asset("/styles/post-body.css")}"><link rel="stylesheet" href="${asset("/styles/share-page.css")}"><link rel="stylesheet" href="${asset("/styles/interact.css")}"><link rel="stylesheet" href="${asset("/styles/feed.css")}"><link rel="stylesheet" href="${asset("/styles/account.css")}"><link rel="stylesheet" href="${asset("/styles/search.css")}">${ctx.viewer ? `<link rel="stylesheet" href="${asset("/styles/compose.css")}"><link rel="stylesheet" href="${asset("/styles/settings.css")}"><link rel="stylesheet" href="${asset("/styles/notifications.css")}"><link rel="stylesheet" href="${asset("/styles/admin.css")}">` : ""}${page.side ? `<link rel="stylesheet" href="${asset("/styles/shell.css")}"><link rel="stylesheet" href="${asset("/styles/aside.css")}">` : ""}` +
-    `${(page.stylesheets ?? []).map((s) => `<link rel="stylesheet" href="${asset(s)}">`).join("")}${page.head ?? ""}<script src="${asset("/scripts/share.js")}" defer></script><script src="${asset("/scripts/interact.js")}" defer></script>${(page.scripts ?? []).map((s) => `<script src="${asset(s)}" defer></script>`).join("")}</head>` +
-    `<body ${data}>${page.header ?? siteHeader(ctx)}${main}${page.footer ?? siteFooter(ctx, page.side)}</body></html>`
+    `<link rel="stylesheet" href="${asset("/styles/post-body.css")}"><link rel="stylesheet" href="${asset("/styles/share-page.css")}"><link rel="stylesheet" href="${asset("/styles/interact.css")}"><link rel="stylesheet" href="${asset("/styles/feed.css")}"><link rel="stylesheet" href="${asset("/styles/account.css")}"><link rel="stylesheet" href="${asset("/styles/search.css")}"><link rel="stylesheet" href="${asset("/styles/nav.css")}">${ctx.viewer ? `<link rel="stylesheet" href="${asset("/styles/compose.css")}"><link rel="stylesheet" href="${asset("/styles/settings.css")}"><link rel="stylesheet" href="${asset("/styles/notifications.css")}"><link rel="stylesheet" href="${asset("/styles/admin.css")}">` : ""}${page.side ? `<link rel="stylesheet" href="${asset("/styles/shell.css")}"><link rel="stylesheet" href="${asset("/styles/aside.css")}">` : ""}` +
+    `${(page.stylesheets ?? []).map((s) => `<link rel="stylesheet" href="${asset(s)}">`).join("")}${themeHead(ctx.theme, asset("/styles/dark.css"))}${page.head ?? ""}<script src="${asset("/scripts/share.js")}" defer></script><script src="${asset("/scripts/interact.js")}" defer></script>${(page.scripts ?? []).map((s) => `<script src="${asset(s)}" defer></script>`).join("")}</head>` +
+    `<body ${data}>${page.header ?? siteHeader(ctx)}${main}${page.footer ?? siteFooter(ctx, page.side)}${(page.tabBar ?? !!page.side) ? phoneTabBar(ctx) : ""}</body></html>`
   );
 }

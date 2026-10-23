@@ -112,8 +112,7 @@
     "readingTime": "{minutes} min läsning",
     "tab": {
       "all": "Allt",
-      "articles": "Artiklar",
-      "images": "Bilder"
+      "articles": "Artiklar"
     }
   },
   "follow": {
@@ -167,7 +166,10 @@
     }
   },
   "nav": {
-    "home": "Hem"
+    "compose": "Nytt inlägg",
+    "home": "Hem",
+    "me": "Profil",
+    "signIn": "Logga in"
   },
   "notifications": {
     "comment": "{name} kommenterade ditt inlägg",
@@ -292,5 +294,11 @@
       "body": "Länken kan vara fel, eller så finns sidan inte längre.",
       "title": "Sidan hittades inte"
     }
+  },
+  "theme": {
+    "auto": "Följ systemet",
+    "dark": "Mörkt",
+    "label": "Utseende",
+    "light": "Ljust"
   }
 }

@@ -57,7 +57,8 @@ describe("discover and profile pages", () => {
     const { html } = await discover("?tab=articles");
     expect(html).toContain("Long read");
     expect(html).not.toContain("Feed &lt;b&gt;short");
-    expect((await discover("?tab=images")).html).toContain("Nothing here yet.");
+    // The "images" tab was removed (2026-10-22); old links fall back to "all".
+    expect((await discover("?tab=images")).html).toContain("Feed &lt;b&gt;short");
   });
 
   it("pages with a keyset cursor", async () => {
@@ -102,7 +103,7 @@ describe("discover and profile pages", () => {
   it("feeds have no in-site header link for mainland-China visitors", async () => {
     // The page itself is blocked by the proxy marker + rewrite (see share-page.test.ts).
     expect((await discover("", { "cf-ipcountry": "CN" })).html).not.toContain("ni-hdr-nav");
-    expect((await discover()).html).toContain('class="ni-hdr-nav" href="/discover" aria-label="Discover" aria-current="page"');
+    expect((await discover()).html).toContain('class="ni-hdr-nav ni-tabbed" href="/discover" aria-label="Discover" aria-current="page"');
   });
 
   it("estimates reading time for latin and CJK text", () => {

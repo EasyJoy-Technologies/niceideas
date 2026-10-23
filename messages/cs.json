@@ -112,8 +112,7 @@
     "readingTime": "{minutes} min čtení",
     "tab": {
       "all": "Vše",
-      "articles": "Články",
-      "images": "Obrázky"
+      "articles": "Články"
     }
   },
   "follow": {
@@ -167,7 +166,10 @@
     }
   },
   "nav": {
-    "home": "Domů"
+    "compose": "Nový příspěvek",
+    "home": "Domů",
+    "me": "Profil",
+    "signIn": "Přihlásit se"
   },
   "notifications": {
     "comment": "{name} okomentoval(a) váš příspěvek",
@@ -292,5 +294,11 @@
       "body": "Odkaz může být chybný, nebo stránka už neexistuje.",
       "title": "Stránka nenalezena"
     }
+  },
+  "theme": {
+    "auto": "Podle systému",
+    "dark": "Tmavý",
+    "label": "Vzhled",
+    "light": "Světlý"
   }
 }

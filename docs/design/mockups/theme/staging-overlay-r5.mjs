@@ -3,7 +3,6 @@ import { readFileSync } from "node:fs";
 const R = "/root/openclaw/workspace/niceideas/review/r5";
 const B = "http://127.0.0.1:3110";
 const sid = readFileSync("/tmp/pw/.sid", "utf8").trim();
-const POST = "/p/czaqaadzpedktz";
 
 const sv = (d) => `<svg class="ni-i" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">${d}</svg>`;
 const I = {

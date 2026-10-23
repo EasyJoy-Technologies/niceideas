@@ -112,8 +112,7 @@
     "readingTime": "阅读约 {minutes} 分钟",
     "tab": {
       "all": "全部",
-      "articles": "长文",
-      "images": "图片"
+      "articles": "长文"
     }
   },
   "follow": {
@@ -167,7 +166,10 @@
     }
   },
   "nav": {
-    "home": "首页"
+    "compose": "发帖",
+    "home": "首页",
+    "me": "我",
+    "signIn": "登录"
   },
   "notifications": {
     "comment": "{name} 评论了你的帖子",
@@ -292,5 +294,11 @@
       "body": "链接可能有误，或该页面已不存在。",
       "title": "页面不存在"
     }
+  },
+  "theme": {
+    "auto": "跟随系统",
+    "dark": "深色",
+    "label": "外观",
+    "light": "浅色"
   }
 }

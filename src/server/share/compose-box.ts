@@ -3,6 +3,7 @@ import { escapeHtml } from "@/server/render/escape";
 import { WEB_MAX_AUDIOS, WEB_MAX_IMAGES, WEB_MAX_TEXT } from "@/server/posts/web-compose";
 import type { ChromeContext } from "./chrome";
 import { composeToolbar } from "./compose-toolbar";
+import { icon } from "./icons";
 import { avatarHtml } from "./profile-bits";
 
 export const COMPOSE_ERRORS = ["empty", "too_much", "short_too_long", "too_large", "unsupported", "rate_limited", "failed"] as const;
@@ -27,7 +28,8 @@ function scriptData(ctx: ChromeContext): string {
 }
 
 /**
- * Compose card at the top of the signed-in home timeline (v4 compose-v2 design).
+ * Compose card at the top of the signed-in home timeline (v4 compose-v2 design); on phones
+ * a bottom sheet opened by the tab bar "+" (`/#compose`, CSS :target — no JS needed).
  * With JS: a rich editor (short post / article). Without JS: title (article only),
  * plain text, image and audio files, short / article toggle — still publishes.
  */
@@ -40,7 +42,8 @@ export function composeBox(ctx: ChromeContext, error: ComposeError | null): stri
   const title = escapeHtml(t("compose.title"));
   const err = `<p class="ni-compose-err" role="alert" data-compose-err${error ? "" : " hidden"}>${error ? escapeHtml(errorText(ctx, error)) : ""}</p>`;
   return (
-    `<form class="ni-card ni-compose" method="post" action="/api/web/compose" enctype="multipart/form-data"${scriptData(ctx)}>` +
+    `<form class="ni-card ni-compose" id="compose" method="post" action="/api/web/compose" enctype="multipart/form-data"${scriptData(ctx)}>` +
+    `<div class="ni-sheet-h"><a class="ni-sheet-x" href="#" aria-label="${escapeHtml(t("share.action.close"))}">${icon("close")}</a></div>` +
     `<div class="ni-compose-top">${avatarHtml(name, v.avatar_url, 40)}<div class="ni-compose-f">${err}` +
     `<input class="ni-compose-title" name="title" maxlength="200" placeholder="${title}" aria-label="${title}">` +
     `<textarea class="ni-compose-text" name="text" rows="5" maxlength="${WEB_MAX_TEXT}" placeholder="${placeholder}" aria-label="${placeholder}"></textarea>` +

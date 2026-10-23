@@ -112,8 +112,7 @@
     "readingTime": "{minutes} min de lecture",
     "tab": {
       "all": "Tout",
-      "articles": "Articles",
-      "images": "Images"
+      "articles": "Articles"
     }
   },
   "follow": {
@@ -167,7 +166,10 @@
     }
   },
   "nav": {
-    "home": "Accueil"
+    "compose": "Nouvelle publication",
+    "home": "Accueil",
+    "me": "Profil",
+    "signIn": "Connexion"
   },
   "notifications": {
     "comment": "{name} a commenté votre publication",
@@ -292,5 +294,11 @@
       "body": "Le lien est peut-être erroné, ou la page n’existe plus.",
       "title": "Page introuvable"
     }
+  },
+  "theme": {
+    "auto": "Comme le système",
+    "dark": "Sombre",
+    "label": "Apparence",
+    "light": "Clair"
   }
 }

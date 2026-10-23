@@ -40,7 +40,7 @@
   padding: 0.1em 0.35em;
 }
 .ni-text pre {
-  background: var(--ni-color-text-primary);
+  background: var(--ni-color-code-bg);
   color: #f9fafb;
   border-radius: var(--ni-radius-md);
   padding: 1rem;

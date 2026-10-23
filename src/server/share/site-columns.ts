@@ -3,6 +3,7 @@ import { accountMenu, signInCard } from "./account-menu";
 import { escapeHtml } from "@/server/render/escape";
 import { icon, type IconName } from "./icons";
 import { profilePath } from "./profile-bits";
+import { themeMenu } from "./theme-menu";
 import { copyright, infoLinks } from "./site-footer";
 
 /** Red unread count ("99+" when large); empty when none. */
@@ -31,10 +32,10 @@ export function siteRail(ctx: ChromeContext): string {
   return `<nav class="ni-rail">${brand(ctx, 1.75)}${nav}<div class="ni-col-foot">${bottom}</div></nav>`;
 }
 
-/** Right column (v3 design): discovery panels on top; site links, language and © pinned to the bottom. */
+/** Right column (v3 design): discovery panels on top; site links, language, theme and © pinned to the bottom. */
 export function siteAside(ctx: ChromeContext, panels = ""): string {
   return (
     `<aside class="ni-aside">${panels}<div class="ni-col-foot">${infoLinks(ctx, "ni-aside-links")}` +
-    `<div class="ni-aside-meta">${languageMenu(ctx)}${copyright()}</div></div></aside>`
+    `<div class="ni-aside-meta">${languageMenu(ctx)}${themeMenu(ctx)}<span class="ni-sp"></span>${copyright()}</div></div></aside>`
   );
 }

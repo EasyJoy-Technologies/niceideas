@@ -112,8 +112,7 @@
     "readingTime": "{minutes} minit bacaan",
     "tab": {
       "all": "Semua",
-      "articles": "Artikel",
-      "images": "Imej"
+      "articles": "Artikel"
     }
   },
   "follow": {
@@ -167,7 +166,10 @@
     }
   },
   "nav": {
-    "home": "Laman utama"
+    "compose": "Siaran baharu",
+    "home": "Laman utama",
+    "me": "Profil",
+    "signIn": "Log masuk"
   },
   "notifications": {
     "comment": "{name} mengulas siaran anda",
@@ -292,5 +294,11 @@
       "body": "Pautan mungkin salah, atau halaman ini sudah tiada.",
       "title": "Halaman tidak dijumpai"
     }
+  },
+  "theme": {
+    "auto": "Ikut sistem",
+    "dark": "Gelap",
+    "label": "Paparan",
+    "light": "Cerah"
   }
 }

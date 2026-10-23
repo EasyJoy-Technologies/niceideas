@@ -112,8 +112,7 @@
     "readingTime": "{minutes} min de citit",
     "tab": {
       "all": "Toate",
-      "articles": "Articole",
-      "images": "Imagini"
+      "articles": "Articole"
     }
   },
   "follow": {
@@ -167,7 +166,10 @@
     }
   },
   "nav": {
-    "home": "Acasă"
+    "compose": "Postare nouă",
+    "home": "Acasă",
+    "me": "Profil",
+    "signIn": "Conectare"
   },
   "notifications": {
     "comment": "{name} a comentat la postarea ta",
@@ -292,5 +294,11 @@
       "body": "Linkul poate fi greșit sau pagina nu mai există.",
       "title": "Pagina nu a fost găsită"
     }
+  },
+  "theme": {
+    "auto": "Ca în sistem",
+    "dark": "Întunecat",
+    "label": "Aspect",
+    "light": "Luminos"
   }
 }

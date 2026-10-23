@@ -112,8 +112,7 @@
     "readingTime": "{minutes} min read",
     "tab": {
       "all": "All",
-      "articles": "Articles",
-      "images": "Images"
+      "articles": "Articles"
     }
   },
   "follow": {
@@ -167,7 +166,10 @@
     }
   },
   "nav": {
-    "home": "Home"
+    "compose": "New post",
+    "home": "Home",
+    "me": "Profile",
+    "signIn": "Sign in"
   },
   "notifications": {
     "comment": "{name} commented on your post",
@@ -292,5 +294,11 @@
       "body": "The link may be wrong, or the page no longer exists.",
       "title": "Page not found"
     }
+  },
+  "theme": {
+    "auto": "System",
+    "dark": "Dark",
+    "label": "Appearance",
+    "light": "Light"
   }
 }

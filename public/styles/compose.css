@@ -3,12 +3,12 @@
 .ni-compose-top { display: flex; gap: 0.75rem; }
 .ni-compose-f { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 0.375rem; }
 .ni-compose-title, .ni-compose-text { width: 100%; border: 0; background: transparent; color: var(--ni-color-text-primary); font: inherit; padding: 0.25rem 0; }
-.ni-compose-title { display: none; font-weight: 700; font-size: 1.375rem; padding: 0.375rem 0 0.625rem; border-bottom: 1px solid #f3f4f6; }
+.ni-compose-title { display: none; font-weight: 700; font-size: 1.375rem; padding: 0.375rem 0 0.625rem; border-bottom: 1px solid var(--ni-color-divider); }
 .ni-compose:has(input[name="mode"][value="long"]:checked) .ni-compose-title { display: block; }
 .ni-compose-text { resize: vertical; font-size: 1.0625rem; line-height: 1.55; min-height: 8rem; }
 .ni-compose-title:focus, .ni-compose-text:focus { outline: none; }
-.ni-compose-title::placeholder, .ni-compose-text::placeholder { color: #9ca3af; }
-.ni-compose-err { margin: 0; padding: 0.5rem 0.75rem; border-radius: 0.625rem; background: #fef2f2; color: var(--ni-color-danger, #dc2626); font-size: 0.875rem; }
+.ni-compose-title::placeholder, .ni-compose-text::placeholder { color: var(--ni-color-muted); }
+.ni-compose-err { margin: 0; padding: 0.5rem 0.75rem; border-radius: 0.625rem; background: var(--ni-color-danger-soft); color: var(--ni-color-danger); font-size: 0.875rem; }
 .ni-compose-err[hidden] { display: none; }
 
 /* editor (JS) */
@@ -22,7 +22,7 @@
 .ni-compose:has(input[name="mode"][value="long"]:checked) .ni-ed { min-height: 26.25rem; }
 .ni-ed > * { margin: 0; }
 .ni-ed > * + * { margin-top: 0.625rem; }
-.ni-ed p.is-editor-empty:first-child::before { content: attr(data-placeholder); color: #9ca3af; float: inline-start; height: 0; pointer-events: none; }
+.ni-ed p.is-editor-empty:first-child::before { content: attr(data-placeholder); color: var(--ni-color-muted); float: inline-start; height: 0; pointer-events: none; }
 .ni-ed h2 { font-size: 1.1875rem; line-height: 1.35; }
 .ni-ed h3 { font-size: 1.0625rem; line-height: 1.35; }
 .ni-ed a { color: var(--ni-color-primary); text-decoration: underline; text-underline-offset: 0.2em; }
@@ -30,7 +30,7 @@
 .ni-ed li > p { margin: 0; }
 .ni-ed blockquote { padding-inline-start: 0.875rem; border-inline-start: 3px solid var(--ni-color-secondary); color: var(--ni-color-text-secondary); }
 .ni-ed code { font-family: var(--ni-font-mono); font-size: 0.875em; background: var(--ni-color-surface-2); border-radius: 6px; padding: 0.1em 0.35em; }
-.ni-ed pre { background: var(--ni-color-text-primary); color: #f9fafb; border-radius: var(--ni-radius-md); padding: 0.75rem 1rem; overflow-x: auto; }
+.ni-ed pre { background: var(--ni-color-code-bg); color: #f9fafb; border-radius: var(--ni-radius-md); padding: 0.75rem 1rem; overflow-x: auto; }
 .ni-ed pre code { background: none; padding: 0; color: inherit; }
 .ni-ed hr { border: 0; border-top: 1px solid var(--ni-color-border); }
 .ni-ed ul[data-type="taskList"] { list-style: none; padding-inline-start: 0.125rem; }
@@ -57,7 +57,7 @@
 .ni-compose-tray .ni-media-aud { flex: 1 1 100%; }
 
 /* toolbar: one row from the card's left edge */
-.ni-compose-bar { display: flex; align-items: center; gap: 0.125rem; margin-top: 0.625rem; padding-top: 0.625rem; border-top: 1px solid #f3f4f6; }
+.ni-compose-bar { display: flex; align-items: center; gap: 0.125rem; margin-top: 0.625rem; padding-top: 0.625rem; border-top: 1px solid var(--ni-color-divider); }
 .ni-tb { position: relative; min-width: 2rem; height: 2rem; padding: 0 0.3125rem; border: 0; border-radius: 0.5rem; background: none; color: var(--ni-color-text-secondary); display: inline-grid; place-items: center; cursor: pointer; list-style: none; }
 .ni-tb::-webkit-details-marker { display: none; }
 .ni-tb .ni-i { width: 1.125rem; height: 1.125rem; }
@@ -68,21 +68,33 @@
 .ni-tb-sep { width: 1px; height: 1.125rem; background: var(--ni-color-border); margin: 0 0.25rem; }
 .ni-tb-more ul { bottom: calc(100% + 0.375rem); inset-inline-start: 0; min-width: 11rem; }
 .ni-tb-more li[hidden] { display: none; }
-.ni-compose-count { font-size: 0.75rem; color: #9ca3af; margin-inline-end: 0.375rem; white-space: nowrap; }
-.ni-compose-count.ni-over { color: var(--ni-color-danger, #dc2626); font-weight: 600; }
+.ni-compose-count { font-size: 0.75rem; color: var(--ni-color-muted); margin-inline-end: 0.375rem; white-space: nowrap; }
+.ni-compose-count.ni-over { color: var(--ni-color-danger); font-weight: 600; }
 .ni-compose-count[hidden] { display: none; }
-.ni-compose-seg { flex: none; display: inline-flex; background: #f3f4f6; border-radius: 999px; padding: 0.1875rem; font-size: 0.78125rem; margin-inline-end: 0.375rem; }
+.ni-compose-seg { flex: none; display: inline-flex; background: var(--ni-color-hover); border-radius: 999px; padding: 0.1875rem; font-size: 0.78125rem; margin-inline-end: 0.375rem; }
 .ni-compose-seg label { position: relative; cursor: pointer; }
 .ni-compose-seg input { position: absolute; opacity: 0; width: 1px; height: 1px; }
 .ni-compose-seg span { display: block; padding: 0.25rem 0.625rem; border-radius: 999px; color: var(--ni-color-text-secondary); white-space: nowrap; }
-.ni-compose-seg input:checked + span { background: var(--ni-color-surface); color: var(--ni-color-primary); font-weight: 600; box-shadow: 0 1px 2px rgb(0 0 0 / 0.08); }
+.ni-compose-seg input:checked + span { background: var(--ni-color-surface); color: var(--ni-color-primary); font-weight: 600; box-shadow: var(--ni-shadow-chip); }
 .ni-compose-seg input:focus-visible + span { outline: 2px solid var(--ni-color-primary); outline-offset: 1px; }
 .ni-compose-bar .ni-btn { flex: none; height: 2.125rem; }
 .ni-compose button[disabled] { opacity: 0.6; cursor: progress; }
 .ni-phone-only { display: none !important; }
 
+.ni-sheet-h { display: none; }
 @media (max-width: 47.99rem) {
   .ni-compose { border-radius: 0; box-shadow: none; padding: 0.875rem 0.875rem 0.625rem; }
+  /* With the tab bar, "+" opens the card as a bottom sheet (:target); the feed starts without it. */
+  body:has(.ni-tabbar) .ni-compose:not(:target) { display: none; }
+  body:has(.ni-tabbar) .ni-compose:target {
+    position: fixed; inset-inline: 0; bottom: 0; z-index: 30; border-radius: 1.25rem 1.25rem 0 0;
+    padding-bottom: calc(0.75rem + env(safe-area-inset-bottom)); box-shadow: 0 0 0 100vmax rgb(0 0 0 / 0.45);
+  }
+  body:has(.ni-tabbar) .ni-compose:target .ni-sheet-h { display: flex; justify-content: flex-end; margin: -0.375rem -0.25rem 0.125rem; }
+  body:has(.ni-tabbar) .ni-compose:target .ni-ed { max-height: 45vh; overflow-y: auto; }
+  body:has(.ni-tabbar) .ni-compose:target:has(input[name="mode"][value="long"]:checked) .ni-ed { min-height: 14rem; }
+  .ni-sheet-x { display: inline-grid; place-items: center; width: 2rem; height: 2rem; border-radius: 50%; color: var(--ni-color-text-secondary); }
+  .ni-sheet-x:hover { background: var(--ni-color-hover); }
   .ni-phone-hide { display: none !important; }
   .ni-phone-only { display: revert !important; }
   /* Phones keep "…" in short posts too: it holds italic, link and checklist there. */

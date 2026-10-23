@@ -91,19 +91,19 @@ describe("web compose", () => {
 
   it("limits short posts to 500 characters and publishes audio without JS", async () => {
     const long = JSON.stringify({ type: "doc", content: [{ type: "paragraph", content: [{ type: "text", text: "x".repeat(501) }] }] });
-    expect((await post({ mode: "short", doc: long })).headers.get("location")).toBe("/?compose=short_too_long");
+    expect((await post({ mode: "short", doc: long })).headers.get("location")).toBe("/?compose=short_too_long#compose");
     const res = await post({ mode: "short", text: "Listen" }, [{ name: "t.m4a", data: m4aTone(), type: "audio/mp4", field: "audios" }]);
     const slug = res.headers.get("location")!.replace("/p/", "");
     const row = await ctx.db.selectFrom("post").selectAll().where("slug", "=", slug).executeTakeFirstOrThrow();
     expect(row.kind).toBe("short");
     expect((await post({ mode: "long", doc: long }, [{ name: "a.jpg", data: await jpegWithExif(), type: "image/jpeg", field: "media" }])).headers.get("location")).toMatch(/^\/p\//);
     const badRef = JSON.stringify({ type: "doc", content: [{ type: "image", attrs: { file: 3 } }] });
-    expect((await post({ mode: "long", doc: badRef })).headers.get("location")).toBe("/?compose=failed");
+    expect((await post({ mode: "long", doc: badRef })).headers.get("location")).toBe("/?compose=failed#compose");
   });
 
   it("rejects empty posts, non-images, other origins and signed-out visitors", async () => {
-    expect((await post({ title: "", text: "  " })).headers.get("location")).toBe("/?compose=empty");
-    expect((await post({ text: "x" }, [{ name: "x.svg", data: svg(), type: "image/svg+xml" }])).headers.get("location")).toBe("/?compose=unsupported");
+    expect((await post({ title: "", text: "  " })).headers.get("location")).toBe("/?compose=empty#compose");
+    expect((await post({ text: "x" }, [{ name: "x.svg", data: svg(), type: "image/svg+xml" }])).headers.get("location")).toBe("/?compose=unsupported#compose");
     expect((await post({ text: "x" }, [], { origin: "https://evil.test" })).status).toBe(403);
     expect((await post({ text: "x" }, [], { cookie: "" })).headers.get("location")).toBe("/auth/sign-in?next=%2F");
     expect((await post({ text: "x" }, [], { "cf-ipcountry": "CN" })).status).toBe(451);

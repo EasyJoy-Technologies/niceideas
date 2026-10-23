@@ -4,23 +4,13 @@ import { escapeHtml } from "@/server/render/escape";
 import type { ChromeContext } from "./chrome";
 import { renderPage } from "./document";
 import { feedList } from "./feed-list";
-import { icon } from "./icons";
 import type { FeedPage } from "./load-feed";
 import { avatarHtml, profilePath } from "./profile-bits";
+import { searchBox } from "./search-box";
 
 export const SEARCH_TYPES = ["posts", "people"] as const;
 export type SearchType = (typeof SEARCH_TYPES)[number];
 export type SearchView = { query: string; type: SearchType; posts: FeedPage | null; people: Profile[] | null };
-
-/** Search box (GET /search?q=): right column on wide screens, top of the search page elsewhere. */
-export function searchBox(ctx: ChromeContext, query = "", cls = "ni-search"): string {
-  if (ctx.restricted) return "";
-  const label = escapeHtml(ctx.intl.t("search.placeholder", { brand: GLOSSARY.brand }));
-  return (
-    `<form class="${cls}" role="search" method="get" action="/search">${icon("search")}` +
-    `<input type="search" name="q" value="${escapeHtml(query)}" placeholder="${label}" aria-label="${label}" maxlength="100" autocomplete="off"></form>`
-  );
-}
 
 function personRow(p: Profile): string {
   const name = p.display_name || `@${p.handle}`;

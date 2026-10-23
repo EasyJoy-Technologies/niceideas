@@ -112,8 +112,7 @@
     "readingTime": "{minutes} min de leitura",
     "tab": {
       "all": "Tudo",
-      "articles": "Artigos",
-      "images": "Imagens"
+      "articles": "Artigos"
     }
   },
   "follow": {
@@ -167,7 +166,10 @@
     }
   },
   "nav": {
-    "home": "Início"
+    "compose": "Nova publicação",
+    "home": "Início",
+    "me": "Perfil",
+    "signIn": "Entrar"
   },
   "notifications": {
     "comment": "{name} comentou a sua publicação",
@@ -292,5 +294,11 @@
       "body": "A ligação pode estar errada ou a página já não existe.",
       "title": "Página não encontrada"
     }
+  },
+  "theme": {
+    "auto": "Predefinição do sistema",
+    "dark": "Escuro",
+    "label": "Aspeto",
+    "light": "Claro"
   }
 }

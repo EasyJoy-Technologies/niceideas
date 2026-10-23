@@ -112,8 +112,7 @@
     "readingTime": "{minutes} phút đọc",
     "tab": {
       "all": "Tất cả",
-      "articles": "Bài viết dài",
-      "images": "Hình ảnh"
+      "articles": "Bài viết dài"
     }
   },
   "follow": {
@@ -167,7 +166,10 @@
     }
   },
   "nav": {
-    "home": "Trang chủ"
+    "compose": "Bài đăng mới",
+    "home": "Trang chủ",
+    "me": "Hồ sơ",
+    "signIn": "Đăng nhập"
   },
   "notifications": {
     "comment": "{name} đã bình luận về bài đăng của bạn",
@@ -292,5 +294,11 @@
       "body": "Có thể liên kết bị sai hoặc trang không còn tồn tại.",
       "title": "Không tìm thấy trang"
     }
+  },
+  "theme": {
+    "auto": "Theo hệ thống",
+    "dark": "Tối",
+    "label": "Giao diện",
+    "light": "Sáng"
   }
 }

@@ -112,8 +112,7 @@
     "readingTime": "閱讀約 {minutes} 分鐘",
     "tab": {
       "all": "全部",
-      "articles": "長文",
-      "images": "圖片"
+      "articles": "長文"
     }
   },
   "follow": {
@@ -167,7 +166,10 @@
     }
   },
   "nav": {
-    "home": "首頁"
+    "compose": "發文",
+    "home": "首頁",
+    "me": "我",
+    "signIn": "登入"
   },
   "notifications": {
     "comment": "{name} 留言回應你的貼文",
@@ -292,5 +294,11 @@
       "body": "連結可能有誤，或此頁面已不存在。",
       "title": "找不到頁面"
     }
+  },
+  "theme": {
+    "auto": "跟隨系統",
+    "dark": "深色",
+    "label": "外觀",
+    "light": "淺色"
   }
 }

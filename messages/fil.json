@@ -112,8 +112,7 @@
     "readingTime": "{minutes} min na pagbasa",
     "tab": {
       "all": "Lahat",
-      "articles": "Mga artikulo",
-      "images": "Mga larawan"
+      "articles": "Mga artikulo"
     }
   },
   "follow": {
@@ -167,7 +166,10 @@
     }
   },
   "nav": {
-    "home": "Home"
+    "compose": "Bagong post",
+    "home": "Home",
+    "me": "Profile",
+    "signIn": "Mag-sign in"
   },
   "notifications": {
     "comment": "Nag-comment si {name} sa post mo",
@@ -292,5 +294,11 @@
       "body": "Maaaring mali ang link, o wala na ang page na ito.",
       "title": "Hindi nakita ang page"
     }
+  },
+  "theme": {
+    "auto": "Sundan ang system",
+    "dark": "Madilim",
+    "label": "Itsura",
+    "light": "Maliwanag"
   }
 }

@@ -112,8 +112,7 @@
     "readingTime": "{minutes} ደቂቃ ንባብ",
     "tab": {
       "all": "ሁሉም",
-      "articles": "ጽሑፎች",
-      "images": "ምስሎች"
+      "articles": "ጽሑፎች"
     }
   },
   "follow": {
@@ -167,7 +166,10 @@
     }
   },
   "nav": {
-    "home": "መነሻ"
+    "compose": "አዲስ ልጥፍ",
+    "home": "መነሻ",
+    "me": "መገለጫ",
+    "signIn": "ግባ"
   },
   "notifications": {
     "comment": "{name} በልጥፍዎ ላይ አስተያየት ሰጡ",
@@ -292,5 +294,11 @@
       "body": "ሊንኩ የተሳሳተ ሊሆን ይችላል፣ ወይም ገጹ ከእንግዲህ የለም።",
       "title": "ገጹ አልተገኘም"
     }
+  },
+  "theme": {
+    "auto": "እንደ ሥርዓቱ",
+    "dark": "ጨለማ",
+    "label": "ገጽታ",
+    "light": "ብሩህ"
   }
 }

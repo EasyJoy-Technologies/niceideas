@@ -112,8 +112,7 @@
     "readingTime": "Karatun minti {minutes}",
     "tab": {
       "all": "Duka",
-      "articles": "Makaloli",
-      "images": "Hotuna"
+      "articles": "Makaloli"
     }
   },
   "follow": {
@@ -167,7 +166,10 @@
     }
   },
   "nav": {
-    "home": "Gida"
+    "compose": "Sabon rubutu",
+    "home": "Gida",
+    "me": "Bayanan martaba",
+    "signIn": "Shiga"
   },
   "notifications": {
     "comment": "{name} ya yi sharhi a kan rubutunka",
@@ -292,5 +294,11 @@
       "body": "Wataƙila hanyar haɗin ba daidai ba ce, ko shafin ba ya nan kuma.",
       "title": "Ba a sami shafin ba"
     }
+  },
+  "theme": {
+    "auto": "Bisa tsarin naʼura",
+    "dark": "Duhu",
+    "label": "Kamanni",
+    "light": "Haske"
   }
 }

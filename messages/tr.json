@@ -112,8 +112,7 @@
     "readingTime": "{minutes} dk okuma",
     "tab": {
       "all": "Tümü",
-      "articles": "Makaleler",
-      "images": "Görseller"
+      "articles": "Makaleler"
     }
   },
   "follow": {
@@ -167,7 +166,10 @@
     }
   },
   "nav": {
-    "home": "Ana sayfa"
+    "compose": "Yeni gönderi",
+    "home": "Ana sayfa",
+    "me": "Profil",
+    "signIn": "Giriş yap"
   },
   "notifications": {
     "comment": "{name} gönderine yorum yaptı",
@@ -292,5 +294,11 @@
       "body": "Bağlantı hatalı olabilir ya da sayfa artık mevcut değil.",
       "title": "Sayfa bulunamadı"
     }
+  },
+  "theme": {
+    "auto": "Sistem varsayılanı",
+    "dark": "Koyu",
+    "label": "Görünüm",
+    "light": "Açık"
   }
 }

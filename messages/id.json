@@ -112,8 +112,7 @@
     "readingTime": "{minutes} menit baca",
     "tab": {
       "all": "Semua",
-      "articles": "Artikel",
-      "images": "Gambar"
+      "articles": "Artikel"
     }
   },
   "follow": {
@@ -167,7 +166,10 @@
     }
   },
   "nav": {
-    "home": "Beranda"
+    "compose": "Postingan baru",
+    "home": "Beranda",
+    "me": "Profil",
+    "signIn": "Masuk"
   },
   "notifications": {
     "comment": "{name} mengomentari postinganmu",
@@ -292,5 +294,11 @@
       "body": "Tautannya mungkin salah, atau halaman ini sudah tidak ada.",
       "title": "Halaman tidak ditemukan"
     }
+  },
+  "theme": {
+    "auto": "Ikuti sistem",
+    "dark": "Gelap",
+    "label": "Tampilan",
+    "light": "Terang"
   }
 }

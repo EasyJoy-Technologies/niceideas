@@ -112,8 +112,7 @@
     "readingTime": "{minutes} daqiqalik oʻqish",
     "tab": {
       "all": "Hammasi",
-      "articles": "Maqolalar",
-      "images": "Rasmlar"
+      "articles": "Maqolalar"
     }
   },
   "follow": {
@@ -167,7 +166,10 @@
     }
   },
   "nav": {
-    "home": "Bosh sahifa"
+    "compose": "Yangi post",
+    "home": "Bosh sahifa",
+    "me": "Profil",
+    "signIn": "Kirish"
   },
   "notifications": {
     "comment": "{name} postingizga izoh qoldirdi",
@@ -292,5 +294,11 @@
       "body": "Havola notoʻgʻri boʻlishi yoki bu sahifa endi mavjud boʻlmasligi mumkin.",
       "title": "Sahifa topilmadi"
     }
+  },
+  "theme": {
+    "auto": "Tizimga ko‘ra",
+    "dark": "Qorong‘i",
+    "label": "Ko‘rinish",
+    "light": "Yorug‘"
   }
 }

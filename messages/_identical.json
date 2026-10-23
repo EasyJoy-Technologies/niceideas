@@ -76,14 +76,14 @@
   "feed.tab.articles": [
     "fr"
   ],
-  "feed.tab.images": [
-    "fr"
-  ],
   "info.help.title": [
     "nl"
   ],
   "nav.home": [
     "it",
+    "fil"
+  ],
+  "nav.me": [
     "fil"
   ],
   "notifications.title": [

@@ -2,6 +2,7 @@ import { GLOSSARY } from "@/i18n/glossary";
 import { escapeHtml } from "@/server/render/escape";
 import { brand, languageMenu, type ChromeContext } from "./chrome";
 import { INFO_PAGES } from "./info-content";
+import { themeMenu } from "./theme-menu";
 
 /** Information-page links; none for mainland-China visitors (plan §4.2). */
 export function infoLinks(ctx: ChromeContext, cls: string): string {
@@ -17,7 +18,7 @@ export function copyright(): string {
 }
 
 /**
- * Footer per approved v2 design: brand + tagline, site links, © + language.
+ * Footer per approved v2 design: brand + tagline, site links, © + language + theme.
  * `narrowOnly`: feed pages show it below 75rem only — wider screens use the
  * three-column shell (shell.css), whose side columns carry the same content.
  */
@@ -26,6 +27,6 @@ export function siteFooter(ctx: ChromeContext, narrowOnly = false): string {
   return (
     `<footer class="ni-ftr${narrowOnly ? " ni-ftr-narrow" : ""}"><div class="ni-ftr-in"><div class="ni-ftr-brand">${brand(ctx, 1.625)}` +
     `<p>${escapeHtml(t("common.tagline"))}</p></div>${infoLinks(ctx, "ni-ftr-links")}` +
-    `<div class="ni-ftr-meta">${copyright()}${languageMenu(ctx)}</div></div></footer>`
+    `<div class="ni-ftr-meta">${copyright()}<span class="ni-sp"></span>${languageMenu(ctx)}${themeMenu(ctx)}</div></div></footer>`
   );
 }

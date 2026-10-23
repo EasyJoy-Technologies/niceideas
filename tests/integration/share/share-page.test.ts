@@ -151,7 +151,9 @@ describe("information pages", () => {
     expect(html).toContain('<a class="ni-brand" href="/">');
     expect(html).toMatch(/<span class="ni-pill">[^<]*21[^<]*<\/span>/);
     expect(html).not.toContain("ni-btn-primary");
-    expect(html).toContain('<details class="ni-menu ni-info-more"><summary>Über uns &amp; Bedingungen</summary>');
+    // Round 5: page links in a header hamburger (icon, labelled); theme menu next to the language.
+    expect(html).toContain('<details class="ni-menu ni-info-more"><summary aria-label="Über uns &amp; Bedingungen"');
+    expect(html).toContain('<details class="ni-menu ni-theme">');
   });
 
   it("serves every legal document in every locale without placeholders", async () => {

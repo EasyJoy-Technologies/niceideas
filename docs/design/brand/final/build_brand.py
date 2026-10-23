@@ -65,7 +65,7 @@ def main():
         "app-icon-rounded.svg": svg(1024, 1024, '<rect width="1024" height="1024" rx="224" fill="#FFFFFF"/>' + mark(512, 512, 760)),
         "favicon.svg": svg(64, 64, '<rect width="64" height="64" rx="14" fill="#FFFFFF"/>' + mark(32, 32, 58)),
     }
-    for name, (ink, accent, bg) in {"lockup": (INK, PURPLE, None), "lockup-dark": (WHITE, LILAC, "#111827")}.items():
+    for name, (ink, accent, bg) in {"lockup": (INK, PURPLE, None), "lockup-dark": (WHITE, LILAC, None)}.items():
         w, h, body = lockup(ink, accent, bg)
         files[f"{name}.svg"] = svg(round(w, 1), h, body)
     w, h, body = lockup(INK, INK, None, [INK]*8, INK)

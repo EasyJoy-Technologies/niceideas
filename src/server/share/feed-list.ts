@@ -4,7 +4,7 @@ import type { ChromeContext } from "./chrome";
 import { feedCard } from "./feed-card";
 import type { FeedPage } from "./load-feed";
 
-export const FEED_TABS = ["all", "articles", "images"] as const;
+export const FEED_TABS = ["all", "articles"] as const;
 export type FeedTab = (typeof FEED_TABS)[number];
 
 /** `?tab=` → tab (unknown values fall back to "all"). */
@@ -15,7 +15,6 @@ export function feedTab(url: URL): FeedTab {
 
 export function tabFilter(tab: FeedTab): FeedFilter {
   if (tab === "articles") return { kind: "article" };
-  if (tab === "images") return { withCover: true };
   return {};
 }
 

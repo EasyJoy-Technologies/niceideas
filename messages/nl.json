@@ -112,8 +112,7 @@
     "readingTime": "{minutes} min. lezen",
     "tab": {
       "all": "Alles",
-      "articles": "Artikelen",
-      "images": "Afbeeldingen"
+      "articles": "Artikelen"
     }
   },
   "follow": {
@@ -167,7 +166,10 @@
     }
   },
   "nav": {
-    "home": "Start"
+    "compose": "Nieuw bericht",
+    "home": "Start",
+    "me": "Profiel",
+    "signIn": "Inloggen"
   },
   "notifications": {
     "comment": "{name} reageerde op je bericht",
@@ -292,5 +294,11 @@
       "body": "De link klopt misschien niet, of de pagina bestaat niet meer.",
       "title": "Pagina niet gevonden"
     }
+  },
+  "theme": {
+    "auto": "Systeemstandaard",
+    "dark": "Donker",
+    "label": "Weergave",
+    "light": "Licht"
   }
 }

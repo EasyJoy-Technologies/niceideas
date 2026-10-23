@@ -112,8 +112,7 @@
     "readingTime": "約 {minutes} 分で読めます",
     "tab": {
       "all": "すべて",
-      "articles": "長文",
-      "images": "画像"
+      "articles": "長文"
     }
   },
   "follow": {
@@ -167,7 +166,10 @@
     }
   },
   "nav": {
-    "home": "ホーム"
+    "compose": "新規投稿",
+    "home": "ホーム",
+    "me": "プロフィール",
+    "signIn": "ログイン"
   },
   "notifications": {
     "comment": "{name}さんがあなたの投稿にコメントしました",
@@ -292,5 +294,11 @@
       "body": "リンクが間違っているか、ページが削除された可能性があります。",
       "title": "ページが見つかりません"
     }
+  },
+  "theme": {
+    "auto": "システムに合わせる",
+    "dark": "ダーク",
+    "label": "外観",
+    "light": "ライト"
   }
 }

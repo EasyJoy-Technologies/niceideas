@@ -1,7 +1,7 @@
 /* Post-page interactions (approved v2 design): actions, comments, report dialog, phone bar. */
 .ni-card { background: var(--ni-color-surface); border-radius: var(--ni-radius-lg); box-shadow: var(--ni-shadow-card); }
-.ni-act[aria-pressed="true"] { color: #e11d48; }
-.ni-act[aria-pressed="true"] .ni-i { fill: #e11d48; stroke: #e11d48; }
+.ni-act[aria-pressed="true"] { color: var(--ni-color-like); }
+.ni-act[aria-pressed="true"] .ni-i { fill: var(--ni-color-like); stroke: var(--ni-color-like); }
 .ni-act:disabled { opacity: 0.6; cursor: default; }
 .ni-btn-sm { height: 2rem; padding: 0 0.75rem; font-size: 0.8125rem; }
 .ni-btn-ghost { background: transparent; color: var(--ni-color-text-primary); border: 1px solid var(--ni-color-border); }
@@ -25,9 +25,9 @@
 .ni-reply-to[hidden] { display: none; }
 .ni-form-error { margin: 0; color: var(--ni-color-danger); font-size: 0.8125rem; }
 
-.ni-cmt { display: flex; gap: 0.75rem; padding: 1rem 0; border-top: 1px solid #f3f4f6; }
+.ni-cmt { display: flex; gap: 0.75rem; padding: 1rem 0; border-top: 1px solid var(--ni-color-divider); }
 .ni-composer + .ni-cmt-list > .ni-cmt:first-child, .ni-note + .ni-cmt-list > .ni-cmt:first-child { border-top: 0; }
-.ni-cmt-ava { width: 2.25rem; height: 2.25rem; border-radius: 50%; flex: none; background: #f3f4f6; color: #9ca3af; display: grid; place-items: center; object-fit: cover; }
+.ni-cmt-ava { width: 2.25rem; height: 2.25rem; border-radius: 50%; flex: none; background: var(--ni-color-hover); color: var(--ni-color-muted); display: grid; place-items: center; object-fit: cover; }
 .ni-replies .ni-cmt-ava { width: 1.875rem; height: 1.875rem; }
 .ni-cmt-main { flex: 1; min-width: 0; }
 .ni-cmt-top { display: flex; align-items: center; gap: 0.375rem; flex-wrap: wrap; font-size: 0.8125rem; }
@@ -36,13 +36,13 @@
 .ni-cmt-actions .ni-act { height: 1.75rem; font-size: 0.75rem; }
 .ni-cmt-actions .ni-i { width: 1rem; height: 1rem; }
 .ni-replies .ni-cmt { padding: 0.75rem 0 0; border-top: 0; }
-.ni-tag { font-size: 0.6875rem; font-weight: 600; padding: 0.0625rem 0.4375rem; border-radius: 999px; background: #f3f4f6; color: var(--ni-color-text-secondary); }
+.ni-tag { font-size: 0.6875rem; font-weight: 600; padding: 0.0625rem 0.4375rem; border-radius: 999px; background: var(--ni-color-hover); color: var(--ni-color-text-secondary); }
 .ni-tag-author { background: var(--ni-color-surface-2); color: var(--ni-color-primary); }
 .ni-cmt.ni-new { animation: ni-flash 1.6s ease-out; }
 @keyframes ni-flash { from { background: var(--ni-color-surface-2); } to { background: transparent; } }
 .ni-more { display: block; text-align: center; font-size: 0.8125rem; font-weight: 600; color: var(--ni-color-primary); padding: 0.75rem 0 0.125rem; }
 
-.ni-dialog { border: 0; border-radius: var(--ni-radius-lg); padding: 1.5rem; width: min(24rem, calc(100vw - 2rem)); box-shadow: 0 24px 48px rgb(31 41 55 / 0.2); }
+.ni-dialog { background: var(--ni-color-surface); color: var(--ni-color-text-primary); border: 0; border-radius: var(--ni-radius-lg); padding: 1.5rem; width: min(24rem, calc(100vw - 2rem)); box-shadow: 0 24px 48px rgb(31 41 55 / 0.2); }
 .ni-dialog::backdrop { background: rgb(17 24 39 / 0.45); }
 .ni-dialog h2 { margin: 0 0 1rem; font-size: 1.125rem; }
 .ni-reasons { display: flex; flex-direction: column; gap: 0.5rem; }

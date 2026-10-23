@@ -1,0 +1,54 @@
+/*
+ * Navigation chrome (round-5 design): theme menu, header search, phone bottom tab bar,
+ * compose sheet trigger. Colours: tokens.css (dark.css overrides them).
+ */
+
+/* theme menu (<details>, no JS) — header, right column, footers */
+.ni-theme summary {
+  display: inline-grid; place-items: center; width: 2rem; height: 2rem; border-radius: 0.5rem; color: var(--ni-color-text-secondary);
+}
+.ni-theme summary:hover, .ni-theme[open] summary { background: var(--ni-color-hover); color: var(--ni-color-primary); }
+.ni-theme summary .ni-i { width: 1.125rem; height: 1.125rem; }
+.ni-theme ul { top: calc(100% + 0.375rem); inset-inline-end: 0; min-width: 11rem; }
+.ni-ftr .ni-theme ul, .ni-aside .ni-theme ul { top: auto; bottom: calc(100% + 0.375rem); }
+.ni-menu li a[aria-current] { color: var(--ni-color-primary); font-weight: 600; }
+.ni-ftr-meta .ni-theme summary { width: 1.75rem; height: 1.75rem; }
+.ni-aside-meta .ni-theme summary { width: 1.5rem; height: 1.5rem; color: inherit; }
+.ni-aside-meta .ni-theme summary:hover, .ni-aside-meta .ni-theme[open] summary { background: none; color: var(--ni-color-primary); }
+.ni-aside-meta .ni-theme summary .ni-i { width: 0.9375rem; height: 0.9375rem; }
+
+/* header search: icon button; the field opens in a row under the header */
+.ni-hdr-find summary { list-style: none; cursor: pointer; }
+.ni-hdr-find summary::-webkit-details-marker { display: none; }
+.ni-hdr-find[open] summary { color: var(--ni-color-primary); }
+.ni-find {
+  position: absolute; inset-inline: 0; top: 100%; display: flex; align-items: center; gap: 0.75rem;
+  padding: 0.625rem max(1rem, calc((100% - 67.5rem) / 2)); background: var(--ni-color-surface); border-bottom: 1px solid var(--ni-color-border);
+}
+.ni-find .ni-search { flex: 1; }
+.ni-find-x { font-size: 0.9375rem; font-weight: 500; color: var(--ni-color-text-secondary); white-space: nowrap; }
+
+/* phone bottom tab bar (feed pages) */
+.ni-tabbar { display: none; }
+@media (max-width: 47.99rem) {
+  .ni-hdr .ni-tabbed { display: none; }
+  .ni-tabbar {
+    position: fixed; inset-inline: 0; bottom: 0; z-index: 6; display: grid; grid-template-columns: repeat(5, 1fr);
+    height: calc(3.5rem + env(safe-area-inset-bottom)); padding-bottom: env(safe-area-inset-bottom);
+    background: var(--ni-color-surface); border-top: 1px solid var(--ni-color-border);
+  }
+  .ni-tabbar-2 { grid-template-columns: repeat(2, 1fr); }
+  .ni-tabbar a {
+    position: relative; min-width: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.125rem;
+    font-size: 0.6875rem; font-weight: 500; color: var(--ni-color-text-secondary);
+  }
+  .ni-tabbar a[aria-current] { color: var(--ni-color-primary); font-weight: 700; }
+  .ni-tabbar .ni-i { width: 1.375rem; height: 1.375rem; }
+  .ni-tab-l { max-width: 100%; padding: 0 0.125rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .ni-tab-plus span { width: 2.75rem; height: 2.25rem; border-radius: 0.875rem; background: var(--ni-color-btn); color: #fff; display: grid; place-items: center; }
+  .ni-tab-plus .ni-i { width: 1.375rem; height: 1.375rem; stroke-width: 2.2; }
+  .ni-tabbar .ni-badge { position: absolute; top: 0.3125rem; inset-inline-start: calc(50% + 0.25rem); margin: 0; }
+  body:has(.ni-tabbar) { padding-bottom: calc(3.5rem + env(safe-area-inset-bottom)); }
+  /* The tab bar carries the account and sign-in; the header keeps brand, search, language, theme. */
+  body:has(.ni-tabbar) .ni-acct-header, body:has(.ni-tabbar) .ni-hdr .ni-btn { display: none; }
+}

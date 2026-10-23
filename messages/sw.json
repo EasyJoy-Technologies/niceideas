@@ -112,8 +112,7 @@
     "readingTime": "Dakika {minutes} za kusoma",
     "tab": {
       "all": "Zote",
-      "articles": "Makala",
-      "images": "Picha"
+      "articles": "Makala"
     }
   },
   "follow": {
@@ -167,7 +166,10 @@
     }
   },
   "nav": {
-    "home": "Nyumbani"
+    "compose": "Chapisho jipya",
+    "home": "Nyumbani",
+    "me": "Wasifu",
+    "signIn": "Ingia"
   },
   "notifications": {
     "comment": "{name} ametoa maoni kwenye chapisho lako",
@@ -292,5 +294,11 @@
       "body": "Huenda kiungo si sahihi, au ukurasa huu haupo tena.",
       "title": "Ukurasa haukupatikana"
     }
+  },
+  "theme": {
+    "auto": "Kama mfumo",
+    "dark": "Giza",
+    "label": "Mwonekano",
+    "light": "Angavu"
   }
 }

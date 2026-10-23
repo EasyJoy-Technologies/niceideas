@@ -107,6 +107,7 @@ export function renderPostPage(ctx: ChromeContext, data: SharePost, social: Page
     main: wx + main,
     // Wide-screen shell only outside mainland China (no site navigation there, plan §4.2).
     side: !!aside,
+    tabBar: false,
     aside: aside ? renderPostAside(ctx, aside) : undefined,
   });
 }

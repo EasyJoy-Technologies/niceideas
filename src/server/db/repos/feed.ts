@@ -6,7 +6,7 @@ import type { Database, Post, PostKind, PostRevision } from "../schema";
 export type FeedCursor = { at: Date; id: string };
 
 /** `query`: case-insensitive substring of the post text (site search). */
-export type FeedFilter = { authorId?: string; kind?: PostKind; withCover?: boolean; query?: string; /** Home timeline: own posts + followed authors. */ followerId?: string };
+export type FeedFilter = { authorId?: string; kind?: PostKind; query?: string; /** Home timeline: own posts + followed authors. */ followerId?: string };
 
 /** LIKE pattern matching `text` literally anywhere. */
 export const containsPattern = (text: string) => `%${text.replace(/[\\%_]/g, (c) => `\\${c}`)}%`;
@@ -52,11 +52,10 @@ async function listHomeFeed(db: Db, me: string, filter: FeedFilter, cursor: Feed
 
 type PostQuery = SelectQueryBuilder<Database, "post", object>;
 
-/** Conditions shared by every feed: live posts, kind / cover tabs, keyset cursor. */
+/** Conditions shared by every feed: live posts, kind tab, keyset cursor. */
 function feedConditions(filter: FeedFilter, cursor: FeedCursor | null): RawBuilder<boolean> {
   const parts: RawBuilder<unknown>[] = [sql`post.status = 'active'`];
   if (filter.kind) parts.push(sql`post.kind = ${filter.kind}`);
-  if (filter.withCover) parts.push(sql`post.cover_media_id IS NOT NULL`);
   if (cursor) parts.push(sql`(post.published_at, post.id) < (${cursor.at}, ${cursor.id}::uuid)`);
   return sql<boolean>`(${sql.join(parts, sql` AND `)})`;
 }

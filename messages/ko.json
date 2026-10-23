@@ -112,8 +112,7 @@
     "readingTime": "{minutes}분 분량",
     "tab": {
       "all": "전체",
-      "articles": "긴 글",
-      "images": "이미지"
+      "articles": "긴 글"
     }
   },
   "follow": {
@@ -167,7 +166,10 @@
     }
   },
   "nav": {
-    "home": "홈"
+    "compose": "새 게시물",
+    "home": "홈",
+    "me": "프로필",
+    "signIn": "로그인"
   },
   "notifications": {
     "comment": "{name}님이 회원님의 게시물에 댓글을 남겼어요",
@@ -292,5 +294,11 @@
       "body": "링크가 잘못되었거나 페이지가 더 이상 존재하지 않습니다.",
       "title": "페이지를 찾을 수 없습니다"
     }
+  },
+  "theme": {
+    "auto": "시스템 설정",
+    "dark": "다크",
+    "label": "화면 테마",
+    "light": "라이트"
   }
 }

@@ -112,8 +112,7 @@
     "readingTime": "{minutes} perc olvasás",
     "tab": {
       "all": "Összes",
-      "articles": "Cikkek",
-      "images": "Képek"
+      "articles": "Cikkek"
     }
   },
   "follow": {
@@ -167,7 +166,10 @@
     }
   },
   "nav": {
-    "home": "Kezdőlap"
+    "compose": "Új bejegyzés",
+    "home": "Kezdőlap",
+    "me": "Profil",
+    "signIn": "Belépés"
   },
   "notifications": {
     "comment": "{name} hozzászólt a bejegyzésedhez",
@@ -292,5 +294,11 @@
       "body": "Lehet, hogy hibás a link, vagy az oldal már nem létezik.",
       "title": "Az oldal nem található"
     }
+  },
+  "theme": {
+    "auto": "Rendszerbeállítás",
+    "dark": "Sötét",
+    "label": "Megjelenés",
+    "light": "Világos"
   }
 }

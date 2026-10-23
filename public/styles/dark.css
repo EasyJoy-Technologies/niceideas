@@ -1,0 +1,44 @@
+/*
+ * Dark palette: overrides the tokens only (tokens.css). Loaded by the server for
+ * theme=dark, or with media="(prefers-color-scheme: dark)" for theme=auto — no script, no flash.
+ */
+:root {
+  color-scheme: dark;
+
+  --ni-color-primary: #a78bfa;
+  --ni-color-primary-hover: #c4b5fd;
+  --ni-color-secondary: #7c3aed;
+  --ni-color-neutral: #0f1115;
+  --ni-color-surface: #171a21;
+  --ni-color-surface-2: #241f36;
+  --ni-color-text-primary: #e6e8ec;
+  --ni-color-text-secondary: #9aa1ad;
+  --ni-color-border: #2a2f3a;
+  --ni-color-success: #4ade80;
+  --ni-color-warning: #fbbf24;
+  --ni-color-danger: #f87171;
+  --ni-color-info: #60a5fa;
+
+  --ni-color-btn: #7c3aed;
+  --ni-color-btn-hover: #8b5cf6;
+  --ni-color-hover: #222631;
+  --ni-color-divider: #232733;
+  --ni-color-muted: #7d8494;
+  --ni-color-input: #1f232c;
+  --ni-color-seg: #1f232c;
+  --ni-color-header: rgb(15 17 21 / 0.86);
+  --ni-color-soft-hover: #2f2850;
+  --ni-color-like: #fb7185;
+  --ni-color-danger-soft: #3a1418;
+  --ni-color-success-soft: #0f2a1a;
+  --ni-color-source-bg: #2a1a0e;
+  --ni-color-source-hover: #3a2412;
+  --ni-color-source-text: #fdba74;
+  --ni-color-source-border: #5a3416;
+  --ni-color-code-bg: #0b0d11;
+  --ni-color-banner: linear-gradient(135deg, #2a2440 0%, #3b2f63 55%, #4c3d80 100%);
+  --ni-shadow-card: 0 1px 2px rgb(0 0 0 / 0.4);
+  --ni-shadow-pop: 0 12px 32px rgb(0 0 0 / 0.5);
+  --ni-shadow-chip: 0 1px 2px rgb(0 0 0 / 0.4);
+  --ni-ring: 0 0 0 3px rgb(167 139 250 / 0.25);
+}

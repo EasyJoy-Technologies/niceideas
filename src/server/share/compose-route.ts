@@ -27,7 +27,7 @@ function errorOf(err: unknown): ComposeError {
 
 /**
  * POST /api/web/compose (same-origin multipart form, works without JS). Success →
- * the new post page; failure → home with `?compose=<error>`. Under /api so the
+ * the new post page; failure → home with `?compose=<error>#compose` (reopens the phone sheet). Under /api so the
  * page proxy (body-size capped) is not in the upload path; region rule applied here.
  */
 export async function composeRoute(request: Request): Promise<Response> {
@@ -44,6 +44,6 @@ export async function composeRoute(request: Request): Promise<Response> {
   } catch (err) {
     const code = errorOf(err);
     if (code === "failed") console.error(`[compose] failed errorId=${randomUUID()}`, err);
-    return see(`/?compose=${COMPOSE_ERRORS.includes(code) ? code : "failed"}`);
+    return see(`/?compose=${COMPOSE_ERRORS.includes(code) ? code : "failed"}#compose`);
   }
 }

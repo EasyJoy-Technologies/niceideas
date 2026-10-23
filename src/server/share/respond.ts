@@ -9,6 +9,7 @@ import { ensureSourceRegistry } from "./source-registry";
 import { countryFromHeaders, decideAccess, logRegionDecision, type AccessClass } from "@/server/region/region-policy";
 import type { ChromeContext } from "./chrome";
 import { pageIntl, requestLocale } from "./locale";
+import { requestTheme } from "./theme";
 
 function signInOrigin(): string {
   const s = webAuthSettings();
@@ -53,7 +54,7 @@ export async function pageContext(request: Request, access: AccessClass = "share
   await ensureSourceRegistry(getDb()).catch(() => undefined);
   const viewer = decision.restricted ? null : await sessionProfile(getDb(), request.headers).catch(() => null);
   const unread = viewer ? await unreadNotifications(getDb(), viewer).catch(() => 0) : 0;
-  return { intl: await pageIntl(requestLocale(request)), restricted: decision.restricted, path, viewer, unread };
+  return { intl: await pageIntl(requestLocale(request)), restricted: decision.restricted, path, viewer, unread, theme: requestTheme(request) };
 }
 
 /** HTML response; output varies by language and region, so shared caches must not store it. */

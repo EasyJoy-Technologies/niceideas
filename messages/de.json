@@ -112,8 +112,7 @@
     "readingTime": "{minutes} Min. Lesezeit",
     "tab": {
       "all": "Alle",
-      "articles": "Artikel",
-      "images": "Bilder"
+      "articles": "Artikel"
     }
   },
   "follow": {
@@ -167,7 +166,10 @@
     }
   },
   "nav": {
-    "home": "Startseite"
+    "compose": "Neuer Beitrag",
+    "home": "Startseite",
+    "me": "Profil",
+    "signIn": "Anmelden"
   },
   "notifications": {
     "comment": "{name} hat deinen Beitrag kommentiert",
@@ -292,5 +294,11 @@
       "body": "Der Link ist möglicherweise falsch oder die Seite existiert nicht mehr.",
       "title": "Seite nicht gefunden"
     }
+  },
+  "theme": {
+    "auto": "Systemeinstellung",
+    "dark": "Dunkel",
+    "label": "Darstellung",
+    "light": "Hell"
   }
 }

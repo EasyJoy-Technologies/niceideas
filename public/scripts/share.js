@@ -26,12 +26,17 @@
   }
 
   // Pop-up menus (<details>: language, account): a click outside or Esc closes them.
-  const MENUS = "details.ni-lang, details.ni-menu";
+  const MENUS = "details.ni-lang, details.ni-menu, details.ni-hdr-find";
   const closeMenus = (except) => {
     for (const m of d.querySelectorAll(MENUS)) if (m.open && m !== except) m.open = false;
   };
   d.addEventListener("click", (e) => closeMenus(e.target.closest?.(MENUS)));
   d.addEventListener("keydown", (e) => { if (e.key === "Escape") closeMenus(null); });
+  // Header search: focus the field when it opens; "Cancel" closes it.
+  for (const find of d.querySelectorAll("details.ni-hdr-find")) {
+    find.addEventListener("toggle", () => { if (find.open) find.querySelector("input")?.focus(); });
+    find.querySelector("[data-close]")?.addEventListener("click", () => { find.open = false; });
+  }
 
 
   let box;
