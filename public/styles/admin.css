@@ -91,7 +91,10 @@ body.ad { background: var(--ni-color-neutral); font-size: 0.875rem; }
 .ad-dot { width: 0.5rem; height: 0.5rem; border-radius: 50%; background: var(--ni-color-success); }
 
 /* tables */
-.ad-tbl { padding: 0; overflow-x: auto; }
+.ad-tbl { padding: 0; }
+/* No overflow clipping (row pop-ups must show): round the header cells instead. */
+.ad-tbl > table:first-child th:first-child { border-start-start-radius: calc(0.75rem - 1px); }
+.ad-tbl > table:first-child th:last-child { border-start-end-radius: calc(0.75rem - 1px); }
 .ad-tbl h2 { padding: 1rem 1.125rem 0; }
 .ad-tbl table { width: 100%; border-collapse: collapse; }
 .ad-tbl th { text-align: start; font-weight: 500; font-size: 0.75rem; color: var(--ni-color-text-secondary); background: var(--ni-color-hover); padding: 0.5rem 1.125rem; white-space: nowrap; }
@@ -177,4 +180,13 @@ select.ad-in { width: auto; }
   .ad-ct { padding: 1rem; }
   .ad-rr { grid-template-columns: 1.5rem minmax(0, 1fr) 2rem; }
   .ad-rr-r, .ad-rr-at { display: none; }
+  /* Tables become stacked rows: first cell full width, others labelled, action at the end. */
+  .ad-tbl thead { display: none; }
+  .ad-tbl tr { display: flex; flex-wrap: wrap; align-items: center; gap: 0.375rem 0.875rem; padding: 0.75rem 1rem; border-top: 1px solid var(--ni-color-divider); }
+  .ad-tbl tbody tr:first-child { border-top: 0; }
+  .ad-tbl td { display: block; padding: 0; border: 0; font-size: 0.8125rem; }
+  .ad-tbl td:first-child { flex-basis: 100%; font-size: 0.875rem; }
+  .ad-tbl td[data-label]:not(:first-child)::before { content: attr(data-label) " "; color: var(--ni-color-muted); }
+  .ad-tbl td:empty { display: none; }
+  .ad-tbl .a { width: auto; margin-inline-start: auto; }
 }
