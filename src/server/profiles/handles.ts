@@ -20,7 +20,18 @@ export function isValidHandle(handle: string): boolean {
   return HANDLE_PATTERN.test(handle) && !RESERVED_HANDLES.has(handle);
 }
 
-/** Random, unguessable default handle such as `u7k2mfq9xa` (user may change it later). */
+/** NiceMatrix (Logto) user id → handle (lowercased); null when it cannot be one. Used while the user has no username. */
+export function handleFromUserId(userId: string): string | null {
+  const h = userId.toLowerCase();
+  return isValidHandle(h) ? h : null;
+}
+
+/** True for a handle made by generateHandle() (never chosen by the user). */
+export function isGeneratedHandle(handle: string): boolean {
+  return new RegExp(`^u[${ALPHABET}]{9}$`).test(handle);
+}
+
+/** Random, unguessable fallback handle such as `u7k2mfq9xa` (user may change it later). */
 export function generateHandle(): string {
   let out = "u";
   for (let i = 0; i < 9; i++) out += ALPHABET[randomInt(ALPHABET.length)];

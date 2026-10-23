@@ -2,7 +2,7 @@ import type { JWTPayload } from "jose";
 import type { Db } from "@/server/db/client";
 import type { Profile } from "@/server/db/schema";
 import { isUniqueViolation } from "@/server/db/repos/profiles";
-import { HANDLE_PATTERN, isValidHandle, RESERVED_HANDLES } from "./handles";
+import { HANDLE_PATTERN, handleFromUserId, isGeneratedHandle, isValidHandle, RESERVED_HANDLES } from "./handles";
 
 const MAX_NAME = 50;
 
@@ -27,16 +27,17 @@ function unusableReason(username: string): string {
 
 /**
  * Web sign-in (plan §3): the handle follows the NiceMatrix username (re-synced at every
- * sign-in; users without a usable username keep their generated handle). An empty
+ * sign-in). No username → a random handle becomes the NiceMatrix user id (a handle that came
+ * from a username is kept, so a missing claim never breaks links); an unusable username keeps the current handle. An empty
  * display name / avatar is filled from the ID token; values set on NiceIdeas are kept.
  */
 export async function syncProfileFromClaims(db: Db, profile: Profile, claims: JWTPayload): Promise<Profile> {
   const patch: { display_name?: string; avatar_url?: string; handle?: string } = {};
   const username = claimString(claims, "username");
-  const handle = handleFromUsername(username);
+  const handle = username ? handleFromUsername(username) : isGeneratedHandle(profile.handle) ? handleFromUserId(profile.user_id) : null;
   if (handle && handle !== profile.handle) patch.handle = handle;
   // Diagnostics only (no personal data): why the handle did or did not follow the username.
-  const outcome = !username ? "no_username" : !handle ? "unusable" : patch.handle ? "updated" : "unchanged";
+  const outcome = !username ? (patch.handle ? "user_id" : "no_username") : !handle ? "unusable" : patch.handle ? "updated" : "unchanged";
   console.info(JSON.stringify({ event: "handle_sync", result: outcome, ...(outcome === "unusable" ? { reason: unusableReason(username) } : {}) }));
   if (!profile.display_name) {
     const name = claimString(claims, "name") || claimString(claims, "nickname") || claimString(claims, "username");
