@@ -97,6 +97,7 @@
 - nginx 不用改（8 MB 小于现有的 160 MB 上限）。
 
 ## 11. 需要确认的问题
+- 后台已在契约里答复（API 1.2.743，提交 c9f4ff70）：第 1、2、4 条都按建议定了。S1 已符合；S2 要做的：`media_failed` 带 `details.reason`（暂时性：fetch_failed / fetch_expired / temporarily_unavailable；永久性：too_large / unsupported_format / decode_failed / transcode_failed），永久性失败按 (owner, ref) 记住，之后再收到取件地址也不再拉取（现在 `upsertMediaJob` 收到新地址会重新排队失败的任务，S2 要区分）。
 1. **sourceRevision 相同但内容不同**：媒体从 pending 变 ready 时版本号可能不变，所以按“接受并更新”处理。请后台确认。
 2. **失败媒体什么时候重试**：后台“内容没变不推送”，那失败的媒体就拿不到新的取件地址。建议后台收到 media_failed 后主动推送一次（同版本、同内容、带新地址）；NiceIdeas 只会重新排队失败的媒体。
 3. ~~**图片解码上限**~~ 已定（保留 1 亿像素）：2 vCPU / 1 GB 内存解不了任意大的图（比如 2 亿像素的 PNG 解码要约 800 MB 内存）。建议保留现在的 1 亿像素上限，超出发 media_failed（too_large）。普通长截图（1080×30000 约 3200 万像素）不受影响。需要 Xianglin 决定。
