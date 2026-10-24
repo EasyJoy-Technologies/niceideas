@@ -1,6 +1,6 @@
 # 乐趣记事本分享（由后台写入）— NiceIdeas 实现方案（2026-10-23）
 
-状态：Xianglin 已确认（2026-10-23 22:15）。S1 已实现（v1.0.63，未部署）；S2、E 待做。
+状态：Xianglin 已确认（2026-10-23 22:15）。S1 已上 staging（v1.0.63，后台联调通过）；S2 实现计划见 `2026-10-24-s2-worker.md`；E 待做。
 
 ## 0. 现状核对（已查）
 - 分享密钥：本机 `/root/keys/niceideas-share-staging.env`、`niceideas-share-prod.env`（变量 `NICEIDEAS_SHARE_HMAC_KEY`）。
