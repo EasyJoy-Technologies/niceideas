@@ -49,6 +49,10 @@ describe("image ingest", () => {
     if (v.kind !== "image") throw new Error("expected image");
     expect(v.webp.map((r) => r.width)).toEqual([480, 960, 1600]);
     expect(v.fallback.mime).toBe("image/jpeg");
+    // 6 MP, wider than 1600: the viewer's zoom rendition keeps every pixel.
+    expect(v.large).toMatchObject({ mime: "image/webp", width: 2000, height: 3000 });
+    expect(mediaKeys(media)).toContain(v.large!.key);
+    expect(media.byte_size).toBe([...v.webp, v.fallback, v.large!].reduce((n, r) => n + r.bytes, 0));
     const original = await sharp(await jpegWithExif()).metadata();
     expect(original.orientation).toBe(6);
     expect(original.exif).toBeDefined();
@@ -68,6 +72,7 @@ describe("image ingest", () => {
     if (v.kind !== "image") throw new Error("expected image");
     expect(v.webp.map((r) => r.width)).toEqual([300]);
     expect(v.fallback.mime).toBe("image/png");
+    expect(v.large).toBeUndefined();
   });
 
   it("rejects svg, hash mismatch, oversize and pixel bombs (no per-user quota)", async () => {

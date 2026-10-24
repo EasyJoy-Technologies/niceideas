@@ -451,6 +451,13 @@
         "body": "A szerző törölte ezt a bejegyzést.",
         "title": "A bejegyzést törölték"
       }
+    },
+    "viewer": {
+      "label": "Képnézegető",
+      "zoom": "Nagyítás",
+      "previous": "Előző kép",
+      "next": "Következő kép",
+      "error": "A képet nem sikerült betölteni"
     }
   },
   "status": {

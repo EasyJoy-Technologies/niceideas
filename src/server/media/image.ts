@@ -9,6 +9,8 @@ const FALLBACK_MAX_WIDTH = 1600;
 const WEBP_MAX_SIDE = 16383;
 /** JPEG's limit (65535) with a margin: very tall images are narrowed until they fit (no slicing). */
 const MAX_HEIGHT = 65500;
+/** Zoom rendition for the image viewer: at most 4096 × 4096 worth of pixels (decodes reliably on phones). */
+export const LARGE_MAX_PIXELS = 4096 * 4096;
 const TRANSIENT = /no space left|ENOSPC|EIO|out of memory|cannot allocate/i;
 
 export type ProcessedImage = {
@@ -18,6 +20,8 @@ export type ProcessedImage = {
   webp: MediaRendition[];
   /** Static (first frame) JPEG / PNG for browsers without WebP and for the share card. */
   fallback: MediaRendition;
+  /** Zoom rendition (WebP) when the image has more detail than the largest responsive rendition shows. */
+  large: MediaRendition | null;
 };
 
 export type ImageRejectReason = "too_large" | "decode_failed";
@@ -38,10 +42,22 @@ function fitWidth(target: number, width: number, height: number): { w: number; h
 }
 
 /**
- * Decodes the image, applies EXIF orientation, and writes responsive renditions plus one static
- * fallback. `animated` (NiceNote shares): animated GIF / WebP keep their animation in the WebP
- * renditions when all frames fit the pixel limit (otherwise the first frame is used). sharp drops
- * all metadata (EXIF/GPS/XMP) unless explicitly asked to keep it, so outputs carry none.
+ * Size of the zoom rendition (plan docs/plan/2026-10-24-image-viewer.md §4): scaled by area to at most
+ * LARGE_MAX_PIXELS, each side within WebP's limit, never upscaled; null when it would not be wider than
+ * the largest responsive rendition (small images, long screenshots).
+ */
+export function largeRenditionSize(width: number, height: number, largestWidth: number): { w: number; h: number } | null {
+  const scale = Math.min(1, Math.sqrt(LARGE_MAX_PIXELS / (width * height)), WEBP_MAX_SIDE / width, WEBP_MAX_SIDE / height);
+  const w = Math.floor(width * scale);
+  return w > largestWidth ? { w, h: Math.max(1, Math.round((height * w) / width)) } : null;
+}
+
+/**
+ * Decodes the image, applies EXIF orientation, and writes responsive renditions, one static
+ * fallback and (still images only) the zoom rendition. `animated` (NiceNote shares): animated
+ * GIF / WebP keep their animation in the WebP renditions when all frames fit the pixel limit
+ * (otherwise the first frame is used). sharp drops all metadata (EXIF/GPS/XMP) unless explicitly
+ * asked to keep it, so outputs carry none.
  */
 export async function processImage(input: string, workDir: string, maxPixels: number, opts: { animated?: boolean } = {}): Promise<ProcessedImage> {
   let meta;
@@ -86,11 +102,21 @@ export async function processImage(input: string, workDir: string, maxPixels: nu
     const fallbackName = usePng ? "fallback.png" : "fallback.jpg";
     const pipeline = stillImage().resize({ width: fb.w, withoutEnlargement: true });
     const info = await (usePng ? pipeline.png({ compressionLevel: 9 }) : pipeline.flatten({ background: "#ffffff" }).jpeg({ quality: 85, mozjpeg: true })).toFile(path.join(workDir, fallbackName));
+
+    // Animated images (any multi-frame source) keep their responsive set only: every frame would be enlarged.
+    const ls = pages > 1 ? null : largeRenditionSize(width, height, Math.max(...webp.map((r) => r.width ?? 0)));
+    let large: MediaRendition | null = null;
+    if (ls) {
+      // Encoder effort 2: about half the encoding time of the default for ~5 % more bytes (uploads wait for it).
+      const li = await stillImage().resize({ width: ls.w }).webp({ quality: 82, effort: 2 }).toFile(path.join(workDir, "large.webp"));
+      large = { key: "large.webp", mime: "image/webp", bytes: li.size, width: li.width, height: li.height };
+    }
     return {
       width,
       height,
       webp,
       fallback: { key: fallbackName, mime: usePng ? "image/png" : "image/jpeg", bytes: info.size, width: info.width, height: info.height },
+      large,
     };
   } catch (err) {
     // Disk / memory trouble is not the image's fault: let the caller retry later.

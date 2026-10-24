@@ -451,6 +451,13 @@
         "body": "Yazar bu gönderiyi sildi.",
         "title": "Bu gönderi silindi"
       }
+    },
+    "viewer": {
+      "label": "Görsel görüntüleyici",
+      "zoom": "Yakınlaştır",
+      "previous": "Önceki görsel",
+      "next": "Sonraki görsel",
+      "error": "Görsel yüklenemedi"
     }
   },
   "status": {

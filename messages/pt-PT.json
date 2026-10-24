@@ -451,6 +451,13 @@
         "body": "O autor eliminou esta publicação.",
         "title": "Esta publicação foi eliminada"
       }
+    },
+    "viewer": {
+      "label": "Visualizador de imagens",
+      "zoom": "Ampliar",
+      "previous": "Imagem anterior",
+      "next": "Imagem seguinte",
+      "error": "Não foi possível carregar a imagem"
     }
   },
   "status": {

@@ -451,6 +451,13 @@
         "body": "De auteur heeft dit bericht verwijderd.",
         "title": "Dit bericht is verwijderd"
       }
+    },
+    "viewer": {
+      "label": "Afbeeldingsviewer",
+      "zoom": "Zoomen",
+      "previous": "Vorige afbeelding",
+      "next": "Volgende afbeelding",
+      "error": "De afbeelding kon niet worden geladen"
     }
   },
   "status": {

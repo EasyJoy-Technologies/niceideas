@@ -451,6 +451,13 @@
         "body": "Autor usunął ten wpis.",
         "title": "Wpis został usunięty"
       }
+    },
+    "viewer": {
+      "label": "Przeglądarka obrazów",
+      "zoom": "Powiększ",
+      "previous": "Poprzedni obraz",
+      "next": "Następny obraz",
+      "error": "Nie udało się wczytać obrazu"
     }
   },
   "status": {

@@ -86,7 +86,12 @@ describe("share page /p/<slug>", () => {
     expect(html).toContain('<h1 class="ni-title">Lake trip</h1>');
     expect(html).toMatch(new RegExp(`og:image" content="http://localhost:3000/p/${article.slug}/og/wide\\.jpg\\?v=[a-z0-9]+"`));
     expect(html).toMatch(new RegExp(`itemprop="image" content="http://localhost:3000/p/${article.slug}/og/square\\.jpg`));
-    expect(html).toContain("data-lightbox");
+    // Images open the viewer: its script, styles and labels come with the page.
+    expect(html).toMatch(/<a class="ni-zoom" href="[^"]+" data-pswp-width="\d+" data-pswp-height="\d+" data-pswp-srcset="/);
+    expect(html).toContain('src="/scripts/viewer.js?v=');
+    expect(html).toContain('href="/styles/photoswipe.css?v=');
+    expect(html).toContain('data-zoom-label="Zoom"');
+    expect(html).toContain('data-image-error-label="The image couldn&#39;t be loaded"');
   });
 
   it("share images are JPEG, exact size, ≤ 300 KB; unknown variants 404", async () => {

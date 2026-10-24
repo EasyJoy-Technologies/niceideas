@@ -451,6 +451,13 @@
         "body": "Marubucin ya share wannan rubutun.",
         "title": "An share rubutun"
       }
+    },
+    "viewer": {
+      "label": "Mai duba hotuna",
+      "zoom": "Zuƙowa",
+      "previous": "Hoton baya",
+      "next": "Hoto na gaba",
+      "error": "An kasa loda hoton"
     }
   },
   "status": {

@@ -4,7 +4,7 @@ import { cardTitle } from "./card";
 import { publicUrl } from "@/server/media/keys";
 import { renderDocumentHtml } from "@/server/render/document-html";
 import { escapeHtml } from "@/server/render/escape";
-import { responsivePicture } from "@/server/render/media-html";
+import { responsivePicture, zoomLink } from "@/server/render/media-html";
 import type { ChromeContext } from "./chrome";
 import { icon } from "./icons";
 import type { FeedItem } from "./load-feed";
@@ -37,7 +37,7 @@ function articleBlock(ctx: ChromeContext, item: FeedItem): string {
 
 /**
  * Short posts show in full: text / to-do, then images as thumbnails (opening the
- * lightbox) and audio players, in document order (compose v2 design).
+ * image viewer) and audio players, in document order (compose v2 design).
  */
 function shortBlock(item: FeedItem): string {
   const key = (b: AnyBlock) => blockMediaKey(b) ?? "";
@@ -47,8 +47,8 @@ function shortBlock(item: FeedItem): string {
     .flatMap((m) => (m && m.variants.kind === "image" ? [m.variants] : []))
     .map((v) => {
       const small = v.webp[0] ?? v.fallback;
-      const large = v.webp.at(-1) ?? v.fallback;
-      return `<a class="ni-zoom" href="${publicUrl(large.key)}" data-lightbox><img src="${publicUrl(small.key)}" width="${small.width}" height="${small.height}" alt="" loading="lazy" decoding="async"></a>`;
+      const thumb = `<img src="${publicUrl(small.key)}" width="${small.width}" height="${small.height}" alt="" loading="lazy" decoding="async">`;
+      return zoomLink(v, thumb, publicUrl, { cropped: true });
     })
     .join("");
   const audios = withBlocks(item.document, (b) => b.type === "audio" && item.media.has(key(b)));

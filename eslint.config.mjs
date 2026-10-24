@@ -12,7 +12,7 @@ const eslintConfig = defineConfig([
       "react/jsx-no-literals": ["error", { noStrings: true, ignoreProps: true, allowedStrings: [] }],
     },
   },
-  globalIgnores([".next/**", "out/**", "build/**", "next-env.d.ts", "coverage/**", "dist/**", "public/scripts/compose.js"]),
+  globalIgnores([".next/**", "out/**", "build/**", "next-env.d.ts", "coverage/**", "dist/**", "public/scripts/compose.js", "public/scripts/viewer.js"]),
 ]);
 
 export default eslintConfig;

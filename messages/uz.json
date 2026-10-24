@@ -451,6 +451,13 @@
         "body": "Muallif bu postni o'chirdi.",
         "title": "Post o'chirildi"
       }
+    },
+    "viewer": {
+      "label": "Rasm ko‘rish vositasi",
+      "zoom": "Kattalashtirish",
+      "previous": "Oldingi rasm",
+      "next": "Keyingi rasm",
+      "error": "Rasmni yuklab bo‘lmadi"
     }
   },
   "status": {

@@ -451,6 +451,13 @@
         "body": "The author has deleted this post.",
         "title": "This post was deleted"
       }
+    },
+    "viewer": {
+      "label": "Image viewer",
+      "zoom": "Zoom",
+      "previous": "Previous image",
+      "next": "Next image",
+      "error": "The image couldn't be loaded"
     }
   },
   "status": {

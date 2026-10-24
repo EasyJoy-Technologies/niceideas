@@ -6,15 +6,15 @@ export function mediaPrefix(storageId: string): string {
   return `m/${storageId}`;
 }
 
-/** Every object key belonging to a media row. */
-export function mediaKeys(media: Pick<Media, "variants">): string[] {
-  const v = media.variants;
-  return v.kind === "image" ? [...v.webp.map((r) => r.key), v.fallback.key] : [v.original.key];
-}
-
+/** Every stored rendition of a media row (storage, publication, deletion and size all use this list). */
 export function renditionsOf(media: Pick<Media, "variants">): MediaRendition[] {
   const v = media.variants;
-  return v.kind === "image" ? [...v.webp, v.fallback] : [v.original];
+  return v.kind === "image" ? [...v.webp, v.fallback, ...(v.large ? [v.large] : [])] : [v.original];
+}
+
+/** Every object key belonging to a media row. */
+export function mediaKeys(media: Pick<Media, "variants">): string[] {
+  return renditionsOf(media).map((r) => r.key);
 }
 
 export function publicUrl(key: string): string {

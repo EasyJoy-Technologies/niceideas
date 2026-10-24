@@ -451,6 +451,13 @@
         "body": "Penulis telah menghapus postingan ini.",
         "title": "Postingan dihapus"
       }
+    },
+    "viewer": {
+      "label": "Penampil gambar",
+      "zoom": "Perbesar",
+      "previous": "Gambar sebelumnya",
+      "next": "Gambar berikutnya",
+      "error": "Gambar tidak dapat dimuat"
     }
   },
   "status": {

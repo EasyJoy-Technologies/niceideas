@@ -451,6 +451,13 @@
         "body": "Penulis telah memadam siaran ini.",
         "title": "Siaran dipadam"
       }
+    },
+    "viewer": {
+      "label": "Pemapar imej",
+      "zoom": "Zum",
+      "previous": "Imej sebelumnya",
+      "next": "Imej seterusnya",
+      "error": "Imej tidak dapat dimuatkan"
     }
   },
   "status": {

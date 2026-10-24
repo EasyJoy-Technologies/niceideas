@@ -451,6 +451,13 @@
         "body": "Der Autor hat diesen Beitrag gelöscht.",
         "title": "Dieser Beitrag wurde gelöscht"
       }
+    },
+    "viewer": {
+      "label": "Bildbetrachter",
+      "zoom": "Zoomen",
+      "previous": "Vorheriges Bild",
+      "next": "Nächstes Bild",
+      "error": "Das Bild konnte nicht geladen werden"
     }
   },
   "status": {

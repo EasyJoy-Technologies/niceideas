@@ -21,15 +21,31 @@ export function responsivePicture(v: ImageVariants, sizes: string, attrs: string
   return `<picture>${img(` srcset="${srcset}" sizes="${sizes}"`)}</picture>`;
 }
 
-/** Responsive image with lightbox link; "" when the media is missing or not an image (never a broken element). */
+/** Present in a page exactly when it has images that open the viewer (pages load /scripts/viewer.js then). */
+export const ZOOM_LINK_MARKER = '<a class="ni-zoom"';
+
+/**
+ * Link that opens the image viewer (/scripts/viewer.js; without JS it opens the image): points at the
+ * most detailed rendition and tells the viewer its size and every rendition, so the browser downloads
+ * the zoom rendition only when the view needs it. `cropped`: the thumbnail is a crop (feed squares).
+ */
+export function zoomLink(v: ImageVariants, inner: string, publicUrl: MediaUrl, opts: { cropped?: boolean } = {}): string {
+  const top = v.large ?? v.webp.at(-1) ?? v.fallback;
+  const all = [...v.webp, ...(v.large ? [v.large] : [])].filter((r) => r.width);
+  const sized = top.width && top.height;
+  const data = sized
+    ? ` data-pswp-width="${top.width}" data-pswp-height="${top.height}" data-pswp-srcset="${all.map((r) => `${publicUrl(r.key)} ${r.width}w`).join(", ")}"${opts.cropped ? ' data-cropped="true"' : ""}`
+    : "";
+  return `${ZOOM_LINK_MARKER} href="${publicUrl(top.key)}"${data}>${inner}</a>`;
+}
+
+/** Responsive image opening the viewer; "" when the media is missing or not an image (never a broken element). */
 export function imageFigure(media: Media | undefined, text: { alt?: string; caption?: string }, eager: boolean, publicUrl: MediaUrl): string {
   if (!media || media.variants.kind !== "image") return "";
   const v = media.variants;
-  const largest = v.webp.at(-1) ?? v.fallback;
   const alt = escapeHtml(text.alt ?? text.caption ?? "");
   const loading = eager ? 'fetchpriority="high"' : 'loading="lazy"';
-  const img = responsivePicture(v, IMAGE_SIZES, `alt="${alt}" ${loading}`, publicUrl);
-  const zoom = `<a class="ni-zoom" href="${publicUrl(largest.key)}" data-lightbox>${img}</a>`;
+  const zoom = zoomLink(v, responsivePicture(v, IMAGE_SIZES, `alt="${alt}" ${loading}`, publicUrl), publicUrl);
   const caption = text.caption ? `<figcaption>${escapeHtml(text.caption)}</figcaption>` : "";
   return `<figure class="ni-image">${zoom}${caption}</figure>`;
 }

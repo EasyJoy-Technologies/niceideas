@@ -451,6 +451,13 @@
         "body": "Binura ng author ang post na ito.",
         "title": "Binura ang post"
       }
+    },
+    "viewer": {
+      "label": "Tagatingin ng larawan",
+      "zoom": "I-zoom",
+      "previous": "Nakaraang larawan",
+      "next": "Susunod na larawan",
+      "error": "Hindi ma-load ang larawan"
     }
   },
   "status": {

@@ -451,6 +451,13 @@
         "body": "L’autore ha eliminato questo post.",
         "title": "Questo post è stato eliminato"
       }
+    },
+    "viewer": {
+      "label": "Visualizzatore di immagini",
+      "zoom": "Ingrandisci",
+      "previous": "Immagine precedente",
+      "next": "Immagine successiva",
+      "error": "Impossibile caricare l'immagine"
     }
   },
   "status": {

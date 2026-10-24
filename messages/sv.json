@@ -451,6 +451,13 @@
         "body": "Författaren har tagit bort det här inlägget.",
         "title": "Inlägget har tagits bort"
       }
+    },
+    "viewer": {
+      "label": "Bildvisare",
+      "zoom": "Zooma",
+      "previous": "Föregående bild",
+      "next": "Nästa bild",
+      "error": "Bilden kunde inte läsas in"
     }
   },
   "status": {

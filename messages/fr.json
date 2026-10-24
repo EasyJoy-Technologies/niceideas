@@ -451,6 +451,13 @@
         "body": "L’auteur a supprimé cette publication.",
         "title": "Cette publication a été supprimée"
       }
+    },
+    "viewer": {
+      "label": "Visionneuse d'images",
+      "zoom": "Zoomer",
+      "previous": "Image précédente",
+      "next": "Image suivante",
+      "error": "Impossible de charger l'image"
     }
   },
   "status": {

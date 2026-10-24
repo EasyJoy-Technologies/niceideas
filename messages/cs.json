@@ -451,6 +451,13 @@
         "body": "Autor tento příspěvek smazal.",
         "title": "Příspěvek byl smazán"
       }
+    },
+    "viewer": {
+      "label": "Prohlížeč obrázků",
+      "zoom": "Přiblížit",
+      "previous": "Předchozí obrázek",
+      "next": "Další obrázek",
+      "error": "Obrázek se nepodařilo načíst"
     }
   },
   "status": {

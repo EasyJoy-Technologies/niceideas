@@ -1,11 +1,14 @@
 #!/usr/bin/env node
 // Bundles the browser-side enhancement scripts that need npm packages (src/client/*)
-// into public/scripts/*.js (generated, git-ignored). Runs before `next build`.
+// into public/scripts/*.js, and copies their vendor styles into public/styles (generated,
+// git-ignored). Runs before `next build`.
 import { build } from "esbuild";
+import { copyFileSync } from "node:fs";
 import path from "node:path";
 
 const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), "..");
-const ENTRIES = { compose: "src/client/compose/index.ts" };
+const ENTRIES = { compose: "src/client/compose/index.ts", viewer: "src/client/viewer/index.ts" };
+const VENDOR_STYLES = { "photoswipe.css": "node_modules/photoswipe/dist/photoswipe.css" };
 
 for (const [name, entry] of Object.entries(ENTRIES)) {
   await build({
@@ -20,4 +23,8 @@ for (const [name, entry] of Object.entries(ENTRIES)) {
     logLevel: "warning",
   });
   console.log(`built public/scripts/${name}.js`);
+}
+for (const [name, file] of Object.entries(VENDOR_STYLES)) {
+  copyFileSync(path.join(ROOT, file), path.join(ROOT, "public", "styles", name));
+  console.log(`copied public/styles/${name}`);
 }

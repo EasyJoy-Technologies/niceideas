@@ -451,6 +451,13 @@
         "body": "Tác giả đã xóa bài viết này.",
         "title": "Bài viết đã bị xóa"
       }
+    },
+    "viewer": {
+      "label": "Trình xem hình ảnh",
+      "zoom": "Thu phóng",
+      "previous": "Hình ảnh trước",
+      "next": "Hình ảnh tiếp theo",
+      "error": "Không tải được hình ảnh"
     }
   },
   "status": {

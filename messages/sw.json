@@ -451,6 +451,13 @@
         "body": "Mwandishi amefuta chapisho hili.",
         "title": "Chapisho hili limefutwa"
       }
+    },
+    "viewer": {
+      "label": "Kitazamaji picha",
+      "zoom": "Kuza",
+      "previous": "Picha iliyotangulia",
+      "next": "Picha inayofuata",
+      "error": "Imeshindwa kupakia picha"
     }
   },
   "status": {

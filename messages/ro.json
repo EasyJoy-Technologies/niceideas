@@ -451,6 +451,13 @@
         "body": "Autorul a șters această postare.",
         "title": "Această postare a fost ștearsă"
       }
+    },
+    "viewer": {
+      "label": "Vizualizator de imagini",
+      "zoom": "Mărește",
+      "previous": "Imaginea anterioară",
+      "next": "Imaginea următoare",
+      "error": "Imaginea nu a putut fi încărcată"
     }
   },
   "status": {

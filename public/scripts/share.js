@@ -1,5 +1,5 @@
-// Share page enhancements (the page is complete without JS): local times,
-// image lightbox, share / copy-link button. Labels come from data-* attributes.
+// Share page enhancements (the page is complete without JS): local times, pop-up
+// menus, share / copy-link button. Labels come from data-* attributes. Images: /scripts/viewer.js.
 (() => {
   const d = document;
   const lang = d.documentElement.lang || undefined;
@@ -36,36 +36,6 @@
   for (const find of d.querySelectorAll("details.ni-hdr-find")) {
     find.addEventListener("toggle", () => { if (find.open) find.querySelector("input")?.focus(); });
     find.querySelector("[data-close]")?.addEventListener("click", () => { find.open = false; });
-  }
-
-
-  let box;
-  const lightbox = (src, alt) => {
-    if (!box) {
-      box = d.createElement("dialog");
-      box.className = "ni-lb";
-      const close = d.createElement("button");
-      close.type = "button";
-      close.setAttribute("aria-label", labels.closeLabel || "");
-      close.innerHTML = '<svg class="ni-i" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>';
-      close.addEventListener("click", () => box.close());
-      box.append(close, d.createElement("img"));
-      box.addEventListener("click", (e) => { if (e.target === box) box.close(); });
-      d.body.append(box);
-    }
-    const img = box.querySelector("img");
-    img.src = src;
-    img.alt = alt;
-    box.showModal();
-  };
-  if (typeof HTMLDialogElement === "function") {
-    for (const a of d.querySelectorAll("a.ni-zoom")) {
-      a.addEventListener("click", (e) => {
-        if (e.metaKey || e.ctrlKey || e.shiftKey) return;
-        e.preventDefault();
-        lightbox(a.href, a.querySelector("img")?.alt || "");
-      });
-    }
   }
 
   const toast = (text) => {

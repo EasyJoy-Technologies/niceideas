@@ -451,6 +451,13 @@
         "body": "O autor excluiu esta publicação.",
         "title": "Esta publicação foi excluída"
       }
+    },
+    "viewer": {
+      "label": "Visualizador de imagens",
+      "zoom": "Ampliar",
+      "previous": "Imagem anterior",
+      "next": "Próxima imagem",
+      "error": "Não foi possível carregar a imagem"
     }
   },
   "status": {

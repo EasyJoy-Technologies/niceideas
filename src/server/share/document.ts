@@ -1,5 +1,6 @@
 import { directionOf } from "@/i18n/locales";
 import { escapeHtml } from "@/server/render/escape";
+import { ZOOM_LINK_MARKER } from "@/server/render/media-html";
 import { APP_VERSION } from "@/server/version";
 import { siteHeader, type ChromeContext } from "./chrome";
 import { searchBox } from "./search-box";
@@ -34,10 +35,14 @@ export type PageDocument = {
 /** Same-origin asset URL with the release as cache buster. */
 export const asset = (path: string) => `${path}?v=${APP_VERSION}`;
 
+/** Pages showing images that open the viewer (post bodies, feed cards: `zoomLink`) load it. */
+const hasZoomableImages = (main: string) => main.includes(ZOOM_LINK_MARKER);
+
 /** Full HTML document of a server-rendered page: no framework JS, readable without JS. */
 export function renderPage(ctx: ChromeContext, page: PageDocument): string {
   const { locale, t } = ctx.intl;
-  // Labels the enhancement script needs (it carries no text of its own).
+  const viewer = hasZoomableImages(page.main);
+  // Labels the enhancement scripts need (they carry no text of their own).
   const label = (name: string, key: string, values?: Record<string, string>) => `data-${name}-label="${escapeHtml(t(key, values))}"`;
   const data = [
     label("close", "share.action.close"),
@@ -47,7 +52,12 @@ export function renderPage(ctx: ChromeContext, page: PageDocument): string {
     label("comment-error", "share.comments.error"),
     label("rate-limited", "share.comments.rateLimited"),
     label("report-done", "share.report.done"),
+    ...(viewer
+      ? [label("viewer", "share.viewer.label"), label("zoom", "share.viewer.zoom"), label("prev", "share.viewer.previous"), label("next", "share.viewer.next"), label("image-error", "share.viewer.error")]
+      : []),
   ].join(" ");
+  const stylesheets = [...(page.stylesheets ?? []), ...(viewer ? ["/styles/photoswipe.css", "/styles/viewer.css"] : [])];
+  const scripts = [...(page.scripts ?? []), ...(viewer ? ["/scripts/viewer.js"] : [])];
   const main = page.side ? `<div class="ni-shell">${siteRail(ctx)}${page.main}${siteAside(ctx, searchBox(ctx, page.query) + (page.aside ?? ""))}</div>` : page.main;
   return (
     `<!doctype html><html lang="${locale}" dir="${directionOf(locale)}"><head><meta charset="utf-8">` +
@@ -56,7 +66,7 @@ export function renderPage(ctx: ChromeContext, page: PageDocument): string {
     `<link rel="apple-touch-icon" href="/brand/apple-touch-icon.png">` +
     `<link rel="stylesheet" href="${asset("/styles/fonts.css")}"><link rel="stylesheet" href="${asset("/styles/tokens.css")}">` +
     `<link rel="stylesheet" href="${asset("/styles/post-body.css")}"><link rel="stylesheet" href="${asset("/styles/share-page.css")}"><link rel="stylesheet" href="${asset("/styles/interact.css")}"><link rel="stylesheet" href="${asset("/styles/feed.css")}"><link rel="stylesheet" href="${asset("/styles/account.css")}"><link rel="stylesheet" href="${asset("/styles/search.css")}"><link rel="stylesheet" href="${asset("/styles/nav.css")}">${ctx.viewer ? `<link rel="stylesheet" href="${asset("/styles/compose.css")}"><link rel="stylesheet" href="${asset("/styles/settings.css")}"><link rel="stylesheet" href="${asset("/styles/notifications.css")}">` : ""}${page.side ? `<link rel="stylesheet" href="${asset("/styles/shell.css")}"><link rel="stylesheet" href="${asset("/styles/aside.css")}">` : ""}` +
-    `${(page.stylesheets ?? []).map((s) => `<link rel="stylesheet" href="${asset(s)}">`).join("")}${themeHead(ctx.theme, asset("/styles/dark.css"))}${page.head ?? ""}<script src="${asset("/scripts/share.js")}" defer></script><script src="${asset("/scripts/interact.js")}" defer></script>${(page.scripts ?? []).map((s) => `<script src="${asset(s)}" defer></script>`).join("")}</head>` +
+    `${stylesheets.map((s) => `<link rel="stylesheet" href="${asset(s)}">`).join("")}${themeHead(ctx.theme, asset("/styles/dark.css"))}${page.head ?? ""}<script src="${asset("/scripts/share.js")}" defer></script><script src="${asset("/scripts/interact.js")}" defer></script>${scripts.map((s) => `<script src="${asset(s)}" defer></script>`).join("")}</head>` +
     `<body ${data}>${page.header ?? siteHeader(ctx)}${main}${page.footer ?? siteFooter(ctx, page.side)}${(page.tabBar ?? !!page.side) ? phoneTabBar(ctx) : ""}</body></html>`
   );
 }

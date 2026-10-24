@@ -41,4 +41,25 @@ describe("renderDocumentHtml", () => {
     expect(html).toContain('<source src="https://media.test/m/b/audio.m4a" type="audio/mp4">');
     expect(html.match(/<figure class="ni-image">/g)).toHaveLength(2);
   });
+  it("image links open the viewer with every rendition, the zoom rendition first in detail", () => {
+    const large = new Map<string, Media>([
+      [IMG, {
+        id: IMG,
+        kind: "image",
+        variants: {
+          kind: "image",
+          webp: [{ key: "m/a/w480.webp", mime: "image/webp", bytes: 1, width: 480, height: 320 }, { key: "m/a/w1600.webp", mime: "image/webp", bytes: 1, width: 1600, height: 1067 }],
+          fallback: { key: "m/a/fallback.jpg", mime: "image/jpeg", bytes: 1, width: 1600, height: 1067 },
+          large: { key: "m/a/large.webp", mime: "image/webp", bytes: 1, width: 4032, height: 2688 },
+        },
+      } as Media],
+    ]);
+    const html = renderDocumentHtml(parseDocument({ version: 1, blocks: [{ type: "image", mediaId: IMG }] }), large, url);
+    expect(html).toContain(
+      '<a class="ni-zoom" href="https://media.test/m/a/large.webp" data-pswp-width="4032" data-pswp-height="2688" data-pswp-srcset="https://media.test/m/a/w480.webp 480w, https://media.test/m/a/w1600.webp 1600w, https://media.test/m/a/large.webp 4032w">',
+    );
+    // Without a zoom rendition (older images): the largest responsive rendition.
+    expect(render([{ type: "image", mediaId: IMG }])).toContain('href="https://media.test/m/a/w480.webp" data-pswp-width="480" data-pswp-height="320"');
+    expect(html).not.toContain("data-cropped");
+  });
 });

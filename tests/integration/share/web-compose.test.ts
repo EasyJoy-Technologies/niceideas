@@ -86,7 +86,10 @@ describe("web compose", () => {
     const html = await (await homeRoute(new Request(`${BASE}/`, { headers: { "accept-language": "en", cookie: `${cookie}; ni_sso=1` } }))).text();
     expect(html).toContain("Sunset by the river");
     expect(html).toContain('class="ni-fc-thumbs"');
+    // Thumbnails are square crops of a 2000 × 3000 photo: the viewer opens its zoom rendition.
+    expect(html).toMatch(/<div class="ni-fc-thumbs"><a class="ni-zoom" href="[^"]+\/large\.webp" data-pswp-width="2000" data-pswp-height="3000" data-pswp-srcset="[^"]+" data-cropped="true">/);
     expect(html).toContain('src="/scripts/compose.js?v=');
+    expect(html).toContain('src="/scripts/viewer.js?v=');
   });
 
   it("limits short posts to 500 characters and publishes audio without JS", async () => {

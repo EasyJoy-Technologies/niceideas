@@ -5,7 +5,7 @@ import type { Media, MediaKind, MediaRendition, MediaVariants } from "@/server/d
 import { insertMediaOrGet } from "@/server/db/repos/media";
 import type { ObjectStore } from "@/server/storage/types";
 import type { ProcessedImage } from "./image";
-import { mediaKeys, mediaPrefix } from "./keys";
+import { mediaKeys, mediaPrefix, renditionsOf } from "./keys";
 
 /** Object key prefix of a new stored media (random, so public URLs are not enumerable). */
 export const newMediaPrefix = () => mediaPrefix(randomUUID());
@@ -13,8 +13,9 @@ export const newMediaPrefix = () => mediaPrefix(randomUUID());
 /** Uploads image renditions from `workDir` to the private store under `prefix`. */
 export async function storeImageRenditions(store: ObjectStore, prefix: string, workDir: string, img: ProcessedImage): Promise<MediaVariants> {
   const withKey = (r: MediaRendition): MediaRendition => ({ ...r, key: `${prefix}/${r.key}` });
-  await Promise.all([...img.webp, img.fallback].map((r) => store.putFile(`${prefix}/${r.key}`, path.join(workDir, r.key), { contentType: r.mime })));
-  return { kind: "image", webp: img.webp.map(withKey), fallback: withKey(img.fallback) };
+  const all = [...img.webp, img.fallback, ...(img.large ? [img.large] : [])];
+  await Promise.all(all.map((r) => store.putFile(`${prefix}/${r.key}`, path.join(workDir, r.key), { contentType: r.mime })));
+  return { kind: "image", webp: img.webp.map(withKey), fallback: withKey(img.fallback), ...(img.large ? { large: withKey(img.large) } : {}) };
 }
 
 /** Uploads one audio file to the private store under `prefix`. */
@@ -33,7 +34,7 @@ export async function insertStoredMedia(
   store: ObjectStore,
   row: { ownerId: string; sha256: string; kind: MediaKind; mime: string; variants: MediaVariants; width: number | null; height: number | null; durationMs: number | null },
 ): Promise<{ media: Media; created: boolean }> {
-  const renditions = row.variants.kind === "image" ? [...row.variants.webp, row.variants.fallback] : [row.variants.original];
+  const renditions = renditionsOf({ variants: row.variants });
   const result = await insertMediaOrGet(db, {
     owner_id: row.ownerId,
     sha256: row.sha256,

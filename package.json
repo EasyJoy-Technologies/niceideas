@@ -1,6 +1,6 @@
 {
   "name": "niceideas",
-  "version": "1.0.64",
+  "version": "1.0.65",
   "private": true,
   "scripts": {
     "dev": "node scripts/build-client.mjs && next dev -p 3000",
@@ -49,6 +49,7 @@
     "esbuild": "^0.28.2",
     "eslint": "^9",
     "eslint-config-next": "16.4.2",
+    "photoswipe": "^5.4.4",
     "tailwindcss": "^4",
     "testcontainers": "^12.2.1",
     "tsx": "^4.23.15",
