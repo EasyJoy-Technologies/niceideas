@@ -1,0 +1,24 @@
+[Unit]
+Description=NiceIdeas (production) background worker — NiceNote media, backend notifications, avatars
+After=network.target postgresql.service niceideas.service
+Wants=postgresql.service
+
+[Service]
+Type=simple
+WorkingDirectory=/var/www/niceideas/current
+EnvironmentFile=/etc/niceideas/env.production
+ExecStart=/usr/bin/node dist/worker.mjs
+Restart=always
+RestartSec=5
+TimeoutStopSec=30
+# prod2 is shared (2 vCPU, ~1 GB free): media work runs at low priority within hard limits.
+Nice=10
+IOSchedulingClass=idle
+CPUQuota=80%
+MemoryHigh=500M
+MemoryMax=600M
+NoNewPrivileges=true
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

@@ -10,7 +10,8 @@ import { derivedFields } from "@/server/posts/derived-fields";
 import type { MediaStores } from "@/server/storage/types";
 import { assertShareOpen, loadShare } from "./manage-share";
 import type { PushContentInput } from "./requests";
-import { assertGrants, resolveShareMedia } from "./share-media";
+import { queueMediaEvents } from "./post-events";
+import { assertGrants, queueShareMedia, resolveShareMedia } from "./share-media";
 
 export type PushResult = { post: Post; changed: boolean };
 
@@ -40,7 +41,8 @@ export async function pushShareContent(db: Db, stores: MediaStores, cacheControl
   assertGrants(input.media);
   const doc: SourceDocument = { ...input.document, origin: "nicenote" };
   const hash = contentHash(doc);
-  const resolved = await resolveShareMedia(db, before.author_id, doc, input.media);
+  await queueShareMedia(db, before.author_id, doc, input.media);
+  const resolved = await resolveShareMedia(db, before.author_id, doc);
   const goesLive = statusAfterPush(before.status) === "active";
   if (goesLive) await projectMediaPublic(stores, resolved.media, cacheControl);
 
@@ -49,9 +51,14 @@ export async function pushShareContent(db: Db, stores: MediaStores, cacheControl
     if (!post) throw notFound("post.not_found");
     assertPushable(post, input.sourceRevision);
     const prev = post.current_revision_id ? await findRevision(trx, post.current_revision_id) : undefined;
+    // The backend learns about media changes from events: ready when complete now; failures when the post
+    // became partial or its content changed while partial (failures it was already told about stay quiet).
+    const events = (updated: Post, changed: boolean) =>
+      queueMediaEvents(trx, updated, { before: post.media_state, failed: changed || post.media_state !== "partial" ? resolved.failed : [] });
     if (prev?.content_hash === hash) {
       const same = post.media_state === resolved.state && Number(post.source_revision) === input.sourceRevision;
       const updated = same ? post : await updatePost(trx, post.id, { media_state: resolved.state, source_revision: input.sourceRevision });
+      await events(updated, false);
       return { post: updated, changed: false, previousMedia: [] as string[] };
     }
     const rev = await insertRevision(trx, { postId: post.id, document: doc, contentHash: hash, sourceUpdatedAt: null });
@@ -65,6 +72,7 @@ export async function pushShareContent(db: Db, stores: MediaStores, cacheControl
       status: statusAfterPush(post.status),
       ...(post.status === "preparing" ? { published_at: new Date() } : {}),
     });
+    await events(updated, true);
     const previousMedia = prev ? await listRevisionMediaIds(trx, prev.id) : [];
     return { post: updated, changed: true, previousMedia };
   });

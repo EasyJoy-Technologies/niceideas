@@ -1,5 +1,6 @@
 import type { Db } from "@/server/db/client";
 import type { Profile } from "@/server/db/schema";
+import { queueAvatarJob } from "@/server/db/repos/avatar-jobs";
 import { isUniqueViolation } from "@/server/db/repos/profiles";
 import { HANDLE_PATTERN, handleFromUserId, isGeneratedHandle, isValidHandle, RESERVED_HANDLES } from "./handles";
 
@@ -8,6 +9,8 @@ import { HANDLE_PATTERN, handleFromUserId, isGeneratedHandle, isValidHandle, RES
  * A field left `undefined` is unknown (unchanged); `null` means NiceMatrix has no value.
  */
 export type NiceMatrixProfile = { username?: string | null; name?: string | null; avatarUrl?: string | null };
+
+type FollowPatch = { display_name?: string; avatar_source?: string | null; handle?: string };
 
 const MAX_NAME = 50;
 const AVATAR_URL = /^https:\/\/[^\s"'<>]{1,500}$/;
@@ -41,10 +44,11 @@ function handlePatch(profile: Profile, username: string | null | undefined): str
  * Applies NiceMatrix profile data (plan docs/plan/2026-10-23-nicenote-source-api.md §6):
  * the handle always follows the NiceMatrix username (unusable / taken → current handle kept);
  * the display name follows unless it was changed on NiceIdeas (`name_locked`); the avatar always
- * follows (it cannot be changed on NiceIdeas). Nothing is written back to NiceMatrix.
+ * follows (it cannot be changed on NiceIdeas): a new source is downloaded into our bucket by the
+ * worker. Nothing is written back to NiceMatrix.
  */
 export async function followNiceMatrixProfile(db: Db, profile: Profile, nm: NiceMatrixProfile): Promise<Profile> {
-  const patch: { display_name?: string; avatar_url?: string | null; handle?: string } = {};
+  const patch: FollowPatch = {};
   const handle = handlePatch(profile, nm.username);
   if (handle) patch.handle = handle;
   if (!profile.name_locked && nm.name !== undefined) {
@@ -52,10 +56,17 @@ export async function followNiceMatrixProfile(db: Db, profile: Profile, nm: Nice
     if (name !== profile.display_name) patch.display_name = name;
   }
   if (nm.avatarUrl !== undefined) {
-    const avatar = nm.avatarUrl === null ? null : AVATAR_URL.test(nm.avatarUrl) ? nm.avatarUrl : profile.avatar_url;
-    if (avatar !== profile.avatar_url) patch.avatar_url = avatar;
+    const source = nm.avatarUrl === null ? null : AVATAR_URL.test(nm.avatarUrl) ? nm.avatarUrl : profile.avatar_source;
+    if (source !== profile.avatar_source) patch.avatar_source = source;
   }
   if (Object.keys(patch).length === 0) return profile;
+  const saved = await savePatch(db, profile, patch);
+  // The worker downloads the new avatar (or removes ours, source ""); the current one shows until then.
+  if (patch.avatar_source !== undefined) await queueAvatarJob(db, profile.user_id, patch.avatar_source ?? "");
+  return saved;
+}
+
+async function savePatch(db: Db, profile: Profile, patch: FollowPatch): Promise<Profile> {
   const save = (p: typeof patch) =>
     db.updateTable("profile").set({ ...p, updated_at: new Date() }).where("user_id", "=", profile.user_id).returningAll().executeTakeFirstOrThrow();
   try {

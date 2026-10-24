@@ -1,3 +1,4 @@
+import { sql } from "kysely";
 import type { Db } from "../client";
 import type { NewPost, Post, PostSource, PostUpdate } from "../schema";
 
@@ -54,4 +55,18 @@ export async function updatePost(db: Db, id: string, patch: PostUpdate): Promise
     .where("id", "=", id)
     .returningAll()
     .executeTakeFirstOrThrow();
+}
+
+/** Ids of an owner's NiceNote shares whose current content uses a media ref (any status but deleted). */
+export async function listSharesUsingRef(db: Db, ownerId: string, ref: string): Promise<string[]> {
+  const rows = await db
+    .selectFrom("post as p")
+    .innerJoin("post_revision as r", "r.id", "p.current_revision_id")
+    .select("p.id")
+    .where("p.author_id", "=", ownerId)
+    .where("p.source", "=", "nicenote")
+    .where("p.status", "in", ["active", "removed", "author_deleting"])
+    .where(sql<boolean>`r.document @> ${JSON.stringify({ blocks: [{ ref }] })}::jsonb`)
+    .execute();
+  return rows.map((r) => r.id);
 }

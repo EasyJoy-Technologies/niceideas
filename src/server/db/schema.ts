@@ -1,6 +1,6 @@
 import type { ColumnType, Generated, Insertable, JSONColumnType, Selectable, Updateable } from "kysely";
 import type { CreatedAt, DefaultedTimestamp, JsonColumn, Timestamp } from "./schema-columns";
-import type { MediaJobTable, OutboxTable, ServiceNonceTable } from "./schema-share";
+import type { AvatarJobTable, MediaJobTable, OutboxTable, ServiceNonceTable } from "./schema-share";
 
 export type { MediaJobState, OutboxKind } from "./schema-share";
 
@@ -20,7 +20,10 @@ export type CommentStatus = "visible" | "hidden" | "deleted";
 /** One stored rendition (object key relative to the bucket root). */
 export type MediaRendition = { key: string; mime: string; bytes: number; width?: number; height?: number };
 
-/** Derived renditions. Images: responsive webp set + one jpeg/png fallback. Audio: original bytes. */
+/**
+ * Derived renditions. Images: responsive set (`webp`: WebP, or JPEG / PNG for images too tall for WebP;
+ * animated WebP for animated NiceNote images) + one static jpeg/png fallback. Audio: one browser-playable file.
+ */
 export type MediaVariants =
   | { kind: "image"; webp: MediaRendition[]; fallback: MediaRendition }
   | { kind: "audio"; original: MediaRendition };
@@ -38,6 +41,8 @@ export interface ProfileTable {
   notifications_seen_at: DefaultedTimestamp;
   /** Display name changed on NiceIdeas: it no longer follows NiceMatrix. */
   name_locked: Generated<boolean>;
+  /** NiceMatrix avatar the profile follows; `avatar_url` is its copy in the public bucket once downloaded. */
+  avatar_source: string | null;
 }
 
 export interface PostTable {
@@ -99,8 +104,6 @@ export interface MediaTable {
   public_at: Timestamp | null;
   detached_at: Timestamp | null;
   created_at: CreatedAt;
-  /** NiceNote media ref (stable per owner; same ref = same content). */
-  source_ref: string | null;
 }
 
 export interface RevisionMediaTable {
@@ -264,6 +267,7 @@ export interface Database {
   pow_used: PowUsedTable;
   admin_member: AdminMemberTable;
   media_job: MediaJobTable;
+  avatar_job: AvatarJobTable;
   outbox: OutboxTable;
   service_nonce: ServiceNonceTable;
 }

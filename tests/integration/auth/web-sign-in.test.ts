@@ -58,7 +58,9 @@ describe("web sign-in", () => {
     expect(session).toBeTruthy();
     const p = await ctx.db.selectFrom("profile").selectAll().where("user_id", "=", "web-user").executeTakeFirstOrThrow();
     expect(p.display_name).toBe("Web User");
-    expect(p.avatar_url).toBe("https://cdn.test/a.png");
+    // The avatar is downloaded into our bucket by the worker (tests/integration/worker/avatars.test.ts).
+    expect(p.avatar_source).toBe("https://cdn.test/a.png");
+    expect((await ctx.db.selectFrom("avatar_job").select("source_url").where("user_id", "=", "web-user").executeTakeFirstOrThrow()).source_url).toBe("https://cdn.test/a.png");
     const page = await (await discoverRoute(new Request(`${BASE}/discover`, { headers: { ...html, cookie: session } }))).text();
     expect(page).toContain("ni-acct-rail");
     expect(page).toContain('action="/auth/sign-out"');

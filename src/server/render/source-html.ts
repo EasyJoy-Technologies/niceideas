@@ -80,9 +80,10 @@ function todoHtml(items: { checked: boolean; runs: SourceRun[] }[]): string {
   return `<ul class="ni-todo">${li}</ul>`;
 }
 
-function placeholder(kind: "image" | "audio", ref: string | null, opts: Opts): string {
-  const failed = ref !== null && opts.jobs?.get(ref) === "failed";
-  const state = failed ? "unavailable" : "processing";
+/** `stored`: the ref is stored but as the other kind (unusable here). */
+function placeholder(kind: "image" | "audio", ref: string | null, opts: Opts, stored = false): string {
+  const job = ref === null ? undefined : opts.jobs?.get(ref);
+  const state = stored || job === "failed" || job === "rejected" ? "unavailable" : "processing";
   return mediaPlaceholder(kind, state, opts.labels?.[state] ?? "");
 }
 
@@ -101,10 +102,11 @@ export function renderSourceHtml(doc: SourceDocument, media: ReadonlyMap<string,
         if (b.state !== "ready") return placeholder("image", null, opts);
         const html = imageFigure(media.get(b.ref), b, firstImage, publicUrl);
         if (html) firstImage = false;
-        return html || placeholder("image", b.ref, opts);
+        return html || placeholder("image", b.ref, opts, media.has(b.ref));
       }
       case "audio":
-        return b.state === "ready" ? audioFigure(media.get(b.ref), b.title, publicUrl) || placeholder("audio", b.ref, opts) : placeholder("audio", null, opts);
+        if (b.state !== "ready") return placeholder("audio", null, opts);
+        return audioFigure(media.get(b.ref), b.title, publicUrl) || placeholder("audio", b.ref, opts, media.has(b.ref));
     }
   };
   return doc.blocks.map(block).join("\n");

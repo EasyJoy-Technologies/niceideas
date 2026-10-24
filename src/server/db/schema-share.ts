@@ -2,12 +2,17 @@ import type { Generated } from "kysely";
 import type { CreatedAt, DefaultedTimestamp, JsonColumn, Timestamp } from "./schema-columns";
 
 /** Tables of NiceNote sharing through the NiceMatrix backend (migration 0013). */
-export type MediaJobState = "pending" | "running" | "done" | "failed";
+/** `failed`: temporary (a new grant URL queues it again); `rejected`: permanent (never fetched again for this owner and ref). */
+export type MediaJobState = "pending" | "running" | "done" | "failed" | "rejected";
 
-/** A NiceNote media still to fetch (signed grant URL) and process. */
+/**
+ * A NiceNote media of an owner by ref: fetching (signed grant URL) and processing, then the
+ * ref → media mapping (`media_id`, done). `run_after` is the due time, or the lease end while running.
+ */
 export interface MediaJobTable {
   owner_id: string;
   ref: string;
+  media_id: string | null;
   kind: "image" | "audio";
   mime: Generated<string>;
   bytes: number | null;
@@ -34,6 +39,18 @@ export interface OutboxTable {
   last_error: string | null;
   run_after: DefaultedTimestamp;
   created_at: CreatedAt;
+  updated_at: DefaultedTimestamp;
+}
+
+/** Download of a NiceMatrix avatar into the public bucket (one per user; a new source replaces the job). */
+export interface AvatarJobTable {
+  user_id: string;
+  source_url: string;
+  state: Generated<"pending" | "running" | "done" | "failed">;
+  attempts: Generated<number>;
+  error: string | null;
+  run_after: DefaultedTimestamp;
+  created_at: DefaultedTimestamp;
   updated_at: DefaultedTimestamp;
 }
 

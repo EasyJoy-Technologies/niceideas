@@ -3,6 +3,7 @@ import { createHmac, timingSafeEqual } from "node:crypto";
 import { z } from "zod";
 import type { Db } from "@/server/db/client";
 import { findProfile } from "@/server/db/repos/profiles";
+import { ownAvatarKey } from "@/server/profiles/avatars";
 import { followNiceMatrixProfile } from "@/server/profiles/profile-follow";
 import { claimAccountEvent, deleteProfileCascade, latestAccountEventAt, mediaOfOwner, postIdsOfAuthor, setProfileStatus, switchAuthorPosts } from "@/server/db/repos/accounts";
 import { findMediaByIds } from "@/server/db/repos/media";
@@ -92,8 +93,10 @@ export async function applyAccountEvent(rt: AccountRuntime, e: AccountEvent): Pr
       await recordMediaPublic(trx, media.map((m) => m.id));
     });
   } else {
-    // Cooling-off ended: delete everything now (no extra 30-day retention).
+    // Cooling-off ended: delete everything now (no extra 30-day retention), the avatar copy included.
     const media = await mediaOfOwner(rt.db, e.userId);
+    const avatar = ownAvatarKey((await findProfile(rt.db, e.userId))?.avatar_url ?? null);
+    if (avatar) await rt.stores.publicStore.deleteMany([avatar]);
     const keys = media.flatMap((m) => mediaKeys(m));
     await rt.stores.publicStore.deleteMany(keys);
     await rt.stores.privateStore.deleteMany(keys);

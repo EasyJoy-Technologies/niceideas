@@ -39,14 +39,30 @@ Base: `https://niceideas.app/api/internal/v1/nicenote` (staging `https://t.nicei
   the next request shows the change.
 - **Document**: stored as received plus `origin: "nicenote"`; rendered structurally (`src/server/render/source-html.ts`),
   never as markdown; no count / length limits; links only http(s) / mailto.
-- **Media**: stored per owner by `ref` (`media.source_ref`); refs not stored are queued in `media_job` with their grant
-  (only grants under `NICEMATRIX_API_URL` are accepted). Blocks without stored media show a placeholder
-  ("Processing…" / "Media unavailable"). `mediaState`: complete / processing / partial. Fetching and processing is the
-  worker's job (phase S2, v1.0.64).
+- **Media**: an owner's `ref` maps to a stored media through `media_job.media_id` (one stored file can serve several
+  refs; files already uploaded on the web are reused by sha256). Refs not stored are queued in `media_job` with their
+  grant (only grants under `NICEMATRIX_API_URL` are accepted). Blocks without stored media show a placeholder
+  ("Processing…" / "Media unavailable"). `mediaState`: complete / processing / partial.
+- **Worker** (`dist/worker.mjs`, systemd `niceideas[-staging]-worker`; plan `docs/plan/2026-10-24-s2-worker.md`): fetches
+  grants (signed GET, ≤ 2 GiB, `MEDIA_SHARE_MAX_BYTES`), stores web versions, updates every share using the ref (links,
+  publishes, cover, `mediaState`; the page shows it on the next request).
+  - Images: JPEG / PNG / WebP / GIF / AVIF / TIFF with sharp; HEIC / HEIF / BMP decoded by ImageMagick (`MAGICK_PATH`)
+    first; ≤ 100 MP (`too_large`); animated GIF / WebP stay animated; renditions taller than 16383 px are JPEG / PNG and
+    at most 65500 px high (narrowed, no slicing).
+  - Audio (`FFMPEG_PATH`, `FFPROBE_PATH`): AAC re-wrapped into a fast-start M4A, MP3 stream kept, everything else
+    encoded to 128 kbps AAC / M4A; metadata dropped; no duration limit; video or no audio → `unsupported_format`.
+  - Failures: temporary ones (`fetch_failed` after 3 tries, `fetch_expired`, `temporarily_unavailable`) leave the job
+    `failed` (a new grant queues it again); permanent ones (`too_large`, `unsupported_format`, `decode_failed`,
+    `transcode_failed`) leave it `rejected` and that owner's ref is never fetched again.
 - **Delete** by the backend: `unpublished`, page 410, media withdrawn, purged after 30 days; no event back.
-- **Events to the backend** (`outbox`, delivered by the worker from S2): `user_registered` on first profile;
-  post events `unpublished` (author deleted on the web), `removed` / `restored` (moderation), `media_failed` / `media_ready` (S2).
+- **Events to the backend** (`outbox`, delivered by the worker, signed, `X-NM-Service: niceideas`; retried after 1 min,
+  5 min, 30 min, then hourly for 24 h; 400 / 404 / 409 / 410 / 413 / 422 are not retried): `user_registered` on first
+  profile (existing users were queued by migration 0014); post events `unpublished` (author deleted on the web),
+  `removed` / `restored` (moderation), `media_failed` (`details.refs` + `reason`, per reason) and `media_ready` (the
+  post's media became complete — by the worker or by a push).
 - **Profiles**: one rule set for web sign-in, the create request and `profile_updated` (`src/server/profiles/profile-follow.ts`):
   handle follows the NiceMatrix username (none → user id; unusable / taken → kept); display name follows unless changed on
-  NiceIdeas (`profile.name_locked`; clearing it follows again); avatar always follows.
+  NiceIdeas (`profile.name_locked`; clearing it follows again); avatar always follows: `profile.avatar_source` is the
+  NiceMatrix URL, the worker downloads it (public https only, ≤ 10 MB) into the public bucket as a 256 px WebP
+  (`a/<uuid>.webp`) and points `avatar_url` there; a failed download keeps the current avatar.
 - No per-user media quota (removed for every source, 2026-10-23); single files ≤ 2 GiB for shares.

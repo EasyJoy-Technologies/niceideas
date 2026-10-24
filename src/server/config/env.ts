@@ -64,6 +64,12 @@ const schema = z.object({
   MEDIA_MAX_AUDIO_BYTES: z.coerce.number().int().positive().default(150 * 1024 * 1024),
   MEDIA_MAX_AUDIO_SECONDS: z.coerce.number().int().positive().default(4 * 60 * 60),
   MEDIA_MAX_IMAGE_PIXELS: z.coerce.number().int().positive().default(100_000_000),
+  /** NiceNote media fetched by the worker (contract §6: ≤ 2 GiB per file; no duration limit). */
+  MEDIA_SHARE_MAX_BYTES: z.coerce.number().int().positive().default(2 * 1024 * 1024 * 1024),
+  /** Media tools used by the worker (HEIC / BMP via ImageMagick with libheif; audio via ffmpeg). */
+  FFMPEG_PATH: z.string().default("ffmpeg"),
+  FFPROBE_PATH: z.string().default("ffprobe"),
+  MAGICK_PATH: z.string().default("magick"),
 
   /** Source badge target for NiceNote posts (plan §16.4); `utm_*` is appended. Moves to the API-client registry with the open API. */
   SOURCE_NICENOTE_URL: z.url().default("https://enp.ej-mobile.cn"),

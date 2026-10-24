@@ -16,7 +16,7 @@ export async function loadDocumentMedia(db: Db, ownerId: string, doc: StoredDocu
   const keys = documentMediaKeys(doc);
   if (keys.length === 0) return NO_DOCUMENT_MEDIA;
   if (!isSourceDocument(doc)) return { media: new Map((await findMediaByIds(db, keys)).map((m) => [m.id, m])), jobs: new Map() };
-  const stored = await findMediaByRefs(db, ownerId, keys);
-  const missing = keys.filter((k) => !stored.some((m) => m.source_ref === k));
-  return { media: new Map(stored.map((m) => [m.source_ref!, m])), jobs: await mediaJobStates(db, ownerId, missing) };
+  const media = await findMediaByRefs(db, ownerId, keys);
+  const jobs = await mediaJobStates(db, ownerId, keys.filter((k) => !media.has(k)));
+  return { media, jobs: new Map([...jobs].map(([ref, j]) => [ref, j.state])) };
 }

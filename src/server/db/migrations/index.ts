@@ -12,6 +12,7 @@ import * as m0010 from "./0010_handle_length";
 import * as m0011 from "./0011_handle_dot";
 import * as m0012 from "./0012_admin_member";
 import * as m0013 from "./0013_nicenote_share";
+import * as m0014 from "./0014_share_worker";
 
 /**
  * Static registry (bundler-friendly; no filesystem scanning at runtime).
@@ -31,6 +32,7 @@ const MIGRATIONS: Record<string, Migration> = {
   "0011_handle_dot": m0011,
   "0012_admin_member": m0012,
   "0013_nicenote_share": m0013,
+  "0014_share_worker": m0014,
 };
 
 export const migrationProvider: MigrationProvider = {

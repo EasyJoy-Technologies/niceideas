@@ -1,5 +1,6 @@
 import { randomUUID } from "node:crypto";
 import type { Db } from "@/server/db/client";
+import { linkMediaRef } from "@/server/db/repos/media-jobs";
 import { parseDocument } from "@/server/documents/validate";
 import { ingestUpload } from "@/server/media/ingest";
 import { mediaLimitsFromConfig } from "@/server/media/limits";
@@ -29,7 +30,7 @@ export async function uploadAs(ctx: Ctx, userId: string, bytes: Buffer, sourceRe
   const upload = await spoolBody(new Response(new Uint8Array(bytes)).body!, Number.MAX_SAFE_INTEGER);
   try {
     const { media } = await ingestUpload(ctx.db, ctx.stores.privateStore, { ownerId: userId, upload, declaredSha256: upload.sha256, limits: mediaLimitsFromConfig() });
-    if (sourceRef) await ctx.db.updateTable("media").set({ source_ref: sourceRef }).where("id", "=", media.id).execute();
+    if (sourceRef) await linkMediaRef(ctx.db, userId, sourceRef, media);
     return media.id;
   } finally {
     await removeTempDir(upload.dir);

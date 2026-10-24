@@ -61,12 +61,16 @@ describe("account events", () => {
   it("profile_updated: handle and avatar follow, the name unless changed here; unknown users; never makes deletions stale", async () => {
     await ensureProfile(ctx.db, "pf-user");
     const upd = (eventId: string, profile: unknown, userId = "pf-user", at = "2026-10-25T00:00:00Z") => send("profile_updated", at, { eventId, userId, profile });
-    const row = () => ctx.db.selectFrom("profile").select(["handle", "display_name", "avatar_url"]).where("user_id", "=", "pf-user").executeTakeFirstOrThrow();
+    const row = () => ctx.db.selectFrom("profile").select(["handle", "display_name", "avatar_source"]).where("user_id", "=", "pf-user").executeTakeFirstOrThrow();
+    const avatarJob = async () => (await ctx.db.selectFrom("avatar_job").select("source_url").where("user_id", "=", "pf-user").executeTakeFirst())?.source_url;
     expect(await (await upd("evt-pf-0001", { username: "Pf.User", name: "Pf Name", avatarUrl: "https://cdn.test/p.png" })).json()).toEqual({ result: "applied" });
-    expect(await row()).toEqual({ handle: "pf.user", display_name: "Pf Name", avatar_url: "https://cdn.test/p.png" });
+    expect(await row()).toEqual({ handle: "pf.user", display_name: "Pf Name", avatar_source: "https://cdn.test/p.png" });
+    expect(await avatarJob()).toBe("https://cdn.test/p.png");
     await ctx.db.updateTable("profile").set({ display_name: "Mine", name_locked: true }).where("user_id", "=", "pf-user").execute();
     await upd("evt-pf-0002", { username: "pf.user", name: "Other", avatarUrl: null });
-    expect(await row()).toEqual({ handle: "pf.user", display_name: "Mine", avatar_url: null });
+    expect(await row()).toEqual({ handle: "pf.user", display_name: "Mine", avatar_source: null });
+    // Source "" = remove our copy of the avatar.
+    expect(await avatarJob()).toBe("");
     expect(await (await upd("evt-pf-0003", { username: "x", name: null, avatarUrl: null }, "nobody-here")).json()).toEqual({ result: "unknown_user" });
     // A later-dated profile update does not make a deletion request look stale.
     await upd("evt-pf-0004", { username: "pf.user", name: null, avatarUrl: null }, "pf-user", "2026-12-01T00:00:00Z");

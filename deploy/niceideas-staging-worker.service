@@ -1,0 +1,25 @@
+[Unit]
+Description=NiceIdeas (staging) background worker — NiceNote media, backend notifications, avatars
+After=network.target docker.service niceideas-staging.service
+Wants=docker.service
+
+[Service]
+Type=simple
+WorkingDirectory=/var/www/niceideas-staging/current
+EnvironmentFile=/etc/niceideas/env.staging
+ExecStart=/usr/bin/node dist/worker.mjs
+Restart=always
+RestartSec=5
+# Ends the current item or hands it back (deploy restarts); ffmpeg / magick children are killed.
+TimeoutStopSec=30
+# Media work must never slow the website: low CPU / IO priority and hard limits.
+Nice=10
+IOSchedulingClass=idle
+CPUQuota=80%
+MemoryHigh=800M
+MemoryMax=1G
+NoNewPrivileges=true
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

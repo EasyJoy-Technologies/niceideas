@@ -1,9 +1,8 @@
-import { randomUUID } from "node:crypto";
 import { mkdir } from "node:fs/promises";
 import path from "node:path";
 import type { Db } from "@/server/db/client";
-import type { Media, MediaRendition, MediaVariants } from "@/server/db/schema";
-import { findMediaByOwnerSha, insertMediaOrGet } from "@/server/db/repos/media";
+import type { Media, MediaVariants } from "@/server/db/schema";
+import { findMediaByOwnerSha } from "@/server/db/repos/media";
 import { ApiError, badRequest } from "@/server/http/errors";
 import type { ObjectStore } from "@/server/storage/types";
 import type { SpooledBody } from "@/server/util/temp-file";
@@ -11,7 +10,7 @@ import { Semaphore } from "@/server/util/semaphore";
 import { probeAudio, AudioRejectedError } from "./audio";
 import { detectMediaType } from "./detect";
 import { processImage, ImageRejectedError } from "./image";
-import { mediaPrefix } from "./keys";
+import { insertStoredMedia, newMediaPrefix, storeAudioFile, storeImageRenditions } from "./store-media";
 
 export type MediaLimits = {
   maxImageBytes: number;
@@ -44,27 +43,21 @@ export async function ingestUpload(
   const maxBytes = type.kind === "image" ? limits.maxImageBytes : limits.maxAudioBytes;
   if (upload.bytes > maxBytes) throw new ApiError("media.too_large", 413, { maxBytes });
 
-  const prefix = mediaPrefix(randomUUID());
+  const prefix = newMediaPrefix();
   const workDir = path.join(upload.dir, "out");
   await mkdir(workDir);
 
   let variants: MediaVariants;
-  let dims: { width: number | null; height: number | null; duration_ms: number | null };
+  let dims: { width: number | null; height: number | null; durationMs: number | null };
   try {
     if (type.kind === "image") {
       const img = await processing.run(() => processImage(upload.file, workDir, limits.maxImagePixels));
-      const withKey = (r: MediaRendition): MediaRendition => ({ ...r, key: `${prefix}/${r.key}` });
-      variants = { kind: "image", webp: img.webp.map(withKey), fallback: withKey(img.fallback) };
-      dims = { width: img.width, height: img.height, duration_ms: null };
-      await Promise.all(
-        [...img.webp, img.fallback].map((r) => store.putFile(`${prefix}/${r.key}`, path.join(workDir, r.key), { contentType: r.mime })),
-      );
+      variants = await storeImageRenditions(store, prefix, workDir, img);
+      dims = { width: img.width, height: img.height, durationMs: null };
     } else {
       const audio = await probeAudio(upload.file, limits.maxAudioSeconds);
-      const original: MediaRendition = { key: `${prefix}/audio.${type.ext}`, mime: type.mime, bytes: upload.bytes };
-      variants = { kind: "audio", original };
-      dims = { width: null, height: null, duration_ms: audio.durationMs };
-      await store.putFile(original.key, upload.file, { contentType: type.mime });
+      variants = await storeAudioFile(store, prefix, upload.file, { mime: type.mime, ext: type.ext, bytes: upload.bytes });
+      dims = { width: null, height: null, durationMs: audio.durationMs };
     }
   } catch (err) {
     if (err instanceof ImageRejectedError || err instanceof AudioRejectedError) {
@@ -72,21 +65,5 @@ export async function ingestUpload(
     }
     throw err;
   }
-
-  const storedBytes = variants.kind === "image" ? [...variants.webp, variants.fallback].reduce((n, r) => n + r.bytes, 0) : upload.bytes;
-  const result = await insertMediaOrGet(db, {
-    owner_id: ownerId,
-    sha256: upload.sha256,
-    kind: type.kind,
-    mime: type.mime,
-    byte_size: storedBytes,
-    ...dims,
-    variants: JSON.stringify(variants),
-  });
-  if (!result.created) {
-    // A concurrent identical upload won the race; drop our copies.
-    const keys = variants.kind === "image" ? [...variants.webp, variants.fallback].map((r) => r.key) : [variants.original.key];
-    await store.deleteMany(keys).catch((e) => console.error("[media] orphan cleanup failed", prefix, e));
-  }
-  return result;
+  return insertStoredMedia(db, store, { ownerId, sha256: upload.sha256, kind: type.kind, mime: type.mime, variants, ...dims });
 }

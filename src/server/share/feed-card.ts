@@ -4,6 +4,7 @@ import { cardTitle } from "./card";
 import { publicUrl } from "@/server/media/keys";
 import { renderDocumentHtml } from "@/server/render/document-html";
 import { escapeHtml } from "@/server/render/escape";
+import { responsivePicture } from "@/server/render/media-html";
 import type { ChromeContext } from "./chrome";
 import { icon } from "./icons";
 import type { FeedItem } from "./load-feed";
@@ -16,12 +17,7 @@ const NO_MEDIA: ReadonlyMap<string, Media> = new Map();
 
 function coverImage(media: Media): string {
   if (media.variants.kind !== "image") return "";
-  const v = media.variants;
-  const srcset = v.webp.map((r) => `${publicUrl(r.key)} ${r.width}w`).join(", ");
-  return (
-    `<picture><source type="image/webp" srcset="${srcset}" sizes="${COVER_SIZES}">` +
-    `<img src="${publicUrl(v.fallback.key)}" width="${v.fallback.width}" height="${v.fallback.height}" alt="" loading="lazy" decoding="async"></picture>`
-  );
+  return responsivePicture(media.variants, COVER_SIZES, 'alt="" loading="lazy"', publicUrl);
 }
 
 function articleBlock(ctx: ChromeContext, item: FeedItem): string {

@@ -53,5 +53,12 @@ for i in $(seq 1 40); do
   sleep 1
   [ "$i" = 40 ] && { echo "health check failed (got '$got')"; journalctl -u niceideas -n 40 --no-pager; exit 1; }
 done
+# Background worker (deploy/niceideas-worker.service), once installed: same release, restarted with it.
+if systemctl is-enabled --quiet niceideas-worker 2>/dev/null; then
+  systemctl restart niceideas-worker
+  sleep 3
+  systemctl is-active --quiet niceideas-worker || { echo "worker failed to start"; journalctl -u niceideas-worker -n 40 --no-pager; exit 1; }
+  echo "worker is running"
+fi
 ls -1dt "$DEST"/releases/* | tail -n +4 | xargs -r rm -rf
 REMOTE
