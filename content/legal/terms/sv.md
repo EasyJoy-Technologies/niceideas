@@ -1,4 +1,4 @@
-> **Sammanfattning.** Du äger det du publicerar och ansvarar för det. Inlägg på niceideas är offentliga. Publicera inget olagligt eller skadligt, eller något du inte har rätt att dela. Du kan dra tillbaka ett inlägg när som helst; tillbakadragna inlägg raderas permanent efter 30 dagar. niceideas är kostnadsfritt och tillhandahålls i befintligt skick. Dessa Villkor regleras av lagarna i Alberta, Kanada. Denna sammanfattning är enbart för bekvämlighet; de fullständiga Villkoren nedan gäller.
+> **Sammanfattning.** Du äger det du publicerar och ansvarar för det. Inlägg på niceideas är offentliga. Publicera inget olagligt eller skadligt, eller något du inte har rätt att dela. Du kan ta bort ett inlägg när som helst; borttagna inlägg raderas permanent efter 30 dagar. niceideas är kostnadsfritt och tillhandahålls i befintligt skick. Dessa Villkor regleras av lagarna i Alberta, Kanada. Denna sammanfattning är enbart för bekvämlighet; de fullständiga Villkoren nedan gäller.
 
 ## 1. Om dessa Villkor
 
@@ -30,7 +30,7 @@ Genom att använda Tjänsten, inklusive att visa, gilla eller kommentera utan ko
 
 4.2 Kommentarer är offentliga och visas under inlägget. Besökare utan konto kan gilla inlägg och kommentera under ett valfritt smeknamn.
 
-4.3 Publicera inget som du vill hålla privat. När något blivit offentligt kan andra kopiera eller spara det innan du drar det tillbaka, och vi kan inte återkalla sådana kopior.
+4.3 Publicera inget som du vill hålla privat. När något blivit offentligt kan andra kopiera eller spara det innan du tar bort det, och vi kan inte återkalla sådana kopior.
 
 4.4 För besökare vars anslutning kommer från Fastlandskina är endast enskilda delade inläggssidor samt gilla-markeringar och kommentarer på dem tillgängliga; andra sidor är det inte. Detta speglar hur Tjänsten för närvarande erbjuds och kan ändras.
 
@@ -44,7 +44,7 @@ Genom att använda Tjänsten, inklusive att visa, gilla eller kommentera utan ko
 
 5.4 Du bekräftar att du äger ditt innehåll eller har alla nödvändiga tillstånd för att publicera det och bevilja denna licens, och att publiceringen inte kränker någons rättigheter eller någon lag.
 
-5.5 Du kan dra tillbaka dina inlägg när som helst: ett inlägg publicerat från en app kan dras tillbaka i den appen, och alla inlägg kan dras tillbaka genom att skriva till support@nicematrix.ca. Ett tillbakadraget inlägg lämnar Tjänsten omedelbart och raderas permanent 30 dagar senare. Där appen du använder stödjer det kan du även radera kommentarer under dina egna inlägg.
+5.5 Du kan ta bort dina inlägg när som helst: alla inlägg kan tas bort på sin sida på niceideas, ett inlägg publicerat från en app kan också tas bort i den appen, och du kan skriva till support@nicematrix.ca. Ett borttaget inlägg lämnar Tjänsten omedelbart och raderas permanent 30 dagar senare. Där appen du använder stödjer det kan du även radera kommentarer under dina egna inlägg.
 
 ## 6. Uppföranderegler
 
@@ -83,11 +83,11 @@ Du samtycker till att inte använda Tjänsten för att:
 
 9.1 Du kan publicera på niceideas från appen NiceNote eller från andra appar du auktoriserar via NiceMatrix ID. En app kan bara göra det du tillåter (till exempel publicera inlägg eller ladda upp media), och endast för de inlägg den har publicerat. Inlägg visar vilken app de kom från.
 
-9.2 Du kan återkalla en apps åtkomst via NiceMatrix ID, eller be oss blockera den för ditt konto genom att skriva till support@nicematrix.ca. Att återkalla åtkomst stoppar framtida åtkomst; det tar inte bort redan publicerade inlägg, som du själv kan dra tillbaka.
+9.2 Du kan återkalla en apps åtkomst via NiceMatrix ID, eller be oss blockera den för ditt konto genom att skriva till support@nicematrix.ca. Att återkalla åtkomst stoppar framtida åtkomst; det tar inte bort redan publicerade inlägg, som du själv kan ta bort.
 
 9.3 Appar tillhandahålls av sina utvecklare enligt deras egna villkor och integritetspolicyer. Vi kan blockera eller begränsa alla appar som missbrukar Tjänsten.
 
-9.4 När du publicerar från NiceNote skickas endast anteckningen du väljer att publicera till niceideas. Ändringar och tillbakadragningar du gör i NiceNote kan uppdatera eller dra tillbaka det publicerade inlägget.
+9.4 När du publicerar från NiceNote skickas endast anteckningen du väljer att publicera till niceideas, via NiceMatrix. Ändringar du gör i anteckningen i NiceNote kan uppdatera det publicerade inlägget, och du kan ta bort inlägget i NiceNote eller på niceideas.
 
 ## 10. Avslutande av din användning
 

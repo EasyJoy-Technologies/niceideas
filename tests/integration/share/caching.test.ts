@@ -1,13 +1,12 @@
 import { afterAll, beforeAll, describe, expect, it } from "vitest";
-import { POST as createRoute } from "@/app/api/v1/posts/route";
-import { DELETE as withdrawRoute } from "@/app/api/v1/posts/[id]/route";
+import { deleteAs, publishAs } from "../../helpers/publish";
 import { GET as pageRoute } from "@/app/p/[slug]/route";
 import { resetConfigForTests } from "@/server/config/env";
 import { verifyProof } from "@/server/interactions/pow";
 import { getDb } from "@/server/db";
 import { clearPageCacheForTests } from "@/server/share/page-cache";
 import { startAppContext } from "../../helpers/app-context";
-import { jsonRequest, params } from "../../helpers/api";
+import { params } from "../../helpers/api";
 
 let ctx: Awaited<ReturnType<typeof startAppContext>>;
 beforeAll(async () => {
@@ -30,15 +29,13 @@ const view = (slug: string, cookie = "", lang = "en") =>
 
 describe("anonymous page cache", () => {
   it("serves anonymous visitors from the cache; cookies bypass it; languages are separate", async () => {
-    const token = await ctx.tokenFor("cache-user");
-    const res = await createRoute(jsonRequest("POST", "/api/v1/posts", token, { document: doc("Cached words"), sourceRef: "c1", sourceUpdatedAt: "2026-10-21T00:00:00Z" }), {});
-    const post = (await res.json()).post;
+    const post = await publishAs(ctx, "cache-user", doc("Cached words"), "c1");
     expect((await view(post.slug)).status).toBe(200);
     const de = await (await view(post.slug, "", "de")).text();
     expect(de).toContain('lang="de"');
-    await withdrawRoute(jsonRequest("DELETE", `/api/v1/posts/${post.id}`, token), params({ id: post.id }));
-    // Within the cache window anonymous visitors still get the cached page; anyone with a cookie sees the change.
-    expect((await view(post.slug)).status).toBe(200);
+    await deleteAs(ctx, post.id);
+    // The cache key carries the post's version: a deletion (or edit) shows on the next anonymous request too.
+    expect((await view(post.slug)).status).toBe(410);
     expect((await view(post.slug, "ni_vid=abcdefghijklmnopqrstuv")).status).toBe(410);
     clearPageCacheForTests();
     expect((await view(post.slug)).status).toBe(410);

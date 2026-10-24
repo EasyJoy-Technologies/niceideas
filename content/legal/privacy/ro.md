@@ -1,4 +1,4 @@
-> **Rezumat.** Colectăm doar ceea ce avem nevoie pentru a opera niceideas: profilul dumneavoastră, ceea ce publicați și date tehnice limitate pentru a menține Serviciul în siguranță. Postările dumneavoastră sunt publice. Nu vindem date cu caracter personal, nu afișăm reclame și nu utilizăm instrumente externe de urmărire. Puteți retrage postările în orice moment și vă puteți șterge contul ștergând NiceMatrix ID-ul dumneavoastră. Scrieți la support@nicematrix.ca cu orice întrebare sau cerere privind confidențialitatea.
+> **Rezumat.** Colectăm doar ceea ce avem nevoie pentru a opera niceideas: profilul dumneavoastră, ceea ce publicați și date tehnice limitate pentru a menține Serviciul în siguranță. Postările dumneavoastră sunt publice. Nu vindem date cu caracter personal, nu afișăm reclame și nu utilizăm instrumente externe de urmărire. Puteți șterge postările în orice moment și vă puteți șterge contul ștergând NiceMatrix ID-ul dumneavoastră. Scrieți la support@nicematrix.ca cu orice întrebare sau cerere privind confidențialitatea.
 
 ## 1. Cine suntem
 
@@ -84,7 +84,7 @@ Pentru conexiunile din China continentală, sunt disponibile numai paginile indi
 | Informații | Cât timp |
 |---|---|
 | Profil | Cât timp contul dumneavoastră există; șters la finalizarea ștergerii contului |
-| Postări, versiuni anterioare și media acestora | Până când retrageți postarea sau ștergeți contul; postările retrase sau eliminate sunt șterse definitiv 30 de zile mai târziu |
+| Postări, versiuni anterioare și media acestora | Până când ștergeți postarea sau contul; postările șterse sau eliminate sunt eliminate definitiv 30 de zile mai târziu |
 | Media care nu mai este utilizată de nicio postare | Șterse după 7 zile |
 | Comentarii și aprecieri | Până la ștergerea comentariului de către autorul postării sau de noi, sau la ștergerea postării |
 | Raportări și înregistrări de moderare privind o postare | Șterse împreună cu postarea la care se referă |
@@ -107,7 +107,7 @@ Conturile niceideas sunt șterse prin ștergerea NiceMatrix ID-ului dumneavoastr
 2. Dacă anulați în perioada de grație a NiceMatrix ID (în prezent 15 zile), totul revine la aceleași linkuri.
 3. Când perioada de grație se termină, ștergem definitiv profilul, postările, versiunile anterioare, media, comentariile, aprecierile și urmăririle dumneavoastră, fără nicio altă perioadă de păstrare, cu excepția ciclului de copii de rezervă de până la 14 zile.
 
-Puteți, de asemenea, retrage postări individuale în orice moment, sau să ne scrieți pentru a șterge altceva.
+De asemenea, puteți șterge postări individuale în orice moment, sau să ne scrieți pentru a șterge altceva.
 
 ## 11. Drepturile dumneavoastră
 
@@ -120,7 +120,7 @@ Puteți, de asemenea, retrage postări individuale în orice moment, sau să ne 
 - de a vă retrage consimțământul;
 - de a depune o reclamație la o autoritate de protecție a datelor, cum ar fi Comisarul pentru Confidențialitate al Canadei, Comisarul pentru Informații și Confidențialitate din Alberta, autoritatea dumneavoastră locală din Uniunea Europeană, sau Biroul Comisarului pentru Informații din Regatul Unit.
 
-Puteți edita profilul dumneavoastră în Setări și retrage postări în aplicația din care le-ați publicat, sau scriindu-ne. Pentru orice altă cerere, scrieți la support@nicematrix.ca. Vă putem cere să confirmați că contul este al dumneavoastră, de exemplu prin conectare. Răspundem în termen de 30 de zile, sau în termenul impus de lege, și nu percepem taxe pentru cereri, cu excepția cazului în care sunt vădit nefondate sau excesive. Puteți utiliza un agent autorizat atunci când legea permite. Nu vă vom trata diferit pentru exercitarea drepturilor dumneavoastră.
+Puteți edita profilul dumneavoastră în Setări și șterge postări pe niceideas sau în aplicația din care le-ați publicat, sau scriindu-ne. Pentru orice altă cerere, scrieți la support@nicematrix.ca. Vă putem cere să confirmați că contul este al dumneavoastră, de exemplu prin conectare. Răspundem în termen de 30 de zile, sau în termenul impus de lege, și nu percepem taxe pentru cereri, cu excepția cazului în care sunt vădit nefondate sau excesive. Puteți utiliza un agent autorizat atunci când legea permite. Nu vă vom trata diferit pentru exercitarea drepturilor dumneavoastră.
 
 ## 12. Copii
 

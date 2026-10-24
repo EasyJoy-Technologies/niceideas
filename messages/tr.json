@@ -150,8 +150,9 @@
     "status": {
       "active": "Yayında",
       "author_deleting": "Yazarın hesabı siliniyor",
+      "preparing": "Hazırlanıyor",
       "removed": "Kaldırıldı",
-      "unpublished": "Yazar geri çekti"
+      "unpublished": "Yazar sildi"
     },
     "tab": {
       "dismissed": "Reddedildi",
@@ -277,7 +278,7 @@
     "about": {
       "p1": "{brand}, nice ideas'larını — kısa düşünceler, uzun yazılar, fotoğraflar ve sesler — tek bir bağlantıyla paylaşabileceğin yerdir.",
       "p2": "Paylaşılan bir bağlantıyı hesabı olan da olmayan da herkes açabilir. Gönderiler NiceNote gibi uygulamalardan doğrudan gelebilir ya da web'de yazılabilir.",
-      "p3": "Gönderilerin sana ait kalır: Onları istediğin zaman düzenleyebilir ya da geri çekebilirsin; geri çekilen gönderiler 30 gün sonra kalıcı olarak silinir.",
+      "p3": "Gönderilerin sana ait kalır: Onları istediğin zaman düzenleyebilir ya da silebilirsin; silinen gönderiler 30 gün sonra kalıcı olarak kaldırılır.",
       "title": "Hakkında"
     },
     "effective": "Yürürlük tarihi: {date}",
@@ -293,7 +294,7 @@
     },
     "help": {
       "a1": "NiceNote'tan bir not paylaş ya da web'de paylaşım açıldığında doğrudan web'de yaz.",
-      "a2": "Notu uygulamada düzenlediğinde gönderi güncellenir. Uygulamada geri çektiğinde bağlantı hemen çalışmaz hale gelir.",
+      "a2": "Notu uygulamada düzenlediğinde gönderi güncellenir. Bir gönderiyi silmek için, sayfasındaki \"⋯\" menüsünü açıp Sil seçeneğini belirle; bağlantı hemen çalışmaz hale gelir.",
       "a3": "Bağlantıya sahip olan herkes. Gönderiler profilinde ve akışlarda da görünür.",
       "a4": "Gönderideki Şikayet et seçeneğini kullan. Her bildirimi inceleriz.",
       "q1": "Nasıl paylaşım yaparım?",
@@ -368,7 +369,9 @@
       "cancel": "İptal",
       "close": "Kapat",
       "copied": "Bağlantı kopyalandı",
+      "delete": "Sil",
       "like": "Beğen",
+      "more": "Diğer seçenekler",
       "reply": "Yanıtla",
       "report": "Şikayet et",
       "share": "Paylaş"
@@ -393,14 +396,29 @@
       "submit": "Gönder",
       "title": "Yorumlar"
     },
+    "delete": {
+      "body": "Bağlantı hemen çalışmaz hale gelir ve gönderi 30 gün sonra kalıcı olarak kaldırılır. Bu işlem geri alınamaz.",
+      "failed": "Gönderi silinemedi. Lütfen tekrar deneyin.",
+      "fromApp": "{app} içindeki orijinal etkilenmez; yeniden paylaşmak yeni bir bağlantı oluşturur.",
+      "title": "Bu gönderi silinsin mi?"
+    },
     "header": {
       "join": "{brand} topluluğuna katıl",
       "joinShort": "Katıl"
     },
     "language": "Dil",
+    "media": {
+      "processing": "İşleniyor…",
+      "unavailable": "Medya kullanılamıyor"
+    },
     "post": {
       "edited": "Düzenlendi: {time}",
-      "from": "{app} üzerinden"
+      "empty": "Bu gönderinin içeriği yok.",
+      "from": "{app} üzerinden",
+      "preparing": {
+        "body": "İçerik birazdan burada görünecek.",
+        "title": "Bu gönderi hazırlanıyor"
+      }
     },
     "report": {
       "done": "Teşekkürler. İnceleyeceğiz.",
@@ -430,8 +448,8 @@
         "title": "Bu sayfa bölgende kullanılamıyor"
       },
       "withdrawn": {
-        "body": "Yazar bu gönderiyi geri çekti.",
-        "title": "Gönderi geri çekildi"
+        "body": "Yazar bu gönderiyi sildi.",
+        "title": "Bu gönderi silindi"
       }
     }
   },

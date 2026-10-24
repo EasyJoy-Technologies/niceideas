@@ -32,6 +32,8 @@ a { color: inherit; text-decoration: none; }
 /* Shared by the site and the admin console. */
 .ni-btn-sm { height: 2rem; padding: 0 0.75rem; font-size: 0.8125rem; }
 .ni-btn-ghost { background: transparent; color: var(--ni-color-text-primary); border: 1px solid var(--ni-color-border); }
+.ni-btn-danger { background: var(--ni-color-alert); color: #fff; }
+.ni-btn-danger:hover { filter: brightness(0.92); }
 
 /* header */
 .ni-hdr {

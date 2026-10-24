@@ -150,8 +150,9 @@
     "status": {
       "active": "Yana nan",
       "author_deleting": "Ana share asusun marubuci",
+      "preparing": "Ana shiryawa",
       "removed": "An cire",
-      "unpublished": "Marubuci ya janye"
+      "unpublished": "Marubuci ya share"
     },
     "tab": {
       "dismissed": "An ƴanta",
@@ -277,7 +278,7 @@
     "about": {
       "p1": "{brand} wuri ne na raba nice ideas ɗinka — gajerun tunani, dogayen rubuce-rubuce, hotuna da sauti — da hanyar haɗi ɗaya.",
       "p2": "Kowa zai iya buɗe hanyar haɗin da aka raba, ko yana da asusu ko babu. Rubuce-rubuce za su iya zuwa kai tsaye daga manhajoji kamar NiceNote ko a rubuta su a yanar gizo.",
-      "p3": "Rubuce-rubucenka naka ne: za ka iya gyara su ko janye su a kowane lokaci, kuma ana goge waɗanda aka janye har abada bayan kwana 30.",
+      "p3": "Rubuce-rubucenka naka ne: za ka iya gyara su ko share su a kowane lokaci, kuma ana goge waɗanda aka share har abada bayan kwana 30.",
       "title": "Game da mu"
     },
     "effective": "Yana aiki daga {date}",
@@ -293,7 +294,7 @@
     },
     "help": {
       "a1": "Raba bayani daga NiceNote, ko ka rubuta a yanar gizo idan aka buɗe wallafawa ta yanar gizo.",
-      "a2": "Gyara bayanin a manhajar kuma rubutun zai sabunta. Janye shi a manhajar kuma hanyar haɗin za ta daina aiki nan take.",
+      "a2": "Gyara bayanin a manhajar kuma rubutun zai sabunta. Don share rubutu, buɗe menu na “⋯” a shafinsa ka zaɓi “Share”; hanyar haɗin za ta daina aiki nan take.",
       "a3": "Duk wanda yake da hanyar haɗin. Rubuce-rubucen kuma suna bayyana a bayanin martabarka da cikin ciyarwa.",
       "a4": "Yi amfani da Kai rahoto a kan rubutun. Muna duba kowane rahoto.",
       "q1": "Ta yaya zan wallafa?",
@@ -368,7 +369,9 @@
       "cancel": "Soke",
       "close": "Rufe",
       "copied": "An kwafi hanyar haɗi",
+      "delete": "Share",
       "like": "So",
+      "more": "Ƙarin zaɓuɓɓuka",
       "reply": "Amsa",
       "report": "Kai rahoto",
       "share": "Raba"
@@ -393,14 +396,29 @@
       "submit": "Wallafa",
       "title": "Sharhi"
     },
+    "delete": {
+      "body": "Hanyar haɗin za ta daina aiki nan take, kuma za a goge rubutun har abada bayan kwana 30. Ba za a iya mayar da wannan ba.",
+      "failed": "An kasa share rubutun. Da fatan a sake gwadawa.",
+      "fromApp": "Ainihin rubutun da ke {app} ba zai shafu ba; sake raba shi zai ƙirƙiri sabuwar hanyar haɗi.",
+      "title": "A share wannan rubutun?"
+    },
     "header": {
       "join": "Shiga {brand}",
       "joinShort": "Shiga"
     },
     "language": "Harshe",
+    "media": {
+      "processing": "Ana sarrafawa…",
+      "unavailable": "Kafofin watsa labarai ba sa samuwa"
+    },
     "post": {
       "edited": "An gyara a {time}",
-      "from": "Daga {app}"
+      "empty": "Wannan rubutun ba shi da abun ciki.",
+      "from": "Daga {app}",
+      "preparing": {
+        "body": "Abun ciki zai bayyana a nan cikin ɗan lokaci.",
+        "title": "Ana shirya wannan rubutun"
+      }
     },
     "report": {
       "done": "Na gode. Za mu duba shi.",
@@ -430,8 +448,8 @@
         "title": "Babu wannan shafin a yankinku"
       },
       "withdrawn": {
-        "body": "Marubucin ya janye wannan rubutun.",
-        "title": "An janye rubutun"
+        "body": "Marubucin ya share wannan rubutun.",
+        "title": "An share rubutun"
       }
     }
   },

@@ -150,8 +150,9 @@
     "status": {
       "active": "Tayang",
       "author_deleting": "Akun penulis sedang dihapus",
+      "preparing": "Menyiapkan",
       "removed": "Dihapus",
-      "unpublished": "Ditarik oleh penulis"
+      "unpublished": "Dihapus oleh penulis"
     },
     "tab": {
       "dismissed": "Ditolak",
@@ -277,7 +278,7 @@
     "about": {
       "p1": "{brand} adalah tempat untuk membagikan nice ideas-mu — pemikiran singkat, tulisan panjang, foto, dan audio — dalam satu tautan.",
       "p2": "Siapa pun bisa membuka tautan yang dibagikan, punya akun atau tidak. Postingan bisa langsung datang dari aplikasi seperti NiceNote atau ditulis di web.",
-      "p3": "Postinganmu tetap milikmu: kamu bisa mengedit atau menariknya kapan saja, dan postingan yang ditarik dihapus permanen setelah 30 hari.",
+      "p3": "Postinganmu tetap milikmu: kamu bisa mengedit atau menghapusnya kapan saja, dan postingan yang dihapus akan dihapus permanen setelah 30 hari.",
       "title": "Tentang"
     },
     "effective": "Berlaku sejak {date}",
@@ -293,7 +294,7 @@
     },
     "help": {
       "a1": "Bagikan catatan dari NiceNote, atau tulis postingan di web setelah publikasi web dibuka.",
-      "a2": "Edit catatan di aplikasi dan postingan ikut diperbarui. Tarik di aplikasi dan tautan langsung tidak berfungsi.",
+      "a2": "Edit catatan di aplikasi dan postingan ikut diperbarui. Untuk menghapus postingan, buka menu “⋯” di halaman postingan dan pilih Hapus; tautan langsung tidak berfungsi.",
       "a3": "Siapa pun yang punya tautannya. Postingan juga muncul di profil dan feed.",
       "a4": "Gunakan Laporkan pada postingan. Kami meninjau setiap laporan.",
       "q1": "Bagaimana cara memposting?",
@@ -368,7 +369,9 @@
       "cancel": "Batal",
       "close": "Tutup",
       "copied": "Tautan disalin",
+      "delete": "Hapus",
       "like": "Suka",
+      "more": "Opsi lainnya",
       "reply": "Balas",
       "report": "Laporkan",
       "share": "Bagikan"
@@ -393,14 +396,29 @@
       "submit": "Kirim",
       "title": "Komentar"
     },
+    "delete": {
+      "body": "Tautan langsung tidak berfungsi, dan postingan dihapus permanen setelah 30 hari. Tindakan ini tidak dapat dibatalkan.",
+      "failed": "Postingan tidak dapat dihapus. Silakan coba lagi.",
+      "fromApp": "Postingan asli di {app} tidak terpengaruh; membagikan lagi akan membuat tautan baru.",
+      "title": "Hapus postingan ini?"
+    },
     "header": {
       "join": "Gabung ke {brand}",
       "joinShort": "Gabung"
     },
     "language": "Bahasa",
+    "media": {
+      "processing": "Memproses…",
+      "unavailable": "Media tidak tersedia"
+    },
     "post": {
       "edited": "Diedit {time}",
-      "from": "Dari {app}"
+      "empty": "Postingan ini tidak memiliki konten.",
+      "from": "Dari {app}",
+      "preparing": {
+        "body": "Konten akan muncul di sini sebentar lagi.",
+        "title": "Menyiapkan postingan ini"
+      }
     },
     "report": {
       "done": "Terima kasih. Kami akan meninjaunya.",
@@ -430,8 +448,8 @@
         "title": "Halaman ini tidak tersedia di wilayahmu"
       },
       "withdrawn": {
-        "body": "Penulis telah menarik postingan ini.",
-        "title": "Postingan ditarik"
+        "body": "Penulis telah menghapus postingan ini.",
+        "title": "Postingan dihapus"
       }
     }
   },

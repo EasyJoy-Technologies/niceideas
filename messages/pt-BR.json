@@ -150,8 +150,9 @@
     "status": {
       "active": "No ar",
       "author_deleting": "Conta do autor sendo excluída",
+      "preparing": "Preparando",
       "removed": "Removida",
-      "unpublished": "Retirada pelo autor"
+      "unpublished": "Excluída pelo autor"
     },
     "tab": {
       "dismissed": "Rejeitadas",
@@ -277,7 +278,7 @@
     "about": {
       "p1": "O {brand} é o lugar para compartilhar suas nice ideas — pensamentos curtos, textos longos, fotos e áudio — com um só link.",
       "p2": "Qualquer pessoa pode abrir um link compartilhado, com ou sem conta. As publicações podem vir de apps como o NiceNote ou ser escritas na web.",
-      "p3": "Suas publicações continuam sendo suas: você pode editá-las ou retirá-las quando quiser, e as retiradas são excluídas definitivamente após 30 dias.",
+      "p3": "Suas publicações continuam sendo suas: você pode editá-las ou excluí-las quando quiser, e as publicações excluídas são removidas definitivamente após 30 dias.",
       "title": "Sobre"
     },
     "effective": "Em vigor desde {date}",
@@ -293,7 +294,7 @@
     },
     "help": {
       "a1": "Compartilhe uma nota pelo NiceNote ou escreva na web quando a publicação pela web for liberada.",
-      "a2": "Edite a nota no app e a publicação é atualizada. Retire-a no app e o link para de funcionar na hora.",
+      "a2": "Edite a nota no app e a publicação é atualizada. Para excluir uma publicação, abra o menu “⋯” na página dela e escolha “Excluir”; o link para de funcionar na hora.",
       "a3": "Qualquer pessoa com o link. Elas também aparecem no seu perfil e nos feeds.",
       "a4": "Use Denunciar na publicação. Analisamos todas as denúncias.",
       "q1": "Como publico?",
@@ -368,7 +369,9 @@
       "cancel": "Cancelar",
       "close": "Fechar",
       "copied": "Link copiado",
+      "delete": "Excluir",
       "like": "Curtir",
+      "more": "Mais opções",
       "reply": "Responder",
       "report": "Denunciar",
       "share": "Compartilhar"
@@ -393,14 +396,29 @@
       "submit": "Publicar",
       "title": "Comentários"
     },
+    "delete": {
+      "body": "O link para de funcionar na hora, e a publicação é removida definitivamente após 30 dias. Isso não pode ser desfeito.",
+      "failed": "Não foi possível excluir a publicação. Tente novamente.",
+      "fromApp": "O original no {app} não é afetado; compartilhar de novo cria um link novo.",
+      "title": "Excluir esta publicação?"
+    },
     "header": {
       "join": "Entrar no {brand}",
       "joinShort": "Entrar"
     },
     "language": "Idioma",
+    "media": {
+      "processing": "Processando…",
+      "unavailable": "Mídia não disponível"
+    },
     "post": {
       "edited": "Editado em {time}",
-      "from": "Via {app}"
+      "empty": "Esta publicação não tem conteúdo.",
+      "from": "Via {app}",
+      "preparing": {
+        "body": "O conteúdo vai aparecer aqui em um instante.",
+        "title": "Preparando esta publicação"
+      }
     },
     "report": {
       "done": "Obrigado. Vamos analisar.",
@@ -430,8 +448,8 @@
         "title": "Esta página não está disponível na sua região"
       },
       "withdrawn": {
-        "body": "O autor retirou esta publicação.",
-        "title": "Publicação retirada"
+        "body": "O autor excluiu esta publicação.",
+        "title": "Esta publicação foi excluída"
       }
     }
   },

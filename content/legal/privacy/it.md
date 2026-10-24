@@ -1,4 +1,4 @@
-> **Riepilogo.** Raccogliamo solo ciò che è necessario per gestire niceideas: il suo profilo, ciò che pubblica e dati tecnici limitati per mantenere sicuro il Servizio. Le sue pubblicazioni sono pubbliche. Non vendiamo informazioni personali, non mostriamo pubblicità e non utilizziamo tracker esterni. Può ritirare pubblicazioni in qualsiasi momento ed eliminare il suo account eliminando il suo NiceMatrix ID. Scriva a support@nicematrix.ca per qualsiasi domanda o richiesta relativa alla privacy.
+> **Riepilogo.** Raccogliamo solo ciò che è necessario per gestire niceideas: il suo profilo, ciò che pubblica e dati tecnici limitati per mantenere sicuro il Servizio. Le sue pubblicazioni sono pubbliche. Non vendiamo informazioni personali, non mostriamo pubblicità e non utilizziamo tracker esterni. Può eliminare pubblicazioni in qualsiasi momento ed eliminare il suo account eliminando il suo NiceMatrix ID. Scriva a support@nicematrix.ca per qualsiasi domanda o richiesta relativa alla privacy.
 
 ## 1. Chi siamo
 
@@ -84,7 +84,7 @@ Per le connessioni dalla Cina continentale, sono disponibili solo le singole pag
 | Informazioni | Per quanto tempo |
 |---|---|
 | Profilo | Finché esiste il suo account; eliminato quando l'eliminazione dell'account è completata |
-| Pubblicazioni, versioni precedenti e i relativi media | Finché non ritira la pubblicazione o elimina il suo account; le pubblicazioni ritirate o rimosse vengono eliminate definitivamente 30 giorni dopo |
+| Pubblicazioni, versioni precedenti e i relativi media | Finché non elimina la pubblicazione o il suo account; le pubblicazioni eliminate o rimosse vengono eliminate definitivamente 30 giorni dopo |
 | Media non più utilizzati da alcuna pubblicazione | Eliminati dopo 7 giorni |
 | Commenti e "mi piace" | Finché il commento non viene eliminato dall'autore della pubblicazione o da noi, o la pubblicazione viene eliminata |
 | Segnalazioni e registri di moderazione relativi a una pubblicazione | Eliminati insieme alla pubblicazione a cui si riferiscono |
@@ -107,7 +107,7 @@ Gli account niceideas vengono eliminati eliminando il suo NiceMatrix ID:
 2. Se annulla durante il periodo di ripensamento di NiceMatrix ID (attualmente 15 giorni), tutto torna disponibile agli stessi link.
 3. Quando il periodo di ripensamento termina, eliminiamo definitivamente il suo profilo, le pubblicazioni, le versioni precedenti, i media, i commenti, i "mi piace" e i follow, senza alcun ulteriore periodo di conservazione, a parte il ciclo di backup fino a 14 giorni.
 
-Può anche ritirare singole pubblicazioni in qualsiasi momento, o scriverci per eliminare qualsiasi altra cosa.
+Può anche eliminare singole pubblicazioni in qualsiasi momento, o scriverci per eliminare qualsiasi altra cosa.
 
 ## 11. I suoi diritti
 
@@ -120,7 +120,7 @@ In base a dove vive, comprese la PIPEDA canadese, la legge sulla protezione dell
 - ritirare il suo consenso;
 - presentare un reclamo a un'autorità di protezione dei dati, come l'Office of the Privacy Commissioner of Canada, l'Office of the Information and Privacy Commissioner of Alberta, la sua autorità locale nell'Unione Europea, o l'Information Commissioner's Office del Regno Unito.
 
-Può modificare il suo profilo nelle Impostazioni e ritirare pubblicazioni nell'app da cui le ha pubblicate, o scrivendoci. Per qualsiasi altra richiesta, scriva a support@nicematrix.ca. Potremmo chiederle di confermare che l'account è suo, ad esempio accedendo. Rispondiamo entro 30 giorni, o entro il periodo richiesto dalla legge, e non applichiamo costi per le richieste a meno che non siano chiaramente infondate o eccessive. Può utilizzare un agente autorizzato dove la legge lo consente. Non la tratteremo diversamente per aver esercitato i suoi diritti.
+Può modificare il suo profilo nelle Impostazioni ed eliminare pubblicazioni su niceideas o nell'app da cui le ha pubblicate, o scrivendoci. Per qualsiasi altra richiesta, scriva a support@nicematrix.ca. Potremmo chiederle di confermare che l'account è suo, ad esempio accedendo. Rispondiamo entro 30 giorni, o entro il periodo richiesto dalla legge, e non applichiamo costi per le richieste a meno che non siano chiaramente infondate o eccessive. Può utilizzare un agente autorizzato dove la legge lo consente. Non la tratteremo diversamente per aver esercitato i suoi diritti.
 
 ## 12. Minori
 

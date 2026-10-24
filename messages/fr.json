@@ -150,8 +150,9 @@
     "status": {
       "active": "En ligne",
       "author_deleting": "Compte de l’auteur en cours de suppression",
+      "preparing": "En préparation",
       "removed": "Retirée par la modération",
-      "unpublished": "Retirée par l’auteur"
+      "unpublished": "Supprimée par l’auteur"
     },
     "tab": {
       "dismissed": "Rejetés",
@@ -277,7 +278,7 @@
     "about": {
       "p1": "{brand} est l’endroit où partager vos nice ideas — pensées courtes, textes longs, photos et audio — en un seul lien.",
       "p2": "Tout le monde peut ouvrir un lien partagé, avec ou sans compte. Les publications peuvent venir d’applications comme NiceNote ou être rédigées sur le web.",
-      "p3": "Vos publications restent les vôtres : vous pouvez les modifier ou les retirer à tout moment, et les publications retirées sont définitivement supprimées au bout de 30 jours.",
+      "p3": "Vos publications restent les vôtres : vous pouvez les modifier ou les supprimer à tout moment, et les publications supprimées sont définitivement effacées au bout de 30 jours.",
       "title": "À propos"
     },
     "effective": "En vigueur depuis le {date}",
@@ -293,7 +294,7 @@
     },
     "help": {
       "a1": "Partagez une note depuis NiceNote, ou rédigez sur le web dès que la publication web sera ouverte.",
-      "a2": "Modifiez la note dans l’application et la publication se met à jour. Retirez-la dans l’application et le lien cesse aussitôt de fonctionner.",
+      "a2": "Modifiez la note dans l’application et la publication se met à jour. Pour supprimer une publication, ouvrez le menu « ⋯ » sur sa page et choisissez « Supprimer » ; le lien cesse aussitôt de fonctionner.",
       "a3": "Toute personne disposant du lien. Elles apparaissent aussi sur votre profil et dans les fils.",
       "a4": "Utilisez Signaler sur la publication. Nous examinons chaque signalement.",
       "q1": "Comment publier ?",
@@ -368,7 +369,9 @@
       "cancel": "Annuler",
       "close": "Fermer",
       "copied": "Lien copié",
+      "delete": "Supprimer",
       "like": "J’aime",
+      "more": "Plus d’options",
       "reply": "Répondre",
       "report": "Signaler",
       "share": "Partager"
@@ -393,14 +396,29 @@
       "submit": "Publier",
       "title": "Commentaires"
     },
+    "delete": {
+      "body": "Le lien cesse aussitôt de fonctionner, et la publication est définitivement supprimée au bout de 30 jours. Cette action est irréversible.",
+      "failed": "Impossible de supprimer la publication. Veuillez réessayer.",
+      "fromApp": "L’original dans {app} n’est pas affecté ; le partager de nouveau crée un nouveau lien.",
+      "title": "Supprimer cette publication ?"
+    },
     "header": {
       "join": "Rejoindre {brand}",
       "joinShort": "Rejoindre"
     },
     "language": "Langue",
+    "media": {
+      "processing": "Traitement en cours…",
+      "unavailable": "Média indisponible"
+    },
     "post": {
       "edited": "Modifié le {time}",
-      "from": "Depuis {app}"
+      "empty": "Cette publication n’a pas de contenu.",
+      "from": "Depuis {app}",
+      "preparing": {
+        "body": "Le contenu apparaîtra ici dans un instant.",
+        "title": "Préparation de la publication"
+      }
     },
     "report": {
       "done": "Merci. Nous allons l’examiner.",
@@ -430,8 +448,8 @@
         "title": "Cette page n’est pas disponible dans votre région"
       },
       "withdrawn": {
-        "body": "L’auteur a retiré cette publication.",
-        "title": "Publication retirée"
+        "body": "L’auteur a supprimé cette publication.",
+        "title": "Cette publication a été supprimée"
       }
     }
   },

@@ -1,4 +1,4 @@
-> **Ringkasan.** Anda memiliki apa yang Anda unggah, dan Anda bertanggung jawab atasnya. Unggahan di niceideas bersifat publik. Jangan mengunggah apa pun yang ilegal atau berbahaya, atau apa pun yang tidak Anda miliki hak untuk dibagikan. Anda dapat menarik unggahan kapan saja; unggahan yang ditarik akan dihapus secara permanen setelah 30 hari. niceideas disediakan secara gratis dan "sebagaimana adanya". Ketentuan ini diatur oleh hukum Alberta, Kanada. Ringkasan ini hanya untuk kemudahan; Ketentuan lengkap di bawah ini yang berlaku.
+> **Ringkasan.** Anda memiliki apa yang Anda unggah, dan Anda bertanggung jawab atasnya. Unggahan di niceideas bersifat publik. Jangan mengunggah apa pun yang ilegal atau berbahaya, atau apa pun yang tidak Anda miliki hak untuk dibagikan. Anda dapat menghapus unggahan kapan saja; unggahan yang dihapus akan dihapus secara permanen setelah 30 hari. niceideas disediakan secara gratis dan "sebagaimana adanya". Ketentuan ini diatur oleh hukum Alberta, Kanada. Ringkasan ini hanya untuk kemudahan; Ketentuan lengkap di bawah ini yang berlaku.
 
 ## 1. Tentang Ketentuan ini
 
@@ -30,7 +30,7 @@ Dengan menggunakan Layanan, termasuk melihat, menyukai, atau mengomentari tanpa 
 
 4.2 Komentar bersifat publik dan muncul di bawah unggahan. Pengunjung tanpa akun dapat menyukai unggahan dan berkomentar dengan nama panggilan opsional.
 
-4.3 Jangan menerbitkan apa pun yang ingin Anda jaga kerahasiaannya. Setelah sesuatu menjadi publik, orang lain mungkin telah menyalin atau menyimpannya sebelum Anda menariknya, dan kami tidak dapat menarik kembali salinan tersebut.
+4.3 Jangan menerbitkan apa pun yang ingin Anda jaga kerahasiaannya. Setelah sesuatu menjadi publik, orang lain mungkin telah menyalin atau menyimpannya sebelum Anda menghapusnya, dan kami tidak dapat menarik kembali salinan tersebut.
 
 4.4 Bagi pengunjung yang koneksinya berasal dari Tiongkok daratan, hanya halaman unggahan bersama individual serta suka dan komentar pada halaman tersebut yang tersedia; halaman lain tidak tersedia. Ini menggambarkan cara Layanan ditawarkan saat ini dan dapat berubah.
 
@@ -44,7 +44,7 @@ Dengan menggunakan Layanan, termasuk melihat, menyukai, atau mengomentari tanpa 
 
 5.4 Anda menegaskan bahwa Anda memiliki konten Anda atau telah mendapatkan setiap izin yang diperlukan untuk mengunggahnya dan memberikan lisensi ini, dan bahwa mengunggahnya tidak melanggar hak siapa pun atau hukum apa pun.
 
-5.5 Anda dapat menarik unggahan Anda kapan saja: unggahan yang diterbitkan dari aplikasi dapat ditarik di aplikasi tersebut, dan setiap unggahan dapat ditarik dengan menulis ke support@nicematrix.ca. Unggahan yang ditarik langsung hilang dari Layanan dan dihapus secara permanen 30 hari kemudian. Jika aplikasi yang Anda gunakan mendukungnya, Anda juga dapat menghapus komentar di bawah unggahan Anda sendiri.
+5.5 Anda dapat menghapus unggahan Anda kapan saja: setiap unggahan dapat dihapus di halaman unggahan tersebut pada niceideas, unggahan yang diterbitkan dari aplikasi juga dapat dihapus di aplikasi tersebut, dan Anda juga dapat menulis ke support@nicematrix.ca. Unggahan yang dihapus langsung hilang dari Layanan dan dihapus secara permanen 30 hari kemudian. Jika aplikasi yang Anda gunakan mendukungnya, Anda juga dapat menghapus komentar di bawah unggahan Anda sendiri.
 
 ## 6. Aturan perilaku
 
@@ -83,11 +83,11 @@ Anda setuju untuk tidak menggunakan Layanan untuk:
 
 9.1 Anda dapat menerbitkan ke niceideas dari aplikasi NiceNote atau dari aplikasi lain yang Anda otorisasi melalui NiceMatrix ID. Aplikasi hanya dapat melakukan apa yang Anda izinkan (misalnya menerbitkan unggahan atau mengunggah media), dan hanya untuk unggahan yang diterbitkannya. Unggahan menampilkan aplikasi asalnya.
 
-9.2 Anda dapat mencabut akses aplikasi melalui NiceMatrix ID, atau meminta kami memblokirnya untuk akun Anda dengan menulis ke support@nicematrix.ca. Mencabut akses menghentikan akses di masa mendatang; itu tidak menghapus unggahan yang sudah diterbitkan, yang dapat Anda tarik sendiri.
+9.2 Anda dapat mencabut akses aplikasi melalui NiceMatrix ID, atau meminta kami memblokirnya untuk akun Anda dengan menulis ke support@nicematrix.ca. Mencabut akses menghentikan akses di masa mendatang; itu tidak menghapus unggahan yang sudah diterbitkan, yang dapat Anda hapus sendiri.
 
 9.3 Aplikasi disediakan oleh pengembangnya berdasarkan ketentuan dan kebijakan privasi mereka sendiri. Kami dapat memblokir atau membatasi aplikasi mana pun yang menyalahgunakan Layanan.
 
-9.4 Saat Anda menerbitkan dari NiceNote, hanya catatan yang Anda pilih untuk diterbitkan yang dikirim ke niceideas. Perubahan dan penarikan yang Anda lakukan di NiceNote dapat memperbarui atau menarik unggahan yang telah diterbitkan.
+9.4 Saat Anda menerbitkan dari NiceNote, hanya catatan yang Anda pilih untuk diterbitkan yang dikirim ke niceideas melalui NiceMatrix. Perubahan yang Anda lakukan pada catatan di NiceNote dapat memperbarui unggahan yang telah diterbitkan, dan Anda dapat menghapus unggahan tersebut di NiceNote atau di niceideas.
 
 ## 10. Mengakhiri penggunaan Anda
 

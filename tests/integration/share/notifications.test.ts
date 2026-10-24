@@ -1,11 +1,10 @@
 import { afterAll, beforeAll, describe, expect, it } from "vitest";
-import { POST as createRoute } from "@/app/api/v1/posts/route";
+import { publishAs } from "../../helpers/publish";
 import { GET as notificationsRoute } from "@/app/notifications/route";
 import { GET as discoverRoute } from "@/app/discover/route";
 import { startSession } from "@/server/auth/web/session";
 import { ensureProfile } from "@/server/profiles/ensure-profile";
 import { startAppContext } from "../../helpers/app-context";
-import { jsonRequest } from "../../helpers/api";
 
 const BASE = "http://localhost:3000";
 let ctx: Awaited<ReturnType<typeof startAppContext>>;
@@ -13,9 +12,7 @@ let cookie: string;
 let postId: string;
 beforeAll(async () => {
   ctx = await startAppContext();
-  const token = await ctx.tokenFor("note-author");
-  const res = await createRoute(jsonRequest("POST", "/api/v1/posts", token, { document: { version: 1, blocks: [{ type: "text", text: "Notify me" }] }, sourceRef: "n1", sourceUpdatedAt: "2026-10-21T00:00:00Z" }), {});
-  postId = (await res.json()).post.id;
+  postId = (await publishAs(ctx, "note-author", { version: 1, blocks: [{ type: "text", text: "Notify me" }] }, "n1")).id;
   await ensureProfile(ctx.db, "note-fan");
   await ctx.db.updateTable("profile").set({ display_name: "Fan Person", notifications_seen_at: new Date(Date.now() - 60_000) }).where("user_id", "in", ["note-fan", "note-author"]).execute();
   cookie = (await startSession(ctx.db, "note-author")).split(";")[0];

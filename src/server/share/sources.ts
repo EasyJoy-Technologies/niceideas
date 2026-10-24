@@ -27,7 +27,7 @@ export function withUtm(url: string, medium: string): string {
  * third-party apps (`api:<client_id>`) get name, logo and website from the app directory cache (source-registry.ts).
  */
 export function sourceBadge(source: PostSource): SourceBadge | null {
-  if (source === "nicenote_intl" || source === "nicenote_cn") {
+  if (source === "nicenote" || source === "nicenote_intl" || source === "nicenote_cn") {
     return { nameKey: "brand.nicenote", icon: "/brand/sources/nicenote.png", href: withUtm(getConfig().SOURCE_NICENOTE_URL, "post_source") };
   }
   if (source.startsWith("api:")) {

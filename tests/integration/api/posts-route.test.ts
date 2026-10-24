@@ -2,25 +2,25 @@ import { afterAll, beforeAll, describe, expect, it } from "vitest";
 import { POST as createRoute } from "@/app/api/v1/posts/route";
 import { DELETE, GET, PATCH } from "@/app/api/v1/posts/[id]/route";
 import { PUT } from "@/app/api/v1/posts/[id]/content/route";
-import { GET as sourcesRoute } from "@/app/api/v1/me/sources/route";
 import { POST as mediaRoute } from "@/app/api/v1/media/route";
 import { startAppContext } from "../../helpers/app-context";
 import { jsonRequest, params } from "../../helpers/api";
 import { jpegWithExif, sha256, smallPngWithAlpha } from "../../helpers/media-fixtures";
-import { AUD_CN } from "../../helpers/tokens";
 
 let ctx: Awaited<ReturnType<typeof startAppContext>>;
 let alice: string;
 let bob: string;
 beforeAll(async () => {
   ctx = await startAppContext();
-  alice = await ctx.tokenFor("alice");
-  bob = await ctx.tokenFor("bob");
+  alice = await ctx.apiToken("alice");
+  bob = await ctx.apiToken("bob");
 });
 afterAll(async () => ctx?.stop());
 
 const text = (t: string) => ({ version: 1, blocks: [{ type: "text", text: t }] });
-const create = (token: string, body: unknown, headers?: Record<string, string>) => createRoute(jsonRequest("POST", "/api/v1/posts", token, body, headers), {});
+let keyN = 0;
+/** External apps must send an Idempotency-Key; a fresh one per call unless given. */
+const create = (token: string, body: unknown, headers: Record<string, string> = { "idempotency-key": `auto-${++keyN}` }) => createRoute(jsonRequest("POST", "/api/v1/posts", token, body, headers), {});
 const sync = (token: string, id: string, body: unknown) => PUT(jsonRequest("PUT", `/api/v1/posts/${id}/content`, token, body), params({ id }));
 const upload = async (token: string, buf: Buffer) => {
   const res = await mediaRoute(new Request("http://x/api/v1/media", { method: "POST", body: new Uint8Array(buf), headers: { authorization: `Bearer ${token}`, "x-content-sha256": sha256(buf) } }), {});
@@ -29,7 +29,7 @@ const upload = async (token: string, buf: Buffer) => {
 const T1 = "2026-10-19T10:00:00Z";
 const T2 = "2026-10-19T11:00:00Z";
 
-describe("publish → re-share → sync → settings → withdraw", () => {
+describe("third-party app: publish → re-share → sync → settings → withdraw", () => {
   let id: string;
   let url: string;
 
@@ -37,7 +37,7 @@ describe("publish → re-share → sync → settings → withdraw", () => {
     const res = await create(alice, { document: text("Hello world"), sourceRef: "note-a", sourceUpdatedAt: T1 });
     expect(res.status).toBe(201);
     const { post } = await res.json();
-    expect(post).toMatchObject({ kind: "short", status: "active", source: "nicenote_intl", sourceRef: "note-a", syncMode: "follow", summary: "Hello world" });
+    expect(post).toMatchObject({ kind: "short", status: "active", source: "api:test-app", sourceRef: "note-a", syncMode: "follow", summary: "Hello world" });
     expect(post.url).toMatch(/^http:\/\/localhost:3000\/p\/[a-z2-9]{14}$/);
     ({ id, url } = post);
   });
@@ -84,10 +84,7 @@ describe("publish → re-share → sync → settings → withdraw", () => {
     expect((await GET(jsonRequest("GET", `/api/v1/posts/not-a-uuid`, alice), params({ id: "not-a-uuid" }))).status).toBe(404);
   });
 
-  it("lists sources, withdraws idempotently with 30-day purge, then a new share gets a new link", async () => {
-    const list = await (await sourcesRoute(jsonRequest("GET", "/api/v1/me/sources?source=nicenote", alice), {})).json();
-    expect(list.items).toEqual([expect.objectContaining({ id, sourceRef: "note-a", syncMode: "frozen" })]);
-
+  it("withdraws idempotently with 30-day purge, then a new share gets a new link", async () => {
     const del = await (await DELETE(jsonRequest("DELETE", `/api/v1/posts/${id}`, alice), params({ id }))).json();
     expect(del.post.status).toBe("unpublished");
     const days = (Date.parse(del.post.purgeAfter) - Date.now()) / 86_400_000;
@@ -97,8 +94,6 @@ describe("publish → re-share → sync → settings → withdraw", () => {
 
     const again = await (await create(alice, { document: text("Hello again"), sourceRef: "note-a", sourceUpdatedAt: T2 })).json();
     expect(again.post.id).not.toBe(id);
-    const after = await (await sourcesRoute(jsonRequest("GET", "/api/v1/me/sources?source=nicenote", alice), {})).json();
-    expect(after.items.map((i: { id: string }) => i.id)).toEqual([again.post.id]);
   });
 });
 
@@ -111,14 +106,8 @@ describe("validation, ownership and idempotency", () => {
     expect(await res.json()).toEqual({ error: { code: "document.media_invalid", status: 422, details: { mediaIds: [bobImg] } } });
     const asAudio = await create(bob, { document: { version: 1, blocks: [{ type: "audio", mediaId: bobImg }] }, sourceRef: "n3", sourceUpdatedAt: T1 });
     expect(asAudio.status).toBe(422);
-    const raw = await createRoute(new Request("http://x/api/v1/posts", { method: "POST", body: "{nope", headers: { authorization: `Bearer ${alice}` } }), {});
+    const raw = await createRoute(new Request("http://x/api/v1/posts", { method: "POST", body: "{nope", headers: { authorization: `Bearer ${alice}`, "idempotency-key": "raw" } }), {});
     expect(raw.status).toBe(400);
-  });
-
-  it("cn tokens publish as nicenote_cn; same note id in both regions are separate posts", async () => {
-    const cn = await ctx.tokenFor("alice", AUD_CN);
-    const res = await (await create(cn, { document: text("from cn"), sourceRef: "note-cn", sourceUpdatedAt: T1 })).json();
-    expect(res.post.source).toBe("nicenote_cn");
   });
 
   it("Idempotency-Key replays the response and rejects reuse with another body", async () => {
@@ -132,7 +121,7 @@ describe("validation, ownership and idempotency", () => {
 
   it("concurrent shares of one note create exactly one post", async () => {
     const body = { document: text("race"), sourceRef: "note-race", sourceUpdatedAt: T1 };
-    const results = await Promise.all(Array.from({ length: 6 }, () => create(bob, body)));
+    const results = await Promise.all(Array.from({ length: 6 }, (_, i) => create(bob, body, { "idempotency-key": `race-${i}` })));
     const ids = new Set(await Promise.all(results.map(async (r) => (await r.json()).post.id)));
     expect(ids.size).toBe(1);
     expect(results.filter((r) => r.status === 201)).toHaveLength(1);

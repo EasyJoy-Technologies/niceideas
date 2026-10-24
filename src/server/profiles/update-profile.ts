@@ -17,7 +17,8 @@ export async function updateOwnProfile(db: Db, profile: Profile, edit: ProfileEd
   if (chars(displayName) > NAME_MAX || chars(bio) > BIO_MAX) return { ok: false, error: "too_long" };
   const row = await db
     .updateTable("profile")
-    .set({ display_name: displayName, bio, updated_at: new Date() })
+    // A name typed here stops following NiceMatrix; clearing it follows NiceMatrix again.
+    .set({ display_name: displayName, bio, name_locked: displayName === "" ? false : displayName !== profile.display_name || profile.name_locked, updated_at: new Date() })
     .where("user_id", "=", profile.user_id)
     .returningAll()
     .executeTakeFirstOrThrow();

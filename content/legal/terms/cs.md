@@ -1,4 +1,4 @@
-> **Shrnutí.** Vlastníte to, co zveřejňujete, a nesete za to odpovědnost. Příspěvky na niceideas jsou veřejné. Nezveřejňujte nic nezákonného nebo škodlivého, ani nic, k čemu nemáte právo. Příspěvek můžete kdykoli odvolat; odvolané příspěvky jsou trvale odstraněny po 30 dnech. niceideas je zdarma a poskytováno „tak, jak je". Tyto Podmínky se řídí právem provincie Alberta, Kanada. Toto shrnutí slouží pouze pro usnadnění; platí úplné Podmínky uvedené níže.
+> **Shrnutí.** Vlastníte to, co zveřejňujete, a nesete za to odpovědnost. Příspěvky na niceideas jsou veřejné. Nezveřejňujte nic nezákonného nebo škodlivého, ani nic, k čemu nemáte právo. Příspěvek můžete kdykoli smazat; smazané příspěvky jsou trvale odstraněny po 30 dnech. niceideas je zdarma a poskytováno „tak, jak je". Tyto Podmínky se řídí právem provincie Alberta, Kanada. Toto shrnutí slouží pouze pro usnadnění; platí úplné Podmínky uvedené níže.
 
 ## 1. O těchto Podmínkách
 
@@ -30,7 +30,7 @@ Používáním Služby, včetně prohlížení, lajkování nebo komentování b
 
 4.2 Komentáře jsou veřejné a zobrazují se pod příspěvkem. Návštěvníci bez účtu mohou lajkovat příspěvky a komentovat pod nepovinnou přezdívkou.
 
-4.3 Nezveřejňujte nic, co chcete zachovat v soukromí. Jakmile se něco stane veřejným, mohou to ostatní zkopírovat nebo uložit, než příspěvek odvoláte, a takové kopie nemůžeme stáhnout zpět.
+4.3 Nezveřejňujte nic, co chcete zachovat v soukromí. Jakmile se něco stane veřejným, mohou to ostatní zkopírovat nebo uložit, než příspěvek smažete, a takové kopie nemůžeme stáhnout zpět.
 
 4.4 Pro návštěvníky připojující se z Číny na pevnině jsou dostupné pouze jednotlivé stránky sdílených příspěvků a lajky a komentáře k nim; ostatní stránky nejsou dostupné. To odráží způsob, jakým je Služba v současnosti poskytována, a může se změnit.
 
@@ -44,7 +44,7 @@ Používáním Služby, včetně prohlížení, lajkování nebo komentování b
 
 5.4 Potvrzujete, že jste vlastníkem svého obsahu nebo máte veškerá oprávnění nezbytná k jeho zveřejnění a udělení této licence, a že jeho zveřejnění neporušuje práva nikoho jiného ani žádný zákon.
 
-5.5 Své příspěvky můžete kdykoli odvolat: příspěvek zveřejněný z aplikace lze odvolat v této aplikaci, a jakýkoli příspěvek lze odvolat zasláním zprávy na support@nicematrix.ca. Odvolaný příspěvek okamžitě zmizí ze Služby a je trvale odstraněn o 30 dní později. Pokud to aplikace, kterou používáte, podporuje, můžete také odstraňovat komentáře pod svými vlastními příspěvky.
+5.5 Své příspěvky můžete kdykoli smazat: jakýkoli příspěvek lze smazat na jeho stránce na niceideas, příspěvek zveřejněný z aplikace lze také smazat v této aplikaci, a můžete také napsat na support@nicematrix.ca. Smazaný příspěvek okamžitě zmizí ze Služby a je trvale odstraněn o 30 dní později. Pokud to aplikace, kterou používáte, podporuje, můžete také odstraňovat komentáře pod svými vlastními příspěvky.
 
 ## 6. Pravidla chování
 
@@ -83,11 +83,11 @@ Souhlasíte, že nebudete Službu používat k:
 
 9.1 Můžete zveřejňovat na niceideas z aplikace NiceNote nebo z jiných aplikací, které jste autorizovali prostřednictvím NiceMatrix ID. Aplikace může provádět pouze to, co jí povolíte (například zveřejňovat příspěvky nebo nahrávat média), a pouze v souvislosti s příspěvky, které zveřejnila. Příspěvky zobrazují, ze které aplikace pocházejí.
 
-9.2 Přístup aplikace můžete odvolat prostřednictvím NiceMatrix ID, nebo nás požádat o jeho zablokování pro váš účet zasláním zprávy na support@nicematrix.ca. Odvolání přístupu zastaví budoucí přístup; nepostradí to příspěvky, které již byly zveřejněny a které můžete odvolat sami.
+9.2 Přístup aplikace můžete odvolat prostřednictvím NiceMatrix ID, nebo nás požádat o jeho zablokování pro váš účet zasláním zprávy na support@nicematrix.ca. Odvolání přístupu zastaví budoucí přístup; nepostradí to příspěvky, které již byly zveřejněny a které můžete smazat sami.
 
 9.3 Aplikace jsou poskytovány jejich vývojáři za jejich vlastních podmínek a zásad ochrany osobních údajů. Jakoukoli aplikaci, která Službu zneužívá, můžeme zablokovat nebo omezit.
 
-9.4 Když zveřejňujete z NiceNote, do niceideas se odesílá pouze poznámka, kterou se rozhodnete zveřejnit. Změny a odvolání, které provedete v NiceNote, mohou zveřejněný příspěvek aktualizovat nebo odvolat.
+9.4 Když zveřejňujete z NiceNote, do niceideas se přes NiceMatrix odesílá pouze poznámka, kterou se rozhodnete zveřejnit. Změny, které provedete v NiceNote, mohou zveřejněný příspěvek aktualizovat, a příspěvek můžete smazat v NiceNote nebo na niceideas.
 
 ## 10. Ukončení používání
 

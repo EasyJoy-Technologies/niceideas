@@ -1,4 +1,4 @@
-> **Özet.** Sadece niceideas'ı çalıştırmak için gerekli olanı topluyoruz: profilinizi, yayınladıklarınızı ve Hizmeti güvenli tutmak için sınırlı teknik verileri. Paylaşımlarınız herkese açıktır. Kişisel bilgileri satmıyoruz, reklam göstermiyoruz veya harici izleyiciler kullanmıyoruz. Paylaşımlarınızı istediğiniz zaman geri çekebilir ve NiceMatrix ID'nizi silerek hesabınızı silebilirsiniz. Herhangi bir gizlilik sorusu veya talebi için support@nicematrix.ca adresine yazın.
+> **Özet.** Sadece niceideas'ı çalıştırmak için gerekli olanı topluyoruz: profilinizi, yayınladıklarınızı ve Hizmeti güvenli tutmak için sınırlı teknik verileri. Paylaşımlarınız herkese açıktır. Kişisel bilgileri satmıyoruz, reklam göstermiyoruz veya harici izleyiciler kullanmıyoruz. Paylaşımlarınızı istediğiniz zaman silebilir ve NiceMatrix ID'nizi silerek hesabınızı silebilirsiniz. Herhangi bir gizlilik sorusu veya talebi için support@nicematrix.ca adresine yazın.
 
 ## 1. Biz kimiz
 
@@ -84,7 +84,7 @@ Avrupa Ekonomik Alanı, Birleşik Krallık ve İsviçre'den Kanada'ya yapılan t
 | Bilgi | Ne kadar süreyle |
 |---|---|
 | Profil | Hesabınız var olduğu sürece; hesap silme tamamlandığında silinir |
-| Paylaşımlar, önceki sürümler ve medyaları | Paylaşımı geri çekene veya hesabı silene kadar; geri çekilen veya kaldırılan paylaşımlar 30 gün sonra kalıcı olarak silinir |
+| Paylaşımlar, önceki sürümler ve medyaları | Paylaşımı veya hesabı silene kadar; silinen veya kaldırılan paylaşımlar 30 gün sonra kalıcı olarak silinir |
 | Artık hiçbir paylaşım tarafından kullanılmayan medya | 7 gün sonra silinir |
 | Yorumlar ve beğeniler | Yorum, paylaşımın yazarı veya bizim tarafımızdan silinene veya paylaşım silinene kadar |
 | Bir paylaşım hakkındaki bildirimler ve moderasyon kayıtları | İlgili oldukları paylaşımla birlikte silinir |
@@ -107,7 +107,7 @@ niceideas hesapları, NiceMatrix ID'nizin silinmesiyle silinir:
 2. NiceMatrix ID ertelenme süresi içinde (şu anda 15 gün) iptal ederseniz, her şey aynı bağlantılara geri döner.
 3. Ertelenme süresi sona erdiğinde, en fazla 14 günlük yedekleme döngüsü dışında herhangi bir ek saklama süresi olmaksızın profilinizi, paylaşımlarınızı, önceki sürümlerinizi, medyanızı, yorumlarınızı, beğenilerinizi ve takiplerinizi kalıcı olarak sileriz.
 
-Ayrıca, bireysel paylaşımları istediğiniz zaman geri çekebilir, ya da başka bir şeyi silmemiz için bize yazabilirsiniz.
+Ayrıca, bireysel paylaşımları istediğiniz zaman silebilir, ya da başka bir şeyi silmemiz için bize yazabilirsiniz.
 
 ## 11. Haklarınız
 
@@ -120,7 +120,7 @@ Yaşadığınız yere bağlı olarak, Kanada'nın PIPEDA'sı, Alberta'nın Kişi
 - Onayınızı geri çekme;
 - Kanada Gizlilik Komiserliği Ofisi, Alberta Bilgi ve Gizlilik Komiserliği Ofisi, Avrupa Birliği'ndeki yerel yetkiliniz, veya Birleşik Krallık Bilgi Komiserliği Ofisi gibi bir veri koruma kurumuna şikayette bulunma.
 
-Profilinizi Ayarlar'da düzenleyebilir ve paylaşımları yayınladığınız uygulamadan ya da bize yazarak geri çekebilirsiniz. Başka herhangi bir talep için support@nicematrix.ca adresine yazın. Hesabın size ait olduğunu, örneğin giriş yaparak, doğrulamanızı isteyebiliriz. 30 gün içinde ya da yasanın gerektirdiği süre içinde yanıt veririz, ve açıkça temelsiz veya aşırı olmadıkça talepler için ücret almayız. Yasanın izin verdiği durumlarda yetkili bir temsilci kullanabilirsiniz. Haklarınızı kullandığınız için size farklı davranmayacağız.
+Profilinizi Ayarlar'da düzenleyebilir ve paylaşımları niceideas'ta veya yayınladığınız uygulamada silebilir, ya da bize yazabilirsiniz. Başka herhangi bir talep için support@nicematrix.ca adresine yazın. Hesabın size ait olduğunu, örneğin giriş yaparak, doğrulamanızı isteyebiliriz. 30 gün içinde ya da yasanın gerektirdiği süre içinde yanıt veririz, ve açıkça temelsiz veya aşırı olmadıkça talepler için ücret almayız. Yasanın izin verdiği durumlarda yetkili bir temsilci kullanabilirsiniz. Haklarınızı kullandığınız için size farklı davranmayacağız.
 
 ## 12. Çocuklar
 

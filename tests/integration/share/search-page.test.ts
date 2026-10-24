@@ -1,16 +1,14 @@
 import { afterAll, beforeAll, describe, expect, it } from "vitest";
-import { POST as createRoute } from "@/app/api/v1/posts/route";
+import { publishAs } from "../../helpers/publish";
 import { GET as searchRoute } from "@/app/search/route";
 import { startAppContext } from "../../helpers/app-context";
-import { jsonRequest } from "../../helpers/api";
 
 let ctx: Awaited<ReturnType<typeof startAppContext>>;
 beforeAll(async () => {
   ctx = await startAppContext();
-  const token = await ctx.tokenFor("search-author");
   const doc = (text: string) => ({ version: 1, blocks: [{ type: "text", text }] });
   for (const [text, ref] of [["Morning walk by the lake", "s1"], ["100% juice_box recipe", "s2"], ["Unrelated note", "s3"]]) {
-    await createRoute(jsonRequest("POST", "/api/v1/posts", token, { document: doc(text), sourceRef: ref, sourceUpdatedAt: "2026-10-21T00:00:00Z" }), {});
+    await publishAs(ctx, "search-author", doc(text), ref);
   }
   await ctx.db.updateTable("profile").set({ display_name: "Lake Walker" }).where("user_id", "=", "search-author").execute();
 });

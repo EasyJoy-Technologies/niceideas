@@ -150,8 +150,9 @@
     "status": {
       "active": "Online",
       "author_deleting": "Account van de auteur wordt verwijderd",
+      "preparing": "Wordt voorbereid",
       "removed": "Verwijderd",
-      "unpublished": "Ingetrokken door de auteur"
+      "unpublished": "Verwijderd door de auteur"
     },
     "tab": {
       "dismissed": "Afgewezen",
@@ -277,7 +278,7 @@
     "about": {
       "p1": "{brand} is de plek om je nice ideas te delen — korte gedachten, lange teksten, foto’s en audio — met één link.",
       "p2": "Iedereen kan een gedeelde link openen, met of zonder account. Berichten kunnen rechtstreeks uit apps zoals NiceNote komen of op het web geschreven worden.",
-      "p3": "Je berichten blijven van jou: je kunt ze altijd bewerken of intrekken, en ingetrokken berichten worden na 30 dagen definitief verwijderd.",
+      "p3": "Je berichten blijven van jou: je kunt ze altijd bewerken of verwijderen, en verwijderde berichten worden na 30 dagen definitief verwijderd.",
       "title": "Over"
     },
     "effective": "Van kracht sinds {date}",
@@ -293,7 +294,7 @@
     },
     "help": {
       "a1": "Deel een notitie vanuit NiceNote, of schrijf een bericht op het web zodra publiceren via het web open is.",
-      "a2": "Bewerk de notitie in de app en het bericht wordt bijgewerkt. Trek het in de app in en de link werkt meteen niet meer.",
+      "a2": "Bewerk de notitie in de app en het bericht wordt bijgewerkt. Om een bericht te verwijderen, open je het ‘⋯’-menu op de pagina en kies je ‘Verwijderen’; de link werkt meteen niet meer.",
       "a3": "Iedereen met de link. Berichten verschijnen ook op je profiel en in feeds.",
       "a4": "Gebruik Melden bij het bericht. We bekijken elke melding.",
       "q1": "Hoe publiceer ik?",
@@ -368,7 +369,9 @@
       "cancel": "Annuleren",
       "close": "Sluiten",
       "copied": "Link gekopieerd",
+      "delete": "Verwijderen",
       "like": "Vind ik leuk",
+      "more": "Meer opties",
       "reply": "Reageren",
       "report": "Melden",
       "share": "Delen"
@@ -393,14 +396,29 @@
       "submit": "Plaatsen",
       "title": "Reacties"
     },
+    "delete": {
+      "body": "De link werkt meteen niet meer, en het bericht wordt na 30 dagen definitief verwijderd. Dit kan niet ongedaan worden gemaakt.",
+      "failed": "Het bericht kon niet worden verwijderd. Probeer het opnieuw.",
+      "fromApp": "Het origineel in {app} blijft ongewijzigd; opnieuw delen maakt een nieuwe link.",
+      "title": "Dit bericht verwijderen?"
+    },
     "header": {
       "join": "Word lid van {brand}",
       "joinShort": "Aanmelden"
     },
     "language": "Taal",
+    "media": {
+      "processing": "Verwerken…",
+      "unavailable": "Media niet beschikbaar"
+    },
     "post": {
       "edited": "Bewerkt op {time}",
-      "from": "Via {app}"
+      "empty": "Dit bericht heeft geen inhoud.",
+      "from": "Via {app}",
+      "preparing": {
+        "body": "De inhoud verschijnt hier zo.",
+        "title": "Dit bericht wordt voorbereid"
+      }
     },
     "report": {
       "done": "Bedankt. We bekijken het.",
@@ -430,8 +448,8 @@
         "title": "Deze pagina is niet beschikbaar in jouw regio"
       },
       "withdrawn": {
-        "body": "De auteur heeft dit bericht ingetrokken.",
-        "title": "Bericht ingetrokken"
+        "body": "De auteur heeft dit bericht verwijderd.",
+        "title": "Dit bericht is verwijderd"
       }
     }
   },

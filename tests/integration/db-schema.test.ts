@@ -3,7 +3,7 @@ import { sql } from "kysely";
 import type { Db } from "@/server/db/client";
 import { migrateToLatest } from "@/server/db/migrate";
 import { insertProfileIfAbsent } from "@/server/db/repos/profiles";
-import { findLivePostBySource, insertPost, listLiveBySources, updatePost } from "@/server/db/repos/posts";
+import { findLivePostBySource, insertPost, updatePost } from "@/server/db/repos/posts";
 import { insertRevision, linkRevisionMedia } from "@/server/db/repos/revisions";
 import { filterPubliclyReferenced, insertMediaOrGet } from "@/server/db/repos/media";
 import { claimIdempotency, completeIdempotency, releaseIdempotency } from "@/server/db/repos/idempotency";
@@ -54,15 +54,12 @@ describe("posts + revisions", () => {
     await expect(insertPost(db, { author_id: "u1", kind: "short", source: "web", source_ref: null, slug: "short" })).rejects.toThrow();
   });
 
-  it("numbers revisions sequentially and lists sources with current hash", async () => {
+  it("numbers revisions sequentially", async () => {
     const post = await insertPost(db, { author_id: "u1", kind: "article", source: "nicenote_cn", source_ref: "note-9", slug: "slugslugslug05" });
     const r1 = await insertRevision(db, { postId: post.id, document: { version: 1, blocks: [] }, contentHash: HASH, sourceUpdatedAt: null });
     const r2 = await insertRevision(db, { postId: post.id, document: { version: 1, blocks: [] }, contentHash: "b".repeat(64), sourceUpdatedAt: new Date() });
     expect([r1.revision_no, r2.revision_no]).toEqual([1, 2]);
-    await updatePost(db, post.id, { current_revision_id: r2.id });
-    const list = await listLiveBySources(db, "u1", ["nicenote_cn"]);
-    expect(list).toHaveLength(1);
-    expect(list[0]).toMatchObject({ source_ref: "note-9", content_hash: "b".repeat(64) });
+    expect((await updatePost(db, post.id, { current_revision_id: r2.id })).current_revision_id).toBe(r2.id);
   });
 
   it("current_revision_id must reference an existing revision (checked at commit)", async () => {

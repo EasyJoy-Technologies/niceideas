@@ -150,8 +150,9 @@
     "status": {
       "active": "Zveřejněno",
       "author_deleting": "Účet autora se ruší",
+      "preparing": "Připravuje se",
       "removed": "Odstraněno",
-      "unpublished": "Staženo autorem"
+      "unpublished": "Smazáno autorem"
     },
     "tab": {
       "dismissed": "Zamítnutá",
@@ -277,7 +278,7 @@
     "about": {
       "p1": "{brand} je místo, kde můžete sdílet své nice ideas — krátké myšlenky, dlouhé texty, fotky i zvuk — jediným odkazem.",
       "p2": "Sdílený odkaz může otevřít kdokoli, s účtem i bez něj. Příspěvky mohou přicházet přímo z aplikací, jako je NiceNote, nebo vznikat na webu.",
-      "p3": "Vaše příspěvky zůstávají vaše: můžete je kdykoli upravit nebo stáhnout a stažené příspěvky se po 30 dnech trvale smažou.",
+      "p3": "Vaše příspěvky zůstávají vaše: můžete je kdykoli upravit nebo smazat a smazané příspěvky se po 30 dnech trvale odstraní.",
       "title": "O nás"
     },
     "effective": "Účinné od {date}",
@@ -293,7 +294,7 @@
     },
     "help": {
       "a1": "Sdílejte poznámku z NiceNote, nebo napište příspěvek na webu, jakmile se publikování na webu otevře.",
-      "a2": "Upravte poznámku v aplikaci a příspěvek se aktualizuje. Stáhněte ji v aplikaci a odkaz okamžitě přestane fungovat.",
+      "a2": "Upravte poznámku v aplikaci a příspěvek se aktualizuje. Chcete-li příspěvek smazat, otevřete na jeho stránce nabídku „⋯“ a vyberte Smazat; odkaz okamžitě přestane fungovat.",
       "a3": "Kdokoli s odkazem. Příspěvky se zobrazují i na vašem profilu a ve zdrojích.",
       "a4": "Použijte Nahlásit u příspěvku. Každé nahlášení prověříme.",
       "q1": "Jak publikovat?",
@@ -368,7 +369,9 @@
       "cancel": "Zrušit",
       "close": "Zavřít",
       "copied": "Odkaz zkopírován",
+      "delete": "Smazat",
       "like": "Líbí se mi",
+      "more": "Další možnosti",
       "reply": "Odpovědět",
       "report": "Nahlásit",
       "share": "Sdílet"
@@ -393,14 +396,29 @@
       "submit": "Odeslat",
       "title": "Komentáře"
     },
+    "delete": {
+      "body": "Odkaz okamžitě přestane fungovat a příspěvek se po 30 dnech trvale odstraní. Tuto akci nelze vrátit.",
+      "failed": "Příspěvek se nepodařilo smazat. Zkuste to znovu.",
+      "fromApp": "Originál v {app} není ovlivněn; opětovné sdílení vytvoří nový odkaz.",
+      "title": "Smazat tento příspěvek?"
+    },
     "header": {
       "join": "Připojit se k {brand}",
       "joinShort": "Připojit se"
     },
     "language": "Jazyk",
+    "media": {
+      "processing": "Zpracovává se…",
+      "unavailable": "Médium není k dispozici"
+    },
     "post": {
       "edited": "Upraveno {time}",
-      "from": "Z aplikace {app}"
+      "empty": "Tento příspěvek neobsahuje žádný obsah.",
+      "from": "Z aplikace {app}",
+      "preparing": {
+        "body": "Obsah se tu zobrazí za okamžik.",
+        "title": "Příspěvek se připravuje"
+      }
     },
     "report": {
       "done": "Děkujeme. Prověříme to.",
@@ -430,8 +448,8 @@
         "title": "Tato stránka není ve vašem regionu dostupná"
       },
       "withdrawn": {
-        "body": "Autor tento příspěvek stáhl.",
-        "title": "Příspěvek stažen"
+        "body": "Autor tento příspěvek smazal.",
+        "title": "Příspěvek byl smazán"
       }
     }
   },

@@ -1,4 +1,4 @@
-> **Summary.** We collect only what we need to run niceideas: your profile, what you publish, and limited technical data to keep the Service safe. Your posts are public. We do not sell personal information, show ads or use third-party trackers. You can withdraw posts at any time and delete your account by deleting your NiceMatrix ID. Write to support@nicematrix.ca with any privacy question or request.
+> **Summary.** We collect only what we need to run niceideas: your profile, what you publish, and limited technical data to keep the Service safe. Your posts are public. We do not sell personal information, show ads or use third-party trackers. You can delete posts at any time and delete your account by deleting your NiceMatrix ID. Write to support@nicematrix.ca with any privacy question or request.
 
 ## 1. Who we are
 
@@ -84,7 +84,7 @@ For connections from mainland China, only individual shared post pages and the l
 | Information | How long |
 |---|---|
 | Profile | While your account exists; deleted when account deletion is completed |
-| Posts, earlier versions and their media | Until you withdraw the post or delete your account; withdrawn or removed posts are permanently deleted 30 days later |
+| Posts, earlier versions and their media | Until you delete the post or your account; deleted or removed posts are permanently erased 30 days later |
 | Media no longer used by any post | Deleted after 7 days |
 | Comments and likes | Until the comment is deleted by the post's author or by us, or the post is deleted |
 | Reports and moderation records about a post | Deleted together with the post they concern |
@@ -107,7 +107,7 @@ niceideas accounts are deleted by deleting your NiceMatrix ID:
 2. If you cancel during the NiceMatrix ID cooling-off period (currently 15 days), everything returns at the same links.
 3. When the cooling-off period ends, we permanently delete your profile, posts, earlier versions, media, comments, likes and follows, without any further retention period, apart from the backup cycle of up to 14 days.
 
-You can also withdraw individual posts at any time, or write to us to delete anything else.
+You can also delete individual posts at any time, or write to us to delete anything else.
 
 ## 11. Your rights
 
@@ -120,7 +120,7 @@ Depending on where you live, including under Canada's PIPEDA, Alberta's Personal
 - withdraw your consent;
 - complain to a data protection authority, such as the Office of the Privacy Commissioner of Canada, the Office of the Information and Privacy Commissioner of Alberta, your local authority in the European Union, or the UK Information Commissioner's Office.
 
-You can edit your profile in Settings and withdraw posts in the app you published them from, or by writing to us. For any other request, write to support@nicematrix.ca. We may ask you to confirm that the account is yours, for example by signing in. We reply within 30 days, or within the period the law requires, and we do not charge for requests unless they are clearly unfounded or excessive. You may use an authorised agent where the law permits. We will not treat you differently for exercising your rights.
+You can edit your profile in Settings and delete posts on niceideas or in the app you published them from, or by writing to us. For any other request, write to support@nicematrix.ca. We may ask you to confirm that the account is yours, for example by signing in. We reply within 30 days, or within the period the law requires, and we do not charge for requests unless they are clearly unfounded or excessive. You may use an authorised agent where the law permits. We will not treat you differently for exercising your rights.
 
 ## 12. Children
 

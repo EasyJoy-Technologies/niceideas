@@ -1,4 +1,4 @@
-> **Summary.** You own what you post, and you are responsible for it. Posts on niceideas are public. Do not post anything illegal or harmful, or anything you do not have the right to share. You can withdraw a post at any time; withdrawn posts are permanently deleted after 30 days. niceideas is free and provided as is. These Terms are governed by the laws of Alberta, Canada. This summary is for convenience only; the full Terms below apply.
+> **Summary.** You own what you post, and you are responsible for it. Posts on niceideas are public. Do not post anything illegal or harmful, or anything you do not have the right to share. You can delete a post at any time; deleted posts are permanently removed after 30 days. niceideas is free and provided as is. These Terms are governed by the laws of Alberta, Canada. This summary is for convenience only; the full Terms below apply.
 
 ## 1. About these Terms
 
@@ -30,7 +30,7 @@ By using the Service, including viewing, liking or commenting without an account
 
 4.2 Comments are public and appear under the post. Visitors without an account may like posts and comment under an optional nickname.
 
-4.3 Do not publish anything you want to keep private. Once something is public, others may copy or save it before you withdraw it, and we cannot recall such copies.
+4.3 Do not publish anything you want to keep private. Once something is public, others may copy or save it before you delete it, and we cannot recall such copies.
 
 4.4 For visitors whose connection comes from mainland China, only individual shared post pages and the likes and comments on them are available; other pages are not. This reflects how the Service is currently offered and may change.
 
@@ -44,7 +44,7 @@ By using the Service, including viewing, liking or commenting without an account
 
 5.4 You confirm that you own your content or have every permission needed to post it and to grant this licence, and that posting it does not violate anyone's rights or any law.
 
-5.5 You can withdraw your posts at any time: a post published from an app can be withdrawn in that app, and any post can be withdrawn by writing to support@nicematrix.ca. A withdrawn post leaves the Service immediately and is permanently deleted 30 days later. Where the app you use supports it, you can also delete comments under your own posts.
+5.5 You can delete your posts at any time: any post can be deleted on its page on niceideas, a post published from an app can also be deleted in that app, and you can write to support@nicematrix.ca. A deleted post leaves the Service immediately and is permanently removed 30 days later. Where the app you use supports it, you can also delete comments under your own posts.
 
 ## 6. Rules of conduct
 
@@ -83,11 +83,11 @@ You agree not to use the Service to:
 
 9.1 You can publish to niceideas from the NiceNote app or from other apps you authorise through NiceMatrix ID. An app can do only what you allow it to (for example, publish posts or upload media), and only for the posts it published. Posts show which app they came from.
 
-9.2 You can revoke an app's access through NiceMatrix ID, or ask us to block it for your account by writing to support@nicematrix.ca. Revoking access stops future access; it does not remove posts already published, which you can withdraw yourself.
+9.2 You can revoke an app's access through NiceMatrix ID, or ask us to block it for your account by writing to support@nicematrix.ca. Revoking access stops future access; it does not remove posts already published, which you can delete yourself.
 
 9.3 Apps are provided by their developers under their own terms and privacy policies. We may block or limit any app that misuses the Service.
 
-9.4 When you publish from NiceNote, only the note you choose to publish is sent to niceideas. Changes and withdrawals you make in NiceNote can update or withdraw the published post.
+9.4 When you publish from NiceNote, only the note you choose to publish is sent to niceideas, through NiceMatrix. Changes you make to the note in NiceNote can update the published post, and you can delete the post in NiceNote or on niceideas.
 
 ## 10. Ending your use
 

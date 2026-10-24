@@ -1,4 +1,4 @@
-> **Ringkasan.** Kami hanya mengumpulkan apa yang kami perlukan untuk menjalankan niceideas: profil Anda, apa yang Anda terbitkan, dan data teknis terbatas untuk menjaga keamanan Layanan. Unggahan Anda bersifat publik. Kami tidak menjual informasi pribadi, menampilkan iklan, atau menggunakan pelacak eksternal. Anda dapat menarik unggahan kapan saja dan menghapus akun Anda dengan menghapus NiceMatrix ID Anda. Tulislah ke support@nicematrix.ca untuk pertanyaan atau permintaan privasi apa pun.
+> **Ringkasan.** Kami hanya mengumpulkan apa yang kami perlukan untuk menjalankan niceideas: profil Anda, apa yang Anda terbitkan, dan data teknis terbatas untuk menjaga keamanan Layanan. Unggahan Anda bersifat publik. Kami tidak menjual informasi pribadi, menampilkan iklan, atau menggunakan pelacak eksternal. Anda dapat menghapus unggahan kapan saja dan menghapus akun Anda dengan menghapus NiceMatrix ID Anda. Tulislah ke support@nicematrix.ca untuk pertanyaan atau permintaan privasi apa pun.
 
 ## 1. Siapa kami
 
@@ -84,7 +84,7 @@ Untuk koneksi dari Tiongkok daratan, hanya halaman unggahan bersama individual s
 | Informasi | Berapa lama |
 |---|---|
 | Profil | Selama akun Anda ada; dihapus ketika penghapusan akun selesai |
-| Unggahan, versi sebelumnya, dan medianya | Sampai Anda menarik unggahan atau menghapus akun; unggahan yang ditarik atau dihapus secara permanen dihapus 30 hari kemudian |
+| Unggahan, versi sebelumnya, dan medianya | Sampai Anda menghapus unggahan atau menghapus akun; unggahan yang dihapus atau dihapus secara permanen dihapus 30 hari kemudian |
 | Media yang tidak lagi digunakan oleh unggahan mana pun | Dihapus setelah 7 hari |
 | Komentar dan suka | Sampai komentar dihapus oleh penulis unggahan atau oleh kami, atau unggahan dihapus |
 | Laporan dan catatan moderasi tentang unggahan | Dihapus bersama unggahan yang bersangkutan |
@@ -107,7 +107,7 @@ Akun niceideas dihapus dengan menghapus NiceMatrix ID Anda:
 2. Jika Anda membatalkan selama periode pembatalan NiceMatrix ID (saat ini 15 hari), semuanya kembali di tautan yang sama.
 3. Ketika periode pembatalan berakhir, kami secara permanen menghapus profil, unggahan, versi sebelumnya, media, komentar, suka, dan pengikut Anda, tanpa periode penyimpanan lebih lanjut, kecuali siklus cadangan hingga 14 hari.
 
-Anda juga dapat menarik unggahan individual kapan saja, atau menulis kepada kami untuk menghapus hal lainnya.
+Anda juga dapat menghapus unggahan individual kapan saja, atau menulis kepada kami untuk menghapus hal lainnya.
 
 ## 11. Hak Anda
 
@@ -120,7 +120,7 @@ Bergantung pada tempat Anda tinggal, termasuk berdasarkan PIPEDA Kanada, Undang-
 - menarik persetujuan Anda;
 - mengajukan keluhan kepada otoritas perlindungan data, seperti Kantor Komisaris Privasi Kanada, Kantor Komisaris Informasi dan Privasi Alberta, otoritas lokal Anda di Uni Eropa, atau Kantor Komisaris Informasi Inggris Raya.
 
-Anda dapat mengedit profil Anda di Pengaturan dan menarik unggahan di aplikasi yang Anda terbitkan, atau menulis kepada kami. Untuk permintaan lain apa pun, tulislah ke support@nicematrix.ca. Kami mungkin meminta Anda mengonfirmasi bahwa akun tersebut milik Anda, misalnya dengan masuk. Kami menanggapi dalam 30 hari, atau dalam periode yang diharuskan oleh hukum, dan kami tidak mengenakan biaya untuk permintaan kecuali jelas tidak berdasar atau berlebihan. Anda dapat menggunakan agen yang diberi kuasa jika hukum mengizinkannya. Kami tidak akan memperlakukan Anda secara berbeda karena menggunakan hak Anda.
+Anda dapat mengedit profil Anda di Pengaturan dan menghapus unggahan di niceideas atau di aplikasi yang Anda terbitkan, atau menulis kepada kami. Untuk permintaan lain apa pun, tulislah ke support@nicematrix.ca. Kami mungkin meminta Anda mengonfirmasi bahwa akun tersebut milik Anda, misalnya dengan masuk. Kami menanggapi dalam 30 hari, atau dalam periode yang diharuskan oleh hukum, dan kami tidak mengenakan biaya untuk permintaan kecuali jelas tidak berdasar atau berlebihan. Anda dapat menggunakan agen yang diberi kuasa jika hukum mengizinkannya. Kami tidak akan memperlakukan Anda secara berbeda karena menggunakan hak Anda.
 
 ## 12. Anak-anak
 

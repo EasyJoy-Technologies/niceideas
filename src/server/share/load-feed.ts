@@ -1,20 +1,22 @@
 import type { Db } from "@/server/db/client";
-import type { Media } from "@/server/db/schema";
+import type { Media, MediaJobState } from "@/server/db/schema";
 import { findRevisions, listFeed, type FeedCursor, type FeedFilter, type FeedRow } from "@/server/db/repos/feed";
 import { likedAmong, POST_LIKE } from "@/server/db/repos/likes";
 import { findMediaByIds } from "@/server/db/repos/media";
 import { documentPlainText } from "@/server/documents/derive";
-import { documentSchema, type PostDocument } from "@/server/documents/schema";
-import { documentMediaIds } from "@/server/documents/validate";
+import { documentMediaKeys, isSourceDocument, parseStoredDocument, type StoredDocument } from "@/server/documents/stored";
+import { loadDocumentMedia } from "./document-media";
 
 export const FEED_PAGE_SIZE = 20;
 
 export type FeedItem = {
   post: FeedRow;
-  document: PostDocument;
+  document: StoredDocument;
   cover: Media | null;
-  /** Media of short posts (shown in full under the text); empty for articles. */
+  /** Media of short posts (shown in full under the text), keyed like the document's blocks; empty for articles. */
   media: ReadonlyMap<string, Media>;
+  /** NiceNote shares: fetch state of media not stored yet. */
+  jobs: ReadonlyMap<string, MediaJobState>;
   liked: boolean;
   /** Article facts shown under the summary. */
   readingMinutes: number;
@@ -46,9 +48,11 @@ export async function loadFeed(db: Db, filter: FeedFilter, cursor: FeedCursor | 
   const page = rows.slice(0, FEED_PAGE_SIZE);
   const revisions = new Map((await findRevisions(db, page.flatMap((p) => (p.current_revision_id ? [p.current_revision_id] : [])))).map((r) => [r.id, r]));
   const covers = new Map((await findMediaByIds(db, page.flatMap((p) => (p.cover_media_id ? [p.cover_media_id] : [])))).map((m) => [m.id, m]));
-  const documents = new Map(page.map((p) => [p.id, p.current_revision_id ? revisions.get(p.current_revision_id) : undefined] as const).flatMap(([id, r]) => (r ? [[id, documentSchema.parse(r.document)] as const] : [])));
-  const shortMediaIds = page.filter((p) => p.kind === "short").flatMap((p) => (documents.get(p.id) ? documentMediaIds(documents.get(p.id)!) : []));
-  const media = new Map((await findMediaByIds(db, shortMediaIds)).map((m) => [m.id, m]));
+  const documents = new Map(page.map((p) => [p.id, p.current_revision_id ? revisions.get(p.current_revision_id) : undefined] as const).flatMap(([id, r]) => (r ? [[id, parseStoredDocument(r.document)] as const] : [])));
+  const shorts = page.filter((p) => p.kind === "short" && documents.has(p.id));
+  // API documents: one query by media id; NiceNote shares: by ref per author.
+  const media = new Map((await findMediaByIds(db, shorts.flatMap((p) => (isSourceDocument(documents.get(p.id)!) ? [] : documentMediaKeys(documents.get(p.id)!))))).map((m) => [m.id, m]));
+  const shared = new Map(await Promise.all(shorts.filter((p) => isSourceDocument(documents.get(p.id)!)).map(async (p) => [p.id, await loadDocumentMedia(db, p.author_id, documents.get(p.id)!)] as const)));
   const liked = visitorKey ? await likedAmong(db, POST_LIKE, page.map((p) => p.id), visitorKey) : new Set<string>();
   const items: FeedItem[] = [];
   for (const post of page) {
@@ -58,7 +62,8 @@ export async function loadFeed(db: Db, filter: FeedFilter, cursor: FeedCursor | 
       post,
       document,
       cover: post.cover_media_id ? covers.get(post.cover_media_id) ?? null : null,
-      media: post.kind === "short" ? media : new Map(),
+      media: post.kind !== "short" ? new Map() : (shared.get(post.id)?.media ?? media),
+      jobs: shared.get(post.id)?.jobs ?? new Map(),
       liked: liked.has(post.id),
       readingMinutes: readingMinutes(documentPlainText(document)),
       images: document.blocks.filter((b) => b.type === "image").length,

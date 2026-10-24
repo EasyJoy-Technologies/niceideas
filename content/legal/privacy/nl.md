@@ -1,4 +1,4 @@
-> **Samenvatting.** Wij verzamelen alleen wat nodig is om niceideas te laten werken: uw profiel, wat u plaatst, en beperkte technische gegevens om de Dienst veilig te houden. Uw berichten zijn openbaar. Wij verkopen geen persoonsgegevens, tonen geen advertenties en gebruiken geen externe trackers. U kunt berichten op elk moment intrekken en uw account verwijderen door uw NiceMatrix ID te verwijderen. Schrijf naar support@nicematrix.ca met elke privacyvraag of verzoek.
+> **Samenvatting.** Wij verzamelen alleen wat nodig is om niceideas te laten werken: uw profiel, wat u plaatst, en beperkte technische gegevens om de Dienst veilig te houden. Uw berichten zijn openbaar. Wij verkopen geen persoonsgegevens, tonen geen advertenties en gebruiken geen externe trackers. U kunt berichten op elk moment verwijderen en uw account verwijderen door uw NiceMatrix ID te verwijderen. Schrijf naar support@nicematrix.ca met elke privacyvraag of verzoek.
 
 ## 1. Wie wij zijn
 
@@ -84,7 +84,7 @@ Voor verbindingen vanuit vasteland-China zijn alleen individuele gedeelde berich
 | Informatie | Hoe lang |
 |---|---|
 | Profiel | Zolang uw account bestaat; verwijderd wanneer de accountverwijdering is voltooid |
-| Berichten, eerdere versies en hun media | Totdat u het bericht intrekt of uw account verwijdert; ingetrokken of verwijderde berichten worden 30 dagen later definitief gewist |
+| Berichten, eerdere versies en hun media | Totdat u het bericht of uw account verwijdert; verwijderde berichten worden 30 dagen later definitief gewist |
 | Media die niet meer door een bericht worden gebruikt | Verwijderd na 7 dagen |
 | Reacties en likes | Totdat de reactie wordt verwijderd door de auteur van het bericht of door ons, of het bericht wordt verwijderd |
 | Meldingen en moderatierecords over een bericht | Verwijderd samen met het bericht waarop ze betrekking hebben |
@@ -107,7 +107,7 @@ niceideas-accounts worden verwijderd door uw NiceMatrix ID te verwijderen:
 2. Als u annuleert tijdens de bedenktermijn van NiceMatrix ID (momenteel 15 dagen), komt alles terug op dezelfde links.
 3. Wanneer de bedenktermijn eindigt, verwijderen wij definitief uw profiel, berichten, eerdere versies, media, reacties, likes en volgers, zonder verdere bewaartermijn, afgezien van de back-upcyclus van maximaal 14 dagen.
 
-U kunt ook op elk moment afzonderlijke berichten intrekken, of ons schrijven om iets anders te verwijderen.
+U kunt ook op elk moment afzonderlijke berichten verwijderen, of ons schrijven om iets anders te verwijderen.
 
 ## 11. Uw rechten
 
@@ -120,7 +120,7 @@ Afhankelijk van waar u woont, onder meer onder de Canadese PIPEDA, de Personal I
 - uw toestemming in te trekken;
 - een klacht in te dienen bij een gegevensbeschermingsautoriteit, zoals het Office of the Privacy Commissioner of Canada, het Office of the Information and Privacy Commissioner of Alberta, uw lokale autoriteit in de Europese Unie, of het Information Commissioner's Office van het VK.
 
-U kunt uw profiel bewerken in Instellingen en berichten intrekken in de app waarmee u ze heeft gepubliceerd, of door ons te schrijven. Voor elk ander verzoek schrijft u naar support@nicematrix.ca. Wij kunnen u vragen te bevestigen dat het account het uwe is, bijvoorbeeld door in te loggen. Wij antwoorden binnen 30 dagen, of binnen de door de wet vereiste termijn, en wij brengen geen kosten in rekening voor verzoeken, behalve wanneer deze duidelijk ongegrond of buitensporig zijn. U kunt een gemachtigde vertegenwoordiger gebruiken waar de wet dit toestaat. Wij zullen u niet anders behandelen omdat u uw rechten uitoefent.
+U kunt uw profiel bewerken in Instellingen en berichten verwijderen op niceideas of in de app waarmee u ze heeft gepubliceerd, of door ons te schrijven. Voor elk ander verzoek schrijft u naar support@nicematrix.ca. Wij kunnen u vragen te bevestigen dat het account het uwe is, bijvoorbeeld door in te loggen. Wij antwoorden binnen 30 dagen, of binnen de door de wet vereiste termijn, en wij brengen geen kosten in rekening voor verzoeken, behalve wanneer deze duidelijk ongegrond of buitensporig zijn. U kunt een gemachtigde vertegenwoordiger gebruiken waar de wet dit toestaat. Wij zullen u niet anders behandelen omdat u uw rechten uitoefent.
 
 ## 12. Kinderen
 

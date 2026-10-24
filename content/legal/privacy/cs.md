@@ -1,4 +1,4 @@
-> **Shrnutí.** Shromažďujeme pouze to, co potřebujeme k provozu niceideas: váš profil, to, co zveřejňujete, a omezené technické údaje pro zajištění bezpečnosti Služby. Vaše příspěvky jsou veřejné. Osobní údaje neprodáváme, nezobrazujeme reklamy ani nevyužíváme externí sledovací nástroje. Příspěvky můžete kdykoli odvolat a účet odstranit odstraněním svého NiceMatrix ID. S jakýmkoli dotazem nebo žádostí týkající se ochrany osobních údajů nás kontaktujte na support@nicematrix.ca.
+> **Shrnutí.** Shromažďujeme pouze to, co potřebujeme k provozu niceideas: váš profil, to, co zveřejňujete, a omezené technické údaje pro zajištění bezpečnosti Služby. Vaše příspěvky jsou veřejné. Osobní údaje neprodáváme, nezobrazujeme reklamy ani nevyužíváme externí sledovací nástroje. Příspěvky můžete kdykoli smazat a účet odstranit odstraněním svého NiceMatrix ID. S jakýmkoli dotazem nebo žádostí týkající se ochrany osobních údajů nás kontaktujte na support@nicematrix.ca.
 
 ## 1. Kdo jsme
 
@@ -84,7 +84,7 @@ Pro připojení z Číny na pevnině jsou dostupné pouze jednotlivé stránky s
 | Informace | Jak dlouho |
 |---|---|
 | Profil | Po dobu existence vašeho účtu; odstraněn po dokončení odstranění účtu |
-| Příspěvky, dřívější verze a jejich média | Do odvolání příspěvku nebo odstranění účtu; odvolané nebo odstraněné příspěvky jsou trvale odstraněny o 30 dní později |
+| Příspěvky, dřívější verze a jejich média | Do smazání příspěvku nebo účtu; smazané nebo odstraněné příspěvky jsou trvale odstraněny o 30 dní později |
 | Média, která již žádný příspěvek nepoužívá | Odstraněna po 7 dnech |
 | Komentáře a lajky | Do odstranění komentáře autorem příspěvku nebo námi, nebo do odstranění příspěvku |
 | Nahlášení a záznamy moderace o příspěvku | Odstraněna společně s příspěvkem, kterého se týkají |
@@ -107,7 +107,7 @@ Informace mohou být uchovávány delší dobu, pokud to vyžaduje zákon nebo z
 2. Pokud žádost zrušíte během ochranné lhůty NiceMatrix ID (v současnosti 15 dní), vše se vrátí na stejné odkazy.
 3. Po skončení ochranné lhůty trvale odstraníme váš profil, příspěvky, dřívější verze, média, komentáře, lajky a sledování, bez jakékoli další lhůty uchovávání, kromě cyklu zálohování v délce až 14 dní.
 
-Jednotlivé příspěvky můžete také kdykoli odvolat, nebo nás kontaktovat ohledně odstranění čehokoli jiného.
+Jednotlivé příspěvky můžete také kdykoli smazat, nebo nás kontaktovat ohledně odstranění čehokoli jiného.
 
 ## 11. Vaše práva
 
@@ -120,7 +120,7 @@ V závislosti na místě vašeho bydliště, včetně kanadského PIPEDA, zákon
 - odvolat svůj souhlas;
 - podat stížnost orgánu pro ochranu osobních údajů, jako je Úřad komisaře pro ochranu soukromí Kanady, Úřad komisaře pro informace a ochranu soukromí Alberty, váš místní orgán v Evropské unii, nebo britský Úřad komisaře pro informace.
 
-Svůj profil můžete upravovat v Nastavení a odvolávat příspěvky v aplikaci, ze které jste je zveřejnili, nebo zasláním zprávy nám. U jakékoli jiné žádosti napište na support@nicematrix.ca. Můžeme vás požádat o potvrzení, že účet je váš, například přihlášením. Odpovídáme do 30 dnů nebo ve lhůtě požadované zákonem, a za žádosti neúčtujeme poplatky, pokud nejsou zjevně neopodstatněné nebo nepřiměřené. Můžete využít oprávněného zástupce, kde to zákon umožňuje. Nebudeme s vámi zacházet odlišně za uplatnění vašich práv.
+Svůj profil můžete upravovat v Nastavení a mazat příspěvky na niceideas nebo v aplikaci, ze které jste je zveřejnili, nebo zasláním zprávy nám. U jakékoli jiné žádosti napište na support@nicematrix.ca. Můžeme vás požádat o potvrzení, že účet je váš, například přihlášením. Odpovídáme do 30 dnů nebo ve lhůtě požadované zákonem, a za žádosti neúčtujeme poplatky, pokud nejsou zjevně neopodstatněné nebo nepřiměřené. Můžete využít oprávněného zástupce, kde to zákon umožňuje. Nebudeme s vámi zacházet odlišně za uplatnění vašich práv.
 
 ## 12. Děti
 

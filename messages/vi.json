@@ -150,8 +150,9 @@
     "status": {
       "active": "Đang hiển thị",
       "author_deleting": "Tài khoản tác giả đang bị xóa",
+      "preparing": "Đang chuẩn bị",
       "removed": "Đã gỡ",
-      "unpublished": "Tác giả đã thu hồi"
+      "unpublished": "Tác giả đã xóa"
     },
     "tab": {
       "dismissed": "Đã bác bỏ",
@@ -277,7 +278,7 @@
     "about": {
       "p1": "{brand} là nơi chia sẻ nice ideas của bạn — suy nghĩ ngắn, bài viết dài, ảnh và âm thanh — chỉ bằng một liên kết.",
       "p2": "Ai cũng có thể mở liên kết được chia sẻ, dù có tài khoản hay không. Bài viết có thể đến trực tiếp từ các ứng dụng như NiceNote hoặc được viết trên web.",
-      "p3": "Bài viết vẫn là của bạn: bạn có thể chỉnh sửa hoặc thu hồi bất cứ lúc nào, và bài đã thu hồi sẽ bị xóa vĩnh viễn sau 30 ngày.",
+      "p3": "Bài viết vẫn là của bạn: bạn có thể chỉnh sửa hoặc xóa bất cứ lúc nào, và bài đã xóa sẽ bị xóa vĩnh viễn sau 30 ngày.",
       "title": "Giới thiệu"
     },
     "effective": "Có hiệu lực từ {date}",
@@ -293,7 +294,7 @@
     },
     "help": {
       "a1": "Chia sẻ ghi chú từ NiceNote, hoặc viết bài trên web khi tính năng đăng bài trên web được mở.",
-      "a2": "Sửa ghi chú trong ứng dụng thì bài viết sẽ được cập nhật. Thu hồi trong ứng dụng thì liên kết ngừng hoạt động ngay.",
+      "a2": "Sửa ghi chú trong ứng dụng thì bài viết sẽ được cập nhật. Để xóa bài viết, mở menu “⋯” trên trang bài viết và chọn Xóa; liên kết sẽ ngừng hoạt động ngay.",
       "a3": "Bất kỳ ai có liên kết. Bài viết cũng hiển thị trên trang cá nhân và bảng tin.",
       "a4": "Dùng nút Báo cáo trên bài viết. Chúng tôi xem xét mọi báo cáo.",
       "q1": "Làm sao để đăng bài?",
@@ -368,7 +369,9 @@
       "cancel": "Hủy",
       "close": "Đóng",
       "copied": "Đã sao chép liên kết",
+      "delete": "Xóa",
       "like": "Thích",
+      "more": "Thêm tùy chọn",
       "reply": "Trả lời",
       "report": "Báo cáo",
       "share": "Chia sẻ"
@@ -393,14 +396,29 @@
       "submit": "Đăng",
       "title": "Bình luận"
     },
+    "delete": {
+      "body": "Liên kết sẽ ngừng hoạt động ngay, và bài viết sẽ bị xóa vĩnh viễn sau 30 ngày. Không thể hoàn tác.",
+      "failed": "Không thể xóa bài viết. Vui lòng thử lại.",
+      "fromApp": "Bản gốc trong {app} không bị ảnh hưởng; chia sẻ lại sẽ tạo liên kết mới.",
+      "title": "Xóa bài viết này?"
+    },
     "header": {
       "join": "Tham gia {brand}",
       "joinShort": "Tham gia"
     },
     "language": "Ngôn ngữ",
+    "media": {
+      "processing": "Đang xử lý…",
+      "unavailable": "Không có sẵn nội dung đa phương tiện"
+    },
     "post": {
       "edited": "Đã chỉnh sửa lúc {time}",
-      "from": "Từ {app}"
+      "empty": "Bài viết này không có nội dung.",
+      "from": "Từ {app}",
+      "preparing": {
+        "body": "Nội dung sẽ xuất hiện ở đây trong chốc lát.",
+        "title": "Đang chuẩn bị bài viết này"
+      }
     },
     "report": {
       "done": "Cảm ơn bạn. Chúng tôi sẽ xem xét.",
@@ -430,8 +448,8 @@
         "title": "Trang này không khả dụng ở khu vực của bạn"
       },
       "withdrawn": {
-        "body": "Tác giả đã thu hồi bài viết này.",
-        "title": "Bài viết đã bị thu hồi"
+        "body": "Tác giả đã xóa bài viết này.",
+        "title": "Bài viết đã bị xóa"
       }
     }
   },

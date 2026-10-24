@@ -1,4 +1,4 @@
-> **Qisqacha mazmuni.** Siz joylashtirgan narsa sizga tegishli bo'lib, uning uchun siz javobgarsiz. niceideas'dagi postlar ommaviy hisoblanadi. Noqonuniy yoki zararli biror narsani, yoki ulashish huquqingiz bo'lmagan hech narsani joylashtirmang. Postni istalgan vaqtda qaytarib olishingiz mumkin; qaytarib olingan postlar 30 kundan keyin butunlay o'chiriladi. niceideas bepul va "bor holicha" taqdim etiladi. Ushbu Shartlar Kanadaning Alberta provinsiyasi qonunlariga muvofiq boshqariladi. Ushbu qisqacha mazmun faqat qulaylik uchun berilgan; quyidagi to'liq Shartlar amal qiladi.
+> **Qisqacha mazmuni.** Siz joylashtirgan narsa sizga tegishli bo'lib, uning uchun siz javobgarsiz. niceideas'dagi postlar ommaviy hisoblanadi. Noqonuniy yoki zararli biror narsani, yoki ulashish huquqingiz bo'lmagan hech narsani joylashtirmang. Postni istalgan vaqtda o'chirishingiz mumkin; o'chirilgan postlar 30 kundan keyin butunlay o'chiriladi. niceideas bepul va "bor holicha" taqdim etiladi. Ushbu Shartlar Kanadaning Alberta provinsiyasi qonunlariga muvofiq boshqariladi. Ushbu qisqacha mazmun faqat qulaylik uchun berilgan; quyidagi to'liq Shartlar amal qiladi.
 
 ## 1. Ushbu Shartlar haqida
 
@@ -30,7 +30,7 @@ Xizmatdan foydalanish, shu jumladan hisobsiz ko'rish, layk qo'yish yoki izoh qol
 
 4.2 Izohlar ommaviy bo'lib, post ostida ko'rinadi. Hisobi bo'lmagan tashrif buyuruvchilar postlarni yoqtirishi va ixtiyoriy taxallus ostida izoh qoldirishi mumkin.
 
-4.3 Maxfiy saqlamoqchi bo'lgan hech narsani nashr etmang. Biror narsa ommaviy bo'lgach, siz uni qaytarib olishdan oldin boshqalar uni nusxalashi yoki saqlashi mumkin, va biz bunday nusxalarni qaytarib ola olmaymiz.
+4.3 Maxfiy saqlamoqchi bo'lgan hech narsani nashr etmang. Biror narsa ommaviy bo'lgach, siz uni o'chirishdan oldin boshqalar uni nusxalashi yoki saqlashi mumkin, va biz bunday nusxalarni qaytarib ola olmaymiz.
 
 4.4 Materik Xitoydan ulanadigan tashrif buyuruvchilar uchun faqat alohida ulashilgan post sahifalari va ularga qo'yilgan layklar va izohlar mavjud; boshqa sahifalar mavjud emas. Bu Xizmatning hozirgi taqdim etilish usulini aks ettiradi va o'zgarishi mumkin.
 
@@ -44,7 +44,7 @@ Xizmatdan foydalanish, shu jumladan hisobsiz ko'rish, layk qo'yish yoki izoh qol
 
 5.4 Siz mazmuningizga egalik qilishingizni yoki uni joylashtirish va ushbu litsenziyani berish uchun zarur bo'lgan barcha ruxsatlarga ega ekanligingizni, va uni joylashtirish birovning huquqlarini yoki biror qonunni buzmasligini tasdiqlaysiz.
 
-5.5 Siz postlaringizni istalgan vaqtda qaytarib olishingiz mumkin: ilovadan nashr etilgan postni shu ilovada qaytarib olish mumkin, va har qanday postni support@nicematrix.ca manziliga yozish orqali qaytarib olish mumkin. Qaytarib olingan post Xizmatdan darhol chiqib ketadi va 30 kundan keyin butunlay o'chiriladi. Foydalanadigan ilova qo'llab-quvvatlasa, o'zingizning postlaringiz ostidagi izohlarni ham o'chirishingiz mumkin.
+5.5 Siz postlaringizni istalgan vaqtda o'chirishingiz mumkin: har qanday post niceideas'da uning sahifasida o'chirilishi mumkin, ilovadan nashr etilgan post shu ilovada ham o'chirilishi mumkin, va siz support@nicematrix.ca manziliga yozishingiz mumkin. O'chirilgan post Xizmatdan darhol chiqib ketadi va 30 kundan keyin butunlay o'chiriladi. Foydalanadigan ilova qo'llab-quvvatlasa, o'zingizning postlaringiz ostidagi izohlarni ham o'chirishingiz mumkin.
 
 ## 6. Xulq-atvor qoidalari
 
@@ -83,11 +83,11 @@ Siz Xizmatdan quyidagi maqsadlarda foydalanmaslikka rozisiz:
 
 9.1 Siz niceideas'ga NiceNote ilovasidan yoki NiceMatrix ID orqali ruxsat bergan boshqa ilovalardan nashr qilishingiz mumkin. Ilova faqat siz ruxsat bergan ishni bajarishi mumkin (masalan, postlarni nashr etish yoki media yuklash), va faqat o'zi nashr etgan postlar uchun. Postlar qaysi ilovadan kelganini ko'rsatadi.
 
-9.2 Siz ilovaning kirish huquqini NiceMatrix ID orqali bekor qilishingiz, yoki support@nicematrix.ca manziliga yozib, uni hisobingiz uchun blokirovka qilishimizni so'rashingiz mumkin. Kirish huquqini bekor qilish kelgusi kirishni to'xtatadi; u allaqachon nashr etilgan postlarni olib tashlamaydi, ularni o'zingiz qaytarib olishingiz mumkin.
+9.2 Siz ilovaning kirish huquqini NiceMatrix ID orqali bekor qilishingiz, yoki support@nicematrix.ca manziliga yozib, uni hisobingiz uchun blokirovka qilishimizni so'rashingiz mumkin. Kirish huquqini bekor qilish kelgusi kirishni to'xtatadi; u allaqachon nashr etilgan postlarni olib tashlamaydi, ularni o'zingiz o'chirishingiz mumkin.
 
 9.3 Ilovalar o'z ishlab chiquvchilari tomonidan o'zlarining shartlari va maxfiylik siyosatlari asosida taqdim etiladi. Biz Xizmatdan noto'g'ri foydalanadigan har qanday ilovani bloklashimiz yoki cheklashimiz mumkin.
 
-9.4 NiceNote'dan nashr qilganingizda, faqat siz nashr etishni tanlagan eslatma niceideas'ga yuboriladi. NiceNote'da qilgan o'zgartirishlar va qaytarib olishlar nashr etilgan postni yangilashi yoki qaytarib olishi mumkin.
+9.4 NiceNote'dan nashr qilganingizda, faqat siz nashr etishni tanlagan eslatma NiceMatrix orqali niceideas'ga yuboriladi. NiceNote'da eslatmaga qilgan o'zgartirishlaringiz nashr etilgan postni yangilashi mumkin, va siz postni NiceNote'da yoki niceideas'da o'chirishingiz mumkin.
 
 ## 10. Foydalanishni tugatish
 

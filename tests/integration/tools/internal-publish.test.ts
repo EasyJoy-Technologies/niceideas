@@ -27,7 +27,6 @@ describe("internal publishing tool (no HTTP endpoint)", () => {
     const input = {
       userId: "tool-user",
       displayName: "Tester",
-      source: "nicenote_intl" as const,
       sourceRef: "cli-1",
       title: "From the CLI",
       blocks: [
@@ -49,7 +48,7 @@ describe("internal publishing tool (no HTTP endpoint)", () => {
     expect(html).toContain("<strong>works</strong>");
     expect(html).toContain('class="ni-audio"');
 
-    expect(await withdrawFromTool(rt, { userId: "tool-user", source: "nicenote_intl", postId: out.id })).toMatchObject({ status: "unpublished" });
+    expect(await withdrawFromTool(rt, { userId: "tool-user", postId: out.id })).toMatchObject({ status: "unpublished" });
     expect((await page(out.url)).status).toBe(410);
   });
 });

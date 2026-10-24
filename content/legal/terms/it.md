@@ -1,4 +1,4 @@
-> **Riepilogo.** Lei è proprietario di ciò che pubblica e ne è responsabile. Le pubblicazioni su niceideas sono pubbliche. Non pubblichi nulla di illegale o dannoso, né nulla che non abbia il diritto di condividere. Può ritirare una pubblicazione in qualsiasi momento; le pubblicazioni ritirate vengono eliminate definitivamente dopo 30 giorni. niceideas è gratuito e fornito così com'è. Le presenti Condizioni sono regolate dalle leggi dell'Alberta, Canada. Questo riepilogo è fornito solo per comodità; si applicano le Condizioni complete di seguito.
+> **Riepilogo.** Lei è proprietario di ciò che pubblica e ne è responsabile. Le pubblicazioni su niceideas sono pubbliche. Non pubblichi nulla di illegale o dannoso, né nulla che non abbia il diritto di condividere. Può eliminare una pubblicazione in qualsiasi momento; le pubblicazioni eliminate vengono rimosse definitivamente dopo 30 giorni. niceideas è gratuito e fornito così com'è. Le presenti Condizioni sono regolate dalle leggi dell'Alberta, Canada. Questo riepilogo è fornito solo per comodità; si applicano le Condizioni complete di seguito.
 
 ## 1. Informazioni su queste Condizioni
 
@@ -30,7 +30,7 @@ Utilizzando il Servizio, anche visualizzando, mettendo "mi piace" o commentando 
 
 4.2 I commenti sono pubblici e appaiono sotto la pubblicazione. I visitatori senza account possono mettere "mi piace" alle pubblicazioni e commentare con un soprannome facoltativo.
 
-4.3 Non pubblichi nulla che desideri mantenere privato. Una volta che un contenuto è pubblico, altri possono copiarlo o salvarlo prima che lei lo ritiri, e noi non possiamo recuperare tali copie.
+4.3 Non pubblichi nulla che desideri mantenere privato. Una volta che un contenuto è pubblico, altri possono copiarlo o salvarlo prima che lei lo elimini, e noi non possiamo recuperare tali copie.
 
 4.4 Per i visitatori la cui connessione proviene dalla Cina continentale, sono disponibili solo le singole pagine delle pubblicazioni condivise e i "mi piace" e i commenti ad esse relativi; le altre pagine non lo sono. Ciò riflette il modo in cui il Servizio è attualmente offerto e può cambiare.
 
@@ -44,7 +44,7 @@ Utilizzando il Servizio, anche visualizzando, mettendo "mi piace" o commentando 
 
 5.4 Lei confirma di essere proprietario dei suoi contenuti o di disporre di tutte le autorizzazioni necessarie per pubblicarli e concedere questa licenza, e che la loro pubblicazione non viola i diritti di nessuno né alcuna legge.
 
-5.5 Può ritirare le sue pubblicazioni in qualsiasi momento: una pubblicazione pubblicata da un'app può essere ritirata in quell'app, e qualsiasi pubblicazione può essere ritirata scrivendo a support@nicematrix.ca. Una pubblicazione ritirata esce immediatamente dal Servizio e viene eliminata definitivamente 30 giorni dopo. Quando l'app che utilizza lo supporta, può anche eliminare i commenti sotto le sue pubblicazioni.
+5.5 Può eliminare le sue pubblicazioni in qualsiasi momento: qualsiasi pubblicazione può essere eliminata nella sua pagina su niceideas, una pubblicazione pubblicata da un'app può anche essere eliminata in quell'app, e può anche scrivere a support@nicematrix.ca. Una pubblicazione eliminata esce immediatamente dal Servizio e viene rimossa definitivamente 30 giorni dopo. Quando l'app che utilizza lo supporta, può anche eliminare i commenti sotto le sue pubblicazioni.
 
 ## 6. Regole di comportamento
 
@@ -83,11 +83,11 @@ Lei si impegna a non utilizzare il Servizio per:
 
 9.1 Può pubblicare su niceideas dall'app NiceNote o da altre app che autorizza tramite NiceMatrix ID. Un'app può fare solo ciò che lei le consente (ad esempio, pubblicare contenuti o caricare media), e solo per le pubblicazioni che ha pubblicato. Le pubblicazioni mostrano da quale app provengono.
 
-9.2 Può revocare l'accesso di un'app tramite NiceMatrix ID, o chiederci di bloccarla per il suo account scrivendo a support@nicematrix.ca. Revocare l'accesso impedisce l'accesso futuro; non rimuove le pubblicazioni già pubblicate, che lei stesso può ritirare.
+9.2 Può revocare l'accesso di un'app tramite NiceMatrix ID, o chiederci di bloccarla per il suo account scrivendo a support@nicematrix.ca. Revocare l'accesso impedisce l'accesso futuro; non rimuove le pubblicazioni già pubblicate, che lei stesso può eliminare.
 
 9.3 Le app sono fornite dai rispettivi sviluppatori secondo le proprie condizioni e informative sulla privacy. Possiamo bloccare o limitare qualsiasi app che faccia un uso improprio del Servizio.
 
-9.4 Quando pubblica da NiceNote, solo la nota che scelga di pubblicare viene inviata a niceideas. Le modifiche e i ritiri che effettua in NiceNote possono aggiornare o ritirare la pubblicazione pubblicata.
+9.4 Quando pubblica da NiceNote, solo la nota che scelga di pubblicare viene inviata a niceideas tramite NiceMatrix. Le modifiche che effettua alla nota in NiceNote possono aggiornare la pubblicazione pubblicata, e può eliminare la pubblicazione in NiceNote o su niceideas.
 
 ## 10. Fine del suo utilizzo
 

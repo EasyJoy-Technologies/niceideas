@@ -1,4 +1,4 @@
-> **Ringkasan.** Kami hanya mengumpul apa yang kami perlukan untuk mengendalikan niceideas: profil anda, apa yang anda terbitkan, dan data teknikal terhad untuk mengekalkan keselamatan Perkhidmatan. Hantaran anda adalah bersifat awam. Kami tidak menjual maklumat peribadi, memaparkan iklan atau menggunakan penjejak luar. Anda boleh menarik balik hantaran pada bila-bila masa dan memadam akaun anda dengan memadam NiceMatrix ID anda. Tulis kepada support@nicematrix.ca untuk sebarang soalan atau permintaan privasi.
+> **Ringkasan.** Kami hanya mengumpul apa yang kami perlukan untuk mengendalikan niceideas: profil anda, apa yang anda terbitkan, dan data teknikal terhad untuk mengekalkan keselamatan Perkhidmatan. Hantaran anda adalah bersifat awam. Kami tidak menjual maklumat peribadi, memaparkan iklan atau menggunakan penjejak luar. Anda boleh memadam hantaran pada bila-bila masa dan memadam akaun anda dengan memadam NiceMatrix ID anda. Tulis kepada support@nicematrix.ca untuk sebarang soalan atau permintaan privasi.
 
 ## 1. Siapa kami
 
@@ -84,7 +84,7 @@ Bagi sambungan dari China tanah besar, hanya halaman hantaran kongsi individu se
 | Maklumat | Berapa lama |
 |---|---|
 | Profil | Semasa akaun anda wujud; dipadam apabila pemadaman akaun selesai |
-| Hantaran, versi terdahulu dan medianya | Sehingga anda menarik balik hantaran atau memadam akaun; hantaran yang ditarik balik atau dialih keluar dipadam secara kekal 30 hari kemudian |
+| Hantaran, versi terdahulu dan medianya | Sehingga anda memadam hantaran atau memadam akaun; hantaran yang dipadam atau dialih keluar dipadam secara kekal 30 hari kemudian |
 | Media yang tidak lagi digunakan oleh mana-mana hantaran | Dipadam selepas 7 hari |
 | Komen dan suka | Sehingga komen dipadam oleh pengarang hantaran atau oleh kami, atau hantaran dipadam |
 | Laporan dan rekod kesederhanaan mengenai hantaran | Dipadam bersama hantaran yang berkaitan |
@@ -107,7 +107,7 @@ Akaun niceideas dipadam dengan memadam NiceMatrix ID anda:
 2. Jika anda membatalkan semasa tempoh dingin NiceMatrix ID (pada masa ini 15 hari), segalanya kembali di pautan yang sama.
 3. Apabila tempoh dingin tamat, kami memadam secara kekal profil, hantaran, versi terdahulu, media, komen, suka dan pengikut anda, tanpa sebarang tempoh penyimpanan selanjutnya, kecuali kitaran sandaran sehingga 14 hari.
 
-Anda juga boleh menarik balik hantaran individu pada bila-bila masa, atau menulis kepada kami untuk memadam apa-apa yang lain.
+Anda juga boleh memadam hantaran individu pada bila-bila masa, atau menulis kepada kami untuk memadam apa-apa yang lain.
 
 ## 11. Hak anda
 
@@ -120,7 +120,7 @@ Bergantung pada tempat anda tinggal, termasuk di bawah PIPEDA Kanada, Akta Perli
 - menarik balik persetujuan anda;
 - membuat aduan kepada pihak berkuasa perlindungan data, seperti Pejabat Pesuruhjaya Privasi Kanada, Pejabat Pesuruhjaya Maklumat dan Privasi Alberta, pihak berkuasa tempatan anda di Kesatuan Eropah, atau Pejabat Pesuruhjaya Maklumat UK.
 
-Anda boleh mengedit profil anda dalam Tetapan dan menarik balik hantaran dalam aplikasi yang anda terbitkannya, atau menulis kepada kami. Untuk sebarang permintaan lain, tulis kepada support@nicematrix.ca. Kami mungkin meminta anda mengesahkan bahawa akaun tersebut adalah milik anda, contohnya dengan log masuk. Kami membalas dalam 30 hari, atau dalam tempoh yang dikehendaki oleh undang-undang, dan kami tidak mengenakan bayaran untuk permintaan kecuali jika ia jelas tidak berasas atau berlebihan. Anda boleh menggunakan ejen yang diberi kuasa jika undang-undang membenarkannya. Kami tidak akan melayan anda secara berbeza kerana menjalankan hak anda.
+Anda boleh mengedit profil anda dalam Tetapan dan memadam hantaran di niceideas atau dalam aplikasi yang anda terbitkannya, atau menulis kepada kami. Untuk sebarang permintaan lain, tulis kepada support@nicematrix.ca. Kami mungkin meminta anda mengesahkan bahawa akaun tersebut adalah milik anda, contohnya dengan log masuk. Kami membalas dalam 30 hari, atau dalam tempoh yang dikehendaki oleh undang-undang, dan kami tidak mengenakan bayaran untuk permintaan kecuali jika ia jelas tidak berasas atau berlebihan. Anda boleh menggunakan ejen yang diberi kuasa jika undang-undang membenarkannya. Kami tidak akan melayan anda secara berbeza kerana menjalankan hak anda.
 
 ## 12. Kanak-kanak
 

@@ -1,4 +1,4 @@
-> **Özet.** Paylaştığınız içeriğin sahibisiniz ve bundan sorumlusunuz. niceideas'taki paylaşımlar herkese açıktır. Yasa dışı veya zararlı hiçbir şey, ya da paylaşma hakkına sahip olmadığınız hiçbir şey paylaşmayın. Bir paylaşımı istediğiniz zaman geri çekebilirsiniz; geri çekilen paylaşımlar 30 gün sonra kalıcı olarak silinir. niceideas ücretsizdir ve "olduğu gibi" sunulur. Bu Şartlar, Kanada'nın Alberta eyaleti yasalarına tabidir. Bu özet sadece kolaylık için sunulmuştur; aşağıdaki tam Şartlar geçerlidir.
+> **Özet.** Paylaştığınız içeriğin sahibisiniz ve bundan sorumlusunuz. niceideas'taki paylaşımlar herkese açıktır. Yasa dışı veya zararlı hiçbir şey, ya da paylaşma hakkına sahip olmadığınız hiçbir şey paylaşmayın. Bir paylaşımı istediğiniz zaman silebilirsiniz; silinen paylaşımlar 30 gün sonra kalıcı olarak kaldırılır. niceideas ücretsizdir ve "olduğu gibi" sunulur. Bu Şartlar, Kanada'nın Alberta eyaleti yasalarına tabidir. Bu özet sadece kolaylık için sunulmuştur; aşağıdaki tam Şartlar geçerlidir.
 
 ## 1. Bu Şartlar Hakkında
 
@@ -30,7 +30,7 @@ Hesap olmaksızın görüntüleme, beğenme veya yorum yapma dahil olmak üzere 
 
 4.2 Yorumlar herkese açıktır ve paylaşımın altında görünür. Hesabı olmayan ziyaretçiler paylaşımları beğenebilir ve isteğe bağlı bir takma ad altında yorum yapabilir.
 
-4.3 Gizli tutmak istediğiniz hiçbir şeyi paylaşmayın. Bir şey herkese açık hale geldiğinde, siz paylaşımı geri çekmeden önce başkaları bunu kopyalayabilir veya kaydedebilir ve biz bu tür kopyaları geri çağıramayız.
+4.3 Gizli tutmak istediğiniz hiçbir şeyi paylaşmayın. Bir şey herkese açık hale geldiğinde, siz silmeden önce başkaları bunu kopyalayabilir veya kaydedebilir ve biz bu tür kopyaları geri alamayız.
 
 4.4 Bağlantısı Çin anakarasından gelen ziyaretçiler için, yalnızca paylaşılan bireysel gönderi sayfaları ve bunların altındaki beğeniler ve yorumlar erişilebilir; diğer sayfalar erişilebilir değildir. Bu, Hizmetin şu anda sunulma şeklini yansıtır ve değişebilir.
 
@@ -44,7 +44,7 @@ Hesap olmaksızın görüntüleme, beğenme veya yorum yapma dahil olmak üzere 
 
 5.4 İçeriğinizin sahibi olduğunuzu veya onu yayınlamak ve bu lisansı vermek için gereken tüm izinlere sahip olduğunuzu, ve yayınlanmasının hiç kimsenin haklarını veya herhangi bir yasayı ihlal etmediğini onaylarsınız.
 
-5.5 Paylaşımlarınızı istediğiniz zaman geri çekebilirsiniz: bir uygulamadan yayınlanan bir paylaşım o uygulamada geri çekilebilir, ve herhangi bir paylaşım support@nicematrix.ca adresine yazarak geri çekilebilir. Geri çekilen bir paylaşım, Hizmetten hemen kaldırılır ve 30 gün sonra kalıcı olarak silinir. Kullandığınız uygulama bunu destekliyorsa, kendi paylaşımlarınızın altındaki yorumları da silebilirsiniz.
+5.5 Paylaşımlarınızı istediğiniz zaman silebilirsiniz: herhangi bir paylaşım niceideas'taki kendi sayfasından silinebilir, bir uygulamadan yayınlanan bir paylaşım o uygulamada da silinebilir, ve support@nicematrix.ca adresine yazabilirsiniz. Silinen bir paylaşım, Hizmetten hemen kaldırılır ve 30 gün sonra kalıcı olarak silinir. Kullandığınız uygulama bunu destekliyorsa, kendi paylaşımlarınızın altındaki yorumları da silebilirsiniz.
 
 ## 6. Davranış kuralları
 
@@ -83,11 +83,11 @@ Hizmeti aşağıdakiler için kullanmamayı kabul edersiniz:
 
 9.1 NiceNote uygulamasından ya da NiceMatrix ID aracılığıyla yetkilendirdiğiniz diğer uygulamalardan niceideas'a yayın yapabilirsiniz. Bir uygulama, sadece izin verdiğiniz şeyi yapabilir (örneğin, paylaşımları yayınlamak veya medya yüklemek), ve sadece yayınladığı paylaşımlar için. Paylaşımlar, hangi uygulamadan geldiklerini gösterir.
 
-9.2 Bir uygulamanın erişimini NiceMatrix ID üzerinden iptal edebilir, ya da support@nicematrix.ca adresine yazarak hesabınız için engellenmesini bizden isteyebilirsiniz. Erişimin iptal edilmesi gelecekteki erişimi durdurur; zaten yayınlanmış paylaşımları kaldırmaz, bunları kendiniz geri çekebilirsiniz.
+9.2 Bir uygulamanın erişimini NiceMatrix ID üzerinden iptal edebilir, ya da support@nicematrix.ca adresine yazarak hesabınız için engellenmesini bizden isteyebilirsiniz. Erişimin iptal edilmesi gelecekteki erişimi durdurur; zaten yayınlanmış paylaşımları kaldırmaz, bunları kendiniz silebilirsiniz.
 
 9.3 Uygulamalar, geliştiricileri tarafından kendi şartları ve gizlilik politikaları altında sunulur. Hizmeti kötüye kullanan herhangi bir uygulamayı engelleyebilir veya sınırlayabiliriz.
 
-9.4 NiceNote'tan yayın yaptığınızda, sadece yayınlamayı seçtiğiniz not niceideas'a gönderilir. NiceNote'ta yaptığınız değişiklikler ve geri çekmeler, yayınlanan paylaşımı güncelleyebilir veya geri çekebilir.
+9.4 NiceNote'tan yayın yaptığınızda, sadece yayınlamayı seçtiğiniz not NiceMatrix aracılığıyla niceideas'a gönderilir. NiceNote'ta notta yaptığınız değişiklikler yayınlanan paylaşımı güncelleyebilir, ve paylaşımı NiceNote'ta veya niceideas'ta silebilirsiniz.
 
 ## 10. Kullanımınızı sona erdirme
 

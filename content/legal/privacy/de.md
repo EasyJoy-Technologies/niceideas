@@ -1,4 +1,4 @@
-> **Zusammenfassung.** Wir erheben nur, was zum Betrieb von niceideas nötig ist: Ihr Profil, was Sie veröffentlichen, und begrenzte technische Daten, um den Dienst sicher zu halten. Ihre Beiträge sind öffentlich. Wir verkaufen keine personenbezogenen Daten, zeigen keine Werbung und nutzen keine externen Tracker. Sie können Beiträge jederzeit zurückziehen und Ihr Konto löschen, indem Sie Ihre NiceMatrix ID löschen. Schreiben Sie bei jeder Datenschutzfrage oder -anfrage an support@nicematrix.ca.
+> **Zusammenfassung.** Wir erheben nur, was zum Betrieb von niceideas nötig ist: Ihr Profil, was Sie veröffentlichen, und begrenzte technische Daten, um den Dienst sicher zu halten. Ihre Beiträge sind öffentlich. Wir verkaufen keine personenbezogenen Daten, zeigen keine Werbung und nutzen keine externen Tracker. Sie können Beiträge jederzeit löschen und Ihr Konto löschen, indem Sie Ihre NiceMatrix ID löschen. Schreiben Sie bei jeder Datenschutzfrage oder -anfrage an support@nicematrix.ca.
 
 ## 1. Wer wir sind
 
@@ -84,7 +84,7 @@ Für Verbindungen aus Festlandchina sind nur einzelne geteilte Beitragsseiten so
 | Informationen | Wie lange |
 |---|---|
 | Profil | Solange Ihr Konto besteht; wird nach Abschluss der Kontolöschung gelöscht |
-| Beiträge, frühere Versionen und deren Medien | Bis Sie den Beitrag zurückziehen oder Ihr Konto löschen; zurückgezogene oder entfernte Beiträge werden 30 Tage später endgültig gelöscht |
+| Beiträge, frühere Versionen und deren Medien | Bis Sie den Beitrag oder Ihr Konto löschen; gelöschte oder entfernte Beiträge werden 30 Tage später endgültig gelöscht |
 | Von keinem Beitrag mehr verwendete Medien | Nach 7 Tagen gelöscht |
 | Kommentare und Gefällt-mir-Angaben | Bis der Kommentar vom Autor des Beitrags oder von uns gelöscht wird, oder der Beitrag gelöscht wird |
 | Meldungen und Moderationsdatensätze zu einem Beitrag | Werden zusammen mit dem betreffenden Beitrag gelöscht |
@@ -107,7 +107,7 @@ niceideas-Konten werden durch Löschung Ihrer NiceMatrix ID gelöscht:
 2. Wenn Sie innerhalb der Widerrufsfrist von NiceMatrix ID (derzeit 15 Tage) stornieren, kehrt alles unter denselben Links zurück.
 3. Wenn die Widerrufsfrist endet, löschen wir Ihr Profil, Ihre Beiträge, frühere Versionen, Medien, Kommentare, Gefällt-mir-Angaben und Follows endgültig, ohne weitere Aufbewahrungsfrist, abgesehen vom Sicherungszyklus von bis zu 14 Tagen.
 
-Sie können auch jederzeit einzelne Beiträge zurückziehen oder uns schreiben, um alles andere zu löschen.
+Sie können auch jederzeit einzelne Beiträge löschen oder uns schreiben, um alles andere zu löschen.
 
 ## 11. Ihre Rechte
 
@@ -120,7 +120,7 @@ Abhängig von Ihrem Wohnort, einschließlich nach dem kanadischen PIPEDA, dem Pe
 - Ihre Einwilligung zu widerrufen;
 - sich bei einer Datenschutzbehörde zu beschweren, etwa dem Office of the Privacy Commissioner of Canada, dem Office of the Information and Privacy Commissioner of Alberta, Ihrer örtlichen Behörde in der Europäischen Union oder dem britischen Information Commissioner's Office.
 
-Sie können Ihr Profil in den Einstellungen bearbeiten und Beiträge in der App zurückziehen, über die Sie sie veröffentlicht haben, oder uns schreiben. Für jede andere Anfrage schreiben Sie an support@nicematrix.ca. Wir können Sie bitten zu bestätigen, dass das Konto Ihnen gehört, zum Beispiel durch Anmeldung. Wir antworten innerhalb von 30 Tagen oder innerhalb der gesetzlich vorgeschriebenen Frist und erheben keine Gebühr für Anfragen, sofern diese nicht offenkundig unbegründet oder exzessiv sind. Sie können, soweit gesetzlich zulässig, einen bevollmächtigten Vertreter einsetzen. Wir werden Sie nicht benachteiligen, weil Sie Ihre Rechte ausgeübt haben.
+Sie können Ihr Profil in den Einstellungen bearbeiten und Beiträge auf niceideas oder in der App löschen, über die Sie sie veröffentlicht haben, oder uns schreiben. Für jede andere Anfrage schreiben Sie an support@nicematrix.ca. Wir können Sie bitten zu bestätigen, dass das Konto Ihnen gehört, zum Beispiel durch Anmeldung. Wir antworten innerhalb von 30 Tagen oder innerhalb der gesetzlich vorgeschriebenen Frist und erheben keine Gebühr für Anfragen, sofern diese nicht offenkundig unbegründet oder exzessiv sind. Sie können, soweit gesetzlich zulässig, einen bevollmächtigten Vertreter einsetzen. Wir werden Sie nicht benachteiligen, weil Sie Ihre Rechte ausgeübt haben.
 
 ## 12. Kinder
 

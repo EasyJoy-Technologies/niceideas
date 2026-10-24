@@ -150,8 +150,9 @@
     "status": {
       "active": "Hewani",
       "author_deleting": "Akaunti ya mwandishi inafutwa",
+      "preparing": "Linatayarishwa",
       "removed": "Limeondolewa",
-      "unpublished": "Limeondolewa na mwandishi"
+      "unpublished": "Limefutwa na mwandishi"
     },
     "tab": {
       "dismissed": "Imefutwa",
@@ -277,7 +278,7 @@
     "about": {
       "p1": "{brand} ni mahali pa kushiriki nice ideas zako — mawazo mafupi, maandishi marefu, picha na sauti — kwa kiungo kimoja.",
       "p2": "Mtu yeyote anaweza kufungua kiungo kilichoshirikiwa, akiwa na akaunti au la. Machapisho yanaweza kutoka moja kwa moja kwenye programu kama NiceNote au kuandikwa kwenye wavuti.",
-      "p3": "Machapisho yako yanabaki kuwa yako: unaweza kuyahariri au kuyaondoa wakati wowote, na yaliyoondolewa hufutwa kabisa baada ya siku 30.",
+      "p3": "Machapisho yako yanabaki kuwa yako: unaweza kuyahariri au kuyafuta wakati wowote, na yaliyofutwa hufutwa kabisa baada ya siku 30.",
       "title": "Kuhusu"
     },
     "effective": "Inatumika kuanzia {date}",
@@ -293,7 +294,7 @@
     },
     "help": {
       "a1": "Shiriki dokezo kutoka NiceNote, au andika chapisho kwenye wavuti uchapishaji wa wavuti utakapofunguliwa.",
-      "a2": "Hariri dokezo kwenye programu na chapisho litasasishwa. Liondoe kwenye programu na kiungo kitaacha kufanya kazi mara moja.",
+      "a2": "Hariri dokezo kwenye programu na chapisho litasasishwa. Kufuta chapisho, fungua menyu ya \"⋯\" kwenye ukurasa wake na chagua Futa; kiungo kitaacha kufanya kazi mara moja.",
       "a3": "Yeyote aliye na kiungo. Machapisho pia huonekana kwenye wasifu wako na kwenye mipasho.",
       "a4": "Tumia Ripoti kwenye chapisho. Tunakagua kila ripoti.",
       "q1": "Ninachapishaje?",
@@ -368,7 +369,9 @@
       "cancel": "Ghairi",
       "close": "Funga",
       "copied": "Kiungo kimenakiliwa",
+      "delete": "Futa",
       "like": "Penda",
+      "more": "Chaguo zaidi",
       "reply": "Jibu",
       "report": "Ripoti",
       "share": "Shiriki"
@@ -393,14 +396,29 @@
       "submit": "Chapisha",
       "title": "Maoni"
     },
+    "delete": {
+      "body": "Kiungo kitaacha kufanya kazi mara moja, na chapisho litafutwa kabisa baada ya siku 30. Hili haliwezi kutenduliwa.",
+      "failed": "Imeshindikana kufuta chapisho. Tafadhali jaribu tena.",
+      "fromApp": "Chapisho asili kwenye {app} haliathiriwi; kushiriki tena kutaunda kiungo kipya.",
+      "title": "Ungependa kufuta chapisho hili?"
+    },
     "header": {
       "join": "Jiunge na {brand}",
       "joinShort": "Jiunge"
     },
     "language": "Lugha",
+    "media": {
+      "processing": "Inachakatwa…",
+      "unavailable": "Media hazipatikani"
+    },
     "post": {
       "edited": "Ilihaririwa {time}",
-      "from": "Kutoka {app}"
+      "empty": "Chapisho hili halina maudhui.",
+      "from": "Kutoka {app}",
+      "preparing": {
+        "body": "Maudhui yataonekana hapa muda mfupi.",
+        "title": "Chapisho hili linatayarishwa"
+      }
     },
     "report": {
       "done": "Asante. Tutaikagua.",
@@ -430,8 +448,8 @@
         "title": "Ukurasa huu haupatikani katika eneo lako"
       },
       "withdrawn": {
-        "body": "Mwandishi ameondoa chapisho hili.",
-        "title": "Chapisho limeondolewa na mwandishi"
+        "body": "Mwandishi amefuta chapisho hili.",
+        "title": "Chapisho hili limefutwa"
       }
     }
   },

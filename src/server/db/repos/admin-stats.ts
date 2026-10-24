@@ -43,11 +43,11 @@ export async function authorsWeekly(db: Db): Promise<{ now: number; prev: number
 export const SOURCE_CLASSES = ["nicenote_intl", "nicenote_cn", "web", "api"] as const;
 export type SourceClass = (typeof SOURCE_CLASSES)[number];
 
-/** New posts per day and source class (third-party apps grouped), last `days` days. */
+/** New posts per day and source class (third-party apps grouped; NiceNote shares by app region), last `days` days. */
 export async function postsBySource(db: Db, days: number): Promise<Record<SourceClass, number[]>> {
   const { rows } = await sql<{ i: number; cls: SourceClass; n: string }>`
     SELECT ((published_at AT TIME ZONE 'utc')::date - ((now() AT TIME ZONE 'utc')::date - ${days - 1}::int))::int AS i,
-           CASE WHEN source LIKE 'api:%' THEN 'api' ELSE source END AS cls, count(*) AS n
+           CASE WHEN source LIKE 'api:%' THEN 'api' WHEN source = 'nicenote' THEN 'nicenote_' || coalesce(region, 'intl') ELSE source END AS cls, count(*) AS n
     FROM post WHERE published_at >= (now() AT TIME ZONE 'utc')::date - ${days - 1}::int GROUP BY 1, 2`.execute(db);
   const out = Object.fromEntries(SOURCE_CLASSES.map((c) => [c, new Array<number>(days).fill(0)])) as Record<SourceClass, number[]>;
   for (const r of rows) if (out[r.cls] && r.i >= 0 && r.i < days) out[r.cls][r.i] = Number(r.n);

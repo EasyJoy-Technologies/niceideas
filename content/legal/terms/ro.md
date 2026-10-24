@@ -1,4 +1,4 @@
-> **Rezumat.** Dețineți ceea ce publicați și sunteți responsabil pentru acest lucru. Postările de pe niceideas sunt publice. Nu publicați nimic ilegal sau dăunător, sau ceva pentru care nu aveți dreptul de a-l distribui. Puteți retrage o postare în orice moment; postările retrase sunt șterse definitiv după 30 de zile. niceideas este gratuit și oferit „ca atare". Acești Termeni sunt reglementați de legile provinciei Alberta, Canada. Acest rezumat este oferit doar pentru comoditate; se aplică Termenii integrali de mai jos.
+> **Rezumat.** Dețineți ceea ce publicați și sunteți responsabil pentru acest lucru. Postările de pe niceideas sunt publice. Nu publicați nimic ilegal sau dăunător, sau ceva pentru care nu aveți dreptul de a-l distribui. Puteți șterge o postare în orice moment; postările șterse sunt eliminate definitiv după 30 de zile. niceideas este gratuit și oferit „ca atare". Acești Termeni sunt reglementați de legile provinciei Alberta, Canada. Acest rezumat este oferit doar pentru comoditate; se aplică Termenii integrali de mai jos.
 
 ## 1. Despre acești Termeni
 
@@ -30,7 +30,7 @@ Prin utilizarea Serviciului, inclusiv vizualizarea, aprecierea sau comentarea f�
 
 4.2 Comentariile sunt publice și apar sub postare. Vizitatorii fără cont pot aprecia postările și comenta sub un pseudonim opțional.
 
-4.3 Nu publicați nimic ce doriți să rămână privat. Odată ce ceva devine public, alții îl pot copia sau salva înainte să vă retrageți postarea, și nu putem retrage astfel de copii.
+4.3 Nu publicați nimic ce doriți să rămână privat. Odată ce ceva devine public, alții îl pot copia sau salva înainte să ștergeți postarea, și nu putem retrage astfel de copii.
 
 4.4 Pentru vizitatorii a căror conexiune provine din China continentală, sunt disponibile numai paginile individuale ale postărilor partajate și aprecierile și comentariile de pe acestea; alte pagini nu sunt disponibile. Aceasta reflectă modul în care Serviciul este oferit în prezent și se poate schimba.
 
@@ -44,7 +44,7 @@ Prin utilizarea Serviciului, inclusiv vizualizarea, aprecierea sau comentarea f�
 
 5.4 Confirmați că deținați conținutul dumneavoastră sau aveți toate permisiunile necesare pentru a-l publica și pentru a acorda această licență, și că publicarea acestuia nu violează drepturile nimănui sau nicio lege.
 
-5.5 Puteți retrage postările dumneavoastră în orice moment: o postare publicată dintr-o aplicație poate fi retrasă din acea aplicație, iar orice postare poate fi retrasă scriind la support@nicematrix.ca. O postare retrasă părăsește imediat Serviciul și este ștearsă definitiv 30 de zile mai târziu. Acolo unde aplicația pe care o utilizați permite acest lucru, puteți șterge și comentariile de sub propriile dumneavoastră postări.
+5.5 Puteți șterge postările dumneavoastră în orice moment: orice postare poate fi ștearsă pe pagina sa de pe niceideas, o postare publicată dintr-o aplicație poate fi ștearsă și din acea aplicație, și puteți scrie la support@nicematrix.ca. O postare ștearsă părăsește imediat Serviciul și este eliminată definitiv 30 de zile mai târziu. Acolo unde aplicația pe care o utilizați permite acest lucru, puteți șterge și comentariile de sub propriile dumneavoastră postări.
 
 ## 6. Reguli de conduită
 
@@ -83,11 +83,11 @@ Sunteți de acord să nu utilizați Serviciul pentru a:
 
 9.1 Puteți publica pe niceideas din aplicația NiceNote sau din alte aplicații pe care le autorizați prin NiceMatrix ID. O aplicație poate face numai ceea ce îi permiteți (de exemplu, publicarea postărilor sau încărcarea de media), și numai pentru postările pe care le-a publicat. Postările arată din ce aplicație provin.
 
-9.2 Puteți revoca accesul unei aplicații prin NiceMatrix ID, sau să ne cereți să o blocăm pentru contul dumneavoastră scriind la support@nicematrix.ca. Revocarea accesului oprește accesul viitor; nu elimină postările deja publicate, pe care le puteți retrage dumneavoastră înșivă.
+9.2 Puteți revoca accesul unei aplicații prin NiceMatrix ID, sau să ne cereți să o blocăm pentru contul dumneavoastră scriind la support@nicematrix.ca. Revocarea accesului oprește accesul viitor; nu elimină postările deja publicate, pe care le puteți șterge dumneavoastră înșivă.
 
 9.3 Aplicațiile sunt furnizate de dezvoltatorii lor în conformitate cu propriile lor termeni și politici de confidențialitate. Putem bloca sau limita orice aplicație care abuzează de Serviciu.
 
-9.4 Când publicați din NiceNote, numai nota pe care alegeți să o publicați este trimisă la niceideas. Modificările și retragerile pe care le faceți în NiceNote pot actualiza sau retrage postarea publicată.
+9.4 Când publicați din NiceNote, numai nota pe care alegeți să o publicați este trimisă la niceideas, prin NiceMatrix. Modificările pe care le faceți notei în NiceNote pot actualiza postarea publicată, și puteți șterge postarea în NiceNote sau pe niceideas.
 
 ## 10. Încetarea utilizării
 

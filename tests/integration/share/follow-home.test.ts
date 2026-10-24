@@ -1,11 +1,10 @@
 import { afterAll, beforeAll, describe, expect, it } from "vitest";
-import { POST as createRoute } from "@/app/api/v1/posts/route";
+import { publishAs } from "../../helpers/publish";
 import { POST as followRoute } from "@/app/follow/route";
 import { GET as homeRoute } from "@/app/route";
 import { startSession } from "@/server/auth/web/session";
 import { ensureProfile } from "@/server/profiles/ensure-profile";
 import { startAppContext } from "../../helpers/app-context";
-import { jsonRequest } from "../../helpers/api";
 
 const BASE = "http://localhost:3000";
 let ctx: Awaited<ReturnType<typeof startAppContext>>;
@@ -13,8 +12,7 @@ let cookie: string;
 let authorHandle: string;
 beforeAll(async () => {
   ctx = await startAppContext();
-  const token = await ctx.tokenFor("followed-author");
-  await createRoute(jsonRequest("POST", "/api/v1/posts", token, { document: { version: 1, blocks: [{ type: "text", text: "Followed author idea" }] }, sourceRef: "f1", sourceUpdatedAt: "2026-10-21T00:00:00Z" }), {});
+  await publishAs(ctx, "followed-author", { version: 1, blocks: [{ type: "text", text: "Followed author idea" }] }, "f1");
   authorHandle = (await ensureProfile(ctx.db, "followed-author")).handle;
   await ensureProfile(ctx.db, "reader");
   cookie = (await startSession(ctx.db, "reader")).split(";")[0];

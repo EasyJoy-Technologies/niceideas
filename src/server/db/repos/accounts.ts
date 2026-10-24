@@ -12,9 +12,15 @@ export async function claimAccountEvent(db: Db, e: { eventId: string; userId: st
   return Number(r.numInsertedOrUpdatedRows ?? 0) > 0;
 }
 
-/** Latest event already applied for the user (out-of-order deliveries are ignored). */
+/** Latest deletion event already applied for the user (out-of-order deliveries are ignored). */
 export async function latestAccountEventAt(db: Db, userId: string): Promise<Date | null> {
-  const row = await db.selectFrom("account_event").select(sql<Date>`max(occurred_at)`.as("at")).where("user_id", "=", userId).executeTakeFirst();
+  // Profile updates do not take part in ordering (they would make later deletion events look stale).
+  const row = await db
+    .selectFrom("account_event")
+    .select(sql<Date>`max(occurred_at)`.as("at"))
+    .where("user_id", "=", userId)
+    .where("event", "<>", "profile_updated")
+    .executeTakeFirst();
   return row?.at ?? null;
 }
 

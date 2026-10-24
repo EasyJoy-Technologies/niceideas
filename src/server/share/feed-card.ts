@@ -1,4 +1,5 @@
 import type { Media } from "@/server/db/schema";
+import { blockMediaKey, withBlocks, type AnyBlock } from "@/server/documents/stored";
 import { cardTitle } from "./card";
 import { publicUrl } from "@/server/media/keys";
 import { renderDocumentHtml } from "@/server/render/document-html";
@@ -7,6 +8,7 @@ import type { ChromeContext } from "./chrome";
 import { icon } from "./icons";
 import type { FeedItem } from "./load-feed";
 import { avatarHtml, profilePath } from "./profile-bits";
+import { isOwnPost, ownPostMenu } from "./post-menu";
 import { badgeAppName, sourceBadge } from "./sources";
 
 const COVER_SIZES = "(min-width: 48rem) 37rem, 100vw";
@@ -42,9 +44,10 @@ function articleBlock(ctx: ChromeContext, item: FeedItem): string {
  * lightbox) and audio players, in document order (compose v2 design).
  */
 function shortBlock(item: FeedItem): string {
-  const text = { ...item.document, blocks: item.document.blocks.filter((b) => b.type === "text" || b.type === "todo") };
-  const thumbs = item.document.blocks
-    .flatMap((b) => (b.type === "image" ? [item.media.get(b.mediaId)] : []))
+  const key = (b: AnyBlock) => blockMediaKey(b) ?? "";
+  const text = withBlocks(item.document, (b) => b.type === "text" || b.type === "rich" || b.type === "todo");
+  const thumbs = (item.document.blocks as AnyBlock[])
+    .flatMap((b) => (b.type === "image" ? [item.media.get(key(b))] : []))
     .flatMap((m) => (m && m.variants.kind === "image" ? [m.variants] : []))
     .map((v) => {
       const small = v.webp[0] ?? v.fallback;
@@ -52,7 +55,7 @@ function shortBlock(item: FeedItem): string {
       return `<a class="ni-zoom" href="${publicUrl(large.key)}" data-lightbox><img src="${publicUrl(small.key)}" width="${small.width}" height="${small.height}" alt="" loading="lazy" decoding="async"></a>`;
     })
     .join("");
-  const audios = { ...item.document, blocks: item.document.blocks.filter((b) => b.type === "audio") };
+  const audios = withBlocks(item.document, (b) => b.type === "audio" && item.media.has(key(b)));
   const body = text.blocks.length ? renderDocumentHtml(text, NO_MEDIA, publicUrl) : "";
   const media = (thumbs ? `<div class="ni-fc-thumbs">${thumbs}</div>` : "") + (audios.blocks.length ? renderDocumentHtml(audios, item.media, publicUrl) : "");
   return `<div class="ni-body ni-fc-text">${body}${media}</div>`;
@@ -85,6 +88,7 @@ export function feedCard(ctx: ChromeContext, item: FeedItem): string {
     `<div class="ni-actions ni-fc-actions"><button type="button" class="ni-act" data-like="post" data-id="${post.slug}" aria-pressed="${item.liked}" aria-label="${escapeHtml(t("share.action.like"))}">` +
     `${icon("heart")}<span>${post.like_count}</span></button>` +
     `<a class="ni-act" href="/p/${post.slug}#comments" aria-label="${escapeHtml(t("share.comments.title"))}">${icon("comment")}<span>${post.comment_count}</span></a>` +
-    `<button type="button" class="ni-act ni-share" data-url="/p/${post.slug}" hidden>${icon("share")}${escapeHtml(t("share.action.share"))}</button></div>`;
+    `<button type="button" class="ni-act ni-share" data-url="/p/${post.slug}" hidden>${icon("share")}${escapeHtml(t("share.action.share"))}</button>` +
+    `${isOwnPost(ctx, post) ? `<span class="ni-sp"></span>${ownPostMenu(ctx, post, ctx.path)}` : ""}</div>`;
   return `<article class="ni-card ni-fc">${head}${body}${actions}</article>`;
 }

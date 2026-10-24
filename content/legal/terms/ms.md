@@ -1,4 +1,4 @@
-> **Ringkasan.** Anda memiliki apa yang anda hantar, dan anda bertanggungjawab terhadapnya. Hantaran di niceideas adalah bersifat awam. Jangan hantar apa-apa yang menyalahi undang-undang atau berbahaya, atau apa-apa yang anda tidak mempunyai hak untuk berkongsi. Anda boleh menarik balik hantaran pada bila-bila masa; hantaran yang ditarik balik akan dipadam secara kekal selepas 30 hari. niceideas disediakan secara percuma dan "seadanya". Terma ini tertakluk kepada undang-undang Alberta, Kanada. Ringkasan ini hanya untuk tujuan kemudahan; Terma penuh di bawah yang terpakai.
+> **Ringkasan.** Anda memiliki apa yang anda hantar, dan anda bertanggungjawab terhadapnya. Hantaran di niceideas adalah bersifat awam. Jangan hantar apa-apa yang menyalahi undang-undang atau berbahaya, atau apa-apa yang anda tidak mempunyai hak untuk berkongsi. Anda boleh memadam hantaran pada bila-bila masa; hantaran yang dipadam akan dipadam secara kekal selepas 30 hari. niceideas disediakan secara percuma dan "seadanya". Terma ini tertakluk kepada undang-undang Alberta, Kanada. Ringkasan ini hanya untuk tujuan kemudahan; Terma penuh di bawah yang terpakai.
 
 ## 1. Mengenai Terma ini
 
@@ -30,7 +30,7 @@ Dengan menggunakan Perkhidmatan, termasuk melihat, menyukai atau memberi komen t
 
 4.2 Komen adalah bersifat awam dan muncul di bawah hantaran. Pelawat tanpa akaun boleh menyukai hantaran dan memberi komen dengan nama panggilan pilihan.
 
-4.3 Jangan terbitkan apa-apa yang anda mahu kekal sulit. Setelah sesuatu menjadi awam, orang lain mungkin telah menyalin atau menyimpannya sebelum anda menariknya balik, dan kami tidak boleh menarik balik salinan tersebut.
+4.3 Jangan terbitkan apa-apa yang anda mahu kekal sulit. Setelah sesuatu menjadi awam, orang lain mungkin telah menyalin atau menyimpannya sebelum anda memadamnya, dan kami tidak boleh menarik balik salinan tersebut.
 
 4.4 Bagi pelawat yang sambungannya berasal dari China tanah besar, hanya halaman hantaran kongsi individu serta suka dan komen di atasnya yang boleh diakses; halaman lain tidak boleh diakses. Ini mencerminkan cara Perkhidmatan ditawarkan pada masa ini dan boleh berubah.
 
@@ -44,7 +44,7 @@ Dengan menggunakan Perkhidmatan, termasuk melihat, menyukai atau memberi komen t
 
 5.4 Anda mengesahkan bahawa anda memiliki kandungan anda atau telah memperoleh setiap kebenaran yang diperlukan untuk menghantarnya dan memberikan lesen ini, dan bahawa menghantarnya tidak melanggar hak sesiapa atau mana-mana undang-undang.
 
-5.5 Anda boleh menarik balik hantaran anda pada bila-bila masa: hantaran yang diterbitkan daripada aplikasi boleh ditarik balik dalam aplikasi tersebut, dan mana-mana hantaran boleh ditarik balik dengan menulis kepada support@nicematrix.ca. Hantaran yang ditarik balik akan hilang daripada Perkhidmatan dengan segera dan dipadam secara kekal 30 hari kemudian. Jika aplikasi yang anda gunakan menyokongnya, anda juga boleh memadam komen di bawah hantaran anda sendiri.
+5.5 Anda boleh memadam hantaran anda pada bila-bila masa: mana-mana hantaran boleh dipadam di halaman hantaran tersebut pada niceideas, hantaran yang diterbitkan daripada aplikasi juga boleh dipadam dalam aplikasi tersebut, dan anda juga boleh menulis kepada support@nicematrix.ca. Hantaran yang dipadam akan hilang daripada Perkhidmatan dengan segera dan dipadam secara kekal 30 hari kemudian. Jika aplikasi yang anda gunakan menyokongnya, anda juga boleh memadam komen di bawah hantaran anda sendiri.
 
 ## 6. Peraturan kelakuan
 
@@ -83,11 +83,11 @@ Anda bersetuju untuk tidak menggunakan Perkhidmatan untuk:
 
 9.1 Anda boleh menerbitkan ke niceideas daripada aplikasi NiceNote atau daripada aplikasi lain yang anda benarkan melalui NiceMatrix ID. Sesuatu aplikasi hanya boleh melakukan apa yang anda benarkan (contohnya menerbitkan hantaran atau memuat naik media), dan hanya untuk hantaran yang diterbitkannya. Hantaran menunjukkan aplikasi yang menjadi sumbernya.
 
-9.2 Anda boleh menarik balik akses aplikasi melalui NiceMatrix ID, atau meminta kami menghalangnya bagi akaun anda dengan menulis kepada support@nicematrix.ca. Menarik balik akses menghentikan akses pada masa hadapan; ia tidak memadam hantaran yang telah diterbitkan, yang boleh anda tarik balik sendiri.
+9.2 Anda boleh menarik balik akses aplikasi melalui NiceMatrix ID, atau meminta kami menghalangnya bagi akaun anda dengan menulis kepada support@nicematrix.ca. Menarik balik akses menghentikan akses pada masa hadapan; ia tidak memadam hantaran yang telah diterbitkan, yang boleh anda padam sendiri.
 
 9.3 Aplikasi disediakan oleh pembangun mereka sendiri mengikut terma dan dasar privasi mereka sendiri. Kami boleh menghalang atau menghadkan mana-mana aplikasi yang menyalahgunakan Perkhidmatan.
 
-9.4 Apabila anda menerbitkan daripada NiceNote, hanya nota yang anda pilih untuk diterbitkan dihantar ke niceideas. Perubahan dan penarikan balik yang anda buat dalam NiceNote boleh mengemas kini atau menarik balik hantaran yang telah diterbitkan.
+9.4 Apabila anda menerbitkan daripada NiceNote, hanya nota yang anda pilih untuk diterbitkan dihantar ke niceideas melalui NiceMatrix. Perubahan yang anda buat kepada nota dalam NiceNote boleh mengemas kini hantaran yang telah diterbitkan, dan anda boleh memadam hantaran tersebut dalam NiceNote atau di niceideas.
 
 ## 10. Menamatkan penggunaan anda
 

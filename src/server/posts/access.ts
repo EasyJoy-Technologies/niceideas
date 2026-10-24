@@ -6,10 +6,9 @@ import { ApiError, notFound } from "@/server/http/errors";
 
 const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 
-/** First-party clients manage NiceNote publications; an third-party app only its own (`api:<client_id>`). */
+/** Through the API an third-party app manages only the posts it published (`api:<client_id>`). */
 function canManage(principal: Principal, post: Post): boolean {
-  if (post.author_id !== principal.userId) return false;
-  return principal.kind === "third_party" ? post.source === principal.source : post.source.startsWith("nicenote_");
+  return post.author_id === principal.userId && post.source === principal.source;
 }
 
 /** Loads a post the caller may manage; other users' posts look nonexistent (404). */

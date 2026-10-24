@@ -10,10 +10,6 @@ const schema = z.object({
   DATABASE_URL: z.string().regex(/^postgres(ql)?:\/\//, "must be a postgres:// URL"),
   LOGTO_ISSUER: z.url().default("https://id.nicematrix.com/oidc"),
   LOGTO_JWKS_URI: z.url().default("https://id.nicematrix.com/oidc/jwks"),
-  /** `aud=source` pairs: which business audience maps to which NiceNote source. */
-  FIRST_PARTY_AUDIENCES: z
-    .string()
-    .default("https://api.nicematrix.com=nicenote_intl,https://apiv3.ej-mobile.cn=nicenote_cn"),
   /** Logto API resource of the third-party API (plan §9). */
   THIRD_PARTY_AUDIENCE: z.url().default("https://api.niceideas.app"),
   /** NiceMatrix platform API serving the third-party app directory (GET /v1/oauth/apps/{clientId}). */
@@ -28,8 +24,16 @@ const schema = z.object({
   DB_POOL_MAX: z.coerce.number().int().min(1).max(100).default(10),
   /** Posts per hour per third-party client, across all its users (the per-user limits apply too). */
   RATE_CLIENT_POSTS_PER_HOUR: z.coerce.number().int().positive().default(2000),
-  /** Logto client_ids allowed to call first-party APIs. Empty = no first-party access (fail closed). */
-  FIRST_PARTY_CLIENT_IDS: z.string().default(""),
+  /**
+   * NiceNote sharing through the NiceMatrix backend (contract niceideas-share.md §3–§4): HMAC key shared
+   * with the backend, both directions; `_NEXT` is also accepted during a rotation. Unset = source API disabled (503).
+   */
+  NICEMATRIX_SHARE_KEY: z.string().min(32).optional(),
+  NICEMATRIX_SHARE_KEY_NEXT: z.string().min(32).optional(),
+  /** Caller ids (X-NM-Service) accepted on the source API, comma-separated (production `nicematrix-intl`). */
+  NICEMATRIX_SHARE_SERVICES: z.string().default("nicematrix-intl"),
+  /** NiceMatrix backend origin: user registration, post events and media grants (contract §4). */
+  NICEMATRIX_API_URL: z.url().default("https://api.nicematrix.com"),
 
   /** Web sign-in (Logto "Traditional Web" app; secret stays server-side). Unset id/secret = sign-in disabled. */
   LOGTO_WEB_ISSUER: z.url().optional(),
@@ -60,7 +64,6 @@ const schema = z.object({
   MEDIA_MAX_AUDIO_BYTES: z.coerce.number().int().positive().default(150 * 1024 * 1024),
   MEDIA_MAX_AUDIO_SECONDS: z.coerce.number().int().positive().default(4 * 60 * 60),
   MEDIA_MAX_IMAGE_PIXELS: z.coerce.number().int().positive().default(100_000_000),
-  MEDIA_USER_QUOTA_BYTES: z.coerce.number().int().positive().default(5 * 1024 * 1024 * 1024),
 
   /** Source badge target for NiceNote posts (plan §16.4); `utm_*` is appended. Moves to the API-client registry with the open API. */
   SOURCE_NICENOTE_URL: z.url().default("https://enp.ej-mobile.cn"),

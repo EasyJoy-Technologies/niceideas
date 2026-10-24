@@ -21,8 +21,9 @@ let post: { id: string; slug: string };
 beforeAll(async () => {
   process.env.COMMENT_POW_BITS = "8";
   ctx = await startAppContext();
-  token = await ctx.tokenFor("author-x");
-  const res = await createRoute(jsonRequest("POST", "/api/v1/posts", token, { document: { version: 1, blocks: [{ type: "text", text: "Talk to me" }] }, sourceRef: "ix", sourceUpdatedAt: "2026-10-20T00:00:00Z" }), {});
+  // Published by an third-party app, so the author can also manage comments through the API.
+  token = await ctx.apiToken("author-x");
+  const res = await createRoute(jsonRequest("POST", "/api/v1/posts", token, { document: { version: 1, blocks: [{ type: "text", text: "Talk to me" }] }, sourceRef: "ix", sourceUpdatedAt: "2026-10-20T00:00:00Z" }, { "idempotency-key": "ix" }), {});
   post = (await res.json()).post;
 });
 afterAll(async () => {
@@ -122,7 +123,7 @@ describe("anonymous comments", () => {
     expect(del.status).toBe(200);
     const html = await page();
     expect(html).not.toContain("Lovely &lt;b&gt;idea");
-    const other = await ctx.tokenFor("someone-else");
+    const other = await ctx.apiToken("someone-else");
     expect((await authorDeleteRoute(jsonRequest("DELETE", "/x", other), params({ id: post.id, commentId: top }))).status).toBe(404);
     const audit = await ctx.db.selectFrom("moderation_action").selectAll().where("comment_id", "=", top).execute();
     expect(audit).toMatchObject([{ action: "delete_comment", actor_id: "author-x", reason: "author" }]);

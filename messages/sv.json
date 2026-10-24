@@ -150,8 +150,9 @@
     "status": {
       "active": "Publicerat",
       "author_deleting": "Skribentens konto raderas",
+      "preparing": "Förbereder",
       "removed": "Borttaget",
-      "unpublished": "Återkallat av skribenten"
+      "unpublished": "Borttagen av skribenten"
     },
     "tab": {
       "dismissed": "Avvisade",
@@ -277,7 +278,7 @@
     "about": {
       "p1": "{brand} är platsen där du delar dina nice ideas – korta tankar, långa texter, foton och ljud – med en enda länk.",
       "p2": "Vem som helst kan öppna en delad länk, med eller utan konto. Inlägg kan komma direkt från appar som NiceNote eller skrivas på webben.",
-      "p3": "Dina inlägg förblir dina: du kan redigera eller dra tillbaka dem när som helst, och tillbakadragna inlägg raderas permanent efter 30 dagar.",
+      "p3": "Dina inlägg förblir dina: du kan redigera eller ta bort dem när som helst, och borttagna inlägg raderas permanent efter 30 dagar.",
       "title": "Om"
     },
     "effective": "Gäller från {date}",
@@ -293,7 +294,7 @@
     },
     "help": {
       "a1": "Dela en anteckning från NiceNote, eller skriv ett inlägg på webben när webbpublicering öppnar.",
-      "a2": "Redigera anteckningen i appen så uppdateras inlägget. Dra tillbaka den i appen så slutar länken fungera direkt.",
+      "a2": "Redigera anteckningen i appen så uppdateras inlägget. För att ta bort ett inlägg, öppna ”⋯”-menyn på dess sida och välj Ta bort; länken slutar fungera direkt.",
       "a3": "Alla som har länken. Inläggen visas också på din profil och i flöden.",
       "a4": "Använd Anmäl på inlägget. Vi granskar varje anmälan.",
       "q1": "Hur publicerar jag?",
@@ -368,7 +369,9 @@
       "cancel": "Avbryt",
       "close": "Stäng",
       "copied": "Länken har kopierats",
+      "delete": "Ta bort",
       "like": "Gilla",
+      "more": "Fler alternativ",
       "reply": "Svara",
       "report": "Anmäl",
       "share": "Dela"
@@ -393,14 +396,29 @@
       "submit": "Publicera",
       "title": "Kommentarer"
     },
+    "delete": {
+      "body": "Länken slutar fungera direkt, och inlägget raderas permanent efter 30 dagar. Detta kan inte ångras.",
+      "failed": "Det gick inte att ta bort inlägget. Försök igen.",
+      "fromApp": "Originalet i {app} påverkas inte; att dela igen skapar en ny länk.",
+      "title": "Ta bort det här inlägget?"
+    },
     "header": {
       "join": "Gå med i {brand}",
       "joinShort": "Gå med"
     },
     "language": "Språk",
+    "media": {
+      "processing": "Bearbetar…",
+      "unavailable": "Media ej tillgängligt"
+    },
     "post": {
       "edited": "Redigerat {time}",
-      "from": "Från {app}"
+      "empty": "Det här inlägget har inget innehåll.",
+      "from": "Från {app}",
+      "preparing": {
+        "body": "Innehållet visas här inom en stund.",
+        "title": "Inlägget förbereds"
+      }
     },
     "report": {
       "done": "Tack. Vi granskar det.",
@@ -430,8 +448,8 @@
         "title": "Sidan är inte tillgänglig i din region"
       },
       "withdrawn": {
-        "body": "Författaren har dragit tillbaka det här inlägget.",
-        "title": "Inlägget har dragits tillbaka"
+        "body": "Författaren har tagit bort det här inlägget.",
+        "title": "Inlägget har tagits bort"
       }
     }
   },

@@ -2,6 +2,8 @@ import { deleteSessionsOfUser } from "@/server/db/repos/sessions";
 import { createHmac, timingSafeEqual } from "node:crypto";
 import { z } from "zod";
 import type { Db } from "@/server/db/client";
+import { findProfile } from "@/server/db/repos/profiles";
+import { followNiceMatrixProfile } from "@/server/profiles/profile-follow";
 import { claimAccountEvent, deleteProfileCascade, latestAccountEventAt, mediaOfOwner, postIdsOfAuthor, setProfileStatus, switchAuthorPosts } from "@/server/db/repos/accounts";
 import { findMediaByIds } from "@/server/db/repos/media";
 import { deletePosts } from "@/server/db/repos/maintenance";
@@ -18,11 +20,14 @@ import type { MediaStores } from "@/server/storage/types";
  */
 export const MAX_SKEW_SECONDS = 300;
 
+const nullableText = (max: number) => z.string().max(max).nullable().optional().transform((v) => v ?? null);
 const eventSchema = z.object({
-  eventId: z.string().min(8).max(100),
-  event: z.enum(["deletion_requested", "deletion_cancelled", "deletion_completed"]),
+  eventId: z.string().min(8).max(200),
+  event: z.enum(["deletion_requested", "deletion_cancelled", "deletion_completed", "profile_updated"]),
   userId: z.string().min(1).max(200),
   occurredAt: z.iso.datetime({ offset: true }),
+  /** profile_updated only: current NiceMatrix values (null = none). */
+  profile: z.object({ username: nullableText(200), name: nullableText(500), avatarUrl: nullableText(2000) }).optional(),
 });
 export type AccountEvent = z.infer<typeof eventSchema>;
 
@@ -55,11 +60,20 @@ async function currentMediaIds(db: Db, postIds: string[]): Promise<string[]> {
   return [...new Set(ids.flat())];
 }
 
-/** Applies an event once; stale events (older than the latest applied one) are ignored. */
-export async function applyAccountEvent(rt: AccountRuntime, e: AccountEvent): Promise<"applied" | "duplicate" | "stale"> {
+/**
+ * Applies an event once; stale deletion events (older than the latest applied one) are ignored.
+ * profile_updated carries the latest values: applied as is, outside the ordering of deletion events.
+ */
+export async function applyAccountEvent(rt: AccountRuntime, e: AccountEvent): Promise<"applied" | "duplicate" | "stale" | "unknown_user"> {
   const occurredAt = new Date(e.occurredAt);
   const latest = await latestAccountEventAt(rt.db, e.userId);
   if (!(await claimAccountEvent(rt.db, { eventId: e.eventId, userId: e.userId, event: e.event, occurredAt }))) return "duplicate";
+  if (e.event === "profile_updated") {
+    const profile = await findProfile(rt.db, e.userId);
+    if (!profile) return "unknown_user";
+    await followNiceMatrixProfile(rt.db, profile, e.profile ?? {});
+    return "applied";
+  }
   if (latest && occurredAt < latest && e.event !== "deletion_completed") return "stale";
 
   if (e.event === "deletion_requested") {

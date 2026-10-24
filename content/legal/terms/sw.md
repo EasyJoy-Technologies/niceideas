@@ -1,4 +1,4 @@
-> **Muhtasari.** Unamiliki kile unachochapisha, na unawajibika kwa hilo. Machapisho kwenye niceideas ni ya umma. Usichapishe chochote kisicho halali au chenye madhara, au chochote ambacho hauna haki ya kukishiriki. Unaweza kuondoa chapisho wakati wowote; machapisho yaliyoondolewa yanafutwa kabisa baada ya siku 30. niceideas ni bure na inatolewa kama ilivyo. Masharti haya yanaongozwa na sheria za Alberta, Kanada. Muhtasari huu ni kwa urahisi tu; Masharti kamili yaliyo hapa chini ndiyo yanayotumika.
+> **Muhtasari.** Unamiliki kile unachochapisha, na unawajibika kwa hilo. Machapisho kwenye niceideas ni ya umma. Usichapishe chochote kisicho halali au chenye madhara, au chochote ambacho hauna haki ya kukishiriki. Unaweza kufuta chapisho wakati wowote; machapisho yaliyofutwa yanafutwa kabisa baada ya siku 30. niceideas ni bure na inatolewa kama ilivyo. Masharti haya yanaongozwa na sheria za Alberta, Kanada. Muhtasari huu ni kwa urahisi tu; Masharti kamili yaliyo hapa chini ndiyo yanayotumika.
 
 ## 1. Kuhusu Masharti haya
 
@@ -30,7 +30,7 @@ Kwa kutumia Huduma, ikiwa ni pamoja na kutazama, kupenda au kutoa maoni bila aka
 
 4.2 Maoni ni ya umma na yanaonekana chini ya chapisho. Watembeleaji wasio na akaunti wanaweza kupenda machapisho na kutoa maoni chini ya jina la utani la hiari.
 
-4.3 Usichapishe chochote unachotaka kukibaki faragha. Mara kitu kinapokuwa cha umma, wengine wanaweza kukinakili au kukihifadhi kabla hujakiondoa, na hatuwezi kuzirejesha nakala hizo.
+4.3 Usichapishe chochote unachotaka kukibaki faragha. Mara kitu kinapokuwa cha umma, wengine wanaweza kukinakili au kukihifadhi kabla hujakifuta, na hatuwezi kuzirejesha nakala hizo.
 
 4.4 Kwa watembeleaji ambao muunganisho wao unatoka China bara, kurasa za machapisho binafsi yaliyoshirikiwa na mapendekezo na maoni juu yake pekee ndizo zinazopatikana; kurasa nyingine hazipatikani. Hii inaonyesha jinsi Huduma inavyotolewa kwa sasa na inaweza kubadilika.
 
@@ -44,7 +44,7 @@ Kwa kutumia Huduma, ikiwa ni pamoja na kutazama, kupenda au kutoa maoni bila aka
 
 5.4 Unathibitisha kuwa unamiliki maudhui yako au una ruhusa zote zinazohitajika kuyachapisha na kutoa leseni hii, na kuwa kuyachapisha hakukiuki haki za mtu yeyote au sheria yoyote.
 
-5.5 Unaweza kuondoa machapisho yako wakati wowote: chapisho lililochapishwa kutoka programu linaweza kuondolewa kwenye programu hiyo, na chapisho lolote linaweza kuondolewa kwa kuandika kwa support@nicematrix.ca. Chapisho lililoondolewa linaondoka kwenye Huduma mara moja na linafutwa kabisa baada ya siku 30. Pale programu unayotumia inaruhusu, unaweza pia kufuta maoni chini ya machapisho yako mwenyewe.
+5.5 Unaweza kufuta machapisho yako wakati wowote: chapisho lolote linaweza kufutwa kwenye ukurasa wake kwenye niceideas, chapisho lililochapishwa kutoka programu linaweza kufutwa kwenye programu hiyo pia, na unaweza kuandika kwa support@nicematrix.ca. Chapisho lililofutwa linaondoka kwenye Huduma mara moja na linafutwa kabisa baada ya siku 30. Pale programu unayotumia inaruhusu, unaweza pia kufuta maoni chini ya machapisho yako mwenyewe.
 
 ## 6. Kanuni za mwenendo
 
@@ -83,11 +83,11 @@ Unakubali kutotumia Huduma ili:
 
 9.1 Unaweza kuchapisha kwenye niceideas kutoka programu ya NiceNote au programu nyingine unazoziidhinisha kupitia NiceMatrix ID. Programu inaweza kufanya tu kile unachokiruhusu (kwa mfano, kuchapisha machapisho au kupakia media), na tu kwa machapisho iliyoyachapisha. Machapisho yanaonyesha programu yaliyotoka.
 
-9.2 Unaweza kubatilisha ufikiaji wa programu kupitia NiceMatrix ID, au kutuomba tuizuie kwenye akaunti yako kwa kuandika kwa support@nicematrix.ca. Kubatilisha ufikiaji kunazuia ufikiaji wa baadaye; haikuondoi machapisho yaliyotangazwa tayari, ambayo unaweza kuyaondoa wewe mwenyewe.
+9.2 Unaweza kubatilisha ufikiaji wa programu kupitia NiceMatrix ID, au kutuomba tuizuie kwenye akaunti yako kwa kuandika kwa support@nicematrix.ca. Kubatilisha ufikiaji kunazuia ufikiaji wa baadaye; haikuondoi machapisho yaliyotangazwa tayari, ambayo unaweza kuyafuta wewe mwenyewe.
 
 9.3 Programu hutolewa na watengenezaji wao chini ya masharti na sera zao za faragha. Tunaweza kuzuia au kupunguza programu yoyote inayotumia Huduma vibaya.
 
-9.4 Unapochapisha kutoka NiceNote, ni noti tu uliyochagua kuchapisha inatumwa kwa niceideas. Mabadiliko na uondoaji unaofanya katika NiceNote yanaweza kusasisha au kuondoa chapisho lililochapishwa.
+9.4 Unapochapisha kutoka NiceNote, ni noti tu uliyochagua kuchapisha inatumwa kwa niceideas kupitia NiceMatrix. Mabadiliko unayofanya kwenye noti katika NiceNote yanaweza kusasisha chapisho lililochapishwa, na unaweza kufuta chapisho hilo kwenye NiceNote au kwenye niceideas.
 
 ## 10. Kukomesha matumizi yako
 

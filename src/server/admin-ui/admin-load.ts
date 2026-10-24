@@ -49,7 +49,7 @@ export async function loadSection(db: Db, ctx: AdminContext, section: AdminSecti
     case "reports":
       return reports(db, ctx, url);
     case "posts": {
-      const status = pick<PostStatus>(url.searchParams.get("s"), ["active", "removed", "unpublished", "author_deleting"]);
+      const status = pick<PostStatus>(url.searchParams.get("s"), ["active", "preparing", "removed", "unpublished", "author_deleting"]);
       const query = queryOf(url);
       return renderPosts(ctx, { status, query, offset, page: await listAdminPosts(db, { status, query, offset, limit: PAGE_SIZE }), notice: noticeOf(url) });
     }

@@ -61,16 +61,6 @@ export async function markMediaWithdrawn(db: Db, ids: string[], detach: boolean)
     .execute();
 }
 
-/** Total stored bytes of an owner's media (all renditions), for the per-user quota. */
-export async function sumOwnerMediaBytes(db: Db, ownerId: string): Promise<number> {
-  const row = await db
-    .selectFrom("media")
-    .select(sql<number>`coalesce(sum(byte_size), 0)::bigint`.as("total"))
-    .where("owner_id", "=", ownerId)
-    .executeTakeFirst();
-  return Number(row?.total ?? 0);
-}
-
 /** Media still referenced by the current revision of any existing post (any status). */
 export async function filterReferencedByAnyPost(db: Db, ids: string[]): Promise<Set<string>> {
   if (ids.length === 0) return new Set();

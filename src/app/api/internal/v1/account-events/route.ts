@@ -6,7 +6,7 @@ import { ApiError } from "@/server/http/errors";
 import { jsonOk } from "@/server/http/json";
 import { getMediaStores } from "@/server/storage";
 
-const MAX_BYTES = 4096;
+const MAX_BYTES = 8192;
 
 /** NiceMatrix account lifecycle events (server to server, HMAC-signed; contract docs/api/account-events.md). */
 export const POST = apiRoute("account.events", "third_party_api", async (request) => {

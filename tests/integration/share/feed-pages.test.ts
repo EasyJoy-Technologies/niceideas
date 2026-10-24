@@ -1,26 +1,19 @@
 import { afterAll, beforeAll, describe, expect, it } from "vitest";
-import { POST as createRoute } from "@/app/api/v1/posts/route";
-import { DELETE } from "@/app/api/v1/posts/[id]/route";
 import { GET as discoverRoute } from "@/app/discover/route";
 import { GET as profileRoute } from "@/app/u/[handle]/route";
 import { FEED_PAGE_SIZE, readingMinutes } from "@/server/share/load-feed";
 import { startAppContext } from "../../helpers/app-context";
-import { jsonRequest, params } from "../../helpers/api";
+import { params } from "../../helpers/api";
+import { deleteAs, publishAs, shareFromNiceNote } from "../../helpers/publish";
 
 let ctx: Awaited<ReturnType<typeof startAppContext>>;
-let token: string;
 let handle: string;
 beforeAll(async () => {
   ctx = await startAppContext();
-  token = await ctx.tokenFor("feed-author");
 });
 afterAll(async () => ctx?.stop());
 
-const T = "2026-10-20T10:00:00Z";
-async function publish(document: unknown, sourceRef: string) {
-  const res = await createRoute(jsonRequest("POST", "/api/v1/posts", token, { document, sourceRef, sourceUpdatedAt: T }), {});
-  return (await res.json()).post as { id: string; slug: string };
-}
+const publish = (document: unknown, sourceRef: string) => publishAs(ctx, "feed-author", document, sourceRef);
 const discover = async (query = "", headers: Record<string, string> = {}) => {
   const res = await discoverRoute(new Request(`http://localhost:3000/discover${query}`, { headers: { "accept-language": "en", ...headers } }));
   return { status: res.status, html: await res.text() };
@@ -35,7 +28,7 @@ describe("discover and profile pages", () => {
   let article: { id: string; slug: string };
 
   beforeAll(async () => {
-    short = await publish({ version: 1, blocks: [{ type: "text", text: "Feed <b>short</b> idea" }] }, "f-short");
+    short = await shareFromNiceNote(ctx, "feed-author", { version: 1, blocks: [{ type: "text", text: "Feed <b>short</b> idea" }] });
     article = await publish({ version: 1, title: "Long read", blocks: [{ type: "text", text: "word ".repeat(600) }] }, "f-article");
     handle = (await ctx.db.selectFrom("profile").select("handle").where("user_id", "=", "feed-author").executeTakeFirstOrThrow()).handle;
   });
@@ -94,8 +87,8 @@ describe("discover and profile pages", () => {
     await ctx.db.updateTable("profile").set({ handle }).where("user_id", "=", "feed-author").execute();
   });
 
-  it("withdrawn posts leave the feeds", async () => {
-    await DELETE(jsonRequest("DELETE", `/api/v1/posts/${short.id}`, token), params({ id: short.id }));
+  it("deleted posts leave the feeds", async () => {
+    await deleteAs(ctx, short.id);
     expect((await discover("?tab=all")).html).not.toContain(`data-id="${short.slug}"`);
     expect((await profile(handle)).html).toMatch(/<b>21<\/b> Posts/);
   });

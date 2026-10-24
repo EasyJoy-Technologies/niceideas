@@ -3,7 +3,7 @@ import { mkdir } from "node:fs/promises";
 import path from "node:path";
 import type { Db } from "@/server/db/client";
 import type { Media, MediaRendition, MediaVariants } from "@/server/db/schema";
-import { findMediaByOwnerSha, insertMediaOrGet, sumOwnerMediaBytes } from "@/server/db/repos/media";
+import { findMediaByOwnerSha, insertMediaOrGet } from "@/server/db/repos/media";
 import { ApiError, badRequest } from "@/server/http/errors";
 import type { ObjectStore } from "@/server/storage/types";
 import type { SpooledBody } from "@/server/util/temp-file";
@@ -18,7 +18,6 @@ export type MediaLimits = {
   maxAudioBytes: number;
   maxAudioSeconds: number;
   maxImagePixels: number;
-  userQuotaBytes: number;
 };
 
 /** Image decoding is CPU/memory heavy: at most two at a time per process. */
@@ -44,9 +43,6 @@ export async function ingestUpload(
   if (!type) throw new ApiError("media.unsupported_type", 415);
   const maxBytes = type.kind === "image" ? limits.maxImageBytes : limits.maxAudioBytes;
   if (upload.bytes > maxBytes) throw new ApiError("media.too_large", 413, { maxBytes });
-  if ((await sumOwnerMediaBytes(db, ownerId)) + upload.bytes > limits.userQuotaBytes) {
-    throw new ApiError("media.quota_exceeded", 413);
-  }
 
   const prefix = mediaPrefix(randomUUID());
   const workDir = path.join(upload.dir, "out");

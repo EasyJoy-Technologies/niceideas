@@ -9,6 +9,7 @@ import { renderPage } from "./document";
 import { followButton } from "./follow-button";
 import { icon } from "./icons";
 import type { SharePost } from "./load-post";
+import type { Post, Profile } from "@/server/db/schema";
 import { commentsSection, reportDialog } from "./comments-section";
 import type { PageInteractions } from "./load-interactions";
 import type { PostAside } from "./load-post-aside";
@@ -50,7 +51,7 @@ function cardHead(ctx: ChromeContext, data: SharePost, url: string): string {
   ].join("");
 }
 
-function authorBlock(ctx: ChromeContext, data: SharePost, following: boolean): string {
+function authorBlock(ctx: ChromeContext, data: Pick<SharePost, "author" | "post">, following: boolean): string {
   const a = data.author;
   const name = a.display_name || `@${a.handle}`;
   const handle = a.display_name ? `<span>@${escapeHtml(a.handle)}</span><i class="ni-dot"></i>` : "";
@@ -87,14 +88,24 @@ function backLink(ctx: ChromeContext): string {
   return `<a class="ni-back" href="/discover"><span aria-hidden="true">${directionOf(ctx.intl.locale) === "rtl" ? "→" : "←"}</span>${escapeHtml(ctx.intl.t("discover.title"))}</a>`;
 }
 
+function bodyHtml(ctx: ChromeContext, data: SharePost): string {
+  const { t } = ctx.intl;
+  if (data.document.blocks.length === 0) return `<p class="ni-empty-body">${escapeHtml(t("share.post.empty"))}</p>`;
+  return renderDocumentHtml(data.document, data.media, publicUrl, { jobs: data.jobs, labels: { processing: t("share.media.processing"), unavailable: t("share.media.unavailable") } });
+}
+
+/** Result of the author's last action on this page (`?n=delete_failed`). */
+const noticeHtml = (ctx: ChromeContext, deleteFailed: boolean) =>
+  deleteFailed ? `<p class="ni-compose-err" role="status">${escapeHtml(ctx.intl.t("share.delete.failed"))}</p>` : "";
+
 /** Server-rendered post page (plan §6, §16): complete without JS. */
-export function renderPostPage(ctx: ChromeContext, data: SharePost, social: PageInteractions, aside: PostAside | null = null, following = false): string {
-  const { post, document } = data;
+export function renderPostPage(ctx: ChromeContext, data: SharePost, social: PageInteractions, aside: PostAside | null = null, following = false, deleteFailed = false): string {
+  const { post } = data;
   const url = postUrl(post.slug);
   const title = post.title ? `<h1 class="ni-title">${escapeHtml(post.title)}</h1>` : "";
-  const body = renderDocumentHtml(document, data.media, publicUrl);
+  const body = bodyHtml(ctx, data);
   const main =
-    `<main class="ni-main">${aside ? backLink(ctx) : ""}<article class="ni-post${post.kind === "short" ? " ni-short" : ""}">` +
+    `<main class="ni-main">${aside ? backLink(ctx) : ""}${noticeHtml(ctx, deleteFailed)}<article class="ni-post${post.kind === "short" ? " ni-short" : ""}">` +
     `${authorBlock(ctx, data, following)}${title}<div class="ni-body">${body}</div>` +
     `${postFoot(ctx, data)}${postActions(ctx, post, social.liked)}</article>` +
     `${commentsSection(ctx, post, social, ctx.path)}${reportDialog(ctx, post.slug)}</main>`;
@@ -109,5 +120,22 @@ export function renderPostPage(ctx: ChromeContext, data: SharePost, social: Page
     side: !!aside,
     tabBar: false,
     aside: aside ? renderPostAside(ctx, aside) : undefined,
+  });
+}
+
+/**
+ * A just-shared NiceNote post whose content has not arrived yet (usually a second or two):
+ * author and a short note, never indexed, no actions. The page refreshes itself once.
+ */
+export function renderPreparingPage(ctx: ChromeContext, post: Post, author: Profile): string {
+  const { t } = ctx.intl;
+  const main =
+    `<main class="ni-main"><article class="ni-post ni-short">${authorBlock(ctx, { post, author }, false)}` +
+    `<div class="ni-body"><p class="ni-empty-body"><b>${escapeHtml(t("share.post.preparing.title"))}</b><br>${escapeHtml(t("share.post.preparing.body"))}</p></div></article></main>`;
+  return renderPage(ctx, {
+    title: `${t("share.post.preparing.title")} · ${GLOSSARY.brand}`,
+    head: '<meta name="robots" content="noindex"><meta http-equiv="refresh" content="5">',
+    main,
+    tabBar: false,
   });
 }

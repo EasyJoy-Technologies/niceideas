@@ -1,4 +1,4 @@
-> **Resumen.** Usted es propietario de lo que publica y es responsable de ello. Las publicaciones en niceideas son públicas. No publique nada ilegal o dañino, ni nada que no tenga derecho a compartir. Puede retirar una publicación en cualquier momento; las publicaciones retiradas se eliminan permanentemente después de 30 días. niceideas es gratuito y se ofrece tal cual. Estas Condiciones se rigen por las leyes de Alberta, Canadá. Este resumen es solo para su comodidad; se aplican las Condiciones completas que figuran a continuación.
+> **Resumen.** Usted es propietario de lo que publica y es responsable de ello. Las publicaciones en niceideas son públicas. No publique nada ilegal o dañino, ni nada que no tenga derecho a compartir. Puede eliminar una publicación en cualquier momento; las publicaciones eliminadas se borran permanentemente después de 30 días. niceideas es gratuito y se ofrece tal cual. Estas Condiciones se rigen por las leyes de Alberta, Canadá. Este resumen es solo para su comodidad; se aplican las Condiciones completas que figuran a continuación.
 
 ## 1. Sobre estas Condiciones
 
@@ -30,7 +30,7 @@ Al usar el Servicio, incluido ver, dar "me gusta" o comentar sin una cuenta, ust
 
 4.2 Los comentarios son públicos y aparecen debajo de la publicación. Los visitantes sin cuenta pueden dar "me gusta" a las publicaciones y comentar bajo un apodo opcional.
 
-4.3 No publique nada que desee mantener privado. Una vez que algo es público, otras personas pueden copiarlo o guardarlo antes de que usted lo retire, y no podemos recuperar dichas copias.
+4.3 No publique nada que desee mantener privado. Una vez que algo es público, otras personas pueden copiarlo o guardarlo antes de que usted lo elimine, y no podemos recuperar dichas copias.
 
 4.4 Para los visitantes cuya conexión proviene de China continental, solo están disponibles las páginas individuales de publicaciones compartidas y los "me gusta" y comentarios en ellas; las demás páginas no lo están. Esto refleja cómo se ofrece actualmente el Servicio y puede cambiar.
 
@@ -44,7 +44,7 @@ Al usar el Servicio, incluido ver, dar "me gusta" o comentar sin una cuenta, ust
 
 5.4 Usted confirma que es propietario de su contenido o que cuenta con todos los permisos necesarios para publicarlo y conceder esta licencia, y que publicarlo no vulnera los derechos de nadie ni ninguna ley.
 
-5.5 Puede retirar sus publicaciones en cualquier momento: una publicación publicada desde una aplicación puede retirarse en esa aplicación, y cualquier publicación puede retirarse escribiendo a support@nicematrix.ca. Una publicación retirada abandona el Servicio de inmediato y se elimina permanentemente 30 días después. Cuando la aplicación que usa lo permita, también puede eliminar comentarios en sus propias publicaciones.
+5.5 Puede eliminar sus publicaciones en cualquier momento: cualquier publicación puede eliminarse en su página de niceideas, una publicación publicada desde una aplicación también puede eliminarse en esa aplicación, y también puede escribir a support@nicematrix.ca. Una publicación eliminada abandona el Servicio de inmediato y se borra permanentemente 30 días después. Cuando la aplicación que usa lo permita, también puede eliminar comentarios en sus propias publicaciones.
 
 ## 6. Normas de conducta
 
@@ -83,11 +83,11 @@ Usted se compromete a no usar el Servicio para:
 
 9.1 Puede publicar en niceideas desde la aplicación NiceNote o desde otras aplicaciones que autorice a través de NiceMatrix ID. Una aplicación solo puede hacer lo que usted le permita (por ejemplo, publicar contenido o subir medios), y únicamente respecto de las publicaciones que haya publicado. Las publicaciones muestran de qué aplicación proceden.
 
-9.2 Puede revocar el acceso de una aplicación a través de NiceMatrix ID, o pedirnos que la bloqueemos para su cuenta escribiendo a support@nicematrix.ca. Revocar el acceso impide el acceso futuro; no elimina las publicaciones ya publicadas, que usted mismo puede retirar.
+9.2 Puede revocar el acceso de una aplicación a través de NiceMatrix ID, o pedirnos que la bloqueemos para su cuenta escribiendo a support@nicematrix.ca. Revocar el acceso impide el acceso futuro; no elimina las publicaciones ya publicadas, que usted mismo puede eliminar.
 
 9.3 Las aplicaciones son proporcionadas por sus desarrolladores conforme a sus propias condiciones y políticas de privacidad. Podemos bloquear o limitar cualquier aplicación que haga un uso indebido del Servicio.
 
-9.4 Cuando publica desde NiceNote, solo se envía a niceideas la nota que usted elige publicar. Los cambios y las retiradas que realice en NiceNote pueden actualizar o retirar la publicación publicada.
+9.4 Cuando publica desde NiceNote, solo se envía a niceideas, a través de NiceMatrix, la nota que usted elige publicar. Los cambios que realice en la nota en NiceNote pueden actualizar la publicación publicada, y puede eliminar la publicación en NiceNote o en niceideas.
 
 ## 10. Finalización de su uso
 

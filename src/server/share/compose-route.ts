@@ -18,7 +18,7 @@ function errorOf(err: unknown): ComposeError {
   const map: Record<string, ComposeError> = {
     "compose.empty": "empty", "compose.too_much": "too_much", "compose.images_only": "unsupported",
     "media.unsupported_type": "unsupported", "media.unprocessable": "unsupported", "media.too_large": "too_large",
-    "media.quota_exceeded": "too_large", "rate.limited": "rate_limited", "document.invalid": "too_much",
+    "rate.limited": "rate_limited", "document.invalid": "too_much",
     "compose.short_too_long": "short_too_long", "compose.media_mismatch": "unsupported", "compose.invalid": "failed",
     "document.too_long": "too_much", "document.too_many_images": "too_much", "document.too_many_audios": "too_much",
   };

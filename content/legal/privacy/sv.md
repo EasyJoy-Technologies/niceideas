@@ -1,4 +1,4 @@
-> **Sammanfattning.** Vi samlar bara in vad som behövs för att driva niceideas: din profil, vad du publicerar, och begränsade tekniska uppgifter för att hålla Tjänsten säker. Dina inlägg är offentliga. Vi säljer inte personuppgifter, visar ingen reklam och använder inga externa spårare. Du kan dra tillbaka inlägg när som helst och radera ditt konto genom att radera ditt NiceMatrix ID. Skriv till support@nicematrix.ca med alla frågor eller begäranden om integritet.
+> **Sammanfattning.** Vi samlar bara in vad som behövs för att driva niceideas: din profil, vad du publicerar, och begränsade tekniska uppgifter för att hålla Tjänsten säker. Dina inlägg är offentliga. Vi säljer inte personuppgifter, visar ingen reklam och använder inga externa spårare. Du kan ta bort inlägg när som helst och radera ditt konto genom att radera ditt NiceMatrix ID. Skriv till support@nicematrix.ca med alla frågor eller begäranden om integritet.
 
 ## 1. Vilka vi är
 
@@ -84,7 +84,7 @@ För anslutningar från Fastlandskina är endast enskilda delade inläggssidor s
 | Information | Hur länge |
 |---|---|
 | Profil | Så länge ditt konto existerar; raderas när kontoraderingen är slutförd |
-| Inlägg, tidigare versioner och deras media | Tills du drar tillbaka inlägget eller raderar ditt konto; tillbakadragna eller borttagna inlägg raderas permanent 30 dagar senare |
+| Inlägg, tidigare versioner och deras media | Tills du tar bort inlägget eller raderar ditt konto; borttagna inlägg raderas permanent 30 dagar senare |
 | Media som inte längre används av något inlägg | Raderas efter 7 dagar |
 | Kommentarer och gillanden | Tills kommentaren raderas av inläggets författare eller av oss, eller inlägget raderas |
 | Rapporter och modereringsregistreringar om ett inlägg | Raderas tillsammans med det inlägg de gäller |
@@ -107,7 +107,7 @@ niceideas-konton raderas genom att radera ditt NiceMatrix ID:
 2. Om du avbryter under NiceMatrix ID:s betänketid (för närvarande 15 dagar) återkommer allt på samma länkar.
 3. När betänketiden tar slut raderar vi permanent din profil, inlägg, tidigare versioner, media, kommentarer, gillanden och följare, utan ytterligare lagringsperiod, förutom säkerhetskopieringscykeln på upp till 14 dagar.
 
-Du kan också dra tillbaka enskilda inlägg när som helst, eller skriva till oss för att radera något annat.
+Du kan också ta bort enskilda inlägg när som helst, eller skriva till oss för att radera något annat.
 
 ## 11. Dina rättigheter
 
@@ -120,7 +120,7 @@ Beroende på var du bor, inklusive enligt kanadensiska PIPEDA, Albertas Personal
 - återkalla ditt samtycke;
 - klaga till en dataskyddsmyndighet, såsom Office of the Privacy Commissioner of Canada, Office of the Information and Privacy Commissioner of Alberta, din lokala myndighet inom Europeiska unionen, eller Storbritanniens Information Commissioner's Office.
 
-Du kan redigera din profil i Inställningar och dra tillbaka inlägg i appen du publicerade dem från, eller genom att skriva till oss. För alla andra förfrågningar, skriv till support@nicematrix.ca. Vi kan be dig bekräfta att kontot är ditt, till exempel genom att logga in. Vi svarar inom 30 dagar, eller inom den period lagen kräver, och vi tar inte ut någon avgift för förfrågningar såvida de inte är uppenbart ogrundade eller orimliga. Du kan använda ett auktoriserat ombud där lagen tillåter det. Vi kommer inte att behandla dig annorlunda för att du utövar dina rättigheter.
+Du kan redigera din profil i Inställningar och ta bort inlägg på niceideas eller i appen du publicerade dem från, eller genom att skriva till oss. För alla andra förfrågningar, skriv till support@nicematrix.ca. Vi kan be dig bekräfta att kontot är ditt, till exempel genom att logga in. Vi svarar inom 30 dagar, eller inom den period lagen kräver, och vi tar inte ut någon avgift för förfrågningar såvida de inte är uppenbart ogrundade eller orimliga. Du kan använda ett auktoriserat ombud där lagen tillåter det. Vi kommer inte att behandla dig annorlunda för att du utövar dina rättigheter.
 
 ## 12. Barn
 

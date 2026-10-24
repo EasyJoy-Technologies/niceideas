@@ -8,6 +8,5 @@ export function mediaLimitsFromConfig(): MediaLimits {
     maxAudioBytes: c.MEDIA_MAX_AUDIO_BYTES,
     maxAudioSeconds: c.MEDIA_MAX_AUDIO_SECONDS,
     maxImagePixels: c.MEDIA_MAX_IMAGE_PIXELS,
-    userQuotaBytes: c.MEDIA_USER_QUOTA_BYTES,
   };
 }

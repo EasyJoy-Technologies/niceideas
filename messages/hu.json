@@ -150,8 +150,9 @@
     "status": {
       "active": "Elérhető",
       "author_deleting": "A szerző fiókja törlés alatt",
+      "preparing": "Előkészítés",
       "removed": "Eltávolítva",
-      "unpublished": "A szerző visszavonta"
+      "unpublished": "A szerző törölte"
     },
     "tab": {
       "dismissed": "Elutasított",
@@ -277,7 +278,7 @@
     "about": {
       "p1": "A {brand} az a hely, ahol megoszthatod a nice ideas-eidet – rövid gondolatokat, hosszú írásokat, fotókat és hangot – egyetlen linkkel.",
       "p2": "A megosztott linket bárki megnyithatja, fiókkal vagy anélkül. A bejegyzések érkezhetnek közvetlenül alkalmazásokból, például a NiceNote-ból, vagy készülhetnek a weben.",
-      "p3": "A bejegyzéseid a tieid maradnak: bármikor szerkesztheted vagy visszavonhatod őket, a visszavont bejegyzések pedig 30 nap után véglegesen törlődnek.",
+      "p3": "A bejegyzéseid a tieid maradnak: bármikor szerkesztheted vagy törölheted őket, a törölt bejegyzések pedig 30 nap után véglegesen eltávolításra kerülnek.",
       "title": "Rólunk"
     },
     "effective": "Hatályos: {date}",
@@ -293,7 +294,7 @@
     },
     "help": {
       "a1": "Ossz meg egy jegyzetet a NiceNote-ból, vagy írj bejegyzést a weben, amint elindul a webes közzététel.",
-      "a2": "Szerkeszd a jegyzetet az alkalmazásban, és a bejegyzés frissül. Ha visszavonod az alkalmazásban, a link azonnal megszűnik.",
+      "a2": "Szerkeszd a jegyzetet az alkalmazásban, és a bejegyzés frissül. A bejegyzés törléséhez nyisd meg a „⋯” menüt az oldalán, és válaszd a Törlés lehetőséget; a link azonnal megszűnik.",
       "a3": "Bárki, akinél megvan a link. A bejegyzések a profilodon és a hírfolyamokban is megjelennek.",
       "a4": "Használd a Jelentés gombot a bejegyzésen. Minden jelentést megvizsgálunk.",
       "q1": "Hogyan tehetek közzé valamit?",
@@ -368,7 +369,9 @@
       "cancel": "Mégse",
       "close": "Bezárás",
       "copied": "Link másolva",
+      "delete": "Törlés",
       "like": "Tetszik",
+      "more": "További lehetőségek",
       "reply": "Válasz",
       "report": "Jelentés",
       "share": "Megosztás"
@@ -393,14 +396,29 @@
       "submit": "Küldés",
       "title": "Hozzászólások"
     },
+    "delete": {
+      "body": "A link azonnal megszűnik, és a bejegyzés 30 nap után véglegesen eltávolításra kerül. Ez nem vonható vissza.",
+      "failed": "A bejegyzést nem sikerült törölni. Próbáld újra.",
+      "fromApp": "Az eredeti a {app} alkalmazásban nem sérül; az ismételt megosztás új linket hoz létre.",
+      "title": "Törlöd ezt a bejegyzést?"
+    },
     "header": {
       "join": "Csatlakozás: {brand}",
       "joinShort": "Csatlakozás"
     },
     "language": "Nyelv",
+    "media": {
+      "processing": "Feldolgozás…",
+      "unavailable": "A média nem érhető el"
+    },
     "post": {
       "edited": "Szerkesztve: {time}",
-      "from": "Forrás: {app}"
+      "empty": "Ennek a bejegyzésnek nincs tartalma.",
+      "from": "Forrás: {app}",
+      "preparing": {
+        "body": "A tartalom hamarosan megjelenik itt.",
+        "title": "A bejegyzés előkészítése"
+      }
     },
     "report": {
       "done": "Köszönjük. Megvizsgáljuk.",
@@ -430,8 +448,8 @@
         "title": "Ez az oldal nem érhető el a régiódban"
       },
       "withdrawn": {
-        "body": "A szerző visszavonta ezt a bejegyzést.",
-        "title": "A bejegyzést visszavonták"
+        "body": "A szerző törölte ezt a bejegyzést.",
+        "title": "A bejegyzést törölték"
       }
     }
   },

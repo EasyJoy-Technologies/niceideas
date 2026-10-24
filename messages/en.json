@@ -150,8 +150,9 @@
     "status": {
       "active": "Live",
       "author_deleting": "Author account being deleted",
+      "preparing": "Preparing",
       "removed": "Removed",
-      "unpublished": "Withdrawn by the author"
+      "unpublished": "Deleted by the author"
     },
     "tab": {
       "dismissed": "Dismissed",
@@ -277,7 +278,7 @@
     "about": {
       "p1": "{brand} is a place to share your nice ideas — short thoughts, long reads, photos and audio — as a single link.",
       "p2": "Anyone can open a shared link, with or without an account. Posts can come straight from apps such as NiceNote, or be written on the web.",
-      "p3": "Your posts stay yours: you can edit or withdraw them at any time, and withdrawn posts are permanently deleted after 30 days.",
+      "p3": "Your posts stay yours: you can edit or delete them at any time, and deleted posts are permanently removed after 30 days.",
       "title": "About"
     },
     "effective": "Effective {date}",
@@ -293,7 +294,7 @@
     },
     "help": {
       "a1": "Share a note from NiceNote, or write a post on the web once web publishing opens.",
-      "a2": "Edit the note in the app and the post updates. Withdraw it in the app and the link stops working right away.",
+      "a2": "Edit the note in the app and the post updates. To delete a post, open the ⋯ menu on its page and choose Delete; the link stops working right away.",
       "a3": "Anyone with the link. Posts also appear on your profile and in feeds.",
       "a4": "Use Report on the post. We review every report.",
       "q1": "How do I publish?",
@@ -368,7 +369,9 @@
       "cancel": "Cancel",
       "close": "Close",
       "copied": "Link copied",
+      "delete": "Delete",
       "like": "Like",
+      "more": "More options",
       "reply": "Reply",
       "report": "Report",
       "share": "Share"
@@ -393,14 +396,29 @@
       "submit": "Post",
       "title": "Comments"
     },
+    "delete": {
+      "body": "The link stops working right away, and the post is permanently removed after 30 days. This can't be undone.",
+      "failed": "Couldn't delete the post. Please try again.",
+      "fromApp": "The original in {app} is not affected; sharing it again creates a new link.",
+      "title": "Delete this post?"
+    },
     "header": {
       "join": "Join {brand}",
       "joinShort": "Join"
     },
     "language": "Language",
+    "media": {
+      "processing": "Processing…",
+      "unavailable": "Media unavailable"
+    },
     "post": {
       "edited": "Edited {time}",
-      "from": "From {app}"
+      "empty": "This post has no content.",
+      "from": "From {app}",
+      "preparing": {
+        "body": "The content will appear here in a moment.",
+        "title": "Getting this post ready"
+      }
     },
     "report": {
       "done": "Thanks. We'll review it.",
@@ -430,8 +448,8 @@
         "title": "This page isn't available in your region"
       },
       "withdrawn": {
-        "body": "The author has withdrawn this post.",
-        "title": "This post was withdrawn"
+        "body": "The author has deleted this post.",
+        "title": "This post was deleted"
       }
     }
   },

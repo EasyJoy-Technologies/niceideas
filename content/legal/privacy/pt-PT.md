@@ -1,4 +1,4 @@
-> **Resumo.** Apenas recolhemos o que é necessário para operar o niceideas: o seu perfil, aquilo que publica, e dados técnicos limitados para manter o Serviço seguro. As suas publicações são públicas. Não vendemos informações pessoais, não exibimos anúncios nem utilizamos rastreadores externos. Pode retirar publicações em qualquer momento e eliminar a sua conta eliminando a sua NiceMatrix ID. Escreva para support@nicematrix.ca com qualquer questão ou pedido relacionado com privacidade.
+> **Resumo.** Apenas recolhemos o que é necessário para operar o niceideas: o seu perfil, aquilo que publica, e dados técnicos limitados para manter o Serviço seguro. As suas publicações são públicas. Não vendemos informações pessoais, não exibimos anúncios nem utilizamos rastreadores externos. Pode eliminar publicações em qualquer momento e eliminar a sua conta eliminando a sua NiceMatrix ID. Escreva para support@nicematrix.ca com qualquer questão ou pedido relacionado com privacidade.
 
 ## 1. Quem somos
 
@@ -84,7 +84,7 @@ Para ligações provenientes da China continental, apenas estão disponíveis as
 | Informações | Durante quanto tempo |
 |---|---|
 | Perfil | Enquanto a sua conta existir; eliminado quando a eliminação da conta estiver concluída |
-| Publicações, versões anteriores e respetivos ficheiros multimédia | Até retirar a publicação ou eliminar a sua conta; as publicações retiradas ou removidas são eliminadas definitivamente 30 dias depois |
+| Publicações, versões anteriores e respetivos ficheiros multimédia | Até eliminar a publicação ou a sua conta; as publicações eliminadas ou removidas são eliminadas definitivamente 30 dias depois |
 | Ficheiros multimédia já não utilizados por nenhuma publicação | Eliminados após 7 dias |
 | Comentários e gostos | Até o comentário ser eliminado pelo autor da publicação ou por nós, ou a publicação ser eliminada |
 | Denúncias e registos de moderação relativos a uma publicação | Eliminados juntamente com a publicação a que se referem |
@@ -107,7 +107,7 @@ As contas do niceideas são eliminadas ao eliminar a sua NiceMatrix ID:
 2. Se cancelar durante o período de reflexão da NiceMatrix ID (atualmente 15 dias), tudo volta a estar disponível nas mesmas ligações.
 3. Quando o período de reflexão termina, eliminamos definitivamente o seu perfil, publicações, versões anteriores, ficheiros multimédia, comentários, gostos e seguidores, sem qualquer período de conservação adicional, à exceção do ciclo de cópias de segurança até 14 dias.
 
-Também pode retirar publicações individuais em qualquer momento, ou escrever-nos para eliminar qualquer outra coisa.
+Também pode eliminar publicações individuais em qualquer momento, ou escrever-nos para eliminar qualquer outra coisa.
 
 ## 11. Os seus direitos
 
@@ -120,7 +120,7 @@ Dependendo de onde reside, incluindo ao abrigo da PIPEDA canadiana, da Lei de Pr
 - retirar o seu consentimento;
 - apresentar uma reclamação a uma autoridade de proteção de dados, como o Gabinete do Comissário da Privacidade do Canadá, o Gabinete do Comissário da Informação e Privacidade de Alberta, a sua autoridade local na União Europeia, ou o Information Commissioner's Office do Reino Unido.
 
-Pode editar o seu perfil nas Definições e retirar publicações na aplicação a partir da qual as publicou, ou escrevendo-nos. Para qualquer outro pedido, escreva para support@nicematrix.ca. Podemos pedir-lhe que confirme que a conta é sua, por exemplo, iniciando sessão. Respondemos no prazo de 30 dias, ou no prazo exigido pela lei, e não cobramos pelos pedidos, salvo se forem claramente infundados ou excessivos. Pode recorrer a um representante autorizado quando a lei o permitir. Não o trataremos de forma diferente por exercer os seus direitos.
+Pode editar o seu perfil nas Definições e eliminar publicações no niceideas ou na aplicação a partir da qual as publicou, ou escrevendo-nos. Para qualquer outro pedido, escreva para support@nicematrix.ca. Podemos pedir-lhe que confirme que a conta é sua, por exemplo, iniciando sessão. Respondemos no prazo de 30 dias, ou no prazo exigido pela lei, e não cobramos pelos pedidos, salvo se forem claramente infundados ou excessivos. Pode recorrer a um representante autorizado quando a lei o permitir. Não o trataremos de forma diferente por exercer os seus direitos.
 
 ## 12. Crianças
 

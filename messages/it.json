@@ -150,8 +150,9 @@
     "status": {
       "active": "Pubblicato",
       "author_deleting": "Account dell’autore in eliminazione",
+      "preparing": "In preparazione",
       "removed": "Rimosso",
-      "unpublished": "Ritirato dall’autore"
+      "unpublished": "Eliminato dall’autore"
     },
     "tab": {
       "dismissed": "Respinte",
@@ -277,7 +278,7 @@
     "about": {
       "p1": "{brand} è il posto dove condividere le tue nice ideas — pensieri brevi, testi lunghi, foto e audio — con un solo link.",
       "p2": "Chiunque può aprire un link condiviso, con o senza account. I post possono arrivare da app come NiceNote o essere scritti sul web.",
-      "p3": "I tuoi post restano tuoi: puoi modificarli o ritirarli in qualsiasi momento, e quelli ritirati vengono eliminati definitivamente dopo 30 giorni.",
+      "p3": "I tuoi post restano tuoi: puoi modificarli o eliminarli in qualsiasi momento, e quelli eliminati vengono rimossi definitivamente dopo 30 giorni.",
       "title": "Informazioni"
     },
     "effective": "In vigore dal {date}",
@@ -293,7 +294,7 @@
     },
     "help": {
       "a1": "Condividi una nota da NiceNote, oppure scrivi un post sul web quando sarà attiva la pubblicazione web.",
-      "a2": "Modifica la nota nell’app e il post si aggiorna. Ritirala nell’app e il link smette subito di funzionare.",
+      "a2": "Modifica la nota nell’app e il post si aggiorna. Per eliminare un post, apri il menu «⋯» nella sua pagina e scegli «Elimina»; il link smette subito di funzionare.",
       "a3": "Chiunque abbia il link. I post compaiono anche sul tuo profilo e nei feed.",
       "a4": "Usa Segnala sul post. Esaminiamo ogni segnalazione.",
       "q1": "Come pubblico?",
@@ -368,7 +369,9 @@
       "cancel": "Annulla",
       "close": "Chiudi",
       "copied": "Link copiato",
+      "delete": "Elimina",
       "like": "Mi piace",
+      "more": "Altre opzioni",
       "reply": "Rispondi",
       "report": "Segnala",
       "share": "Condividi"
@@ -393,14 +396,29 @@
       "submit": "Pubblica",
       "title": "Commenti"
     },
+    "delete": {
+      "body": "Il link smette subito di funzionare e il post viene eliminato definitivamente dopo 30 giorni. Questa azione non può essere annullata.",
+      "failed": "Impossibile eliminare il post. Riprova.",
+      "fromApp": "L’originale in {app} non viene modificato; condividerlo di nuovo crea un nuovo link.",
+      "title": "Eliminare questo post?"
+    },
     "header": {
       "join": "Unisciti a {brand}",
       "joinShort": "Unisciti"
     },
     "language": "Lingua",
+    "media": {
+      "processing": "Elaborazione in corso…",
+      "unavailable": "Media non disponibile"
+    },
     "post": {
       "edited": "Modificato il {time}",
-      "from": "Da {app}"
+      "empty": "Questo post non ha contenuto.",
+      "from": "Da {app}",
+      "preparing": {
+        "body": "Il contenuto apparirà qui a breve.",
+        "title": "Preparazione del post in corso"
+      }
     },
     "report": {
       "done": "Grazie. Lo esamineremo.",
@@ -430,8 +448,8 @@
         "title": "Questa pagina non è disponibile nella tua area geografica"
       },
       "withdrawn": {
-        "body": "L’autore ha ritirato questo post.",
-        "title": "Post ritirato"
+        "body": "L’autore ha eliminato questo post.",
+        "title": "Questo post è stato eliminato"
       }
     }
   },

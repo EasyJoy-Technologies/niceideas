@@ -150,8 +150,9 @@
     "status": {
       "active": "Online",
       "author_deleting": "Konto des Autors wird gelöscht",
+      "preparing": "Wird vorbereitet",
       "removed": "Entfernt",
-      "unpublished": "Vom Autor zurückgezogen"
+      "unpublished": "Vom Autor gelöscht"
     },
     "tab": {
       "dismissed": "Abgelehnt",
@@ -277,7 +278,7 @@
     "about": {
       "p1": "{brand} ist der Ort, um deine nice ideas zu teilen – kurze Gedanken, lange Texte, Fotos und Audio – mit einem einzigen Link.",
       "p2": "Jede und jeder kann einen geteilten Link öffnen, mit oder ohne Konto. Beiträge können direkt aus Apps wie NiceNote kommen oder im Web geschrieben werden.",
-      "p3": "Deine Beiträge gehören dir: Du kannst sie jederzeit bearbeiten oder zurückziehen, und zurückgezogene Beiträge werden nach 30 Tagen endgültig gelöscht.",
+      "p3": "Deine Beiträge gehören dir: Du kannst sie jederzeit bearbeiten oder löschen, und gelöschte Beiträge werden nach 30 Tagen endgültig entfernt.",
       "title": "Über uns"
     },
     "effective": "Gültig ab {date}",
@@ -293,7 +294,7 @@
     },
     "help": {
       "a1": "Teile eine Notiz aus NiceNote oder schreibe einen Beitrag im Web, sobald das Veröffentlichen im Web freigeschaltet ist.",
-      "a2": "Bearbeite die Notiz in der App, und der Beitrag wird aktualisiert. Ziehst du sie in der App zurück, funktioniert der Link sofort nicht mehr.",
+      "a2": "Bearbeite die Notiz in der App, und der Beitrag wird aktualisiert. Um einen Beitrag zu löschen, öffne das „⋯“-Menü auf seiner Seite und wähle „Löschen“; der Link funktioniert sofort nicht mehr.",
       "a3": "Alle, die den Link haben. Beiträge erscheinen auch in deinem Profil und in Feeds.",
       "a4": "Nutze „Melden“ beim Beitrag. Wir prüfen jede Meldung.",
       "q1": "Wie veröffentliche ich etwas?",
@@ -368,7 +369,9 @@
       "cancel": "Abbrechen",
       "close": "Schließen",
       "copied": "Link kopiert",
+      "delete": "Löschen",
       "like": "Gefällt mir",
+      "more": "Weitere Optionen",
       "reply": "Antworten",
       "report": "Melden",
       "share": "Teilen"
@@ -393,14 +396,29 @@
       "submit": "Senden",
       "title": "Kommentare"
     },
+    "delete": {
+      "body": "Der Link funktioniert sofort nicht mehr, und der Beitrag wird nach 30 Tagen endgültig entfernt. Das kann nicht rückgängig gemacht werden.",
+      "failed": "Der Beitrag konnte nicht gelöscht werden. Bitte versuche es erneut.",
+      "fromApp": "Das Original in {app} ist davon nicht betroffen; erneutes Teilen erstellt einen neuen Link.",
+      "title": "Diesen Beitrag löschen?"
+    },
     "header": {
       "join": "{brand} beitreten",
       "joinShort": "Beitreten"
     },
     "language": "Sprache",
+    "media": {
+      "processing": "Wird verarbeitet…",
+      "unavailable": "Medien nicht verfügbar"
+    },
     "post": {
       "edited": "Bearbeitet am {time}",
-      "from": "Aus {app}"
+      "empty": "Dieser Beitrag hat keinen Inhalt.",
+      "from": "Aus {app}",
+      "preparing": {
+        "body": "Der Inhalt wird gleich hier erscheinen.",
+        "title": "Dieser Beitrag wird vorbereitet"
+      }
     },
     "report": {
       "done": "Danke. Wir prüfen das.",
@@ -430,8 +448,8 @@
         "title": "Diese Seite ist in deiner Region nicht verfügbar"
       },
       "withdrawn": {
-        "body": "Der Autor hat diesen Beitrag zurückgezogen.",
-        "title": "Beitrag zurückgezogen"
+        "body": "Der Autor hat diesen Beitrag gelöscht.",
+        "title": "Dieser Beitrag wurde gelöscht"
       }
     }
   },

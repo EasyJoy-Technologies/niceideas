@@ -1,4 +1,4 @@
-> **Zusammenfassung.** Was Sie veröffentlichen, gehört Ihnen, und Sie sind dafür verantwortlich. Beiträge auf niceideas sind öffentlich. Veröffentlichen Sie nichts Illegales oder Schädliches und nichts, zu dessen Weitergabe Sie nicht berechtigt sind. Sie können einen Beitrag jederzeit zurückziehen; zurückgezogene Beiträge werden nach 30 Tagen endgültig gelöscht. niceideas ist kostenlos und wird wie besehen bereitgestellt. Diese Nutzungsbedingungen unterliegen dem Recht von Alberta, Kanada. Diese Zusammenfassung dient nur der Übersicht; es gelten die vollständigen Bedingungen unten.
+> **Zusammenfassung.** Was Sie veröffentlichen, gehört Ihnen, und Sie sind dafür verantwortlich. Beiträge auf niceideas sind öffentlich. Veröffentlichen Sie nichts Illegales oder Schädliches und nichts, zu dessen Weitergabe Sie nicht berechtigt sind. Sie können einen Beitrag jederzeit löschen; gelöschte Beiträge werden nach 30 Tagen endgültig entfernt. niceideas ist kostenlos und wird wie besehen bereitgestellt. Diese Nutzungsbedingungen unterliegen dem Recht von Alberta, Kanada. Diese Zusammenfassung dient nur der Übersicht; es gelten die vollständigen Bedingungen unten.
 
 ## 1. Über diese Bedingungen
 
@@ -30,7 +30,7 @@ Durch die Nutzung des Dienstes, einschließlich des Ansehens, Gefällt-mir-Marki
 
 4.2 Kommentare sind öffentlich und erscheinen unter dem Beitrag. Besucher ohne Konto können Beiträge mit Gefällt-mir markieren und unter einem optionalen Spitznamen kommentieren.
 
-4.3 Veröffentlichen Sie nichts, was Sie privat halten möchten. Sobald etwas öffentlich ist, können andere es kopieren oder speichern, bevor Sie es zurückziehen, und wir können solche Kopien nicht zurückrufen.
+4.3 Veröffentlichen Sie nichts, was Sie privat halten möchten. Sobald etwas öffentlich ist, können andere es kopieren oder speichern, bevor Sie es löschen, und wir können solche Kopien nicht zurückrufen.
 
 4.4 Für Besucher, deren Verbindung aus Festlandchina stammt, sind nur einzelne geteilte Beitragsseiten sowie die Gefällt-mir-Angaben und Kommentare dazu verfügbar; andere Seiten sind es nicht. Dies spiegelt wider, wie der Dienst derzeit angeboten wird, und kann sich ändern.
 
@@ -44,7 +44,7 @@ Durch die Nutzung des Dienstes, einschließlich des Ansehens, Gefällt-mir-Marki
 
 5.4 Sie bestätigen, dass Sie Eigentümer Ihrer Inhalte sind oder alle für die Veröffentlichung und die Erteilung dieser Lizenz erforderlichen Berechtigungen besitzen und dass die Veröffentlichung keine Rechte Dritter oder Gesetze verletzt.
 
-5.5 Sie können Ihre Beiträge jederzeit zurückziehen: Ein von einer App veröffentlichter Beitrag kann in dieser App zurückgezogen werden, und jeder Beitrag kann durch Schreiben an support@nicematrix.ca zurückgezogen werden. Ein zurückgezogener Beitrag verlässt den Dienst sofort und wird 30 Tage später endgültig gelöscht. Wenn die von Ihnen genutzte App dies unterstützt, können Sie auch Kommentare unter Ihren eigenen Beiträgen löschen.
+5.5 Sie können Ihre Beiträge jederzeit löschen: Jeder Beitrag kann auf seiner Seite auf niceideas gelöscht werden, ein über eine App veröffentlichter Beitrag kann auch in dieser App gelöscht werden, und Sie können auch an support@nicematrix.ca schreiben. Ein gelöschter Beitrag verlässt den Dienst sofort und wird 30 Tage später endgültig entfernt. Wenn die von Ihnen genutzte App dies unterstützt, können Sie auch Kommentare unter Ihren eigenen Beiträgen löschen.
 
 ## 6. Verhaltensregeln
 
@@ -83,11 +83,11 @@ Sie verpflichten sich, den Dienst nicht zu nutzen, um:
 
 9.1 Sie können über die NiceNote-App oder andere Apps, die Sie über NiceMatrix ID autorisieren, auf niceideas veröffentlichen. Eine App kann nur das tun, was Sie ihr erlauben (zum Beispiel Beiträge veröffentlichen oder Medien hochladen), und nur für die von ihr veröffentlichten Beiträge. Beiträge zeigen an, von welcher App sie stammen.
 
-9.2 Sie können den Zugriff einer App über NiceMatrix ID widerrufen oder uns bitten, diese für Ihr Konto zu blockieren, indem Sie an support@nicematrix.ca schreiben. Der Widerruf des Zugriffs verhindert künftigen Zugriff; er entfernt keine bereits veröffentlichten Beiträge, die Sie selbst zurückziehen können.
+9.2 Sie können den Zugriff einer App über NiceMatrix ID widerrufen oder uns bitten, diese für Ihr Konto zu blockieren, indem Sie an support@nicematrix.ca schreiben. Der Widerruf des Zugriffs verhindert künftigen Zugriff; er entfernt keine bereits veröffentlichten Beiträge, die Sie selbst löschen können.
 
 9.3 Apps werden von ihren Entwicklern nach deren eigenen Bedingungen und Datenschutzerklärungen bereitgestellt. Wir können jede App blockieren oder einschränken, die den Dienst missbraucht.
 
-9.4 Wenn Sie über NiceNote veröffentlichen, wird nur die von Ihnen zur Veröffentlichung ausgewählte Notiz an niceideas gesendet. Änderungen und Rückzüge, die Sie in NiceNote vornehmen, können den veröffentlichten Beitrag aktualisieren oder zurückziehen.
+9.4 Wenn Sie über NiceNote veröffentlichen, wird nur die von Ihnen zur Veröffentlichung ausgewählte Notiz über NiceMatrix an niceideas gesendet. Änderungen, die Sie in NiceNote an der Notiz vornehmen, können den veröffentlichten Beitrag aktualisieren, und Sie können den Beitrag in NiceNote oder auf niceideas löschen.
 
 ## 10. Beendigung Ihrer Nutzung
 

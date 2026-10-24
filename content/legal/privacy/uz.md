@@ -1,4 +1,4 @@
-> **Qisqacha mazmuni.** Biz niceideas'ni ishlatish uchun faqat zarur bo'lgan narsalarni to'playmiz: profilingiz, siz nashr etgan narsa, va Xizmatni xavfsiz saqlash uchun cheklangan texnik ma'lumotlar. Postlaringiz ommaviy hisoblanadi. Biz shaxsiy ma'lumotlarni sotmaymiz, reklama ko'rsatmaymiz yoki tashqi kuzatuvchilardan foydalanmaymiz. Siz istalgan vaqtda postlarni qaytarib olishingiz va NiceMatrix ID'ingizni o'chirib hisobingizni o'chirishingiz mumkin. Har qanday maxfiylik savoli yoki so'rovi bilan support@nicematrix.ca manziliga yozing.
+> **Qisqacha mazmuni.** Biz niceideas'ni ishlatish uchun faqat zarur bo'lgan narsalarni to'playmiz: profilingiz, siz nashr etgan narsa, va Xizmatni xavfsiz saqlash uchun cheklangan texnik ma'lumotlar. Postlaringiz ommaviy hisoblanadi. Biz shaxsiy ma'lumotlarni sotmaymiz, reklama ko'rsatmaymiz yoki tashqi kuzatuvchilardan foydalanmaymiz. Siz istalgan vaqtda postlarni o'chirishingiz va NiceMatrix ID'ingizni o'chirib hisobingizni o'chirishingiz mumkin. Har qanday maxfiylik savoli yoki so'rovi bilan support@nicematrix.ca manziliga yozing.
 
 ## 1. Biz kimmiz
 
@@ -84,7 +84,7 @@ Materik Xitoydan ulanishlar uchun faqat alohida ulashilgan post sahifalari va ul
 | Ma'lumot | Qancha muddat |
 |---|---|
 | Profil | Hisobingiz mavjud bo'lgan davrda; hisob o'chirish yakunlanganda o'chiriladi |
-| Postlar, oldingi versiyalari va ularning mediasi | Postni qaytarib olguningizcha yoki hisobingizni o'chirguningizcha; qaytarib olingan yoki olib tashlangan postlar 30 kundan keyin butunlay o'chiriladi |
+| Postlar, oldingi versiyalari va ularning mediasi | Postni o'chirguningizcha yoki hisobingizni o'chirguningizcha; o'chirilgan yoki olib tashlangan postlar 30 kundan keyin butunlay o'chiriladi |
 | Hech qanday post tomonidan ishlatilmaydigan media | 7 kundan keyin o'chiriladi |
 | Izohlar va layklar | Izoh post muallifi yoki biz tomonidan o'chirilguncha, yoki post o'chirilguncha |
 | Post haqidagi shikoyatlar va moderatsiya yozuvlari | Tegishli post bilan birga o'chiriladi |
@@ -107,7 +107,7 @@ niceideas hisoblari NiceMatrix ID'ingizni o'chirish orqali o'chiriladi:
 2. NiceMatrix ID'ning sovib ketish davrida (hozirda 15 kun) bekor qilsangiz, hamma narsa xuddi shu havolalarda qaytadi.
 3. Sovib ketish davri tugaganda, biz sizning profilingiz, postlaringiz, oldingi versiyalari, media, izohlar, layklar va kuzatuvlarni, 14 kungacha bo'lgan zaxira nusxalash sikllidan tashqari, hech qanday qo'shimcha saqlash muddatsiz, butunlay o'chiramiz.
 
-Siz istalgan vaqtda alohida postlarni ham qaytarib olishingiz, yoki boshqa narsani o'chirish uchun bizga yozishingiz mumkin.
+Siz istalgan vaqtda alohida postlarni ham o'chirishingiz, yoki boshqa narsani o'chirish uchun bizga yozishingiz mumkin.
 
 ## 11. Sizning huquqlaringiz
 
@@ -120,7 +120,7 @@ Yashash joyingizga qarab, shu jumladan Kanadaning PIPEDA, Albertaning Shaxsiy Ma
 - roziligingizni bekor qilish;
 - ma'lumotlarni himoya qilish organiga, masalan Kanadaning Maxfiylik Komissari Boshqarmasiga, Albertaning Axborot va Maxfiylik Komissari Boshqarmasiga, Yevropa Ittifoqidagi mahalliy organingizga, yoki Buyuk Britaniyaning Axborot Komissari Boshqarmasiga shikoyat qilish.
 
-Siz Sozlamalarda profilingizni tahrirlashingiz va postlarni nashr etgan ilovangizda, yoki bizga yozish orqali qaytarib olishingiz mumkin. Boshqa har qanday so'rov uchun support@nicematrix.ca manziliga yozing. Biz hisobning sizga tegishli ekanligini, masalan kirish orqali, tasdiqlashingizni so'rashimiz mumkin. Biz 30 kun ichida, yoki qonun talab qilgan muddatda javob beramiz, va aniq asossiz yoki haddan tashqari bo'lmasa so'rovlar uchun pul olmaymiz. Qonun ruxsat bergan joyda vakolatli vakildan foydalanishingiz mumkin. Huquqlaringizni amalga oshirganingiz uchun sizga boshqacha munosabatda bo'lmaymiz.
+Siz Sozlamalarda profilingizni tahrirlashingiz va postlarni niceideas'da yoki ularni nashr etgan ilovangizda, yoki bizga yozish orqali o'chirishingiz mumkin. Boshqa har qanday so'rov uchun support@nicematrix.ca manziliga yozing. Biz hisobning sizga tegishli ekanligini, masalan kirish orqali, tasdiqlashingizni so'rashimiz mumkin. Biz 30 kun ichida, yoki qonun talab qilgan muddatda javob beramiz, va aniq asossiz yoki haddan tashqari bo'lmasa so'rovlar uchun pul olmaymiz. Qonun ruxsat bergan joyda vakolatli vakildan foydalanishingiz mumkin. Huquqlaringizni amalga oshirganingiz uchun sizga boshqacha munosabatda bo'lmaymiz.
 
 ## 12. Bolalar
 

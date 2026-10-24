@@ -130,3 +130,9 @@
   .ni-image { margin-inline: -1rem; }
   .ni-image img { border-radius: 0; }
 }
+
+/* NiceNote media still processing / unavailable (no broken element, keeps the reading flow). */
+.ni-media-ph { margin: 0; display: grid; place-items: center; min-height: 7.5rem; border: 1px dashed var(--ni-color-border); border-radius: var(--ni-radius-md); background: var(--ni-color-hover); color: var(--ni-color-text-secondary); font-size: 0.875rem; }
+.ni-media-ph-audio { min-height: 3.5rem; }
+.ni-media-ph[data-state="unavailable"] { color: var(--ni-color-muted); }
+.ni-empty-body { color: var(--ni-color-text-secondary); }

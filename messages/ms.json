@@ -150,8 +150,9 @@
     "status": {
       "active": "Disiarkan",
       "author_deleting": "Akaun penulis sedang dipadamkan",
+      "preparing": "Sedang disediakan",
       "removed": "Dialih keluar",
-      "unpublished": "Ditarik balik oleh penulis"
+      "unpublished": "Dipadam oleh penulis"
     },
     "tab": {
       "dismissed": "Ditolak",
@@ -277,7 +278,7 @@
     "about": {
       "p1": "{brand} ialah tempat untuk berkongsi nice ideas anda — buah fikiran ringkas, tulisan panjang, foto dan audio — melalui satu pautan.",
       "p2": "Sesiapa sahaja boleh membuka pautan yang dikongsi, dengan atau tanpa akaun. Siaran boleh datang terus daripada aplikasi seperti NiceNote atau ditulis di web.",
-      "p3": "Siaran anda kekal milik anda: anda boleh menyunting atau menarik baliknya pada bila-bila masa, dan siaran yang ditarik balik dipadam secara kekal selepas 30 hari.",
+      "p3": "Siaran anda kekal milik anda: anda boleh menyunting atau memadamnya pada bila-bila masa, dan siaran yang dipadam akan dipadam secara kekal selepas 30 hari.",
       "title": "Mengenai"
     },
     "effective": "Berkuat kuasa mulai {date}",
@@ -293,7 +294,7 @@
     },
     "help": {
       "a1": "Kongsi nota daripada NiceNote, atau tulis siaran di web apabila penerbitan web dibuka.",
-      "a2": "Sunting nota dalam aplikasi dan siaran akan dikemas kini. Tarik balik dalam aplikasi dan pautan terus tidak berfungsi.",
+      "a2": "Sunting nota dalam aplikasi dan siaran akan dikemas kini. Untuk memadam siaran, buka menu “⋯” pada halaman siaran dan pilih Padam; pautan terus tidak berfungsi.",
       "a3": "Sesiapa yang mempunyai pautan. Siaran juga dipaparkan pada profil dan suapan anda.",
       "a4": "Gunakan Laporkan pada siaran. Kami menyemak setiap laporan.",
       "q1": "Bagaimana untuk menyiarkan?",
@@ -368,7 +369,9 @@
       "cancel": "Batal",
       "close": "Tutup",
       "copied": "Pautan disalin",
+      "delete": "Padam",
       "like": "Suka",
+      "more": "Lagi pilihan",
       "reply": "Balas",
       "report": "Laporkan",
       "share": "Kongsi"
@@ -393,14 +396,29 @@
       "submit": "Siarkan",
       "title": "Ulasan"
     },
+    "delete": {
+      "body": "Pautan terus tidak berfungsi, dan siaran dipadam secara kekal selepas 30 hari. Tindakan ini tidak boleh dibuat asal.",
+      "failed": "Siaran tidak dapat dipadam. Sila cuba lagi.",
+      "fromApp": "Siaran asal dalam {app} tidak terjejas; berkongsi semula akan mencipta pautan baharu.",
+      "title": "Padam siaran ini?"
+    },
     "header": {
       "join": "Sertai {brand}",
       "joinShort": "Sertai"
     },
     "language": "Bahasa",
+    "media": {
+      "processing": "Sedang memproses…",
+      "unavailable": "Media tidak tersedia"
+    },
     "post": {
       "edited": "Disunting {time}",
-      "from": "Daripada {app}"
+      "empty": "Siaran ini tidak mempunyai kandungan.",
+      "from": "Daripada {app}",
+      "preparing": {
+        "body": "Kandungan akan dipaparkan di sini sebentar lagi.",
+        "title": "Menyediakan siaran ini"
+      }
     },
     "report": {
       "done": "Terima kasih. Kami akan menyemaknya.",
@@ -430,8 +448,8 @@
         "title": "Halaman ini tidak tersedia di rantau anda"
       },
       "withdrawn": {
-        "body": "Penulis telah menarik balik siaran ini.",
-        "title": "Siaran ditarik balik"
+        "body": "Penulis telah memadam siaran ini.",
+        "title": "Siaran dipadam"
       }
     }
   },

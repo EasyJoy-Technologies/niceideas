@@ -1,4 +1,4 @@
-> **Összefoglaló.** Csak azt gyűjtjük, amire a niceideas működéséhez szükségünk van: az Ön profilját, amit közzétesz, és korlátozott technikai adatokat a Szolgáltatás biztonságának fenntartásához. Az Ön bejegyzései nyilvánosak. Nem adunk el személyes adatokat, nem jelenítünk meg hirdetéseket, és nem használunk külső nyomkövetőket. Bejegyzéseit bármikor visszavonhatja, és fiókját a NiceMatrix ID törlésével törölheti. Írjon a support@nicematrix.ca címre bármilyen adatvédelmi kérdéssel vagy kéréssel.
+> **Összefoglaló.** Csak azt gyűjtjük, amire a niceideas működéséhez szükségünk van: az Ön profilját, amit közzétesz, és korlátozott technikai adatokat a Szolgáltatás biztonságának fenntartásához. Az Ön bejegyzései nyilvánosak. Nem adunk el személyes adatokat, nem jelenítünk meg hirdetéseket, és nem használunk külső nyomkövetőket. Bejegyzéseit bármikor törölheti, és fiókját a NiceMatrix ID törlésével törölheti. Írjon a support@nicematrix.ca címre bármilyen adatvédelmi kérdéssel vagy kéréssel.
 
 ## 1. Kik vagyunk
 
@@ -84,7 +84,7 @@ A kínai szárazföldről érkező kapcsolatok esetében csak az egyes megosztot
 | Információ | Mennyi ideig |
 |---|---|
 | Profil | Amíg a fiókja létezik; törlődik a fióktörlés befejezésekor |
-| Bejegyzések, korábbi verziók és azok médiafájljai | Amíg visszavonja a bejegyzést vagy törli a fiókot; a visszavont vagy eltávolított bejegyzéseket 30 nap elteltével véglegesen töröljük |
+| Bejegyzések, korábbi verziók és azok médiafájljai | Amíg törli a bejegyzést vagy a fiókot; a törölt vagy eltávolított bejegyzéseket 30 nap elteltével véglegesen töröljük |
 | A bejegyzések által nem használt médiafájlok | 7 nap után törölve |
 | Hozzászólások és kedvelések | A bejegyzés szerzője vagy mi általunk történő törléséig, vagy a bejegyzés törléséig |
 | Egy bejegyzéssel kapcsolatos jelentések és moderációs feljegyzések | A bejegyzéssel együtt törlésre kerülnek, amelyre vonatkoznak |
@@ -107,7 +107,7 @@ A niceideas fiókokat a NiceMatrix ID törlésével töröljük:
 2. Ha a NiceMatrix ID türelmi időszakában (jelenleg 15 nap) visszavonja, minden visszatér ugyanazokra a linkekre.
 3. A türelmi időszak végén véglegesen töröljük a profilját, bejegyzéseit, korábbi verzióit, médiafájljait, hozzászólásait, kedveléseit és követéseit, további megőrzési időszak nélkül, a legfeljebb 14 napos biztonsági mentési ciklus kivételével.
 
-Bármikor visszavonhat egyéni bejegyzéseket is, vagy írhat nekünk bármi más törlése érdekében.
+Egyéni bejegyzéseket is bármikor törölhet, vagy írhat nekünk bármi más törlése érdekében.
 
 ## 11. Az Ön jogai
 
@@ -120,7 +120,7 @@ A lakóhelyétől függően, beleértve a kanadai PIPEDA-t, Alberta tartomány S
 - hozzájárulásának visszavonása;
 - panasz benyújtása egy adatvédelmi hatósághoz, mint például a kanadai Információs és Adatvédelmi Biztos Hivatalához, Alberta tartomány Információs és Adatvédelmi Biztosának Hivatalához, az Ön helyi hatóságához az Európai Unióban, vagy az Egyesült Királyság Információs Biztosának Hivatalához.
 
-Profilját a Beállításokban szerkesztheti, és bejegyzéseit visszavonhatja az alkalmazásban, ahonnan közzétette, vagy nekünk írva. Bármely más kéréssel írjon a support@nicematrix.ca címre. Kérhetjük, hogy igazolja, hogy a fiók az Öné, például bejelentkezéssel. 30 napon belül, vagy a törvény által előírt határidőn belül válaszolunk, és nem számítunk fel díjat a kérésekért, kivéve, ha azok nyilvánvalóan megalapozatlanok vagy túlzóak. Jogosult képviselőt is igénybe vehet, ahol a törvény ezt megengedi. Nem fogjuk Önt másképp kezelni jogainak gyakorlásáért.
+Profilját a Beállításokban szerkesztheti, és bejegyzéseit törölheti a niceideas-en vagy az alkalmazásban, ahonnan közzétette, vagy nekünk írva. Bármely más kéréssel írjon a support@nicematrix.ca címre. Kérhetjük, hogy igazolja, hogy a fiók az Öné, például bejelentkezéssel. 30 napon belül, vagy a törvény által előírt határidőn belül válaszolunk, és nem számítunk fel díjat a kérésekért, kivéve, ha azok nyilvánvalóan megalapozatlanok vagy túlzóak. Jogosult képviselőt is igénybe vehet, ahol a törvény ezt megengedi. Nem fogjuk Önt másképp kezelni jogainak gyakorlásáért.
 
 ## 12. Gyermekek
 

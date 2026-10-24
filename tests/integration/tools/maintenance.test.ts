@@ -1,34 +1,23 @@
 import { existsSync } from "node:fs";
 import { sql } from "kysely";
 import { afterAll, beforeAll, describe, expect, it } from "vitest";
-import { POST as createRoute } from "@/app/api/v1/posts/route";
-import { DELETE as withdrawRoute } from "@/app/api/v1/posts/[id]/route";
-import { POST as mediaRoute } from "@/app/api/v1/media/route";
 import { GET as pageRoute } from "@/app/p/[slug]/route";
 import { mediaKeys } from "@/server/media/keys";
 import { runMaintenance } from "@/server/maintenance/run-maintenance";
 import { removePost, restorePost } from "@/server/moderation/admin";
 import { startAppContext } from "../../helpers/app-context";
-import { jsonRequest, params } from "../../helpers/api";
-import { jpegWithExif, sha256, smallPngWithAlpha } from "../../helpers/media-fixtures";
+import { params } from "../../helpers/api";
+import { jpegWithExif, smallPngWithAlpha } from "../../helpers/media-fixtures";
+import { deleteAs, publishAs, uploadAs } from "../../helpers/publish";
 
 let ctx: Awaited<ReturnType<typeof startAppContext>>;
-let token: string;
 beforeAll(async () => {
   ctx = await startAppContext();
-  token = await ctx.tokenFor("maint-user");
 });
 afterAll(async () => ctx?.stop());
 
-async function upload(buf: Buffer) {
-  const req = new Request("http://x/api/v1/media", { method: "POST", body: new Uint8Array(buf), headers: { authorization: `Bearer ${token}`, "x-content-sha256": sha256(buf) } });
-  return (await (await mediaRoute(req, {})).json()).media.id as string;
-}
-async function publish(ref: string, mediaId: string) {
-  const doc = { version: 1, title: ref, blocks: [{ type: "text", text: "x" }, { type: "image", mediaId }] };
-  const res = await createRoute(jsonRequest("POST", "/api/v1/posts", token, { document: doc, sourceRef: ref, sourceUpdatedAt: "2026-10-20T00:00:00Z" }), {});
-  return (await res.json()).post as { id: string; slug: string };
-}
+const upload = (buf: Buffer) => uploadAs(ctx, "maint-user", buf);
+const publish = (ref: string, mediaId: string) => publishAs(ctx, "maint-user", { version: 1, title: ref, blocks: [{ type: "text", text: "x" }, { type: "image", mediaId }] }, ref);
 const status = async (slug: string) => (await pageRoute(new Request(`http://localhost:3000/p/${slug}`), params({ slug }))).status;
 const media = (id: string) => ctx.db.selectFrom("media").selectAll().where("id", "=", id).executeTakeFirst();
 const rt = () => ({ db: ctx.db, stores: ctx.stores, cacheControl: "public, max-age=300", retentionDays: 30 });
@@ -56,7 +45,7 @@ describe("daily maintenance", () => {
   it("purges expired posts with their media, and old never-published uploads; keeps live data", async () => {
     const goneImg = await upload(await smallPngWithAlpha());
     const gone = await publish("gone", goneImg);
-    await withdrawRoute(jsonRequest("DELETE", `/api/v1/posts/${gone.id}`, token), params({ id: gone.id }));
+    await deleteAs(ctx, gone.id);
     await ctx.db.updateTable("post").set({ purge_after: sql<Date>`now() - interval '1 day'` }).where("id", "=", gone.id).execute();
 
     const orphanBuf = Buffer.concat([await jpegWithExif(), Buffer.from("orphan")]);

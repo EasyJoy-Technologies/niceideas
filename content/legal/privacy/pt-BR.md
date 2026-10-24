@@ -1,4 +1,4 @@
-> **Resumo.** Coletamos apenas o que é necessário para operar o niceideas: seu perfil, o que você publica, e dados técnicos limitados para manter o Serviço seguro. Suas publicações são públicas. Não vendemos informações pessoais, não exibimos anúncios nem usamos rastreadores externos. Você pode retirar publicações em qualquer momento e excluir sua conta excluindo sua NiceMatrix ID. Escreva para support@nicematrix.ca com qualquer pergunta ou solicitação sobre privacidade.
+> **Resumo.** Coletamos apenas o que é necessário para operar o niceideas: seu perfil, o que você publica, e dados técnicos limitados para manter o Serviço seguro. Suas publicações são públicas. Não vendemos informações pessoais, não exibimos anúncios nem usamos rastreadores externos. Você pode excluir publicações em qualquer momento e excluir sua conta excluindo sua NiceMatrix ID. Escreva para support@nicematrix.ca com qualquer pergunta ou solicitação sobre privacidade.
 
 ## 1. Quem somos
 
@@ -84,7 +84,7 @@ Para conexões provenientes da China continental, apenas páginas individuais de
 | Informações | Por quanto tempo |
 |---|---|
 | Perfil | Enquanto sua conta existir; excluído quando a exclusão da conta é concluída |
-| Publicações, versões anteriores e suas mídias | Até você retirar a publicação ou excluir sua conta; publicações retiradas ou removidas são excluídas permanentemente 30 dias depois |
+| Publicações, versões anteriores e suas mídias | Até você excluir a publicação ou sua conta; publicações excluídas ou removidas são excluídas permanentemente 30 dias depois |
 | Mídia não mais usada por nenhuma publicação | Excluída após 7 dias |
 | Comentários e curtidas | Até o comentário ser excluído pelo autor da publicação ou por nós, ou a publicação ser excluída |
 | Denúncias e registros de moderação sobre uma publicação | Excluídos junto com a publicação a que se referem |
@@ -107,7 +107,7 @@ As contas do niceideas são excluídas ao excluir sua NiceMatrix ID:
 2. Se você cancelar durante o período de reflexão da NiceMatrix ID (atualmente 15 dias), tudo volta a aparecer nos mesmos links.
 3. Quando o período de reflexão termina, excluímos permanentemente seu perfil, publicações, versões anteriores, mídias, comentários, curtidas e seguidores, sem qualquer período de retenção adicional, exceto o ciclo de backup de até 14 dias.
 
-Você também pode retirar publicações individuais em qualquer momento, ou nos escrever para excluir qualquer outra coisa.
+Você também pode excluir publicações individuais em qualquer momento, ou nos escrever para excluir qualquer outra coisa.
 
 ## 11. Seus direitos
 
@@ -120,7 +120,7 @@ Dependendo de onde você vive, incluindo sob a PIPEDA canadense, a Lei de Prote�
 - retirar seu consentimento;
 - reclamar a uma autoridade de proteção de dados, como o Escritório do Comissário de Privacidade do Canadá, o Escritório do Comissário de Informação e Privacidade de Alberta, sua autoridade local na União Europeia, ou o Information Commissioner's Office do Reino Unido.
 
-Você pode editar seu perfil nas Configurações e retirar publicações no aplicativo em que as publicou, ou nos escrevendo. Para qualquer outra solicitação, escreva para support@nicematrix.ca. Podemos pedir que você confirme que a conta é sua, por exemplo, acessando-a. Respondemos dentro de 30 dias, ou dentro do prazo exigido pela lei, e não cobramos por solicitações, salvo se forem claramente infundadas ou excessivas. Você pode usar um agente autorizado onde a lei permitir. Não trataremos você de forma diferente por exercer seus direitos.
+Você pode editar seu perfil nas Configurações e excluir publicações no niceideas ou no aplicativo em que as publicou, ou nos escrevendo. Para qualquer outra solicitação, escreva para support@nicematrix.ca. Podemos pedir que você confirme que a conta é sua, por exemplo, acessando-a. Respondemos dentro de 30 dias, ou dentro do prazo exigido pela lei, e não cobramos por solicitações, salvo se forem claramente infundadas ou excessivas. Você pode usar um agente autorizado onde a lei permitir. Não trataremos você de forma diferente por exercer seus direitos.
 
 ## 12. Crianças
 

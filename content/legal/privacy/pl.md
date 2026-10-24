@@ -1,4 +1,4 @@
-> **Podsumowanie.** Zbieramy tylko to, czego potrzebujemy do prowadzenia niceideas: Twój profil, to, co publikujesz, oraz ograniczone dane techniczne niezbędne do zapewnienia bezpieczeństwa Usługi. Twoje wpisy są publiczne. Nie sprzedajemy danych osobowych, nie wyświetlamy reklam i nie korzystamy z zewnętrznych narzędzi śledzących. Możesz wycofać wpisy w każdej chwili i usunąć konto, usuwając swoje NiceMatrix ID. Napisz na support@nicematrix.ca z każdym pytaniem lub żądaniem dotyczącym prywatności.
+> **Podsumowanie.** Zbieramy tylko to, czego potrzebujemy do prowadzenia niceideas: Twój profil, to, co publikujesz, oraz ograniczone dane techniczne niezbędne do zapewnienia bezpieczeństwa Usługi. Twoje wpisy są publiczne. Nie sprzedajemy danych osobowych, nie wyświetlamy reklam i nie korzystamy z zewnętrznych narzędzi śledzących. Możesz usunąć wpisy w każdej chwili i usunąć konto, usuwając swoje NiceMatrix ID. Napisz na support@nicematrix.ca z każdym pytaniem lub żądaniem dotyczącym prywatności.
 
 ## 1. Kim jesteśmy
 
@@ -84,7 +84,7 @@ Dla połączeń z Chin kontynentalnych dostępne są tylko poszczególne strony 
 | Informacje | Okres przechowywania |
 |---|---|
 | Profil | Dopóki istnieje Twoje konto; usuwany po zakończeniu usunięcia konta |
-| Wpisy, wcześniejsze wersje i ich media | Do wycofania wpisu lub usunięcia konta; wycofane lub usunięte wpisy są trwale usuwane po 30 dniach |
+| Wpisy, wcześniejsze wersje i ich media | Do usunięcia wpisu lub konta; wpisy usunięte przez Ciebie lub przez nas są trwale usuwane po 30 dniach |
 | Media nieużywane już przez żaden wpis | Usuwane po 7 dniach |
 | Komentarze i polubienia | Do usunięcia komentarza przez autora wpisu lub przez nas, lub do usunięcia wpisu |
 | Zgłoszenia i zapisy moderacji dotyczące wpisu | Usuwane wraz z wpisem, którego dotyczą |
@@ -107,7 +107,7 @@ Konta niceideas są usuwane poprzez usunięcie Twojego NiceMatrix ID:
 2. Jeśli odwołasz żądanie w okresie na wycofanie NiceMatrix ID (obecnie 15 dni), wszystko wraca pod tymi samymi linkami.
 3. Po zakończeniu okresu na wycofanie trwale usuwamy Twój profil, wpisy, wcześniejsze wersje, media, komentarze, polubienia i obserwacje, bez dalszego okresu przechowywania, poza cyklem kopii zapasowych trwającym do 14 dni.
 
-Możesz również w każdej chwili wycofać poszczególne wpisy lub napisać do nas o usunięcie czegokolwiek innego.
+Możesz również w każdej chwili usunąć poszczególne wpisy lub napisać do nas o usunięcie czegokolwiek innego.
 
 ## 11. Twoje prawa
 
@@ -120,7 +120,7 @@ W zależności od miejsca zamieszkania, w tym na podstawie kanadyjskiej PIPEDA, 
 - odwołania swojej zgody;
 - złożenia zażalenia do organu ochrony danych, takiego jak Urząd Komisarza Prywatności Kanady, Urząd Komisarza Informacji i Prywatności Alberty, lokalny organ w Unii Europejskiej, lub brytyjski Urząd Komisarza Informacji.
 
-Możesz edytować swój profil w ustawieniach i wycofywać wpisy w aplikacji, z której je opublikowałeś, lub pisząc do nas. W przypadku innych żądań pisz na support@nicematrix.ca. Możemy prosić o potwierdzenie, że konto należy do Ciebie, na przykład poprzez zalogowanie się. Odpowiadamy w ciągu 30 dni lub w terminie wymaganym przez prawo, i nie pobieramy opłat za żądania, o ile nie są one oczywiście bezpodstawne lub nadmierne. Możesz skorzystać z upoważnionego przedstawiciela, jeśli prawo to dopuszcza. Nie będziemy traktować Cię inaczej za korzystanie z Twoich praw.
+Możesz edytować swój profil w ustawieniach i usuwać wpisy na niceideas lub w aplikacji, z której je opublikowałeś, lub pisząc do nas. W przypadku innych żądań pisz na support@nicematrix.ca. Możemy prosić o potwierdzenie, że konto należy do Ciebie, na przykład poprzez zalogowanie się. Odpowiadamy w ciągu 30 dni lub w terminie wymaganym przez prawo, i nie pobieramy opłat za żądania, o ile nie są one oczywiście bezpodstawne lub nadmierne. Możesz skorzystać z upoważnionego przedstawiciela, jeśli prawo to dopuszcza. Nie będziemy traktować Cię inaczej za korzystanie z Twoich praw.
 
 ## 12. Dzieci
 

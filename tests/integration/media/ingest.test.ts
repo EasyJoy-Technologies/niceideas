@@ -19,7 +19,7 @@ import { jpegWithExif, m4aTone, mp3Tone, mp4Video, smallPngWithAlpha, spooled, s
 let db: Db;
 let stop: () => Promise<void>;
 let stores: MediaStores & { privateStore: LocalStore; publicStore: LocalStore };
-const limits: MediaLimits = { maxImageBytes: 30e6, maxAudioBytes: 150e6, maxAudioSeconds: 3600, maxImagePixels: 1e8, userQuotaBytes: 5e9 };
+const limits: MediaLimits = { maxImageBytes: 30e6, maxAudioBytes: 150e6, maxAudioSeconds: 3600, maxImagePixels: 1e8 };
 
 beforeAll(async () => {
   ({ db, stop } = await startTestDb());
@@ -70,13 +70,12 @@ describe("image ingest", () => {
     expect(v.fallback.mime).toBe("image/png");
   });
 
-  it("rejects svg, hash mismatch, oversize, pixel bombs and quota overflow", async () => {
+  it("rejects svg, hash mismatch, oversize and pixel bombs (no per-user quota)", async () => {
     expect(await code(ingest(svg()))).toBe("media.unsupported_type");
     expect(await code(ingest(await smallPngWithAlpha(), { sha: "0".repeat(64) }))).toBe("media.hash_mismatch");
     const big = await jpegWithExif();
     expect(await code(ingest(Buffer.concat([big, Buffer.from("w")]), { limits: { ...limits, maxImageBytes: 10 } }))).toBe("media.too_large");
     expect(await code(ingest(Buffer.concat([big, Buffer.from("x")]), { limits: { ...limits, maxImagePixels: 1000 } }))).toBe("media.unprocessable");
-    expect(await code(ingest(Buffer.concat([big, Buffer.from("y")]), { limits: { ...limits, userQuotaBytes: 1 } }))).toBe("media.quota_exceeded");
   });
 });
 

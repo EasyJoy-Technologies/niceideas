@@ -1,4 +1,4 @@
-> **Tóm tắt.** Bạn sở hữu những gì bạn đăng và bạn chịu trách nhiệm về nội dung đó. Các bài đăng trên niceideas là công khai. Không đăng bất cứ nội dung bất hợp pháp hay có hại, hoặc bất cứ nội dung mà bạn không có quyền chia sẻ. Bạn có thể rút bài đăng bất cứ lúc nào; các bài đăng đã rút sẽ bị xóa vĩnh viễn sau 30 ngày. niceideas được cung cấp miễn phí và theo "nguyên trạng". Các Điều khoản này tuân theo luật pháp của tỉnh Alberta, Canada. Bản tóm tắt này chỉ nhằm mục đích thuận tiện; toàn bộ Điều khoản dưới đây mới có hiệu lực áp dụng.
+> **Tóm tắt.** Bạn sở hữu những gì bạn đăng và bạn chịu trách nhiệm về nội dung đó. Các bài đăng trên niceideas là công khai. Không đăng bất cứ nội dung bất hợp pháp hay có hại, hoặc bất cứ nội dung mà bạn không có quyền chia sẻ. Bạn có thể xóa bài đăng bất cứ lúc nào; các bài đăng đã xóa sẽ bị xóa vĩnh viễn sau 30 ngày. niceideas được cung cấp miễn phí và theo "nguyên trạng". Các Điều khoản này tuân theo luật pháp của tỉnh Alberta, Canada. Bản tóm tắt này chỉ nhằm mục đích thuận tiện; toàn bộ Điều khoản dưới đây mới có hiệu lực áp dụng.
 
 ## 1. Về các Điều khoản này
 
@@ -30,7 +30,7 @@ Bằng việc sử dụng Dịch vụ, bao gồm việc xem, thích hoặc bình
 
 4.2 Bình luận là công khai và xuất hiện dưới bài đăng. Khách truy cập không có tài khoản có thể thích bài đăng và bình luận dưới một biệt danh tùy chọn.
 
-4.3 Không công khai bất cứ nội dung nào bạn muốn giữ riêng tư. Khi một nội dung đã trở thành công khai, người khác có thể sao chép hoặc lưu lại trước khi bạn rút nó, và chúng tôi không thể thu hồi các bản sao đó.
+4.3 Không công khai bất cứ nội dung nào bạn muốn giữ riêng tư. Khi một nội dung đã trở thành công khai, người khác có thể sao chép hoặc lưu lại trước khi bạn xóa nó, và chúng tôi không thể thu hồi các bản sao đó.
 
 4.4 Đối với khách truy cập có kết nối từ Trung Quốc đại lục, chỉ có các trang bài đăng được chia sẻ riêng lẻ và các lượt thích, bình luận trên đó là có thể truy cập được; các trang khác thì không. Điều này phản ánh cách Dịch vụ hiện đang được cung cấp và có thể thay đổi.
 
@@ -44,7 +44,7 @@ Bằng việc sử dụng Dịch vụ, bao gồm việc xem, thích hoặc bình
 
 5.4 Bạn xác nhận rằng bạn sở hữu nội dung của bạn hoặc đã có mọi sự cho phép cần thiết để đăng nội dung đó và cấp giấy phép này, và việc đăng nội dung đó không vi phạm quyền của bất kỳ ai hay bất kỳ pháp luật nào.
 
-5.5 Bạn có thể rút các bài đăng của bạn bất cứ lúc nào: một bài đăng được công khai từ một ứng dụng có thể được rút trong ứng dụng đó, và bất kỳ bài đăng nào cũng có thể được rút bằng cách viết thư tới support@nicematrix.ca. Một bài đăng đã rút sẽ rời khỏi Dịch vụ ngay lập tức và bị xóa vĩnh viễn sau 30 ngày. Nếu ứng dụng bạn sử dụng hỗ trợ, bạn cũng có thể xóa các bình luận dưới bài đăng của chính bạn.
+5.5 Bạn có thể xóa các bài đăng của bạn bất cứ lúc nào: bất kỳ bài đăng nào cũng có thể được xóa trên trang bài đăng đó trên niceideas, một bài đăng được công khai từ một ứng dụng cũng có thể được xóa trong ứng dụng đó, và bạn cũng có thể viết thư tới support@nicematrix.ca. Một bài đăng đã xóa sẽ rời khỏi Dịch vụ ngay lập tức và bị xóa vĩnh viễn sau 30 ngày. Nếu ứng dụng bạn sử dụng hỗ trợ, bạn cũng có thể xóa các bình luận dưới bài đăng của chính bạn.
 
 ## 6. Quy tắc ứng xử
 
@@ -83,11 +83,11 @@ Bạn đồng ý không sử dụng Dịch vụ để:
 
 9.1 Bạn có thể công khai lên niceideas từ ứng dụng NiceNote hoặc từ các ứng dụng khác mà bạn ủy quyền qua NiceMatrix ID. Một ứng dụng chỉ có thể làm những gì bạn cho phép (ví dụ: công khai bài đăng hoặc tải lên phương tiện), và chỉ đối với các bài đăng mà nó đã công khai. Các bài đăng hiển thị ứng dụng mà chúng xuất phát từ.
 
-9.2 Bạn có thể hủy quyền truy cập của một ứng dụng qua NiceMatrix ID, hoặc yêu cầu chúng tôi chặn ứng dụng đó cho tài khoản của bạn bằng cách viết thư tới support@nicematrix.ca. Việc hủy quyền truy cập ngăn chặn việc truy cập trong tương lai; nó không xóa các bài đăng đã được công khai, mà bạn có thể tự rút.
+9.2 Bạn có thể hủy quyền truy cập của một ứng dụng qua NiceMatrix ID, hoặc yêu cầu chúng tôi chặn ứng dụng đó cho tài khoản của bạn bằng cách viết thư tới support@nicematrix.ca. Việc hủy quyền truy cập ngăn chặn việc truy cập trong tương lai; nó không xóa các bài đăng đã được công khai, mà bạn có thể tự xóa.
 
 9.3 Các ứng dụng được cung cấp bởi các nhà phát triển của chúng theo các điều khoản và chính sách quyền riêng tư riêng của họ. Chúng tôi có thể chặn hoặc hạn chế bất kỳ ứng dụng nào lạm dụng Dịch vụ.
 
-9.4 Khi bạn công khai từ NiceNote, chỉ ghi chú bạn chọn công khai mới được gửi đến niceideas. Những thay đổi và rút lại mà bạn thực hiện trong NiceNote có thể cập nhật hoặc rút lại bài đăng đã công khai.
+9.4 Khi bạn công khai từ NiceNote, chỉ ghi chú bạn chọn công khai mới được gửi đến niceideas thông qua NiceMatrix. Những thay đổi bạn thực hiện cho ghi chú trong NiceNote có thể cập nhật bài đăng đã công khai, và bạn có thể xóa bài đăng trong NiceNote hoặc trên niceideas.
 
 ## 10. Kết thúc việc sử dụng của bạn
 

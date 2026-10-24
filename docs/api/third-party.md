@@ -19,7 +19,7 @@ NiceMatrix developer guide; this page covers only what is specific to NiceIdeas.
 |---|---|---|
 | `posts:read` | Read the posts **this app published** for the user (`GET /posts/{id}`), their comments (`GET /posts/{id}/comments`), and the user's NiceIdeas profile (`GET /me`). | Never posts published from NiceNote, the web or other apps (they look nonexistent: 404). Public pages need no token. |
 | `posts:write` | Publish (`POST /posts`), edit content (`PUT /posts/{id}/content`), change settings (`PATCH /posts/{id}`), **withdraw** (`DELETE /posts/{id}`), and delete comments on those posts. | Only posts this app published. `Idempotency-Key` header required on `POST /posts`. |
-| `media:write` | Upload images and audio for the app's posts (`POST /media`, raw bytes + `X-Content-SHA256`). | Images: JPEG, PNG, WebP, GIF, AVIF; ≤ 30 MB, ≤ 100 MP (SVG/HEIC/BMP rejected). Audio: MP3, M4A/AAC, Ogg/Opus, WebM, WAV; ≤ 150 MB, ≤ 4 h. Type detected from the bytes. Per-user storage quota 5 GB (shared with all sources). |
+| `media:write` | Upload images and audio for the app's posts (`POST /media`, raw bytes + `X-Content-SHA256`). | Images: JPEG, PNG, WebP, GIF, AVIF; ≤ 30 MB, ≤ 100 MP (SVG/HEIC/BMP rejected). Audio: MP3, M4A/AAC, Ogg/Opus, WebM, WAV; ≤ 150 MB, ≤ 4 h. Type detected from the bytes. No per-user storage quota. |
 
 ## Endpoints
 | Method | Path | Scope |

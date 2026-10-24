@@ -1,4 +1,4 @@
-> **Összefoglaló.** Az Ön tulajdona, amit közzétesz, és Ön felelős érte. A niceideas-en közzétett bejegyzések nyilvánosak. Ne tegyen közzé semmi jogellenest vagy ártalmast, illetve olyat, amelynek megosztására nincs joga. Egy bejegyzés bármikor visszavonható; a visszavont bejegyzéseket 30 nap elteltével véglegesen töröljük. A niceideas ingyenes, és „ahogy van" alapon biztosított. A jelen Feltételekre Alberta tartomány (Kanada) joga az irányadó. Ez az összefoglaló csak a kényelem céljából szolgál; az alábbi teljes Feltételek alkalmazandók.
+> **Összefoglaló.** Az Ön tulajdona, amit közzétesz, és Ön felelős érte. A niceideas-en közzétett bejegyzések nyilvánosak. Ne tegyen közzé semmi jogellenest vagy ártalmast, illetve olyat, amelynek megosztására nincs joga. Egy bejegyzés bármikor törölhető; a törölt bejegyzések 30 nap elteltével véglegesen eltávolításra kerülnek. A niceideas ingyenes, és „ahogy van" alapon biztosított. A jelen Feltételekre Alberta tartomány (Kanada) joga az irányadó. Ez az összefoglaló csak a kényelem céljából szolgál; az alábbi teljes Feltételek alkalmazandók.
 
 ## 1. A jelen Feltételekről
 
@@ -30,7 +30,7 @@ A Szolgáltatás használatával, beleértve a megtekintést, kedvelést vagy ko
 
 4.2 A hozzászólások nyilvánosak, és a bejegyzés alatt jelennek meg. A fiók nélküli látogatók kedvelhetnek bejegyzéseket, és hozzászólhatnak egy opcionális álnév alatt.
 
-4.3 Ne tegyen közzé semmit, amit szeretne privátban tartani. Ha valami nyilvánossá válik, mások lemásolhatják vagy elmenthetik, mielőtt visszavonná a bejegyzést, és az ilyen másolatokat nem tudjuk visszahívni.
+4.3 Ne tegyen közzé semmit, amit szeretne privátban tartani. Ha valami nyilvánossá válik, mások lemásolhatják vagy elmenthetik, mielőtt törölné a bejegyzést, és az ilyen másolatokat nem tudjuk visszahívni.
 
 4.4 A kínai szárazföldről csatlakozó látogatók számára csak az egyes megosztott bejegyzés-oldalak, illetve az azokon lévő kedvelések és hozzászólások érhetők el; más oldalak nem. Ez tükrözi azt, ahogyan a Szolgáltatást jelenleg kínáljuk, és változhat.
 
@@ -44,7 +44,7 @@ A Szolgáltatás használatával, beleértve a megtekintést, kedvelést vagy ko
 
 5.4 Ön megerősíti, hogy saját tartalma, vagy minden szükséges engedéllyel rendelkezik annak közzétételéhez és a jelen licenc megadásához, és hogy a közzététel nem sérti senki jogait vagy semmilyen törvényt.
 
-5.5 Bejegyzéseit bármikor visszavonhatja: az alkalmazásból közzétett bejegyzés az adott alkalmazásban visszavonható, és bármely bejegyzés visszavonható a support@nicematrix.ca címre írva. A visszavont bejegyzés azonnal eltávozik a Szolgáltatásból, és 30 nap elteltével véglegesen törlésre kerül. Ha az Ön által használt alkalmazás ezt támogatja, saját bejegyzései alatti hozzászólásokat is törölhet.
+5.5 Bejegyzéseit bármikor törölheti: bármely bejegyzés törölhető annak niceideas-oldalán, az alkalmazásból közzétett bejegyzés az adott alkalmazásban is törölhető, és írhat is a support@nicematrix.ca címre. A törölt bejegyzés azonnal eltávozik a Szolgáltatásból, és 30 nap elteltével véglegesen eltávolításra kerül. Ha az Ön által használt alkalmazás ezt támogatja, saját bejegyzései alatti hozzászólásokat is törölhet.
 
 ## 6. Magatartási szabályok
 
@@ -83,11 +83,11 @@ A Szolgáltatás használatával, beleértve a megtekintést, kedvelést vagy ko
 
 9.1 Közzétehet a niceideas-en a NiceNote alkalmazásból, vagy más olyan alkalmazásból, amelyet a NiceMatrix ID-n keresztül engedélyezett. Egy alkalmazás csak azt teheti meg, amit Ön engedélyezett számára (például bejegyzések közzétételét vagy médiafájlok feltöltését), és csak az általa közzétett bejegyzésekre vonatkozóan. A bejegyzések megjelenítik, melyik alkalmazásból származnak.
 
-9.2 Egy alkalmazás hozzáférését visszahívhatja a NiceMatrix ID-n keresztül, vagy kérheti tőlünk annak letiltását a fiókja számára a support@nicematrix.ca címre írva. A hozzáférés visszahívása megállítja a jövőbeli hozzáférést; nem távolítja el a már közzétett bejegyzéseket, amelyeket Ön maga visszavonhat.
+9.2 Egy alkalmazás hozzáférését visszahívhatja a NiceMatrix ID-n keresztül, vagy kérheti tőlünk annak letiltását a fiókja számára a support@nicematrix.ca címre írva. A hozzáférés visszahívása megállítja a jövőbeli hozzáférést; nem távolítja el a már közzétett bejegyzéseket, amelyeket Ön maga törölhet.
 
 9.3 Az alkalmazásokat a fejlesztőik biztosítják saját feltételeik és adatvédelmi szabályzataik szerint. Letilthatunk vagy korlátozhatunk bármely alkalmazást, amely visszaél a Szolgáltatással.
 
-9.4 Amikor a NiceNote-ból tesz közzé, csak az Ön által kiválasztott jegyzet kerül elküldésre a niceideas-nek. A NiceNote-ban végzett módosítások és visszavonások frissíthetik vagy visszavonhatják a közzétett bejegyzést.
+9.4 Amikor a NiceNote-ból tesz közzé, csak az Ön által kiválasztott jegyzet kerül elküldésre a niceideas-nek, a NiceMatrix-on keresztül. A NiceNote-ban a jegyzeten végzett módosítások frissíthetik a közzétett bejegyzést, és a bejegyzést törölheti a NiceNote-ban vagy a niceideas-en.
 
 ## 10. A használat megszüntetése
 

@@ -1,4 +1,4 @@
-> **Résumé.** Nous ne collectons que ce qui est nécessaire pour faire fonctionner niceideas : votre profil, ce que vous publiez, et des données techniques limitées pour assurer la sécurité du Service. Vos publications sont publiques. Nous ne vendons pas d'informations personnelles, n'affichons pas de publicités et n'utilisons pas de traceurs externes. Vous pouvez retirer des publications à tout moment et supprimer votre compte en supprimant votre NiceMatrix ID. Écrivez à support@nicematrix.ca pour toute question ou demande relative à la confidentialité.
+> **Résumé.** Nous ne collectons que ce qui est nécessaire pour faire fonctionner niceideas : votre profil, ce que vous publiez, et des données techniques limitées pour assurer la sécurité du Service. Vos publications sont publiques. Nous ne vendons pas d'informations personnelles, n'affichons pas de publicités et n'utilisons pas de traceurs externes. Vous pouvez supprimer des publications à tout moment et supprimer votre compte en supprimant votre NiceMatrix ID. Écrivez à support@nicematrix.ca pour toute question ou demande relative à la confidentialité.
 
 ## 1. Qui nous sommes
 
@@ -84,7 +84,7 @@ Pour les connexions provenant de Chine continentale, seules les pages individuel
 | Informations | Durée |
 |---|---|
 | Profil | Pendant toute la durée d'existence de votre compte ; supprimé une fois la suppression du compte terminée |
-| Publications, versions antérieures et leurs médias | Jusqu'à ce que vous retiriez la publication ou supprimiez votre compte ; les publications retirées ou supprimées sont définitivement effacées 30 jours plus tard |
+| Publications, versions antérieures et leurs médias | Jusqu'à ce que vous supprimiez la publication ou votre compte ; les publications supprimées ou retirées sont définitivement effacées 30 jours plus tard |
 | Médias n'étant plus utilisés par aucune publication | Supprimés après 7 jours |
 | Commentaires et mentions « j'aime » | Jusqu'à ce que le commentaire soit supprimé par l'auteur de la publication ou par nous, ou que la publication soit supprimée |
 | Signalements et registres de modération relatifs à une publication | Supprimés en même temps que la publication concernée |
@@ -107,7 +107,7 @@ Les comptes niceideas sont supprimés en supprimant votre NiceMatrix ID :
 2. Si vous annulez pendant le délai de réflexion de NiceMatrix ID (actuellement 15 jours), tout redevient accessible aux mêmes liens.
 3. Lorsque le délai de réflexion prend fin, nous supprimons définitivement votre profil, vos publications, leurs versions antérieures, les médias, les commentaires, les mentions « j'aime » et les abonnements, sans aucune période de conservation supplémentaire, à l'exception du cycle de sauvegarde pouvant aller jusqu'à 14 jours.
 
-Vous pouvez également retirer des publications individuelles à tout moment, ou nous écrire pour supprimer tout autre élément.
+Vous pouvez également supprimer des publications individuelles à tout moment, ou nous écrire pour supprimer tout autre élément.
 
 ## 11. Vos droits
 
@@ -120,7 +120,7 @@ Selon votre lieu de résidence, y compris en vertu de la LPRPDE canadienne, de l
 - retirer votre consentement ;
 - porter plainte auprès d'une autorité de protection des données, telle que le Commissariat à la protection de la vie privée du Canada, le Bureau du commissaire à l'information et à la protection de la vie privée de l'Alberta, votre autorité locale dans l'Union européenne, ou l'Information Commissioner's Office du Royaume-Uni.
 
-Vous pouvez modifier votre profil dans les paramètres et retirer des publications depuis l'application où vous les avez publiées, ou en nous écrivant. Pour toute autre demande, écrivez à support@nicematrix.ca. Nous pouvons vous demander de confirmer que le compte vous appartient, par exemple en vous connectant. Nous répondons dans un délai de 30 jours, ou dans le délai exigé par la loi, et nous ne facturons pas les demandes, sauf si elles sont manifestement infondées ou excessives. Vous pouvez recourir à un mandataire autorisé lorsque la loi le permet. Nous ne vous traiterons pas différemment pour avoir exercé vos droits.
+Vous pouvez modifier votre profil dans les paramètres et supprimer des publications sur niceideas ou depuis l'application où vous les avez publiées, ou en nous écrivant. Pour toute autre demande, écrivez à support@nicematrix.ca. Nous pouvons vous demander de confirmer que le compte vous appartient, par exemple en vous connectant. Nous répondons dans un délai de 30 jours, ou dans le délai exigé par la loi, et nous ne facturons pas les demandes, sauf si elles sont manifestement infondées ou excessives. Vous pouvez recourir à un mandataire autorisé lorsque la loi le permet. Nous ne vous traiterons pas différemment pour avoir exercé vos droits.
 
 ## 12. Enfants
 

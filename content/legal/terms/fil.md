@@ -1,4 +1,4 @@
-> **Buod.** Pagmamay-ari mo ang anumang ipinapaskil mo, at ikaw ang responsable para dito. Pampubliko ang mga post sa niceideas. Huwag maglagay ng anumang labag sa batas o nakakasama, o anumang wala kang karapatang ibahagi. Maaari mong bawiin ang isang post anumang oras; permanenteng mabubura ang mga binawi na post pagkatapos ng 30 araw. Libre ang niceideas at ibinibigay ito "as is." Ang mga Tuntunin na ito ay pinaiiral ng mga batas ng Alberta, Canada. Ang buod na ito ay para lamang sa kaginhawahan; ang kumpletong Tuntunin sa ibaba ang may bisa.
+> **Buod.** Pagmamay-ari mo ang anumang ipinapaskil mo, at ikaw ang responsable para dito. Pampubliko ang mga post sa niceideas. Huwag maglagay ng anumang labag sa batas o nakakasama, o anumang wala kang karapatang ibahagi. Maaari mong burahin ang isang post anumang oras; permanenteng mabubura ang mga binurang post pagkatapos ng 30 araw. Libre ang niceideas at ibinibigay ito "as is." Ang mga Tuntunin na ito ay pinaiiral ng mga batas ng Alberta, Canada. Ang buod na ito ay para lamang sa kaginhawahan; ang kumpletong Tuntunin sa ibaba ang may bisa.
 
 ## 1. Tungkol sa mga Tuntunin na ito
 
@@ -30,7 +30,7 @@ Sa paggamit ng Serbisyo, kasama ang pagtingin, pag-like, o pagkomento kahit wala
 
 4.2 Pampubliko ang mga komento at lumalabas ito sa ilalim ng post. Ang mga bisitang walang account ay maaaring mag-like ng mga post at magkomento gamit ang isang opsyonal na palayaw.
 
-4.3 Huwag maglathala ng anumang bagay na nais mong itago. Kapag naging pampubliko ang isang bagay, maaari na itong kopyahin o i-save ng iba bago mo ito bawiin, at hindi namin kayang bawiin ang mga kopya nito.
+4.3 Huwag maglathala ng anumang bagay na nais mong itago. Kapag naging pampubliko ang isang bagay, maaari na itong kopyahin o i-save ng iba bago mo ito burahin, at hindi namin kayang bawiin ang mga kopya nito.
 
 4.4 Para sa mga bisitang nagkoneksyon mula sa mainland China, ang mga indibidwal na pinapaskil na post page lamang at ang mga like at komento dito ang maa-access; hindi maa-access ang ibang mga page. Ipinakikita nito ang kasalukuyang paraan ng pagbibigay ng Serbisyo at maaaring magbago.
 
@@ -44,7 +44,7 @@ Sa paggamit ng Serbisyo, kasama ang pagtingin, pag-like, o pagkomento kahit wala
 
 5.4 Kinukumpirma mo na pagmamay-ari mo ang iyong nilalaman o nakuha mo ang bawat pahintulot na kailangan upang ipaskil ito at ipagkaloob ang lisensyang ito, at na ang pagpaskil nito ay hindi nilalabag ang karapatan ng sinuman o anumang batas.
 
-5.5 Maaari mong bawiin ang iyong mga post anumang oras: ang post na ipinaskil mula sa isang app ay maaaring bawiin sa app na iyon, at ang anumang post ay maaaring bawiin sa pagsulat sa support@nicematrix.ca. Agad na mawawala ang isang binawi na post mula sa Serbisyo at permanenteng mabubura 30 araw mamaya. Kung sinusuportahan ito ng app na iyong ginagamit, maaari ka ring bumura ng mga komento sa ilalim ng iyong sariling post.
+5.5 Maaari mong burahin ang iyong mga post anumang oras: ang anumang post ay maaaring burahin sa page ng post na iyon sa niceideas, ang post na ipinaskil mula sa isang app ay maaari ring burahin sa app na iyon, at maaari ka ring sumulat sa support@nicematrix.ca. Agad na mawawala ang isang binurang post mula sa Serbisyo at permanenteng mabubura 30 araw mamaya. Kung sinusuportahan ito ng app na iyong ginagamit, maaari ka ring bumura ng mga komento sa ilalim ng iyong sariling post.
 
 ## 6. Mga patakaran sa pag-uugali
 
@@ -83,11 +83,11 @@ Sumasang-ayon ka na hindi gagamitin ang Serbisyo upang:
 
 9.1 Maaari kang maglathala sa niceideas mula sa NiceNote app o mula sa iba pang mga app na awtorisado mo sa pamamagitan ng NiceMatrix ID. Isang app lamang ang maaaring gawin ang ipinahintulot mo rito (halimbawa, maglathala ng mga post o mag-upload ng media), at lamang para sa mga post na ipinaskil nito. Ipinapakita ng mga post kung saang app ito nagmula.
 
-9.2 Maaari mong bawiin ang access ng isang app sa pamamagitan ng NiceMatrix ID, o hilingin sa amin na i-block ito para sa iyong account sa pagsulat sa support@nicematrix.ca. Ang pagbawi ng access ay pipigilan ang hinaharap na access; hindi ito nagtatanggal ng mga post na naipaskil na, na maaari mong bawiin mismo.
+9.2 Maaari mong bawiin ang access ng isang app sa pamamagitan ng NiceMatrix ID, o hilingin sa amin na i-block ito para sa iyong account sa pagsulat sa support@nicematrix.ca. Ang pagbawi ng access ay pipigilan ang hinaharap na access; hindi ito nagtatanggal ng mga post na naipaskil na, na maaari mong burahin mismo.
 
 9.3 Ang mga app ay ibinigay ng kanilang mga developer sa ilalim ng kanilang sariling mga tuntunin at patakaran sa privacy. Maaari naming i-block o limitahan ang anumang app na nag-abuso sa Serbisyo.
 
-9.4 Kapag naglathala ka mula sa NiceNote, lamang ang note na pinili mong ilathala ang ipapadala sa niceideas. Ang mga pagbabago at pagbawi na gagawin mo sa NiceNote ay maaaring i-update o bawiin ang naipaskil na post.
+9.4 Kapag naglathala ka mula sa NiceNote, lamang ang note na pinili mong ilathala ang ipapadala sa niceideas sa pamamagitan ng NiceMatrix. Ang mga pagbabago na gagawin mo sa note sa NiceNote ay maaaring i-update ang naipaskil na post, at maaari mong burahin ang post sa NiceNote o sa niceideas.
 
 ## 10. Pagwawakas ng iyong paggamit
 

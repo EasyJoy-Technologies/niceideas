@@ -1,9 +1,6 @@
 import sharp from "sharp";
 import { afterAll, beforeAll, describe, expect, it } from "vitest";
 import { NextRequest } from "next/server";
-import { POST as createRoute } from "@/app/api/v1/posts/route";
-import { DELETE } from "@/app/api/v1/posts/[id]/route";
-import { POST as mediaRoute } from "@/app/api/v1/media/route";
 import { GET as pageRoute } from "@/app/p/[slug]/route";
 import { GET as ogRoute } from "@/app/p/[slug]/og/[variant]/route";
 import { GET as regionRoute } from "@/app/status/region/route";
@@ -12,37 +9,29 @@ import { REGION_BLOCK_HEADER, SITE_PATH_EXCLUSIONS } from "@/server/region/regio
 import { GET as termsRoute } from "@/app/terms/route";
 import { GET as langRoute } from "@/app/api/web/lang/route";
 import { startAppContext } from "../../helpers/app-context";
-import { jsonRequest, params } from "../../helpers/api";
-import { jpegWithExif, sha256 } from "../../helpers/media-fixtures";
+import { params } from "../../helpers/api";
+import { deleteAs, publishAs, shareFromNiceNote, uploadAs } from "../../helpers/publish";
+import { jpegWithExif } from "../../helpers/media-fixtures";
 
 let ctx: Awaited<ReturnType<typeof startAppContext>>;
-let token: string;
 beforeAll(async () => {
   ctx = await startAppContext();
-  token = await ctx.tokenFor("author-1");
 });
 afterAll(async () => ctx?.stop());
 
-const T = "2026-10-19T10:00:00Z";
 const page = (slug: string, headers: Record<string, string> = {}, query = "") =>
   pageRoute(new Request(`http://localhost:3000/p/${slug}${query}`, { headers }), params({ slug }));
 const og = (slug: string, variant: string, headers: Record<string, string> = {}) =>
   ogRoute(new Request(`http://localhost:3000/p/${slug}/og/${variant}`, { headers }), params({ slug, variant }));
-async function publish(document: unknown, sourceRef: string) {
-  const res = await createRoute(jsonRequest("POST", "/api/v1/posts", token, { document, sourceRef, sourceUpdatedAt: T }), {});
-  return (await res.json()).post as { id: string; slug: string };
-}
-async function upload(buf: Buffer) {
-  const req = new Request("http://x/api/v1/media", { method: "POST", body: new Uint8Array(buf), headers: { authorization: `Bearer ${token}`, "x-content-sha256": sha256(buf) } });
-  return (await (await mediaRoute(req, {})).json()).media.id as string;
-}
+const publish = (document: unknown, sourceRef: string) => publishAs(ctx, "author-1", document, sourceRef);
+const upload = (buf: Buffer) => uploadAs(ctx, "author-1", buf);
 
 describe("share page /p/<slug>", () => {
   let short: { id: string; slug: string };
   let article: { id: string; slug: string };
 
   beforeAll(async () => {
-    short = await publish({ version: 1, blocks: [{ type: "text", text: "A <b>nice</b> idea" }] }, "s1");
+    short = await shareFromNiceNote(ctx, "author-1", { version: 1, blocks: [{ type: "text", text: "A <b>nice</b> idea" }] });
     const img = await upload(await jpegWithExif());
     article = await publish({ version: 1, title: "Lake trip", blocks: [{ type: "text", text: "Morning fog." }, { type: "image", mediaId: img, caption: "Lake" }] }, "a1");
   });
@@ -122,15 +111,14 @@ describe("share page /p/<slug>", () => {
     expect(html).toContain("enp.ej-mobile.cn");
   });
 
-  it("unknown / malformed slugs → 404, withdrawn → 410 without card tags", async () => {
+  it("unknown / malformed slugs → 404, deleted → 410 without card tags", async () => {
     expect((await page("zzzzzzzzzzzzzz")).status).toBe(404);
     expect((await page("bad slug!")).status).toBe(404);
-    const del = await DELETE(jsonRequest("DELETE", `/api/v1/posts/${short.id}`, token), params({ id: short.id }));
-    expect(del.status).toBe(200);
+    expect((await deleteAs(ctx, short.id)).changed).toBe(true);
     const gone = await page(short.slug, { "accept-language": "en" });
     expect(gone.status).toBe(410);
     const html = await gone.text();
-    expect(html).toContain("This post was withdrawn");
+    expect(html).toContain("This post was deleted");
     expect(html).toContain('<meta name="robots" content="noindex">');
     expect(html).not.toContain("og:title");
   });
@@ -149,7 +137,7 @@ describe("information pages", () => {
     expect(html).not.toMatch(/TO CONFIRM|待确认/);
     // v4.1: no back button (the logo links home); phone footer links in a pop-up menu.
     expect(html).toContain('<a class="ni-brand" href="/">');
-    expect(html).toMatch(/<span class="ni-pill">[^<]*21[^<]*<\/span>/);
+    expect(html).toMatch(/<span class="ni-pill">[^<]*24[^<]*<\/span>/);
     expect(html).not.toContain("ni-btn-primary");
     // Round 5: page links in a header hamburger (icon, labelled); theme menu next to the language.
     expect(html).toContain('<details class="ni-menu ni-info-more"><summary aria-label="Über uns &amp; Bedingungen"');

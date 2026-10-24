@@ -150,8 +150,9 @@
     "status": {
       "active": "E’lon qilingan",
       "author_deleting": "Muallif hisobi o‘chirilmoqda",
+      "preparing": "Tayyorlanmoqda",
       "removed": "Olib tashlangan",
-      "unpublished": "Muallif qaytarib olgan"
+      "unpublished": "Muallif o'chirgan"
     },
     "tab": {
       "dismissed": "Rad etilgan",
@@ -277,7 +278,7 @@
     "about": {
       "p1": "{brand} — nice ideas’laringizni — qisqa fikrlar, uzun matnlar, rasmlar va audioni — bitta havola orqali ulashish joyi.",
       "p2": "Ulashilgan havolani hisobi bor yoki yo‘q har kim ochishi mumkin. Postlar NiceNote kabi ilovalardan to‘g‘ridan-to‘g‘ri kelishi yoki vebda yozilishi mumkin.",
-      "p3": "Postlaringiz o‘zingizniki bo‘lib qoladi: ularni istalgan vaqtda tahrirlash yoki qaytarib olish mumkin, qaytarib olingan postlar 30 kundan keyin butunlay o‘chiriladi.",
+      "p3": "Postlaringiz o'zingizniki bo'lib qoladi: ularni istalgan vaqtda tahrirlash yoki o'chirish mumkin, o'chirilgan postlar 30 kundan keyin butunlay o'chiriladi.",
       "title": "Biz haqimizda"
     },
     "effective": "{date} dan kuchga kirgan",
@@ -293,7 +294,7 @@
     },
     "help": {
       "a1": "NiceNote’dan qaydni ulashing yoki veb orqali e’lon qilish ochilgach, postni vebda yozing.",
-      "a2": "Qaydni ilovada tahrirlasangiz, post ham yangilanadi. Ilovada qaytarib olsangiz, havola darhol ishlamay qoladi.",
+      "a2": "Qaydni ilovada tahrirlasangiz, post ham yangilanadi. Postni o'chirish uchun uning sahifasida \"⋯\" menyusini ochib, O'chirish ni tanlang; havola darhol ishlamay qoladi.",
       "a3": "Havolasi bor har kim. Postlar profilingiz va lentalarda ham ko‘rinadi.",
       "a4": "Postdagi Shikoyat qilish tugmasidan foydalaning. Har bir shikoyatni ko‘rib chiqamiz.",
       "q1": "Qanday post joylayman?",
@@ -368,7 +369,9 @@
       "cancel": "Bekor qilish",
       "close": "Yopish",
       "copied": "Havola nusxalandi",
+      "delete": "O'chirish",
       "like": "Yoqdi",
+      "more": "Qo'shimcha amallar",
       "reply": "Javob berish",
       "report": "Shikoyat qilish",
       "share": "Ulashish"
@@ -393,14 +396,29 @@
       "submit": "Yuborish",
       "title": "Izohlar"
     },
+    "delete": {
+      "body": "Havola darhol ishlamay qoladi, va post 30 kundan keyin butunlay o'chiriladi. Buni ortga qaytarib bo'lmaydi.",
+      "failed": "Postni o'chirib bo'lmadi. Qaytadan urinib ko'ring.",
+      "fromApp": "{app}'dagi asl nusxaga ta'sir qilmaydi; qayta ulashish yangi havola yaratadi.",
+      "title": "Bu postni o'chirasizmi?"
+    },
     "header": {
       "join": "{brand} ga qo‘shiling",
       "joinShort": "Qoʻshilish"
     },
     "language": "Til",
+    "media": {
+      "processing": "Qayta ishlanmoqda…",
+      "unavailable": "Media mavjud emas"
+    },
     "post": {
       "edited": "Tahrirlangan: {time}",
-      "from": "{app} orqali"
+      "empty": "Bu postda mazmun yo'q.",
+      "from": "{app} orqali",
+      "preparing": {
+        "body": "Mazmun bir zumda shu yerda ko'rinadi.",
+        "title": "Bu post tayyorlanmoqda"
+      }
     },
     "report": {
       "done": "Rahmat. Ko‘rib chiqamiz.",
@@ -430,8 +448,8 @@
         "title": "Bu sahifa hududingizda mavjud emas"
       },
       "withdrawn": {
-        "body": "Muallif bu postni qaytarib oldi.",
-        "title": "Post qaytarib olindi"
+        "body": "Muallif bu postni o'chirdi.",
+        "title": "Post o'chirildi"
       }
     }
   },

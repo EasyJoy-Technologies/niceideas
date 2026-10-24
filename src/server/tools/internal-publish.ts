@@ -2,7 +2,6 @@ import { createReadStream } from "node:fs";
 import { Readable } from "node:stream";
 import type { Principal } from "@/server/auth/principal";
 import type { Db } from "@/server/db/client";
-import type { PostSource } from "@/server/db/schema";
 import type { DocBlock } from "@/server/documents/schema";
 import { parseDocument } from "@/server/documents/validate";
 import { ingestUpload } from "@/server/media/ingest";
@@ -29,7 +28,6 @@ export type ToolInput =
 export type PublishInput = {
   userId: string;
   displayName?: string;
-  source: Extract<PostSource, "nicenote_intl" | "nicenote_cn">;
   sourceRef: string;
   title?: string;
   blocks: ToolInput[];
@@ -37,7 +35,8 @@ export type PublishInput = {
 
 export type ToolRuntime = { db: Db; stores: MediaStores; cacheControl: string; retentionDays: number };
 
-const principalOf = (userId: string, source: PublishInput["source"]): Principal => ({ userId, clientId: "internal-cli", kind: "first_party", source });
+/** Tool posts are NiceIdeas posts (source `web`): NiceNote shares only come from the NiceMatrix backend. */
+const principalOf = (userId: string): Principal => ({ userId, clientId: "internal-cli", kind: "first_party", source: "web" });
 
 async function uploadFile(rt: ToolRuntime, ownerId: string, path: string): Promise<string> {
   const upload = await spoolBody(Readable.toWeb(createReadStream(path)) as unknown as ReadableStream<Uint8Array>, Number.MAX_SAFE_INTEGER);
@@ -63,11 +62,11 @@ export async function publishFromTool(rt: ToolRuntime, input: PublishInput): Pro
   }
   // Same validation as the API (limits, empty text, …).
   const document = parseDocument({ version: 1, ...(input.title ? { title: input.title } : {}), blocks });
-  const result = await createPost(rt.db, rt.stores, principalOf(input.userId, input.source), { document, sourceRef: input.sourceRef, sourceUpdatedAt: new Date() }, rt.cacheControl);
+  const result = await createPost(rt.db, rt.stores, principalOf(input.userId), { document, sourceRef: input.sourceRef, sourceUpdatedAt: new Date() }, rt.cacheControl);
   return { id: result.post.id, url: postUrl(result.post.slug), created: result.created };
 }
 
-export async function withdrawFromTool(rt: ToolRuntime, input: { userId: string; source: PublishInput["source"]; postId: string }) {
-  const post = await withdrawPost(rt.db, rt.stores, principalOf(input.userId, input.source), input.postId, rt.retentionDays);
+export async function withdrawFromTool(rt: ToolRuntime, input: { userId: string; postId: string }) {
+  const post = await withdrawPost(rt.db, rt.stores, principalOf(input.userId), input.postId, rt.retentionDays);
   return { id: post.id, status: post.status, purgeAfter: post.purge_after?.toISOString() ?? null };
 }

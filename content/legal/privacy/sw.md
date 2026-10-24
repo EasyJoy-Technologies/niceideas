@@ -1,4 +1,4 @@
-> **Muhtasari.** Tunakusanya tu kile tunachohitaji kuendesha niceideas: wasifu wako, kile unachochapisha, na data ndogo ya kiufundi kuilinda Huduma. Machapisho yako ni ya umma. Hatuuzi taarifa binafsi, hatuonyeshi matangazo au kutumia vifuatiliaji vya nje. Unaweza kuondoa machapisho wakati wowote na kufuta akaunti yako kwa kufuta NiceMatrix ID yako. Andika kwa support@nicematrix.ca kwa swali lolote la faragha au ombi.
+> **Muhtasari.** Tunakusanya tu kile tunachohitaji kuendesha niceideas: wasifu wako, kile unachochapisha, na data ndogo ya kiufundi kuilinda Huduma. Machapisho yako ni ya umma. Hatuuzi taarifa binafsi, hatuonyeshi matangazo au kutumia vifuatiliaji vya nje. Unaweza kufuta machapisho wakati wowote na kufuta akaunti yako kwa kufuta NiceMatrix ID yako. Andika kwa support@nicematrix.ca kwa swali lolote la faragha au ombi.
 
 ## 1. Sisi ni nani
 
@@ -84,7 +84,7 @@ Kwa muunganisho kutoka China bara, kurasa za machapisho binafsi yaliyoshirikiwa 
 | Taarifa | Muda gani |
 |---|---|
 | Wasifu | Wakati akaunti yako ipo; inafutwa ufutaji wa akaunti ukimalizika |
-| Machapisho, matoleo ya awali na media yake | Hadi uondoe chapisho au kufuta akaunti yako; machapisho yaliyoondolewa au kuondolewa yanafutwa kabisa baada ya siku 30 |
+| Machapisho, matoleo ya awali na media yake | Hadi ufute chapisho au kufuta akaunti yako; machapisho yaliyofutwa au kuondolewa yanafutwa kabisa baada ya siku 30 |
 | Media isiyotumika tena na chapisho lolote | Inafutwa baada ya siku 7 |
 | Maoni na mapendo | Hadi maoni yafutwe na mwandishi wa chapisho au na sisi, au chapisho lifutwe |
 | Ripoti na rekodi za usimamizi kuhusu chapisho | Zinafutwa pamoja na chapisho zinalohusika |
@@ -107,7 +107,7 @@ Akaunti za niceideas zinafutwa kwa kufuta NiceMatrix ID yako:
 2. Ukighairi wakati wa kipindi cha kutafakari cha NiceMatrix ID (kwa sasa siku 15), kila kitu kinarejea kwenye viungo vile vile.
 3. Kipindi cha kutafakari kikimalizika, tunafuta kabisa wasifu wako, machapisho, matoleo ya awali, media, maoni, mapendo na wafuasi, bila kipindi chochote cha kuhifadhi zaidi, isipokuwa mzunguko wa nakala za hadi siku 14.
 
-Unaweza pia kuondoa machapisho binafsi wakati wowote, au kutuandikia kufuta chochote kingine.
+Unaweza pia kufuta machapisho binafsi wakati wowote, au kutuandikia kufuta chochote kingine.
 
 ## 11. Haki zako
 
@@ -120,7 +120,7 @@ Kutegemea unapoishi, ikiwa ni pamoja na chini ya PIPEDA ya Kanada, Sheria ya Uli
 - kughairi ridhaa yako;
 - kulalamika kwa mamlaka ya ulinzi wa data, kama Ofisi ya Kamishna wa Faragha wa Kanada, Ofisi ya Kamishna wa Taarifa na Faragha ya Alberta, mamlaka yako ya karibu katika Umoja wa Ulaya, au Ofisi ya Kamishna wa Taarifa ya Uingereza.
 
-Unaweza kuhariri wasifu wako kwenye Mipangilio na kuondoa machapisho kwenye programu uliyoyachapisha, au kwa kuandika kwetu. Kwa ombi lingine lolote, andika kwa support@nicematrix.ca. Tunaweza kukuomba uthibitishe kuwa akaunti ni yako, kwa mfano kwa kujiunga. Tunajibu ndani ya siku 30, au ndani ya kipindi sheria inachokihitaji, na hatutozi malipo kwa maombi isipokuwa yanapokuwa wazi bila msingi au ya kupindukia. Unaweza kutumia wakala aliyeidhinishwa pale sheria inapoitajiwa. Hatutakutendea tofauti kwa kutekeleza haki zako.
+Unaweza kuhariri wasifu wako kwenye Mipangilio na kufuta machapisho kwenye niceideas au kwenye programu uliyoyachapisha, au kwa kuandika kwetu. Kwa ombi lingine lolote, andika kwa support@nicematrix.ca. Tunaweza kukuomba uthibitishe kuwa akaunti ni yako, kwa mfano kwa kujiunga. Tunajibu ndani ya siku 30, au ndani ya kipindi sheria inachokihitaji, na hatutozi malipo kwa maombi isipokuwa yanapokuwa wazi bila msingi au ya kupindukia. Unaweza kutumia wakala aliyeidhinishwa pale sheria inapoitajiwa. Hatutakutendea tofauti kwa kutekeleza haki zako.
 
 ## 12. Watoto
 

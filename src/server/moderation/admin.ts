@@ -6,6 +6,7 @@ import { findPostBySlug, updatePost } from "@/server/db/repos/posts";
 import { listRevisionMediaIds } from "@/server/db/repos/revisions";
 import { findMediaByIds } from "@/server/db/repos/media";
 import { projectMediaPublic, recordMediaPublic, withdrawUnreferencedMedia } from "@/server/media/publication";
+import { queuePostEvent } from "@/server/nicenote/post-events";
 import type { MediaStores } from "@/server/storage/types";
 
 /**
@@ -62,8 +63,11 @@ export async function removePost(rt: ModerationRuntime, op: Operator, slug: stri
   if (post.status === "removed") return;
   if (post.status !== "active") throw new ModerationError(`post is ${post.status}`);
   const now = new Date();
-  await updatePost(rt.db, post.id, { status: "removed", status_changed_at: now, status_reason: op.reason, purge_after: new Date(now.getTime() + rt.retentionDays * 86_400_000) });
-  await recordModeration(rt.db, { action: "remove", actorId: op.actorId, reason: op.reason, postId: post.id });
+  await rt.db.transaction().execute(async (trx) => {
+    await updatePost(trx, post.id, { status: "removed", status_changed_at: now, status_reason: op.reason, purge_after: new Date(now.getTime() + rt.retentionDays * 86_400_000) });
+    await recordModeration(trx, { action: "remove", actorId: op.actorId, reason: op.reason, postId: post.id });
+    await queuePostEvent(trx, post, "removed");
+  });
   const media = post.current_revision_id ? await listRevisionMediaIds(rt.db, post.current_revision_id) : [];
   await withdrawUnreferencedMedia(rt.db, rt.stores, media);
 }
@@ -78,6 +82,7 @@ export async function restorePost(rt: ModerationRuntime, op: Operator, slug: str
     await updatePost(trx, post.id, { status: "active", status_changed_at: new Date(), status_reason: null, purge_after: null });
     await recordMediaPublic(trx, media.map((m) => m.id));
     await recordModeration(trx, { action: "restore", actorId: op.actorId, reason: op.reason, postId: post.id });
+    await queuePostEvent(trx, post, "restored");
   });
 }
 

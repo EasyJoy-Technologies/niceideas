@@ -150,8 +150,9 @@
     "status": {
       "active": "Opublikowany",
       "author_deleting": "Konto autora jest usuwane",
+      "preparing": "Przygotowywanie",
       "removed": "Usunięty",
-      "unpublished": "Wycofany przez autora"
+      "unpublished": "Usunięty przez autora"
     },
     "tab": {
       "dismissed": "Odrzucone",
@@ -277,7 +278,7 @@
     "about": {
       "p1": "{brand} to miejsce, w którym dzielisz się swoimi nice ideas — krótkimi myślami, długimi tekstami, zdjęciami i nagraniami — za pomocą jednego linku.",
       "p2": "Każdy może otworzyć udostępniony link, z kontem lub bez. Wpisy mogą pochodzić bezpośrednio z aplikacji takich jak NiceNote albo powstawać w przeglądarce.",
-      "p3": "Twoje wpisy pozostają Twoje: możesz je w każdej chwili edytować lub wycofać, a wycofane wpisy są trwale usuwane po 30 dniach.",
+      "p3": "Twoje wpisy pozostają Twoje: możesz je w każdej chwili edytować lub usunąć, a usunięte wpisy są trwale usuwane po 30 dniach.",
       "title": "O nas"
     },
     "effective": "Obowiązuje od {date}",
@@ -293,7 +294,7 @@
     },
     "help": {
       "a1": "Udostępnij notatkę z NiceNote albo napisz wpis w przeglądarce, gdy zostanie uruchomione publikowanie w sieci.",
-      "a2": "Edytuj notatkę w aplikacji, a wpis się zaktualizuje. Wycofaj ją w aplikacji, a link od razu przestanie działać.",
+      "a2": "Edytuj notatkę w aplikacji, a wpis się zaktualizuje. Aby usunąć wpis, otwórz menu „⋯” na jego stronie i wybierz Usuń; link od razu przestanie działać.",
       "a3": "Każdy, kto ma link. Wpisy pojawiają się też na Twoim profilu i w kanałach.",
       "a4": "Użyj opcji Zgłoś przy wpisie. Rozpatrujemy każde zgłoszenie.",
       "q1": "Jak opublikować wpis?",
@@ -368,7 +369,9 @@
       "cancel": "Anuluj",
       "close": "Zamknij",
       "copied": "Skopiowano link",
+      "delete": "Usuń",
       "like": "Lubię to",
+      "more": "Więcej opcji",
       "reply": "Odpowiedz",
       "report": "Zgłoś",
       "share": "Udostępnij"
@@ -393,14 +396,29 @@
       "submit": "Opublikuj",
       "title": "Komentarze"
     },
+    "delete": {
+      "body": "Link od razu przestanie działać, a wpis zostanie trwale usunięty po 30 dniach. Tej czynności nie można odwrócić.",
+      "failed": "Nie udało się usunąć wpisu. Spróbuj ponownie.",
+      "fromApp": "Oryginał w {app} nie zostanie naruszony; ponowne udostępnienie utworzy nowy link.",
+      "title": "Usunąć ten wpis?"
+    },
     "header": {
       "join": "Dołącz do {brand}",
       "joinShort": "Dołącz"
     },
     "language": "Język",
+    "media": {
+      "processing": "Przetwarzanie…",
+      "unavailable": "Media niedostępne"
+    },
     "post": {
       "edited": "Edytowano: {time}",
-      "from": "Z aplikacji {app}"
+      "empty": "Ten wpis nie ma treści.",
+      "from": "Z aplikacji {app}",
+      "preparing": {
+        "body": "Treść pojawi się tutaj za chwilę.",
+        "title": "Przygotowywanie wpisu"
+      }
     },
     "report": {
       "done": "Dziękujemy. Sprawdzimy to.",
@@ -430,8 +448,8 @@
         "title": "Ta strona jest niedostępna w Twoim regionie"
       },
       "withdrawn": {
-        "body": "Autor wycofał ten wpis.",
-        "title": "Wpis wycofany"
+        "body": "Autor usunął ten wpis.",
+        "title": "Wpis został usunięty"
       }
     }
   },

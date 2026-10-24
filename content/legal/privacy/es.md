@@ -1,4 +1,4 @@
-> **Resumen.** Solo recopilamos lo necesario para operar niceideas: su perfil, lo que publica y datos técnicos limitados para mantener el Servicio seguro. Sus publicaciones son públicas. No vendemos información personal, no mostramos anuncios ni usamos rastreadores externos. Puede retirar publicaciones en cualquier momento y eliminar su cuenta eliminando su NiceMatrix ID. Escriba a support@nicematrix.ca ante cualquier pregunta o solicitud sobre privacidad.
+> **Resumen.** Solo recopilamos lo necesario para operar niceideas: su perfil, lo que publica y datos técnicos limitados para mantener el Servicio seguro. Sus publicaciones son públicas. No vendemos información personal, no mostramos anuncios ni usamos rastreadores externos. Puede eliminar publicaciones en cualquier momento y eliminar su cuenta eliminando su NiceMatrix ID. Escriba a support@nicematrix.ca ante cualquier pregunta o solicitud sobre privacidad.
 
 ## 1. Quiénes somos
 
@@ -84,7 +84,7 @@ Para las conexiones desde China continental, solo están disponibles las página
 | Información | Durante cuánto tiempo |
 |---|---|
 | Perfil | Mientras exista su cuenta; se elimina cuando se completa la eliminación de la cuenta |
-| Publicaciones, versiones anteriores y sus medios | Hasta que retire la publicación o elimine su cuenta; las publicaciones retiradas o eliminadas se borran permanentemente 30 días después |
+| Publicaciones, versiones anteriores y sus medios | Hasta que elimine la publicación o su cuenta; las publicaciones eliminadas o retiradas se borran permanentemente 30 días después |
 | Medios que ya no utiliza ninguna publicación | Se eliminan después de 7 días |
 | Comentarios y "me gusta" | Hasta que el comentario sea eliminado por el autor de la publicación o por nosotros, o se elimine la publicación |
 | Denuncias y registros de moderación relativos a una publicación | Se eliminan junto con la publicación a la que se refieren |
@@ -107,7 +107,7 @@ Las cuentas de niceideas se eliminan eliminando su NiceMatrix ID:
 2. Si cancela durante el periodo de reflexión de NiceMatrix ID (actualmente 15 días), todo vuelve a estar disponible en los mismos enlaces.
 3. Cuando termina el periodo de reflexión, eliminamos permanentemente su perfil, publicaciones, versiones anteriores, medios, comentarios, "me gusta" y seguimientos, sin ningún periodo de retención adicional, salvo el ciclo de copias de seguridad de hasta 14 días.
 
-También puede retirar publicaciones individuales en cualquier momento, o escribirnos para eliminar cualquier otra cosa.
+También puede eliminar publicaciones individuales en cualquier momento, o escribirnos para eliminar cualquier otra cosa.
 
 ## 11. Sus derechos
 
@@ -120,7 +120,7 @@ Según el lugar donde viva, incluidas la PIPEDA de Canadá, la Ley de Protecció
 - retirar su consentimiento;
 - presentar una reclamación ante una autoridad de protección de datos, como la Oficina del Comisionado de Privacidad de Canadá, la Oficina del Comisionado de Información y Privacidad de Alberta, su autoridad local en la Unión Europea, o la Oficina del Comisionado de Información del Reino Unido.
 
-Puede editar su perfil en Configuración y retirar publicaciones en la aplicación desde la que las publicó, o escribiéndonos. Para cualquier otra solicitud, escriba a support@nicematrix.ca. Podemos pedirle que confirme que la cuenta es suya, por ejemplo iniciando sesión. Respondemos dentro de 30 días, o dentro del plazo que exija la ley, y no cobramos por las solicitudes salvo que sean claramente infundadas o excesivas. Puede utilizar un representante autorizado cuando la ley lo permita. No le trataremos de forma diferente por ejercer sus derechos.
+Puede editar su perfil en Configuración y eliminar publicaciones en niceideas o en la aplicación desde la que las publicó, o escribiéndonos. Para cualquier otra solicitud, escriba a support@nicematrix.ca. Podemos pedirle que confirme que la cuenta es suya, por ejemplo iniciando sesión. Respondemos dentro de 30 días, o dentro del plazo que exija la ley, y no cobramos por las solicitudes salvo que sean claramente infundadas o excesivas. Puede utilizar un representante autorizado cuando la ley lo permita. No le trataremos de forma diferente por ejercer sus derechos.
 
 ## 12. Menores
 

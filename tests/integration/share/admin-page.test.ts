@@ -1,12 +1,11 @@
 import { afterAll, beforeAll, describe, expect, it } from "vitest";
 import { GET as adminGet, POST as adminPost } from "@/app/admin/route";
 import { GET as sectionGet } from "@/app/admin/[section]/route";
-import { POST as createRoute } from "@/app/api/v1/posts/route";
+import { publishAs } from "../../helpers/publish";
 import { startSession } from "@/server/auth/web/session";
 import { resetConfigForTests } from "@/server/config/env";
 import { ensureProfile } from "@/server/profiles/ensure-profile";
 import { startAppContext } from "../../helpers/app-context";
-import { jsonRequest } from "../../helpers/api";
 
 const BASE = "http://localhost:3000";
 let ctx: Awaited<ReturnType<typeof startAppContext>>;
@@ -17,9 +16,7 @@ let postId: string;
 beforeAll(async () => {
   process.env.ADMIN_USER_IDS = "mod-1";
   ctx = await startAppContext();
-  const token = await ctx.tokenFor("admin-author");
-  const res = await createRoute(jsonRequest("POST", "/api/v1/posts", token, { document: { version: 1, blocks: [{ type: "text", text: "Reported idea" }] }, sourceRef: "a1", sourceUpdatedAt: "2026-10-21T00:00:00Z" }), {});
-  ({ slug, id: postId } = (await res.json()).post);
+  ({ slug, id: postId } = await publishAs(ctx, "admin-author", { version: 1, blocks: [{ type: "text", text: "Reported idea" }] }, "a1"));
   await ensureProfile(ctx.db, "mod-1");
   await ensureProfile(ctx.db, "plain-user");
   adminCookie = (await startSession(ctx.db, "mod-1")).split(";")[0];

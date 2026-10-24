@@ -1,17 +1,17 @@
 import type { ColumnType, Generated, Insertable, JSONColumnType, Selectable, Updateable } from "kysely";
+import type { CreatedAt, DefaultedTimestamp, JsonColumn, Timestamp } from "./schema-columns";
+import type { MediaJobTable, OutboxTable, ServiceNonceTable } from "./schema-share";
 
-/** Timestamps are written as Date/ISO strings and read back as Date. */
-type Timestamp = ColumnType<Date, Date | string, Date | string>;
-type CreatedAt = ColumnType<Date, Date | string | undefined, never>;
-/** Timestamp with a database default (optional on insert, updatable). */
-type DefaultedTimestamp = ColumnType<Date, Date | string | undefined, Date | string>;
-/** Arbitrary JSON written as a serialized string. */
-type JsonColumn = ColumnType<unknown, string, string>;
+export type { MediaJobState, OutboxKind } from "./schema-share";
 
 export type ProfileStatus = "active" | "deleting";
 export type PostKind = "short" | "article";
-export type PostStatus = "active" | "unpublished" | "removed" | "author_deleting";
-export type PostSource = "nicenote_intl" | "nicenote_cn" | "web" | `api:${string}`;
+/** `preparing`: shared from NiceNote, content not pushed yet (not listed, not indexed). */
+export type PostStatus = "preparing" | "active" | "unpublished" | "removed" | "author_deleting";
+/** `nicenote`: shared through the NiceMatrix backend; `nicenote_intl` / `nicenote_cn`: legacy client-token posts. */
+export type PostSource = "nicenote" | "nicenote_intl" | "nicenote_cn" | "web" | `api:${string}`;
+export type ShareRegion = "intl" | "cn";
+export type MediaState = "complete" | "processing" | "partial";
 export type SyncMode = "follow" | "frozen";
 export type MediaKind = "image" | "audio";
 export type CommentsMode = "open" | "signed_in" | "closed";
@@ -36,6 +36,8 @@ export interface ProfileTable {
   created_at: CreatedAt;
   updated_at: DefaultedTimestamp;
   notifications_seen_at: DefaultedTimestamp;
+  /** Display name changed on NiceIdeas: it no longer follows NiceMatrix. */
+  name_locked: Generated<boolean>;
 }
 
 export interface PostTable {
@@ -66,6 +68,11 @@ export interface PostTable {
   comments_mode: Generated<CommentsMode>;
   /** Title + plain body text (site search). */
   search_text: Generated<string>;
+  /** NiceNote shares (source `nicenote`): backend share id, last applied cloud revision, app region, media progress. */
+  share_id: string | null;
+  source_revision: number | null;
+  region: ShareRegion | null;
+  media_state: Generated<MediaState>;
 }
 
 export interface PostRevisionTable {
@@ -92,6 +99,8 @@ export interface MediaTable {
   public_at: Timestamp | null;
   detached_at: Timestamp | null;
   created_at: CreatedAt;
+  /** NiceNote media ref (stable per owner; same ref = same content). */
+  source_ref: string | null;
 }
 
 export interface RevisionMediaTable {
@@ -212,7 +221,7 @@ export interface IdempotencyTable {
   expires_at: Timestamp;
 }
 
-export type AccountEventKind = "deletion_requested" | "deletion_cancelled" | "deletion_completed";
+export type AccountEventKind = "deletion_requested" | "deletion_cancelled" | "deletion_completed" | "profile_updated";
 
 export interface AccountEventTable {
   event_id: string;
@@ -254,6 +263,9 @@ export interface Database {
   web_session: WebSessionTable;
   pow_used: PowUsedTable;
   admin_member: AdminMemberTable;
+  media_job: MediaJobTable;
+  outbox: OutboxTable;
+  service_nonce: ServiceNonceTable;
 }
 
 export type Profile = Selectable<ProfileTable>;

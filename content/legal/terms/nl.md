@@ -1,4 +1,4 @@
-> **Samenvatting.** U bent eigenaar van wat u plaatst en bent daarvoor verantwoordelijk. Berichten op niceideas zijn openbaar. Plaats niets illegaals of schadelijks, of iets waarvan u niet het recht heeft om het te delen. U kunt een bericht op elk moment intrekken; ingetrokken berichten worden na 30 dagen definitief verwijderd. niceideas is gratis en wordt geleverd zoals het is. Deze Voorwaarden worden beheerst door het recht van Alberta, Canada. Deze samenvatting is slechts voor het gemak; de volledige Voorwaarden hieronder zijn van toepassing.
+> **Samenvatting.** U bent eigenaar van wat u plaatst en bent daarvoor verantwoordelijk. Berichten op niceideas zijn openbaar. Plaats niets illegaals of schadelijks, of iets waarvan u niet het recht heeft om het te delen. U kunt een bericht op elk moment verwijderen; verwijderde berichten worden na 30 dagen definitief gewist. niceideas is gratis en wordt geleverd zoals het is. Deze Voorwaarden worden beheerst door het recht van Alberta, Canada. Deze samenvatting is slechts voor het gemak; de volledige Voorwaarden hieronder zijn van toepassing.
 
 ## 1. Over deze Voorwaarden
 
@@ -30,7 +30,7 @@ Door de Dienst te gebruiken, ook door te bekijken, te liken of te reageren zonde
 
 4.2 Reacties zijn openbaar en verschijnen onder het bericht. Bezoekers zonder account kunnen berichten liken en reageren onder een optionele bijnaam.
 
-4.3 Plaats niets wat u privé wilt houden. Zodra iets openbaar is, kunnen anderen het kopiëren of opslaan voordat u het intrekt, en wij kunnen dergelijke kopieën niet terughalen.
+4.3 Plaats niets wat u privé wilt houden. Zodra iets openbaar is, kunnen anderen het kopiëren of opslaan voordat u het verwijdert, en wij kunnen dergelijke kopieën niet terughalen.
 
 4.4 Voor bezoekers wier verbinding uit vasteland-China komt, zijn alleen individuele gedeelde berichtpagina's en de likes en reacties daarop beschikbaar; andere pagina's niet. Dit weerspiegelt hoe de Dienst momenteel wordt aangeboden en kan veranderen.
 
@@ -44,7 +44,7 @@ Door de Dienst te gebruiken, ook door te bekijken, te liken of te reageren zonde
 
 5.4 U bevestigt dat u eigenaar bent van uw inhoud of over alle benodigde toestemmingen beschikt om deze te plaatsen en deze licentie te verlenen, en dat het plaatsen daarvan niemands rechten of enige wet schendt.
 
-5.5 U kunt uw berichten op elk moment intrekken: een bericht dat vanuit een app is geplaatst, kan in die app worden ingetrokken, en elk bericht kan worden ingetrokken door te schrijven naar support@nicematrix.ca. Een ingetrokken bericht verlaat de Dienst onmiddellijk en wordt 30 dagen later definitief verwijderd. Waar de app die u gebruikt dit ondersteunt, kunt u ook reacties onder uw eigen berichten verwijderen.
+5.5 U kunt uw berichten op elk moment verwijderen: elk bericht kan worden verwijderd op zijn pagina op niceideas, een bericht dat vanuit een app is geplaatst, kan ook in die app worden verwijderd, en u kunt ook schrijven naar support@nicematrix.ca. Een verwijderd bericht verlaat de Dienst onmiddellijk en wordt 30 dagen later definitief gewist. Waar de app die u gebruikt dit ondersteunt, kunt u ook reacties onder uw eigen berichten verwijderen.
 
 ## 6. Gedragsregels
 
@@ -83,11 +83,11 @@ U stemt ermee in de Dienst niet te gebruiken om:
 
 9.1 U kunt publiceren op niceideas vanuit de NiceNote-app of vanuit andere apps die u via NiceMatrix ID machtigt. Een app kan alleen doen wat u toestaat (bijvoorbeeld berichten publiceren of media uploaden), en alleen voor de berichten die zij heeft gepubliceerd. Berichten laten zien van welke app ze afkomstig zijn.
 
-9.2 U kunt de toegang van een app intrekken via NiceMatrix ID, of ons vragen deze voor uw account te blokkeren door te schrijven naar support@nicematrix.ca. Het intrekken van toegang stopt toekomstige toegang; het verwijdert geen al gepubliceerde berichten, die u zelf kunt intrekken.
+9.2 U kunt de toegang van een app intrekken via NiceMatrix ID, of ons vragen deze voor uw account te blokkeren door te schrijven naar support@nicematrix.ca. Het intrekken van toegang stopt toekomstige toegang; het verwijdert geen al gepubliceerde berichten, die u zelf kunt verwijderen.
 
 9.3 Apps worden geleverd door hun ontwikkelaars onder hun eigen voorwaarden en privacybeleid. Wij kunnen elke app blokkeren of beperken die de Dienst misbruikt.
 
-9.4 Wanneer u publiceert vanuit NiceNote, wordt alleen de notitie die u kiest om te publiceren naar niceideas verzonden. Wijzigingen en intrekkingen die u in NiceNote aanbrengt, kunnen het gepubliceerde bericht bijwerken of intrekken.
+9.4 Wanneer u publiceert vanuit NiceNote, wordt alleen de notitie die u kiest om te publiceren via NiceMatrix naar niceideas verzonden. Wijzigingen die u in NiceNote aan de notitie aanbrengt, kunnen het gepubliceerde bericht bijwerken, en u kunt het bericht in NiceNote of op niceideas verwijderen.
 
 ## 10. Einde van uw gebruik
 

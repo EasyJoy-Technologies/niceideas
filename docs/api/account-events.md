@@ -16,6 +16,7 @@ cooling-off period (plan §10). Implemented in v1.0.15.
 | `deletion_requested` | User submits account deletion (15-day cooling-off starts) | Profile and all posts go offline at once (pages answer 410); media leave the public bucket |
 | `deletion_cancelled` | User cancels within the cooling-off period | Everything goes back online with the same links |
 | `deletion_completed` | Cooling-off ended | Immediate physical deletion of profile, posts, revisions, media, comments, likes, follows (no extra 30-day retention) |
+| `profile_updated` | The user's NiceMatrix profile changed (sent only for users registered with the backend) | Body adds `"profile": { "username", "name", "avatarUrl" }` (current values; `null` = none). Handle follows the username, display name follows unless changed on NiceIdeas, avatar follows. Unknown user → 200 `{"result":"unknown_user"}`. Added in v1.0.63 |
 
 ## Authentication
 - Headers: `X-NiceMatrix-Timestamp: <unix seconds>`, `X-NiceMatrix-Signature: <hex>`
@@ -25,7 +26,8 @@ cooling-off period (plan §10). Implemented in v1.0.15.
 
 ## Delivery
 - Idempotent by `eventId`: repeats return 200 `{"result":"duplicate"}`.
-- Ordering by `occurredAt`: a request / cancel older than the latest applied event for the user returns 200 `{"result":"stale"}` and changes nothing. `deletion_completed` always applies.
+- Ordering by `occurredAt`: a request / cancel older than the latest applied deletion event for the user returns 200 `{"result":"stale"}` and changes nothing. `deletion_completed` always applies. `profile_updated` carries the latest values and takes no part in this ordering.
+- Body ≤ 8 KB; `eventId` ≤ 200 chars.
 - Success: 200 `{"result":"applied"}`. Retry on network errors / 5xx with backoff (suggested: 1 min, 5 min, 30 min, then hourly for 24 h) and alert after the last attempt.
 - 4xx other than 429 are not retryable (fix the request).
 

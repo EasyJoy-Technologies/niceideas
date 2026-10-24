@@ -150,8 +150,9 @@
     "status": {
       "active": "Live",
       "author_deleting": "Binubura ang account ng author",
+      "preparing": "Inihahanda",
       "removed": "Inalis",
-      "unpublished": "Binawi ng author"
+      "unpublished": "Binura ng author"
     },
     "tab": {
       "dismissed": "Itinatwa",
@@ -277,7 +278,7 @@
     "about": {
       "p1": "Ang {brand} ay lugar para ibahagi ang iyong nice ideas — maiikling kaisipan, mahahabang sulatin, larawan at audio — sa iisang link.",
       "p2": "Kahit sino ay puwedeng magbukas ng ibinahaging link, may account man o wala. Ang mga post ay puwedeng manggaling mismo sa mga app tulad ng NiceNote o isulat sa web.",
-      "p3": "Sa iyo pa rin ang mga post mo: puwede mong i-edit o bawiin ang mga ito anumang oras, at permanenteng binubura ang mga binawing post pagkalipas ng 30 araw.",
+      "p3": "Sa iyo pa rin ang mga post mo: puwede mong i-edit o burahin ang mga ito anumang oras, at permanenteng binubura ang mga binurang post pagkalipas ng 30 araw.",
       "title": "Tungkol"
     },
     "effective": "Epektibo simula {date}",
@@ -293,7 +294,7 @@
     },
     "help": {
       "a1": "Magbahagi ng note mula sa NiceNote, o magsulat ng post sa web kapag binuksan na ang pag-publish sa web.",
-      "a2": "I-edit ang note sa app at maa-update ang post. Bawiin ito sa app at agad na hindi na gagana ang link.",
+      "a2": "I-edit ang note sa app at maa-update ang post. Para burahin ang post, buksan ang “⋯” menu sa page ng post at piliin ang Burahin; agad na hindi na gagana ang link.",
       "a3": "Kahit sinong may link. Lumalabas din ang mga post sa iyong profile at sa mga feed.",
       "a4": "Gamitin ang I-report sa post. Sinusuri namin ang bawat report.",
       "q1": "Paano ako magpo-post?",
@@ -368,7 +369,9 @@
       "cancel": "Kanselahin",
       "close": "Isara",
       "copied": "Nakopya ang link",
+      "delete": "Burahin",
       "like": "I-like",
+      "more": "Higit pang opsyon",
       "reply": "Sumagot",
       "report": "I-report",
       "share": "Ibahagi"
@@ -393,14 +396,29 @@
       "submit": "I-post",
       "title": "Mga komento"
     },
+    "delete": {
+      "body": "Agad na hindi na gagana ang link, at permanenteng mabubura ang post pagkalipas ng 30 araw. Hindi na ito maibabalik.",
+      "failed": "Hindi na-delete ang post. Pakisubukang muli.",
+      "fromApp": "Hindi maaapektuhan ang orihinal sa {app}; gagawa ng bagong link kung ibahagi mo ulit.",
+      "title": "Burahin ang post na ito?"
+    },
     "header": {
       "join": "Sumali sa {brand}",
       "joinShort": "Sumali"
     },
     "language": "Wika",
+    "media": {
+      "processing": "Pinoproseso…",
+      "unavailable": "Hindi available ang media"
+    },
     "post": {
       "edited": "Na-edit noong {time}",
-      "from": "Mula sa {app}"
+      "empty": "Walang content ang post na ito.",
+      "from": "Mula sa {app}",
+      "preparing": {
+        "body": "Lalabas dito ang content sa ilang saglit.",
+        "title": "Inihahanda ang post na ito"
+      }
     },
     "report": {
       "done": "Salamat. Susuriin namin ito.",
@@ -430,8 +448,8 @@
         "title": "Hindi available ang page na ito sa iyong rehiyon"
       },
       "withdrawn": {
-        "body": "Binawi ng may-akda ang post na ito.",
-        "title": "Binawi ang post"
+        "body": "Binura ng author ang post na ito.",
+        "title": "Binura ang post"
       }
     }
   },

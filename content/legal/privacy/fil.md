@@ -1,4 +1,4 @@
-> **Buod.** Kinokolekta lamang namin ang kinakailangan para patakbuhin ang niceideas: ang iyong profile, ang iyong ipinapaskil, at limitadong teknikal na data upang mapanatiling ligtas ang Serbisyo. Pampubliko ang iyong mga post. Hindi namin ibinebenta ang personal na impormasyon, nagpapakita ng mga ad, o gumagamit ng mga third-party tracker. Maaari mong bawiin ang mga post anumang oras at burahin ang iyong account sa pagbura ng iyong NiceMatrix ID. Sumulat sa support@nicematrix.ca para sa anumang tanong o kahilingan tungkol sa privacy.
+> **Buod.** Kinokolekta lamang namin ang kinakailangan para patakbuhin ang niceideas: ang iyong profile, ang iyong ipinapaskil, at limitadong teknikal na data upang mapanatiling ligtas ang Serbisyo. Pampubliko ang iyong mga post. Hindi namin ibinebenta ang personal na impormasyon, nagpapakita ng mga ad, o gumagamit ng mga third-party tracker. Maaari mong burahin ang mga post anumang oras at burahin ang iyong account sa pagbura ng iyong NiceMatrix ID. Sumulat sa support@nicematrix.ca para sa anumang tanong o kahilingan tungkol sa privacy.
 
 ## 1. Sino kami
 
@@ -84,7 +84,7 @@ Para sa mga koneksyon mula sa mainland China, ang mga indibidwal na pinapaskil n
 | Impormasyon | Gaano katagal |
 |---|---|
 | Profile | Habang umiiral ang iyong account; nabubura kapag natapos ang pagbura ng account |
-| Mga post, naunang bersyon, at media nito | Hanggang bawiin mo ang post o bura ang account; ang mga binawi o tinanggal na post ay permanenteng mabubura 30 araw mamaya |
+| Mga post, naunang bersyon, at media nito | Hanggang burahin mo ang post o bura ang account; ang mga binura o tinanggal na post ay permanenteng mabubura 30 araw mamaya |
 | Media na hindi na gamit ng kahit anong post | Nabubura pagkalipas ng 7 araw |
 | Mga komento at like | Hanggang mabura ang komento ng author ng post o namin, o mabura ang post |
 | Mga ulat at rekord ng moderasyon tungkol sa isang post | Nabubura kasabay ng kaugnay na post |
@@ -107,7 +107,7 @@ Ang mga account sa niceideas ay binubura sa pagbura ng iyong NiceMatrix ID:
 2. Kung kinansel mo sa panahon ng cooling-off period ng NiceMatrix ID (kasalukuyang 15 araw), babalik ang lahat sa parehong mga link.
 3. Kapag natapos ang cooling-off period, permanenteng buburahin namin ang iyong profile, mga post, naunang bersyon, media, komento, like, at follow, nang walang karagdagang panahon ng pananatili, maliban sa cycle ng backup na hanggang 14 araw.
 
-Maaari mo ring bawiin ang mga indibidwal na post anumang oras, o sumulat sa amin upang burahin ang iba pa.
+Maaari mo ring burahin ang mga indibidwal na post anumang oras, o sumulat sa amin upang burahin ang iba pa.
 
 ## 11. Ang iyong mga karapatan
 
@@ -120,7 +120,7 @@ Depende sa kung saan ka naninirahan, kasama ang sa ilalim ng PIPEDA ng Canada, P
 - bawiin ang iyong pahintulot;
 - magreklamo sa isang data protection authority, tulad ng Office of the Privacy Commissioner of Canada, Office of the Information and Privacy Commissioner of Alberta, iyong lokal na awtoridad sa European Union, o UK Information Commissioner's Office.
 
-Maaari mong i-edit ang iyong profile sa Settings at bawiin ang mga post sa app na iyong ipinaskil ito, o sumulat sa amin. Para sa anumang ibang kahilingan, sumulat sa support@nicematrix.ca. Maaari kaming humiling na kumpirmahin mo na ang account ay iyo, halimbawa sa pagsign in. Tumutugon kami sa loob ng 30 araw, o sa loob ng panahong kinakailangan ng batas, at hindi kami naniningil para sa mga kahilingan maliban kung malinaw na walang basehan o sobra-sobra ito. Maaari kang gumamit ng isang authorized na agent kung pinapayagan ng batas. Hindi ka namin iiba ang pagtrato dahil ginamit mo ang iyong mga karapatan.
+Maaari mong i-edit ang iyong profile sa Settings at burahin ang mga post sa niceideas o sa app na iyong ipinaskil ito, o sumulat sa amin. Para sa anumang ibang kahilingan, sumulat sa support@nicematrix.ca. Maaari kaming humiling na kumpirmahin mo na ang account ay iyo, halimbawa sa pagsign in. Tumutugon kami sa loob ng 30 araw, o sa loob ng panahong kinakailangan ng batas, at hindi kami naniningil para sa mga kahilingan maliban kung malinaw na walang basehan o sobra-sobra ito. Maaari kang gumamit ng isang authorized na agent kung pinapayagan ng batas. Hindi ka namin iiba ang pagtrato dahil ginamit mo ang iyong mga karapatan.
 
 ## 12. Mga bata
 

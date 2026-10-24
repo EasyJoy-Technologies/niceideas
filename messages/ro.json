@@ -150,8 +150,9 @@
     "status": {
       "active": "Publicată",
       "author_deleting": "Contul autorului se șterge",
+      "preparing": "Se pregătește",
       "removed": "Eliminată",
-      "unpublished": "Retrasă de autor"
+      "unpublished": "Ștearsă de autor"
     },
     "tab": {
       "dismissed": "Respinse",
@@ -277,7 +278,7 @@
     "about": {
       "p1": "{brand} este locul unde îți împărtășești nice ideas — gânduri scurte, texte lungi, fotografii și audio — printr-un singur link.",
       "p2": "Oricine poate deschide un link distribuit, cu sau fără cont. Postările pot veni direct din aplicații precum NiceNote sau pot fi scrise pe web.",
-      "p3": "Postările tale rămân ale tale: le poți edita sau retrage oricând, iar cele retrase sunt șterse definitiv după 30 de zile.",
+      "p3": "Postările tale rămân ale tale: le poți edita sau șterge oricând, iar postările șterse sunt eliminate definitiv după 30 de zile.",
       "title": "Despre"
     },
     "effective": "În vigoare de la {date}",
@@ -293,7 +294,7 @@
     },
     "help": {
       "a1": "Distribuie o notă din NiceNote sau scrie o postare pe web după ce se deschide publicarea pe web.",
-      "a2": "Editează nota în aplicație și postarea se actualizează. Retrage-o în aplicație și linkul nu mai funcționează imediat.",
+      "a2": "Editează nota în aplicație și postarea se actualizează. Pentru a șterge o postare, deschide meniul „⋯” de pe pagina ei și alege Șterge; linkul nu mai funcționează imediat.",
       "a3": "Oricine are linkul. Postările apar și pe profilul tău și în fluxuri.",
       "a4": "Folosește Raportează pe postare. Analizăm fiecare raportare.",
       "q1": "Cum public?",
@@ -368,7 +369,9 @@
       "cancel": "Anulează",
       "close": "Închide",
       "copied": "Link copiat",
+      "delete": "Șterge",
       "like": "Îmi place",
+      "more": "Mai multe opțiuni",
       "reply": "Răspunde",
       "report": "Raportează",
       "share": "Distribuie"
@@ -393,14 +396,29 @@
       "submit": "Publică",
       "title": "Comentarii"
     },
+    "delete": {
+      "body": "Linkul nu mai funcționează imediat, iar postarea este eliminată definitiv după 30 de zile. Această acțiune nu poate fi anulată.",
+      "failed": "Postarea nu a putut fi ștearsă. Încearcă din nou.",
+      "fromApp": "Originalul din {app} nu este afectat; distribuirea din nou creează un link nou.",
+      "title": "Ștergi această postare?"
+    },
     "header": {
       "join": "Alătură-te {brand}",
       "joinShort": "Alătură-te"
     },
     "language": "Limbă",
+    "media": {
+      "processing": "Se procesează…",
+      "unavailable": "Conținut media indisponibil"
+    },
     "post": {
       "edited": "Editat la {time}",
-      "from": "Din {app}"
+      "empty": "Această postare nu are conținut.",
+      "from": "Din {app}",
+      "preparing": {
+        "body": "Conținutul va apărea aici imediat.",
+        "title": "Postarea se pregătește"
+      }
     },
     "report": {
       "done": "Mulțumim. Vom analiza.",
@@ -430,8 +448,8 @@
         "title": "Această pagină nu este disponibilă în regiunea ta"
       },
       "withdrawn": {
-        "body": "Autorul a retras această postare.",
-        "title": "Postare retrasă"
+        "body": "Autorul a șters această postare.",
+        "title": "Această postare a fost ștearsă"
       }
     }
   },

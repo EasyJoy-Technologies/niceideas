@@ -1,4 +1,4 @@
-> **Tóm tắt.** Chúng tôi chỉ thu thập những gì cần thiết để vận hành niceideas: hồ sơ của bạn, những gì bạn công khai, và một lượng dữ liệu kỹ thuật hạn chế để giữ an toàn cho Dịch vụ. Các bài đăng của bạn là công khai. Chúng tôi không bán thông tin cá nhân, không hiển thị quảng cáo và không sử dụng các công cụ theo dõi bên ngoài. Bạn có thể rút bài đăng bất cứ lúc nào và xóa tài khoản của mình bằng cách xóa NiceMatrix ID của bạn. Hãy viết thư tới support@nicematrix.ca với bất kỳ câu hỏi hoặc yêu cầu nào về quyền riêng tư.
+> **Tóm tắt.** Chúng tôi chỉ thu thập những gì cần thiết để vận hành niceideas: hồ sơ của bạn, những gì bạn công khai, và một lượng dữ liệu kỹ thuật hạn chế để giữ an toàn cho Dịch vụ. Các bài đăng của bạn là công khai. Chúng tôi không bán thông tin cá nhân, không hiển thị quảng cáo và không sử dụng các công cụ theo dõi bên ngoài. Bạn có thể xóa bài đăng bất cứ lúc nào và xóa tài khoản của mình bằng cách xóa NiceMatrix ID của bạn. Hãy viết thư tới support@nicematrix.ca với bất kỳ câu hỏi hoặc yêu cầu nào về quyền riêng tư.
 
 ## 1. Chúng tôi là ai
 
@@ -84,7 +84,7 @@ Việc chuyển giao từ Khu vực Kinh tế châu Âu, Vương quốc Anh và 
 | Thông tin | Thời gian |
 |---|---|
 | Hồ sơ | Trong khi tài khoản của bạn còn tồn tại; bị xóa khi việc xóa tài khoản hoàn tất |
-| Bài đăng, các phiên bản trước và phương tiện của chúng | Cho đến khi bạn rút bài đăng hoặc xóa tài khoản; các bài đăng đã rút hoặc bị loại bỏ sẽ bị xóa vĩnh viễn sau 30 ngày |
+| Bài đăng, các phiên bản trước và phương tiện của chúng | Cho đến khi bạn xóa bài đăng hoặc xóa tài khoản; các bài đăng đã xóa hoặc bị loại bỏ sẽ bị xóa vĩnh viễn sau 30 ngày |
 | Phương tiện không còn được bất kỳ bài đăng nào sử dụng | Bị xóa sau 7 ngày |
 | Bình luận và lượt thích | Cho đến khi bình luận bị xóa bởi tác giả bài đăng hoặc chúng tôi, hoặc bài đăng bị xóa |
 | Báo cáo và hồ sơ kiểm duyệt về một bài đăng | Bị xóa cùng với bài đăng mà chúng liên quan |
@@ -107,7 +107,7 @@ Tài khoản niceideas được xóa bằng cách xóa NiceMatrix ID của bạn
 2. Nếu bạn hủy trong thời gian cân nhắc của NiceMatrix ID (hiện tại là 15 ngày), mọi thứ sẽ trở lại ở cùng các liên kết.
 3. Khi thời gian cân nhắc kết thúc, chúng tôi xóa vĩnh viễn hồ sơ, bài đăng, các phiên bản trước, phương tiện, bình luận, lượt thích và lượt theo dõi của bạn, không có bất kỳ thời gian lưu giữ bổ sung nào, ngoại trừ chu kỳ sao lưu lên đến 14 ngày.
 
-Bạn cũng có thể rút từng bài đăng bất cứ lúc nào, hoặc viết thư cho chúng tôi để xóa bất cứ điều gì khác.
+Bạn cũng có thể xóa từng bài đăng bất cứ lúc nào, hoặc viết thư cho chúng tôi để xóa bất cứ điều gì khác.
 
 ## 11. Quyền của bạn
 
@@ -120,7 +120,7 @@ Tùy thuộc vào nơi bạn sinh sống, bao gồm theo PIPEDA của Canada, Lu
 - rút lại sự đồng ý của bạn;
 - khiếu nại với một cơ quan bảo vệ dữ liệu, chẳng hạn Văn phòng Ủy viên Quyền riêng tư của Canada, Văn phòng Ủy viên Thông tin và Quyền riêng tư của Alberta, cơ quan quốc gia của bạn trong Liên minh châu Âu, hoặc Văn phòng Ủy viên Thông tin Vương quốc Anh.
 
-Bạn có thể chỉnh sửa hồ sơ của mình trong Cài đặt và rút các bài đăng trong ứng dụng bạn đã công khai chúng, hoặc viết thư cho chúng tôi. Đối với bất kỳ yêu cầu khác, hãy viết thư tới support@nicematrix.ca. Chúng tôi có thể yêu cầu bạn xác nhận tài khoản là của bạn, chẳng hạn bằng cách đăng nhập. Chúng tôi phản hồi trong vòng 30 ngày, hoặc trong thời gian pháp luật yêu cầu, và chúng tôi không thu phí đối với các yêu cầu trừ khi chúng rõ ràng không có cơ sở hoặc quá đáng. Bạn có thể sử dụng một đại diện được ủy quyền khi pháp luật cho phép. Chúng tôi sẽ không đối xử khác biệt với bạn vì việc thực hiện quyền của bạn.
+Bạn có thể chỉnh sửa hồ sơ của mình trong Cài đặt và xóa bài đăng trên niceideas hoặc trong ứng dụng bạn đã công khai chúng, hoặc viết thư cho chúng tôi. Đối với bất kỳ yêu cầu khác, hãy viết thư tới support@nicematrix.ca. Chúng tôi có thể yêu cầu bạn xác nhận tài khoản là của bạn, chẳng hạn bằng cách đăng nhập. Chúng tôi phản hồi trong vòng 30 ngày, hoặc trong thời gian pháp luật yêu cầu, và chúng tôi không thu phí đối với các yêu cầu trừ khi chúng rõ ràng không có cơ sở hoặc quá đáng. Bạn có thể sử dụng một đại diện được ủy quyền khi pháp luật cho phép. Chúng tôi sẽ không đối xử khác biệt với bạn vì việc thực hiện quyền của bạn.
 
 ## 12. Trẻ em
 

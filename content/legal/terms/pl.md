@@ -1,4 +1,4 @@
-> **Podsumowanie.** Jesteś właścicielem tego, co publikujesz, i odpowiadasz za to. Wpisy na niceideas są publiczne. Nie publikuj niczego nielegalnego lub szkodliwego, ani niczego, do czego nie masz prawa. Możesz wycofać wpis w każdej chwili; wycofane wpisy są trwale usuwane po 30 dniach. niceideas jest bezpłatne i dostarczane „tak jak jest". Niniejsze Warunki podlegają prawu prowincji Alberta, Kanada. Niniejsze podsumowanie służy jedynie wygodzie; obowiązują pełne Warunki poniżej.
+> **Podsumowanie.** Jesteś właścicielem tego, co publikujesz, i odpowiadasz za to. Wpisy na niceideas są publiczne. Nie publikuj niczego nielegalnego lub szkodliwego, ani niczego, do czego nie masz prawa. Możesz usunąć wpis w każdej chwili; usunięte wpisy są trwale usuwane po 30 dniach. niceideas jest bezpłatne i dostarczane „tak jak jest". Niniejsze Warunki podlegają prawu prowincji Alberta, Kanada. Niniejsze podsumowanie służy jedynie wygodzie; obowiązują pełne Warunki poniżej.
 
 ## 1. O niniejszych Warunkach
 
@@ -30,7 +30,7 @@ Korzystając z Usługi, w tym przeglądając, polubiając lub komentując bez ko
 
 4.2 Komentarze są publiczne i pojawiają się pod wpisem. Odwiedzający bez konta mogą polubić wpisy i komentować pod opcjonalnym pseudonimem.
 
-4.3 Nie publikuj niczego, co chcesz zachować prywatnym. Gdy coś staje się publiczne, inni mogą to skopiować lub zapisać, zanim wycofasz wpis, i nie możemy wycofać takich kopii.
+4.3 Nie publikuj niczego, co chcesz zachować prywatnym. Gdy coś staje się publiczne, inni mogą to skopiować lub zapisać, zanim usuniesz wpis, i nie możemy wycofać takich kopii.
 
 4.4 Dla odwiedzających łączących się z Chin kontynentalnych dostępne są tylko poszczególne strony udostępnionych wpisów oraz polubienia i komentarze do nich; inne strony nie są dostępne. Odzwierciedla to aktualny sposób świadczenia Usługi i może się zmienić.
 
@@ -44,7 +44,7 @@ Korzystając z Usługi, w tym przeglądając, polubiając lub komentując bez ko
 
 5.4 Potwierdzasz, że jesteś właścicielem swoich treści lub posiadasz wszystkie uprawnienia niezbędne do ich publikacji i udzielenia niniejszej licencji oraz że ich publikacja nie narusza praw innych osób lub przepisów prawa.
 
-5.5 Możesz wycofać swoje wpisy w każdej chwili: wpis opublikowany z aplikacji można wycofać w tej aplikacji, a każdy wpis można wycofać, pisząc na support@nicematrix.ca. Wycofany wpis natychmiast opuszcza Usługę i jest trwale usuwany 30 dni później. Jeśli używana przez Ciebie aplikacja to umożliwia, możesz również usuwać komentarze pod własnymi wpisami.
+5.5 Możesz usunąć swoje wpisy w każdej chwili: każdy wpis można usunąć na jego stronie na niceideas, wpis opublikowany z aplikacji można również usunąć w tej aplikacji, a także można napisać na support@nicematrix.ca. Usunięty wpis natychmiast opuszcza Usługę i jest trwale usuwany 30 dni później. Jeśli używana przez Ciebie aplikacja to umożliwia, możesz również usuwać komentarze pod własnymi wpisami.
 
 ## 6. Zasady postępowania
 
@@ -83,11 +83,11 @@ Zgadzasz się nie wykorzystywać Usługi do:
 
 9.1 Możesz publikować na niceideas z aplikacji NiceNote lub z innych aplikacji, które autoryzowałeś za pomocą NiceMatrix ID. Aplikacja może robić tylko to, co jej zezwoliłeś (na przykład publikować wpisy lub przesyłać media), i tylko w odniesieniu do wpisów, które opublikowała. Wpisy wskazują, z jakiej aplikacji pochodzą.
 
-9.2 Możesz odwołać dostęp aplikacji za pomocą NiceMatrix ID lub poprosić nas o jego zablokowanie dla Twojego konta, pisząc na support@nicematrix.ca. Odwołanie dostępu zatrzymuje przyszły dostęp; nie usuwa już opublikowanych wpisów, które możesz wycofać samodzielnie.
+9.2 Możesz odwołać dostęp aplikacji za pomocą NiceMatrix ID lub poprosić nas o jego zablokowanie dla Twojego konta, pisząc na support@nicematrix.ca. Odwołanie dostępu zatrzymuje przyszły dostęp; nie usuwa już opublikowanych wpisów, które możesz usunąć samodzielnie.
 
 9.3 Aplikacje są udostępniane przez ich twórców na podstawie ich własnych warunków i polityk prywatności. Możemy blokować lub ograniczać każdą aplikację, która niewłaściwie wykorzystuje Usługę.
 
-9.4 Gdy publikujesz z NiceNote, do niceideas wysyłana jest tylko notatka, którą wybrałeś do opublikowania. Zmiany i wycofania, które wprowadzasz w NiceNote, mogą aktualizować lub wycofywać opublikowany wpis.
+9.4 Gdy publikujesz z NiceNote, do niceideas wysyłana jest tylko notatka, którą wybrałeś do opublikowania, poprzez NiceMatrix. Zmiany, które wprowadzasz w notatce w NiceNote, mogą aktualizować opublikowany wpis, a wpis możesz usunąć w NiceNote lub na niceideas.
 
 ## 10. Zakończenie korzystania
 

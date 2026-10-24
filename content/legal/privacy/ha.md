@@ -1,4 +1,4 @@
-> **Taƙaitawa.** Muna tattara kawai abin da muke buƙata don gudanar da niceideas: bayanin martabarka, abin da ka fitowa, da taƙaitattun bayanan fasaha don kiyaye Hidimar lafiya. Saƙonninka na jama'a ne. Ba mu sayar da bayanan sirri, ba mu nuna talla ko amfani da masu bibiya na waje. Za ka iya janye saƙonni a kowane lokaci kuma share asusunka ta share NiceMatrix ID naka. Rubuta zuwa support@nicematrix.ca da kowace tambaya ta keɓantawa ko buƙata.
+> **Taƙaitawa.** Muna tattara kawai abin da muke buƙata don gudanar da niceideas: bayanin martabarka, abin da ka fitowa, da taƙaitattun bayanan fasaha don kiyaye Hidimar lafiya. Saƙonninka na jama'a ne. Ba mu sayar da bayanan sirri, ba mu nuna talla ko amfani da masu bibiya na waje. Za ka iya share saƙonni a kowane lokaci kuma share asusunka ta share NiceMatrix ID naka. Rubuta zuwa support@nicematrix.ca da kowace tambaya ta keɓantawa ko buƙata.
 
 ## 1. Wanene mu
 
@@ -84,7 +84,7 @@ Don haɗuwa daga babban yankin China, kawai shafukan saƙonnin da aka raba daban
 | Bayani | Tsawon lokaci |
 |---|---|
 | Bayanin martaba | Yayin da asusunka yake; a share lokacin sharewar asusu ta kammala |
-| Saƙonni, tsoffin sigogi da kafofin watsa labarainsu | Har sai ka janye saƙon ko share asusunka; saƙonnin da aka janye ko cire za a share har abada bayan kwana 30 |
+| Saƙonni, tsoffin sigogi da kafofin watsa labarainsu | Har sai ka share saƙon ko asusunka; saƙonnin da aka share ko cire za a goge su har abada bayan kwana 30 |
 | Kafofin watsa labarai da ba a amfani da su a kowane saƙo | A share bayan kwana 7 |
 | Sharhi da so | Har sai mawallafin saƙon ko mu mu share sharhin, ko saƙon ya share |
 | Rahotanni da bayanan sarrafawa kan saƙo | A share tare da saƙon da suka shafi |
@@ -107,7 +107,7 @@ Asusun niceideas ana share su ta sharewar NiceMatrix ID naka:
 2. Idan ka soke a lokacin dokar hutawa ta NiceMatrix ID (a yanzu kwana 15), komai zai koma a waɗannan hanyoyin haɗi.
 3. Lokacin da dokar hutawa ta ƙare, muna share bayanin martabarka, saƙonni, tsoffin sigogi, kafofin watsa labarai, sharhi, so da bibiyoyi har abada, ba tare da wani ƙarin tsawon lokaci ba, sai zagayowar madadi na har kwana 14.
 
-Za ka iya kuma janye saƙonni daban-daban a kowane lokaci, ko ka rubuta mana don share wani abu dabam.
+Za ka iya kuma share saƙonni daban-daban a kowane lokaci, ko ka rubuta mana don share wani abu dabam.
 
 ## 11. Haƙƙoƙinka
 
@@ -120,7 +120,7 @@ Dangane da inda kake zama, hade da ƙarƙashin PIPEDA ta Kanada, Dokar Kariyar B
 - soke yardarka;
 - kai ƙara ga hukumar kariyar bayanai, kamar Ofishin Kwamishinan Keɓantawa na Kanada, Ofishin Kwamishinan Bayanai da Keɓantawa na Alberta, hukumarka ta gida a Tarayyar Turai, ko Ofishin Kwamishinan Bayanai na Ingila.
 
-Za ka iya gyara bayanin martabarka a Saituna kuma janye saƙonni a aikace-aikacen da ka fitowa su, ko ta rubuta mana. Don kowace buƙata dabam, rubuta zuwa support@nicematrix.ca. Za mu iya tambayarka don tabbatar cewa asusu naka ne, misali ta shiga. Muna amsa cikin kwana 30, ko cikin lokacin da doka ta buƙaci, kuma ba mu cajin buƙatu sai idan a fili ba su da tushe ko sun wuce gona da iri. Za ka iya amfani da wakili mai izini inda doka ta yarda. Ba za mu bambanta ka ba saboda kana aiwatar da haƙƙoƙinka.
+Za ka iya gyara bayanin martabarka a Saituna kuma share saƙonni a niceideas ko a aikace-aikacen da ka fitowa su, ko ta rubuta mana. Don kowace buƙata dabam, rubuta zuwa support@nicematrix.ca. Za mu iya tambayarka don tabbatar cewa asusu naka ne, misali ta shiga. Muna amsa cikin kwana 30, ko cikin lokacin da doka ta buƙaci, kuma ba mu cajin buƙatu sai idan a fili ba su da tushe ko sun wuce gona da iri. Za ka iya amfani da wakili mai izini inda doka ta yarda. Ba za mu bambanta ka ba saboda kana aiwatar da haƙƙoƙinka.
 
 ## 12. Yara
 

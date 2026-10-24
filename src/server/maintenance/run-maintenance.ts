@@ -1,6 +1,7 @@
 import type { Db } from "@/server/db/client";
 import { purgeExpiredIdempotency } from "@/server/db/repos/idempotency";
 import { purgeSpentChallenges } from "@/server/db/repos/pow";
+import { purgeExpiredServiceNonces } from "@/server/db/repos/service-nonces";
 import { purgeExpiredSessions } from "@/server/db/repos/sessions";
 import { deleteMediaRows, deletePosts, listDeletableMedia, listExpiredPosts, listStrayPublicMedia, mediaOfPosts, purgeExpiredBans } from "@/server/db/repos/maintenance";
 import { mediaKeys } from "@/server/media/keys";
@@ -11,16 +12,16 @@ import type { MediaStores } from "@/server/storage/types";
 export const MEDIA_GRACE_DAYS = 7;
 const BATCH = 200;
 
-export type MaintenanceReport = { postsPurged: number; mediaDeleted: number; strayPublicWithdrawn: number; idempotencyPurged: number; bansExpired: number; sessionsExpired: number; challengesExpired: number };
+export type MaintenanceReport = { postsPurged: number; mediaDeleted: number; strayPublicWithdrawn: number; idempotencyPurged: number; bansExpired: number; sessionsExpired: number; challengesExpired: number; noncesExpired: number };
 
 /**
  * Daily job (plan §10): physically deletes posts past their 30-day retention,
  * then media no post uses any more (objects first, rows after), re-runs failed
- * public-bucket withdrawals, and drops expired idempotency keys, bans, web sessions and spent PoW challenges.
+ * public-bucket withdrawals, and drops expired idempotency keys, bans, web sessions, spent PoW challenges and service-signature nonces.
  * Safe to re-run; each step is idempotent.
  */
 export async function runMaintenance(db: Db, stores: MediaStores): Promise<MaintenanceReport> {
-  const report: MaintenanceReport = { postsPurged: 0, mediaDeleted: 0, strayPublicWithdrawn: 0, idempotencyPurged: 0, bansExpired: 0, sessionsExpired: 0, challengesExpired: 0 };
+  const report: MaintenanceReport = { postsPurged: 0, mediaDeleted: 0, strayPublicWithdrawn: 0, idempotencyPurged: 0, bansExpired: 0, sessionsExpired: 0, challengesExpired: 0, noncesExpired: 0 };
 
   for (;;) {
     const posts = (await listExpiredPosts(db, BATCH)).map((p) => p.id);
@@ -41,6 +42,7 @@ export async function runMaintenance(db: Db, stores: MediaStores): Promise<Maint
   report.bansExpired = await purgeExpiredBans(db);
   report.sessionsExpired = await purgeExpiredSessions(db);
   report.challengesExpired = await purgeSpentChallenges(db);
+  report.noncesExpired = await purgeExpiredServiceNonces(db);
   return report;
 }
 
