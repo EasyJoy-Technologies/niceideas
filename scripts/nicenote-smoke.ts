@@ -32,33 +32,41 @@ function check(step: string, ok: boolean, detail: unknown): void {
   if (!ok) process.exit(1);
 }
 
-const shareId = randomUUID();
-const created = await call("POST", "/posts", { shareId, userId: user, region: "intl", syncMode: "follow", commentsMode: null, profile: null });
-const post = created.json.post as { id: string; url: string; status: string } | undefined;
-check("create → 201 preparing", created.status === 201 && post?.status === "preparing", created);
-check("create again → 200 same post", (await call("POST", "/posts", { shareId, userId: user, region: "intl" })).status === 200, null);
-const pageStatus = async () => (await fetch(post!.url, { redirect: "manual" })).status;
-check("preparing page → 200", (await pageStatus()) === 200, null);
+// Runs as CommonJS under tsx (no top-level await).
+async function main(): Promise<void> {
+  const shareId = randomUUID();
+  const created = await call("POST", "/posts", { shareId, userId: user, region: "intl", syncMode: "follow", commentsMode: null, profile: null });
+  const post = created.json.post as { id: string; url: string; status: string } | undefined;
+  check("create → 201 preparing", created.status === 201 && post?.status === "preparing", created);
+  check("create again → 200 same post", (await call("POST", "/posts", { shareId, userId: user, region: "intl" })).status === 200, null);
+  const pageStatus = async () => (await fetch(post!.url, { redirect: "manual" })).status;
+  check("preparing page → 200", (await pageStatus()) === 200, null);
 
-const document = {
-  version: 1,
-  title: "Smoke test",
-  blocks: [
-    { type: "text", text: "Plain <b>text</b>" },
-    { type: "rich", lines: [{ kind: "heading", level: 1, runs: [{ text: "Heading" }] }, { kind: "bullet", indent: 0, runs: [{ text: "item", bold: true }] }] },
-    { type: "todo", items: [{ checked: true, runs: [{ text: "done" }] }] },
-  ],
-};
-const pushed = await call("PUT", `/posts/${post!.id}/content`, { sourceRevision: 1, document });
-check("push → changed, active", pushed.status === 200 && pushed.json.changed === true && (pushed.json.post as { status: string }).status === "active", pushed);
-check("same push → unchanged", (await call("PUT", `/posts/${post!.id}/content`, { sourceRevision: 1, document })).json.changed === false, null);
-const stale = await call("PUT", `/posts/${post!.id}/content`, { sourceRevision: 0, document });
-check("older revision → 409 post.stale_update", stale.status === 409 && (stale.json.error as { code: string }).code === "post.stale_update", stale);
-const html = await (await fetch(post!.url)).text();
-check("page shows the content", html.includes("Plain &lt;b&gt;text&lt;/b&gt;") && html.includes("<h2>Heading</h2>"), html.slice(0, 200));
-check("get → 200", (await call("GET", `/posts/${post!.id}`)).status === 200, null);
-const patched = await call("PATCH", `/posts/${post!.id}`, { commentsMode: "closed" });
-check("patch → commentsMode closed", (patched.json.post as { commentsMode: string } | undefined)?.commentsMode === "closed", patched);
-check("delete → unpublished", ((await call("DELETE", `/posts/${post!.id}`)).json.post as { status: string }).status === "unpublished", null);
-check("deleted page → 410", (await pageStatus()) === 410, null);
-console.log(`smoke passed (${post!.url})`);
+  const document = {
+    version: 1,
+    title: "Smoke test",
+    blocks: [
+      { type: "text", text: "Plain <b>text</b>" },
+      { type: "rich", lines: [{ kind: "heading", level: 1, runs: [{ text: "Heading" }] }, { kind: "bullet", indent: 0, runs: [{ text: "item", bold: true }] }] },
+      { type: "todo", items: [{ checked: true, runs: [{ text: "done" }] }] },
+    ],
+  };
+  const pushed = await call("PUT", `/posts/${post!.id}/content`, { sourceRevision: 1, document });
+  check("push → changed, active", pushed.status === 200 && pushed.json.changed === true && (pushed.json.post as { status: string }).status === "active", pushed);
+  check("same push → unchanged", (await call("PUT", `/posts/${post!.id}/content`, { sourceRevision: 1, document })).json.changed === false, null);
+  const stale = await call("PUT", `/posts/${post!.id}/content`, { sourceRevision: 0, document });
+  check("older revision → 409 post.stale_update", stale.status === 409 && (stale.json.error as { code: string }).code === "post.stale_update", stale);
+  const html = await (await fetch(post!.url)).text();
+  check("page shows the content", html.includes("Plain &lt;b&gt;text&lt;/b&gt;") && html.includes("<h2>Heading</h2>"), html.slice(0, 200));
+  check("get → 200", (await call("GET", `/posts/${post!.id}`)).status === 200, null);
+  const patched = await call("PATCH", `/posts/${post!.id}`, { commentsMode: "closed" });
+  check("patch → commentsMode closed", (patched.json.post as { commentsMode: string } | undefined)?.commentsMode === "closed", patched);
+  check("delete → unpublished", ((await call("DELETE", `/posts/${post!.id}`)).json.post as { status: string }).status === "unpublished", null);
+  check("deleted page → 410", (await pageStatus()) === 410, null);
+  console.log(`smoke passed (${post!.url})`);
+}
+
+main().catch((err: unknown) => {
+  console.error("FAIL unexpected error", err);
+  process.exit(1);
+});
