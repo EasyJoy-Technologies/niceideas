@@ -48,27 +48,32 @@ async function probe(file: string, signal?: AbortSignal): Promise<Probe> {
   return { format: json.format?.format_name ?? "", durationMs: Number.isFinite(seconds) && seconds > 0 ? Math.round(seconds * 1000) : null, codec: audio.codec_name, channels: audio.channels ?? 2 };
 }
 
-/** Arguments shared by every output: first audio stream only, no video / subtitles / data, no metadata (tags, chapters, location). */
-const INPUT = (file: string) => ["-nostdin", "-hide_banner", "-loglevel", "error", "-y", "-i", file, "-map", "0:a:0", "-vn", "-sn", "-dn", "-map_metadata", "-1", "-map_chapters", "-1"];
+/** Location tags (privacy): removed from every converted file. */
+const NO_LOCATION = ["location", "location-eng", "com.apple.quicktime.location.ISO6709"].flatMap((k) => ["-metadata", `${k}=`]);
+/**
+ * Arguments shared by every converted output: first audio stream only (no video, cover art, subtitles
+ * or data); standard tags (title, artist, album, comment, …) kept, location removed. ffmpeg writes its
+ * own `encoder` tag, and non-standard M4A tags are not carried over.
+ */
+const INPUT = (file: string) => ["-nostdin", "-hide_banner", "-loglevel", "error", "-y", "-i", file, "-map", "0:a:0", "-vn", "-sn", "-dn", "-map_metadata", "0", ...NO_LOCATION];
 
 async function ffmpeg(args: string[], signal?: AbortSignal): Promise<void> {
   await runTool(getConfig().FFMPEG_PATH, args, { timeoutMs: FFMPEG_TIMEOUT_MS, signal });
 }
 
 /**
- * Makes a browser-playable copy of any audio file (contract §7): AAC is only re-wrapped into an
- * M4A with the index first (no re-encoding); MP3 keeps its stream (tags dropped); everything else
- * is encoded to ~128 kbps AAC / M4A. Video files and files without audio are refused. No duration limit.
+ * Makes a browser-playable copy of any audio file (contract §7): MP3 is kept exactly as it is (every
+ * ID3 tag included); AAC is only re-wrapped into an M4A with the index first (no re-encoding);
+ * everything else is encoded to ~128 kbps AAC / M4A. Video files and files without audio are refused.
+ * No duration limit.
  */
 export async function toWebAudio(input: string, workDir: string, signal?: AbortSignal): Promise<WebAudio> {
   const p = await probe(input, signal);
+  if (p.codec === "mp3" && p.format === "mp3") return { file: input, mime: "audio/mpeg", ext: "mp3", bytes: (await stat(input)).size, durationMs: p.durationMs };
   const m4a = path.join(workDir, "audio.m4a");
   const attempts: { args: string[]; out: string; mime: WebAudio["mime"]; ext: WebAudio["ext"] }[] = [];
   if (p.codec === "aac" && (MP4_FAMILY.test(p.format) || p.format === "aac")) {
     attempts.push({ args: [...INPUT(input), "-c:a", "copy", "-movflags", "+faststart", "-f", "mp4", m4a], out: m4a, mime: "audio/mp4", ext: "m4a" });
-  } else if (p.codec === "mp3" && p.format === "mp3") {
-    const mp3 = path.join(workDir, "audio.mp3");
-    attempts.push({ args: [...INPUT(input), "-c:a", "copy", "-id3v2_version", "0", "-write_id3v1", "0", "-f", "mp3", mp3], out: mp3, mime: "audio/mpeg", ext: "mp3" });
   }
   // Re-encoding is also the fallback when copying the stream fails (damaged headers and the like).
   const downmix = p.channels > 2 ? ["-ac", "2"] : [];

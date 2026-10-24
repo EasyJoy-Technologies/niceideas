@@ -35,6 +35,8 @@ export const animatedGif = () => readFileSync(path.join(FIXTURES, "anim-3f.gif")
 export const wavTone = () => readFileSync(path.join(FIXTURES, "tone-1s.wav"));
 export const flacTone = () => readFileSync(path.join(FIXTURES, "tone-1s.flac"));
 export const opusTone = () => readFileSync(path.join(FIXTURES, "tone-1s.opus"));
+/** AAC / M4A with title, artist, comment and location tags. */
+export const taggedM4a = () => readFileSync(path.join(FIXTURES, "tagged-1s.m4a"));
 
 /** True when the worker's media tools are installed (the media pipeline tests need them; CI runners may not have them). */
 export function hasMediaTools(): boolean {

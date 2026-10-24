@@ -49,8 +49,11 @@ Base: `https://niceideas.app/api/internal/v1/nicenote` (staging `https://t.nicei
   - Images: JPEG / PNG / WebP / GIF / AVIF / TIFF with sharp; HEIC / HEIF / BMP decoded by ImageMagick (`MAGICK_PATH`)
     first; ≤ 100 MP (`too_large`); animated GIF / WebP stay animated; renditions taller than 16383 px are JPEG / PNG and
     at most 65500 px high (narrowed, no slicing).
-  - Audio (`FFMPEG_PATH`, `FFPROBE_PATH`): AAC re-wrapped into a fast-start M4A, MP3 stream kept, everything else
-    encoded to 128 kbps AAC / M4A; metadata dropped; no duration limit; video or no audio → `unsupported_format`.
+  - Audio (`FFMPEG_PATH`, `FFPROBE_PATH`): MP3 stored exactly as received (all ID3 tags); AAC re-wrapped into a
+    fast-start M4A; everything else encoded to 128 kbps AAC / M4A. Converted files keep the standard tags (title,
+    artist, album, comment, …) without location tags; ffmpeg rewrites `encoder` and drops non-standard M4A tags, so an
+    app name belongs in `comment` (Xianglin 2026-10-24: ID tags are kept). No duration limit; video or no audio →
+    `unsupported_format`.
   - Failures: temporary ones (`fetch_failed` after 3 tries, `fetch_expired`, `temporarily_unavailable`) leave the job
     `failed` (a new grant queues it again); permanent ones (`too_large`, `unsupported_format`, `decode_failed`,
     `transcode_failed`) leave it `rejected` and that owner's ref is never fetched again.
