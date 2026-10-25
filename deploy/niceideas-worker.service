@@ -7,6 +7,8 @@ Wants=postgresql.service
 Type=simple
 WorkingDirectory=/var/www/niceideas/current
 EnvironmentFile=/etc/niceideas/env.production
+# glibc keeps per-thread malloc arenas that libvips (sharp) fills and never returns: cap them.
+Environment=MALLOC_ARENA_MAX=2
 ExecStart=/usr/bin/node dist/worker.mjs
 Restart=always
 RestartSec=5

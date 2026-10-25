@@ -30,6 +30,12 @@ export async function claimOutbox(db: Db, limit: number, leaseSeconds: number): 
   return r.rows.sort((a, b) => a.created_at.getTime() - b.created_at.getTime());
 }
 
+/** When the next notification falls due (same filter as `claimOutbox`); null when none is pending. */
+export async function nextOutboxDueAt(db: Db): Promise<Date | null> {
+  const r = await db.selectFrom("outbox").select((eb) => eb.fn.min("run_after").as("at")).where("state", "=", "pending").executeTakeFirst();
+  return r?.at ?? null;
+}
+
 /** Delivered (`done`), given up (`failed`), or due again after `retryInSeconds`. */
 export async function settleOutbox(db: Db, id: string, outcome: { state: "done" } | { state: "failed"; error: string } | { retryInSeconds: number; error: string }): Promise<void> {
   const set =

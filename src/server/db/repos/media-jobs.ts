@@ -79,6 +79,17 @@ export async function claimMediaJob(db: Db, leaseSeconds: number): Promise<Media
   return r.rows[0];
 }
 
+/** When the next media job falls due (same filter as `claimMediaJob`); null when none is waiting. */
+export async function nextMediaJobDueAt(db: Db): Promise<Date | null> {
+  const r = await db
+    .selectFrom("media_job")
+    .select((eb) => eb.fn.min("run_after").as("at"))
+    .where("state", "in", ["pending", "running"])
+    .where("url", "is not", null)
+    .executeTakeFirst();
+  return r?.at ?? null;
+}
+
 /** Extends the lease of a running job (long downloads / transcodes). */
 export async function extendMediaJobLease(db: Db, j: Pick<MediaJob, "owner_id" | "ref">, leaseSeconds: number): Promise<void> {
   await db

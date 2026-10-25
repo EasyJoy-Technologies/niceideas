@@ -9,6 +9,19 @@ const nextConfig: NextConfig = {
   reactStrictMode: true,
   // Native / binary-heavy packages stay third-party to the server bundle.
   serverExternalPackages: ["sharp", "pg", "music-metadata", "file-type"],
+  // Static files (public/): every /styles and /scripts reference carries ?v=<version> (asset() in
+  // src/server/share/document.ts), so those URLs never change content; font files are never edited
+  // in place. Brand images can change under the same name: one day.
+  async headers() {
+    const immutable = [{ key: "Cache-Control", value: "public, max-age=31536000, immutable" }];
+    const versioned = [{ type: "query" as const, key: "v" }];
+    return [
+      { source: "/styles/:file*", has: versioned, headers: immutable },
+      { source: "/scripts/:file*", has: versioned, headers: immutable },
+      { source: "/fonts/:file*", headers: immutable },
+      { source: "/brand/:file*", headers: [{ key: "Cache-Control", value: "public, max-age=86400" }] },
+    ];
+  },
   // Path-only rewrites (internal by construction). They run after src/proxy.ts.
   async rewrites() {
     return {

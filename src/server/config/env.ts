@@ -58,8 +58,11 @@ const schema = z.object({
   /** Holds only media of live posts; served by MEDIA_PUBLIC_BASE_URL. */
   S3_PUBLIC_BUCKET: z.string().optional(),
   MEDIA_PUBLIC_BASE_URL: z.url().default("http://localhost:3000/media-local"),
-  /** Short TTL bounds how long withdrawn media can linger in CDN / browser caches. */
-  MEDIA_CACHE_CONTROL: z.string().default("public, max-age=300"),
+  /**
+   * Browsers keep media 5 minutes, the Cloudflare edge 1 hour (fewer R2 reads): bounds how long
+   * withdrawn media can linger in caches until deletions also purge the edge.
+   */
+  MEDIA_CACHE_CONTROL: z.string().default("public, max-age=300, s-maxage=3600"),
   MEDIA_MAX_IMAGE_BYTES: z.coerce.number().int().positive().default(30 * 1024 * 1024),
   MEDIA_MAX_AUDIO_BYTES: z.coerce.number().int().positive().default(150 * 1024 * 1024),
   MEDIA_MAX_AUDIO_SECONDS: z.coerce.number().int().positive().default(4 * 60 * 60),

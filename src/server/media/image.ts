@@ -1,10 +1,11 @@
 import path from "node:path";
-import sharp from "sharp";
+import sharp from "./sharp";
 import type { MediaRendition } from "@/server/db/schema";
 
 /** Responsive widths (plan §6). Never upscaled. */
 export const IMAGE_WIDTHS = [480, 960, 1600] as const;
-const FALLBACK_MAX_WIDTH = 1600;
+/** JPEG / PNG for old browsers and the source of share-card images (1200 × 630): no need to be larger. */
+const FALLBACK_MAX_WIDTH = 1200;
 /** WebP cannot be taller than this; taller renditions are JPEG (PNG with transparency). */
 const WEBP_MAX_SIDE = 16383;
 /** JPEG's limit (65535) with a margin: very tall images are narrowed until they fit (no slicing). */

@@ -1,8 +1,10 @@
 [Unit]
-Description=NiceIdeas (production) daily database backup (pg_dump, 14 kept locally)
+Description=NiceIdeas (production) daily database backup (pg_dump: 14 kept locally, 30 days in the private R2 bucket)
 After=postgresql.service
 
 [Service]
 Type=oneshot
 EnvironmentFile=/etc/niceideas/env.production
 ExecStart=/bin/bash -c 'set -euo pipefail; d=/var/backups/niceideas; install -d -m 700 $d; f=$d/niceideas-$(date -u +%%Y%%m%%dT%%H%%M%%SZ).sql.gz; pg_dump --no-owner "$DATABASE_URL" | gzip -6 > $f.tmp && mv $f.tmp $f && chmod 600 $f; ls -1t $d/niceideas-*.sql.gz | tail -n +15 | xargs -r rm -f'
+# Off-site copy (dist/backup-offsite.mjs): the newest local dump goes to the private R2 bucket under backups/.
+ExecStart=/bin/bash -c 'cd /var/www/niceideas/current && exec /usr/bin/node dist/backup-offsite.mjs "$(ls -1t /var/backups/niceideas/niceideas-*.sql.gz | head -1)"'

@@ -7,7 +7,9 @@ Wants=postgresql.service
 Type=simple
 WorkingDirectory=/var/www/niceideas/current
 EnvironmentFile=/etc/niceideas/env.production
-# Workers on one port (deploy/cluster.mjs); per-worker DB pool = DB_POOL_MAX. WEB_CONCURRENCY comes from the env file.
+# glibc keeps per-thread malloc arenas that libvips (sharp) fills and never returns: cap them.
+Environment=MALLOC_ARENA_MAX=2
+# Workers on one port (deploy/cluster.mjs; 1 = single process); per-worker DB pool = DB_POOL_MAX. WEB_CONCURRENCY comes from the env file.
 ExecStart=/usr/bin/node cluster.mjs
 Restart=always
 RestartSec=3

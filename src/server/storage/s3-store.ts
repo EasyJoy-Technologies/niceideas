@@ -1,14 +1,14 @@
 import { createReadStream } from "node:fs";
 import { stat } from "node:fs/promises";
 import type { Readable } from "node:stream";
-import { DeleteObjectsCommand, GetObjectCommand, PutObjectCommand, S3Client } from "@aws-sdk/client-s3";
-import { assertSafeKey, type ObjectStore, type PutOptions } from "./types";
+import { CopyObjectCommand, DeleteObjectsCommand, GetObjectCommand, HeadObjectCommand, PutObjectCommand, S3Client } from "@aws-sdk/client-s3";
+import { assertSafeKey, ObjectMissingError, type ObjectStore, type PutOptions } from "./types";
 
 /** S3-compatible store (Cloudflare R2). */
 export class S3Store implements ObjectStore {
   constructor(
     private readonly client: S3Client,
-    private readonly bucket: string,
+    readonly bucket: string,
   ) {}
 
   async putFile(key: string, filePath: string, options: PutOptions): Promise<void> {
@@ -54,6 +54,37 @@ export class S3Store implements ObjectStore {
     return out.Body as Readable;
   }
 
+  async exists(key: string): Promise<boolean> {
+    assertSafeKey(key);
+    try {
+      await this.client.send(new HeadObjectCommand({ Bucket: this.bucket, Key: key }));
+      return true;
+    } catch (err) {
+      if (notFound(err)) return false;
+      throw err;
+    }
+  }
+
+  async copyTo(target: ObjectStore, key: string, options: PutOptions): Promise<void> {
+    assertSafeKey(key);
+    if (!(target instanceof S3Store)) throw new Error("copyTo needs a store of the same kind");
+    try {
+      await this.client.send(
+        new CopyObjectCommand({
+          Bucket: target.bucket,
+          Key: key,
+          CopySource: `${this.bucket}/${key}`,
+          MetadataDirective: "REPLACE",
+          ContentType: options.contentType,
+          CacheControl: options.cacheControl,
+        }),
+      );
+    } catch (err) {
+      if (notFound(err)) throw new ObjectMissingError(key);
+      throw err;
+    }
+  }
+
   async deleteMany(keys: string[]): Promise<void> {
     keys.forEach(assertSafeKey);
     for (let i = 0; i < keys.length; i += 1000) {
@@ -65,6 +96,11 @@ export class S3Store implements ObjectStore {
     }
   }
 }
+
+const notFound = (err: unknown) => {
+  const e = err as { name?: string; $metadata?: { httpStatusCode?: number } };
+  return e?.name === "NoSuchKey" || e?.name === "NotFound" || e?.$metadata?.httpStatusCode === 404;
+};
 
 export function createS3Client(endpoint: string, region: string, accessKeyId: string, secretAccessKey: string): S3Client {
   return new S3Client({ endpoint, region, credentials: { accessKeyId, secretAccessKey }, forcePathStyle: true });

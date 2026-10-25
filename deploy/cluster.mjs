@@ -1,6 +1,7 @@
 // Multi-process launcher for the Next.js standalone server (copied next to server.js on deploy).
 // WEB_CONCURRENCY workers share one listening port through node:cluster; a worker that
 // dies is replaced (at most once per second). SIGTERM/SIGINT stop all workers.
+// WEB_CONCURRENCY=1 runs the server in this process (no idle primary; systemd restarts it).
 import cluster from "node:cluster";
 import os from "node:os";
 import path from "node:path";
@@ -9,7 +10,7 @@ import { fileURLToPath, pathToFileURL } from "node:url";
 const here = path.dirname(fileURLToPath(import.meta.url));
 const workers = Math.max(1, Math.min(Number.parseInt(process.env.WEB_CONCURRENCY ?? "", 10) || 1, os.availableParallelism()));
 
-if (!cluster.isPrimary) {
+if (workers === 1 || !cluster.isPrimary) {
   await import(pathToFileURL(path.join(here, "server.js")).href);
 } else {
   let stopping = false;

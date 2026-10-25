@@ -37,6 +37,12 @@ export async function claimAvatarJob(db: Db, leaseSeconds: number): Promise<Avat
   return r.rows[0];
 }
 
+/** When the next avatar job falls due (same filter as `claimAvatarJob`); null when none is waiting. */
+export async function nextAvatarJobDueAt(db: Db): Promise<Date | null> {
+  const r = await db.selectFrom("avatar_job").select((eb) => eb.fn.min("run_after").as("at")).where("state", "in", ["pending", "running"]).executeTakeFirst();
+  return r?.at ?? null;
+}
+
 /** Outcome for the claimed source (a job replaced meanwhile by a newer source is left alone). */
 export async function settleAvatarJob(db: Db, job: Pick<AvatarJob, "user_id" | "source_url">, outcome: { state: "done" } | { state: "failed"; error: string } | { retryInSeconds: number; error: string }): Promise<void> {
   const set =

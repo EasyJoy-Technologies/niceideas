@@ -1,5 +1,5 @@
 import { randomUUID } from "node:crypto";
-import sharp from "sharp";
+import sharp from "@/server/media/sharp";
 import { getConfig } from "@/server/config/env";
 import { publicUrl } from "@/server/media/keys";
 

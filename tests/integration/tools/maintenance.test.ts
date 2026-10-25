@@ -70,4 +70,18 @@ describe("daily maintenance", () => {
     expect(await status(live.slug)).toBe(200);
     expect((await runMaintenance(ctx.db, ctx.stores)).postsPurged).toBe(0);
   });
+
+  it("drops account-event ids processed over 90 days ago, keeps recent ones", async () => {
+    await ctx.db
+      .insertInto("account_event")
+      .values([
+        { event_id: "ae-old", user_id: "gone-user", event: "deletion_completed", occurred_at: new Date() },
+        { event_id: "ae-new", user_id: "gone-user", event: "deletion_requested", occurred_at: new Date() },
+      ])
+      .execute();
+    await ctx.db.updateTable("account_event").set({ processed_at: sql<Date>`now() - interval '91 days'` } as never).where("event_id", "=", "ae-old").execute();
+    expect((await runMaintenance(ctx.db, ctx.stores)).accountEventsPurged).toBe(1);
+    const left = await ctx.db.selectFrom("account_event").select("event_id").where("user_id", "=", "gone-user").execute();
+    expect(left.map((r) => r.event_id)).toEqual(["ae-new"]);
+  });
 });

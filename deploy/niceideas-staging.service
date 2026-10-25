@@ -7,6 +7,8 @@ Wants=docker.service
 Type=simple
 WorkingDirectory=/var/www/niceideas-staging/current
 EnvironmentFile=/etc/niceideas/env.staging
+# glibc keeps per-thread malloc arenas that libvips (sharp) fills and never returns: cap them.
+Environment=MALLOC_ARENA_MAX=2
 # Several workers on one port (deploy/cluster.mjs); per-worker DB pool = DB_POOL_MAX.
 Environment=WEB_CONCURRENCY=4
 ExecStart=/usr/bin/node cluster.mjs

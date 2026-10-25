@@ -1,4 +1,4 @@
-import sharp from "sharp";
+import sharp from "@/server/media/sharp";
 import type { Media } from "@/server/db/schema";
 import type { ObjectStore } from "@/server/storage/types";
 import { Semaphore } from "@/server/util/semaphore";

@@ -24,6 +24,18 @@ export async function latestAccountEventAt(db: Db, userId: string): Promise<Date
   return row?.at ?? null;
 }
 
+/**
+ * Drops processed event ids older than `olderThanDays` (they hold only ids and times). Backend
+ * redeliveries end long before, so duplicate detection and ordering do not need them.
+ */
+export async function purgeOldAccountEvents(db: Db, olderThanDays: number): Promise<number> {
+  const r = await db
+    .deleteFrom("account_event")
+    .where("processed_at", "<", sql<Date>`now() - make_interval(days => ${olderThanDays})`)
+    .executeTakeFirst();
+  return Number(r.numDeletedRows ?? 0);
+}
+
 export async function setProfileStatus(db: Db, userId: string, status: ProfileStatus): Promise<void> {
   await db.updateTable("profile").set({ status, updated_at: new Date() }).where("user_id", "=", userId).execute();
 }
