@@ -16,6 +16,8 @@ const nextConfig: NextConfig = {
     const immutable = [{ key: "Cache-Control", value: "public, max-age=31536000, immutable" }];
     const versioned = [{ type: "query" as const, key: "v" }];
     return [
+      // Every response: HTTPS only from now on (browsers ignore it over plain http, e.g. local dev).
+      { source: "/:path*", headers: [{ key: "Strict-Transport-Security", value: "max-age=31536000" }, { key: "X-Content-Type-Options", value: "nosniff" }] },
       { source: "/styles/:file*", has: versioned, headers: immutable },
       { source: "/scripts/:file*", has: versioned, headers: immutable },
       { source: "/fonts/:file*", headers: immutable },

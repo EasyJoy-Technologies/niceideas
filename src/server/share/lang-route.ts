@@ -1,3 +1,4 @@
+import { safeRedirectPath } from "@/server/http/safe-path";
 import { isLocale, LOCALE_COOKIE } from "@/i18n/locales";
 import { serializeCookie } from "@/server/http/cookies";
 import { LANG_PARAM } from "./locale";
@@ -6,7 +7,7 @@ const YEAR_SECONDS = 365 * 86_400;
 
 /** Same-site path only (no scheme, no `//host`, no backslash tricks); otherwise home. */
 export function safeNextPath(value: string | null): string {
-  return value && /^\/(?![/\\])[^\s\\]*$/.test(value) ? value : "/";
+  return safeRedirectPath(value, 2048);
 }
 
 /**

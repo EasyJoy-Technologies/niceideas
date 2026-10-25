@@ -1,3 +1,4 @@
+import { safeRedirectPath } from "@/server/http/safe-path";
 import { getConfig } from "@/server/config/env";
 
 export type WebAuthSettings = { issuer: string; clientId: string; clientSecret: string; baseUrl: string };
@@ -18,6 +19,6 @@ export const CALLBACK_PATH = "/auth/callback";
 
 /** Only same-site relative paths are accepted as post-sign-in targets. */
 export function safeNext(raw: string | null | undefined): string {
-  if (!raw || !raw.startsWith("/") || raw.startsWith("//") || raw.startsWith("/\\") || raw.startsWith("/auth/")) return "/";
-  return raw.length > 512 ? "/" : raw;
+  const path = safeRedirectPath(raw);
+  return path.startsWith("/auth/") ? "/" : path;
 }
