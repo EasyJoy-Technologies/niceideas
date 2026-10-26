@@ -1,8 +1,11 @@
 import { describe, expect, it } from "vitest";
 import { deriveCoverMediaId, deriveKind, deriveSummary, documentPlainText } from "@/server/documents/derive";
 import { contentHash } from "@/server/documents/hash";
+import { withTitleInText } from "@/server/documents/short-title";
+import { parseStoredDocument } from "@/server/documents/stored";
 import { documentMediaIds, parseDocument } from "@/server/documents/validate";
 import { ApiError } from "@/server/http/errors";
+import { renderDocumentHtml } from "@/server/render/document-html";
 
 const ID1 = "11111111-1111-4111-8111-111111111111";
 const ID2 = "22222222-2222-4222-8222-222222222222";
@@ -42,6 +45,20 @@ describe("derive", () => {
     expect(deriveKind(doc([{ type: "text", text: "x".repeat(501) }]))).toBe("article");
     expect(deriveKind(doc([{ type: "text", text: "x" }, { type: "image", mediaId: ID1 }]))).toBe("article");
     expect(deriveKind(doc([{ type: "text", text: "汉".repeat(500) }]))).toBe("short");
+    // The title counts: a short post shows it as the first line of its text.
+    expect(deriveKind(doc([{ type: "text", text: "x".repeat(490) }], "Ten chars!"))).toBe("short");
+    expect(deriveKind(doc([{ type: "text", text: "x".repeat(491) }], "Ten chars!"))).toBe("article");
+  });
+  it("short posts show their title as the bold first line; articles keep it as the title", () => {
+    const d = doc([{ type: "text", text: "body" }], "A *star* title");
+    const shown = withTitleInText("short", d);
+    expect(shown.title).toBeUndefined();
+    expect(shown.blocks[0]).toEqual({ type: "text", format: "markdown", text: "**A \\*star\\* title**" });
+    expect(renderDocumentHtml(shown, new Map(), (k) => k)).toContain("<strong>A *star* title</strong>");
+    expect(withTitleInText("article", d)).toBe(d);
+    expect(withTitleInText("short", doc([{ type: "text", text: "body" }]))).toEqual(doc([{ type: "text", text: "body" }]));
+    const note = parseStoredDocument({ version: 1, origin: "nicenote", title: "Note", blocks: [{ type: "rich", lines: [{ kind: "paragraph", runs: [{ text: "hi" }] }] }] });
+    expect(withTitleInText("short", note).blocks[0]).toEqual({ type: "rich", lines: [{ kind: "paragraph", runs: [{ text: "Note", bold: true, href: undefined }] }] });
   });
   it("summary is markdown-free, single-line and truncated", () => {
     const d = doc([{ type: "text", format: "markdown", text: "# Title\n\n**bold** [link](https://x.y) & <b>" }]);

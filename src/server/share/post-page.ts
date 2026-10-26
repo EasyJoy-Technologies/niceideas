@@ -1,4 +1,5 @@
 import { GLOSSARY } from "@/i18n/glossary";
+import { withTitleInText } from "@/server/documents/short-title";
 import { publicUrl } from "@/server/media/keys";
 import { postUrl } from "@/server/posts/post-dto";
 import { renderDocumentHtml } from "@/server/render/document-html";
@@ -94,10 +95,11 @@ const noticeHtml = (ctx: ChromeContext, deleteFailed: boolean) =>
 export function renderPostPage(ctx: ChromeContext, data: SharePost, social: PageInteractions, aside: PostAside | null = null, following = false, deleteFailed = false): string {
   const { post } = data;
   const url = postUrl(post.slug);
-  const title = post.title ? `<h1 class="ni-title">${escapeHtml(post.title)}</h1>` : "";
-  const body = bodyHtml(ctx, data);
+  const short = post.kind === "short";
+  const title = post.title && !short ? `<h1 class="ni-title">${escapeHtml(post.title)}</h1>` : "";
+  const body = bodyHtml(ctx, { ...data, document: withTitleInText(post.kind, data.document) });
   const main =
-    `<main class="ni-main">${aside ? backLink(ctx) : ""}${noticeHtml(ctx, deleteFailed)}<article class="ni-post${post.kind === "short" ? " ni-short" : ""}">` +
+    `<main class="ni-main">${aside ? backLink(ctx) : ""}${noticeHtml(ctx, deleteFailed)}<article class="ni-post${short ? " ni-short" : ""}">` +
     `${authorBlock(ctx, data, following)}${title}<div class="ni-body">${body}</div>` +
     `${postFoot(ctx, data)}${postActions(ctx, post, social.liked)}</article>` +
     `${commentsSection(ctx, post, social, ctx.path)}${reportDialog(ctx, post.slug)}</main>`;

@@ -4,6 +4,8 @@
  * so this only has to be faithful, not safe: author text is escaped, links are
  * limited to http(s) / mailto.
  */
+import { escapeMarkdown } from "@/server/render/escape";
+
 export type PmMark = { type: string; attrs?: Record<string, unknown> };
 export type PmNode = { type: string; attrs?: Record<string, unknown>; content?: PmNode[]; text?: string; marks?: PmMark[] };
 
@@ -15,7 +17,6 @@ const DELIM: Record<Exclude<MarkName, "link" | "code">, string> = { bold: "**", 
 const SAFE_URL = /^(https?:\/\/|mailto:)/i;
 
 const key = (m: Active) => (m.name === "link" ? `link:${m.href}` : m.name);
-const escapeText = (s: string) => s.replace(/([\\`*_[\]<>~|&])/g, "\\$1");
 const escapeUrl = (s: string) => s.replace(/[()<>\s]/g, (c) => `%${c.charCodeAt(0).toString(16).toUpperCase().padStart(2, "0")}`);
 
 function marksOf(n: PmNode): Active[] {
@@ -77,7 +78,7 @@ export function inlineMarkdown(nodes: PmNode[] = []): string {
       out += opener(next[j]);
     }
     active = [...active.slice(0, same), ...next.slice(same)];
-    out += active.some((m) => m.name === "code") ? core.replace(/\n/g, " ") : escapeText(core);
+    out += active.some((m) => m.name === "code") ? core.replace(/\n/g, " ") : escapeMarkdown(core);
     pending = trail;
   }
   for (let j = active.length - 1; j >= 0; j--) out += closer(active[j]);

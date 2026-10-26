@@ -1,4 +1,5 @@
 import type { Media, Post } from "@/server/db/schema";
+import { withTitleInText } from "@/server/documents/short-title";
 import type { SourceBlock } from "@/server/documents/source-schema";
 import type { StoredDocument } from "@/server/documents/stored";
 import type { DocBlock } from "@/server/documents/schema";
@@ -49,14 +50,16 @@ function blockNodes(b: DocBlock | SourceBlock, media: ReadonlyMap<string, Media>
 
 /**
  * Stored document → edit prefill. `media`: as loaded for the page (by media id, or by NiceNote ref).
- * Short posts keep their media under the text (tray); articles have them in place.
+ * Short posts keep their media under the text (tray) and their title as the bold first line;
+ * articles have them in place.
  */
 export function editPrefill(post: Pick<Post, "kind">, doc: StoredDocument, media: ReadonlyMap<string, Media>): EditPrefill {
   const mode = post.kind === "short" ? "short" : "long";
   const content: PmNode[] = [];
+  const shown = withTitleInText(post.kind, doc);
   const tray: EditMedia[] = [];
   const placed: EditMedia[] = [];
-  for (const b of doc.blocks) {
+  for (const b of shown.blocks) {
     const r = blockNodes(b, media);
     if (!r) continue;
     if (Array.isArray(r)) content.push(...r);
@@ -66,7 +69,7 @@ export function editPrefill(post: Pick<Post, "kind">, doc: StoredDocument, media
       content.push({ type: r.kind, attrs: { mediaId: r.mediaId, url: r.url, meta: r.meta } });
     }
   }
-  const title = mode === "long" ? (doc.title ?? "") : "";
+  const title = shown.title ?? "";
   const keep = [...placed, ...tray].map(({ mediaId, kind }) => ({ mediaId, kind }));
   const text = content.map((n) => blockMarkdown(n, () => undefined)).filter(Boolean).join("\n\n");
   return { mode, title, doc: { type: "doc", content }, tray, text, keep };

@@ -1,4 +1,5 @@
 import type { Media } from "@/server/db/schema";
+import { withTitleInText } from "@/server/documents/short-title";
 import { blockMediaKey, withBlocks, type AnyBlock } from "@/server/documents/stored";
 import { cardTitle } from "./card";
 import { publicUrl } from "@/server/media/keys";
@@ -41,7 +42,7 @@ function articleBlock(ctx: ChromeContext, item: FeedItem): string {
  */
 function shortBlock(item: FeedItem): string {
   const key = (b: AnyBlock) => blockMediaKey(b) ?? "";
-  const text = withBlocks(item.document, (b) => b.type === "text" || b.type === "rich" || b.type === "todo");
+  const text = withBlocks(withTitleInText("short", item.document), (b) => b.type === "text" || b.type === "rich" || b.type === "todo");
   const thumbs = (item.document.blocks as AnyBlock[])
     .flatMap((b) => (b.type === "image" ? [item.media.get(key(b))] : []))
     .flatMap((m) => (m && m.variants.kind === "image" ? [m.variants] : []))

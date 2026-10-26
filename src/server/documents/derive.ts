@@ -26,10 +26,13 @@ export function documentPlainText(doc: StoredDocument): string {
   return parts.map((p) => p.trim()).filter(Boolean).join("\n\n");
 }
 
-/** Auto kind: text/todo only, no media, ≤ 500 visible chars → short; otherwise article. */
+/**
+ * Auto kind: text/todo only, no media, ≤ 500 visible chars → short; otherwise article.
+ * The title counts: a short post shows it as the first line of its text (short-title.ts).
+ */
 export function deriveKind(doc: StoredDocument): PostKind {
   const hasMedia = doc.blocks.some((b) => b.type === "image" || b.type === "audio");
-  return !hasMedia && length(documentPlainText(doc)) <= SHORT_MAX_CHARS ? "short" : "article";
+  return !hasMedia && length(deriveTitle(doc)) + length(documentPlainText(doc)) <= SHORT_MAX_CHARS ? "short" : "article";
 }
 
 /** First ~200 chars of the body as one line, cut at a word boundary when possible. */

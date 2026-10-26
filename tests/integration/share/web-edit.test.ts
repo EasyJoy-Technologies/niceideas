@@ -120,12 +120,16 @@ describe("web edit", () => {
   it("NiceNote share: a web edit survives a retry of the same version; a newer version replaces it", async () => {
     const rich = (text: string) => ({ version: 1, title: "Note", blocks: [{ type: "rich", lines: [{ kind: "paragraph", runs: [{ text }] }] }] });
     const share = await shareFromNiceNote(ctx, USER, rich("From the app"), { revision: 3 });
-    const titleBefore = (await postRow(share.slug)).title;
+    // Short with a title: the title is the bold first line (post page and editor), no title row.
+    const shown = await page(share.slug);
+    expect(shown).toContain("<strong>Note</strong>");
+    expect(shown).not.toContain('class="ni-title"');
     const html = await (await editPage(share.slug)).text();
     expect(html).toContain("From the app");
+    expect(html).toMatch(/&quot;text&quot;:&quot;Note&quot;,&quot;marks&quot;:\[\{&quot;type&quot;:&quot;bold&quot;/);
     await send(editRoute, "/api/web/posts/edit", form({ slug: share.slug, title: "Note", doc: doc(para("Edited on the web")) }));
     const push = (rev: number, text: string) => pushShareContent(ctx.db, ctx.stores, "public, max-age=300", share.id, { sourceRevision: rev, document: rich(text) as never, media: {} });
-    expect((await postRow(share.slug)).title).toBe(titleBefore);
+    expect((await postRow(share.slug)).title).toBe("");
     expect((await push(3, "From the app")).changed).toBe(false);
     expect(await page(share.slug)).toContain("Edited on the web");
     const newer = await push(4, "App update");

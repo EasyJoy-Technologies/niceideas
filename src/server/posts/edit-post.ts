@@ -42,13 +42,10 @@ export async function loadPostForEdit(db: Db, userId: string, slug: string): Pro
   return { post, prefill: editPrefill(post, doc, media), blocker: null };
 }
 
-/**
- * From the current document: the title and the details of its stored media by media id (the no-JS
- * form does not send them).
- */
-async function currentParts(db: Db, post: Post): Promise<{ title: string; meta: Map<string, DraftMeta> }> {
+/** Details of the stored media in the current document, by media id (the no-JS form does not send them). */
+async function currentMeta(db: Db, post: Post): Promise<Map<string, DraftMeta>> {
   const doc = await currentDocument(db, post);
-  if (!doc) return { title: "", meta: new Map() };
+  if (!doc) return new Map();
   const { media } = await loadDocumentMedia(db, post.author_id, doc);
   const out = new Map<string, DraftMeta>();
   for (const b of doc.blocks) {
@@ -57,7 +54,7 @@ async function currentParts(db: Db, post: Post): Promise<{ title: string; meta: 
     const m = key ? media.get(key) : undefined;
     if (m) out.set(m.id, { alt: "alt" in b ? b.alt : undefined, caption: "caption" in b ? b.caption : undefined, title: "title" in b ? b.title : undefined });
   }
-  return { title: doc.title ?? "", meta: out };
+  return out;
 }
 
 const assertEditable = (post: Post) => {
@@ -75,9 +72,9 @@ export async function saveWebEdit(db: Db, stores: MediaStores, userId: string, s
   const post = await loadOwn(db, userId, slug);
   assertEditable(post);
   const mode = post.kind === "short" ? "short" : "long";
-  const { title, meta } = await currentParts(db, post);
-  // Short posts have no title row: a title they carry (e.g. from the app) stays as it is.
-  const document = await draftDocument(db, stores, userId, { ...input, mode, title: mode === "long" ? input.title : title }, (id) => meta.get(id) ?? {});
+  const meta = await currentMeta(db, post);
+  // Short posts have no title: one they carried was in the editor as the bold first line.
+  const document = await draftDocument(db, stores, userId, { ...input, mode, title: mode === "long" ? input.title : "" }, (id) => meta.get(id) ?? {});
   const result = await switchRevision(db, stores, userId, post, document, {
     cacheControl,
     sourceUpdatedAt: post.source_updated_at,
