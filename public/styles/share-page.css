@@ -143,6 +143,7 @@ a { color: inherit; text-decoration: none; }
   .ni-hdr .ni-btn { height: 2rem; padding: 0 0.75rem; font-size: 0.8125rem; }
   .ni-main { margin-top: 0; padding: 0; }
   .ni-post { border-radius: 0; box-shadow: none; padding: 1.25rem 1rem 0.75rem; }
+  .ni-private-note { margin: 0; border-radius: 0; padding: 0.625rem 1rem; border-bottom: 1px solid var(--ni-color-divider); }
   .ni-title { font-size: 1.625rem; }
   /* Compact phone footer: logo + tagline on one line, links, then © · version + language. */
   .ni-ftr { margin-top: 1rem; }

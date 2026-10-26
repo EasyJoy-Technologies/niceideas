@@ -76,6 +76,8 @@ export function reportDialog(ctx: ChromeContext, slug: string): string {
 /** Comments card (plan §16.2): anonymous composer, threads with one reply level, paging. */
 export function commentsSection(ctx: ChromeContext, post: Post, data: PageInteractions, path: string): string {
   const { t } = ctx.intl;
+  // A private post takes no comments: only earlier ones are shown (read-only), no empty-state invitation.
+  if (post.visibility === "private" && data.threads.length === 0 && data.page === 1) return "";
   const list = data.threads.length
     ? data.threads.map((th) => thread(ctx, post, th, data)).join("")
     : data.page === 1 ? `<p class="ni-note">${escapeHtml(t("share.comments.empty"))}</p>` : "";
