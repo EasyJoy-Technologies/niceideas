@@ -1,7 +1,7 @@
 import type { ColumnType, Generated, Insertable, JSONColumnType, Selectable, Updateable } from "kysely";
 import type { CreatedAt, DefaultedTimestamp, JsonColumn, Timestamp } from "./schema-columns";
 import type { AccountEventTable, DeletedAccountTable } from "./schema-accounts";
-import type { AvatarJobTable, MediaJobTable, MediaUploadTable, OutboxTable, ServiceNonceTable } from "./schema-share";
+import type { AvatarJobTable, CdnPurgeTable, MediaJobTable, MediaUploadTable, OutboxTable, ServiceNonceTable } from "./schema-share";
 
 export type { MediaJobState, OutboxKind } from "./schema-share";
 export type { AccountEventKind } from "./schema-accounts";
@@ -268,6 +268,7 @@ export interface Database {
   admin_member: AdminMemberTable;
   media_job: MediaJobTable;
   media_upload: MediaUploadTable;
+  cdn_purge: CdnPurgeTable;
   avatar_job: AvatarJobTable;
   outbox: OutboxTable;
   service_nonce: ServiceNonceTable;

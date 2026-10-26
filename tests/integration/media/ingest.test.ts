@@ -10,6 +10,7 @@ import { insertRevision, linkRevisionMedia } from "@/server/db/repos/revisions";
 import { ApiError } from "@/server/http/errors";
 import { ingestUpload, type MediaLimits } from "@/server/media/ingest";
 import { mediaKeys } from "@/server/media/keys";
+import { resetConfigForTests } from "@/server/config/env";
 import { finishPublication, projectMediaPublic, queueVisibilityCheck, recordPublication } from "@/server/media/publication";
 import { checkMediaVisibility } from "@/server/media/visibility";
 import { ensureProfile } from "@/server/profiles/ensure-profile";
@@ -24,7 +25,11 @@ let stores: MediaStores & { privateStore: LocalStore; publicStore: LocalStore };
 const limits: MediaLimits = { maxImageBytes: 30e6, maxAudioBytes: 150e6, maxAudioSeconds: 3600, maxImagePixels: 1e8 };
 
 beforeAll(async () => {
-  ({ db, stop } = await startTestDb());
+  let url: string;
+  ({ db, stop, url } = await startTestDb());
+  // Visibility checks read the configuration (CDN purge token, unset here).
+  process.env.DATABASE_URL = url;
+  resetConfigForTests();
   const root = mkdtempSync(path.join(os.tmpdir(), "ni-store-"));
   stores = { privateStore: new LocalStore(path.join(root, "private")), publicStore: new LocalStore(path.join(root, "public")) };
   await ensureProfile(db, "owner");

@@ -8,6 +8,7 @@ import { findMediaByIds } from "@/server/db/repos/media";
 import { lockAuthor, readAuthorState } from "@/server/accounts/author-gate";
 import { finishPublication, NO_PROJECTION, projectMediaPublic, queueVisibilityCheck, recordPublication } from "@/server/media/publication";
 import { checkMediaVisibility } from "@/server/media/visibility";
+import { queuePostPurge } from "@/server/cdn/purge-queue";
 import { queuePostEvent } from "@/server/nicenote/post-events";
 import type { MediaStores } from "@/server/storage/types";
 
@@ -70,6 +71,7 @@ export async function removePost(rt: ModerationRuntime, op: Operator, slug: stri
     await updatePost(trx, post.id, { status: "removed", status_changed_at: now, status_reason: op.reason, purge_after: new Date(now.getTime() + rt.retentionDays * 86_400_000) });
     await recordModeration(trx, { action: "remove", actorId: op.actorId, reason: op.reason, postId: post.id });
     await queuePostEvent(trx, post, "removed");
+    await queuePostPurge(trx, [post.slug]);
     // Read under the lock: the media of the content that was live at the takedown.
     const ids = post.current_revision_id ? await listRevisionMediaIds(trx, post.current_revision_id) : [];
     await queueVisibilityCheck(trx, ids);

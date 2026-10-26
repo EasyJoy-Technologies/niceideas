@@ -1,6 +1,7 @@
 import type { Db } from "@/server/db/client";
 import type { Media } from "@/server/db/schema";
 import { deferVisibility, listDueVisibility, lockDueMedia, mediaReferences, settleVisibility } from "@/server/db/repos/media-visibility";
+import { queueMediaPurge } from "@/server/cdn/purge-queue";
 import { moveObject } from "@/server/storage/move";
 import type { MediaStores } from "@/server/storage/types";
 import { renditionsOf } from "./keys";
@@ -33,6 +34,8 @@ async function checkOne(rt: VisibilityRuntime, id: string): Promise<boolean> {
       const refs = await mediaReferences(trx, id);
       await moveAll(rt, media, refs.live);
       await settleVisibility(trx, id, refs);
+      // Left the public store: its URLs leave the CDN edge too (F22).
+      if (!refs.live && media.public_at) await queueMediaPurge(trx, [media]);
       return true;
     });
   } catch (err) {

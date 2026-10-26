@@ -5,6 +5,7 @@ import type { Post } from "@/server/db/schema";
 import { lockPost, updatePost } from "@/server/db/repos/posts";
 import { listRevisionMediaIds } from "@/server/db/repos/revisions";
 import { ApiError, notFound } from "@/server/http/errors";
+import { queuePostPurge } from "@/server/cdn/purge-queue";
 import { queueVisibilityCheck } from "@/server/media/publication";
 import { checkMediaVisibility } from "@/server/media/visibility";
 import type { MediaStores } from "@/server/storage/types";
@@ -34,6 +35,7 @@ export async function unpublishPost(
       purge_after: new Date(now.getTime() + retentionDays * 86_400_000),
     });
     await onDeleted?.(trx, updated);
+    await queuePostPurge(trx, [post.slug]);
     const mediaIds = post.current_revision_id ? await listRevisionMediaIds(trx, post.current_revision_id) : [];
     await queueVisibilityCheck(trx, mediaIds);
     return { post: updated, changed: true, mediaIds };

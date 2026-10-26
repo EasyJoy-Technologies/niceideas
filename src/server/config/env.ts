@@ -63,6 +63,12 @@ const schema = z.object({
    * withdrawn media can linger in caches until deletions also purge the edge.
    */
   MEDIA_CACHE_CONTROL: z.string().default("public, max-age=300, s-maxage=3600"),
+  /**
+   * Cloudflare API token with Cache Purge on the zone of the media / site hosts (F22): withdrawn media
+   * and share cards are purged from the edge. Unset → nothing is purged (the edge TTL applies).
+   */
+  CLOUDFLARE_PURGE_TOKEN: z.string().min(20).optional(),
+  CLOUDFLARE_API_URL: z.url().default("https://api.cloudflare.com/client/v4"),
   MEDIA_MAX_IMAGE_BYTES: z.coerce.number().int().positive().default(30 * 1024 * 1024),
   MEDIA_MAX_AUDIO_BYTES: z.coerce.number().int().positive().default(150 * 1024 * 1024),
   MEDIA_MAX_AUDIO_SECONDS: z.coerce.number().int().positive().default(4 * 60 * 60),

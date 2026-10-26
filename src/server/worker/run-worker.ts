@@ -2,6 +2,8 @@ import sharp from "@/server/media/sharp";
 import { getConfig } from "@/server/config/env";
 import type { Db } from "@/server/db/client";
 import { nextAvatarJobDueAt } from "@/server/db/repos/avatar-jobs";
+import { runNextCdnPurge } from "@/server/cdn/purge-runner";
+import { nextCdnPurgeDueAt } from "@/server/db/repos/cdn-purge";
 import { nextMediaJobDueAt } from "@/server/db/repos/media-jobs";
 import { nextVisibilityDueAt } from "@/server/db/repos/media-visibility";
 import { nextOutboxDueAt } from "@/server/db/repos/outbox";
@@ -14,9 +16,9 @@ import { deliverOutbox } from "./outbox-delivery";
 import { WorkWakeup } from "./wakeup";
 
 /**
- * The background worker (plan docs/plan/2026-10-24-s2-worker.md §1): four independent loops —
+ * The background worker (plan docs/plan/2026-10-24-s2-worker.md §1): five independent loops —
  * notifications to the NiceMatrix backend, NiceNote media (one at a time), avatars, media
- * visibility checks (public / private store) — until `signal`
+ * visibility checks (public / private store), CDN purges — until `signal`
  * aborts. Work items live in the database (leased), so a restart loses nothing. Idle loops sleep
  * until NOTIFY niceideas_work names their table (migration 0015) or their next item falls due.
  */
@@ -38,6 +40,7 @@ export async function runWorker(db: Db, stores: MediaStores, signal: AbortSignal
     pollLoop("outbox", async () => (await deliverOutbox(db, key)) > 0, { idle: idle("outbox", key ? nextOutboxDueAt : none), signal }),
     pollLoop("media", () => runNextMediaJob(media, signal), { idle: idle("media_job", key ? nextMediaJobDueAt : none), signal }),
     pollLoop("avatar", () => runNextAvatarJob({ db, publicStore: stores.publicStore }), { idle: idle("avatar_job", nextAvatarJobDueAt), signal }),
+    pollLoop("cdn", () => runNextCdnPurge(db), { idle: idle("cdn_purge", c.CLOUDFLARE_PURGE_TOKEN ? nextCdnPurgeDueAt : none), signal }),
     pollLoop("visibility", () => runVisibilityChecks({ db, stores, cacheControl: c.MEDIA_CACHE_CONTROL }), { idle: idle("media", nextVisibilityDueAt), signal }),
   ]);
   await wakeup.close();

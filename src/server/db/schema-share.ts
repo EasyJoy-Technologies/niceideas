@@ -35,6 +35,15 @@ export interface MediaUploadTable {
   created_at: CreatedAt;
 }
 
+/** A URL to purge from the CDN edge (F22), retried like outbox notifications. */
+export interface CdnPurgeTable {
+  url: string;
+  attempts: Generated<number>;
+  last_error: string | null;
+  run_after: DefaultedTimestamp;
+  created_at: CreatedAt;
+}
+
 export type OutboxKind = "user_registered" | "post_event";
 
 /** Signed notification to the NiceMatrix backend, delivered with retries. */

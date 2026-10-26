@@ -1,3 +1,4 @@
+import { queueMediaPurge, queuePostPurge } from "@/server/cdn/purge-queue";
 import type { Db } from "@/server/db/client";
 import {
   deleteProfileCascade,
@@ -34,13 +35,18 @@ async function currentMediaIds(db: Db, postIds: string[]): Promise<string[]> {
   return [...new Set(ids.flat())];
 }
 
+async function slugsOf(db: Db, postIds: string[]): Promise<string[]> {
+  return postIds.length ? (await db.selectFrom("post").select("slug").where("id", "in", postIds).execute()).map((r) => r.slug) : [];
+}
+
 /** Cooling-off starts: profile and posts go offline at once (pages answer 410), sessions end. */
 export async function startCoolingOff(rt: DeletionRuntime, userId: string): Promise<void> {
   const media = await rt.db.transaction().execute(async (trx) => {
     if (!(await lockProfileForStatusChange(trx, userId))) return [];
     await setProfileStatus(trx, userId, "deleting");
     await deleteSessionsOfUser(trx, userId);
-    await switchAuthorPosts(trx, userId, "active", "author_deleting");
+    const offline = await switchAuthorPosts(trx, userId, "active", "author_deleting");
+    await queuePostPurge(trx, await slugsOf(trx, offline));
     // All offline posts, not only the ones switched now: a redelivery finishes a withdrawal that failed.
     const ids = await currentMediaIds(trx, await postIdsOfAuthor(trx, userId, "author_deleting"));
     await queueVisibilityCheck(trx, ids);
@@ -77,6 +83,9 @@ export async function completeDeletion(rt: DeletionRuntime, userId: string): Pro
     await insertDeletedAccount(trx, userId);
   });
   const media = await mediaOfOwner(rt.db, userId);
+  // Edge copies of everything that was public (share cards included) are purged as well (F22).
+  await queueMediaPurge(rt.db, media.filter((m) => m.public_at));
+  await queuePostPurge(rt.db, await slugsOf(rt.db, await postIdsOfAuthor(rt.db, userId)));
   const avatar = ownAvatarKey((await findProfile(rt.db, userId))?.avatar_url ?? null);
   if (avatar) await rt.stores.publicStore.deleteMany([avatar]);
   const keys = media.flatMap((m) => mediaKeys(m));

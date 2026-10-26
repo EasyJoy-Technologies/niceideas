@@ -125,3 +125,4 @@
 - zone：用 token 按媒体域名所属的 zone 名称查一次 id，然后缓存，不新增配置项。
 - 代码：`src/server/cdn/purge.ts`（调用 Cloudflare）、`repos/cdn-purge.ts`、worker 新循环；迁移 0019（只加表和触发器）。
 - 版本 1.0.72：先上 staging 实测（发帖 → 拿到边缘缓存 HIT → 撤回 → 再请求是 MISS/404），再上生产。
+- 2026-10-26 15:55 Xianglin 确认，按此实施（v1.0.72）。
