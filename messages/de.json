@@ -222,7 +222,8 @@
       "short_too_long": "Kurze Beiträge haben höchstens {max} Zeichen. Wechsle zu „{article}“, um mehr zu schreiben.",
       "too_large": "Eine Datei ist zu groß.",
       "too_much": "Das ist zu lang. Kürze den Text oder verwende weniger Bilder.",
-      "unsupported": "Dieser Dateityp wird nicht unterstützt. Wähle ein Bild oder eine Audiodatei."
+      "unsupported": "Dieser Dateityp wird nicht unterstützt. Wähle ein Bild oder eine Audiodatei.",
+      "shortTooLongEdit": "Kurze Beiträge haben höchstens {max} Zeichen."
     },
     "fmt": {
       "bold": "Fett",
@@ -250,7 +251,16 @@
     "posting": "Wird veröffentlicht…",
     "publish": "Veröffentlichen",
     "remove": "Entfernen",
-    "title": "Titel"
+    "title": "Titel",
+    "save": "Speichern",
+    "saving": "Wird gespeichert…",
+    "edit": {
+      "title": "Beitrag bearbeiten",
+      "blocked": {
+        "not_active": "Dieser Beitrag kann gerade nicht bearbeitet werden.",
+        "processing": "Bilder und Audio werden noch verarbeitet. Sobald sie fertig sind, kannst du den Beitrag bearbeiten."
+      }
+    }
   },
   "discover": {
     "title": "Entdecken"
@@ -374,7 +384,8 @@
       "more": "Weitere Optionen",
       "reply": "Antworten",
       "report": "Melden",
-      "share": "Teilen"
+      "share": "Teilen",
+      "edit": "Bearbeiten"
     },
     "aside": {
       "moreArticles": "Weitere Artikel des Autors"
@@ -418,7 +429,8 @@
       "preparing": {
         "body": "Der Inhalt wird gleich hier erscheinen.",
         "title": "Dieser Beitrag wird vorbereitet"
-      }
+      },
+      "editedShort": "Bearbeitet"
     },
     "report": {
       "done": "Danke. Wir prüfen das.",

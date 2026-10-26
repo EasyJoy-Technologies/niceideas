@@ -7,8 +7,21 @@ import { blockMarkdown, itemText, type PmMark, type PmNode } from "./editor-mark
 export const EDITOR_DOC_MAX_CHARS = 1_000_000;
 const MAX_DEPTH = 24;
 
-/** A document block, or an uploaded file (form field `media`, by index) placed at this position. */
-export type DraftBlock = DocBlock | { type: "media"; kind: "image" | "audio"; file: number };
+/** Kept details of a stored media block (editing): image description / caption, audio title. */
+export type DraftMeta = { alt?: string; caption?: string; title?: string };
+/**
+ * A document block, an uploaded file (form field `media`, by index) placed at this position, or
+ * (editing) an already stored media of the post, by id, with its kept details.
+ */
+export type DraftBlock = DocBlock | { type: "media"; kind: "image" | "audio"; file: number } | { type: "stored"; kind: "image" | "audio"; mediaId: string; meta: DraftMeta };
+
+const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+const metaText = (v: unknown) => (typeof v === "string" && v ? v.slice(0, 2_000) : undefined);
+
+function storedMeta(raw: unknown): DraftMeta {
+  const m = raw && typeof raw === "object" ? (raw as Record<string, unknown>) : {};
+  return Object.fromEntries(Object.entries({ alt: metaText(m.alt), caption: metaText(m.caption), title: metaText(m.title) }).filter(([, v]) => v)) as DraftMeta;
+}
 
 const mark: z.ZodType<PmMark> = z.object({ type: z.string().max(40), attrs: z.record(z.string(), z.unknown()).optional() });
 const node: z.ZodType<PmNode> = z.lazy(() =>
@@ -52,10 +65,18 @@ export function editorBlocks(json: string): DraftBlock[] {
     md = [];
   };
   const media = (n: PmNode) => {
+    const kind = n.type === "audio" ? "audio" : "image";
+    const mediaId = n.attrs?.mediaId;
+    if (typeof mediaId === "string") {
+      if (!UUID.test(mediaId)) throw badRequest("compose.invalid");
+      flush();
+      out.push({ type: "stored", kind, mediaId, meta: storedMeta(n.attrs?.meta) });
+      return;
+    }
     const file = n.attrs?.file;
     if (typeof file !== "number" || !Number.isInteger(file) || file < 0) throw badRequest("compose.invalid");
     flush();
-    out.push({ type: "media", kind: n.type === "audio" ? "audio" : "image", file });
+    out.push({ type: "media", kind, file });
   };
   for (const n of parsed.data.content ?? []) {
     if (n.type === "image" || n.type === "audio") {

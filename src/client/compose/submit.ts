@@ -6,9 +6,10 @@ export type SubmitResult = { ok: true; url: string } | { ok: false; error: strin
 
 /**
  * Builds the multipart body: `doc` (editor JSON, media nodes carry `file` = index into
- * the `media` files), `mode`, `title` (article only). A media entry is sent once.
+ * the `media` files; stored media of an edited post carry their id), `mode`, `title` (article only),
+ * plus `fields` (editing: the post's slug). A media entry is sent once.
  */
-export function composeFormData(doc: JSONContent, extra: JSONContent[], store: MediaStore, mode: ComposeMode, title: string): FormData {
+export function composeFormData(doc: JSONContent, extra: JSONContent[], store: MediaStore, mode: ComposeMode, title: string, fields: [string, string][] = []): FormData {
   const files: File[] = [];
   const used = new Set<string>();
   const map = (nodes?: JSONContent[]): JSONContent[] | undefined =>
@@ -17,11 +18,13 @@ export function composeFormData(doc: JSONContent, extra: JSONContent[], store: M
       const entry = store.get(n.attrs?.ref);
       if (!entry || used.has(entry.id)) return [];
       used.add(entry.id);
+      if (entry.stored) return [{ type: n.type, attrs: { mediaId: entry.stored.mediaId, meta: entry.stored.meta ?? {} } }];
       files.push(entry.file);
       return [{ type: n.type, attrs: { file: files.length - 1 } }];
     });
   const json = { type: "doc", content: map([...(doc.content ?? []), ...extra]) };
   const fd = new FormData();
+  for (const [k, v] of fields) fd.set(k, v);
   fd.set("mode", mode);
   if (mode === "long" && title.trim()) fd.set("title", title.trim());
   fd.set("doc", JSON.stringify(json));

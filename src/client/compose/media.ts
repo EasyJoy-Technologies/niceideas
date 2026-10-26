@@ -1,11 +1,13 @@
 import { Node } from "@tiptap/core";
 
 /**
- * Media picked in the compose box: kept in the browser until Post (sent as `media`
- * files, referenced by index from the editor JSON). Previews use blob: URLs.
+ * Media of the compose box: files picked here (kept in the browser until Post, sent as `media`
+ * files referenced by index from the editor JSON; previews use blob: URLs), or, when editing, the
+ * post's stored media (sent back by id with their kept details; previews from the public store).
  */
 export type MediaKind = "image" | "audio";
-export type MediaEntry = { id: string; kind: MediaKind; file: File; url: string };
+export type StoredMedia = { mediaId: string; url: string; meta?: Record<string, string> };
+export type MediaEntry = { id: string; kind: MediaKind; url: string } & ({ file: File; stored?: undefined } | { file?: undefined; stored: StoredMedia });
 
 const CLOSE = '<svg class="ni-i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>';
 const MUSIC = '<svg class="ni-i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>';
@@ -22,7 +24,13 @@ export class MediaStore {
   private seq = 0;
 
   add(file: File, kind: MediaKind): MediaEntry {
-    const entry = { id: `m${++this.seq}`, kind, file, url: URL.createObjectURL(file) };
+    const entry: MediaEntry = { id: `m${++this.seq}`, kind, file, url: URL.createObjectURL(file) };
+    this.entries.set(entry.id, entry);
+    return entry;
+  }
+
+  addStored(stored: StoredMedia, kind: MediaKind): MediaEntry {
+    const entry: MediaEntry = { id: `m${++this.seq}`, kind, url: stored.url, stored };
     this.entries.set(entry.id, entry);
     return entry;
   }
@@ -44,7 +52,7 @@ export function mediaPreview(entry: MediaEntry | undefined, removeLabel: string,
   } else if (entry) {
     box.insertAdjacentHTML("beforeend", MUSIC);
     const name = document.createElement("span");
-    name.textContent = entry.file.name;
+    name.textContent = entry.file?.name ?? "";
     const audio = document.createElement("audio");
     audio.controls = true;
     audio.preload = "metadata";

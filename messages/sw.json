@@ -222,7 +222,8 @@
       "short_too_long": "Machapisho mafupi yana herufi zisizozidi {max}. Badilisha kuwa “{article}” ili kuandika zaidi.",
       "too_large": "Faili moja ni kubwa mno.",
       "too_much": "Ni ndefu mno. Fupisha maandishi au tumia picha chache.",
-      "unsupported": "Aina hii ya faili haitumiki. Chagua picha au faili ya sauti."
+      "unsupported": "Aina hii ya faili haitumiki. Chagua picha au faili ya sauti.",
+      "shortTooLongEdit": "Machapisho mafupi yana herufi zisizozidi {max}."
     },
     "fmt": {
       "bold": "Herufi nzito",
@@ -250,7 +251,16 @@
     "posting": "Inachapisha…",
     "publish": "Chapisha",
     "remove": "Ondoa",
-    "title": "Kichwa"
+    "title": "Kichwa",
+    "save": "Hifadhi",
+    "saving": "Inahifadhi…",
+    "edit": {
+      "title": "Hariri chapisho",
+      "blocked": {
+        "not_active": "Chapisho hili haliwezi kuhaririwa sasa hivi.",
+        "processing": "Picha na sauti bado zinashughulikiwa. Utaweza kuhariri chapisho zikishakuwa tayari."
+      }
+    }
   },
   "discover": {
     "title": "Gundua"
@@ -374,7 +384,8 @@
       "more": "Chaguo zaidi",
       "reply": "Jibu",
       "report": "Ripoti",
-      "share": "Shiriki"
+      "share": "Shiriki",
+      "edit": "Hariri"
     },
     "aside": {
       "moreArticles": "Makala zaidi za mwandishi"
@@ -418,7 +429,8 @@
       "preparing": {
         "body": "Maudhui yataonekana hapa muda mfupi.",
         "title": "Chapisho hili linatayarishwa"
-      }
+      },
+      "editedShort": "Imehaririwa"
     },
     "report": {
       "done": "Asante. Tutaikagua.",

@@ -222,7 +222,8 @@
       "short_too_long": "Les publications courtes sont limitées à {max} caractères. Passez à « {article} » pour écrire davantage.",
       "too_large": "Un fichier est trop volumineux.",
       "too_much": "C’est trop long. Raccourcissez le texte ou utilisez moins d’images.",
-      "unsupported": "Ce type de fichier n’est pas pris en charge. Choisissez une image ou un fichier audio."
+      "unsupported": "Ce type de fichier n’est pas pris en charge. Choisissez une image ou un fichier audio.",
+      "shortTooLongEdit": "Les publications courtes sont limitées à {max} caractères."
     },
     "fmt": {
       "bold": "Gras",
@@ -250,7 +251,16 @@
     "posting": "Publication…",
     "publish": "Publier",
     "remove": "Retirer",
-    "title": "Titre"
+    "title": "Titre",
+    "save": "Enregistrer",
+    "saving": "Enregistrement…",
+    "edit": {
+      "title": "Modifier la publication",
+      "blocked": {
+        "not_active": "Cette publication ne peut pas être modifiée pour le moment.",
+        "processing": "Les images et l'audio sont encore en cours de traitement. Vous pourrez modifier la publication une fois prêts."
+      }
+    }
   },
   "discover": {
     "title": "Découvrir"
@@ -374,7 +384,8 @@
       "more": "Plus d’options",
       "reply": "Répondre",
       "report": "Signaler",
-      "share": "Partager"
+      "share": "Partager",
+      "edit": "Modifier"
     },
     "aside": {
       "moreArticles": "Autres articles de l’auteur"
@@ -418,7 +429,8 @@
       "preparing": {
         "body": "Le contenu apparaîtra ici dans un instant.",
         "title": "Préparation de la publication"
-      }
+      },
+      "editedShort": "Modifié"
     },
     "report": {
       "done": "Merci. Nous allons l’examiner.",

@@ -222,7 +222,8 @@
       "short_too_long": "短內容最多 {max} 個字。想寫更多，請切換到「{article}」。",
       "too_large": "檔案太大了。",
       "too_much": "內容太長了，請縮短文字或減少圖片。",
-      "unsupported": "不支援這種檔案類型，請選擇圖片或音訊。"
+      "unsupported": "不支援這種檔案類型，請選擇圖片或音訊。",
+      "shortTooLongEdit": "短內容最多 {max} 個字。"
     },
     "fmt": {
       "bold": "粗體",
@@ -250,7 +251,16 @@
     "posting": "發布中…",
     "publish": "發布",
     "remove": "移除",
-    "title": "標題"
+    "title": "標題",
+    "save": "儲存",
+    "saving": "儲存中…",
+    "edit": {
+      "title": "編輯貼文",
+      "blocked": {
+        "not_active": "這則貼文現在無法編輯。",
+        "processing": "圖片和音訊還在處理中，處理完就可以編輯了。"
+      }
+    }
   },
   "discover": {
     "title": "探索"
@@ -374,7 +384,8 @@
       "more": "更多操作",
       "reply": "回覆",
       "report": "檢舉",
-      "share": "分享"
+      "share": "分享",
+      "edit": "編輯"
     },
     "aside": {
       "moreArticles": "作者的其他長文"
@@ -418,7 +429,8 @@
       "preparing": {
         "body": "內容稍後就會顯示在這裡。",
         "title": "貼文準備中"
-      }
+      },
+      "editedShort": "已編輯"
     },
     "report": {
       "done": "感謝回報，我們會盡快處理。",

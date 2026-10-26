@@ -222,7 +222,8 @@
       "short_too_long": "Korta inlägg får ha högst {max} tecken. Byt till ”{article}” för att skriva mer.",
       "too_large": "En fil är för stor.",
       "too_much": "Det är för långt. Korta texten eller använd färre bilder.",
-      "unsupported": "Den här filtypen stöds inte. Välj en bild eller en ljudfil."
+      "unsupported": "Den här filtypen stöds inte. Välj en bild eller en ljudfil.",
+      "shortTooLongEdit": "Korta inlägg får ha högst {max} tecken."
     },
     "fmt": {
       "bold": "Fetstil",
@@ -250,7 +251,16 @@
     "posting": "Publicerar…",
     "publish": "Publicera",
     "remove": "Ta bort",
-    "title": "Rubrik"
+    "title": "Rubrik",
+    "save": "Spara",
+    "saving": "Sparar…",
+    "edit": {
+      "title": "Redigera inlägg",
+      "blocked": {
+        "not_active": "Det här inlägget kan inte redigeras just nu.",
+        "processing": "Bilder och ljud bearbetas fortfarande. Du kan redigera inlägget när de är klara."
+      }
+    }
   },
   "discover": {
     "title": "Upptäck"
@@ -374,7 +384,8 @@
       "more": "Fler alternativ",
       "reply": "Svara",
       "report": "Anmäl",
-      "share": "Dela"
+      "share": "Dela",
+      "edit": "Redigera"
     },
     "aside": {
       "moreArticles": "Fler artiklar av skribenten"
@@ -418,7 +429,8 @@
       "preparing": {
         "body": "Innehållet visas här inom en stund.",
         "title": "Inlägget förbereds"
-      }
+      },
+      "editedShort": "Redigerat"
     },
     "report": {
       "done": "Tack. Vi granskar det.",

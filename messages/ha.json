@@ -222,7 +222,8 @@
       "short_too_long": "Gajerun saƙonni suna da iyakar haruffa {max}. Canja zuwa “{article}” don rubuta ƙari.",
       "too_large": "Wani fayil ya yi girma da yawa.",
       "too_much": "Ya yi tsawo sosai. Taƙaita rubutu ko rage hotuna.",
-      "unsupported": "Ba a tallafa wa wannan nau'in fayil ba. Zaɓi hoto ko fayil na sauti."
+      "unsupported": "Ba a tallafa wa wannan nau'in fayil ba. Zaɓi hoto ko fayil na sauti.",
+      "shortTooLongEdit": "Gajerun saƙonni suna da iyakar haruffa {max}."
     },
     "fmt": {
       "bold": "Mai kauri",
@@ -250,7 +251,16 @@
     "posting": "Ana wallafawa…",
     "publish": "Wallafa",
     "remove": "Cire",
-    "title": "Take"
+    "title": "Take",
+    "save": "Ajiye",
+    "saving": "Ana ajiyewa…",
+    "edit": {
+      "title": "Gyara saƙo",
+      "blocked": {
+        "not_active": "Ba za a iya gyara wannan saƙon yanzu ba.",
+        "processing": "Ana ci gaba da sarrafa hotuna da sauti. Za ka iya gyara saƙon idan sun shirya."
+      }
+    }
   },
   "discover": {
     "title": "Bincika"
@@ -374,7 +384,8 @@
       "more": "Ƙarin zaɓuɓɓuka",
       "reply": "Amsa",
       "report": "Kai rahoto",
-      "share": "Raba"
+      "share": "Raba",
+      "edit": "Gyara"
     },
     "aside": {
       "moreArticles": "Ƙarin maƙalu daga marubucin"
@@ -418,7 +429,8 @@
       "preparing": {
         "body": "Abun ciki zai bayyana a nan cikin ɗan lokaci.",
         "title": "Ana shirya wannan rubutun"
-      }
+      },
+      "editedShort": "An gyara"
     },
     "report": {
       "done": "Na gode. Za mu duba shi.",

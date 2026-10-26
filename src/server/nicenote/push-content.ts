@@ -15,6 +15,9 @@ import { assertGrants, queueShareMedia, resolveShareMedia } from "./share-media"
 
 export type PushResult = { post: Post; changed: boolean };
 
+/** After a web edit, an update of the same cloud revision (a backend retry) leaves the web edit in place. */
+const keepsWebEdit = (post: Post, sourceRevision: number) => post.web_edited && post.source_revision !== null && sourceRevision <= Number(post.source_revision);
+
 /**
  * Refuses pushes that cannot apply (re-checked under the row lock): offline posts, frozen posts
  * that already have content, and older cloud revisions (409 `post.stale_update`). The same
@@ -38,6 +41,7 @@ const statusAfterPush = (s: PostStatus): PostStatus => (s === "preparing" ? "act
 export async function pushShareContent(db: Db, stores: MediaStores, cacheControl: string, postId: string, input: PushContentInput): Promise<PushResult> {
   const before = await loadShare(db, postId);
   assertPushable(before, input.sourceRevision);
+  if (keepsWebEdit(before, input.sourceRevision)) return { post: before, changed: false };
   assertGrants(input.media);
   const doc: SourceDocument = { ...input.document, origin: "nicenote" };
   const hash = contentHash(doc);
@@ -50,6 +54,7 @@ export async function pushShareContent(db: Db, stores: MediaStores, cacheControl
     const post = await lockPost(trx, before.id);
     if (!post) throw notFound("post.not_found");
     assertPushable(post, input.sourceRevision);
+    if (keepsWebEdit(post, input.sourceRevision)) return { post, changed: false, previousMedia: [] as string[] };
     const prev = post.current_revision_id ? await findRevision(trx, post.current_revision_id) : undefined;
     // The backend learns about media changes from events: ready when complete now; failures when the post
     // became partial or its content changed while partial (failures it was already told about stay quiet).
@@ -70,7 +75,10 @@ export async function pushShareContent(db: Db, stores: MediaStores, cacheControl
       source_revision: input.sourceRevision,
       media_state: resolved.state,
       status: statusAfterPush(post.status),
+      web_edited: false,
       ...(post.status === "preparing" ? { published_at: new Date() } : {}),
+      // A newer cloud revision of published content is an edit (media becoming ready is not).
+      ...(prev && post.status !== "preparing" && input.sourceRevision > Number(post.source_revision ?? 0) ? { edited_at: new Date() } : {}),
     });
     await events(updated, true);
     const previousMedia = prev ? await listRevisionMediaIds(trx, prev.id) : [];

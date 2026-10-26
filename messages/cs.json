@@ -222,7 +222,8 @@
       "short_too_long": "Krátké příspěvky mají nejvýše {max} znaků. Pro delší text přepněte na „{article}“.",
       "too_large": "Soubor je příliš velký.",
       "too_much": "Je to příliš dlouhé. Zkraťte text nebo použijte méně obrázků.",
-      "unsupported": "Tento typ souboru není podporován. Vyberte obrázek nebo zvukový soubor."
+      "unsupported": "Tento typ souboru není podporován. Vyberte obrázek nebo zvukový soubor.",
+      "shortTooLongEdit": "Krátké příspěvky mají nejvýše {max} znaků."
     },
     "fmt": {
       "bold": "Tučně",
@@ -250,7 +251,16 @@
     "posting": "Publikuje se…",
     "publish": "Zveřejnit",
     "remove": "Odebrat",
-    "title": "Název"
+    "title": "Název",
+    "save": "Uložit",
+    "saving": "Ukládá se…",
+    "edit": {
+      "title": "Upravit příspěvek",
+      "blocked": {
+        "not_active": "Tento příspěvek teď nelze upravit.",
+        "processing": "Obrázky a zvuk se ještě zpracovávají. Příspěvek budete moci upravit, až budou hotové."
+      }
+    }
   },
   "discover": {
     "title": "Objevovat"
@@ -374,7 +384,8 @@
       "more": "Další možnosti",
       "reply": "Odpovědět",
       "report": "Nahlásit",
-      "share": "Sdílet"
+      "share": "Sdílet",
+      "edit": "Upravit"
     },
     "aside": {
       "moreArticles": "Další články autora"
@@ -418,7 +429,8 @@
       "preparing": {
         "body": "Obsah se tu zobrazí za okamžik.",
         "title": "Příspěvek se připravuje"
-      }
+      },
+      "editedShort": "Upraveno"
     },
     "report": {
       "done": "Děkujeme. Prověříme to.",

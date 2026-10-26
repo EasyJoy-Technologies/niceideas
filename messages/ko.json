@@ -222,7 +222,8 @@
       "short_too_long": "짧은 글은 최대 {max}자까지 쓸 수 있어요. 더 쓰려면 ‘{article}’로 바꿔 주세요.",
       "too_large": "파일이 너무 커요.",
       "too_much": "너무 길어요. 글을 줄이거나 이미지를 줄여 주세요.",
-      "unsupported": "지원하지 않는 파일 형식이에요. 이미지나 오디오 파일을 선택해 주세요."
+      "unsupported": "지원하지 않는 파일 형식이에요. 이미지나 오디오 파일을 선택해 주세요.",
+      "shortTooLongEdit": "짧은 글은 최대 {max}자까지 쓸 수 있어요."
     },
     "fmt": {
       "bold": "굵게",
@@ -250,7 +251,16 @@
     "posting": "게시하는 중…",
     "publish": "게시",
     "remove": "삭제",
-    "title": "제목"
+    "title": "제목",
+    "save": "저장",
+    "saving": "저장하는 중…",
+    "edit": {
+      "title": "글 수정",
+      "blocked": {
+        "not_active": "지금은 이 글을 수정할 수 없어요.",
+        "processing": "이미지와 오디오를 처리하고 있어요. 처리가 끝나면 수정할 수 있어요."
+      }
+    }
   },
   "discover": {
     "title": "발견"
@@ -374,7 +384,8 @@
       "more": "더보기",
       "reply": "답글",
       "report": "신고",
-      "share": "공유"
+      "share": "공유",
+      "edit": "수정"
     },
     "aside": {
       "moreArticles": "작성자의 다른 글"
@@ -418,7 +429,8 @@
       "preparing": {
         "body": "잠시 후 여기에 표시됩니다.",
         "title": "게시물을 준비하고 있습니다"
-      }
+      },
+      "editedShort": "수정됨"
     },
     "report": {
       "done": "감사합니다. 검토하겠습니다.",

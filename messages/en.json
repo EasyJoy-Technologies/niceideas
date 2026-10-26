@@ -222,7 +222,8 @@
       "short_too_long": "Short posts are limited to {max} characters. Switch to “{article}” to write more.",
       "too_large": "A file is too large.",
       "too_much": "That’s too long. Shorten the text or use fewer images.",
-      "unsupported": "This file type isn’t supported. Please choose an image or audio file."
+      "unsupported": "This file type isn’t supported. Please choose an image or audio file.",
+      "shortTooLongEdit": "Short posts are limited to {max} characters."
     },
     "fmt": {
       "bold": "Bold",
@@ -250,7 +251,16 @@
     "posting": "Posting…",
     "publish": "Post",
     "remove": "Remove",
-    "title": "Title"
+    "title": "Title",
+    "save": "Save",
+    "saving": "Saving…",
+    "edit": {
+      "title": "Edit post",
+      "blocked": {
+        "not_active": "This post can't be edited right now.",
+        "processing": "Images and audio are still being processed. You can edit the post once they're ready."
+      }
+    }
   },
   "discover": {
     "title": "Discover"
@@ -374,7 +384,8 @@
       "more": "More options",
       "reply": "Reply",
       "report": "Report",
-      "share": "Share"
+      "share": "Share",
+      "edit": "Edit"
     },
     "aside": {
       "moreArticles": "More articles by the author"
@@ -418,7 +429,8 @@
       "preparing": {
         "body": "The content will appear here in a moment.",
         "title": "Getting this post ready"
-      }
+      },
+      "editedShort": "Edited"
     },
     "report": {
       "done": "Thanks. We'll review it.",

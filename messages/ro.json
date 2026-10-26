@@ -222,7 +222,8 @@
       "short_too_long": "Postările scurte au cel mult {max} de caractere. Comută la „{article}” pentru a scrie mai mult.",
       "too_large": "Un fișier este prea mare.",
       "too_much": "E prea lung. Scurtează textul sau folosește mai puține imagini.",
-      "unsupported": "Acest tip de fișier nu este acceptat. Alege o imagine sau un fișier audio."
+      "unsupported": "Acest tip de fișier nu este acceptat. Alege o imagine sau un fișier audio.",
+      "shortTooLongEdit": "Postările scurte au cel mult {max} de caractere."
     },
     "fmt": {
       "bold": "Aldin",
@@ -250,7 +251,16 @@
     "posting": "Se publică…",
     "publish": "Publică",
     "remove": "Elimină",
-    "title": "Titlu"
+    "title": "Titlu",
+    "save": "Salvează",
+    "saving": "Se salvează…",
+    "edit": {
+      "title": "Editează postarea",
+      "blocked": {
+        "not_active": "Această postare nu poate fi editată acum.",
+        "processing": "Imaginile și sunetul sunt încă în procesare. Vei putea edita postarea după ce sunt gata."
+      }
+    }
   },
   "discover": {
     "title": "Descoperă"
@@ -374,7 +384,8 @@
       "more": "Mai multe opțiuni",
       "reply": "Răspunde",
       "report": "Raportează",
-      "share": "Distribuie"
+      "share": "Distribuie",
+      "edit": "Editează"
     },
     "aside": {
       "moreArticles": "Alte articole ale autorului"
@@ -418,7 +429,8 @@
       "preparing": {
         "body": "Conținutul va apărea aici imediat.",
         "title": "Postarea se pregătește"
-      }
+      },
+      "editedShort": "Editat"
     },
     "report": {
       "done": "Mulțumim. Vom analiza.",

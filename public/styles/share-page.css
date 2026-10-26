@@ -94,7 +94,7 @@ a { color: inherit; text-decoration: none; }
 .ni-source .ni-i { width: 0.75rem; height: 0.75rem; stroke-width: 2; }
 .ni-title { font-size: 2.125rem; line-height: 1.2; letter-spacing: -0.02em; margin: 1.125rem 0 0; overflow-wrap: anywhere; }
 .ni-post .ni-body { margin-top: 1.25rem; }
-.ni-edited { font-size: 0.8125rem; color: var(--ni-color-text-secondary); }
+.ni-edited { cursor: help; }
 .ni-actions { display: flex; align-items: center; gap: 0.25rem; margin: 1rem -0.625rem 0; padding-top: 0.75rem; border-top: 1px solid var(--ni-color-border); color: var(--ni-color-text-secondary); }
 .ni-act {
   display: inline-flex; align-items: center; gap: 0.375rem; height: 2.125rem; padding: 0 0.625rem;

@@ -1,6 +1,6 @@
-import type { Editor } from "@tiptap/core";
+import type { Editor, JSONContent } from "@tiptap/core";
 import { createEditor } from "./editor";
-import { kindOf, MediaStore, type MediaKind } from "./media";
+import { kindOf, MediaStore, type MediaKind, type StoredMedia } from "./media";
 import { composeFormData, postCompose, type ComposeMode } from "./submit";
 import { bindToolbar } from "./toolbar";
 import { Tray } from "./tray";
@@ -24,6 +24,22 @@ function editorMedia(editor: Editor): { ids: string[]; ranges: [number, number][
   return { ids, ranges };
 }
 
+type Prefill = { doc: JSONContent; tray: (StoredMedia & { kind: MediaKind })[] };
+
+/** Edit page: the post's content; stored media become store entries (nodes point at them by ref). */
+function readPrefill(form: HTMLFormElement, store: MediaStore): { doc: JSONContent; tray: string[] } | null {
+  if (!form.dataset.prefill) return null;
+  const p = JSON.parse(form.dataset.prefill) as Prefill;
+  const mapNode = (n: JSONContent): JSONContent => {
+    if ((n.type === "image" || n.type === "audio") && n.attrs?.mediaId) {
+      const ref = store.addStored({ mediaId: String(n.attrs.mediaId), url: String(n.attrs.url ?? ""), meta: n.attrs.meta as Record<string, string> }, n.type).id;
+      return { type: n.type, attrs: { ref } };
+    }
+    return n.content ? { ...n, content: n.content.map(mapNode) } : n;
+  };
+  return { doc: mapNode(p.doc), tray: p.tray.map((m) => store.addStored(m, m.kind).id) };
+}
+
 function setup(form: HTMLFormElement): void {
   const d = form.dataset;
   const q = <T extends Element>(sel: string) => form.querySelector<T>(sel);
@@ -37,6 +53,8 @@ function setup(form: HTMLFormElement): void {
   if (!host || !trayEl || !textarea || !title || !errEl || !count || !submit) return;
 
   const store = new MediaStore();
+  const prefill = readPrefill(form, store);
+  const fields = Array.from(form.querySelectorAll<HTMLInputElement>("input[data-send]"), (i): [string, string] => [i.name, i.value]);
   const shortMax = Number(d.shortMax) || 500;
   const max: Record<MediaKind, number> = { image: Number(d.maxImages) || 10, audio: Number(d.maxAudios) || 10 };
   const mode = (): ComposeMode => (q<HTMLInputElement>("input[name=mode]:checked")?.value === "long" ? "long" : "short");
@@ -81,10 +99,12 @@ function setup(form: HTMLFormElement): void {
     removeLabel: d.removeLabel ?? "",
     store,
     initial: textarea.value,
+    content: prefill?.doc,
     onFiles: addFiles,
     onSubmitKey: () => form.requestSubmit(),
   });
   textarea.disabled = true;
+  if (prefill?.tray.length) tray.add(prefill.tray);
   form.classList.add("ni-compose-js");
   editor.on("update", () => {
     showError(null);
@@ -133,7 +153,7 @@ function setup(form: HTMLFormElement): void {
     submit.disabled = true;
     submit.textContent = d.posting ?? label;
     const extra = m === "short" ? tray.list().map((id) => ({ type: store.get(id)!.kind, attrs: { ref: id } })) : [];
-    const res = await postCompose(form.action, composeFormData(editor.getJSON(), extra, store, m, title.value));
+    const res = await postCompose(form.action, composeFormData(editor.getJSON(), extra, store, m, title.value, fields));
     if (res.ok) {
       window.location.assign(res.url);
       return;

@@ -222,7 +222,8 @@
       "short_too_long": "As publicações curtas têm no máximo {max} caracteres. Mude para «{article}» para escrever mais.",
       "too_large": "Um ficheiro é demasiado grande.",
       "too_much": "É demasiado longo. Encurte o texto ou use menos imagens.",
-      "unsupported": "Este tipo de ficheiro não é suportado. Escolha uma imagem ou um ficheiro de áudio."
+      "unsupported": "Este tipo de ficheiro não é suportado. Escolha uma imagem ou um ficheiro de áudio.",
+      "shortTooLongEdit": "As publicações curtas têm no máximo {max} caracteres."
     },
     "fmt": {
       "bold": "Negrito",
@@ -250,7 +251,16 @@
     "posting": "A publicar…",
     "publish": "Publicar",
     "remove": "Remover",
-    "title": "Título"
+    "title": "Título",
+    "save": "Guardar",
+    "saving": "A guardar…",
+    "edit": {
+      "title": "Editar publicação",
+      "blocked": {
+        "not_active": "Esta publicação não pode ser editada agora.",
+        "processing": "As imagens e o áudio ainda estão a ser processados. Poderá editar a publicação quando estiverem prontos."
+      }
+    }
   },
   "discover": {
     "title": "Descobrir"
@@ -374,7 +384,8 @@
       "more": "Mais opções",
       "reply": "Responder",
       "report": "Denunciar",
-      "share": "Partilhar"
+      "share": "Partilhar",
+      "edit": "Editar"
     },
     "aside": {
       "moreArticles": "Mais artigos do autor"
@@ -418,7 +429,8 @@
       "preparing": {
         "body": "O conteúdo vai aparecer aqui dentro de momentos.",
         "title": "A preparar esta publicação"
-      }
+      },
+      "editedShort": "Editado"
     },
     "report": {
       "done": "Obrigado. Vamos analisar.",

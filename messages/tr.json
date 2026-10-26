@@ -222,7 +222,8 @@
       "short_too_long": "Kısa gönderiler en fazla {max} karakter olabilir. Daha fazla yazmak için “{article}” moduna geç.",
       "too_large": "Bir dosya çok büyük.",
       "too_much": "Çok uzun. Metni kısalt veya daha az görsel kullan.",
-      "unsupported": "Bu dosya türü desteklenmiyor. Bir görsel veya ses dosyası seç."
+      "unsupported": "Bu dosya türü desteklenmiyor. Bir görsel veya ses dosyası seç.",
+      "shortTooLongEdit": "Kısa gönderiler en fazla {max} karakter olabilir."
     },
     "fmt": {
       "bold": "Kalın",
@@ -250,7 +251,16 @@
     "posting": "Yayınlanıyor…",
     "publish": "Paylaş",
     "remove": "Kaldır",
-    "title": "Başlık"
+    "title": "Başlık",
+    "save": "Kaydet",
+    "saving": "Kaydediliyor…",
+    "edit": {
+      "title": "Gönderiyi düzenle",
+      "blocked": {
+        "not_active": "Bu gönderi şu anda düzenlenemiyor.",
+        "processing": "Görseller ve ses hâlâ işleniyor. Hazır olduklarında gönderiyi düzenleyebilirsin."
+      }
+    }
   },
   "discover": {
     "title": "Keşfet"
@@ -374,7 +384,8 @@
       "more": "Diğer seçenekler",
       "reply": "Yanıtla",
       "report": "Şikayet et",
-      "share": "Paylaş"
+      "share": "Paylaş",
+      "edit": "Düzenle"
     },
     "aside": {
       "moreArticles": "Yazarın diğer makaleleri"
@@ -418,7 +429,8 @@
       "preparing": {
         "body": "İçerik birazdan burada görünecek.",
         "title": "Bu gönderi hazırlanıyor"
-      }
+      },
+      "editedShort": "Düzenlendi"
     },
     "report": {
       "done": "Teşekkürler. İnceleyeceğiz.",

@@ -222,7 +222,8 @@
       "short_too_long": "Postingan pendek maksimal {max} karakter. Beralih ke “{article}” untuk menulis lebih banyak.",
       "too_large": "Ada file yang terlalu besar.",
       "too_much": "Terlalu panjang. Persingkat teks atau kurangi gambar.",
-      "unsupported": "Jenis file ini tidak didukung. Pilih gambar atau file audio."
+      "unsupported": "Jenis file ini tidak didukung. Pilih gambar atau file audio.",
+      "shortTooLongEdit": "Postingan pendek maksimal {max} karakter."
     },
     "fmt": {
       "bold": "Tebal",
@@ -250,7 +251,16 @@
     "posting": "Memposting…",
     "publish": "Posting",
     "remove": "Hapus",
-    "title": "Judul"
+    "title": "Judul",
+    "save": "Simpan",
+    "saving": "Menyimpan…",
+    "edit": {
+      "title": "Edit postingan",
+      "blocked": {
+        "not_active": "Postingan ini tidak bisa diedit sekarang.",
+        "processing": "Gambar dan audio masih diproses. Kamu bisa mengedit postingan setelah selesai."
+      }
+    }
   },
   "discover": {
     "title": "Jelajahi"
@@ -374,7 +384,8 @@
       "more": "Opsi lainnya",
       "reply": "Balas",
       "report": "Laporkan",
-      "share": "Bagikan"
+      "share": "Bagikan",
+      "edit": "Edit"
     },
     "aside": {
       "moreArticles": "Artikel lain dari penulis"
@@ -418,7 +429,8 @@
       "preparing": {
         "body": "Konten akan muncul di sini sebentar lagi.",
         "title": "Menyiapkan postingan ini"
-      }
+      },
+      "editedShort": "Diedit"
     },
     "report": {
       "done": "Terima kasih. Kami akan meninjaunya.",

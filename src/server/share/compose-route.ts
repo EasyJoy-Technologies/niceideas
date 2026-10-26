@@ -12,7 +12,8 @@ import { COMPOSE_ERRORS, type ComposeError } from "./compose-box";
 
 const see = (location: string) => new Response(null, { status: 303, headers: { Location: location, "Cache-Control": "no-store" } });
 
-function errorOf(err: unknown): ComposeError {
+/** Error code shown in the compose box for a failed publish / edit. */
+export function composeErrorOf(err: unknown): ComposeError {
   if (err instanceof BodyTooLargeError) return "too_large";
   if (!(err instanceof ApiError)) return "failed";
   const map: Record<string, ComposeError> = {
@@ -42,7 +43,7 @@ export async function composeRoute(request: Request): Promise<Response> {
     const post = await publishFromWeb(db, getMediaStores(), viewer.user_id, readComposeForm(form), cfg.MEDIA_CACHE_CONTROL);
     return see(`/p/${post.slug}`);
   } catch (err) {
-    const code = errorOf(err);
+    const code = composeErrorOf(err);
     if (code === "failed") console.error(`[compose] failed errorId=${randomUUID()}`, err);
     return see(`/?compose=${COMPOSE_ERRORS.includes(code) ? code : "failed"}#compose`);
   }

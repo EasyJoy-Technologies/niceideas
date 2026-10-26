@@ -222,7 +222,8 @@
       "short_too_long": "Qisqa postlar ko‘pi bilan {max} belgidan iborat. Ko‘proq yozish uchun “{article}” rejimiga o‘ting.",
       "too_large": "Fayl juda katta.",
       "too_much": "Juda uzun. Matnni qisqartiring yoki kamroq rasm qo‘shing.",
-      "unsupported": "Bu fayl turi qo‘llab-quvvatlanmaydi. Rasm yoki audio fayl tanlang."
+      "unsupported": "Bu fayl turi qo‘llab-quvvatlanmaydi. Rasm yoki audio fayl tanlang.",
+      "shortTooLongEdit": "Qisqa postlar ko‘pi bilan {max} belgidan iborat."
     },
     "fmt": {
       "bold": "Qalin",
@@ -250,7 +251,16 @@
     "posting": "Joylanmoqda…",
     "publish": "Joylash",
     "remove": "Olib tashlash",
-    "title": "Sarlavha"
+    "title": "Sarlavha",
+    "save": "Saqlash",
+    "saving": "Saqlanmoqda…",
+    "edit": {
+      "title": "Postni tahrirlash",
+      "blocked": {
+        "not_active": "Bu postni hozir tahrirlab bo‘lmaydi.",
+        "processing": "Rasmlar va audio hali qayta ishlanmoqda. Tayyor bo‘lgach, postni tahrirlashingiz mumkin."
+      }
+    }
   },
   "discover": {
     "title": "Kashf etish"
@@ -374,7 +384,8 @@
       "more": "Qo'shimcha amallar",
       "reply": "Javob berish",
       "report": "Shikoyat qilish",
-      "share": "Ulashish"
+      "share": "Ulashish",
+      "edit": "Tahrirlash"
     },
     "aside": {
       "moreArticles": "Muallifning boshqa maqolalari"
@@ -418,7 +429,8 @@
       "preparing": {
         "body": "Mazmun bir zumda shu yerda ko'rinadi.",
         "title": "Bu post tayyorlanmoqda"
-      }
+      },
+      "editedShort": "Tahrirlangan"
     },
     "report": {
       "done": "Rahmat. Ko‘rib chiqamiz.",

@@ -79,6 +79,10 @@ export interface PostTable {
   source_revision: number | null;
   region: ShareRegion | null;
   media_state: Generated<MediaState>;
+  /** Content changed after publishing (web edit, app update or re-share): the page shows "Edited". */
+  edited_at: Timestamp | null;
+  /** Edited on the web since the app's last update: an app update of the same version leaves it in place. */
+  web_edited: Generated<boolean>;
 }
 
 export interface PostRevisionTable {

@@ -222,7 +222,8 @@
       "short_too_long": "A rövid bejegyzések legfeljebb {max} karakteresek. Válts „{article}” módra, ha többet írnál.",
       "too_large": "Egy fájl túl nagy.",
       "too_much": "Ez túl hosszú. Rövidítsd a szöveget, vagy használj kevesebb képet.",
-      "unsupported": "Ez a fájltípus nem támogatott. Válassz képet vagy hangfájlt."
+      "unsupported": "Ez a fájltípus nem támogatott. Válassz képet vagy hangfájlt.",
+      "shortTooLongEdit": "A rövid bejegyzések legfeljebb {max} karakteresek."
     },
     "fmt": {
       "bold": "Félkövér",
@@ -250,7 +251,16 @@
     "posting": "Közzététel…",
     "publish": "Közzététel",
     "remove": "Eltávolítás",
-    "title": "Cím"
+    "title": "Cím",
+    "save": "Mentés",
+    "saving": "Mentés…",
+    "edit": {
+      "title": "Bejegyzés szerkesztése",
+      "blocked": {
+        "not_active": "Ez a bejegyzés most nem szerkeszthető.",
+        "processing": "A képek és a hang feldolgozása még folyamatban van. Ha elkészültek, szerkesztheted a bejegyzést."
+      }
+    }
   },
   "discover": {
     "title": "Felfedezés"
@@ -374,7 +384,8 @@
       "more": "További lehetőségek",
       "reply": "Válasz",
       "report": "Jelentés",
-      "share": "Megosztás"
+      "share": "Megosztás",
+      "edit": "Szerkesztés"
     },
     "aside": {
       "moreArticles": "A szerző további cikkei"
@@ -418,7 +429,8 @@
       "preparing": {
         "body": "A tartalom hamarosan megjelenik itt.",
         "title": "A bejegyzés előkészítése"
-      }
+      },
+      "editedShort": "Szerkesztve"
     },
     "report": {
       "done": "Köszönjük. Megvizsgáljuk.",

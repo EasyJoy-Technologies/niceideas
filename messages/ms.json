@@ -222,7 +222,8 @@
       "short_too_long": "Siaran pendek terhad kepada {max} aksara. Tukar kepada “{article}” untuk menulis lebih banyak.",
       "too_large": "Satu fail terlalu besar.",
       "too_much": "Terlalu panjang. Pendekkan teks atau kurangkan imej.",
-      "unsupported": "Jenis fail ini tidak disokong. Pilih imej atau fail audio."
+      "unsupported": "Jenis fail ini tidak disokong. Pilih imej atau fail audio.",
+      "shortTooLongEdit": "Siaran pendek terhad kepada {max} aksara."
     },
     "fmt": {
       "bold": "Tebal",
@@ -250,7 +251,16 @@
     "posting": "Menyiarkan…",
     "publish": "Siar",
     "remove": "Buang",
-    "title": "Tajuk"
+    "title": "Tajuk",
+    "save": "Simpan",
+    "saving": "Menyimpan…",
+    "edit": {
+      "title": "Sunting siaran",
+      "blocked": {
+        "not_active": "Siaran ini tidak boleh disunting sekarang.",
+        "processing": "Imej dan audio masih diproses. Anda boleh menyunting siaran setelah ia sedia."
+      }
+    }
   },
   "discover": {
     "title": "Teroka"
@@ -374,7 +384,8 @@
       "more": "Lagi pilihan",
       "reply": "Balas",
       "report": "Laporkan",
-      "share": "Kongsi"
+      "share": "Kongsi",
+      "edit": "Sunting"
     },
     "aside": {
       "moreArticles": "Artikel lain oleh penulis"
@@ -418,7 +429,8 @@
       "preparing": {
         "body": "Kandungan akan dipaparkan di sini sebentar lagi.",
         "title": "Menyediakan siaran ini"
-      }
+      },
+      "editedShort": "Disunting"
     },
     "report": {
       "done": "Terima kasih. Kami akan menyemaknya.",

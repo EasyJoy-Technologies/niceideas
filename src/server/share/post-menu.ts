@@ -1,4 +1,5 @@
 import type { Post } from "@/server/db/schema";
+import { editBlocker } from "@/server/posts/edit-post";
 import { escapeHtml } from "@/server/render/escape";
 import type { ChromeContext } from "./chrome";
 import { icon } from "./icons";
@@ -8,11 +9,12 @@ import { badgeAppName, sourceBadge } from "./sources";
 export const isOwnPost = (ctx: ChromeContext, post: Pick<Post, "author_id">) => !!ctx.viewer && ctx.viewer.user_id === post.author_id;
 
 /**
- * Author's "⋯" menu (no JS needed: nested <details>): Delete opens an inline confirmation with
+ * Author's "⋯" menu (no JS needed: nested <details>): Edit (while the post can be edited), then
+ * Delete, which opens an inline confirmation with
  * the consequences; posts shared from an app say the original there is not affected.
  * `back`: same-site page to return to after deleting.
  */
-export function ownPostMenu(ctx: ChromeContext, post: Pick<Post, "slug" | "source">, back: string): string {
+export function ownPostMenu(ctx: ChromeContext, post: Pick<Post, "slug" | "source" | "status" | "media_state">, back: string): string {
   const { t } = ctx.intl;
   const more = escapeHtml(t("share.action.more"));
   const del = escapeHtml(t("share.action.delete"));
@@ -24,6 +26,6 @@ export function ownPostMenu(ctx: ChromeContext, post: Pick<Post, "slug" | "sourc
     `<button type="submit" class="ni-btn ni-btn-sm ni-btn-danger">${del}</button></form>`;
   return (
     `<details class="ni-menu ni-more"><summary class="ni-act ni-more-btn" aria-label="${more}" title="${more}">${icon("more")}</summary>` +
-    `<ul><li><details class="ni-del"><summary>${icon("withdrawn")}<span>${del}</span></summary>${form}</details></li></ul></details>`
+    `<ul>${editBlocker(post) ? "" : `<li><a href="/p/${escapeHtml(post.slug)}/edit">${icon("edit")}<span>${escapeHtml(t("share.action.edit"))}</span></a></li>`}<li><details class="ni-del"><summary>${icon("withdrawn")}<span>${del}</span></summary>${form}</details></li></ul></details>`
   );
 }

@@ -222,7 +222,8 @@
       "short_too_long": "短文は {max} 文字までです。もっと書くときは「{article}」に切り替えてください。",
       "too_large": "ファイルが大きすぎます。",
       "too_much": "長すぎます。文章を短くするか、画像を減らしてください。",
-      "unsupported": "このファイル形式には対応していません。画像か音声を選んでください。"
+      "unsupported": "このファイル形式には対応していません。画像か音声を選んでください。",
+      "shortTooLongEdit": "短文は {max} 文字までです。"
     },
     "fmt": {
       "bold": "太字",
@@ -250,7 +251,16 @@
     "posting": "投稿中…",
     "publish": "投稿",
     "remove": "削除",
-    "title": "タイトル"
+    "title": "タイトル",
+    "save": "保存",
+    "saving": "保存中…",
+    "edit": {
+      "title": "投稿を編集",
+      "blocked": {
+        "not_active": "この投稿は現在編集できません。",
+        "processing": "画像と音声を処理しています。処理が終わると編集できます。"
+      }
+    }
   },
   "discover": {
     "title": "発見"
@@ -374,7 +384,8 @@
       "more": "その他の操作",
       "reply": "返信",
       "report": "報告",
-      "share": "共有"
+      "share": "共有",
+      "edit": "編集"
     },
     "aside": {
       "moreArticles": "この作者のほかの記事"
@@ -418,7 +429,8 @@
       "preparing": {
         "body": "もうすぐここに表示されます。",
         "title": "投稿を準備中です"
-      }
+      },
+      "editedShort": "編集済み"
     },
     "report": {
       "done": "ありがとうございます。確認します。",

@@ -10,6 +10,8 @@ export type EditorOptions = {
   store: MediaStore;
   /** Text typed into the no-JS textarea before the script loaded. */
   initial: string;
+  /** Editing: the post's content (replaces `initial`). */
+  content?: JSONContent;
   onFiles: (files: File[]) => void;
   onSubmitKey: () => void;
 };
@@ -30,7 +32,7 @@ export function createEditor(host: HTMLElement, o: EditorOptions): Editor {
   return new Editor({
     element: host,
     injectCSS: false,
-    content: o.initial ? initialDoc(o.initial) : "",
+    content: o.content ?? (o.initial ? initialDoc(o.initial) : ""),
     extensions: [
       StarterKit.configure({
         heading: { levels: [2, 3] },

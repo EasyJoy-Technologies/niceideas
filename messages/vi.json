@@ -222,7 +222,8 @@
       "short_too_long": "Bài ngắn tối đa {max} ký tự. Chuyển sang “{article}” để viết thêm.",
       "too_large": "Một tệp quá lớn.",
       "too_much": "Quá dài. Hãy rút ngắn văn bản hoặc bớt hình ảnh.",
-      "unsupported": "Không hỗ trợ loại tệp này. Hãy chọn ảnh hoặc tệp âm thanh."
+      "unsupported": "Không hỗ trợ loại tệp này. Hãy chọn ảnh hoặc tệp âm thanh.",
+      "shortTooLongEdit": "Bài ngắn tối đa {max} ký tự."
     },
     "fmt": {
       "bold": "In đậm",
@@ -250,7 +251,16 @@
     "posting": "Đang đăng…",
     "publish": "Đăng",
     "remove": "Xóa",
-    "title": "Tiêu đề"
+    "title": "Tiêu đề",
+    "save": "Lưu",
+    "saving": "Đang lưu…",
+    "edit": {
+      "title": "Chỉnh sửa bài viết",
+      "blocked": {
+        "not_active": "Hiện không thể chỉnh sửa bài viết này.",
+        "processing": "Hình ảnh và âm thanh vẫn đang được xử lý. Bạn có thể chỉnh sửa bài viết khi chúng sẵn sàng."
+      }
+    }
   },
   "discover": {
     "title": "Khám phá"
@@ -374,7 +384,8 @@
       "more": "Thêm tùy chọn",
       "reply": "Trả lời",
       "report": "Báo cáo",
-      "share": "Chia sẻ"
+      "share": "Chia sẻ",
+      "edit": "Chỉnh sửa"
     },
     "aside": {
       "moreArticles": "Bài viết khác của tác giả"
@@ -418,7 +429,8 @@
       "preparing": {
         "body": "Nội dung sẽ xuất hiện ở đây trong chốc lát.",
         "title": "Đang chuẩn bị bài viết này"
-      }
+      },
+      "editedShort": "Đã chỉnh sửa"
     },
     "report": {
       "done": "Cảm ơn bạn. Chúng tôi sẽ xem xét.",

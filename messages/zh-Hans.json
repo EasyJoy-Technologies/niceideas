@@ -222,7 +222,8 @@
       "short_too_long": "短内容最多 {max} 个字。想写更多，请切换到“{article}”。",
       "too_large": "文件太大了。",
       "too_much": "内容太长了，请缩短文字或减少图片。",
-      "unsupported": "不支持这种文件类型，请选择图片或音频。"
+      "unsupported": "不支持这种文件类型，请选择图片或音频。",
+      "shortTooLongEdit": "短内容最多 {max} 个字。"
     },
     "fmt": {
       "bold": "粗体",
@@ -250,7 +251,16 @@
     "posting": "发布中…",
     "publish": "发布",
     "remove": "移除",
-    "title": "标题"
+    "title": "标题",
+    "save": "保存",
+    "saving": "保存中…",
+    "edit": {
+      "title": "编辑帖子",
+      "blocked": {
+        "not_active": "这条帖子现在不能编辑。",
+        "processing": "图片和音频还在处理中，处理完就可以编辑了。"
+      }
+    }
   },
   "discover": {
     "title": "发现"
@@ -374,7 +384,8 @@
       "more": "更多操作",
       "reply": "回复",
       "report": "举报",
-      "share": "分享"
+      "share": "分享",
+      "edit": "编辑"
     },
     "aside": {
       "moreArticles": "作者的其他长文"
@@ -418,7 +429,8 @@
       "preparing": {
         "body": "内容马上就会显示在这里。",
         "title": "内容准备中"
-      }
+      },
+      "editedShort": "已编辑"
     },
     "report": {
       "done": "感谢反馈，我们会尽快处理。",

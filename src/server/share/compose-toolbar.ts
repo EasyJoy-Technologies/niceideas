@@ -56,6 +56,11 @@ function mediaButton(ctx: ChromeContext, kind: "images" | "audios"): string {
   return `<label class="ni-tb ni-tb-media" title="${label}">${icon(kind === "images" ? "image" : "music")}<input type="file" name="${kind}" accept="${accept}" multiple aria-label="${label}"></label>`;
 }
 
+/** Fixed type (editing keeps the post's type): hidden radios only, so the page and script still read it. */
+function fixedMode(mode: "short" | "long"): string {
+  return ["short", "long"].map((v) => `<input type="radio" name="mode" value="${v}"${v === mode ? " checked" : ""} hidden>`).join("");
+}
+
 function modeToggle(ctx: ChromeContext): string {
   const { t } = ctx.intl;
   const opt = (value: "short" | "long", checked: boolean) =>
@@ -63,11 +68,12 @@ function modeToggle(ctx: ChromeContext): string {
   return `<div class="ni-compose-seg" role="radiogroup" aria-label="${escapeHtml(t("compose.mode.label"))}">${opt("short", true)}${opt("long", false)}</div>`;
 }
 
-export function composeToolbar(ctx: ChromeContext): string {
+/** `edit`: the post's fixed type and a Save button instead of the type switch and Post. */
+export function composeToolbar(ctx: ChromeContext, edit?: { mode: "short" | "long" }): string {
   const row = ROW.map((f) => (f === "sep" ? '<span class="ni-tb-sep ni-ed-only" data-only="long"></span>' : rowButton(ctx, f))).join("");
   return (
     `<div class="ni-compose-bar">${mediaButton(ctx, "images")}${mediaButton(ctx, "audios")}<span class="ni-tb-sep ni-ed-only"></span>${row}${moreMenu(ctx)}` +
-    `<span class="ni-sp"></span><span class="ni-compose-count" data-compose-count hidden></span>${modeToggle(ctx)}` +
-    `<button type="submit" class="ni-btn ni-btn-primary">${escapeHtml(ctx.intl.t("compose.publish"))}</button></div>`
+    `<span class="ni-sp"></span><span class="ni-compose-count" data-compose-count hidden></span>${edit ? fixedMode(edit.mode) : modeToggle(ctx)}` +
+    `<button type="submit" class="ni-btn ni-btn-primary">${escapeHtml(ctx.intl.t(edit ? "compose.save" : "compose.publish"))}</button></div>`
   );
 }

@@ -4,6 +4,5 @@
  * URLs, so "/\t/evil.example" would become "//evil.example". Anything else becomes "/".
  */
 export function safeRedirectPath(value: string | null | undefined, maxLength = 512): string {
-  // eslint-disable-next-line no-control-regex
   return value && value.length <= maxLength && /^\/(?![/\\])[^\s\\\u0000-\u001f\u007f]*$/.test(value) ? value : "/";
 }

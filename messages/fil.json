@@ -222,7 +222,8 @@
       "short_too_long": "Hanggang {max} karakter lang ang maikling post. Lumipat sa “{article}” para magsulat pa.",
       "too_large": "Masyadong malaki ang isang file.",
       "too_much": "Masyadong mahaba. Paikliin ang text o bawasan ang mga larawan.",
-      "unsupported": "Hindi suportado ang ganitong uri ng file. Pumili ng larawan o audio file."
+      "unsupported": "Hindi suportado ang ganitong uri ng file. Pumili ng larawan o audio file.",
+      "shortTooLongEdit": "Hanggang {max} karakter lang ang maikling post."
     },
     "fmt": {
       "bold": "Makapal",
@@ -250,7 +251,16 @@
     "posting": "Ipinopost…",
     "publish": "I-post",
     "remove": "Alisin",
-    "title": "Pamagat"
+    "title": "Pamagat",
+    "save": "I-save",
+    "saving": "Sine-save…",
+    "edit": {
+      "title": "I-edit ang post",
+      "blocked": {
+        "not_active": "Hindi ma-edit ang post na ito sa ngayon.",
+        "processing": "Pinoproseso pa ang mga larawan at audio. Maaari mong i-edit ang post kapag handa na ang mga ito."
+      }
+    }
   },
   "discover": {
     "title": "Tuklasin"
@@ -374,7 +384,8 @@
       "more": "Higit pang opsyon",
       "reply": "Sumagot",
       "report": "I-report",
-      "share": "Ibahagi"
+      "share": "Ibahagi",
+      "edit": "I-edit"
     },
     "aside": {
       "moreArticles": "Iba pang artikulo ng author"
@@ -418,7 +429,8 @@
       "preparing": {
         "body": "Lalabas dito ang content sa ilang saglit.",
         "title": "Inihahanda ang post na ito"
-      }
+      },
+      "editedShort": "Na-edit"
     },
     "report": {
       "done": "Salamat. Susuriin namin ito.",

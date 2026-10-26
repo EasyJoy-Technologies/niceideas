@@ -1,6 +1,7 @@
 import { SHORT_MAX_CHARS } from "@/server/documents/derive";
 import { escapeHtml } from "@/server/render/escape";
 import { WEB_MAX_AUDIOS, WEB_MAX_IMAGES, WEB_MAX_TEXT } from "@/server/posts/web-compose";
+import type { EditPrefill } from "@/server/posts/edit-source";
 import type { ChromeContext } from "./chrome";
 import { composeToolbar } from "./compose-toolbar";
 import { icon } from "./icons";
@@ -14,15 +15,18 @@ export function composeError(url: URL): ComposeError | null {
   return (COMPOSE_ERRORS as readonly string[]).includes(v ?? "") ? (v as ComposeError) : null;
 }
 
-const errorText = (ctx: ChromeContext, e: ComposeError) => ctx.intl.t(`compose.error.${e}`, { article: ctx.intl.t("compose.mode.long"), max: SHORT_MAX_CHARS });
+/** Editing: no type switch, so the short-post limit message does not suggest switching. */
+const errorText = (ctx: ChromeContext, e: ComposeError, editing = false) =>
+  editing && e === "short_too_long" ? ctx.intl.t("compose.error.shortTooLongEdit", { max: SHORT_MAX_CHARS }) : ctx.intl.t(`compose.error.${e}`, { article: ctx.intl.t("compose.mode.long"), max: SHORT_MAX_CHARS });
+
+const attr = (name: string, value: string | number) => ` data-${name}="${escapeHtml(String(value))}"`;
 
 /** Labels and limits for /scripts/compose.js (the script carries no text of its own). */
-function scriptData(ctx: ChromeContext): string {
+function scriptData(ctx: ChromeContext, editing: boolean): string {
   const { t } = ctx.intl;
-  const attr = (name: string, value: string | number) => ` data-${name}="${escapeHtml(String(value))}"`;
   return (
-    COMPOSE_ERRORS.map((e) => attr(`err-${e.replace(/_/g, "-")}`, errorText(ctx, e))).join("") +
-    attr("link-prompt", t("compose.linkPrompt")) + attr("posting", t("compose.posting")) + attr("remove-label", t("compose.remove")) +
+    COMPOSE_ERRORS.map((e) => attr(`err-${e.replace(/_/g, "-")}`, errorText(ctx, e, editing))).join("") +
+    attr("link-prompt", t("compose.linkPrompt")) + attr("posting", t(editing ? "compose.saving" : "compose.posting")) + attr("remove-label", t("compose.remove")) +
     attr("short-max", SHORT_MAX_CHARS) + attr("max-images", WEB_MAX_IMAGES) + attr("max-audios", WEB_MAX_AUDIOS)
   );
 }
@@ -33,21 +37,39 @@ function scriptData(ctx: ChromeContext): string {
  * With JS: a rich editor (short post / article). Without JS: title (article only),
  * plain text, image and audio files, short / article toggle — still publishes.
  */
-export function composeBox(ctx: ChromeContext, error: ComposeError | null): string {
+/** Editing a post: its slug and current content (`prefill`). */
+export type ComposeEdit = { slug: string; prefill: EditPrefill };
+
+/**
+ * Editing: the same box opened with the post's content (editor JSON in data-prefill; the no-JS
+ * textarea gets its Markdown and the stored media stay as `keep_*` fields), sent to the edit route.
+ */
+function editFields(edit: ComposeEdit): string {
+  const p = edit.prefill;
+  const hidden = (name: string, value: string) => `<input type="hidden" name="${name}" value="${escapeHtml(value)}" data-send>`;
+  const keep = p.keep.map((m) => `<input type="hidden" name="keep_${m.kind}" value="${escapeHtml(m.mediaId)}">`).join("");
+  return hidden("slug", edit.slug) + '<input type="hidden" name="format" value="markdown">' + keep;
+}
+
+export function composeBox(ctx: ChromeContext, error: ComposeError | null, edit?: ComposeEdit): string {
   const v = ctx.viewer;
   if (!v || ctx.restricted) return "";
   const { t } = ctx.intl;
   const name = v.display_name || `@${v.handle}`;
   const placeholder = escapeHtml(t("compose.placeholder"));
   const title = escapeHtml(t("compose.title"));
-  const err = `<p class="ni-compose-err" role="alert" data-compose-err${error ? "" : " hidden"}>${error ? escapeHtml(errorText(ctx, error)) : ""}</p>`;
+  const p = edit?.prefill;
+  const err = `<p class="ni-compose-err" role="alert" data-compose-err${error ? "" : " hidden"}>${error ? escapeHtml(errorText(ctx, error, !!edit)) : ""}</p>`;
+  const action = edit ? "/api/web/posts/edit" : "/api/web/compose";
+  const prefill = p ? attr("prefill", JSON.stringify({ doc: p.doc, tray: p.tray })) : "";
+  const sheet = edit ? "" : `<div class="ni-sheet-h"><a class="ni-sheet-x" href="#" aria-label="${escapeHtml(t("share.action.close"))}">${icon("close")}</a></div>`;
   return (
-    `<form class="ni-card ni-compose" id="compose" method="post" action="/api/web/compose" enctype="multipart/form-data"${scriptData(ctx)}>` +
-    `<div class="ni-sheet-h"><a class="ni-sheet-x" href="#" aria-label="${escapeHtml(t("share.action.close"))}">${icon("close")}</a></div>` +
+    `<form class="ni-card ni-compose" id="compose" method="post" action="${action}" enctype="multipart/form-data"${scriptData(ctx, !!edit)}${prefill}>` +
+    sheet + (edit ? editFields(edit) : "") +
     `<div class="ni-compose-top">${avatarHtml(name, v.avatar_url, 40)}<div class="ni-compose-f">${err}` +
-    `<input class="ni-compose-title" name="title" maxlength="200" placeholder="${title}" aria-label="${title}">` +
-    `<textarea class="ni-compose-text" name="text" rows="5" maxlength="${WEB_MAX_TEXT}" placeholder="${placeholder}" aria-label="${placeholder}"></textarea>` +
+    `<input class="ni-compose-title" name="title" maxlength="200" placeholder="${title}" aria-label="${title}" value="${escapeHtml(p?.title ?? "")}">` +
+    `<textarea class="ni-compose-text" name="text" rows="5" maxlength="${WEB_MAX_TEXT}" placeholder="${placeholder}" aria-label="${placeholder}">${escapeHtml(p?.text ?? "")}</textarea>` +
     `<div class="ni-compose-ed" data-compose-editor></div><div class="ni-compose-tray" data-compose-tray hidden></div></div></div>` +
-    `${composeToolbar(ctx)}</form>`
+    `${composeToolbar(ctx, p ? { mode: p.mode } : undefined)}</form>`
   );
 }
