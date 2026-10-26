@@ -6,7 +6,8 @@ import { findRevision, insertRevision, linkRevisionMedia } from "@/server/db/rep
 import { isUniqueViolation } from "@/server/db/repos/profiles";
 import { contentHash } from "@/server/documents/hash";
 import type { PostDocument } from "@/server/documents/schema";
-import { projectMediaPublic, recordMediaPublic } from "@/server/media/publication";
+import { accountDeleting, assertAuthorActive, readAuthorState } from "@/server/accounts/author-gate";
+import { projectMediaPublic, recordMediaPublic, settlePublication } from "@/server/media/publication";
 import type { MediaStores } from "@/server/storage/types";
 import { derivedFields } from "./derived-fields";
 import { resolveDocumentMedia } from "./media-refs";
@@ -46,6 +47,7 @@ export async function createPost(
   const found = await existing(db, principal, input.sourceRef);
   if (found) return found;
 
+  if ((await readAuthorState(db, principal.userId)) !== "active") throw accountDeleting();
   await assertCanCreatePost(db, principal.userId);
   if (principal.apiClientId) await assertClientBudget(db, principal.apiClientId, principal.userId);
   const media = await resolveDocumentMedia(db, principal.userId, input.document);
@@ -53,34 +55,44 @@ export async function createPost(
 
   const hash = contentHash(input.document);
   const fields = derivedFields(input.document);
-  for (let attempt = 1; ; attempt++) {
-    try {
-      const post = await db.transaction().execute(async (trx) => {
-        const row = await insertPost(trx, {
-          slug: generateSlug(),
-          author_id: principal.userId,
-          source: principal.source,
-          api_client_id: principal.apiClientId ?? null,
-          source_ref: input.sourceRef,
-          sync_mode: input.syncMode ?? "follow",
-          ...fields,
-          kind: input.kind ?? fields.kind!,
-          kind_locked: input.kind !== undefined,
-          source_updated_at: input.sourceUpdatedAt,
+  const moved = media.map((m) => m.id);
+  let live: string[] = [];
+  try {
+    for (let attempt = 1; ; attempt++) {
+      try {
+        const post = await db.transaction().execute(async (trx) => {
+          // The author lock first (author-gate.ts): an account being deleted publishes nothing.
+          await assertAuthorActive(trx, principal.userId);
+          const row = await insertPost(trx, {
+            slug: generateSlug(),
+            author_id: principal.userId,
+            source: principal.source,
+            api_client_id: principal.apiClientId ?? null,
+            source_ref: input.sourceRef,
+            sync_mode: input.syncMode ?? "follow",
+            ...fields,
+            kind: input.kind ?? fields.kind!,
+            kind_locked: input.kind !== undefined,
+            source_updated_at: input.sourceUpdatedAt,
+          });
+          const rev = await insertRevision(trx, { postId: row.id, document: input.document, contentHash: hash, sourceUpdatedAt: input.sourceUpdatedAt });
+          await linkRevisionMedia(trx, rev.id, media.map((m) => m.id));
+          await recordMediaPublic(trx, media.map((m) => m.id));
+          return updatePost(trx, row.id, { current_revision_id: rev.id });
         });
-        const rev = await insertRevision(trx, { postId: row.id, document: input.document, contentHash: hash, sourceUpdatedAt: input.sourceUpdatedAt });
-        await linkRevisionMedia(trx, rev.id, media.map((m) => m.id));
-        await recordMediaPublic(trx, media.map((m) => m.id));
-        return updatePost(trx, row.id, { current_revision_id: rev.id });
-      });
-      return { post, contentHash: hash, created: true };
-    } catch (err) {
-      if (isUniqueViolation(err, "post_live_source_key")) {
-        const raced = await existing(db, principal, input.sourceRef);
-        if (raced) return raced;
+        live = moved;
+        return { post, contentHash: hash, created: true };
+      } catch (err) {
+        if (isUniqueViolation(err, "post_live_source_key")) {
+          const raced = await existing(db, principal, input.sourceRef);
+          if (raced) return raced;
+        }
+        if (isUniqueViolation(err, "post_slug_key") && attempt < MAX_SLUG_ATTEMPTS) continue;
+        throw err;
       }
-      if (isUniqueViolation(err, "post_slug_key") && attempt < MAX_SLUG_ATTEMPTS) continue;
-      throw err;
     }
+  } finally {
+    // Media moved for a post that was not created (account being deleted, error, raced) go back.
+    await settlePublication(db, stores, cacheControl, { moved, live }).catch((e) => console.error("[posts] media settle failed", e));
   }
 }

@@ -2,6 +2,7 @@ import { randomUUID } from "node:crypto";
 import { getConfig } from "@/server/config/env";
 import { getDb } from "@/server/db";
 import { clearCookie, readCookie, serializeCookie } from "@/server/http/cookies";
+import { ApiError } from "@/server/http/errors";
 import { isSameOrigin } from "@/server/interactions/visitor";
 import { ensureProfile } from "@/server/profiles/ensure-profile";
 import { syncProfileFromClaims } from "@/server/profiles/sync-from-claims";
@@ -71,6 +72,8 @@ export async function finishSignIn(request: Request): Promise<Response | SignInF
     console.info(JSON.stringify({ event: "web_sign_in", result: "ok", silent: flow.silent }));
     return redirect(flow.next, [clearFlow, session, clearCookie(SSO_TRIED_COOKIE)]);
   } catch (err) {
+    // The account's deletion completed: same answer as during the cooling-off period.
+    if (err instanceof ApiError && err.code === "user.deleting") return "deleting";
     console.error(`[auth] sign-in failed errorId=${randomUUID()}`, err);
     return "failed";
   }

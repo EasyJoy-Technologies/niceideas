@@ -20,7 +20,10 @@ export type ShareLoad =
   | { state: "preparing"; post: Post; author: Profile }
   | { state: "ok"; data: SharePost };
 
-/** Active posts are shown; a just-shared post is `preparing`; everything else is gone (410) until purged (then 404). */
+/**
+ * Active posts are shown; a just-shared post is `preparing`; everything else (and every post of an
+ * account being deleted) is gone (410) until purged (then 404).
+ */
 export async function loadSharePost(db: Db, slug: string): Promise<ShareLoad> {
   if (!SLUG_PATTERN.test(slug)) return { state: "not_found" };
   const post = await findPostBySlug(db, slug);
@@ -29,6 +32,8 @@ export async function loadSharePost(db: Db, slug: string): Promise<ShareLoad> {
   // post.author_id references profile (FK); a missing row means the account is being deleted.
   const author = await findProfile(db, post.author_id);
   if (!author) return { state: "not_found" };
+  // Defence in depth: posts of an account in its deletion cooling-off period are never shown.
+  if (author.status !== "active") return { state: "gone", reason: "withdrawn" };
   if (post.status === "preparing") return { state: "preparing", post, author };
   const revision = post.current_revision_id ? await findRevision(db, post.current_revision_id) : undefined;
   if (!revision) return { state: "not_found" };

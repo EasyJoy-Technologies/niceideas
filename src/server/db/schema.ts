@@ -1,8 +1,10 @@
 import type { ColumnType, Generated, Insertable, JSONColumnType, Selectable, Updateable } from "kysely";
 import type { CreatedAt, DefaultedTimestamp, JsonColumn, Timestamp } from "./schema-columns";
+import type { AccountEventTable, DeletedAccountTable } from "./schema-accounts";
 import type { AvatarJobTable, MediaJobTable, OutboxTable, ServiceNonceTable } from "./schema-share";
 
 export type { MediaJobState, OutboxKind } from "./schema-share";
+export type { AccountEventKind } from "./schema-accounts";
 
 export type ProfileStatus = "active" | "deleting";
 export type PostKind = "short" | "article";
@@ -229,16 +231,6 @@ export interface IdempotencyTable {
   expires_at: Timestamp;
 }
 
-export type AccountEventKind = "deletion_requested" | "deletion_cancelled" | "deletion_completed" | "profile_updated";
-
-export interface AccountEventTable {
-  event_id: string;
-  user_id: string;
-  event: AccountEventKind;
-  occurred_at: Timestamp;
-  processed_at: CreatedAt;
-}
-
 export interface WebSessionTable {
   id_hash: string;
   user_id: string;
@@ -268,6 +260,7 @@ export interface Database {
   comment_like: CommentLikeTable;
   visitor_ban: VisitorBanTable;
   account_event: AccountEventTable;
+  deleted_account: DeletedAccountTable;
   web_session: WebSessionTable;
   pow_used: PowUsedTable;
   admin_member: AdminMemberTable;

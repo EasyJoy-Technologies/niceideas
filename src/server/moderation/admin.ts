@@ -2,10 +2,11 @@ import type { Db } from "@/server/db/client";
 import type { CommentsMode, CommentStatus } from "@/server/db/schema";
 import { findComment, setCommentStatus } from "@/server/db/repos/comments";
 import { closeReport, deleteBan, recordModeration, upsertBan } from "@/server/db/repos/moderation";
-import { findPostBySlug, updatePost } from "@/server/db/repos/posts";
+import { findPostBySlug, lockPost, updatePost } from "@/server/db/repos/posts";
 import { listRevisionMediaIds } from "@/server/db/repos/revisions";
 import { findMediaByIds } from "@/server/db/repos/media";
-import { projectMediaPublic, recordMediaPublic, withdrawUnreferencedMedia } from "@/server/media/publication";
+import { lockAuthor, readAuthorState } from "@/server/accounts/author-gate";
+import { projectMediaPublic, recordMediaPublic, settlePublication, withdrawUnreferencedMedia } from "@/server/media/publication";
 import { queuePostEvent } from "@/server/nicenote/post-events";
 import type { MediaStores } from "@/server/storage/types";
 
@@ -72,18 +73,35 @@ export async function removePost(rt: ModerationRuntime, op: Operator, slug: stri
   await withdrawUnreferencedMedia(rt.db, rt.stores, media);
 }
 
-/** Reverses a takedown within the retention period: the link works again with the same content. */
+/**
+ * Reverses a takedown within the retention period: the link works again with the same content.
+ * While the author's account is in its deletion cooling-off period the post stays offline with the
+ * author's other posts (`author_deleting`) and comes back if the deletion is cancelled.
+ */
 export async function restorePost(rt: ModerationRuntime, op: Operator, slug: string): Promise<void> {
   const post = await postBySlug(rt.db, slug);
   if (post.status !== "removed") throw new ModerationError(`post is ${post.status}`);
-  const media = await findMediaByIds(rt.db, post.current_revision_id ? await listRevisionMediaIds(rt.db, post.current_revision_id) : []);
-  await projectMediaPublic(rt.stores, media, rt.cacheControl);
-  await rt.db.transaction().execute(async (trx) => {
-    await updatePost(trx, post.id, { status: "active", status_changed_at: new Date(), status_reason: null, purge_after: null });
-    await recordMediaPublic(trx, media.map((m) => m.id));
-    await recordModeration(trx, { action: "restore", actorId: op.actorId, reason: op.reason, postId: post.id });
-    await queuePostEvent(trx, post, "restored");
-  });
+  const mediaIds = post.current_revision_id ? await listRevisionMediaIds(rt.db, post.current_revision_id) : [];
+  const moved = (await readAuthorState(rt.db, post.author_id)) === "active" ? mediaIds : [];
+  await projectMediaPublic(rt.stores, await findMediaByIds(rt.db, moved), rt.cacheControl);
+  let live: string[] = [];
+  try {
+    await rt.db.transaction().execute(async (trx) => {
+      const author = await lockAuthor(trx, post.author_id);
+      const locked = await lockPost(trx, post.id);
+      if (!locked || locked.status !== "removed") throw new ModerationError(`post is ${locked?.status ?? "gone"}`);
+      if (author === "gone") throw new ModerationError("author account deleted");
+      const status = author === "active" ? "active" : "author_deleting";
+      // A removed post takes no content updates, so its media are the ones read above.
+      if (status === "active") live = mediaIds;
+      await updatePost(trx, post.id, { status, status_changed_at: new Date(), status_reason: null, purge_after: null });
+      await recordMediaPublic(trx, live.filter((id) => moved.includes(id)));
+      await recordModeration(trx, { action: "restore", actorId: op.actorId, reason: op.reason, postId: post.id });
+      await queuePostEvent(trx, post, "restored");
+    });
+  } finally {
+    await settlePublication(rt.db, rt.stores, rt.cacheControl, { moved, live }).catch((e) => console.error("[moderation] media settle failed", post.id, e));
+  }
 }
 
 export async function closeReportAs(db: Db, op: Operator, reportId: string, outcome: "resolved" | "dismissed"): Promise<void> {

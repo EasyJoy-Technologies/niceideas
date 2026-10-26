@@ -2,7 +2,8 @@ import type { Db } from "@/server/db/client";
 import { findPostById, listSharesUsingRef, lockPost, updatePost } from "@/server/db/repos/posts";
 import { findRevision, linkRevisionMedia, listRevisionMediaIds } from "@/server/db/repos/revisions";
 import { isSourceDocument, type StoredDocument } from "@/server/documents/stored";
-import { projectMediaPublic, recordMediaPublic } from "@/server/media/publication";
+import { lockAuthor } from "@/server/accounts/author-gate";
+import { projectMediaPublic, recordMediaPublic, settlePublication } from "@/server/media/publication";
 import { derivedFields } from "@/server/posts/derived-fields";
 import type { MediaStores } from "@/server/storage/types";
 import { queueMediaEvents } from "./post-events";
@@ -16,7 +17,8 @@ export type ShareMediaRuntime = { db: Db; stores: MediaStores; cacheControl: str
  * the cover and media state (the page shows the change on the next request), and tells the backend
  * (`media_ready` when complete; `media_failed` for the given refs if they failed).
  * When a push switches the content meanwhile, the new content is brought up to date instead
- * (that push may have seen the media still in progress).
+ * (that push may have seen the media still in progress). Media go public only while the post and its
+ * author are active (re-checked under the locks).
  */
 export async function refreshShareMedia(rt: ShareMediaRuntime, postId: string, reportFailed: FailedRef[]): Promise<void> {
   for (let attempt = 0; attempt < 5; attempt++) {
@@ -34,20 +36,29 @@ async function refreshOnce(rt: ShareMediaRuntime, postId: string, reportFailed: 
   const resolved = await resolveShareMedia(rt.db, post.author_id, doc);
   const linked = new Set(await listRevisionMediaIds(rt.db, rev.id));
   const added = resolved.media.filter((m) => !linked.has(m.id));
-  if (post.status === "active") await projectMediaPublic(rt.stores, added, rt.cacheControl);
+  const moved = post.status === "active" ? added.map((m) => m.id) : [];
+  await projectMediaPublic(rt.stores, post.status === "active" ? added : [], rt.cacheControl);
 
-  return rt.db.transaction().execute(async (trx) => {
-    const locked = await lockPost(trx, postId);
-    if (!locked) return "done";
-    if (locked.current_revision_id !== rev.id) return "content_changed";
-    await linkRevisionMedia(trx, rev.id, added.map((m) => m.id));
-    // Copies were made only for a live post; one taken offline meanwhile keeps them private (reconciliation removes strays).
-    if (locked.status === "active" && post.status === "active") await recordMediaPublic(trx, added.map((m) => m.id));
-    const updated = await updatePost(trx, postId, { ...derivedFields(doc, locked, resolved), media_state: resolved.state });
-    const failed = resolved.failed.filter((f) => reportFailed.some((r) => r.ref === f.ref));
-    await queueMediaEvents(trx, updated, { before: locked.media_state, failed });
-    return "done";
-  });
+  let live: string[] = [];
+  try {
+    return await rt.db.transaction().execute(async (trx) => {
+      // Author first, then post (author-gate.ts): a deletion request committed meanwhile keeps them private.
+      const author = await lockAuthor(trx, post.author_id);
+      const locked = await lockPost(trx, postId);
+      if (!locked || author === "gone") return "done";
+      if (locked.current_revision_id !== rev.id) return "content_changed";
+      await linkRevisionMedia(trx, rev.id, added.map((m) => m.id));
+      if (locked.status === "active" && author === "active") live = added.map((m) => m.id);
+      await recordMediaPublic(trx, live.filter((id) => moved.includes(id)));
+      const updated = await updatePost(trx, postId, { ...derivedFields(doc, locked, resolved), media_state: resolved.state });
+      const failed = resolved.failed.filter((f) => reportFailed.some((r) => r.ref === f.ref));
+      await queueMediaEvents(trx, updated, { before: locked.media_state, failed });
+      return "done";
+    });
+  } finally {
+    // Copies made for a post taken offline meanwhile go back; a post that went live meanwhile gets them now.
+    await settlePublication(rt.db, rt.stores, rt.cacheControl, { moved, live }).catch((e) => console.error("[nicenote] media settle failed", postId, e));
+  }
 }
 
 /** Refreshes every share of the owner whose current content uses `ref`. */

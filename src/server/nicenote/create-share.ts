@@ -4,6 +4,7 @@ import { findPostByShareId, insertPost } from "@/server/db/repos/posts";
 import { isUniqueViolation } from "@/server/db/repos/profiles";
 import { ApiError } from "@/server/http/errors";
 import { generateSlug } from "@/server/posts/slug";
+import { accountDeleting, assertAuthorActive } from "@/server/accounts/author-gate";
 import { ensureProfile } from "@/server/profiles/ensure-profile";
 import { followNiceMatrixProfile } from "@/server/profiles/profile-follow";
 import type { CreateShareInput } from "./requests";
@@ -27,29 +28,33 @@ export async function createShare(db: Db, input: CreateShareInput): Promise<{ po
   const found = await existing(db, input);
   if (found) return found;
   const profile = await ensureProfile(db, input.userId);
-  if (profile.status !== "active") throw new ApiError("user.deleting", 409);
+  if (profile.status !== "active") throw accountDeleting();
   if (input.profile) await followNiceMatrixProfile(db, profile, input.profile);
   for (let attempt = 1; ; attempt++) {
     try {
-      const post = await insertPost(db, {
-        slug: generateSlug(),
-        author_id: input.userId,
-        source: "nicenote",
-        share_id: input.shareId,
-        region: input.region,
-        source_ref: null,
-        api_client_id: null,
-        status: "preparing",
-        kind: "short",
-        sync_mode: input.syncMode,
-        comments_mode: input.commentsMode ?? "open",
-        cover_media_id: null,
-        current_revision_id: null,
-        source_updated_at: null,
-        status_changed_at: null,
-        status_reason: null,
-        purge_after: null,
-        source_revision: null,
+      // Re-checked under the profile lock: a deletion request committed meanwhile wins.
+      const post = await db.transaction().execute(async (trx) => {
+        await assertAuthorActive(trx, input.userId);
+        return insertPost(trx, {
+          slug: generateSlug(),
+          author_id: input.userId,
+          source: "nicenote",
+          share_id: input.shareId,
+          region: input.region,
+          source_ref: null,
+          api_client_id: null,
+          status: "preparing",
+          kind: "short",
+          sync_mode: input.syncMode,
+          comments_mode: input.commentsMode ?? "open",
+          cover_media_id: null,
+          current_revision_id: null,
+          source_updated_at: null,
+          status_changed_at: null,
+          status_reason: null,
+          purge_after: null,
+          source_revision: null,
+        });
       });
       return { post, created: true };
     } catch (err) {

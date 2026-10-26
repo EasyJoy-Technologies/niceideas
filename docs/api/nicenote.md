@@ -20,6 +20,9 @@ Base: `https://niceideas.app/api/internal/v1/nicenote` (staging `https://t.nicei
   `request.invalid_json` / `media.grant_invalid`, 401 `signature.invalid` / `signature.expired` / `nonce.replayed`,
   403 `service.not_allowed`, 404 `post.not_found`, 409 `share.conflict` (share id of another user) /
   `user.deleting` / `post.frozen` / `post.stale_update` / `post.removed` / `post.unpublished`, 413 `request.too_large` (> 8 MB).
+- Account deletion (v1.0.70): during the cooling-off period `POST /posts` answers 409 `user.deleting`; a content
+  push is **accepted and kept offline** (status `author_deleting`, goes live when the deletion is cancelled). After
+  `deletion_completed` every call for the user answers 409 `user.deleting` (or 404 for its deleted posts).
 
 ## Configuration (`/etc/niceideas/env.<env>`)
 | Variable | Meaning |

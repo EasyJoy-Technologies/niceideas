@@ -1,11 +1,12 @@
 import type { Db } from "@/server/db/client";
-import type { Post, PostUpdate } from "@/server/db/schema";
+import type { Media, Post, PostUpdate } from "@/server/db/schema";
 import { lockPost, updatePost } from "@/server/db/repos/posts";
 import { findRevision, insertRevision, linkRevisionMedia, listRevisionMediaIds } from "@/server/db/repos/revisions";
 import { contentHash } from "@/server/documents/hash";
 import type { PostDocument } from "@/server/documents/schema";
 import { ApiError } from "@/server/http/errors";
-import { projectMediaPublic, recordMediaPublic, withdrawUnreferencedMedia } from "@/server/media/publication";
+import { accountDeleting, assertAuthorActive, readAuthorState } from "@/server/accounts/author-gate";
+import { projectMediaPublic, recordMediaPublic, settlePublication, withdrawUnreferencedMedia } from "@/server/media/publication";
 import type { MediaStores } from "@/server/storage/types";
 import { derivedFields } from "./derived-fields";
 import { resolveDocumentMedia } from "./media-refs";
@@ -34,11 +35,29 @@ export async function switchRevision(db: Db, stores: MediaStores, actorId: strin
   const current = before.current_revision_id ? await findRevision(db, before.current_revision_id) : undefined;
   if (current?.content_hash === hash) return { post: before, contentHash: hash, changed: false };
 
+  if ((await readAuthorState(db, before.author_id)) !== "active") throw accountDeleting();
   await assertCanCreateRevision(db, actorId);
   const media = await resolveDocumentMedia(db, before.author_id, document);
   await projectMediaPublic(stores, media, opts.cacheControl);
+  const moved = media.map((m) => m.id);
 
-  const outcome = await db.transaction().execute(async (trx) => {
+  const outcome = await commitSwitch(db, before, document, hash, media, opts).catch(async (err: unknown) => {
+    await settlePublication(db, stores, opts.cacheControl, { moved, live: [] }).catch((e) => console.error("[revision] media settle failed", before.id, e));
+    throw err;
+  });
+  // Unchanged after all (re-checked under the lock): the media moved for nothing go back.
+  if (!outcome.changed) await settlePublication(db, stores, opts.cacheControl, { moved, live: [] }).catch((e) => console.error("[revision] media settle failed", before.id, e));
+
+  // Media dropped by this change leave the public store (failures are retried by reconciliation).
+  const dropped = outcome.previousMedia.filter((id) => !moved.includes(id));
+  await withdrawUnreferencedMedia(db, stores, dropped).catch((e) => console.error("[revision] media withdrawal failed", outcome.post.id, e));
+  return { post: outcome.post, contentHash: hash, changed: outcome.changed };
+}
+
+/** The switch itself, under the author lock then the post lock (author-gate.ts). */
+async function commitSwitch(db: Db, before: Post, document: PostDocument, hash: string, media: Media[], opts: SwitchOptions) {
+  return db.transaction().execute(async (trx) => {
+    await assertAuthorActive(trx, before.author_id);
     const post = await lockPost(trx, before.id);
     if (!post) throw new ApiError("post.not_found", 404);
     if (!opts.check(post)) return { post, changed: false, previousMedia: [] as string[] };
@@ -52,9 +71,4 @@ export async function switchRevision(db: Db, stores: MediaStores, actorId: strin
     const previousMedia = prev ? await listRevisionMediaIds(trx, prev.id) : [];
     return { post: updated, changed: true, previousMedia };
   });
-
-  // Media dropped by this change leave the public store (failures are retried by reconciliation).
-  const dropped = outcome.previousMedia.filter((id) => !media.some((m) => m.id === id));
-  await withdrawUnreferencedMedia(db, stores, dropped).catch((e) => console.error("[revision] media withdrawal failed", outcome.post.id, e));
-  return { post: outcome.post, contentHash: hash, changed: outcome.changed };
 }

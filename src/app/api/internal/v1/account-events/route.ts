@@ -1,4 +1,5 @@
-import { accountEventsDisabled, applyAccountEvent, verifyAccountEvent } from "@/server/accounts/account-events";
+import { accountEventsDisabled, verifyAccountEvent } from "@/server/accounts/account-events";
+import { applyAccountEvent } from "@/server/accounts/apply-account-event";
 import { getConfig } from "@/server/config/env";
 import { getDb } from "@/server/db";
 import { apiRoute } from "@/server/http/api-route";

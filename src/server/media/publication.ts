@@ -48,3 +48,19 @@ export async function withdrawUnreferencedMedia(db: Db, stores: MediaStores, can
   await markMediaWithdrawn(db, toWithdraw.filter((id) => anyRef.has(id)), false);
   await markMediaWithdrawn(db, toWithdraw.filter((id) => !anyRef.has(id)), true);
 }
+
+/**
+ * After the commit that decided which media are live (author / post state re-checked under the
+ * locks): media moved to the public store beforehand but not live go back (unless another active
+ * post uses them); live media not moved yet are moved and recorded now. Safe to re-run.
+ */
+export async function settlePublication(db: Db, stores: MediaStores, cacheControl: string, s: { moved: string[]; live: string[] }): Promise<void> {
+  const moved = new Set(s.moved);
+  const live = new Set(s.live);
+  const late = [...live].filter((id) => !moved.has(id));
+  if (late.length) {
+    await projectMediaPublic(stores, await findMediaByIds(db, late), cacheControl);
+    await recordMediaPublic(db, late);
+  }
+  await withdrawUnreferencedMedia(db, stores, s.moved.filter((id) => !live.has(id)));
+}

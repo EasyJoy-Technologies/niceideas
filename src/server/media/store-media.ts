@@ -2,6 +2,7 @@ import { randomUUID } from "node:crypto";
 import path from "node:path";
 import type { Db } from "@/server/db/client";
 import type { Media, MediaKind, MediaRendition, MediaVariants } from "@/server/db/schema";
+import { accountDeleting, lockAuthor } from "@/server/accounts/author-gate";
 import { insertMediaOrGet } from "@/server/db/repos/media";
 import type { ObjectStore } from "@/server/storage/types";
 import type { ProcessedImage } from "./image";
@@ -27,7 +28,8 @@ export async function storeAudioFile(store: ObjectStore, prefix: string, file: s
 
 /**
  * Inserts the media row for stored renditions. When the same file (owner + sha256) was stored
- * concurrently, the existing row wins and our copies are removed.
+ * concurrently, the existing row wins and our copies are removed. An owner whose deletion completed
+ * (or is running) gets nothing stored: the copies are removed and 409 `user.deleting` is thrown.
  */
 export async function insertStoredMedia(
   db: Db,
@@ -35,20 +37,23 @@ export async function insertStoredMedia(
   row: { ownerId: string; sha256: string; kind: MediaKind; mime: string; variants: MediaVariants; width: number | null; height: number | null; durationMs: number | null },
 ): Promise<{ media: Media; created: boolean }> {
   const renditions = renditionsOf({ variants: row.variants });
-  const result = await insertMediaOrGet(db, {
-    owner_id: row.ownerId,
-    sha256: row.sha256,
-    kind: row.kind,
-    mime: row.mime,
-    byte_size: renditions.reduce((n, r) => n + r.bytes, 0),
-    width: row.width,
-    height: row.height,
-    duration_ms: row.durationMs,
-    variants: JSON.stringify(row.variants),
+  const keys = mediaKeys({ variants: row.variants });
+  // Under the owner lock (author-gate.ts): the account deletion lists the owner's media after its fence.
+  const result = await db.transaction().execute(async (trx) => {
+    if ((await lockAuthor(trx, row.ownerId)) === "gone") return null;
+    return insertMediaOrGet(trx, {
+      owner_id: row.ownerId,
+      sha256: row.sha256,
+      kind: row.kind,
+      mime: row.mime,
+      byte_size: renditions.reduce((n, r) => n + r.bytes, 0),
+      width: row.width,
+      height: row.height,
+      duration_ms: row.durationMs,
+      variants: JSON.stringify(row.variants),
+    });
   });
-  if (!result.created) {
-    const keys = mediaKeys({ variants: row.variants });
-    await store.deleteMany(keys).catch((e) => console.error("[media] orphan cleanup failed", keys[0], e));
-  }
+  if (!result?.created) await store.deleteMany(keys).catch((e) => console.error("[media] orphan cleanup failed", keys[0], e));
+  if (!result) throw accountDeleting();
   return result;
 }
