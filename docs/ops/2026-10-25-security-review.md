@@ -5,7 +5,7 @@
 
 | # | 问题 | 风险 | 处理 |
 |---|---|---|---|
-| S1 | **源站可以绕过 Cloudflare 直接访问**（直连 prod2 的 443 端口返回 200）。应用信任请求头里的 `CF-Connecting-IP`（访客 IP）和 `CF-IPCountry`（国家），直连时这两个头可以伪造：按 IP 的限流和封禁可以被绕过，中国大陆规则也可以被绕过。 | 中 | nginx 只放行 Cloudflare 的地址段，其他直接返回 403；同时补上 IPv6 地址段（原来只信任 IPv4）。已写进 `deploy/niceideas.app.conf` 和 `deploy/t.niceideas.app.conf`，`nginx -t` 语法测试通过。**改 nginx 要你确认后才能上线**（staging 和生产）。 |
+| S1 | **源站可以绕过 Cloudflare 直接访问**（直连 prod2 的 443 端口返回 200）。应用信任请求头里的 `CF-Connecting-IP`（访客 IP）和 `CF-IPCountry`（国家），直连时这两个头可以伪造：按 IP 的限流和封禁可以被绕过，中国大陆规则也可以被绕过。 | 中 | nginx 只放行 Cloudflare 的地址段，其他直接返回 403；同时补上 IPv6 地址段（原来只信任 IPv4）。已写进 `deploy/niceideas.app.conf` 和 `deploy/t.niceideas.app.conf`。**2026-10-26 已上线**（Xianglin 确认）：staging 和生产都是经 Cloudflare 200、直连源站 403，后台的签名心跳照常到达。 |
 | S2 | **登录后跳转可以被引到外站**：`/auth/sign-in?next=` 和关注表单的 `next` 只拦了 `//` 开头，没拦 `/<Tab>/evil.example` 这种写法。浏览器会把 Tab 和换行去掉，结果就变成跳到外站。 | 低到中（可用于钓鱼） | 所有跳转目标统一走一个检查（`src/server/http/safe-path.ts`），拒绝空白、控制字符和反斜杠，并补了测试。v1.0.67。 |
 | H1 | 网站没有发 HSTS 头 | 低 | 所有响应加 `Strict-Transport-Security: max-age=31536000`，静态文件也加 `nosniff`。v1.0.67。 |
 | H2 | 生产备份只存在 prod2 本机 | 运维 | v1.0.66 增加异地备份（R2 私有桶，保留 30 天），需要随生产部署启用。 |
