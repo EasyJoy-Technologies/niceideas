@@ -18,16 +18,17 @@ export async function enqueueOutbox(db: Db, item: { kind: OutboxKind; dedupeKey:
 }
 
 /**
- * Takes up to `limit` due notifications (oldest first) and leases them for `leaseSeconds`: a worker
- * that dies mid-delivery leaves them due again afterwards. Counts the attempt. Safe with several workers.
+ * Takes the oldest due notification and leases it for `leaseSeconds` under a new lease token: a
+ * worker that dies mid-delivery leaves it due again afterwards. Counts the attempt. One at a time, so
+ * a lease never runs out while the item waits behind others (F13). Safe with several workers.
  */
-export async function claimOutbox(db: Db, limit: number, leaseSeconds: number): Promise<OutboxItem[]> {
+export async function claimOutboxItem(db: Db, leaseSeconds: number): Promise<OutboxItem | undefined> {
   const r = await sql<OutboxItem>`
-    UPDATE outbox o SET attempts = o.attempts + 1, run_after = now() + make_interval(secs => ${leaseSeconds}), updated_at = now()
-    FROM (SELECT id FROM outbox WHERE state = 'pending' AND run_after <= now() ORDER BY run_after, created_at LIMIT ${limit} FOR UPDATE SKIP LOCKED) due
+    UPDATE outbox o SET attempts = o.attempts + 1, run_after = now() + make_interval(secs => ${leaseSeconds}), lease_token = gen_random_uuid(), updated_at = now()
+    FROM (SELECT id FROM outbox WHERE state = 'pending' AND run_after <= now() ORDER BY created_at, id LIMIT 1 FOR UPDATE SKIP LOCKED) due
     WHERE o.id = due.id
     RETURNING o.*`.execute(db);
-  return r.rows.sort((a, b) => a.created_at.getTime() - b.created_at.getTime());
+  return r.rows[0];
 }
 
 /** When the next notification falls due (same filter as `claimOutbox`); null when none is pending. */
@@ -36,13 +37,21 @@ export async function nextOutboxDueAt(db: Db): Promise<Date | null> {
   return r?.at ?? null;
 }
 
-/** Delivered (`done`), given up (`failed`), or due again after `retryInSeconds`. */
-export async function settleOutbox(db: Db, id: string, outcome: { state: "done" } | { state: "failed"; error: string } | { retryInSeconds: number; error: string }): Promise<void> {
+/**
+ * Delivered (`done`), given up (`failed`), or due again after `retryInSeconds` — only while the claim
+ * `item` still holds its lease; false when it lost it (nothing written).
+ */
+export async function settleOutbox(
+  db: Db,
+  item: Pick<OutboxItem, "id" | "lease_token">,
+  outcome: { state: "done" } | { state: "failed"; error: string } | { retryInSeconds: number; error: string },
+): Promise<boolean> {
   const set =
     "retryInSeconds" in outcome
-      ? { last_error: outcome.error, run_after: sql<Date>`now() + make_interval(secs => ${outcome.retryInSeconds})`, updated_at: sql<Date>`now()` }
-      : { state: outcome.state, last_error: outcome.state === "failed" ? outcome.error : null, updated_at: sql<Date>`now()` };
-  await db.updateTable("outbox").set(set).where("id", "=", id).execute();
+      ? { last_error: outcome.error, run_after: sql<Date>`now() + make_interval(secs => ${outcome.retryInSeconds})`, lease_token: null, updated_at: sql<Date>`now()` }
+      : { state: outcome.state, last_error: outcome.state === "failed" ? outcome.error : null, lease_token: null, updated_at: sql<Date>`now()` };
+  const r = await db.updateTable("outbox").set(set).where("id", "=", item.id).where("state", "=", "pending").where("lease_token", "=", item.lease_token).executeTakeFirst();
+  return Number(r.numUpdatedRows ?? 0) > 0;
 }
 
 /** Delivered notifications are kept this long (diagnostics), then dropped by maintenance. */

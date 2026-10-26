@@ -2,7 +2,8 @@ import { sql } from "kysely";
 import type { Db } from "../client";
 import type { AccountEventKind, PostStatus, Profile, ProfileStatus } from "../schema";
 
-export type AccountEventClaim = "claimed" | "completed" | "busy";
+/** `until` is the claim's lease end, its token for `releaseAccountEvent`. */
+export type AccountEventClaim = { state: "claimed"; until: Date } | { state: "completed" } | { state: "busy" };
 
 /**
  * Takes an event for processing: a new event, or one whose earlier attempt failed (not completed)
@@ -10,7 +11,8 @@ export type AccountEventClaim = "claimed" | "completed" | "busy";
  * delivery of the same event is running now.
  */
 export async function claimAccountEvent(db: Db, e: { eventId: string; userId: string; event: AccountEventKind; occurredAt: Date }, leaseSeconds: number): Promise<AccountEventClaim> {
-  const until = sql<Date>`now() + make_interval(secs => ${leaseSeconds})`;
+  // Millisecond precision: the lease end is compared again from JavaScript (token).
+  const until = sql<Date>`date_trunc('milliseconds', now() + make_interval(secs => ${leaseSeconds}))`;
   const claimed = await db
     .insertInto("account_event")
     .values({ event_id: e.eventId, user_id: e.userId, event: e.event, occurred_at: e.occurredAt, claimed_until: until })
@@ -21,11 +23,11 @@ export async function claimAccountEvent(db: Db, e: { eventId: string; userId: st
         .where("account_event.completed_at", "is", null)
         .where((eb) => eb.or([eb("account_event.claimed_until", "is", null), eb("account_event.claimed_until", "<", sql<Date>`now()`)])),
     )
-    .returning("event_id")
+    .returning("claimed_until")
     .executeTakeFirst();
-  if (claimed) return "claimed";
+  if (claimed?.claimed_until) return { state: "claimed", until: claimed.claimed_until };
   const row = await db.selectFrom("account_event").select("completed_at").where("event_id", "=", e.eventId).executeTakeFirst();
-  return row?.completed_at ? "completed" : "busy";
+  return row?.completed_at ? { state: "completed" } : { state: "busy" };
 }
 
 /** All steps of the event succeeded: later deliveries are duplicates. */
@@ -33,9 +35,9 @@ export async function completeAccountEvent(db: Db, eventId: string): Promise<voi
   await db.updateTable("account_event").set({ completed_at: sql<Date>`now()`, claimed_until: null }).where("event_id", "=", eventId).execute();
 }
 
-/** An attempt failed: the next delivery runs the event again at once. */
-export async function releaseAccountEvent(db: Db, eventId: string): Promise<void> {
-  await db.updateTable("account_event").set({ claimed_until: null }).where("event_id", "=", eventId).where("completed_at", "is", null).execute();
+/** An attempt failed: the next delivery runs the event again at once (a lease taken over by another delivery meanwhile is left alone). */
+export async function releaseAccountEvent(db: Db, eventId: string, until: Date): Promise<void> {
+  await db.updateTable("account_event").set({ claimed_until: null }).where("event_id", "=", eventId).where("completed_at", "is", null).where("claimed_until", "=", until).execute();
 }
 
 /** Latest deletion event completed for the user (out-of-order deliveries are ignored). */

@@ -136,7 +136,7 @@ describe("F01: a deletion counts as done only once all its steps succeeded", () 
 
   it("a delivery while another one runs answers 503; unfinished events survive the purge", async () => {
     const e = { eventId: "fence-busy-evt", userId: "fence-busy", event: "deletion_requested" as const, occurredAt: new Date() };
-    expect(await claimAccountEvent(ctx.db, e, 600)).toBe("claimed");
+    expect((await claimAccountEvent(ctx.db, e, 600)).state).toBe("claimed");
     await expect(applyAccountEvent(rt(), { ...e, occurredAt: e.occurredAt.toISOString() })).rejects.toMatchObject({ code: "account_event.in_progress", status: 503 });
     await purgeOldAccountEvents(ctx.db, 0);
     expect(await ctx.db.selectFrom("account_event").select("event_id").where("event_id", "=", e.eventId).executeTakeFirst()).toBeDefined();

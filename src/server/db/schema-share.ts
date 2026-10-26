@@ -24,6 +24,8 @@ export interface MediaJobTable {
   run_after: DefaultedTimestamp;
   /** The shares using this settled job still have to be refreshed (a future time = retry delay). */
   refresh_due_at: Timestamp | null;
+  /** Token of the claim holding the lease (migration 0020); later writes of an older claim do nothing. */
+  lease_token: string | null;
   created_at: CreatedAt;
   updated_at: DefaultedTimestamp;
 }
@@ -56,6 +58,8 @@ export interface OutboxTable {
   attempts: Generated<number>;
   last_error: string | null;
   run_after: DefaultedTimestamp;
+  /** Token of the claim holding the lease (migration 0020); later writes of an older claim do nothing. */
+  lease_token: string | null;
   created_at: CreatedAt;
   updated_at: DefaultedTimestamp;
 }
@@ -68,6 +72,8 @@ export interface AvatarJobTable {
   attempts: Generated<number>;
   error: string | null;
   run_after: DefaultedTimestamp;
+  /** Token of the claim holding the lease (migration 0020); later writes of an older claim do nothing. */
+  lease_token: string | null;
   created_at: DefaultedTimestamp;
   updated_at: DefaultedTimestamp;
 }

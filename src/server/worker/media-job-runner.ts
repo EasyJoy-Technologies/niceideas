@@ -15,6 +15,7 @@ import { applyRefToShares } from "@/server/nicenote/apply-share-media";
 import { fetchGrant, GrantFetchError } from "@/server/nicenote/grant-fetch";
 import type { MediaStores } from "@/server/storage/types";
 import { removeTempDir, type SpooledBody } from "@/server/util/temp-file";
+import { logLeaseLost } from "./lease";
 import { errorText } from "./retry";
 
 export type MediaWorkerRuntime = {
@@ -48,13 +49,14 @@ function onError(err: unknown, job: MediaJob, signal: AbortSignal): Outcome {
   return job.attempts < MAX_ATTEMPTS ? { retry: `${reason}: ${errorText(err)}` } : { state: "failed", reason };
 }
 
-async function runJob(rt: MediaWorkerRuntime & { key: string }, job: MediaJob, signal: AbortSignal): Promise<Outcome> {
+/** `signal` aborts on shutdown or lost lease; `lease` only on the latter (nothing more is stored then). */
+async function runJob(rt: MediaWorkerRuntime & { key: string }, job: MediaJob, signal: AbortSignal, lease: AbortSignal): Promise<Outcome> {
   if (job.attempts > MAX_ATTEMPTS) return { state: "failed", reason: job.error?.split(":")[0] || "temporarily_unavailable" };
   if (job.url_expires_at && job.url_expires_at.getTime() < Date.now()) return { state: "failed", reason: "fetch_expired" };
   let file: SpooledBody | undefined;
   try {
     file = await fetchGrant(job.url!, { key: rt.key, maxBytes: rt.maxBytes, signal });
-    const media = await ingestShareMedia(rt.db, rt.stores.privateStore, { ownerId: job.owner_id, kind: job.kind, file, maxImagePixels: rt.maxImagePixels, signal });
+    const media = await ingestShareMedia(rt.db, rt.stores.privateStore, { ownerId: job.owner_id, kind: job.kind, file, maxImagePixels: rt.maxImagePixels, signal, lease });
     return { state: "done", mediaId: media.id };
   } catch (err) {
     return onError(err, job, signal);
@@ -87,6 +89,7 @@ async function runNextMediaRefresh(rt: MediaWorkerRuntime): Promise<boolean> {
  * Takes the next due NiceNote media and fetches / stores it (plan docs/plan/2026-10-24-s2-worker.md
  * §3), then updates the shares using it. Temporary problems are retried here a few times before being
  * reported; files that can never work are remembered (`rejected`). Returns false when nothing was due.
+ * A job whose lease is lost (another worker claimed it, F13) stops at once and writes nothing more.
  */
 export async function runNextMediaJob(rt: MediaWorkerRuntime, signal: AbortSignal): Promise<boolean> {
   const key = rt.key;
@@ -95,23 +98,36 @@ export async function runNextMediaJob(rt: MediaWorkerRuntime, signal: AbortSigna
   const job = await claimMediaJob(rt.db, LEASE_SECONDS);
   if (!job) return false;
   const started = Date.now();
-  const renew = setInterval(() => void extendMediaJobLease(rt.db, job, LEASE_SECONDS).catch(() => undefined), LEASE_RENEW_MS);
+  const lease = new AbortController();
+  const renew = setInterval(
+    () =>
+      void extendMediaJobLease(rt.db, job, LEASE_SECONDS).then(
+        (held) => {
+          if (!held) lease.abort();
+        },
+        () => undefined,
+      ),
+    LEASE_RENEW_MS,
+  );
   let outcome: Outcome;
   try {
-    outcome = await runJob({ ...rt, key }, job, signal);
+    outcome = await runJob({ ...rt, key }, job, AbortSignal.any([signal, lease.signal]), lease.signal);
   } finally {
     clearInterval(renew);
   }
+  // Another worker holds the job now: this run's result is dropped (its writes did nothing).
+  const lost = () => logLeaseLost("media_job", job.attempts, job.ref);
   if ("released" in outcome) {
-    await releaseMediaJob(rt.db, job);
-    return false;
+    if (await releaseMediaJob(rt.db, job)) return false;
+    return lost();
   }
   if ("retry" in outcome) {
-    await retryMediaJobLater(rt.db, job, LOCAL_RETRY_SECONDS[job.attempts - 1] ?? 300, outcome.retry);
+    if (!(await retryMediaJobLater(rt.db, job, LOCAL_RETRY_SECONDS[job.attempts - 1] ?? 300, outcome.retry))) return lost();
   } else {
     const settled = outcome.state === "done" ? outcome : { state: outcome.state, error: outcome.reason };
     const token = await settleMediaJob(rt.db, job, settled);
-    if (token) await refreshShares(rt, { ...job, state: outcome.state, error: "reason" in outcome ? outcome.reason : null }, token);
+    if (!token) return lost();
+    await refreshShares(rt, { ...job, state: outcome.state, error: "reason" in outcome ? outcome.reason : null }, token);
   }
   const result = "retry" in outcome ? "retry" : outcome.state;
   console.log(JSON.stringify({ event: "media_job", kind: job.kind, attempt: job.attempts, result, reason: "reason" in outcome ? outcome.reason : undefined, ms: Date.now() - started }));

@@ -36,13 +36,13 @@ async function run(rt: AccountRuntime, e: AccountEvent): Promise<AccountEventRes
  */
 export async function applyAccountEvent(rt: AccountRuntime, e: AccountEvent): Promise<AccountEventResult> {
   const claim = await claimAccountEvent(rt.db, { eventId: e.eventId, userId: e.userId, event: e.event, occurredAt: new Date(e.occurredAt) }, LEASE_SECONDS);
-  if (claim === "completed") return "duplicate";
-  if (claim === "busy") throw new ApiError("account_event.in_progress", 503, undefined, { "Retry-After": String(RETRY_AFTER_SECONDS) });
+  if (claim.state === "completed") return "duplicate";
+  if (claim.state === "busy") throw new ApiError("account_event.in_progress", 503, undefined, { "Retry-After": String(RETRY_AFTER_SECONDS) });
   let result: AccountEventResult;
   try {
     result = await run(rt, e);
   } catch (err) {
-    await releaseAccountEvent(rt.db, e.eventId).catch((r) => console.error("[account-events] release failed", e.eventId, r));
+    await releaseAccountEvent(rt.db, e.eventId, claim.until).catch((r) => console.error("[account-events] release failed", e.eventId, r));
     throw err;
   }
   await completeAccountEvent(rt.db, e.eventId);

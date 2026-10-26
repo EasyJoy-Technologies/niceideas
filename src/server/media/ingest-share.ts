@@ -22,7 +22,8 @@ export class MediaUnusableError extends Error {
 const SHARP_IMAGES = new Set(["image/jpeg", "image/png", "image/webp", "image/gif", "image/avif", "image/tiff"]);
 const CONVERTED_IMAGES: Record<string, ConvertibleFormat> = { "image/heic": "heic", "image/heif": "heic", "image/heic-sequence": "heic", "image/heif-sequence": "heic", "image/bmp": "bmp" };
 
-type Input = { ownerId: string; kind: MediaKind; file: SpooledBody; maxImagePixels: number; signal?: AbortSignal };
+/** `signal` stops the converters; `lease` (worker, F13) aborts when the job's lease is lost: nothing more is stored then. */
+type Input = { ownerId: string; kind: MediaKind; file: SpooledBody; maxImagePixels: number; signal?: AbortSignal; lease?: AbortSignal };
 
 async function imageVariants(store: ObjectStore, prefix: string, input: Input, workDir: string) {
   const type = await fileTypeFromFile(input.file.file);
@@ -30,12 +31,14 @@ async function imageVariants(store: ObjectStore, prefix: string, input: Input, w
   if (!type || (!SHARP_IMAGES.has(type.mime) && !convertible)) throw new MediaUnusableError("unsupported_format", type?.mime ?? "unknown");
   const source = convertible ? await convertToPng(input.file.file, convertible, workDir, input.maxImagePixels, input.signal) : input.file.file;
   const img = await processImage(source, workDir, input.maxImagePixels, { animated: true });
+  input.lease?.throwIfAborted();
   const variants = await storeImageRenditions(store, prefix, workDir, img);
   return { variants, mime: type.mime, width: img.width, height: img.height, durationMs: null };
 }
 
 async function audioVariants(store: ObjectStore, prefix: string, input: Input, workDir: string) {
   const audio = await toWebAudio(input.file.file, workDir, input.signal);
+  input.lease?.throwIfAborted();
   const variants: MediaVariants = await storeAudioFile(store, prefix, audio.file, audio);
   return { variants, mime: audio.mime, width: null, height: null, durationMs: audio.durationMs };
 }
@@ -54,10 +57,13 @@ export async function ingestShareMedia(db: Db, store: ObjectStore, input: Input)
   }
   const workDir = path.join(input.file.dir, "out");
   await mkdir(workDir, { recursive: true });
+  input.lease?.throwIfAborted();
   const prefix = await beginUpload(db, input.ownerId);
   let stored;
   try {
     stored = input.kind === "image" ? await imageVariants(store, prefix, input, workDir) : await audioVariants(store, prefix, input, workDir);
+    // A write in flight when the lease was lost is not used: its objects go with the upload.
+    input.lease?.throwIfAborted();
   } catch (err) {
     await abandonUpload(db, store, prefix);
     if (err instanceof ImageRejectedError || err instanceof AudioUnusableError) throw new MediaUnusableError(err.reason, err.message);

@@ -1,9 +1,12 @@
-import { sql, type Selectable } from "kysely";
+import { sql, type Selectable, type UpdateObject } from "kysely";
 import type { Db } from "../client";
+import type { Database } from "../schema";
 import type { Media, MediaJobState, MediaKind } from "../schema";
 import type { MediaJobTable } from "../schema-share";
 
 export type MediaJob = Selectable<MediaJobTable>;
+/** A claimed job: writes of the claim apply only while its `lease_token` holds the lease (F13). */
+export type MediaJobLease = Pick<MediaJob, "owner_id" | "ref" | "lease_token">;
 export type MediaGrant = { ref: string; kind: MediaKind; mime: string; bytes: number; url: string | null; expiresAt: Date | null };
 
 /** Stored media of an owner by NiceNote ref (refs not stored yet are absent). */
@@ -47,6 +50,7 @@ export async function upsertMediaJob(db: Db, ownerId: string, g: MediaGrant): Pr
         attempts: sql`CASE WHEN ${revive} THEN 0 ELSE media_job.attempts END`,
         error: sql`CASE WHEN ${revive} THEN NULL ELSE media_job.error END`,
         run_after: sql`CASE WHEN ${revive} THEN now() ELSE media_job.run_after END`,
+        lease_token: sql`CASE WHEN ${revive} THEN NULL ELSE media_job.lease_token END`,
         updated_at: sql`now()`,
       }),
     )
@@ -58,17 +62,18 @@ export async function linkMediaRef(db: Db, ownerId: string, ref: string, media: 
   await db
     .insertInto("media_job")
     .values({ owner_id: ownerId, ref, kind: media.kind, mime: media.mime, bytes: null, url: null, url_expires_at: null, state: "done", media_id: media.id })
-    .onConflict((oc) => oc.columns(["owner_id", "ref"]).doUpdateSet({ state: "done", media_id: media.id, error: null, updated_at: sql`now()` }))
+    .onConflict((oc) => oc.columns(["owner_id", "ref"]).doUpdateSet({ state: "done", media_id: media.id, error: null, lease_token: null, updated_at: sql`now()` }))
     .execute();
 }
 
 /**
  * Takes the next due job with a grant (pending, or running with an expired lease after a crash),
- * marks it running until `now + leaseSeconds` and counts the attempt. Safe with several workers.
+ * marks it running until `now + leaseSeconds` under a new lease token and counts the attempt. Safe
+ * with several workers: an earlier claim of the same job loses its lease (its writes do nothing).
  */
 export async function claimMediaJob(db: Db, leaseSeconds: number): Promise<MediaJob | undefined> {
   const r = await sql<MediaJob>`
-    UPDATE media_job j SET state = 'running', attempts = j.attempts + 1, run_after = now() + make_interval(secs => ${leaseSeconds}), updated_at = now()
+    UPDATE media_job j SET state = 'running', attempts = j.attempts + 1, run_after = now() + make_interval(secs => ${leaseSeconds}), lease_token = gen_random_uuid(), updated_at = now()
     FROM (
       SELECT owner_id, ref FROM media_job
       WHERE state IN ('pending', 'running') AND run_after <= now() AND url IS NOT NULL
@@ -92,15 +97,22 @@ export async function nextMediaJobDueAt(db: Db): Promise<Date | null> {
   return times.length ? new Date(Math.min(...times.map((t) => t.getTime()))) : null;
 }
 
-/** Extends the lease of a running job (long downloads / transcodes). */
-export async function extendMediaJobLease(db: Db, j: Pick<MediaJob, "owner_id" | "ref">, leaseSeconds: number): Promise<void> {
-  await db
+/** Updates the job only while the claim `j` still holds its lease; true when it did. */
+async function updateLeased(db: Db, j: MediaJobLease, set: UpdateObject<Database, "media_job">): Promise<boolean> {
+  const r = await db
     .updateTable("media_job")
-    .set({ run_after: sql`now() + make_interval(secs => ${leaseSeconds})`, updated_at: sql`now()` })
+    .set(set)
     .where("owner_id", "=", j.owner_id)
     .where("ref", "=", j.ref)
     .where("state", "=", "running")
-    .execute();
+    .where("lease_token", "=", j.lease_token)
+    .executeTakeFirst();
+  return Number(r.numUpdatedRows ?? 0) > 0;
+}
+
+/** Extends the lease of a running job (long downloads / transcodes); false when the lease was lost. */
+export async function extendMediaJobLease(db: Db, j: MediaJobLease, leaseSeconds: number): Promise<boolean> {
+  return updateLeased(db, j, { run_after: sql`now() + make_interval(secs => ${leaseSeconds})`, updated_at: sql`now()` });
 }
 
 /** Refresh due times are tokens compared in JavaScript: millisecond precision. */
@@ -109,22 +121,21 @@ const REFRESH_NOW = sql<Date>`date_trunc('milliseconds', now())`;
 /**
  * Final outcome of a running job: stored (`done`), temporary failure (`failed`) or permanent
  * (`rejected`). The shares using it are due for a refresh in the same write (F12); returns that due
- * time, the token for `finishMediaRefresh`.
+ * time, the token for `finishMediaRefresh` — null when the claim lost its lease (nothing written).
  */
-export async function settleMediaJob(
-  db: Db,
-  j: Pick<MediaJob, "owner_id" | "ref">,
-  outcome: { state: "done"; mediaId: string } | { state: "failed" | "rejected"; error: string },
-): Promise<Date | null> {
+export async function settleMediaJob(db: Db, j: MediaJobLease, outcome: { state: "done"; mediaId: string } | { state: "failed" | "rejected"; error: string }): Promise<Date | null> {
   const r = await db
     .updateTable("media_job")
     .set({
       ...(outcome.state === "done" ? { state: "done" as const, media_id: outcome.mediaId, error: null } : { state: outcome.state, error: outcome.error }),
       refresh_due_at: REFRESH_NOW,
+      lease_token: null,
       updated_at: sql`now()`,
     })
     .where("owner_id", "=", j.owner_id)
     .where("ref", "=", j.ref)
+    .where("state", "=", "running")
+    .where("lease_token", "=", j.lease_token)
     .returning("refresh_due_at")
     .executeTakeFirst();
   return r?.refresh_due_at ?? null;
@@ -160,23 +171,12 @@ export async function deferMediaRefresh(db: Db, j: Pick<MediaJob, "owner_id" | "
     .execute();
 }
 
-/** Puts a running job back in the queue after a temporary problem. */
-export async function retryMediaJobLater(db: Db, j: Pick<MediaJob, "owner_id" | "ref">, delaySeconds: number, error: string): Promise<void> {
-  await db
-    .updateTable("media_job")
-    .set({ state: "pending", error, run_after: sql`now() + make_interval(secs => ${delaySeconds})`, updated_at: sql`now()` })
-    .where("owner_id", "=", j.owner_id)
-    .where("ref", "=", j.ref)
-    .execute();
+/** Puts a running job back in the queue after a temporary problem; false when the lease was lost. */
+export async function retryMediaJobLater(db: Db, j: MediaJobLease, delaySeconds: number, error: string): Promise<boolean> {
+  return updateLeased(db, j, { state: "pending", error, run_after: sql`now() + make_interval(secs => ${delaySeconds})`, lease_token: null, updated_at: sql`now()` });
 }
 
-/** Gives a running job back untouched (worker shutting down): due at once, the attempt not counted. */
-export async function releaseMediaJob(db: Db, j: Pick<MediaJob, "owner_id" | "ref">): Promise<void> {
-  await db
-    .updateTable("media_job")
-    .set({ state: "pending", attempts: sql`greatest(attempts - 1, 0)`, run_after: sql`now()`, updated_at: sql`now()` })
-    .where("owner_id", "=", j.owner_id)
-    .where("ref", "=", j.ref)
-    .where("state", "=", "running")
-    .execute();
+/** Gives a running job back untouched (worker shutting down): due at once, the attempt not counted; false when the lease was lost. */
+export async function releaseMediaJob(db: Db, j: MediaJobLease): Promise<boolean> {
+  return updateLeased(db, j, { state: "pending", attempts: sql`greatest(attempts - 1, 0)`, run_after: sql`now()`, lease_token: null, updated_at: sql`now()` });
 }
