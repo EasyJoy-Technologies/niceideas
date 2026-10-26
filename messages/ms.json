@@ -125,10 +125,10 @@
     },
     "preset": {
       "duplicate": "Laporan berulang",
-      "guidelines": "Melanggar garis panduan komuniti",
       "noViolation": "Tidak ditemui pelanggaran",
       "rights": "Melanggar hak pihak lain",
-      "spam": "Spam"
+      "spam": "Spam",
+      "terms": "Melanggar terma penggunaan"
     },
     "queueEmpty": "Tiada laporan terbuka.",
     "readOnly": "Baca sahaja",
@@ -215,15 +215,22 @@
   "compose": {
     "addAudio": "Tambah audio (hingga {max})",
     "addImages": "Tambah imej (maksimum {max})",
+    "edit": {
+      "blocked": {
+        "not_active": "Siaran ini tidak boleh disunting sekarang.",
+        "processing": "Imej dan audio masih diproses. Anda boleh menyunting siaran setelah ia sedia."
+      },
+      "title": "Sunting siaran"
+    },
     "error": {
       "empty": "Tulis sesuatu atau tambah imej.",
       "failed": "Tidak dapat menyiar. Sila cuba lagi.",
       "rate_limited": "Anda menyiar terlalu cepat. Sila tunggu sebentar.",
+      "shortTooLongEdit": "Siaran pendek terhad kepada {max} aksara.",
       "short_too_long": "Siaran pendek terhad kepada {max} aksara. Tukar kepada “{article}” untuk menulis lebih banyak.",
       "too_large": "Satu fail terlalu besar.",
       "too_much": "Terlalu panjang. Pendekkan teks atau kurangkan imej.",
-      "unsupported": "Jenis fail ini tidak disokong. Pilih imej atau fail audio.",
-      "shortTooLongEdit": "Siaran pendek terhad kepada {max} aksara."
+      "unsupported": "Jenis fail ini tidak disokong. Pilih imej atau fail audio."
     },
     "fmt": {
       "bold": "Tebal",
@@ -251,16 +258,9 @@
     "posting": "Menyiarkan…",
     "publish": "Siar",
     "remove": "Buang",
-    "title": "Tajuk",
     "save": "Simpan",
     "saving": "Menyimpan…",
-    "edit": {
-      "title": "Sunting siaran",
-      "blocked": {
-        "not_active": "Siaran ini tidak boleh disunting sekarang.",
-        "processing": "Imej dan audio masih diproses. Anda boleh menyunting siaran setelah ia sedia."
-      }
-    }
+    "title": "Tajuk"
   },
   "discover": {
     "title": "Teroka"
@@ -293,15 +293,6 @@
     },
     "effective": "Berkuat kuasa mulai {date}",
     "footerMenu": "Perihal & terma",
-    "guidelines": {
-      "intro": "Bantu kekalkan {brand} sebagai tempat yang mesra untuk idea. Siaran dan ulasan tidak boleh:",
-      "item1": "melanggar undang-undang atau hak orang lain, termasuk hak cipta dan privasi;",
-      "item2": "mengganggu, mengugut atau menghasut kebencian terhadap sesiapa;",
-      "item3": "mengandungi kandungan seksual yang melibatkan kanak-kanak atau keganasan grafik;",
-      "item4": "berupa spam, penipuan atau mengelirukan orang.",
-      "outro": "Kandungan yang melanggar peraturan ini boleh dialih keluar, dan pesalah berulang boleh hilang akses. Gunakan Laporkan pada siaran untuk memaklumkan masalah kepada kami.",
-      "title": "Garis panduan komuniti"
-    },
     "help": {
       "a1": "Kongsi nota daripada NiceNote, atau tulis siaran di web apabila penerbitan web dibuka.",
       "a2": "Sunting nota dalam aplikasi dan siaran akan dikemas kini. Untuk memadam siaran, buka menu “⋯” pada halaman siaran dan pilih Padam; pautan terus tidak berfungsi.",
@@ -380,12 +371,12 @@
       "close": "Tutup",
       "copied": "Pautan disalin",
       "delete": "Padam",
+      "edit": "Sunting",
       "like": "Suka",
       "more": "Lagi pilihan",
       "reply": "Balas",
       "report": "Laporkan",
-      "share": "Kongsi",
-      "edit": "Sunting"
+      "share": "Kongsi"
     },
     "aside": {
       "moreArticles": "Artikel lain oleh penulis"
@@ -424,13 +415,13 @@
     },
     "post": {
       "edited": "Disunting {time}",
+      "editedShort": "Disunting",
       "empty": "Siaran ini tidak mempunyai kandungan.",
       "from": "Daripada {app}",
       "preparing": {
         "body": "Kandungan akan dipaparkan di sini sebentar lagi.",
         "title": "Menyediakan siaran ini"
-      },
-      "editedShort": "Disunting"
+      }
     },
     "report": {
       "done": "Terima kasih. Kami akan menyemaknya.",
@@ -452,7 +443,7 @@
         "title": "Akaun tidak ditemui"
       },
       "removed": {
-        "body": "Siaran ini dialih keluar kerana melanggar garis panduan komuniti.",
+        "body": "Siaran ini dialih keluar kerana melanggar terma penggunaan.",
         "title": "Siaran dialih keluar"
       },
       "restricted": {
@@ -465,11 +456,11 @@
       }
     },
     "viewer": {
+      "error": "Imej tidak dapat dimuatkan",
       "label": "Pemapar imej",
-      "zoom": "Zum",
-      "previous": "Imej sebelumnya",
       "next": "Imej seterusnya",
-      "error": "Imej tidak dapat dimuatkan"
+      "previous": "Imej sebelumnya",
+      "zoom": "Zum"
     }
   },
   "status": {

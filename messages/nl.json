@@ -125,10 +125,10 @@
     },
     "preset": {
       "duplicate": "Dubbele melding",
-      "guidelines": "Schendt de communityrichtlijnen",
       "noViolation": "Geen overtreding gevonden",
       "rights": "Schendt de rechten van anderen",
-      "spam": "Spam"
+      "spam": "Spam",
+      "terms": "Schendt de gebruiksvoorwaarden"
     },
     "queueEmpty": "Geen openstaande meldingen.",
     "readOnly": "Alleen lezen",
@@ -215,15 +215,22 @@
   "compose": {
     "addAudio": "Audio toevoegen (max. {max})",
     "addImages": "Afbeeldingen toevoegen (max. {max})",
+    "edit": {
+      "blocked": {
+        "not_active": "Dit bericht kan nu niet worden bewerkt.",
+        "processing": "Afbeeldingen en audio worden nog verwerkt. Je kunt het bericht bewerken zodra ze klaar zijn."
+      },
+      "title": "Bericht bewerken"
+    },
     "error": {
       "empty": "Schrijf iets of voeg een afbeelding toe.",
       "failed": "Plaatsen mislukt. Probeer het opnieuw.",
       "rate_limited": "Je plaatst te snel. Wacht even.",
+      "shortTooLongEdit": "Korte berichten hebben maximaal {max} tekens.",
       "short_too_long": "Korte berichten hebben maximaal {max} tekens. Schakel over naar ‘{article}’ om meer te schrijven.",
       "too_large": "Een bestand is te groot.",
       "too_much": "Dat is te lang. Kort de tekst in of gebruik minder afbeeldingen.",
-      "unsupported": "Dit bestandstype wordt niet ondersteund. Kies een afbeelding of audiobestand.",
-      "shortTooLongEdit": "Korte berichten hebben maximaal {max} tekens."
+      "unsupported": "Dit bestandstype wordt niet ondersteund. Kies een afbeelding of audiobestand."
     },
     "fmt": {
       "bold": "Vet",
@@ -251,16 +258,9 @@
     "posting": "Bezig met plaatsen…",
     "publish": "Plaatsen",
     "remove": "Verwijderen",
-    "title": "Titel",
     "save": "Opslaan",
     "saving": "Bezig met opslaan…",
-    "edit": {
-      "title": "Bericht bewerken",
-      "blocked": {
-        "not_active": "Dit bericht kan nu niet worden bewerkt.",
-        "processing": "Afbeeldingen en audio worden nog verwerkt. Je kunt het bericht bewerken zodra ze klaar zijn."
-      }
-    }
+    "title": "Titel"
   },
   "discover": {
     "title": "Ontdekken"
@@ -293,15 +293,6 @@
     },
     "effective": "Van kracht sinds {date}",
     "footerMenu": "Over ons en voorwaarden",
-    "guidelines": {
-      "intro": "Help {brand} een vriendelijke plek voor ideeën te houden. Berichten en reacties mogen niet:",
-      "item1": "de wet of de rechten van anderen schenden, waaronder auteursrecht en privacy;",
-      "item2": "iemand intimideren, bedreigen of haat tegen iemand aanwakkeren;",
-      "item3": "seksuele inhoud met minderjarigen of expliciet geweld bevatten;",
-      "item4": "spammen, oplichten of mensen misleiden.",
-      "outro": "Inhoud die deze regels overtreedt kan worden verwijderd, en wie herhaaldelijk overtreedt kan de toegang verliezen. Gebruik Melden bij een bericht om ons op een probleem te wijzen.",
-      "title": "Communityrichtlijnen"
-    },
     "help": {
       "a1": "Deel een notitie vanuit NiceNote, of schrijf een bericht op het web zodra publiceren via het web open is.",
       "a2": "Bewerk de notitie in de app en het bericht wordt bijgewerkt. Om een bericht te verwijderen, open je het ‘⋯’-menu op de pagina en kies je ‘Verwijderen’; de link werkt meteen niet meer.",
@@ -380,12 +371,12 @@
       "close": "Sluiten",
       "copied": "Link gekopieerd",
       "delete": "Verwijderen",
+      "edit": "Bewerken",
       "like": "Vind ik leuk",
       "more": "Meer opties",
       "reply": "Reageren",
       "report": "Melden",
-      "share": "Delen",
-      "edit": "Bewerken"
+      "share": "Delen"
     },
     "aside": {
       "moreArticles": "Meer artikelen van de auteur"
@@ -424,13 +415,13 @@
     },
     "post": {
       "edited": "Bewerkt op {time}",
+      "editedShort": "Bewerkt",
       "empty": "Dit bericht heeft geen inhoud.",
       "from": "Via {app}",
       "preparing": {
         "body": "De inhoud verschijnt hier zo.",
         "title": "Dit bericht wordt voorbereid"
-      },
-      "editedShort": "Bewerkt"
+      }
     },
     "report": {
       "done": "Bedankt. We bekijken het.",
@@ -452,7 +443,7 @@
         "title": "Account niet gevonden"
       },
       "removed": {
-        "body": "Dit bericht is verwijderd omdat het de communityrichtlijnen schendt.",
+        "body": "Dit bericht is verwijderd omdat het de gebruiksvoorwaarden schendt.",
         "title": "Bericht verwijderd"
       },
       "restricted": {
@@ -465,11 +456,11 @@
       }
     },
     "viewer": {
+      "error": "De afbeelding kon niet worden geladen",
       "label": "Afbeeldingsviewer",
-      "zoom": "Zoomen",
-      "previous": "Vorige afbeelding",
       "next": "Volgende afbeelding",
-      "error": "De afbeelding kon niet worden geladen"
+      "previous": "Vorige afbeelding",
+      "zoom": "Zoomen"
     }
   },
   "status": {

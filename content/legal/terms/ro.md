@@ -4,7 +4,7 @@
 
 Acești Termeni de utilizare („Termenii") reprezintă un acord între dumneavoastră și NiceMatrix Technologies Inc., 434223 Clear Mountain Dr E, Foothills, AB T1S 6B1, Canada („NiceMatrix", „noi"). NiceMatrix operează niceideas la niceideas.app, inclusiv paginile sale web, linkurile publice ale postărilor și interfețele de programare a aplicațiilor (împreună, „Serviciul").
 
-Prin utilizarea Serviciului, inclusiv vizualizarea, aprecierea sau comentarea fără cont, sunteți de acord cu acești Termeni și cu Ghidul comunității noastre. Politica noastră de confidențialitate explică modul în care gestionăm datele cu caracter personal. Dacă nu sunteți de acord, nu utilizați Serviciul.
+Prin utilizarea Serviciului, inclusiv vizualizarea, aprecierea sau comentarea fără cont, sunteți de acord cu acești Termeni. Politica noastră de confidențialitate explică modul în care gestionăm datele cu caracter personal. Dacă nu sunteți de acord, nu utilizați Serviciul.
 
 ## 2. Cine poate utiliza niceideas
 
@@ -57,13 +57,13 @@ Sunteți de acord să nu utilizați Serviciul pentru a:
 - trimite spam, a desfășura escrocherii sau phishing, sau a manipula aprecieri, comentarii sau urmăriri;
 - încărca malware, sau a interfera cu Serviciul, securitatea acestuia sau alți utilizatori;
 - accesa Serviciul prin mijloace automatizate dincolo de ceea ce permit interfețele noastre publice, a colecta date despre alți utilizatori în masă, sau a eluda limitele de rată, blocările sau verificările anti-abuz;
-- încălca Ghidul comunității noastre sau legile care vă sunt aplicabile dumneavoastră ori nouă.
+- publica conținut sângeros sau cu violență explicită ori încălca legile care vă sunt aplicabile dumneavoastră ori nouă.
 
 ## 7. Raportări și moderare
 
 7.1 Oricine poate raporta o postare sau un comentariu folosind funcția Raportează. Analizăm raportările și putem acționa și asupra conținutului sau conturilor care nu au fost raportate.
 
-7.2 Dacă conținutul sau comportamentul violează acești Termeni, Ghidul comunității sau legea, sau pune utilizatorii sau pe noi în pericol, putem elimina sau ascunde conținut, limita funcții precum publicarea sau comentarea, bloca unui vizitator posibilitatea de a interacționa, sau suspenda sau închide un cont. Atunci când este rezonabil, și cu excepția cazului în care legea interzice acest lucru sau ar crea un risc, vă vom spune ce am făcut și de ce.
+7.2 Dacă conținutul sau comportamentul violează acești Termeni sau legea, sau pune utilizatorii sau pe noi în pericol, putem elimina sau ascunde conținut, limita funcții precum publicarea sau comentarea, bloca unui vizitator posibilitatea de a interacționa, sau suspenda sau închide un cont. Atunci când este rezonabil, și cu excepția cazului în care legea interzice acest lucru sau ar crea un risc, vă vom spune ce am făcut și de ce.
 
 7.3 Dacă credeți că am făcut o greșeală, scrieți la support@nicematrix.ca și vă vom analiza cererea.
 
@@ -131,7 +131,7 @@ Sunteți de acord să nu utilizați Serviciul pentru a:
 
 ## 16. Prevederi generale
 
-16.1 Acești Termeni, Ghidul comunității și Politica de confidențialitate constituie acordul complet dintre dumneavoastră și noi cu privire la Serviciu.
+16.1 Acești Termeni și Politica de confidențialitate constituie acordul complet dintre dumneavoastră și noi cu privire la Serviciu.
 
 16.2 Dacă orice parte a acestor Termeni este considerată inaplicabilă, restul rămâne în vigoare. Dacă nu aplicăm un drept, nu am renunțat la el.
 

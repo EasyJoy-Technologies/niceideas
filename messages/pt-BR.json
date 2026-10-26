@@ -125,10 +125,10 @@
     },
     "preset": {
       "duplicate": "Denúncia duplicada",
-      "guidelines": "Viola as diretrizes da comunidade",
       "noViolation": "Nenhuma violação encontrada",
       "rights": "Infringe direitos de terceiros",
-      "spam": "Spam"
+      "spam": "Spam",
+      "terms": "Viola os termos de uso"
     },
     "queueEmpty": "Nenhuma denúncia aberta.",
     "readOnly": "Somente leitura",
@@ -215,15 +215,22 @@
   "compose": {
     "addAudio": "Adicionar áudio (até {max})",
     "addImages": "Adicionar imagens (até {max})",
+    "edit": {
+      "blocked": {
+        "not_active": "Esta publicação não pode ser editada agora.",
+        "processing": "As imagens e o áudio ainda estão sendo processados. Você poderá editar a publicação quando estiverem prontos."
+      },
+      "title": "Editar publicação"
+    },
     "error": {
       "empty": "Escreva algo ou adicione uma imagem.",
       "failed": "Não foi possível publicar. Tente novamente.",
       "rate_limited": "Você está publicando rápido demais. Aguarde um momento.",
+      "shortTooLongEdit": "Publicações curtas têm até {max} caracteres.",
       "short_too_long": "Publicações curtas têm até {max} caracteres. Mude para “{article}” para escrever mais.",
       "too_large": "Um arquivo é grande demais.",
       "too_much": "Está longo demais. Encurte o texto ou use menos imagens.",
-      "unsupported": "Este tipo de arquivo não é compatível. Escolha uma imagem ou um áudio.",
-      "shortTooLongEdit": "Publicações curtas têm até {max} caracteres."
+      "unsupported": "Este tipo de arquivo não é compatível. Escolha uma imagem ou um áudio."
     },
     "fmt": {
       "bold": "Negrito",
@@ -251,16 +258,9 @@
     "posting": "Publicando…",
     "publish": "Publicar",
     "remove": "Remover",
-    "title": "Título",
     "save": "Salvar",
     "saving": "Salvando…",
-    "edit": {
-      "title": "Editar publicação",
-      "blocked": {
-        "not_active": "Esta publicação não pode ser editada agora.",
-        "processing": "As imagens e o áudio ainda estão sendo processados. Você poderá editar a publicação quando estiverem prontos."
-      }
-    }
+    "title": "Título"
   },
   "discover": {
     "title": "Descobrir"
@@ -293,15 +293,6 @@
     },
     "effective": "Em vigor desde {date}",
     "footerMenu": "Sobre e termos",
-    "guidelines": {
-      "intro": "Ajude a manter o {brand} um lugar acolhedor para ideias. Publicações e comentários não podem:",
-      "item1": "violar a lei ou os direitos de outras pessoas, incluindo direitos autorais e privacidade;",
-      "item2": "assediar, ameaçar ou promover ódio contra alguém;",
-      "item3": "conter conteúdo sexual envolvendo menores ou violência explícita;",
-      "item4": "fazer spam, aplicar golpes ou enganar as pessoas.",
-      "outro": "Conteúdo que viole estas regras pode ser removido, e quem reincidir pode perder o acesso. Use Denunciar em uma publicação para nos avisar de um problema.",
-      "title": "Diretrizes da comunidade"
-    },
     "help": {
       "a1": "Compartilhe uma nota pelo NiceNote ou escreva na web quando a publicação pela web for liberada.",
       "a2": "Edite a nota no app e a publicação é atualizada. Para excluir uma publicação, abra o menu “⋯” na página dela e escolha “Excluir”; o link para de funcionar na hora.",
@@ -380,12 +371,12 @@
       "close": "Fechar",
       "copied": "Link copiado",
       "delete": "Excluir",
+      "edit": "Editar",
       "like": "Curtir",
       "more": "Mais opções",
       "reply": "Responder",
       "report": "Denunciar",
-      "share": "Compartilhar",
-      "edit": "Editar"
+      "share": "Compartilhar"
     },
     "aside": {
       "moreArticles": "Mais artigos do autor"
@@ -424,13 +415,13 @@
     },
     "post": {
       "edited": "Editado em {time}",
+      "editedShort": "Editado",
       "empty": "Esta publicação não tem conteúdo.",
       "from": "Via {app}",
       "preparing": {
         "body": "O conteúdo vai aparecer aqui em um instante.",
         "title": "Preparando esta publicação"
-      },
-      "editedShort": "Editado"
+      }
     },
     "report": {
       "done": "Obrigado. Vamos analisar.",
@@ -452,7 +443,7 @@
         "title": "Conta não encontrada"
       },
       "removed": {
-        "body": "Esta publicação foi removida por violar as diretrizes da comunidade.",
+        "body": "Esta publicação foi removida por violar os termos de uso.",
         "title": "Publicação removida"
       },
       "restricted": {
@@ -465,11 +456,11 @@
       }
     },
     "viewer": {
+      "error": "Não foi possível carregar a imagem",
       "label": "Visualizador de imagens",
-      "zoom": "Ampliar",
-      "previous": "Imagem anterior",
       "next": "Próxima imagem",
-      "error": "Não foi possível carregar a imagem"
+      "previous": "Imagem anterior",
+      "zoom": "Ampliar"
     }
   },
   "status": {

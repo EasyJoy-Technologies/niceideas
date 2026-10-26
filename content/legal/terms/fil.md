@@ -4,7 +4,7 @@
 
 Ang mga Tuntunin ng Paggamit na ito ("Tuntunin") ay isang kasunduan sa pagitan mo at ng NiceMatrix Technologies Inc., 434223 Clear Mountain Dr E, Foothills, AB T1S 6B1, Canada ("NiceMatrix", "kami"). Pinapatakbo ng NiceMatrix ang niceideas sa niceideas.app, kasama ang mga web page nito, mga pampublikong link ng post, at mga application programming interface (sama-samang tinatawag na "Serbisyo").
 
-Sa paggamit ng Serbisyo, kasama ang pagtingin, pag-like, o pagkomento kahit walang account, sumasang-ayon ka sa mga Tuntunin na ito at sa aming Mga Alituntunin ng Komunidad. Ipinapaliwanag ng aming Patakaran sa Privacy kung paano namin pinangangasiwaan ang personal na impormasyon. Kung hindi ka sumasang-ayon, mangyaring huwag gamitin ang Serbisyo.
+Sa paggamit ng Serbisyo, kasama ang pagtingin, pag-like, o pagkomento kahit walang account, sumasang-ayon ka sa mga Tuntunin na ito. Ipinapaliwanag ng aming Patakaran sa Privacy kung paano namin pinangangasiwaan ang personal na impormasyon. Kung hindi ka sumasang-ayon, mangyaring huwag gamitin ang Serbisyo.
 
 ## 2. Sino ang maaaring gumamit ng niceideas
 
@@ -57,13 +57,13 @@ Sumasang-ayon ka na hindi gagamitin ang Serbisyo upang:
 - magpadala ng spam, magsagawa ng scam o phishing, o manipulahin ang mga like, komento, o follow;
 - mag-upload ng malware, o makialam sa Serbisyo, sa seguridad nito, o sa iba pang mga user;
 - i-access ang Serbisyo sa automated na paraan na higit pa sa pinapayagan ng aming mga pampublikong interface, kolektahin ang data tungkol sa iba pang mga user nang malawakan, o iwasan ang mga limitasyon sa rate, ban, o anti-abuse checks;
-- labagin ang aming Mga Alituntunin ng Komunidad o ang mga batas na naaangkop sa iyo o sa amin.
+- magpaskil ng madugo o lantarang marahas na nilalaman, o labagin ang mga batas na naaangkop sa iyo o sa amin.
 
 ## 7. Pag-uulat at moderasyon
 
 7.1 Maaaring iulat ng sinuman ang isang post o komento gamit ang Report. Suriin namin ang mga ulat, at maaari rin kaming kumilos sa nilalaman o mga account na hindi pa iniulat.
 
-7.2 Kung ang nilalaman o pag-uugali ay nilabag ang mga Tuntunin na ito, Mga Alituntunin ng Komunidad, o ang batas, o naglalagay sa panganib ng mga user o sa amin, maaari naming alisin o itago ang nilalaman, limitahan ang mga katangian tulad ng pagpaskil o pagkomento, pigilan ang isang bisita sa pag-interact, o suspindihin o isara ang isang account. Kung makatuwiran, at maliban kung ipinagbabawal ito ng batas o lilikha ito ng panganib, sasabihin namin sa iyo kung ano ang aming ginawa at bakit.
+7.2 Kung ang nilalaman o pag-uugali ay nilabag ang mga Tuntunin na ito o ang batas, o naglalagay sa panganib ng mga user o sa amin, maaari naming alisin o itago ang nilalaman, limitahan ang mga katangian tulad ng pagpaskil o pagkomento, pigilan ang isang bisita sa pag-interact, o suspindihin o isara ang isang account. Kung makatuwiran, at maliban kung ipinagbabawal ito ng batas o lilikha ito ng panganib, sasabihin namin sa iyo kung ano ang aming ginawa at bakit.
 
 7.3 Kung iniisip mo na kami ay nagkamali, sumulat sa support@nicematrix.ca at susuriin namin ang iyong kahilingan.
 
@@ -131,7 +131,7 @@ Sa saklaw na pinapayagan ng batas, iindemnipikahan mo ang NiceMatrix at ang mga 
 
 ## 16. Pangkalahatan
 
-16.1 Ang mga Tuntunin na ito, Mga Alituntunin ng Komunidad, at Patakaran sa Privacy ang buong kasunduan sa pagitan mo at namin tungkol sa Serbisyo.
+16.1 Ang mga Tuntunin na ito at ang Patakaran sa Privacy ang buong kasunduan sa pagitan mo at namin tungkol sa Serbisyo.
 
 16.2 Kung ang anumang bahagi ng mga Tuntunin na ito ay natuklasang hindi maipapatupad, ang nalalabi ay nananatiling may bisa. Kung hindi namin ipinatupad ang isang karapatan, hindi namin ito naisuko.
 

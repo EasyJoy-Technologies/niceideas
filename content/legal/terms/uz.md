@@ -4,7 +4,7 @@
 
 Ushbu Foydalanish Shartlari ("Shartlar") siz va NiceMatrix Technologies Inc., 434223 Clear Mountain Dr E, Foothills, AB T1S 6B1, Canada ("NiceMatrix", "biz") o'rtasidagi kelishuvdir. NiceMatrix niceideas.app manzilida niceideas xizmatini, shu jumladan uning veb-sahifalarini, ommaviy post havolalarini va dasturiy interfeyslarini (birgalikda "Xizmat") boshqaradi.
 
-Xizmatdan foydalanish, shu jumladan hisobsiz ko'rish, layk qo'yish yoki izoh qoldirish orqali, siz ushbu Shartlar va bizning Hamjamiyat Qoidalarimizga rozilik bildirasiz. Bizning Maxfiylik Siyosatimiz shaxsiy ma'lumotlarni qanday qayta ishlashimizni tushuntiradi. Agar rozi bo'lmasangiz, Xizmatdan foydalanmang.
+Xizmatdan foydalanish, shu jumladan hisobsiz ko'rish, layk qo'yish yoki izoh qoldirish orqali, siz ushbu Shartlarga rozilik bildirasiz. Bizning Maxfiylik Siyosatimiz shaxsiy ma'lumotlarni qanday qayta ishlashimizni tushuntiradi. Agar rozi bo'lmasangiz, Xizmatdan foydalanmang.
 
 ## 2. niceideas'dan kim foydalanishi mumkin
 
@@ -57,13 +57,13 @@ Siz Xizmatdan quyidagi maqsadlarda foydalanmaslikka rozisiz:
 - spam yuborish, firibgarlik yoki fishing qilish, yoki layklar, izohlar yoki kuzatuvchilarni manipulyatsiya qilish;
 - zararli dastur yuklash, yoki Xizmatga, uning xavfsizligiga yoki boshqa foydalanuvchilarga xalaqit berish;
 - Xizmatga bizning ommaviy interfeyslarimiz ruxsat bergandan tashqari avtomatlashtirilgan usullar bilan kirish, boshqa foydalanuvchilar haqida ma'lumotlarni ommaviy to'plash, yoki tezlik cheklovlari, bloklash yoki suiiste'molga qarshi tekshiruvlardan chetlanish;
-- bizning Hamjamiyat Qoidalarimizni yoki sizga yoki bizga tegishli qonunlarni buzish.
+- qonli yoki o'ta shafqatsiz zo'ravonlik mazmunini joylash yoki sizga yoki bizga tegishli qonunlarni buzish.
 
 ## 7. Shikoyatlar va moderatsiya
 
 7.1 Har kim Shikoyat tugmasi orqali post yoki izoh haqida shikoyat qilishi mumkin. Biz shikoyatlarni ko'rib chiqamiz, shuningdek shikoyat qilinmagan mazmun yoki hisoblar bo'yicha ham harakat qilishimiz mumkin.
 
-7.2 Agar mazmun yoki xatti-harakat ushbu Shartlarni, Hamjamiyat Qoidalarini yoki qonunni buzsa, yoki foydalanuvchilarni yoki bizni xavf ostiga qo'ysa, biz mazmunni olib tashlashimiz yoki yashirishimiz, nashr etish yoki izoh qoldirish kabi funksiyalarni cheklashimiz, tashrif buyuruvchining o'zaro ta'sirini bloklashimiz, yoki hisobni to'xtatishimiz yoki yopishimiz mumkin. Asosli bo'lgan taqdirda, va qonun man etmaguncha yoki bu xavf yaratmaguncha, biz nima qilganimizni va nima uchun qilganimizni sizga aytamiz.
+7.2 Agar mazmun yoki xatti-harakat ushbu Shartlarni yoki qonunni buzsa, yoki foydalanuvchilarni yoki bizni xavf ostiga qo'ysa, biz mazmunni olib tashlashimiz yoki yashirishimiz, nashr etish yoki izoh qoldirish kabi funksiyalarni cheklashimiz, tashrif buyuruvchining o'zaro ta'sirini bloklashimiz, yoki hisobni to'xtatishimiz yoki yopishimiz mumkin. Asosli bo'lgan taqdirda, va qonun man etmaguncha yoki bu xavf yaratmaguncha, biz nima qilganimizni va nima uchun qilganimizni sizga aytamiz.
 
 7.3 Agar biz xato qilganimizga ishonsangiz, support@nicematrix.ca manziliga yozing, va biz sizning so'rovingizni ko'rib chiqamiz.
 
@@ -131,7 +131,7 @@ Qonun ruxsat bergan darajada, siz sizning mazmuningiz, ushbu Shartlarni buzganin
 
 ## 16. Umumiy qoidalar
 
-16.1 Ushbu Shartlar, Hamjamiyat Qoidalari va Maxfiylik Siyosati Xizmat haqida siz va biz o'rtasidagi to'liq kelishuvdir.
+16.1 Ushbu Shartlar va Maxfiylik Siyosati Xizmat haqida siz va biz o'rtasidagi to'liq kelishuvdir.
 
 16.2 Agar ushbu Shartlarning biror qismi amalga oshirilmaydigan deb topilsa, qolgan qismi kuchda qoladi. Agar biz huquqni amalga oshirmasak, biz undan voz kechmagan bo'lamiz.
 

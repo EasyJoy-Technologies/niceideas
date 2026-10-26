@@ -4,7 +4,7 @@
 
 A jelen Felhasználási Feltételek („Feltételek") az Ön és a NiceMatrix Technologies Inc. (434223 Clear Mountain Dr E, Foothills, AB T1S 6B1, Canada; „NiceMatrix", „mi") közötti megállapodást alkotják. A NiceMatrix üzemelteti a niceideas szolgáltatást a niceideas.app címen, beleértve annak weboldalait, a bejegyzésekre mutató nyilvános linkeket és az alkalmazásprogramozási felületeket (együttesen: „Szolgáltatás").
 
-A Szolgáltatás használatával, beleértve a megtekintést, kedvelést vagy kommentelést fiók nélkül is, Ön elfogadja a jelen Feltételeket és a Közösségi Irányelveinket. Az Adatvédelmi Szabályzatunk kifejti, hogyan kezeljük a személyes adatokat. Ha nem fogadja el ezeket, ne használja a Szolgáltatást.
+A Szolgáltatás használatával, beleértve a megtekintést, kedvelést vagy kommentelést fiók nélkül is, Ön elfogadja a jelen Feltételeket. Az Adatvédelmi Szabályzatunk kifejti, hogyan kezeljük a személyes adatokat. Ha nem fogadja el ezeket, ne használja a Szolgáltatást.
 
 ## 2. Ki használhatja a niceideas-t
 
@@ -57,13 +57,13 @@ A Szolgáltatás használatával, beleértve a megtekintést, kedvelést vagy ko
 - spam küldésére, csalás vagy adathalászat (phishing) megvalósítására, vagy kedvelések, hozzászólások vagy követések manipulálására;
 - kártékony szoftverek feltöltésére, vagy a Szolgáltatás, annak biztonsága vagy más felhasználók zavarására;
 - a Szolgáltatáshoz a nyilvános felületeink által megengedettnél nagyobb mértékben automatizált eszközökkel hozzáférésre, más felhasználókról tömeges adatgyűjtésre, vagy a sebességkorlátok, tilalmak vagy visszaélés-elleni ellenőrzések megkerülésére;
-- a Közösségi Irányelveink vagy az Önre, illetve ránk vonatkozó törvények megsértésére.
+- véres vagy naturalisztikusan erőszakos tartalom közzétételére, illetve az Önre vagy ránk vonatkozó törvények megsértésére.
 
 ## 7. Jelentések és moderáció
 
 7.1 Bárki jelenthet egy bejegyzést vagy hozzászólást a Jelentés funkció segítségével. Felülvizsgáljuk a jelentéseket, és olyan tartalmak vagy fiókok esetében is eljárhatunk, amelyeket nem jelentettek.
 
-7.2 Ha egy tartalom vagy magatartás megsérti a jelen Feltételeket, a Közösségi Irányelveket vagy a törvényt, vagy kockázatot jelent a felhasználókra vagy ránk, eltávolíthatjuk vagy elrejthetjük a tartalmat, korlátozhatjuk olyan funkciókat, mint a közzététel vagy a hozzászólás, megakadályozhatjuk egy látogató interakcióját, vagy felfüggeszthetjük vagy lezárhatjuk a fiókot. Ahol ésszerű, és amennyiben a törvény nem tiltja, vagy ez nem jelentene kockázatot, tájékoztatjuk Önt a megtett lépésekről és azok okairól.
+7.2 Ha egy tartalom vagy magatartás megsérti a jelen Feltételeket vagy a törvényt, vagy kockázatot jelent a felhasználókra vagy ránk, eltávolíthatjuk vagy elrejthetjük a tartalmat, korlátozhatjuk olyan funkciókat, mint a közzététel vagy a hozzászólás, megakadályozhatjuk egy látogató interakcióját, vagy felfüggeszthetjük vagy lezárhatjuk a fiókot. Ahol ésszerű, és amennyiben a törvény nem tiltja, vagy ez nem jelentene kockázatot, tájékoztatjuk Önt a megtett lépésekről és azok okairól.
 
 7.3 Ha azt gondolja, hogy hibáztunk, írjon a support@nicematrix.ca címre, és felülvizsgáljuk a kérését.
 
@@ -131,7 +131,7 @@ A jog által megengedett mértékben Ön kártalanítja a NiceMatrix-ot, valamin
 
 ## 16. Általános rendelkezések
 
-16.1 A jelen Feltételek, a Közösségi Irányelvek és az Adatvédelmi Szabályzat alkotják az Ön és köztünk a Szolgáltatással kapcsolatos teljes megállapodást.
+16.1 A jelen Feltételek és az Adatvédelmi Szabályzat alkotják az Ön és köztünk a Szolgáltatással kapcsolatos teljes megállapodást.
 
 16.2 Ha a jelen Feltételek valamely része végrehajthatatlannak bizonyul, a többi rész érvényben marad. Ha nem érvényesítünk egy jogot, azzal nem mondunk le arról.
 

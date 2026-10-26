@@ -125,10 +125,10 @@
     },
     "preset": {
       "duplicate": "Yinelenen şikayet",
-      "guidelines": "Topluluk kurallarını ihlal ediyor",
       "noViolation": "İhlal bulunamadı",
       "rights": "Başkalarının haklarını ihlal ediyor",
-      "spam": "Spam"
+      "spam": "Spam",
+      "terms": "Kullanım koşullarını ihlal ediyor"
     },
     "queueEmpty": "Açık şikâyet yok.",
     "readOnly": "Salt okunur",
@@ -215,15 +215,22 @@
   "compose": {
     "addAudio": "Ses ekle (en fazla {max})",
     "addImages": "Görsel ekle (en fazla {max})",
+    "edit": {
+      "blocked": {
+        "not_active": "Bu gönderi şu anda düzenlenemiyor.",
+        "processing": "Görseller ve ses hâlâ işleniyor. Hazır olduklarında gönderiyi düzenleyebilirsin."
+      },
+      "title": "Gönderiyi düzenle"
+    },
     "error": {
       "empty": "Bir şeyler yaz veya görsel ekle.",
       "failed": "Paylaşılamadı. Lütfen tekrar dene.",
       "rate_limited": "Çok hızlı paylaşıyorsun. Lütfen biraz bekle.",
+      "shortTooLongEdit": "Kısa gönderiler en fazla {max} karakter olabilir.",
       "short_too_long": "Kısa gönderiler en fazla {max} karakter olabilir. Daha fazla yazmak için “{article}” moduna geç.",
       "too_large": "Bir dosya çok büyük.",
       "too_much": "Çok uzun. Metni kısalt veya daha az görsel kullan.",
-      "unsupported": "Bu dosya türü desteklenmiyor. Bir görsel veya ses dosyası seç.",
-      "shortTooLongEdit": "Kısa gönderiler en fazla {max} karakter olabilir."
+      "unsupported": "Bu dosya türü desteklenmiyor. Bir görsel veya ses dosyası seç."
     },
     "fmt": {
       "bold": "Kalın",
@@ -251,16 +258,9 @@
     "posting": "Yayınlanıyor…",
     "publish": "Paylaş",
     "remove": "Kaldır",
-    "title": "Başlık",
     "save": "Kaydet",
     "saving": "Kaydediliyor…",
-    "edit": {
-      "title": "Gönderiyi düzenle",
-      "blocked": {
-        "not_active": "Bu gönderi şu anda düzenlenemiyor.",
-        "processing": "Görseller ve ses hâlâ işleniyor. Hazır olduklarında gönderiyi düzenleyebilirsin."
-      }
-    }
+    "title": "Başlık"
   },
   "discover": {
     "title": "Keşfet"
@@ -293,15 +293,6 @@
     },
     "effective": "Yürürlük tarihi: {date}",
     "footerMenu": "Hakkında ve koşullar",
-    "guidelines": {
-      "intro": "{brand}'in fikirler için dostça bir yer olarak kalmasına yardım et. Gönderiler ve yorumlar şunları içeremez:",
-      "item1": "yasaları ya da telif hakkı ve gizlilik dahil başkalarının haklarını ihlal etmek;",
-      "item2": "birini taciz etmek, tehdit etmek ya da birine karşı nefreti körüklemek;",
-      "item3": "reşit olmayanları içeren cinsel içerik ya da açık şiddet;",
-      "item4": "spam, dolandırıcılık ya da insanları yanıltmak.",
-      "outro": "Bu kuralları ihlal eden içerikler kaldırılabilir; kuralları tekrar tekrar ihlal edenler erişimini kaybedebilir. Bir sorunu bildirmek için gönderideki Şikayet et seçeneğini kullan.",
-      "title": "Topluluk kuralları"
-    },
     "help": {
       "a1": "NiceNote'tan bir not paylaş ya da web'de paylaşım açıldığında doğrudan web'de yaz.",
       "a2": "Notu uygulamada düzenlediğinde gönderi güncellenir. Bir gönderiyi silmek için, sayfasındaki \"⋯\" menüsünü açıp Sil seçeneğini belirle; bağlantı hemen çalışmaz hale gelir.",
@@ -380,12 +371,12 @@
       "close": "Kapat",
       "copied": "Bağlantı kopyalandı",
       "delete": "Sil",
+      "edit": "Düzenle",
       "like": "Beğen",
       "more": "Diğer seçenekler",
       "reply": "Yanıtla",
       "report": "Şikayet et",
-      "share": "Paylaş",
-      "edit": "Düzenle"
+      "share": "Paylaş"
     },
     "aside": {
       "moreArticles": "Yazarın diğer makaleleri"
@@ -424,13 +415,13 @@
     },
     "post": {
       "edited": "Düzenlendi: {time}",
+      "editedShort": "Düzenlendi",
       "empty": "Bu gönderinin içeriği yok.",
       "from": "{app} üzerinden",
       "preparing": {
         "body": "İçerik birazdan burada görünecek.",
         "title": "Bu gönderi hazırlanıyor"
-      },
-      "editedShort": "Düzenlendi"
+      }
     },
     "report": {
       "done": "Teşekkürler. İnceleyeceğiz.",
@@ -452,7 +443,7 @@
         "title": "Hesap bulunamadı"
       },
       "removed": {
-        "body": "Bu gönderi topluluk kurallarını ihlal ettiği için kaldırıldı.",
+        "body": "Bu gönderi kullanım koşullarını ihlal ettiği için kaldırıldı.",
         "title": "Gönderi kaldırıldı"
       },
       "restricted": {
@@ -465,11 +456,11 @@
       }
     },
     "viewer": {
+      "error": "Görsel yüklenemedi",
       "label": "Görsel görüntüleyici",
-      "zoom": "Yakınlaştır",
-      "previous": "Önceki görsel",
       "next": "Sonraki görsel",
-      "error": "Görsel yüklenemedi"
+      "previous": "Önceki görsel",
+      "zoom": "Yakınlaştır"
     }
   },
   "status": {

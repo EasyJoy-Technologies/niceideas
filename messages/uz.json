@@ -125,10 +125,10 @@
     },
     "preset": {
       "duplicate": "Takroriy shikoyat",
-      "guidelines": "Jamoat qoidalarini buzish",
       "noViolation": "Buzilish topilmadi",
       "rights": "Boshqalarning huquqlarini buzish",
-      "spam": "Spam"
+      "spam": "Spam",
+      "terms": "Foydalanish shartlarini buzish"
     },
     "queueEmpty": "Ochiq shikoyatlar yo‘q.",
     "readOnly": "Faqat ko‘rish uchun",
@@ -215,15 +215,22 @@
   "compose": {
     "addAudio": "Audio qo‘shish ({max} tagacha)",
     "addImages": "Rasm qo‘shish (ko‘pi bilan {max})",
+    "edit": {
+      "blocked": {
+        "not_active": "Bu postni hozir tahrirlab bo‘lmaydi.",
+        "processing": "Rasmlar va audio hali qayta ishlanmoqda. Tayyor bo‘lgach, postni tahrirlashingiz mumkin."
+      },
+      "title": "Postni tahrirlash"
+    },
     "error": {
       "empty": "Biror narsa yozing yoki rasm qo‘shing.",
       "failed": "Joylab bo‘lmadi. Qayta urinib ko‘ring.",
       "rate_limited": "Juda tez joylayapsiz. Biroz kuting.",
+      "shortTooLongEdit": "Qisqa postlar ko‘pi bilan {max} belgidan iborat.",
       "short_too_long": "Qisqa postlar ko‘pi bilan {max} belgidan iborat. Ko‘proq yozish uchun “{article}” rejimiga o‘ting.",
       "too_large": "Fayl juda katta.",
       "too_much": "Juda uzun. Matnni qisqartiring yoki kamroq rasm qo‘shing.",
-      "unsupported": "Bu fayl turi qo‘llab-quvvatlanmaydi. Rasm yoki audio fayl tanlang.",
-      "shortTooLongEdit": "Qisqa postlar ko‘pi bilan {max} belgidan iborat."
+      "unsupported": "Bu fayl turi qo‘llab-quvvatlanmaydi. Rasm yoki audio fayl tanlang."
     },
     "fmt": {
       "bold": "Qalin",
@@ -251,16 +258,9 @@
     "posting": "Joylanmoqda…",
     "publish": "Joylash",
     "remove": "Olib tashlash",
-    "title": "Sarlavha",
     "save": "Saqlash",
     "saving": "Saqlanmoqda…",
-    "edit": {
-      "title": "Postni tahrirlash",
-      "blocked": {
-        "not_active": "Bu postni hozir tahrirlab bo‘lmaydi.",
-        "processing": "Rasmlar va audio hali qayta ishlanmoqda. Tayyor bo‘lgach, postni tahrirlashingiz mumkin."
-      }
-    }
+    "title": "Sarlavha"
   },
   "discover": {
     "title": "Kashf etish"
@@ -293,15 +293,6 @@
     },
     "effective": "{date} dan kuchga kirgan",
     "footerMenu": "Biz haqimizda va shartlar",
-    "guidelines": {
-      "intro": "{brand} g‘oyalar uchun samimiy joy bo‘lib qolishiga yordam bering. Postlar va izohlarda quyidagilar bo‘lmasligi kerak:",
-      "item1": "qonunni yoki boshqalarning huquqlarini, jumladan mualliflik huquqi va shaxsiy hayot daxlsizligini buzish;",
-      "item2": "kimnidir ta’qib qilish, qo‘rqitish yoki unga nisbatan nafratni qo‘zg‘atish;",
-      "item3": "voyaga yetmaganlar ishtirokidagi shahvoniy kontent yoki shafqatsiz zo‘ravonlik;",
-      "item4": "spam, firibgarlik yoki odamlarni chalg‘itish.",
-      "outro": "Ushbu qoidalarni buzgan kontent olib tashlanishi, takroriy buzuvchilar esa kirish huquqidan mahrum bo‘lishi mumkin. Muammo haqida xabar berish uchun postdagi Shikoyat qilish tugmasidan foydalaning.",
-      "title": "Hamjamiyat qoidalari"
-    },
     "help": {
       "a1": "NiceNote’dan qaydni ulashing yoki veb orqali e’lon qilish ochilgach, postni vebda yozing.",
       "a2": "Qaydni ilovada tahrirlasangiz, post ham yangilanadi. Postni o'chirish uchun uning sahifasida \"⋯\" menyusini ochib, O'chirish ni tanlang; havola darhol ishlamay qoladi.",
@@ -380,12 +371,12 @@
       "close": "Yopish",
       "copied": "Havola nusxalandi",
       "delete": "O'chirish",
+      "edit": "Tahrirlash",
       "like": "Yoqdi",
       "more": "Qo'shimcha amallar",
       "reply": "Javob berish",
       "report": "Shikoyat qilish",
-      "share": "Ulashish",
-      "edit": "Tahrirlash"
+      "share": "Ulashish"
     },
     "aside": {
       "moreArticles": "Muallifning boshqa maqolalari"
@@ -424,13 +415,13 @@
     },
     "post": {
       "edited": "Tahrirlangan: {time}",
+      "editedShort": "Tahrirlangan",
       "empty": "Bu postda mazmun yo'q.",
       "from": "{app} orqali",
       "preparing": {
         "body": "Mazmun bir zumda shu yerda ko'rinadi.",
         "title": "Bu post tayyorlanmoqda"
-      },
-      "editedShort": "Tahrirlangan"
+      }
     },
     "report": {
       "done": "Rahmat. Ko‘rib chiqamiz.",
@@ -452,7 +443,7 @@
         "title": "Hisob topilmadi"
       },
       "removed": {
-        "body": "Bu post hamjamiyat qoidalarini buzgani uchun olib tashlandi.",
+        "body": "Bu post foydalanish shartlarini buzgani uchun olib tashlandi.",
         "title": "Post olib tashlandi"
       },
       "restricted": {
@@ -465,11 +456,11 @@
       }
     },
     "viewer": {
+      "error": "Rasmni yuklab bo‘lmadi",
       "label": "Rasm ko‘rish vositasi",
-      "zoom": "Kattalashtirish",
-      "previous": "Oldingi rasm",
       "next": "Keyingi rasm",
-      "error": "Rasmni yuklab bo‘lmadi"
+      "previous": "Oldingi rasm",
+      "zoom": "Kattalashtirish"
     }
   },
   "status": {

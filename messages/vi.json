@@ -125,10 +125,10 @@
     },
     "preset": {
       "duplicate": "Báo cáo trùng lặp",
-      "guidelines": "Vi phạm quy tắc cộng đồng",
       "noViolation": "Không phát hiện vi phạm",
       "rights": "Xâm phạm quyền của người khác",
-      "spam": "Spam"
+      "spam": "Spam",
+      "terms": "Vi phạm điều khoản sử dụng"
     },
     "queueEmpty": "Không có báo cáo chưa xử lý.",
     "readOnly": "Chỉ xem",
@@ -215,15 +215,22 @@
   "compose": {
     "addAudio": "Thêm âm thanh (tối đa {max})",
     "addImages": "Thêm hình ảnh (tối đa {max})",
+    "edit": {
+      "blocked": {
+        "not_active": "Hiện không thể chỉnh sửa bài viết này.",
+        "processing": "Hình ảnh và âm thanh vẫn đang được xử lý. Bạn có thể chỉnh sửa bài viết khi chúng sẵn sàng."
+      },
+      "title": "Chỉnh sửa bài viết"
+    },
     "error": {
       "empty": "Hãy viết gì đó hoặc thêm hình ảnh.",
       "failed": "Không thể đăng. Vui lòng thử lại.",
       "rate_limited": "Bạn đăng quá nhanh. Vui lòng đợi một chút.",
+      "shortTooLongEdit": "Bài ngắn tối đa {max} ký tự.",
       "short_too_long": "Bài ngắn tối đa {max} ký tự. Chuyển sang “{article}” để viết thêm.",
       "too_large": "Một tệp quá lớn.",
       "too_much": "Quá dài. Hãy rút ngắn văn bản hoặc bớt hình ảnh.",
-      "unsupported": "Không hỗ trợ loại tệp này. Hãy chọn ảnh hoặc tệp âm thanh.",
-      "shortTooLongEdit": "Bài ngắn tối đa {max} ký tự."
+      "unsupported": "Không hỗ trợ loại tệp này. Hãy chọn ảnh hoặc tệp âm thanh."
     },
     "fmt": {
       "bold": "In đậm",
@@ -251,16 +258,9 @@
     "posting": "Đang đăng…",
     "publish": "Đăng",
     "remove": "Xóa",
-    "title": "Tiêu đề",
     "save": "Lưu",
     "saving": "Đang lưu…",
-    "edit": {
-      "title": "Chỉnh sửa bài viết",
-      "blocked": {
-        "not_active": "Hiện không thể chỉnh sửa bài viết này.",
-        "processing": "Hình ảnh và âm thanh vẫn đang được xử lý. Bạn có thể chỉnh sửa bài viết khi chúng sẵn sàng."
-      }
-    }
+    "title": "Tiêu đề"
   },
   "discover": {
     "title": "Khám phá"
@@ -293,15 +293,6 @@
     },
     "effective": "Có hiệu lực từ {date}",
     "footerMenu": "Giới thiệu và điều khoản",
-    "guidelines": {
-      "intro": "Hãy cùng giữ {brand} là nơi thân thiện cho các ý tưởng. Bài viết và bình luận không được:",
-      "item1": "vi phạm pháp luật hoặc quyền của người khác, bao gồm bản quyền và quyền riêng tư;",
-      "item2": "quấy rối, đe dọa hoặc kích động thù ghét đối với bất kỳ ai;",
-      "item3": "chứa nội dung tình dục liên quan đến trẻ vị thành niên hoặc bạo lực ghê rợn;",
-      "item4": "spam, lừa đảo hoặc gây hiểu lầm.",
-      "outro": "Nội dung vi phạm có thể bị gỡ, và người vi phạm nhiều lần có thể mất quyền truy cập. Hãy dùng nút Báo cáo trên bài viết để cho chúng tôi biết vấn đề.",
-      "title": "Nguyên tắc cộng đồng"
-    },
     "help": {
       "a1": "Chia sẻ ghi chú từ NiceNote, hoặc viết bài trên web khi tính năng đăng bài trên web được mở.",
       "a2": "Sửa ghi chú trong ứng dụng thì bài viết sẽ được cập nhật. Để xóa bài viết, mở menu “⋯” trên trang bài viết và chọn Xóa; liên kết sẽ ngừng hoạt động ngay.",
@@ -380,12 +371,12 @@
       "close": "Đóng",
       "copied": "Đã sao chép liên kết",
       "delete": "Xóa",
+      "edit": "Chỉnh sửa",
       "like": "Thích",
       "more": "Thêm tùy chọn",
       "reply": "Trả lời",
       "report": "Báo cáo",
-      "share": "Chia sẻ",
-      "edit": "Chỉnh sửa"
+      "share": "Chia sẻ"
     },
     "aside": {
       "moreArticles": "Bài viết khác của tác giả"
@@ -424,13 +415,13 @@
     },
     "post": {
       "edited": "Đã chỉnh sửa lúc {time}",
+      "editedShort": "Đã chỉnh sửa",
       "empty": "Bài viết này không có nội dung.",
       "from": "Từ {app}",
       "preparing": {
         "body": "Nội dung sẽ xuất hiện ở đây trong chốc lát.",
         "title": "Đang chuẩn bị bài viết này"
-      },
-      "editedShort": "Đã chỉnh sửa"
+      }
     },
     "report": {
       "done": "Cảm ơn bạn. Chúng tôi sẽ xem xét.",
@@ -452,7 +443,7 @@
         "title": "Không tìm thấy tài khoản"
       },
       "removed": {
-        "body": "Bài viết này đã bị gỡ do vi phạm nguyên tắc cộng đồng.",
+        "body": "Bài viết này đã bị gỡ do vi phạm điều khoản sử dụng.",
         "title": "Bài viết đã bị gỡ"
       },
       "restricted": {
@@ -465,11 +456,11 @@
       }
     },
     "viewer": {
+      "error": "Không tải được hình ảnh",
       "label": "Trình xem hình ảnh",
-      "zoom": "Thu phóng",
-      "previous": "Hình ảnh trước",
       "next": "Hình ảnh tiếp theo",
-      "error": "Không tải được hình ảnh"
+      "previous": "Hình ảnh trước",
+      "zoom": "Thu phóng"
     }
   },
   "status": {

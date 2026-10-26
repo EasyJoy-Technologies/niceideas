@@ -4,7 +4,7 @@
 
 Niniejsze Warunki korzystania ("Warunki") stanowią umowę między Tobą a NiceMatrix Technologies Inc., 434223 Clear Mountain Dr E, Foothills, AB T1S 6B1, Canada ("NiceMatrix", "my"). NiceMatrix obsługuje niceideas na niceideas.app, w tym jego strony internetowe, publiczne linki do wpisów oraz interfejsy programistyczne (łącznie "Usługa").
 
-Korzystając z Usługi, w tym przeglądając, polubiając lub komentując bez konta, zgadzasz się na niniejsze Warunki i nasze Zasady Społeczności. Nasza Polityka Prywatności wyjaśnia, jak przetwarzamy dane osobowe. Jeśli się nie zgadzasz, nie korzystaj z Usługi.
+Korzystając z Usługi, w tym przeglądając, polubiając lub komentując bez konta, zgadzasz się na niniejsze Warunki. Nasza Polityka Prywatności wyjaśnia, jak przetwarzamy dane osobowe. Jeśli się nie zgadzasz, nie korzystaj z Usługi.
 
 ## 2. Kto może korzystać z niceideas
 
@@ -57,13 +57,13 @@ Zgadzasz się nie wykorzystywać Usługi do:
 - wysyłania spamu, prowadzenia oszustw lub phishingu, albo manipulowania polubieniami, komentarzami lub obserwacjami;
 - przesyłania złośliwego oprogramowania, albo zakłócania działania Usługi, jej bezpieczeństwa lub innych użytkowników;
 - uzyskiwania dostępu do Usługi za pomocą zautomatyzowanych środków poza tym, co dopuszczają nasze publiczne interfejsy, zbierania masowo danych o innych użytkownikach, lub obchodzenia limitów częstotliwości, blokad czy kontroli przeciwdziałania nadużyciom;
-- naruszania naszych Zasad Społeczności lub przepisów prawa, które Cię obowiązują lub nas obowiązują.
+- publikowania krwawych lub drastycznie brutalnych treści albo naruszania przepisów prawa, które Cię obowiązują lub nas obowiązują.
 
 ## 7. Zgłoszenia i moderacja
 
 7.1 Każdy może zgłosić wpis lub komentarz za pomocą funkcji Zgłoś. Rozpatrujemy zgłoszenia, a także możemy działać w odniesieniu do treści lub kont, które nie zostały zgłoszone.
 
-7.2 Jeśli treść lub zachowanie narusza niniejsze Warunki, Zasady Społeczności lub prawo, lub stwarza ryzyko dla użytkowników lub dla nas, możemy usunąć lub skryć treść, ograniczyć funkcje takie jak publikowanie lub komentowanie, zablokować odwiedzającemu możliwość interakcji, lub zawiesić albo zamknąć konto. Tam, gdzie jest to rozsądne, i o ile prawo nie zabrania tego lub nie stworzyłoby to ryzyka, powiemy Ci, co zrobiliśmy i dlaczego.
+7.2 Jeśli treść lub zachowanie narusza niniejsze Warunki lub prawo, lub stwarza ryzyko dla użytkowników lub dla nas, możemy usunąć lub skryć treść, ograniczyć funkcje takie jak publikowanie lub komentowanie, zablokować odwiedzającemu możliwość interakcji, lub zawiesić albo zamknąć konto. Tam, gdzie jest to rozsądne, i o ile prawo nie zabrania tego lub nie stworzyłoby to ryzyka, powiemy Ci, co zrobiliśmy i dlaczego.
 
 7.3 Jeśli uważasz, że popełniliśmy błąd, napisz na support@nicematrix.ca, a my zweryfikujemy Twoje żądanie.
 
@@ -131,7 +131,7 @@ W zakresie dopuszczonym przez prawo, zwolnisz NiceMatrix oraz jej dyrektorów, k
 
 ## 16. Postanowienia ogólne
 
-16.1 Niniejsze Warunki, Zasady Społeczności i Polityka Prywatności stanowią całość umowy między Tobą a nami w zakresie Usługi.
+16.1 Niniejsze Warunki i Polityka Prywatności stanowią całość umowy między Tobą a nami w zakresie Usługi.
 
 16.2 Jeśli jakakolwiek część niniejszych Warunków zostanie uznana za niewykonywalną, pozostała część pozostaje w mocy. Jeśli nie wykonujemy jakiegoś prawa, nie oznacza to jego zrzeczenia.
 

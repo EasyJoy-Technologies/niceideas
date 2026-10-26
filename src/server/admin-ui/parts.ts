@@ -5,7 +5,7 @@ import type { AdminContext } from "./shell";
 
 /** Rows per admin list page. */
 export const PAGE_SIZE = 30;
-const PRESETS = ["spam", "guidelines", "rights", "duplicate", "noViolation"] as const;
+const PRESETS = ["spam", "terms", "rights", "duplicate", "noViolation"] as const;
 const BAN_DAYS = [1, 7, 30] as const;
 
 const e = escapeHtml;

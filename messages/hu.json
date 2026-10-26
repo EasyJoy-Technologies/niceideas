@@ -125,10 +125,10 @@
     },
     "preset": {
       "duplicate": "Duplikált bejelentés",
-      "guidelines": "Megsérti a közösségi irányelveket",
       "noViolation": "Nem található szabálysértés",
       "rights": "Megsérti mások jogait",
-      "spam": "Spam"
+      "spam": "Spam",
+      "terms": "Megsérti a felhasználási feltételeket"
     },
     "queueEmpty": "Nincs nyitott bejelentés.",
     "readOnly": "Csak olvasható",
@@ -215,15 +215,22 @@
   "compose": {
     "addAudio": "Hang hozzáadása (legfeljebb {max})",
     "addImages": "Képek hozzáadása (legfeljebb {max})",
+    "edit": {
+      "blocked": {
+        "not_active": "Ez a bejegyzés most nem szerkeszthető.",
+        "processing": "A képek és a hang feldolgozása még folyamatban van. Ha elkészültek, szerkesztheted a bejegyzést."
+      },
+      "title": "Bejegyzés szerkesztése"
+    },
     "error": {
       "empty": "Írj valamit, vagy adj hozzá egy képet.",
       "failed": "A közzététel nem sikerült. Próbáld újra.",
       "rate_limited": "Túl gyorsan teszel közzé. Várj egy kicsit.",
+      "shortTooLongEdit": "A rövid bejegyzések legfeljebb {max} karakteresek.",
       "short_too_long": "A rövid bejegyzések legfeljebb {max} karakteresek. Válts „{article}” módra, ha többet írnál.",
       "too_large": "Egy fájl túl nagy.",
       "too_much": "Ez túl hosszú. Rövidítsd a szöveget, vagy használj kevesebb képet.",
-      "unsupported": "Ez a fájltípus nem támogatott. Válassz képet vagy hangfájlt.",
-      "shortTooLongEdit": "A rövid bejegyzések legfeljebb {max} karakteresek."
+      "unsupported": "Ez a fájltípus nem támogatott. Válassz képet vagy hangfájlt."
     },
     "fmt": {
       "bold": "Félkövér",
@@ -251,16 +258,9 @@
     "posting": "Közzététel…",
     "publish": "Közzététel",
     "remove": "Eltávolítás",
-    "title": "Cím",
     "save": "Mentés",
     "saving": "Mentés…",
-    "edit": {
-      "title": "Bejegyzés szerkesztése",
-      "blocked": {
-        "not_active": "Ez a bejegyzés most nem szerkeszthető.",
-        "processing": "A képek és a hang feldolgozása még folyamatban van. Ha elkészültek, szerkesztheted a bejegyzést."
-      }
-    }
+    "title": "Cím"
   },
   "discover": {
     "title": "Felfedezés"
@@ -293,15 +293,6 @@
     },
     "effective": "Hatályos: {date}",
     "footerMenu": "Rólunk és feltételek",
-    "guidelines": {
-      "intro": "Segíts, hogy a {brand} barátságos hely maradjon az ötletek számára. A bejegyzések és hozzászólások nem:",
-      "item1": "sérthetik a törvényt vagy mások jogait, beleértve a szerzői jogot és a magánszférát;",
-      "item2": "zaklathatnak, fenyegethetnek senkit, és nem szíthatnak gyűlöletet senki ellen;",
-      "item3": "tartalmazhatnak kiskorúakat érintő szexuális tartalmat vagy naturalisztikus erőszakot;",
-      "item4": "lehetnek kéretlen reklámok, csalások vagy félrevezetők.",
-      "outro": "Az irányelveket sértő tartalom eltávolítható, az ismételt szabálysértők pedig elveszíthetik a hozzáférésüket. Probléma esetén használd a Jelentés gombot a bejegyzésen.",
-      "title": "Közösségi irányelvek"
-    },
     "help": {
       "a1": "Ossz meg egy jegyzetet a NiceNote-ból, vagy írj bejegyzést a weben, amint elindul a webes közzététel.",
       "a2": "Szerkeszd a jegyzetet az alkalmazásban, és a bejegyzés frissül. A bejegyzés törléséhez nyisd meg a „⋯” menüt az oldalán, és válaszd a Törlés lehetőséget; a link azonnal megszűnik.",
@@ -380,12 +371,12 @@
       "close": "Bezárás",
       "copied": "Link másolva",
       "delete": "Törlés",
+      "edit": "Szerkesztés",
       "like": "Tetszik",
       "more": "További lehetőségek",
       "reply": "Válasz",
       "report": "Jelentés",
-      "share": "Megosztás",
-      "edit": "Szerkesztés"
+      "share": "Megosztás"
     },
     "aside": {
       "moreArticles": "A szerző további cikkei"
@@ -424,13 +415,13 @@
     },
     "post": {
       "edited": "Szerkesztve: {time}",
+      "editedShort": "Szerkesztve",
       "empty": "Ennek a bejegyzésnek nincs tartalma.",
       "from": "Forrás: {app}",
       "preparing": {
         "body": "A tartalom hamarosan megjelenik itt.",
         "title": "A bejegyzés előkészítése"
-      },
-      "editedShort": "Szerkesztve"
+      }
     },
     "report": {
       "done": "Köszönjük. Megvizsgáljuk.",
@@ -452,7 +443,7 @@
         "title": "A fiók nem található"
       },
       "removed": {
-        "body": "Ezt a bejegyzést a közösségi irányelvek megsértése miatt eltávolították.",
+        "body": "Ezt a bejegyzést a felhasználási feltételek megsértése miatt eltávolították.",
         "title": "A bejegyzést eltávolították"
       },
       "restricted": {
@@ -465,11 +456,11 @@
       }
     },
     "viewer": {
+      "error": "A képet nem sikerült betölteni",
       "label": "Képnézegető",
-      "zoom": "Nagyítás",
-      "previous": "Előző kép",
       "next": "Következő kép",
-      "error": "A képet nem sikerült betölteni"
+      "previous": "Előző kép",
+      "zoom": "Nagyítás"
     }
   },
   "status": {

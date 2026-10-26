@@ -125,10 +125,10 @@
     },
     "preset": {
       "duplicate": "Ripoti inayojirudia",
-      "guidelines": "Inakiuka miongozo ya jamii",
       "noViolation": "Hakuna ukiukwaji uliopatikana",
       "rights": "Inakiuka haki za wengine",
-      "spam": "Taka"
+      "spam": "Taka",
+      "terms": "Inakiuka masharti ya matumizi"
     },
     "queueEmpty": "Hakuna ripoti zilizo wazi.",
     "readOnly": "Kusoma tu",
@@ -215,15 +215,22 @@
   "compose": {
     "addAudio": "Ongeza sauti (hadi {max})",
     "addImages": "Ongeza picha (hadi {max})",
+    "edit": {
+      "blocked": {
+        "not_active": "Chapisho hili haliwezi kuhaririwa sasa hivi.",
+        "processing": "Picha na sauti bado zinashughulikiwa. Utaweza kuhariri chapisho zikishakuwa tayari."
+      },
+      "title": "Hariri chapisho"
+    },
     "error": {
       "empty": "Andika kitu au ongeza picha.",
       "failed": "Imeshindwa kuchapisha. Tafadhali jaribu tena.",
       "rate_limited": "Unachapisha haraka mno. Subiri kidogo.",
+      "shortTooLongEdit": "Machapisho mafupi yana herufi zisizozidi {max}.",
       "short_too_long": "Machapisho mafupi yana herufi zisizozidi {max}. Badilisha kuwa “{article}” ili kuandika zaidi.",
       "too_large": "Faili moja ni kubwa mno.",
       "too_much": "Ni ndefu mno. Fupisha maandishi au tumia picha chache.",
-      "unsupported": "Aina hii ya faili haitumiki. Chagua picha au faili ya sauti.",
-      "shortTooLongEdit": "Machapisho mafupi yana herufi zisizozidi {max}."
+      "unsupported": "Aina hii ya faili haitumiki. Chagua picha au faili ya sauti."
     },
     "fmt": {
       "bold": "Herufi nzito",
@@ -251,16 +258,9 @@
     "posting": "Inachapisha…",
     "publish": "Chapisha",
     "remove": "Ondoa",
-    "title": "Kichwa",
     "save": "Hifadhi",
     "saving": "Inahifadhi…",
-    "edit": {
-      "title": "Hariri chapisho",
-      "blocked": {
-        "not_active": "Chapisho hili haliwezi kuhaririwa sasa hivi.",
-        "processing": "Picha na sauti bado zinashughulikiwa. Utaweza kuhariri chapisho zikishakuwa tayari."
-      }
-    }
+    "title": "Kichwa"
   },
   "discover": {
     "title": "Gundua"
@@ -293,15 +293,6 @@
     },
     "effective": "Inatumika kuanzia {date}",
     "footerMenu": "Kuhusu na masharti",
-    "guidelines": {
-      "intro": "Saidia {brand} ibaki mahali pa kirafiki kwa mawazo. Machapisho na maoni hayapaswi:",
-      "item1": "kuvunja sheria au haki za wengine, zikiwemo hakimiliki na faragha;",
-      "item2": "kunyanyasa, kutishia au kuchochea chuki dhidi ya mtu yeyote;",
-      "item3": "kuwa na maudhui ya ngono yanayohusisha watoto au vurugu za kutisha;",
-      "item4": "kuwa barua taka, utapeli au kupotosha watu.",
-      "outro": "Maudhui yanayokiuka sheria hizi yanaweza kuondolewa, na wanaorudia makosa wanaweza kupoteza ufikiaji. Tumia Ripoti kwenye chapisho kutujulisha kuhusu tatizo.",
-      "title": "Miongozo ya jumuiya"
-    },
     "help": {
       "a1": "Shiriki dokezo kutoka NiceNote, au andika chapisho kwenye wavuti uchapishaji wa wavuti utakapofunguliwa.",
       "a2": "Hariri dokezo kwenye programu na chapisho litasasishwa. Kufuta chapisho, fungua menyu ya \"⋯\" kwenye ukurasa wake na chagua Futa; kiungo kitaacha kufanya kazi mara moja.",
@@ -380,12 +371,12 @@
       "close": "Funga",
       "copied": "Kiungo kimenakiliwa",
       "delete": "Futa",
+      "edit": "Hariri",
       "like": "Penda",
       "more": "Chaguo zaidi",
       "reply": "Jibu",
       "report": "Ripoti",
-      "share": "Shiriki",
-      "edit": "Hariri"
+      "share": "Shiriki"
     },
     "aside": {
       "moreArticles": "Makala zaidi za mwandishi"
@@ -424,13 +415,13 @@
     },
     "post": {
       "edited": "Ilihaririwa {time}",
+      "editedShort": "Imehaririwa",
       "empty": "Chapisho hili halina maudhui.",
       "from": "Kutoka {app}",
       "preparing": {
         "body": "Maudhui yataonekana hapa muda mfupi.",
         "title": "Chapisho hili linatayarishwa"
-      },
-      "editedShort": "Imehaririwa"
+      }
     },
     "report": {
       "done": "Asante. Tutaikagua.",
@@ -452,7 +443,7 @@
         "title": "Akaunti haikupatikana"
       },
       "removed": {
-        "body": "Chapisho hili limeondolewa kwa kukiuka miongozo ya jumuiya.",
+        "body": "Chapisho hili limeondolewa kwa kukiuka masharti ya matumizi.",
         "title": "Chapisho limeondolewa"
       },
       "restricted": {
@@ -465,11 +456,11 @@
       }
     },
     "viewer": {
+      "error": "Imeshindwa kupakia picha",
       "label": "Kitazamaji picha",
-      "zoom": "Kuza",
-      "previous": "Picha iliyotangulia",
       "next": "Picha inayofuata",
-      "error": "Imeshindwa kupakia picha"
+      "previous": "Picha iliyotangulia",
+      "zoom": "Kuza"
     }
   },
   "status": {

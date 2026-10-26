@@ -125,10 +125,10 @@
     },
     "preset": {
       "duplicate": "Dubblettrapport",
-      "guidelines": "Bryter mot communityreglerna",
       "noViolation": "Ingen överträdelse hittades",
       "rights": "Kränker andras rättigheter",
-      "spam": "Skräppost"
+      "spam": "Skräppost",
+      "terms": "Bryter mot användarvillkoren"
     },
     "queueEmpty": "Inga öppna anmälningar.",
     "readOnly": "Skrivskyddad",
@@ -215,15 +215,22 @@
   "compose": {
     "addAudio": "Lägg till ljud (upp till {max})",
     "addImages": "Lägg till bilder (högst {max})",
+    "edit": {
+      "blocked": {
+        "not_active": "Det här inlägget kan inte redigeras just nu.",
+        "processing": "Bilder och ljud bearbetas fortfarande. Du kan redigera inlägget när de är klara."
+      },
+      "title": "Redigera inlägg"
+    },
     "error": {
       "empty": "Skriv något eller lägg till en bild.",
       "failed": "Det gick inte att publicera. Försök igen.",
       "rate_limited": "Du publicerar för snabbt. Vänta en stund.",
+      "shortTooLongEdit": "Korta inlägg får ha högst {max} tecken.",
       "short_too_long": "Korta inlägg får ha högst {max} tecken. Byt till ”{article}” för att skriva mer.",
       "too_large": "En fil är för stor.",
       "too_much": "Det är för långt. Korta texten eller använd färre bilder.",
-      "unsupported": "Den här filtypen stöds inte. Välj en bild eller en ljudfil.",
-      "shortTooLongEdit": "Korta inlägg får ha högst {max} tecken."
+      "unsupported": "Den här filtypen stöds inte. Välj en bild eller en ljudfil."
     },
     "fmt": {
       "bold": "Fetstil",
@@ -251,16 +258,9 @@
     "posting": "Publicerar…",
     "publish": "Publicera",
     "remove": "Ta bort",
-    "title": "Rubrik",
     "save": "Spara",
     "saving": "Sparar…",
-    "edit": {
-      "title": "Redigera inlägg",
-      "blocked": {
-        "not_active": "Det här inlägget kan inte redigeras just nu.",
-        "processing": "Bilder och ljud bearbetas fortfarande. Du kan redigera inlägget när de är klara."
-      }
-    }
+    "title": "Rubrik"
   },
   "discover": {
     "title": "Upptäck"
@@ -293,15 +293,6 @@
     },
     "effective": "Gäller från {date}",
     "footerMenu": "Om oss och villkor",
-    "guidelines": {
-      "intro": "Hjälp till att hålla {brand} en vänlig plats för idéer. Inlägg och kommentarer får inte:",
-      "item1": "bryta mot lagen eller andras rättigheter, inklusive upphovsrätt och integritet;",
-      "item2": "trakassera, hota eller sprida hat mot någon;",
-      "item3": "innehålla sexuellt innehåll med minderåriga eller grovt våld;",
-      "item4": "vara spam, bedrägerier eller vilseledande.",
-      "outro": "Innehåll som bryter mot reglerna kan tas bort, och den som upprepade gånger bryter mot dem kan förlora åtkomsten. Använd Anmäl på ett inlägg för att berätta om ett problem.",
-      "title": "Gemenskapsriktlinjer"
-    },
     "help": {
       "a1": "Dela en anteckning från NiceNote, eller skriv ett inlägg på webben när webbpublicering öppnar.",
       "a2": "Redigera anteckningen i appen så uppdateras inlägget. För att ta bort ett inlägg, öppna ”⋯”-menyn på dess sida och välj Ta bort; länken slutar fungera direkt.",
@@ -380,12 +371,12 @@
       "close": "Stäng",
       "copied": "Länken har kopierats",
       "delete": "Ta bort",
+      "edit": "Redigera",
       "like": "Gilla",
       "more": "Fler alternativ",
       "reply": "Svara",
       "report": "Anmäl",
-      "share": "Dela",
-      "edit": "Redigera"
+      "share": "Dela"
     },
     "aside": {
       "moreArticles": "Fler artiklar av skribenten"
@@ -424,13 +415,13 @@
     },
     "post": {
       "edited": "Redigerat {time}",
+      "editedShort": "Redigerat",
       "empty": "Det här inlägget har inget innehåll.",
       "from": "Från {app}",
       "preparing": {
         "body": "Innehållet visas här inom en stund.",
         "title": "Inlägget förbereds"
-      },
-      "editedShort": "Redigerat"
+      }
     },
     "report": {
       "done": "Tack. Vi granskar det.",
@@ -452,7 +443,7 @@
         "title": "Kontot hittades inte"
       },
       "removed": {
-        "body": "Inlägget har tagits bort eftersom det bröt mot gemenskapsriktlinjerna.",
+        "body": "Inlägget har tagits bort eftersom det bröt mot användarvillkoren.",
         "title": "Inlägget har tagits bort"
       },
       "restricted": {
@@ -465,11 +456,11 @@
       }
     },
     "viewer": {
+      "error": "Bilden kunde inte läsas in",
       "label": "Bildvisare",
-      "zoom": "Zooma",
-      "previous": "Föregående bild",
       "next": "Nästa bild",
-      "error": "Bilden kunde inte läsas in"
+      "previous": "Föregående bild",
+      "zoom": "Zooma"
     }
   },
   "status": {

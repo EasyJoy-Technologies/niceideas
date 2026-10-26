@@ -125,10 +125,10 @@
     },
     "preset": {
       "duplicate": "Zduplikowane zgłoszenie",
-      "guidelines": "Narusza zasady społeczności",
       "noViolation": "Nie znaleziono naruszenia",
       "rights": "Narusza prawa innych osób",
-      "spam": "Spam"
+      "spam": "Spam",
+      "terms": "Narusza warunki korzystania"
     },
     "queueEmpty": "Brak otwartych zgłoszeń.",
     "readOnly": "Tylko podgląd",
@@ -215,15 +215,22 @@
   "compose": {
     "addAudio": "Dodaj audio (maks. {max})",
     "addImages": "Dodaj obrazy (maks. {max})",
+    "edit": {
+      "blocked": {
+        "not_active": "Tego wpisu nie można teraz edytować.",
+        "processing": "Obrazy i dźwięk są jeszcze przetwarzane. Wpis będzie można edytować, gdy będą gotowe."
+      },
+      "title": "Edytuj wpis"
+    },
     "error": {
       "empty": "Napisz coś lub dodaj obraz.",
       "failed": "Nie udało się opublikować. Spróbuj ponownie.",
       "rate_limited": "Publikujesz zbyt szybko. Poczekaj chwilę.",
+      "shortTooLongEdit": "Krótkie wpisy mogą mieć najwyżej {max} znaków.",
       "short_too_long": "Krótkie wpisy mogą mieć najwyżej {max} znaków. Przełącz na „{article}”, aby napisać więcej.",
       "too_large": "Plik jest za duży.",
       "too_much": "To za długie. Skróć tekst lub użyj mniej obrazów.",
-      "unsupported": "Ten typ pliku nie jest obsługiwany. Wybierz obraz lub plik audio.",
-      "shortTooLongEdit": "Krótkie wpisy mogą mieć najwyżej {max} znaków."
+      "unsupported": "Ten typ pliku nie jest obsługiwany. Wybierz obraz lub plik audio."
     },
     "fmt": {
       "bold": "Pogrubienie",
@@ -251,16 +258,9 @@
     "posting": "Publikowanie…",
     "publish": "Opublikuj",
     "remove": "Usuń",
-    "title": "Tytuł",
     "save": "Zapisz",
     "saving": "Zapisywanie…",
-    "edit": {
-      "title": "Edytuj wpis",
-      "blocked": {
-        "not_active": "Tego wpisu nie można teraz edytować.",
-        "processing": "Obrazy i dźwięk są jeszcze przetwarzane. Wpis będzie można edytować, gdy będą gotowe."
-      }
-    }
+    "title": "Tytuł"
   },
   "discover": {
     "title": "Odkrywaj"
@@ -293,15 +293,6 @@
     },
     "effective": "Obowiązuje od {date}",
     "footerMenu": "O serwisie i warunki",
-    "guidelines": {
-      "intro": "Pomóż utrzymać {brand} jako przyjazne miejsce dla pomysłów. Wpisy i komentarze nie mogą:",
-      "item1": "łamać prawa ani naruszać praw innych osób, w tym praw autorskich i prywatności;",
-      "item2": "nękać, grozić ani szerzyć nienawiści wobec kogokolwiek;",
-      "item3": "zawierać treści seksualnych z udziałem nieletnich ani drastycznej przemocy;",
-      "item4": "zawierać spamu, oszustw ani wprowadzać w błąd.",
-      "outro": "Treści naruszające te zasady mogą zostać usunięte, a osoby wielokrotnie je łamiące mogą utracić dostęp. Użyj opcji Zgłoś przy wpisie, aby poinformować nas o problemie.",
-      "title": "Zasady społeczności"
-    },
     "help": {
       "a1": "Udostępnij notatkę z NiceNote albo napisz wpis w przeglądarce, gdy zostanie uruchomione publikowanie w sieci.",
       "a2": "Edytuj notatkę w aplikacji, a wpis się zaktualizuje. Aby usunąć wpis, otwórz menu „⋯” na jego stronie i wybierz Usuń; link od razu przestanie działać.",
@@ -380,12 +371,12 @@
       "close": "Zamknij",
       "copied": "Skopiowano link",
       "delete": "Usuń",
+      "edit": "Edytuj",
       "like": "Lubię to",
       "more": "Więcej opcji",
       "reply": "Odpowiedz",
       "report": "Zgłoś",
-      "share": "Udostępnij",
-      "edit": "Edytuj"
+      "share": "Udostępnij"
     },
     "aside": {
       "moreArticles": "Więcej artykułów autora"
@@ -424,13 +415,13 @@
     },
     "post": {
       "edited": "Edytowano: {time}",
+      "editedShort": "Edytowano",
       "empty": "Ten wpis nie ma treści.",
       "from": "Z aplikacji {app}",
       "preparing": {
         "body": "Treść pojawi się tutaj za chwilę.",
         "title": "Przygotowywanie wpisu"
-      },
-      "editedShort": "Edytowano"
+      }
     },
     "report": {
       "done": "Dziękujemy. Sprawdzimy to.",
@@ -452,7 +443,7 @@
         "title": "Nie znaleziono konta"
       },
       "removed": {
-        "body": "Ten wpis został usunięty za naruszenie zasad społeczności.",
+        "body": "Ten wpis został usunięty za naruszenie warunków korzystania.",
         "title": "Wpis usunięty"
       },
       "restricted": {
@@ -465,11 +456,11 @@
       }
     },
     "viewer": {
+      "error": "Nie udało się wczytać obrazu",
       "label": "Przeglądarka obrazów",
-      "zoom": "Powiększ",
-      "previous": "Poprzedni obraz",
       "next": "Następny obraz",
-      "error": "Nie udało się wczytać obrazu"
+      "previous": "Poprzedni obraz",
+      "zoom": "Powiększ"
     }
   },
   "status": {

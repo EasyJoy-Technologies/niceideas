@@ -4,7 +4,7 @@
 
 Waɗannan Sharuɗɗan Amfani ("Sharuɗɗa") yarjejeniya ne tsakanin kai da NiceMatrix Technologies Inc., 434223 Clear Mountain Dr E, Foothills, AB T1S 6B1, Canada ("NiceMatrix", "mu", "namu"). NiceMatrix tana gudanar da niceideas a niceideas.app, hade da shafukan yanar gizonta, hanyoyin haɗi na saƙonnin jama'a da masu shirye-shiryen aikace-aikace (tare, "Hidima").
 
-Ta amfani da Hidimar, hade da duban, son abu ko yin sharhi ba tare da asusu ba, kana yarda da waɗannan Sharuɗɗa da Jagororin Al'ummarmu. Manufofin Keɓantawarmu na bayyana yadda muke sarrafa bayanan sirri. Idan ba ka yarda ba, kada ka yi amfani da Hidimar.
+Ta amfani da Hidimar, hade da duban, son abu ko yin sharhi ba tare da asusu ba, kana yarda da waɗannan Sharuɗɗa. Manufofin Keɓantawarmu na bayyana yadda muke sarrafa bayanan sirri. Idan ba ka yarda ba, kada ka yi amfani da Hidimar.
 
 ## 2. Wanda zai iya amfani da niceideas
 
@@ -57,13 +57,13 @@ Kana yarda ba za ka yi amfani da Hidimar ba don:
 - aika saƙonnin ba'a, yin zamba ko phishing, ko tada sonsu, sharhi ko bibiyoyi;
 - loda software mai cutarwa, ko tsangwama Hidimar, tsaronta ko wasu masu amfani;
 - shiga Hidimar ta hanyoyin injina fiye da abin da hanyoyin mu na jama'a suka yarda, tattara bayanan wasu masu amfani da yawa, ko guje wa iyakokin kima, hani ko bincike na hana cin zarafi;
-- karya Jagororin Al'ummarmu ko dokokin da suka shafe ka ko mu.
+- wallafa abun ciki mai zubar da jini ko tashin hankali mai muni, ko karya dokokin da suka shafe ka ko mu.
 
 ## 7. Rahotanni da sarrafawa
 
 7.1 Kowa zai iya kai rahoto kan saƙo ko sharhi ta Rahoto. Muna bincika rahotanni, kuma za mu iya kuma ɗaukar mataki kan abun ciki ko asusun da ba a kai rahoton ba.
 
-7.2 Idan abun ciki ko hali ya karya waɗannan Sharuɗɗa, Jagororin Al'umma ko doka, ko ya sa masu amfani ko mu cikin haɗari, za mu iya cire ko ɓoye abun ciki, iyakance fasalin kamar fitowa ko sharhi, toshe baƙo daga hulɗa, ko dakatar ko rufe asusu. Inda ya dace, kuma sai idan doka ta hana ko hakan zai ƙirƙiri haɗari, za mu gaya maka abin da muka yi kuma dalili.
+7.2 Idan abun ciki ko hali ya karya waɗannan Sharuɗɗa ko doka, ko ya sa masu amfani ko mu cikin haɗari, za mu iya cire ko ɓoye abun ciki, iyakance fasalin kamar fitowa ko sharhi, toshe baƙo daga hulɗa, ko dakatar ko rufe asusu. Inda ya dace, kuma sai idan doka ta hana ko hakan zai ƙirƙiri haɗari, za mu gaya maka abin da muka yi kuma dalili.
 
 7.3 Idan kana ganin mun yi kuskure, rubuta zuwa support@nicematrix.ca kuma za mu bincika buƙatarka.
 
@@ -131,7 +131,7 @@ A iyakar doka ta yarda, za ka rama NiceMatrix da daraktoci, jami'ai, ma'aikata d
 
 ## 16. Gabaɗaya
 
-16.1 Waɗannan Sharuɗɗa, Jagororin Al'umma da Manufofin Keɓantawa sune cikakkiyar yarjejeniya tsakanin kai da mu game da Hidimar.
+16.1 Waɗannan Sharuɗɗa da Manufofin Keɓantawa sune cikakkiyar yarjejeniya tsakanin kai da mu game da Hidimar.
 
 16.2 Idan an gano kowace bangare na waɗannan Sharuɗɗa ba za a aiwatar da ita ba, sauran na ci gaba da aiki. Idan ba mu aiwatar da wani haƙƙi ba, ba mu bar shi ba.
 

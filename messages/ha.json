@@ -125,10 +125,10 @@
     },
     "preset": {
       "duplicate": "Rahoto na maimaita",
-      "guidelines": "Ya karya ƙaʼidojin alʼumma",
       "noViolation": "Ba a samu keta ƙaʼida ba",
       "rights": "Ya cin haƙƙin wasu",
-      "spam": "Saƙon banza"
+      "spam": "Saƙon banza",
+      "terms": "Ya karya sharuɗɗan amfani"
     },
     "queueEmpty": "Babu rahotanni a buɗe.",
     "readOnly": "Karantawa kawai",
@@ -215,15 +215,22 @@
   "compose": {
     "addAudio": "Ƙara sauti (har zuwa {max})",
     "addImages": "Ƙara hotuna (har zuwa {max})",
+    "edit": {
+      "blocked": {
+        "not_active": "Ba za a iya gyara wannan saƙon yanzu ba.",
+        "processing": "Ana ci gaba da sarrafa hotuna da sauti. Za ka iya gyara saƙon idan sun shirya."
+      },
+      "title": "Gyara saƙo"
+    },
     "error": {
       "empty": "Rubuta wani abu ko ƙara hoto.",
       "failed": "An kasa wallafawa. Da fatan za a sake gwadawa.",
       "rate_limited": "Kana wallafawa da sauri sosai. Jira ɗan lokaci.",
+      "shortTooLongEdit": "Gajerun saƙonni suna da iyakar haruffa {max}.",
       "short_too_long": "Gajerun saƙonni suna da iyakar haruffa {max}. Canja zuwa “{article}” don rubuta ƙari.",
       "too_large": "Wani fayil ya yi girma da yawa.",
       "too_much": "Ya yi tsawo sosai. Taƙaita rubutu ko rage hotuna.",
-      "unsupported": "Ba a tallafa wa wannan nau'in fayil ba. Zaɓi hoto ko fayil na sauti.",
-      "shortTooLongEdit": "Gajerun saƙonni suna da iyakar haruffa {max}."
+      "unsupported": "Ba a tallafa wa wannan nau'in fayil ba. Zaɓi hoto ko fayil na sauti."
     },
     "fmt": {
       "bold": "Mai kauri",
@@ -251,16 +258,9 @@
     "posting": "Ana wallafawa…",
     "publish": "Wallafa",
     "remove": "Cire",
-    "title": "Take",
     "save": "Ajiye",
     "saving": "Ana ajiyewa…",
-    "edit": {
-      "title": "Gyara saƙo",
-      "blocked": {
-        "not_active": "Ba za a iya gyara wannan saƙon yanzu ba.",
-        "processing": "Ana ci gaba da sarrafa hotuna da sauti. Za ka iya gyara saƙon idan sun shirya."
-      }
-    }
+    "title": "Take"
   },
   "discover": {
     "title": "Bincika"
@@ -293,15 +293,6 @@
     },
     "effective": "Yana aiki daga {date}",
     "footerMenu": "Game da mu da sharuɗɗa",
-    "guidelines": {
-      "intro": "Taimaka wajen ganin {brand} ya kasance wuri mai kyau ga ra'ayoyi. Rubuce-rubuce da sharhi ba za su:",
-      "item1": "karya doka ko take haƙƙin wasu ba, ciki har da haƙƙin mallaka da sirri;",
-      "item2": "tsangwama, tsoratarwa ko tayar da ƙiyayya ga kowa ba;",
-      "item3": "ƙunshi abubuwan batsa da suka shafi ƙananan yara ko tashin hankali mai muni ba;",
-      "item4": "zama saƙonnin banza, zamba ko yaudarar mutane ba.",
-      "outro": "Ana iya cire abubuwan da suka karya waɗannan ƙa'idoji, kuma waɗanda suke maimaitawa za su iya rasa damar shiga. Yi amfani da Kai rahoto a kan rubutu don sanar da mu matsala.",
-      "title": "Ƙa'idojin al'umma"
-    },
     "help": {
       "a1": "Raba bayani daga NiceNote, ko ka rubuta a yanar gizo idan aka buɗe wallafawa ta yanar gizo.",
       "a2": "Gyara bayanin a manhajar kuma rubutun zai sabunta. Don share rubutu, buɗe menu na “⋯” a shafinsa ka zaɓi “Share”; hanyar haɗin za ta daina aiki nan take.",
@@ -380,12 +371,12 @@
       "close": "Rufe",
       "copied": "An kwafi hanyar haɗi",
       "delete": "Share",
+      "edit": "Gyara",
       "like": "So",
       "more": "Ƙarin zaɓuɓɓuka",
       "reply": "Amsa",
       "report": "Kai rahoto",
-      "share": "Raba",
-      "edit": "Gyara"
+      "share": "Raba"
     },
     "aside": {
       "moreArticles": "Ƙarin maƙalu daga marubucin"
@@ -424,13 +415,13 @@
     },
     "post": {
       "edited": "An gyara a {time}",
+      "editedShort": "An gyara",
       "empty": "Wannan rubutun ba shi da abun ciki.",
       "from": "Daga {app}",
       "preparing": {
         "body": "Abun ciki zai bayyana a nan cikin ɗan lokaci.",
         "title": "Ana shirya wannan rubutun"
-      },
-      "editedShort": "An gyara"
+      }
     },
     "report": {
       "done": "Na gode. Za mu duba shi.",
@@ -452,7 +443,7 @@
         "title": "Ba a sami asusun ba"
       },
       "removed": {
-        "body": "An cire wannan rubutun saboda ya karya ƙa'idojin al'umma.",
+        "body": "An cire wannan rubutun saboda ya karya sharuɗɗan amfani.",
         "title": "An cire rubutun"
       },
       "restricted": {
@@ -465,11 +456,11 @@
       }
     },
     "viewer": {
+      "error": "An kasa loda hoton",
       "label": "Mai duba hotuna",
-      "zoom": "Zuƙowa",
-      "previous": "Hoton baya",
       "next": "Hoto na gaba",
-      "error": "An kasa loda hoton"
+      "previous": "Hoton baya",
+      "zoom": "Zuƙowa"
     }
   },
   "status": {

@@ -4,7 +4,7 @@
 
 Terma Penggunaan ini ("Terma") adalah perjanjian antara anda dan NiceMatrix Technologies Inc., 434223 Clear Mountain Dr E, Foothills, AB T1S 6B1, Canada ("NiceMatrix", "kami"). NiceMatrix mengendalikan niceideas di niceideas.app, termasuk laman webnya, pautan hantaran awam dan antara muka pengaturcaraan aplikasi (secara bersama, "Perkhidmatan").
 
-Dengan menggunakan Perkhidmatan, termasuk melihat, menyukai atau memberi komen tanpa akaun, anda bersetuju dengan Terma ini dan Garis Panduan Komuniti kami. Dasar Privasi kami menerangkan bagaimana kami mengendalikan maklumat peribadi. Jika anda tidak bersetuju, sila jangan gunakan Perkhidmatan.
+Dengan menggunakan Perkhidmatan, termasuk melihat, menyukai atau memberi komen tanpa akaun, anda bersetuju dengan Terma ini. Dasar Privasi kami menerangkan bagaimana kami mengendalikan maklumat peribadi. Jika anda tidak bersetuju, sila jangan gunakan Perkhidmatan.
 
 ## 2. Siapa yang boleh menggunakan niceideas
 
@@ -57,13 +57,13 @@ Anda bersetuju untuk tidak menggunakan Perkhidmatan untuk:
 - menghantar spam, menjalankan penipuan atau pancingan data (phishing), atau memanipulasi suka, komen atau pengikut;
 - memuat naik perisian hasad, atau mengganggu Perkhidmatan, keselamatannya atau pengguna lain;
 - mengakses Perkhidmatan melalui cara automatik yang melebihi apa yang dibenarkan oleh antara muka awam kami, mengumpul data tentang pengguna lain secara pukal, atau mengelakkan had kadar, larangan atau semakan anti-penyalahgunaan;
-- melanggar Garis Panduan Komuniti kami atau undang-undang yang terpakai kepada anda atau kami.
+- menghantar kandungan berdarah atau keganasan yang melampau, atau melanggar undang-undang yang terpakai kepada anda atau kami.
 
 ## 7. Laporan dan kesederhanaan
 
 7.1 Sesiapa boleh melaporkan hantaran atau komen dengan fungsi Laporkan. Kami menyemak laporan, dan kami juga boleh mengambil tindakan terhadap kandungan atau akaun yang belum dilaporkan.
 
-7.2 Jika kandungan atau tingkah laku melanggar Terma ini, Garis Panduan Komuniti atau undang-undang, atau menimbulkan risiko kepada pengguna atau kami, kami boleh memadam atau menyembunyikan kandungan, menghadkan ciri seperti menghantar atau memberi komen, menghalang pelawat daripada berinteraksi, atau menggantung atau menutup akaun. Apabila munasabah, dan kecuali undang-undang melarangnya atau akan mewujudkan risiko, kami akan memberitahu anda apa yang kami lakukan dan sebabnya.
+7.2 Jika kandungan atau tingkah laku melanggar Terma ini atau undang-undang, atau menimbulkan risiko kepada pengguna atau kami, kami boleh memadam atau menyembunyikan kandungan, menghadkan ciri seperti menghantar atau memberi komen, menghalang pelawat daripada berinteraksi, atau menggantung atau menutup akaun. Apabila munasabah, dan kecuali undang-undang melarangnya atau akan mewujudkan risiko, kami akan memberitahu anda apa yang kami lakukan dan sebabnya.
 
 7.3 Jika anda rasa kami membuat kesilapan, tulis kepada support@nicematrix.ca dan kami akan menyemak permintaan anda.
 
@@ -131,7 +131,7 @@ Sejauh yang dibenarkan oleh undang-undang, anda akan menanggung rugi NiceMatrix 
 
 ## 16. Umum
 
-16.1 Terma ini, Garis Panduan Komuniti dan Dasar Privasi merupakan keseluruhan perjanjian antara anda dan kami mengenai Perkhidmatan.
+16.1 Terma ini dan Dasar Privasi merupakan keseluruhan perjanjian antara anda dan kami mengenai Perkhidmatan.
 
 16.2 Jika mana-mana bahagian Terma ini didapati tidak boleh dikuatkuasakan, bahagian yang selebihnya kekal berkuat kuasa. Jika kami tidak menguatkuasakan sesuatu hak, kami tidak melepaskan hak tersebut.
 

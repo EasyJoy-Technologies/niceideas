@@ -125,10 +125,10 @@
     },
     "preset": {
       "duplicate": "Raportare duplicat",
-      "guidelines": "Încalcă regulile comunității",
       "noViolation": "Nu s-a găsit nicio încălcare",
       "rights": "Încalcă drepturile altora",
-      "spam": "Spam"
+      "spam": "Spam",
+      "terms": "Încalcă termenii de utilizare"
     },
     "queueEmpty": "Nicio raportare deschisă.",
     "readOnly": "Doar vizualizare",
@@ -215,15 +215,22 @@
   "compose": {
     "addAudio": "Adaugă audio (până la {max})",
     "addImages": "Adaugă imagini (maximum {max})",
+    "edit": {
+      "blocked": {
+        "not_active": "Această postare nu poate fi editată acum.",
+        "processing": "Imaginile și sunetul sunt încă în procesare. Vei putea edita postarea după ce sunt gata."
+      },
+      "title": "Editează postarea"
+    },
     "error": {
       "empty": "Scrie ceva sau adaugă o imagine.",
       "failed": "Nu s-a putut publica. Încearcă din nou.",
       "rate_limited": "Publici prea repede. Așteaptă puțin.",
+      "shortTooLongEdit": "Postările scurte au cel mult {max} de caractere.",
       "short_too_long": "Postările scurte au cel mult {max} de caractere. Comută la „{article}” pentru a scrie mai mult.",
       "too_large": "Un fișier este prea mare.",
       "too_much": "E prea lung. Scurtează textul sau folosește mai puține imagini.",
-      "unsupported": "Acest tip de fișier nu este acceptat. Alege o imagine sau un fișier audio.",
-      "shortTooLongEdit": "Postările scurte au cel mult {max} de caractere."
+      "unsupported": "Acest tip de fișier nu este acceptat. Alege o imagine sau un fișier audio."
     },
     "fmt": {
       "bold": "Aldin",
@@ -251,16 +258,9 @@
     "posting": "Se publică…",
     "publish": "Publică",
     "remove": "Elimină",
-    "title": "Titlu",
     "save": "Salvează",
     "saving": "Se salvează…",
-    "edit": {
-      "title": "Editează postarea",
-      "blocked": {
-        "not_active": "Această postare nu poate fi editată acum.",
-        "processing": "Imaginile și sunetul sunt încă în procesare. Vei putea edita postarea după ce sunt gata."
-      }
-    }
+    "title": "Titlu"
   },
   "discover": {
     "title": "Descoperă"
@@ -293,15 +293,6 @@
     },
     "effective": "În vigoare de la {date}",
     "footerMenu": "Despre și termeni",
-    "guidelines": {
-      "intro": "Ajută-ne să păstrăm {brand} un loc prietenos pentru idei. Postările și comentariile nu au voie:",
-      "item1": "să încalce legea sau drepturile altora, inclusiv drepturile de autor și viața privată;",
-      "item2": "să hărțuiască, să amenințe sau să instige la ură împotriva cuiva;",
-      "item3": "să conțină conținut sexual cu minori sau violență explicită;",
-      "item4": "să fie spam, înșelătorii sau să inducă oamenii în eroare.",
-      "outro": "Conținutul care încalcă aceste reguli poate fi eliminat, iar cei care le încalcă repetat pot pierde accesul. Folosește Raportează pe o postare ca să ne semnalezi o problemă.",
-      "title": "Regulile comunității"
-    },
     "help": {
       "a1": "Distribuie o notă din NiceNote sau scrie o postare pe web după ce se deschide publicarea pe web.",
       "a2": "Editează nota în aplicație și postarea se actualizează. Pentru a șterge o postare, deschide meniul „⋯” de pe pagina ei și alege Șterge; linkul nu mai funcționează imediat.",
@@ -380,12 +371,12 @@
       "close": "Închide",
       "copied": "Link copiat",
       "delete": "Șterge",
+      "edit": "Editează",
       "like": "Îmi place",
       "more": "Mai multe opțiuni",
       "reply": "Răspunde",
       "report": "Raportează",
-      "share": "Distribuie",
-      "edit": "Editează"
+      "share": "Distribuie"
     },
     "aside": {
       "moreArticles": "Alte articole ale autorului"
@@ -424,13 +415,13 @@
     },
     "post": {
       "edited": "Editat la {time}",
+      "editedShort": "Editat",
       "empty": "Această postare nu are conținut.",
       "from": "Din {app}",
       "preparing": {
         "body": "Conținutul va apărea aici imediat.",
         "title": "Postarea se pregătește"
-      },
-      "editedShort": "Editat"
+      }
     },
     "report": {
       "done": "Mulțumim. Vom analiza.",
@@ -452,7 +443,7 @@
         "title": "Contul nu a fost găsit"
       },
       "removed": {
-        "body": "Această postare a fost eliminată pentru încălcarea regulilor comunității.",
+        "body": "Această postare a fost eliminată pentru încălcarea termenilor de utilizare.",
         "title": "Postare eliminată"
       },
       "restricted": {
@@ -465,11 +456,11 @@
       }
     },
     "viewer": {
+      "error": "Imaginea nu a putut fi încărcată",
       "label": "Vizualizator de imagini",
-      "zoom": "Mărește",
-      "previous": "Imaginea anterioară",
       "next": "Imaginea următoare",
-      "error": "Imaginea nu a putut fi încărcată"
+      "previous": "Imaginea anterioară",
+      "zoom": "Mărește"
     }
   },
   "status": {

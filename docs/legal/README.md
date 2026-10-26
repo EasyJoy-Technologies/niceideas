@@ -53,7 +53,7 @@ Both languages have identical section numbering and meaning; Chinese is a locali
 - **No ad/analytics trackers found in code** — repo-wide search of `src/server` and `src/app` for analytics/ads/Sentry/Google Analytics terms returned no matches (verified during drafting via `rg`). → Privacy §2.7, §6 (still flagged `[TO CONFIRM]` pending final production build/CSP review).
 - **CSP / no third-party scripts** — referenced in `src/server/share/respond.ts` and plan §6/§16.2 ("无第三方脚本"). → Privacy §15.
 - **Infrastructure**: Cloudflare (CDN, R2 object storage for published media), PostgreSQL, Hetzner servers Germany/Finland — plan §2 (architecture diagram, R2 bucket `media.niceideas.app`), plan §2 resource note marks Hetzner region itself as uncertain in the source plan. → Privacy §7, §8 (both flagged `[TO CONFIRM]`).
-- **Community Guidelines page exists** — `src/app/guidelines` directory present in repo. → Terms §6.
+- **Community Guidelines folded into the Terms (v1.0.74, Xianglin 2026-10-26)** — the separate page is gone (`/guidelines` → 301 `/terms`); its one rule not already in Terms §6 (gory / graphically violent content) was added there. The drafts below still mention the guidelines; `content/legal/` is authoritative.
 - **Membership (data stats, no ads) is planned, not live; no ads today** — plan §9 "待确认" table Q9/Q10 (§17 referenced, confirmed 2026-10-20 as a separate, not-yet-implemented feature). → Terms §14 context (liability-cap rationale), Privacy §2.7 context.
 
 ## Open questions for the product owner (beyond placeholders above)

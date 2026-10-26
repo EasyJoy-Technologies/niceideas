@@ -5,7 +5,7 @@ import { themeMenu } from "./theme-menu";
 import { copyright, infoLinks } from "./site-footer";
 
 /**
- * Information pages (about, guidelines, terms, privacy, help) — v4.1 design, round-5 header:
+ * Information pages (about, terms, privacy, help) — v4.1 design, round-5 header:
  * brand (= home link), page links, language, theme; on phones the page links move into a
  * hamburger menu (no JS: <details>) and the footer keeps only ©.
  */

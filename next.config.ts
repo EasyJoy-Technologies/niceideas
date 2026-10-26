@@ -24,6 +24,10 @@ const nextConfig: NextConfig = {
       { source: "/brand/:file*", headers: [{ key: "Cache-Control", value: "public, max-age=86400" }] },
     ];
   },
+  // The community guidelines were folded into the terms of use (v1.0.74).
+  async redirects() {
+    return [{ source: "/guidelines", destination: "/terms", permanent: true }];
+  },
   // Path-only rewrites (internal by construction). They run after src/proxy.ts.
   async rewrites() {
     return {

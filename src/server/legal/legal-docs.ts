@@ -12,7 +12,7 @@ export const LEGAL_DOCS = ["terms", "privacy"] as const;
 export type LegalDoc = (typeof LEGAL_DOCS)[number];
 
 /** Effective date of the current versions (ISO date). Bump with every published change. */
-export const LEGAL_EFFECTIVE_DATE = "2026-10-24";
+export const LEGAL_EFFECTIVE_DATE = "2026-10-26";
 
 export type LegalSection = { id: string; title: string; html: string };
 export type LegalDocument = { summaryHtml: string; sections: LegalSection[] };

@@ -4,7 +4,7 @@
 
 Le presenti Condizioni d'uso ("Condizioni") costituiscono un accordo tra lei e NiceMatrix Technologies Inc., 434223 Clear Mountain Dr E, Foothills, AB T1S 6B1, Canada ("NiceMatrix", "noi"). NiceMatrix gestisce niceideas all'indirizzo niceideas.app, comprese le sue pagine web, i link pubblici alle pubblicazioni e le interfacce di programmazione delle applicazioni (collettivamente, il "Servizio").
 
-Utilizzando il Servizio, anche visualizzando, mettendo "mi piace" o commentando senza un account, lei accetta le presenti Condizioni e le nostre Linee Guida della Community. La nostra Informativa sulla Privacy spiega come trattiamo le informazioni personali. Se non è d'accordo, non utilizzi il Servizio.
+Utilizzando il Servizio, anche visualizzando, mettendo "mi piace" o commentando senza un account, lei accetta le presenti Condizioni. La nostra Informativa sulla Privacy spiega come trattiamo le informazioni personali. Se non è d'accordo, non utilizzi il Servizio.
 
 ## 2. Chi può utilizzare niceideas
 
@@ -57,13 +57,13 @@ Lei si impegna a non utilizzare il Servizio per:
 - inviare spam, mettere in atto truffe o phishing, o manipolare "mi piace", commenti o follower;
 - caricare malware, o interferire con il Servizio, con la sua sicurezza o con altri utenti;
 - accedere al Servizio con mezzi automatizzati oltre quanto consentito dalle nostre interfacce pubbliche, raccogliere dati su altri utenti in massa, o eludere limiti di frequenza, blocchi o controlli anti-abuso;
-- violare le nostre Linee Guida della Community o le leggi applicabili a lei o a noi.
+- pubblicare contenuti cruenti o di violenza esplicita, o violare le leggi applicabili a lei o a noi.
 
 ## 7. Segnalazioni e moderazione
 
 7.1 Chiunque può segnalare una pubblicazione o un commento tramite la funzione "Segnala". Esaminiamo le segnalazioni, e possiamo anche agire su contenuti o account che non sono stati segnalati.
 
-7.2 Se un contenuto o un comportamento viola le presenti Condizioni, le Linee Guida della Community o la legge, o pone a rischio gli utenti o noi, possiamo rimuovere o nascondere contenuti, limitare funzionalità come la pubblicazione o i commenti, impedire a un visitatore di interagire, o sospendere o chiudere un account. Nella misura ragionevole, e a meno che la legge lo proibisca o ciò creerebbe un rischio, le comunicheremo cosa abbiamo fatto e perché.
+7.2 Se un contenuto o un comportamento viola le presenti Condizioni o la legge, o pone a rischio gli utenti o noi, possiamo rimuovere o nascondere contenuti, limitare funzionalità come la pubblicazione o i commenti, impedire a un visitatore di interagire, o sospendere o chiudere un account. Nella misura ragionevole, e a meno che la legge lo proibisca o ciò creerebbe un rischio, le comunicheremo cosa abbiamo fatto e perché.
 
 7.3 Se ritiene che abbiamo commesso un errore, scriva a support@nicematrix.ca e esamineremo la sua richiesta.
 
@@ -131,7 +131,7 @@ Nella misura consentita dalla legge, lei indennizzerà NiceMatrix e i suoi ammin
 
 ## 16. Disposizioni generali
 
-16.1 Le presenti Condizioni, le Linee Guida della Community e l'Informativa sulla Privacy costituiscono l'intero accordo tra lei e noi riguardo al Servizio.
+16.1 Le presenti Condizioni e l'Informativa sulla Privacy costituiscono l'intero accordo tra lei e noi riguardo al Servizio.
 
 16.2 Se una parte delle presenti Condizioni risulta inapplicabile, il resto rimane in vigore. Se non facciamo valere un diritto, non vi abbiamo rinunciato.
 

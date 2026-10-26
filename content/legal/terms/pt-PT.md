@@ -4,7 +4,7 @@
 
 Estes Termos de Utilização ("Termos") constituem um acordo entre si e a NiceMatrix Technologies Inc., 434223 Clear Mountain Dr E, Foothills, AB T1S 6B1, Canadá ("NiceMatrix", "nós"). A NiceMatrix opera o niceideas em niceideas.app, incluindo as suas páginas web, as ligações públicas das publicações e as interfaces de programação de aplicações (em conjunto, o "Serviço").
 
-Ao utilizar o Serviço, incluindo ao visualizar, gostar ou comentar sem uma conta, aceita estes Termos e as nossas Normas da Comunidade. A nossa Política de Privacidade explica como tratamos informações pessoais. Se não concordar, não utilize o Serviço.
+Ao utilizar o Serviço, incluindo ao visualizar, gostar ou comentar sem uma conta, aceita estes Termos. A nossa Política de Privacidade explica como tratamos informações pessoais. Se não concordar, não utilize o Serviço.
 
 ## 2. Quem pode utilizar o niceideas
 
@@ -57,13 +57,13 @@ Compromete-se a não utilizar o Serviço para:
 - enviar spam, praticar fraudes ou phishing, ou manipular gostos, comentários ou seguidores;
 - carregar software malicioso, ou interferir com o Serviço, a sua segurança ou outros utilizadores;
 - aceder ao Serviço por meios automatizados além do que as nossas interfaces públicas permitem, recolher dados sobre outros utilizadores em massa, ou contornar limites de frequência, bloqueios ou controlos antiabuso;
-- violar as nossas Normas da Comunidade ou as leis que lhe são aplicáveis ou que nos são aplicáveis.
+- publicar conteúdo sangrento ou de violência explícita, ou violar as leis que lhe são aplicáveis ou que nos são aplicáveis.
 
 ## 7. Denúncias e moderação
 
 7.1 Qualquer pessoa pode denunciar uma publicação ou comentário através da opção "Denunciar". Analisamos as denúncias e também podemos agir relativamente a conteúdos ou contas que não tenham sido denunciados.
 
-7.2 Se o conteúdo ou o comportamento violar estes Termos, as Normas da Comunidade ou a lei, ou colocar os utilizadores ou nós próprios em risco, podemos remover ou ocultar conteúdo, limitar funcionalidades como publicar ou comentar, impedir um visitante de interagir, ou suspender ou encerrar uma conta. Quando razoável, e salvo se a lei o proibir ou isso criar um risco, informá-lo-emos do que fizemos e porquê.
+7.2 Se o conteúdo ou o comportamento violar estes Termos ou a lei, ou colocar os utilizadores ou nós próprios em risco, podemos remover ou ocultar conteúdo, limitar funcionalidades como publicar ou comentar, impedir um visitante de interagir, ou suspender ou encerrar uma conta. Quando razoável, e salvo se a lei o proibir ou isso criar um risco, informá-lo-emos do que fizemos e porquê.
 
 7.3 Se considerar que cometemos um erro, escreva para support@nicematrix.ca e analisaremos o seu pedido.
 
@@ -131,7 +131,7 @@ Na medida permitida pela lei, indemnizará a NiceMatrix e os seus administradore
 
 ## 16. Disposições gerais
 
-16.1 Estes Termos, as Normas da Comunidade e a Política de Privacidade constituem o acordo integral entre si e nós relativamente ao Serviço.
+16.1 Estes Termos e a Política de Privacidade constituem o acordo integral entre si e nós relativamente ao Serviço.
 
 16.2 Se qualquer parte destes Termos for considerada inexequível, o restante permanece em vigor. Se não exercermos um direito, não o teremos renunciado.
 

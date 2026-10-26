@@ -125,10 +125,10 @@
     },
     "preset": {
       "duplicate": "Laporan duplikat",
-      "guidelines": "Melanggar panduan komunitas",
       "noViolation": "Tidak ditemukan pelanggaran",
       "rights": "Melanggar hak orang lain",
-      "spam": "Spam"
+      "spam": "Spam",
+      "terms": "Melanggar ketentuan penggunaan"
     },
     "queueEmpty": "Tidak ada laporan terbuka.",
     "readOnly": "Hanya baca",
@@ -215,15 +215,22 @@
   "compose": {
     "addAudio": "Tambah audio (maks. {max})",
     "addImages": "Tambahkan gambar (maks. {max})",
+    "edit": {
+      "blocked": {
+        "not_active": "Postingan ini tidak bisa diedit sekarang.",
+        "processing": "Gambar dan audio masih diproses. Kamu bisa mengedit postingan setelah selesai."
+      },
+      "title": "Edit postingan"
+    },
     "error": {
       "empty": "Tulis sesuatu atau tambahkan gambar.",
       "failed": "Gagal memposting. Silakan coba lagi.",
       "rate_limited": "Kamu memposting terlalu cepat. Tunggu sebentar.",
+      "shortTooLongEdit": "Postingan pendek maksimal {max} karakter.",
       "short_too_long": "Postingan pendek maksimal {max} karakter. Beralih ke “{article}” untuk menulis lebih banyak.",
       "too_large": "Ada file yang terlalu besar.",
       "too_much": "Terlalu panjang. Persingkat teks atau kurangi gambar.",
-      "unsupported": "Jenis file ini tidak didukung. Pilih gambar atau file audio.",
-      "shortTooLongEdit": "Postingan pendek maksimal {max} karakter."
+      "unsupported": "Jenis file ini tidak didukung. Pilih gambar atau file audio."
     },
     "fmt": {
       "bold": "Tebal",
@@ -251,16 +258,9 @@
     "posting": "Memposting…",
     "publish": "Posting",
     "remove": "Hapus",
-    "title": "Judul",
     "save": "Simpan",
     "saving": "Menyimpan…",
-    "edit": {
-      "title": "Edit postingan",
-      "blocked": {
-        "not_active": "Postingan ini tidak bisa diedit sekarang.",
-        "processing": "Gambar dan audio masih diproses. Kamu bisa mengedit postingan setelah selesai."
-      }
-    }
+    "title": "Judul"
   },
   "discover": {
     "title": "Jelajahi"
@@ -293,15 +293,6 @@
     },
     "effective": "Berlaku sejak {date}",
     "footerMenu": "Tentang & ketentuan",
-    "guidelines": {
-      "intro": "Bantu jaga {brand} tetap ramah bagi ide-ide. Postingan dan komentar tidak boleh:",
-      "item1": "melanggar hukum atau hak orang lain, termasuk hak cipta dan privasi;",
-      "item2": "melecehkan, mengancam, atau menyebarkan kebencian terhadap siapa pun;",
-      "item3": "berisi konten seksual yang melibatkan anak di bawah umur atau kekerasan grafis;",
-      "item4": "berupa spam, penipuan, atau menyesatkan orang.",
-      "outro": "Konten yang melanggar aturan ini dapat dihapus, dan pelanggar berulang dapat kehilangan akses. Gunakan Laporkan pada postingan untuk memberi tahu kami tentang masalah.",
-      "title": "Pedoman komunitas"
-    },
     "help": {
       "a1": "Bagikan catatan dari NiceNote, atau tulis postingan di web setelah publikasi web dibuka.",
       "a2": "Edit catatan di aplikasi dan postingan ikut diperbarui. Untuk menghapus postingan, buka menu “⋯” di halaman postingan dan pilih Hapus; tautan langsung tidak berfungsi.",
@@ -380,12 +371,12 @@
       "close": "Tutup",
       "copied": "Tautan disalin",
       "delete": "Hapus",
+      "edit": "Edit",
       "like": "Suka",
       "more": "Opsi lainnya",
       "reply": "Balas",
       "report": "Laporkan",
-      "share": "Bagikan",
-      "edit": "Edit"
+      "share": "Bagikan"
     },
     "aside": {
       "moreArticles": "Artikel lain dari penulis"
@@ -424,13 +415,13 @@
     },
     "post": {
       "edited": "Diedit {time}",
+      "editedShort": "Diedit",
       "empty": "Postingan ini tidak memiliki konten.",
       "from": "Dari {app}",
       "preparing": {
         "body": "Konten akan muncul di sini sebentar lagi.",
         "title": "Menyiapkan postingan ini"
-      },
-      "editedShort": "Diedit"
+      }
     },
     "report": {
       "done": "Terima kasih. Kami akan meninjaunya.",
@@ -452,7 +443,7 @@
         "title": "Akun tidak ditemukan"
       },
       "removed": {
-        "body": "Postingan ini dihapus karena melanggar pedoman komunitas.",
+        "body": "Postingan ini dihapus karena melanggar ketentuan penggunaan.",
         "title": "Postingan dihapus"
       },
       "restricted": {
@@ -465,11 +456,11 @@
       }
     },
     "viewer": {
+      "error": "Gambar tidak dapat dimuat",
       "label": "Penampil gambar",
-      "zoom": "Perbesar",
-      "previous": "Gambar sebelumnya",
       "next": "Gambar berikutnya",
-      "error": "Gambar tidak dapat dimuat"
+      "previous": "Gambar sebelumnya",
+      "zoom": "Perbesar"
     }
   },
   "status": {

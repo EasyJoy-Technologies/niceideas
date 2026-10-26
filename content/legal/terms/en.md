@@ -4,7 +4,7 @@
 
 These Terms of Use ("Terms") are an agreement between you and NiceMatrix Technologies Inc., 434223 Clear Mountain Dr E, Foothills, AB T1S 6B1, Canada ("NiceMatrix", "we", "us"). NiceMatrix operates niceideas at niceideas.app, including its web pages, public post links and application programming interfaces (together, the "Service").
 
-By using the Service, including viewing, liking or commenting without an account, you agree to these Terms and to our Community Guidelines. Our Privacy Policy explains how we handle personal information. If you do not agree, do not use the Service.
+By using the Service, including viewing, liking or commenting without an account, you agree to these Terms. Our Privacy Policy explains how we handle personal information. If you do not agree, do not use the Service.
 
 ## 2. Who can use niceideas
 
@@ -57,13 +57,13 @@ You agree not to use the Service to:
 - send spam, run scams or phishing, or manipulate likes, comments or follows;
 - upload malware, or interfere with the Service, its security or other users;
 - access the Service by automated means beyond what our public interfaces allow, collect data about other users in bulk, or get around rate limits, bans or anti-abuse checks;
-- break our Community Guidelines or the laws that apply to you or to us.
+- post gory or graphically violent content, or break the laws that apply to you or to us.
 
 ## 7. Reports and moderation
 
 7.1 Anyone can report a post or comment with Report. We review reports, and we may also act on content or accounts that have not been reported.
 
-7.2 If content or behaviour breaks these Terms, the Community Guidelines or the law, or puts users or us at risk, we may remove or hide content, limit features such as posting or commenting, block a visitor from interacting, or suspend or close an account. Where reasonable, and unless the law prohibits it or it would create risk, we will tell you what we did and why.
+7.2 If content or behaviour breaks these Terms or the law, or puts users or us at risk, we may remove or hide content, limit features such as posting or commenting, block a visitor from interacting, or suspend or close an account. Where reasonable, and unless the law prohibits it or it would create risk, we will tell you what we did and why.
 
 7.3 If you think we made a mistake, write to support@nicematrix.ca and we will review your request.
 
@@ -131,7 +131,7 @@ To the extent permitted by law, you will indemnify NiceMatrix and its directors,
 
 ## 16. General
 
-16.1 These Terms, the Community Guidelines and the Privacy Policy are the entire agreement between you and us about the Service.
+16.1 These Terms and the Privacy Policy are the entire agreement between you and us about the Service.
 
 16.2 If any part of these Terms is found unenforceable, the rest remains in effect. If we do not enforce a right, we have not waived it.
 

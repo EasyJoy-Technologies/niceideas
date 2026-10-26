@@ -4,7 +4,7 @@
 
 Diese Nutzungsbedingungen (die „Bedingungen") sind eine Vereinbarung zwischen Ihnen und der NiceMatrix Technologies Inc., 434223 Clear Mountain Dr E, Foothills, AB T1S 6B1, Kanada („NiceMatrix", „wir"). NiceMatrix betreibt niceideas unter niceideas.app, einschließlich der Webseiten, öffentlichen Beitragslinks und Anwendungsprogrammierschnittstellen (zusammen der „Dienst").
 
-Durch die Nutzung des Dienstes, einschließlich des Ansehens, Gefällt-mir-Markierens oder Kommentierens ohne Konto, stimmen Sie diesen Bedingungen und unseren Community-Richtlinien zu. Unsere Datenschutzerklärung erläutert, wie wir personenbezogene Daten verarbeiten. Wenn Sie nicht zustimmen, nutzen Sie den Dienst nicht.
+Durch die Nutzung des Dienstes, einschließlich des Ansehens, Gefällt-mir-Markierens oder Kommentierens ohne Konto, stimmen Sie diesen Bedingungen zu. Unsere Datenschutzerklärung erläutert, wie wir personenbezogene Daten verarbeiten. Wenn Sie nicht zustimmen, nutzen Sie den Dienst nicht.
 
 ## 2. Wer niceideas nutzen darf
 
@@ -57,13 +57,13 @@ Sie verpflichten sich, den Dienst nicht zu nutzen, um:
 - Spam zu versenden, Betrug oder Phishing zu betreiben, oder Gefällt-mir-Angaben, Kommentare oder Follower zu manipulieren;
 - Malware hochzuladen oder den Dienst, seine Sicherheit oder andere Nutzer zu stören;
 - auf den Dienst mit automatisierten Mitteln zuzugreifen, die über das hinausgehen, was unsere öffentlichen Schnittstellen erlauben, massenhaft Daten über andere Nutzer zu sammeln, oder Ratenbegrenzungen, Sperren oder Missbrauchskontrollen zu umgehen;
-- gegen unsere Community-Richtlinien oder die für Sie oder uns geltenden Gesetze zu verstoßen.
+- blutige oder drastische Gewaltdarstellungen zu veröffentlichen oder gegen die für Sie oder uns geltenden Gesetze zu verstoßen.
 
 ## 7. Meldungen und Moderation
 
 7.1 Jeder kann einen Beitrag oder Kommentar mit der Funktion „Melden" melden. Wir prüfen Meldungen und können auch gegen Inhalte oder Konten vorgehen, die nicht gemeldet wurden.
 
-7.2 Wenn Inhalte oder Verhalten gegen diese Bedingungen, die Community-Richtlinien oder das Gesetz verstoßen oder Nutzer oder uns gefährden, können wir Inhalte entfernen oder verbergen, Funktionen wie Veröffentlichen oder Kommentieren einschränken, einen Besucher an der Interaktion hindern oder ein Konto sperren oder schließen. Soweit zumutbar und sofern nicht das Gesetz dies verbietet oder dies ein Risiko schaffen würde, werden wir Ihnen mitteilen, was wir getan haben und warum.
+7.2 Wenn Inhalte oder Verhalten gegen diese Bedingungen oder das Gesetz verstoßen oder Nutzer oder uns gefährden, können wir Inhalte entfernen oder verbergen, Funktionen wie Veröffentlichen oder Kommentieren einschränken, einen Besucher an der Interaktion hindern oder ein Konto sperren oder schließen. Soweit zumutbar und sofern nicht das Gesetz dies verbietet oder dies ein Risiko schaffen würde, werden wir Ihnen mitteilen, was wir getan haben und warum.
 
 7.3 Wenn Sie glauben, dass uns ein Fehler unterlaufen ist, schreiben Sie an support@nicematrix.ca, und wir werden Ihre Anfrage prüfen.
 
@@ -131,7 +131,7 @@ Soweit gesetzlich zulässig, stellen Sie NiceMatrix und ihre Direktoren, leitend
 
 ## 16. Allgemeines
 
-16.1 Diese Bedingungen, die Community-Richtlinien und die Datenschutzerklärung stellen die gesamte Vereinbarung zwischen Ihnen und uns bezüglich des Dienstes dar.
+16.1 Diese Bedingungen und die Datenschutzerklärung stellen die gesamte Vereinbarung zwischen Ihnen und uns bezüglich des Dienstes dar.
 
 16.2 Sollte ein Teil dieser Bedingungen für nicht durchsetzbar erklärt werden, bleibt der Rest in Kraft. Wenn wir ein Recht nicht durchsetzen, haben wir nicht darauf verzichtet.
 

@@ -24,6 +24,14 @@ Base: `https://niceideas.app/api/internal/v1/nicenote` (staging `https://t.nicei
   push is **accepted and kept offline** (status `author_deleting`, goes live when the deletion is cancelled). After
   `deletion_completed` every call for the user answers 409 `user.deleting` (or 404 for its deleted posts).
 
+## Opening a post in the app's light / dark mode (v1.0.74)
+When the app opens **its user's own** post, it appends `?theme=dark` or `?theme=light` (the app's current effective mode;
+`auto` = follow the system) to the post URL, e.g. `https://niceideas.app/p/<slug>?theme=dark`. NiceIdeas stores the choice in
+the same cookie as the page's theme menu (`ni_theme`, 1 year) and 303-redirects to the URL without the parameter, so the
+first paint is right and the address bar stays clean; the rest of the site keeps that mode in that browser until the app
+sends another value or the visitor picks one in the menu. Works in mainland China too (`/p/` only). Links the user
+shares with others must **not** carry the parameter. Other values are dropped without a cookie.
+
 ## Configuration (`/etc/niceideas/env.<env>`)
 | Variable | Meaning |
 |---|---|

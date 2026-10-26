@@ -125,10 +125,10 @@
     },
     "preset": {
       "duplicate": "Duplicate na report",
-      "guidelines": "Lumalabag sa community guidelines",
       "noViolation": "Walang nahanap na paglabag",
       "rights": "Lumalabag sa karapatan ng iba",
-      "spam": "Spam"
+      "spam": "Spam",
+      "terms": "Lumalabag sa mga tuntunin ng paggamit"
     },
     "queueEmpty": "Walang bukas na report.",
     "readOnly": "Pagbabasa lang",
@@ -215,15 +215,22 @@
   "compose": {
     "addAudio": "Magdagdag ng audio (hanggang {max})",
     "addImages": "Magdagdag ng mga larawan (hanggang {max})",
+    "edit": {
+      "blocked": {
+        "not_active": "Hindi ma-edit ang post na ito sa ngayon.",
+        "processing": "Pinoproseso pa ang mga larawan at audio. Maaari mong i-edit ang post kapag handa na ang mga ito."
+      },
+      "title": "I-edit ang post"
+    },
     "error": {
       "empty": "Magsulat ng kahit ano o magdagdag ng larawan.",
       "failed": "Hindi ma-post. Pakisubukang muli.",
       "rate_limited": "Masyado kang mabilis mag-post. Maghintay sandali.",
+      "shortTooLongEdit": "Hanggang {max} karakter lang ang maikling post.",
       "short_too_long": "Hanggang {max} karakter lang ang maikling post. Lumipat sa “{article}” para magsulat pa.",
       "too_large": "Masyadong malaki ang isang file.",
       "too_much": "Masyadong mahaba. Paikliin ang text o bawasan ang mga larawan.",
-      "unsupported": "Hindi suportado ang ganitong uri ng file. Pumili ng larawan o audio file.",
-      "shortTooLongEdit": "Hanggang {max} karakter lang ang maikling post."
+      "unsupported": "Hindi suportado ang ganitong uri ng file. Pumili ng larawan o audio file."
     },
     "fmt": {
       "bold": "Makapal",
@@ -251,16 +258,9 @@
     "posting": "Ipinopost…",
     "publish": "I-post",
     "remove": "Alisin",
-    "title": "Pamagat",
     "save": "I-save",
     "saving": "Sine-save…",
-    "edit": {
-      "title": "I-edit ang post",
-      "blocked": {
-        "not_active": "Hindi ma-edit ang post na ito sa ngayon.",
-        "processing": "Pinoproseso pa ang mga larawan at audio. Maaari mong i-edit ang post kapag handa na ang mga ito."
-      }
-    }
+    "title": "Pamagat"
   },
   "discover": {
     "title": "Tuklasin"
@@ -293,15 +293,6 @@
     },
     "effective": "Epektibo simula {date}",
     "footerMenu": "Tungkol at mga tuntunin",
-    "guidelines": {
-      "intro": "Tumulong na panatilihing magiliw na lugar para sa mga ideya ang {brand}. Hindi dapat ang mga post at komento ay:",
-      "item1": "lumabag sa batas o sa karapatan ng iba, kasama ang copyright at privacy;",
-      "item2": "manligalig, magbanta o mag-udyok ng pagkapoot sa sinuman;",
-      "item3": "maglaman ng sekswal na nilalamang may kinalaman sa menor de edad o marahas na nilalaman;",
-      "item4": "mag-spam, manloko o manlinlang ng tao.",
-      "outro": "Maaaring alisin ang nilalamang lumalabag sa mga alituntuning ito, at maaaring mawalan ng access ang paulit-ulit na lumalabag. Gamitin ang I-report sa isang post para ipaalam sa amin ang problema.",
-      "title": "Mga alituntunin ng komunidad"
-    },
     "help": {
       "a1": "Magbahagi ng note mula sa NiceNote, o magsulat ng post sa web kapag binuksan na ang pag-publish sa web.",
       "a2": "I-edit ang note sa app at maa-update ang post. Para burahin ang post, buksan ang “⋯” menu sa page ng post at piliin ang Burahin; agad na hindi na gagana ang link.",
@@ -380,12 +371,12 @@
       "close": "Isara",
       "copied": "Nakopya ang link",
       "delete": "Burahin",
+      "edit": "I-edit",
       "like": "I-like",
       "more": "Higit pang opsyon",
       "reply": "Sumagot",
       "report": "I-report",
-      "share": "Ibahagi",
-      "edit": "I-edit"
+      "share": "Ibahagi"
     },
     "aside": {
       "moreArticles": "Iba pang artikulo ng author"
@@ -424,13 +415,13 @@
     },
     "post": {
       "edited": "Na-edit noong {time}",
+      "editedShort": "Na-edit",
       "empty": "Walang content ang post na ito.",
       "from": "Mula sa {app}",
       "preparing": {
         "body": "Lalabas dito ang content sa ilang saglit.",
         "title": "Inihahanda ang post na ito"
-      },
-      "editedShort": "Na-edit"
+      }
     },
     "report": {
       "done": "Salamat. Susuriin namin ito.",
@@ -452,7 +443,7 @@
         "title": "Hindi nahanap ang account"
       },
       "removed": {
-        "body": "Inalis ang post na ito dahil lumabag ito sa mga alituntunin ng komunidad.",
+        "body": "Inalis ang post na ito dahil lumabag ito sa mga tuntunin ng paggamit.",
         "title": "Inalis ang post"
       },
       "restricted": {
@@ -465,11 +456,11 @@
       }
     },
     "viewer": {
+      "error": "Hindi ma-load ang larawan",
       "label": "Tagatingin ng larawan",
-      "zoom": "I-zoom",
-      "previous": "Nakaraang larawan",
       "next": "Susunod na larawan",
-      "error": "Hindi ma-load ang larawan"
+      "previous": "Nakaraang larawan",
+      "zoom": "I-zoom"
     }
   },
   "status": {

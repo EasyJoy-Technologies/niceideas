@@ -32,7 +32,7 @@ function legalBody(ctx: ChromeContext, page: LegalDoc, title: string): string {
   );
 }
 
-/** About / guidelines / terms / privacy / help, with the information-page chrome. */
+/** About / terms / privacy / help, with the information-page chrome. */
 export function renderInfoPage(ctx: ChromeContext, page: InfoPage): string {
   const title = ctx.intl.t(`info.${page}.title`, { brand: GLOSSARY.brand });
   const main = isLegalDoc(page)

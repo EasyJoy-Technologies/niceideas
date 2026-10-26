@@ -4,7 +4,7 @@
 
 Dessa Användarvillkor ("Villkoren") är ett avtal mellan dig och NiceMatrix Technologies Inc., 434223 Clear Mountain Dr E, Foothills, AB T1S 6B1, Kanada ("NiceMatrix", "vi"). NiceMatrix driver niceideas på niceideas.app, inklusive dess webbsidor, offentliga inläggslänkar och applikationsprogrammeringsgränssnitt (tillsammans "Tjänsten").
 
-Genom att använda Tjänsten, inklusive att visa, gilla eller kommentera utan konto, godkänner du dessa Villkor och våra Communityriktlinjer. Vår Integritetspolicy förklarar hur vi hanterar personuppgifter. Om du inte godkänner, använd inte Tjänsten.
+Genom att använda Tjänsten, inklusive att visa, gilla eller kommentera utan konto, godkänner du dessa Villkor. Vår Integritetspolicy förklarar hur vi hanterar personuppgifter. Om du inte godkänner, använd inte Tjänsten.
 
 ## 2. Vem som får använda niceideas
 
@@ -57,13 +57,13 @@ Du samtycker till att inte använda Tjänsten för att:
 - skicka skräppost, bedriva bedrägerier eller nätfiske, eller manipulera gillanden, kommentarer eller följare;
 - ladda upp skadlig programvara, eller störa Tjänsten, dess säkerhet eller andra användare;
 - komma åt Tjänsten med automatiserade medel bortom vad våra offentliga gränssnitt tillåter, samla in data om andra användare i stor skala, eller kringgå frekvensgränser, blockeringar eller missbrukskontroller;
-- bryta mot våra Communityriktlinjer eller de lagar som gäller för dig eller för oss.
+- publicera blodigt eller grovt våldsamt innehåll, eller bryta mot de lagar som gäller för dig eller för oss.
 
 ## 7. Rapporter och moderering
 
 7.1 Vem som helst kan rapportera ett inlägg eller en kommentar med "Rapportera". Vi granskar rapporter, och vi kan även agera på innehåll eller konton som inte har rapporterats.
 
-7.2 Om innehåll eller beteende bryter mot dessa Villkor, Communityriktlinjerna eller lagen, eller utsätter användare eller oss för risk, kan vi ta bort eller dölja innehåll, begränsa funktioner som att publicera eller kommentera, blockera en besökare från att interagera, eller stänga av eller stänga ett konto. När det är rimligt, och såvida inte lagen förbjuder det eller det skulle skapa en risk, berättar vi vad vi gjorde och varför.
+7.2 Om innehåll eller beteende bryter mot dessa Villkor eller lagen, eller utsätter användare eller oss för risk, kan vi ta bort eller dölja innehåll, begränsa funktioner som att publicera eller kommentera, blockera en besökare från att interagera, eller stänga av eller stänga ett konto. När det är rimligt, och såvida inte lagen förbjuder det eller det skulle skapa en risk, berättar vi vad vi gjorde och varför.
 
 7.3 Om du tror att vi gjort ett misstag, skriv till support@nicematrix.ca och vi granskar din begäran.
 
@@ -131,7 +131,7 @@ I den utsträckning lagen tillåter kommer du att hålla NiceMatrix och dess sty
 
 ## 16. Allmänt
 
-16.1 Dessa Villkor, Communityriktlinjerna och Integritetspolicyn utgör hela avtalet mellan dig och oss gällande Tjänsten.
+16.1 Dessa Villkor och Integritetspolicyn utgör hela avtalet mellan dig och oss gällande Tjänsten.
 
 16.2 Om någon del av dessa Villkor befinns vara overkställbar, fortsätter resten att gälla. Om vi inte hävdar en rättighet, har vi inte avstått från den.
 

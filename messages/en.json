@@ -125,10 +125,10 @@
     },
     "preset": {
       "duplicate": "Duplicate report",
-      "guidelines": "Breaks the community guidelines",
       "noViolation": "No violation found",
       "rights": "Infringes others' rights",
-      "spam": "Spam"
+      "spam": "Spam",
+      "terms": "Breaks the terms of use"
     },
     "queueEmpty": "No open reports.",
     "readOnly": "Read only",
@@ -215,15 +215,22 @@
   "compose": {
     "addAudio": "Add audio (up to {max})",
     "addImages": "Add images (up to {max})",
+    "edit": {
+      "blocked": {
+        "not_active": "This post can't be edited right now.",
+        "processing": "Images and audio are still being processed. You can edit the post once they're ready."
+      },
+      "title": "Edit post"
+    },
     "error": {
       "empty": "Write something or add an image.",
       "failed": "Couldn’t post. Please try again.",
       "rate_limited": "You’re posting too fast. Please wait a moment.",
+      "shortTooLongEdit": "Short posts are limited to {max} characters.",
       "short_too_long": "Short posts are limited to {max} characters. Switch to “{article}” to write more.",
       "too_large": "A file is too large.",
       "too_much": "That’s too long. Shorten the text or use fewer images.",
-      "unsupported": "This file type isn’t supported. Please choose an image or audio file.",
-      "shortTooLongEdit": "Short posts are limited to {max} characters."
+      "unsupported": "This file type isn’t supported. Please choose an image or audio file."
     },
     "fmt": {
       "bold": "Bold",
@@ -251,16 +258,9 @@
     "posting": "Posting…",
     "publish": "Post",
     "remove": "Remove",
-    "title": "Title",
     "save": "Save",
     "saving": "Saving…",
-    "edit": {
-      "title": "Edit post",
-      "blocked": {
-        "not_active": "This post can't be edited right now.",
-        "processing": "Images and audio are still being processed. You can edit the post once they're ready."
-      }
-    }
+    "title": "Title"
   },
   "discover": {
     "title": "Discover"
@@ -293,15 +293,6 @@
     },
     "effective": "Effective {date}",
     "footerMenu": "About & terms",
-    "guidelines": {
-      "intro": "Help keep {brand} a friendly place for ideas. Posts and comments must not:",
-      "item1": "break the law or infringe other people's rights, including copyright and privacy;",
-      "item2": "harass, threaten or promote hatred against anyone;",
-      "item3": "contain sexual content involving minors or graphic violence;",
-      "item4": "spam, scam or mislead people.",
-      "outro": "Content that breaks these rules may be removed, and repeat offenders may lose access. Use Report on a post to tell us about a problem.",
-      "title": "Community guidelines"
-    },
     "help": {
       "a1": "Share a note from NiceNote, or write a post on the web once web publishing opens.",
       "a2": "Edit the note in the app and the post updates. To delete a post, open the ⋯ menu on its page and choose Delete; the link stops working right away.",
@@ -380,12 +371,12 @@
       "close": "Close",
       "copied": "Link copied",
       "delete": "Delete",
+      "edit": "Edit",
       "like": "Like",
       "more": "More options",
       "reply": "Reply",
       "report": "Report",
-      "share": "Share",
-      "edit": "Edit"
+      "share": "Share"
     },
     "aside": {
       "moreArticles": "More articles by the author"
@@ -424,13 +415,13 @@
     },
     "post": {
       "edited": "Edited {time}",
+      "editedShort": "Edited",
       "empty": "This post has no content.",
       "from": "From {app}",
       "preparing": {
         "body": "The content will appear here in a moment.",
         "title": "Getting this post ready"
-      },
-      "editedShort": "Edited"
+      }
     },
     "report": {
       "done": "Thanks. We'll review it.",
@@ -452,7 +443,7 @@
         "title": "Account not found"
       },
       "removed": {
-        "body": "This post was removed for breaking the community guidelines.",
+        "body": "This post was removed for breaking the terms of use.",
         "title": "This post was removed"
       },
       "restricted": {
@@ -465,11 +456,11 @@
       }
     },
     "viewer": {
+      "error": "The image couldn't be loaded",
       "label": "Image viewer",
-      "zoom": "Zoom",
-      "previous": "Previous image",
       "next": "Next image",
-      "error": "The image couldn't be loaded"
+      "previous": "Previous image",
+      "zoom": "Zoom"
     }
   },
   "status": {

@@ -125,10 +125,10 @@
     },
     "preset": {
       "duplicate": "重复举报",
-      "guidelines": "违反社区准则",
       "noViolation": "未发现违规",
       "rights": "侵犯他人权利",
-      "spam": "垃圾信息"
+      "spam": "垃圾信息",
+      "terms": "违反使用条款"
     },
     "queueEmpty": "没有待处理的举报。",
     "readOnly": "只读",
@@ -215,15 +215,22 @@
   "compose": {
     "addAudio": "添加音频（最多 {max} 个）",
     "addImages": "添加图片（最多 {max} 张）",
+    "edit": {
+      "blocked": {
+        "not_active": "这条帖子现在不能编辑。",
+        "processing": "图片和音频还在处理中，处理完就可以编辑了。"
+      },
+      "title": "编辑帖子"
+    },
     "error": {
       "empty": "请写点内容或添加图片。",
       "failed": "发布失败，请重试。",
       "rate_limited": "发布太频繁了，请稍后再试。",
+      "shortTooLongEdit": "短内容最多 {max} 个字。",
       "short_too_long": "短内容最多 {max} 个字。想写更多，请切换到“{article}”。",
       "too_large": "文件太大了。",
       "too_much": "内容太长了，请缩短文字或减少图片。",
-      "unsupported": "不支持这种文件类型，请选择图片或音频。",
-      "shortTooLongEdit": "短内容最多 {max} 个字。"
+      "unsupported": "不支持这种文件类型，请选择图片或音频。"
     },
     "fmt": {
       "bold": "粗体",
@@ -251,16 +258,9 @@
     "posting": "发布中…",
     "publish": "发布",
     "remove": "移除",
-    "title": "标题",
     "save": "保存",
     "saving": "保存中…",
-    "edit": {
-      "title": "编辑帖子",
-      "blocked": {
-        "not_active": "这条帖子现在不能编辑。",
-        "processing": "图片和音频还在处理中，处理完就可以编辑了。"
-      }
-    }
+    "title": "标题"
   },
   "discover": {
     "title": "发现"
@@ -293,15 +293,6 @@
     },
     "effective": "生效日期：{date}",
     "footerMenu": "关于与条款",
-    "guidelines": {
-      "intro": "让 {brand} 保持友善。帖子和评论不得：",
-      "item1": "违反法律或侵犯他人权利，包括版权和隐私；",
-      "item2": "骚扰、威胁或煽动对任何人的仇恨；",
-      "item3": "包含涉及未成年人的色情内容或血腥暴力内容；",
-      "item4": "发布垃圾信息、进行诈骗或误导他人。",
-      "outro": "违反上述准则的内容可能被移除，屡次违规者可能被限制使用。如发现问题，请在帖子上点击“举报”。",
-      "title": "社区准则"
-    },
     "help": {
       "a1": "在乐趣记事本中分享记事即可；网页发布开放后，也可以直接在网页上撰写。",
       "a2": "在应用里修改记事，帖子会随之更新。要删除帖子，在帖子页打开“⋯”菜单选择“删除”，链接会立即失效。",
@@ -380,12 +371,12 @@
       "close": "关闭",
       "copied": "链接已复制",
       "delete": "删除",
+      "edit": "编辑",
       "like": "赞",
       "more": "更多操作",
       "reply": "回复",
       "report": "举报",
-      "share": "分享",
-      "edit": "编辑"
+      "share": "分享"
     },
     "aside": {
       "moreArticles": "作者的其他长文"
@@ -424,13 +415,13 @@
     },
     "post": {
       "edited": "编辑于 {time}",
+      "editedShort": "已编辑",
       "empty": "这条帖子没有内容。",
       "from": "来自 {app}",
       "preparing": {
         "body": "内容马上就会显示在这里。",
         "title": "内容准备中"
-      },
-      "editedShort": "已编辑"
+      }
     },
     "report": {
       "done": "感谢反馈，我们会尽快处理。",
@@ -452,7 +443,7 @@
         "title": "找不到这个账号"
       },
       "removed": {
-        "body": "这条内容因违反社区准则已被移除。",
+        "body": "这条内容因违反使用条款已被移除。",
         "title": "内容已被移除"
       },
       "restricted": {
@@ -465,11 +456,11 @@
       }
     },
     "viewer": {
+      "error": "图片加载失败",
       "label": "图片查看器",
-      "zoom": "缩放",
-      "previous": "上一张",
       "next": "下一张",
-      "error": "图片加载失败"
+      "previous": "上一张",
+      "zoom": "缩放"
     }
   },
   "status": {

@@ -2,6 +2,7 @@ import { afterAll, beforeAll, describe, expect, it } from "vitest";
 import { GET as discoverRoute } from "@/app/discover/route";
 import { GET as termsRoute } from "@/app/terms/route";
 import { GET as themeRoute } from "@/app/api/web/theme/route";
+import { GET as postRoute } from "@/app/p/[slug]/route";
 import { startAppContext } from "../../helpers/app-context";
 
 let ctx: Awaited<ReturnType<typeof startAppContext>>;
@@ -39,6 +40,21 @@ describe("theme (dark mode)", () => {
     expect(res.headers.get("set-cookie")).toMatch(/^ni_theme=dark; Path=\/; Max-Age=31536000/);
     const bad = await themeRoute(new Request("http://localhost:3000/api/web/theme?t=neon&next=%2F%2Fevil.test"));
     expect(bad.headers.get("location")).toBe("/");
+    expect(bad.headers.get("set-cookie")).toBeNull();
+  });
+
+  it("?theme= on a post link (apps opening their own post) remembers the theme and drops the parameter", async () => {
+    const open = (q: string) => postRoute(new Request(`http://localhost:3000/p/abc123${q}`), { params: Promise.resolve({ slug: "abc123" }) } as never);
+    const dark = await open("?theme=dark&n=x");
+    expect(dark.status).toBe(303);
+    expect(dark.headers.get("location")).toBe("/p/abc123?n=x");
+    expect(dark.headers.get("set-cookie")).toMatch(/^ni_theme=dark; Path=\/; Max-Age=31536000/);
+    expect(dark.headers.get("cache-control")).toBe("no-store");
+    const light = await open("?theme=light");
+    expect(light.headers.get("location")).toBe("/p/abc123");
+    expect(light.headers.get("set-cookie")).toMatch(/^ni_theme=light;/);
+    const bad = await open("?theme=neon");
+    expect(bad.headers.get("location")).toBe("/p/abc123");
     expect(bad.headers.get("set-cookie")).toBeNull();
   });
 

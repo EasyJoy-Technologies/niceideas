@@ -4,7 +4,7 @@
 
 Deze Gebruiksvoorwaarden ("Voorwaarden") vormen een overeenkomst tussen u en NiceMatrix Technologies Inc., 434223 Clear Mountain Dr E, Foothills, AB T1S 6B1, Canada ("NiceMatrix", "wij"). NiceMatrix exploiteert niceideas op niceideas.app, met inbegrip van de webpagina's, openbare linkjes naar berichten en applicatieprogrammeerinterfaces (samen de "Dienst").
 
-Door de Dienst te gebruiken, ook door te bekijken, te liken of te reageren zonder account, gaat u akkoord met deze Voorwaarden en met onze Communityrichtlijnen. Ons Privacybeleid legt uit hoe wij persoonsgegevens verwerken. Als u niet akkoord gaat, gebruik de Dienst dan niet.
+Door de Dienst te gebruiken, ook door te bekijken, te liken of te reageren zonder account, gaat u akkoord met deze Voorwaarden. Ons Privacybeleid legt uit hoe wij persoonsgegevens verwerken. Als u niet akkoord gaat, gebruik de Dienst dan niet.
 
 ## 2. Wie niceideas mag gebruiken
 
@@ -57,13 +57,13 @@ U stemt ermee in de Dienst niet te gebruiken om:
 - spam te versturen, fraude of phishing te plegen, of likes, reacties of volgers te manipuleren;
 - malware te uploaden, of de Dienst, de beveiliging ervan of andere gebruikers te verstoren;
 - de Dienst te benaderen met geautomatiseerde middelen die verder gaan dan onze openbare interfaces toestaan, grootschalig gegevens over andere gebruikers te verzamelen, of snelheidslimieten, blokkades of antimisbruikcontroles te ontwijken;
-- onze Communityrichtlijnen of de wetten die op u of op ons van toepassing zijn, te overtreden.
+- bloederige of expliciet gewelddadige inhoud te plaatsen, of de wetten die op u of op ons van toepassing zijn, te overtreden.
 
 ## 7. Meldingen en moderatie
 
 7.1 Iedereen kan een bericht of reactie melden via "Melden". Wij beoordelen meldingen en kunnen ook optreden tegen inhoud of accounts die niet zijn gemeld.
 
-7.2 Als inhoud of gedrag deze Voorwaarden, de Communityrichtlijnen of de wet overtreedt, of gebruikers of ons in gevaar brengt, kunnen wij inhoud verwijderen of verbergen, functies zoals plaatsen of reageren beperken, een bezoeker blokkeren om te interageren, of een account opschorten of sluiten. Waar redelijk, en tenzij de wet dit verbiedt of het een risico zou creëren, zullen wij u laten weten wat wij hebben gedaan en waarom.
+7.2 Als inhoud of gedrag deze Voorwaarden of de wet overtreedt, of gebruikers of ons in gevaar brengt, kunnen wij inhoud verwijderen of verbergen, functies zoals plaatsen of reageren beperken, een bezoeker blokkeren om te interageren, of een account opschorten of sluiten. Waar redelijk, en tenzij de wet dit verbiedt of het een risico zou creëren, zullen wij u laten weten wat wij hebben gedaan en waarom.
 
 7.3 Als u denkt dat we een fout hebben gemaakt, schrijf naar support@nicematrix.ca en wij zullen uw verzoek beoordelen.
 
@@ -131,7 +131,7 @@ Voor zover wettelijk toegestaan, zult u NiceMatrix en haar directeuren, function
 
 ## 16. Algemene bepalingen
 
-16.1 Deze Voorwaarden, de Communityrichtlijnen en het Privacybeleid vormen de volledige overeenkomst tussen u en ons met betrekking tot de Dienst.
+16.1 Deze Voorwaarden en het Privacybeleid vormen de volledige overeenkomst tussen u en ons met betrekking tot de Dienst.
 
 16.2 Als een deel van deze Voorwaarden onafdwingbaar wordt bevonden, blijft het overige van kracht. Als wij een recht niet afdwingen, hebben wij daarvan niet afgezien.
 

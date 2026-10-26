@@ -4,7 +4,7 @@
 
 Ketentuan Penggunaan ini ("Ketentuan") merupakan perjanjian antara Anda dan NiceMatrix Technologies Inc., 434223 Clear Mountain Dr E, Foothills, AB T1S 6B1, Canada ("NiceMatrix", "kami"). NiceMatrix mengoperasikan niceideas di niceideas.app, termasuk halaman webnya, tautan unggahan publik, dan antarmuka pemrograman aplikasi (secara bersama-sama, "Layanan").
 
-Dengan menggunakan Layanan, termasuk melihat, menyukai, atau mengomentari tanpa akun, Anda menyetujui Ketentuan ini dan Pedoman Komunitas kami. Kebijakan Privasi kami menjelaskan cara kami menangani informasi pribadi. Jika Anda tidak setuju, jangan gunakan Layanan.
+Dengan menggunakan Layanan, termasuk melihat, menyukai, atau mengomentari tanpa akun, Anda menyetujui Ketentuan ini. Kebijakan Privasi kami menjelaskan cara kami menangani informasi pribadi. Jika Anda tidak setuju, jangan gunakan Layanan.
 
 ## 2. Siapa yang dapat menggunakan niceideas
 
@@ -57,13 +57,13 @@ Anda setuju untuk tidak menggunakan Layanan untuk:
 - mengirim spam, menjalankan penipuan atau phishing, atau memanipulasi suka, komentar, atau pengikut;
 - mengunggah malware, atau mengganggu Layanan, keamanannya, atau pengguna lain;
 - mengakses Layanan dengan cara otomatis yang melampaui apa yang diizinkan oleh antarmuka publik kami, mengumpulkan data tentang pengguna lain secara massal, atau mengelabui batas kecepatan, larangan, atau pemeriksaan anti-penyalahgunaan;
-- melanggar Pedoman Komunitas kami atau hukum yang berlaku bagi Anda atau kami.
+- mengunggah konten berdarah atau kekerasan yang vulgar, atau melanggar hukum yang berlaku bagi Anda atau kami.
 
 ## 7. Pelaporan dan moderasi
 
 7.1 Siapa pun dapat melaporkan unggahan atau komentar dengan fungsi Laporkan. Kami meninjau laporan, dan kami juga dapat mengambil tindakan terhadap konten atau akun yang belum dilaporkan.
 
-7.2 Jika konten atau perilaku melanggar Ketentuan ini, Pedoman Komunitas, atau hukum, atau menimbulkan risiko bagi pengguna atau kami, kami dapat menghapus atau menyembunyikan konten, membatasi fitur seperti mengunggah atau berkomentar, memblokir pengunjung dari berinteraksi, atau menangguhkan atau menutup akun. Jika masuk akal, dan kecuali hukum melarangnya atau akan menciptakan risiko, kami akan memberi tahu Anda apa yang kami lakukan dan alasannya.
+7.2 Jika konten atau perilaku melanggar Ketentuan ini atau hukum, atau menimbulkan risiko bagi pengguna atau kami, kami dapat menghapus atau menyembunyikan konten, membatasi fitur seperti mengunggah atau berkomentar, memblokir pengunjung dari berinteraksi, atau menangguhkan atau menutup akun. Jika masuk akal, dan kecuali hukum melarangnya atau akan menciptakan risiko, kami akan memberi tahu Anda apa yang kami lakukan dan alasannya.
 
 7.3 Jika Anda merasa kami melakukan kesalahan, tulislah ke support@nicematrix.ca dan kami akan meninjau permintaan Anda.
 
@@ -131,7 +131,7 @@ Sejauh diizinkan oleh hukum, Anda akan mengganti rugi NiceMatrix dan direktur, p
 
 ## 16. Umum
 
-16.1 Ketentuan ini, Pedoman Komunitas, dan Kebijakan Privasi merupakan keseluruhan perjanjian antara Anda dan kami mengenai Layanan.
+16.1 Ketentuan ini dan Kebijakan Privasi merupakan keseluruhan perjanjian antara Anda dan kami mengenai Layanan.
 
 16.2 Jika ada bagian dari Ketentuan ini yang dianggap tidak dapat ditegakkan, bagian lainnya tetap berlaku. Jika kami tidak menegakkan suatu hak, kami tidak melepaskan hak tersebut.
 

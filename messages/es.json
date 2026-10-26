@@ -125,10 +125,10 @@
     },
     "preset": {
       "duplicate": "Reporte duplicado",
-      "guidelines": "Infringe las normas de la comunidad",
       "noViolation": "No se encontró ninguna infracción",
       "rights": "Infringe los derechos de terceros",
-      "spam": "Spam"
+      "spam": "Spam",
+      "terms": "Infringe las condiciones de uso"
     },
     "queueEmpty": "No hay denuncias abiertas.",
     "readOnly": "Solo lectura",
@@ -215,15 +215,22 @@
   "compose": {
     "addAudio": "Añadir audio (hasta {max})",
     "addImages": "Añadir imágenes (hasta {max})",
+    "edit": {
+      "blocked": {
+        "not_active": "Esta publicación no se puede editar ahora.",
+        "processing": "Las imágenes y el audio todavía se están procesando. Podrás editar la publicación cuando estén listos."
+      },
+      "title": "Editar publicación"
+    },
     "error": {
       "empty": "Escribe algo o añade una imagen.",
       "failed": "No se pudo publicar. Inténtalo de nuevo.",
       "rate_limited": "Estás publicando demasiado rápido. Espera un momento.",
+      "shortTooLongEdit": "Las publicaciones breves tienen un máximo de {max} caracteres.",
       "short_too_long": "Las publicaciones breves tienen un máximo de {max} caracteres. Cambia a «{article}» para escribir más.",
       "too_large": "Un archivo es demasiado grande.",
       "too_much": "Es demasiado largo. Acorta el texto o usa menos imágenes.",
-      "unsupported": "Este tipo de archivo no es compatible. Elige una imagen o un audio.",
-      "shortTooLongEdit": "Las publicaciones breves tienen un máximo de {max} caracteres."
+      "unsupported": "Este tipo de archivo no es compatible. Elige una imagen o un audio."
     },
     "fmt": {
       "bold": "Negrita",
@@ -251,16 +258,9 @@
     "posting": "Publicando…",
     "publish": "Publicar",
     "remove": "Quitar",
-    "title": "Título",
     "save": "Guardar",
     "saving": "Guardando…",
-    "edit": {
-      "title": "Editar publicación",
-      "blocked": {
-        "not_active": "Esta publicación no se puede editar ahora.",
-        "processing": "Las imágenes y el audio todavía se están procesando. Podrás editar la publicación cuando estén listos."
-      }
-    }
+    "title": "Título"
   },
   "discover": {
     "title": "Descubrir"
@@ -293,15 +293,6 @@
     },
     "effective": "Vigente desde el {date}",
     "footerMenu": "Información y términos",
-    "guidelines": {
-      "intro": "Ayuda a que {brand} sea un lugar amable para las ideas. Las publicaciones y los comentarios no deben:",
-      "item1": "infringir la ley ni los derechos de otras personas, incluidos los derechos de autor y la privacidad;",
-      "item2": "acosar, amenazar ni promover el odio contra nadie;",
-      "item3": "contener contenido sexual con menores ni violencia explícita;",
-      "item4": "hacer spam, estafar ni engañar a la gente.",
-      "outro": "El contenido que incumpla estas normas puede eliminarse, y quien las incumpla repetidamente puede perder el acceso. Usa Denunciar en una publicación para avisarnos de un problema.",
-      "title": "Normas de la comunidad"
-    },
     "help": {
       "a1": "Comparte una nota desde NiceNote, o escribe en la web cuando se abra la publicación web.",
       "a2": "Edita la nota en la app y la publicación se actualiza. Para eliminar una publicación, abre el menú «⋯» en su página y elige «Eliminar»; el enlace deja de funcionar al instante.",
@@ -380,12 +371,12 @@
       "close": "Cerrar",
       "copied": "Enlace copiado",
       "delete": "Eliminar",
+      "edit": "Editar",
       "like": "Me gusta",
       "more": "Más opciones",
       "reply": "Responder",
       "report": "Denunciar",
-      "share": "Compartir",
-      "edit": "Editar"
+      "share": "Compartir"
     },
     "aside": {
       "moreArticles": "Más artículos del autor"
@@ -424,13 +415,13 @@
     },
     "post": {
       "edited": "Editado: {time}",
+      "editedShort": "Editado",
       "empty": "Esta publicación no tiene contenido.",
       "from": "Desde {app}",
       "preparing": {
         "body": "El contenido aparecerá aquí en un momento.",
         "title": "Preparando esta publicación"
-      },
-      "editedShort": "Editado"
+      }
     },
     "report": {
       "done": "Gracias. Lo revisaremos.",
@@ -452,7 +443,7 @@
         "title": "Cuenta no encontrada"
       },
       "removed": {
-        "body": "Esta publicación se eliminó por incumplir las normas de la comunidad.",
+        "body": "Esta publicación se eliminó por incumplir las condiciones de uso.",
         "title": "Publicación eliminada"
       },
       "restricted": {
@@ -465,11 +456,11 @@
       }
     },
     "viewer": {
+      "error": "No se pudo cargar la imagen",
       "label": "Visor de imágenes",
-      "zoom": "Ampliar",
-      "previous": "Imagen anterior",
       "next": "Imagen siguiente",
-      "error": "No se pudo cargar la imagen"
+      "previous": "Imagen anterior",
+      "zoom": "Ampliar"
     }
   },
   "status": {

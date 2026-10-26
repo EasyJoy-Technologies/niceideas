@@ -4,7 +4,7 @@
 
 Tyto Podmínky užívání („Podmínky") jsou smlouvou mezi vámi a NiceMatrix Technologies Inc., 434223 Clear Mountain Dr E, Foothills, AB T1S 6B1, Canada („NiceMatrix", „my"). NiceMatrix provozuje niceideas na niceideas.app, včetně jeho webových stránek, veřejných odkazů na příspěvky a programovacích rozhraní (společně „Služba").
 
-Používáním Služby, včetně prohlížení, lajkování nebo komentování bez účtu, souhlasíte s těmito Podmínkami a s našimi Pravidly komunity. Naše Zásady ochrany osobních údajů vysvětlují, jak nakládáme s osobními údaji. Pokud nesouhlasíte, Službu nepoužívejte.
+Používáním Služby, včetně prohlížení, lajkování nebo komentování bez účtu, souhlasíte s těmito Podmínkami. Naše Zásady ochrany osobních údajů vysvětlují, jak nakládáme s osobními údaji. Pokud nesouhlasíte, Službu nepoužívejte.
 
 ## 2. Kdo může niceideas používat
 
@@ -57,13 +57,13 @@ Souhlasíte, že nebudete Službu používat k:
 - zasílání spamu, provádění podvodů nebo phishingu, nebo manipulaci s lajky, komentáři nebo sledováním;
 - nahrávání malwaru nebo zasahování do Služby, jejího zabezpečení nebo jiných uživatelů;
 - přístupu ke Službě automatizovanými prostředky nad rámec toho, co umožňují naše veřejná rozhraní, hromadnému shromažďování údajů o jiných uživatelích, nebo obcházení limitů rychlosti, zákazů nebo kontrol proti zneužití;
-- porušování našich Pravidel komunity nebo zákonů, které se na vás nebo na nás vztahují.
+- zveřejňování krvavého nebo drastického násilného obsahu nebo porušování zákonů, které se na vás nebo na nás vztahují.
 
 ## 7. Nahlášení a moderace
 
 7.1 Kdokoli může nahlásit příspěvek nebo komentář pomocí funkce Nahlásit. Nahlášení přezkoumáváme a také můžeme jednat ohledně obsahu nebo účtů, které nebyly nahlášeny.
 
-7.2 Pokud obsah nebo chování porušuje tyto Podmínky, Pravidla komunity nebo zákon, nebo vystavuje uživatele či nás riziku, můžeme obsah odstranit nebo skrýt, omezit funkce, jako je zveřejňování nebo komentování, zablokovat návštěvníkovi možnost interakce, nebo účet pozastavit či zrušit. Tam, kde je to přiměřené, a pokud to zákon nezakazuje nebo by to nevytvořilo riziko, vám sdělíme, co jsme udělali a proč.
+7.2 Pokud obsah nebo chování porušuje tyto Podmínky nebo zákon, nebo vystavuje uživatele či nás riziku, můžeme obsah odstranit nebo skrýt, omezit funkce, jako je zveřejňování nebo komentování, zablokovat návštěvníkovi možnost interakce, nebo účet pozastavit či zrušit. Tam, kde je to přiměřené, a pokud to zákon nezakazuje nebo by to nevytvořilo riziko, vám sdělíme, co jsme udělali a proč.
 
 7.3 Pokud se domníváte, že jsme udělali chybu, napište na support@nicematrix.ca a my vaši žádost přezkoumáme.
 
@@ -131,7 +131,7 @@ V rozsahu povoleném zákonem odškodníte NiceMatrix a její ředitele, úředn
 
 ## 16. Obecná ustanovení
 
-16.1 Tyto Podmínky, Pravidla komunity a Zásady ochrany osobních údajů představují úplnou dohodu mezi vámi a nám ohledně Služby.
+16.1 Tyto Podmínky a Zásady ochrany osobních údajů představují úplnou dohodu mezi vámi a nám ohledně Služby.
 
 16.2 Pokud bude jakákoli část těchto Podmínek shledána nevymahatelnou, zbytek zůstává v platnosti. Pokud neuplatníme určité právo, nevzdáváme se ho.
 

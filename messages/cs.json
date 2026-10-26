@@ -125,10 +125,10 @@
     },
     "preset": {
       "duplicate": "Duplicitní nahlášení",
-      "guidelines": "Porušuje pravidla komunity",
       "noViolation": "Nebylo zjištěno žádné porušení",
       "rights": "Porušuje práva ostatních",
-      "spam": "Spam"
+      "spam": "Spam",
+      "terms": "Porušuje podmínky použití"
     },
     "queueEmpty": "Žádná otevřená nahlášení.",
     "readOnly": "Pouze ke čtení",
@@ -215,15 +215,22 @@
   "compose": {
     "addAudio": "Přidat zvuk (max. {max})",
     "addImages": "Přidat obrázky (až {max})",
+    "edit": {
+      "blocked": {
+        "not_active": "Tento příspěvek teď nelze upravit.",
+        "processing": "Obrázky a zvuk se ještě zpracovávají. Příspěvek budete moci upravit, až budou hotové."
+      },
+      "title": "Upravit příspěvek"
+    },
     "error": {
       "empty": "Napište něco nebo přidejte obrázek.",
       "failed": "Zveřejnění se nezdařilo. Zkuste to znovu.",
       "rate_limited": "Zveřejňujete příliš rychle. Chvíli počkejte.",
+      "shortTooLongEdit": "Krátké příspěvky mají nejvýše {max} znaků.",
       "short_too_long": "Krátké příspěvky mají nejvýše {max} znaků. Pro delší text přepněte na „{article}“.",
       "too_large": "Soubor je příliš velký.",
       "too_much": "Je to příliš dlouhé. Zkraťte text nebo použijte méně obrázků.",
-      "unsupported": "Tento typ souboru není podporován. Vyberte obrázek nebo zvukový soubor.",
-      "shortTooLongEdit": "Krátké příspěvky mají nejvýše {max} znaků."
+      "unsupported": "Tento typ souboru není podporován. Vyberte obrázek nebo zvukový soubor."
     },
     "fmt": {
       "bold": "Tučně",
@@ -251,16 +258,9 @@
     "posting": "Publikuje se…",
     "publish": "Zveřejnit",
     "remove": "Odebrat",
-    "title": "Název",
     "save": "Uložit",
     "saving": "Ukládá se…",
-    "edit": {
-      "title": "Upravit příspěvek",
-      "blocked": {
-        "not_active": "Tento příspěvek teď nelze upravit.",
-        "processing": "Obrázky a zvuk se ještě zpracovávají. Příspěvek budete moci upravit, až budou hotové."
-      }
-    }
+    "title": "Název"
   },
   "discover": {
     "title": "Objevovat"
@@ -293,15 +293,6 @@
     },
     "effective": "Účinné od {date}",
     "footerMenu": "O službě a podmínky",
-    "guidelines": {
-      "intro": "Pomozte udržet {brand} přátelským místem pro nápady. Příspěvky a komentáře nesmí:",
-      "item1": "porušovat zákon ani práva druhých, včetně autorských práv a soukromí;",
-      "item2": "obtěžovat, vyhrožovat ani podněcovat k nenávisti vůči komukoli;",
-      "item3": "obsahovat sexuální obsah s nezletilými ani drastické násilí;",
-      "item4": "šířit spam, podvádět ani klamat lidi.",
-      "outro": "Obsah porušující tato pravidla může být odstraněn a opakovaní porušovatelé mohou přijít o přístup. Problém nám nahlásíte volbou Nahlásit u příspěvku.",
-      "title": "Pravidla komunity"
-    },
     "help": {
       "a1": "Sdílejte poznámku z NiceNote, nebo napište příspěvek na webu, jakmile se publikování na webu otevře.",
       "a2": "Upravte poznámku v aplikaci a příspěvek se aktualizuje. Chcete-li příspěvek smazat, otevřete na jeho stránce nabídku „⋯“ a vyberte Smazat; odkaz okamžitě přestane fungovat.",
@@ -380,12 +371,12 @@
       "close": "Zavřít",
       "copied": "Odkaz zkopírován",
       "delete": "Smazat",
+      "edit": "Upravit",
       "like": "Líbí se mi",
       "more": "Další možnosti",
       "reply": "Odpovědět",
       "report": "Nahlásit",
-      "share": "Sdílet",
-      "edit": "Upravit"
+      "share": "Sdílet"
     },
     "aside": {
       "moreArticles": "Další články autora"
@@ -424,13 +415,13 @@
     },
     "post": {
       "edited": "Upraveno {time}",
+      "editedShort": "Upraveno",
       "empty": "Tento příspěvek neobsahuje žádný obsah.",
       "from": "Z aplikace {app}",
       "preparing": {
         "body": "Obsah se tu zobrazí za okamžik.",
         "title": "Příspěvek se připravuje"
-      },
-      "editedShort": "Upraveno"
+      }
     },
     "report": {
       "done": "Děkujeme. Prověříme to.",
@@ -452,7 +443,7 @@
         "title": "Účet nenalezen"
       },
       "removed": {
-        "body": "Tento příspěvek byl odstraněn kvůli porušení pravidel komunity.",
+        "body": "Tento příspěvek byl odstraněn kvůli porušení podmínek použití.",
         "title": "Příspěvek odstraněn"
       },
       "restricted": {
@@ -465,11 +456,11 @@
       }
     },
     "viewer": {
+      "error": "Obrázek se nepodařilo načíst",
       "label": "Prohlížeč obrázků",
-      "zoom": "Přiblížit",
-      "previous": "Předchozí obrázek",
       "next": "Další obrázek",
-      "error": "Obrázek se nepodařilo načíst"
+      "previous": "Předchozí obrázek",
+      "zoom": "Přiblížit"
     }
   },
   "status": {

@@ -54,7 +54,7 @@ describe("share page /p/<slug>", () => {
     expect(html).toContain('class="ni-post ni-short"');
     expect(html).toContain('<a class="ni-brand" href="/">');
     // Footer per approved design: site links, no NiceNote store link (only the source badge links there).
-    for (const page of ["about", "guidelines", "terms", "privacy", "help"]) expect(html).toContain(`<a href="/${page}">`);
+    for (const page of ["about", "terms", "privacy", "help"]) expect(html).toContain(`<a href="/${page}">`);
     expect(html.match(/enp\.ej-mobile\.cn/g)).toHaveLength(1);
     expect(html).not.toMatch(/<script>|style="/);
   });
@@ -142,7 +142,7 @@ describe("information pages", () => {
     expect(html).not.toMatch(/TO CONFIRM|待确认/);
     // v4.1: no back button (the logo links home); phone footer links in a pop-up menu.
     expect(html).toContain('<a class="ni-brand" href="/">');
-    expect(html).toMatch(/<span class="ni-pill">[^<]*24[^<]*<\/span>/);
+    expect(html).toMatch(/<span class="ni-pill">[^<]*26[^<]*<\/span>/);
     expect(html).not.toContain("ni-btn-primary");
     // Round 5: page links in a header hamburger (icon, labelled); theme menu next to the language.
     expect(html).toContain('<details class="ni-menu ni-info-more"><summary aria-label="Über uns &amp; Bedingungen"');

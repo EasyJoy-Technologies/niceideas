@@ -4,7 +4,7 @@
 
 Bu Kullanım Şartları ("Şartlar"), sizinle NiceMatrix Technologies Inc., 434223 Clear Mountain Dr E, Foothills, AB T1S 6B1, Canada ("NiceMatrix", "biz") arasında bir sözleşmedir. NiceMatrix, niceideas'ı niceideas.app'te işletir; bu, web sayfalarını, herkese açık paylaşım bağlantılarını ve uygulama programlama arayüzlerini kapsar (birlikte, "Hizmet").
 
-Hesap olmaksızın görüntüleme, beğenme veya yorum yapma dahil olmak üzere Hizmeti kullanarak, bu Şartları ve Topluluk Kurallarımızı kabul etmiş olursunuz. Gizlilik Politikamız, kişisel bilgileri nasıl işlediğimizi açıklar. Kabul etmiyorsanız, Hizmeti kullanmayın.
+Hesap olmaksızın görüntüleme, beğenme veya yorum yapma dahil olmak üzere Hizmeti kullanarak, bu Şartları kabul etmiş olursunuz. Gizlilik Politikamız, kişisel bilgileri nasıl işlediğimizi açıklar. Kabul etmiyorsanız, Hizmeti kullanmayın.
 
 ## 2. niceideas'ı kimler kullanabilir
 
@@ -57,13 +57,13 @@ Hizmeti aşağıdakiler için kullanmamayı kabul edersiniz:
 - spam göndermek, dolandırıcılık veya kimlik avı yapmak, ya da beğenileri, yorumları veya takipleri manipüle etmek;
 - kötü amaçlı yazılım yüklemek, ya da Hizmete, güvenliğine veya diğer kullanıcılara müdahale etmek;
 - herkese açık arayüzlerimizin izin verdiğinin dışında otomatik araçlarla Hizmete erişmek, diğer kullanıcılar hakkında toplu veri toplamak, ya da hız sınırlarını, yasakları veya suistimal karşıtı kontrolleri atlamak;
-- Topluluk Kurallarımızı ya da size veya bize uygulanan yasaları ihlal etmek.
+- kanlı veya açıkça şiddet içeren içerik paylaşmak ya da size veya bize uygulanan yasaları ihlal etmek.
 
 ## 7. Bildirimler ve moderasyon
 
 7.1 Herkes, Bildir özelliğini kullanarak bir paylaşımı veya yorumu bildirebilir. Bildirimleri inceleriz ve bildirilmemiş içerik veya hesaplar üzerinde de işlem yapabiliriz.
 
-7.2 İçerik veya davranış bu Şartları, Topluluk Kurallarını veya yasayı ihlal ediyorsa, ya da kullanıcıları veya bizi riske atıyorsa, içeriği kaldırabilir veya gizleyebilir, paylaşım veya yorum yapma gibi özellikleri sınırlayabilir, bir ziyaretçinin etkileşimini engelleyebilir, ya da bir hesabı askıya alabilir veya kapatabiliriz. Makul olduğunda, ve yasa bunu yasaklamadığı veya risk oluşturmadığı sürece, size ne yaptığımızı ve nedenini bildiririz.
+7.2 İçerik veya davranış bu Şartları veya yasayı ihlal ediyorsa, ya da kullanıcıları veya bizi riske atıyorsa, içeriği kaldırabilir veya gizleyebilir, paylaşım veya yorum yapma gibi özellikleri sınırlayabilir, bir ziyaretçinin etkileşimini engelleyebilir, ya da bir hesabı askıya alabilir veya kapatabiliriz. Makul olduğunda, ve yasa bunu yasaklamadığı veya risk oluşturmadığı sürece, size ne yaptığımızı ve nedenini bildiririz.
 
 7.3 Bir hata yaptığımızı düşünüyorsanız, support@nicematrix.ca adresine yazın, talebinizi inceleyeceğiz.
 
@@ -131,7 +131,7 @@ Yasanın izin verdiği ölçüde, içeriğinizden, bu Şartları ihlal etmenizde
 
 ## 16. Genel hükümler
 
-16.1 Bu Şartlar, Topluluk Kuralları ve Gizlilik Politikası, Hizmet ile ilgili sizinle bizim arasındaki tam anlaşmadır.
+16.1 Bu Şartlar ve Gizlilik Politikası, Hizmet ile ilgili sizinle bizim arasındaki tam anlaşmadır.
 
 16.2 Bu Şartların herhangi bir bölümü uygulanamaz bulunursa, kalan kısım geçerliliğini sürdürür. Bir hakkı uygulamazsak, ondan feragat etmiş olmayız.
 

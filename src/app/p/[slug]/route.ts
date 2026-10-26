@@ -10,9 +10,13 @@ import { renderPostPage, renderPreparingPage } from "@/server/share/post-page";
 import { cachedPage } from "@/server/share/page-cache";
 import { pageContext } from "@/server/share/respond";
 import { renderStatusPage } from "@/server/share/status-page";
+import { themeParamRedirect } from "@/server/share/theme-param";
 
 /** Public post page (plan §6, §16): 200 / 404 / 410, plain server HTML (briefly cached for anonymous visitors). */
 export async function GET(request: Request, ctx: RouteContext<"/p/[slug]">) {
+  // Apps opening their user's own post pass `?theme=` (docs/api/nicenote.md).
+  const themed = themeParamRedirect(request);
+  if (themed) return themed;
   const page = await pageContext(request);
   try {
     const slug = (await ctx.params).slug;

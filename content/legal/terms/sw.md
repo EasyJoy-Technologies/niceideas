@@ -4,7 +4,7 @@
 
 Masharti haya ya Matumizi ("Masharti") ni mkataba kati yako na NiceMatrix Technologies Inc., 434223 Clear Mountain Dr E, Foothills, AB T1S 6B1, Canada ("NiceMatrix", "sisi", "yetu"). NiceMatrix inaendesha niceideas kwenye niceideas.app, ikiwa ni pamoja na kurasa zake za wavuti, viungo vya machapisho ya umma na programu za kiolesura cha programu (pamoja, "Huduma").
 
-Kwa kutumia Huduma, ikiwa ni pamoja na kutazama, kupenda au kutoa maoni bila akaunti, unakubali Masharti haya na Miongozo yetu ya Jamii. Sera yetu ya Faragha inaeleza jinsi tunavyoshughulikia taarifa binafsi. Kama hukubaliani, usitumie Huduma.
+Kwa kutumia Huduma, ikiwa ni pamoja na kutazama, kupenda au kutoa maoni bila akaunti, unakubali Masharti haya. Sera yetu ya Faragha inaeleza jinsi tunavyoshughulikia taarifa binafsi. Kama hukubaliani, usitumie Huduma.
 
 ## 2. Nani anaweza kutumia niceideas
 
@@ -57,13 +57,13 @@ Unakubali kutotumia Huduma ili:
 - kutuma spam, kufanya udanganyifu au phishing, au kudanganya mapendo, maoni au wafuasi;
 - kupakia programu hasidi, au kuingilia Huduma, usalama wake au watumiaji wengine;
 - kufikia Huduma kwa njia za kiotomatiki zaidi ya kile violesura vyetu vya umma vinavyoruhusu, kukusanya data za watumiaji wengine kwa wingi, au kukwepa vikomo vya kiwango, marufuku au ukaguzi wa kuzuia unyanyasaji;
-- kuvunja Miongozo yetu ya Jamii au sheria zinazokuhusu wewe au sisi.
+- kuchapisha maudhui ya umwagaji damu au vurugu za kutisha, au kuvunja sheria zinazokuhusu wewe au sisi.
 
 ## 7. Ripoti na usimamizi
 
 7.1 Mtu yeyote anaweza kuripoti chapisho au maoni kwa kutumia Ripoti. Tunakagua ripoti, na pia tunaweza kuchukua hatua kwenye maudhui au akaunti ambazo hazijaripotiwa.
 
-7.2 Ikiwa maudhui au tabia inavunja Masharti haya, Miongozo ya Jamii au sheria, au kuweka watumiaji au sisi katika hatari, tunaweza kuondoa au kuficha maudhui, kupunguza vipengele kama kuchapisha au kutoa maoni, kuzuia mtembeleaji kushirikiana, au kusimamisha au kufunga akaunti. Pale inapowezekana, na isipokuwa sheria inakataza au italeta hatari, tutakujulisha tulichofanya na kwa nini.
+7.2 Ikiwa maudhui au tabia inavunja Masharti haya au sheria, au kuweka watumiaji au sisi katika hatari, tunaweza kuondoa au kuficha maudhui, kupunguza vipengele kama kuchapisha au kutoa maoni, kuzuia mtembeleaji kushirikiana, au kusimamisha au kufunga akaunti. Pale inapowezekana, na isipokuwa sheria inakataza au italeta hatari, tutakujulisha tulichofanya na kwa nini.
 
 7.3 Ikiwa unaamini tumefanya kosa, andika kwa support@nicematrix.ca na tutakagua ombi lako.
 
@@ -131,7 +131,7 @@ Kadiri sheria inavyoruhusu, utawafidia NiceMatrix na wakurugenzi wake, maafisa, 
 
 ## 16. Jumla
 
-16.1 Masharti haya, Miongozo ya Jamii na Sera ya Faragha ndio mkataba kamili kati yako na sisi kuhusu Huduma.
+16.1 Masharti haya na Sera ya Faragha ndio mkataba kamili kati yako na sisi kuhusu Huduma.
 
 16.2 Ikiwa sehemu yoyote ya Masharti haya itaonekana haitekelezeki, sehemu zingine zinaendelea kutumika. Ikiwa hatutekelezi haki, hatujaiacha.
 

@@ -4,7 +4,7 @@
 
 Các Điều khoản Sử dụng này ("Điều khoản") là một thỏa thuận giữa bạn và NiceMatrix Technologies Inc., 434223 Clear Mountain Dr E, Foothills, AB T1S 6B1, Canada ("NiceMatrix", "chúng tôi"). NiceMatrix vận hành niceideas tại niceideas.app, bao gồm các trang web, liên kết bài đăng công khai và giao diện lập trình ứng dụng (gọi chung là "Dịch vụ").
 
-Bằng việc sử dụng Dịch vụ, bao gồm việc xem, thích hoặc bình luận mà không có tài khoản, bạn đồng ý với các Điều khoản này và Hướng dẫn Cộng đồng của chúng tôi. Chính sách Quyền riêng tư của chúng tôi giải thích cách chúng tôi xử lý thông tin cá nhân. Nếu bạn không đồng ý, vui lòng không sử dụng Dịch vụ.
+Bằng việc sử dụng Dịch vụ, bao gồm việc xem, thích hoặc bình luận mà không có tài khoản, bạn đồng ý với các Điều khoản này. Chính sách Quyền riêng tư của chúng tôi giải thích cách chúng tôi xử lý thông tin cá nhân. Nếu bạn không đồng ý, vui lòng không sử dụng Dịch vụ.
 
 ## 2. Ai có thể sử dụng niceideas
 
@@ -57,13 +57,13 @@ Bạn đồng ý không sử dụng Dịch vụ để:
 - gửi thư rác, thực hiện lừa đảo hoặc tấn công giả mạo, hoặc thao túng lượt thích, bình luận hoặc theo dõi;
 - tải lên phần mềm độc hại, hoặc can thiệp vào Dịch vụ, sự an toàn của Dịch vụ hoặc người dùng khác;
 - truy cập Dịch vụ bằng phương tiện tự động vượt quá những gì giao diện công khai của chúng tôi cho phép, thu thập dữ liệu về người dùng khác trên quy mô lớn, hoặc lách giới hạn tốc độ, lệnh cấm hoặc các kiểm tra chống lạm dụng;
-- vi phạm Hướng dẫn Cộng đồng của chúng tôi hoặc pháp luật áp dụng đối với bạn hoặc chúng tôi.
+- đăng nội dung đẫm máu hoặc bạo lực ghê rợn, hoặc vi phạm pháp luật áp dụng đối với bạn hoặc chúng tôi.
 
 ## 7. Báo cáo và kiểm duyệt
 
 7.1 Bất kỳ ai cũng có thể báo cáo một bài đăng hoặc bình luận bằng chức năng Báo cáo. Chúng tôi xem xét các báo cáo, và chúng tôi cũng có thể hành động đối với nội dung hoặc tài khoản chưa bị báo cáo.
 
-7.2 Nếu nội dung hoặc hành vi vi phạm các Điều khoản này, Hướng dẫn Cộng đồng hoặc pháp luật, hoặc gây rủi ro cho người dùng hoặc chúng tôi, chúng tôi có thể xóa hoặc ẩn nội dung, hạn chế các tính năng như đăng bài hoặc bình luận, chặn khách truy cập tương tác, hoặc đình chỉ hay đóng tài khoản. Khi hợp lý, và trừ khi pháp luật cấm hoặc việc đó sẽ tạo ra rủi ro, chúng tôi sẽ cho bạn biết chúng tôi đã làm gì và tại sao.
+7.2 Nếu nội dung hoặc hành vi vi phạm các Điều khoản này hoặc pháp luật, hoặc gây rủi ro cho người dùng hoặc chúng tôi, chúng tôi có thể xóa hoặc ẩn nội dung, hạn chế các tính năng như đăng bài hoặc bình luận, chặn khách truy cập tương tác, hoặc đình chỉ hay đóng tài khoản. Khi hợp lý, và trừ khi pháp luật cấm hoặc việc đó sẽ tạo ra rủi ro, chúng tôi sẽ cho bạn biết chúng tôi đã làm gì và tại sao.
 
 7.3 Nếu bạn nghĩ rằng chúng tôi đã có sai sót, hãy viết thư tới support@nicematrix.ca và chúng tôi sẽ xem xét yêu cầu của bạn.
 
@@ -131,7 +131,7 @@ Trong phạm vi pháp luật cho phép, bạn sẽ bồi thường cho NiceMatri
 
 ## 16. Quy định chung
 
-16.1 Các Điều khoản này, Hướng dẫn Cộng đồng và Chính sách Quyền riêng tư là toàn bộ thỏa thuận giữa bạn và chúng tôi về Dịch vụ.
+16.1 Các Điều khoản này và Chính sách Quyền riêng tư là toàn bộ thỏa thuận giữa bạn và chúng tôi về Dịch vụ.
 
 16.2 Nếu bất kỳ phần nào của các Điều khoản này bị phát hiện là không thể thi hành, phần còn lại vẫn có hiệu lực. Nếu chúng tôi không thực thi một quyền, chúng tôi không từ bỏ quyền đó.
 
