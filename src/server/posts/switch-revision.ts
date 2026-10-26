@@ -6,7 +6,7 @@ import { contentHash } from "@/server/documents/hash";
 import type { PostDocument } from "@/server/documents/schema";
 import { ApiError } from "@/server/http/errors";
 import { accountDeleting, assertAuthorActive, readAuthorState } from "@/server/accounts/author-gate";
-import { finishPublication, projectMediaPublic, recordPublication, type Projection } from "@/server/media/publication";
+import { finishPublication, NO_PROJECTION, projectMediaPublic, recordPublication, type Projection } from "@/server/media/publication";
 import type { MediaStores } from "@/server/storage/types";
 import { derivedFields } from "./derived-fields";
 import { resolveDocumentMedia } from "./media-refs";
@@ -39,7 +39,8 @@ export async function switchRevision(db: Db, stores: MediaStores, actorId: strin
   await assertCanCreateRevision(db, actorId);
   const media = await resolveDocumentMedia(db, before.author_id, document);
   const rt = { db, stores, cacheControl: opts.cacheControl };
-  const projection = await projectMediaPublic(rt, media);
+  // A private post's media stay in the private store (posts/visibility.ts).
+  const projection = before.visibility === "public" ? await projectMediaPublic(rt, media) : NO_PROJECTION;
   let touched: string[] = [];
   try {
     const outcome = await commitSwitch(db, before, document, hash, media, projection, opts);
@@ -65,7 +66,7 @@ async function commitSwitch(db: Db, before: Post, document: PostDocument, hash: 
     const ids = media.map((m) => m.id);
     await linkRevisionMedia(trx, rev.id, ids);
     const dropped = prev ? (await listRevisionMediaIds(trx, prev.id)).filter((id) => !ids.includes(id)) : [];
-    const touched = await recordPublication(trx, projection, ids, dropped);
+    const touched = await recordPublication(trx, projection, post.visibility === "public" ? ids : [], dropped);
     const updated = await updatePost(trx, post.id, { ...derivedFields(document, post), current_revision_id: rev.id, ...opts.extra(post) });
     return { post: updated, changed: true, touched };
   });

@@ -20,6 +20,8 @@ export async function GET(request: Request, ctx: RouteContext<"/p/[slug]/og/[var
 
   const db = getDb();
   const post = await findPostBySlug(db, slug);
+  // Private posts have no card for anyone (they look nonexistent).
+  if (post?.visibility === "private") return notFound();
   if (!post || post.status !== "active") return new Response(null, { status: post ? 410 : 404, headers: { "Cache-Control": "no-store" } });
   // Same rule as the page: nothing of an account being deleted is served.
   if ((await findProfile(db, post.author_id))?.status !== "active") return new Response(null, { status: 410, headers: { "Cache-Control": "no-store" } });

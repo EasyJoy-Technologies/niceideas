@@ -373,6 +373,8 @@
       "delete": "Sil",
       "edit": "Düzenle",
       "like": "Beğen",
+      "makePrivate": "Yalnızca bana görünür yap",
+      "makePublic": "Herkese açık yap",
       "more": "Diğer seçenekler",
       "reply": "Yanıtla",
       "report": "Şikayet et",
@@ -421,7 +423,9 @@
       "preparing": {
         "body": "İçerik birazdan burada görünecek.",
         "title": "Bu gönderi hazırlanıyor"
-      }
+      },
+      "private": "Yalnızca ben",
+      "privateNote": "Bu gönderiyi yalnızca siz görebilirsiniz. Herkese açık yaptığınızda başkaları da açabilir."
     },
     "report": {
       "done": "Teşekkürler. İnceleyeceğiz.",
@@ -461,6 +465,9 @@
       "next": "Sonraki görsel",
       "previous": "Önceki görsel",
       "zoom": "Yakınlaştır"
+    },
+    "visibility": {
+      "failed": "Bu gönderiyi kimlerin görebileceği değiştirilemedi. Lütfen tekrar deneyin."
     }
   },
   "status": {

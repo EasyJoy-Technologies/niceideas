@@ -10,6 +10,8 @@ export type ProfileStatus = "active" | "deleting";
 export type PostKind = "short" | "article";
 /** `preparing`: shared from NiceNote, content not pushed yet (not listed, not indexed). */
 export type PostStatus = "preparing" | "active" | "unpublished" | "removed" | "author_deleting";
+/** Who may see a post: everyone, or its author only (independent of `status`). */
+export type PostVisibility = "public" | "private";
 /** `nicenote`: shared through the NiceMatrix backend; `nicenote_intl` / `nicenote_cn`: legacy client-token posts. */
 export type PostSource = "nicenote" | "nicenote_intl" | "nicenote_cn" | "web" | `api:${string}`;
 export type ShareRegion = "intl" | "cn";
@@ -55,6 +57,8 @@ export interface PostTable {
   kind: PostKind;
   kind_locked: Generated<boolean>;
   status: Generated<PostStatus>;
+  visibility: Generated<PostVisibility>;
+  visibility_changed_at: Timestamp | null;
   source: PostSource;
   source_ref: string | null;
   api_client_id: string | null;

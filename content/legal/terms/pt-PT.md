@@ -1,4 +1,4 @@
-> **Resumo.** É proprietário daquilo que publica e é responsável por isso. As publicações no niceideas são públicas. Não publique nada ilegal ou nocivo, nem nada que não tenha o direito de partilhar. Pode eliminar uma publicação em qualquer momento; as publicações eliminadas são removidas definitivamente após 30 dias. O niceideas é gratuito e fornecido tal como está. Estes Termos são regidos pelas leis de Alberta, Canadá. Este resumo destina-se apenas à sua comodidade; aplicam-se os Termos completos abaixo.
+> **Resumo.** É proprietário daquilo que publica e é responsável por isso. As publicações no niceideas são públicas, salvo se as tornar visíveis só para si. Não publique nada ilegal ou nocivo, nem nada que não tenha o direito de partilhar. Pode eliminar uma publicação em qualquer momento; as publicações eliminadas são removidas definitivamente após 30 dias. O niceideas é gratuito e fornecido tal como está. Estes Termos são regidos pelas leis de Alberta, Canadá. Este resumo destina-se apenas à sua comodidade; aplicam-se os Termos completos abaixo.
 
 ## 1. Sobre estes Termos
 
@@ -26,13 +26,15 @@ Ao utilizar o Serviço, incluindo ao visualizar, gostar ou comentar sem uma cont
 
 ## 4. Conteúdo público e ligações
 
-4.1 As publicações que publica são públicas. Podem aparecer no seu perfil, em cronologias, na página Descobrir e em resultados de pesquisa, e qualquer pessoa com a ligação pode abri-las, com ou sem conta. Os motores de pesquisa e outras plataformas também podem mostrar páginas públicas e pré-visualizações de ligações.
+4.1 As publicações que publica são públicas (salvo se as tornar visíveis só para si, ver 4.5). Podem aparecer no seu perfil, em cronologias, na página Descobrir e em resultados de pesquisa, e qualquer pessoa com a ligação pode abri-las, com ou sem conta. Os motores de pesquisa e outras plataformas também podem mostrar páginas públicas e pré-visualizações de ligações.
 
 4.2 Os comentários são públicos e aparecem sob a publicação. Os visitantes sem conta podem gostar de publicações e comentar com um apelido opcional.
 
 4.3 Não publique nada que deseje manter privado. Uma vez que algo é público, outras pessoas podem copiá-lo ou guardá-lo antes de o eliminar, e não podemos recuperar essas cópias.
 
 4.4 Para visitantes cuja ligação provenha da China continental, apenas estão disponíveis as páginas individuais de publicações partilhadas e os gostos e comentários nelas inseridos; as restantes páginas não estão disponíveis. Isto reflete a forma como o Serviço é atualmente oferecido e pode ser alterado.
+
+4.5 Pode, a qualquer momento, tornar qualquer publicação sua visível só para si e voltar a torná-la pública. Enquanto uma publicação estiver visível só para si, não aparece aos outros em lado nenhum do Serviço e a respetiva ligação só abre para si; as cópias feitas por outros enquanto era pública não são afetadas (ver 4.3).
 
 ## 5. O seu conteúdo
 

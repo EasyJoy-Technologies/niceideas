@@ -1,4 +1,4 @@
-> **Zusammenfassung.** Wir erheben nur, was zum Betrieb von niceideas nötig ist: Ihr Profil, was Sie veröffentlichen, und begrenzte technische Daten, um den Dienst sicher zu halten. Ihre Beiträge sind öffentlich. Wir verkaufen keine personenbezogenen Daten, zeigen keine Werbung und nutzen keine externen Tracker. Sie können Beiträge jederzeit löschen und Ihr Konto löschen, indem Sie Ihre NiceMatrix ID löschen. Schreiben Sie bei jeder Datenschutzfrage oder -anfrage an support@nicematrix.ca.
+> **Zusammenfassung.** Wir erheben nur, was zum Betrieb von niceideas nötig ist: Ihr Profil, was Sie veröffentlichen, und begrenzte technische Daten, um den Dienst sicher zu halten. Ihre Beiträge sind öffentlich, sofern Sie sie nicht nur für sich sichtbar machen. Wir verkaufen keine personenbezogenen Daten, zeigen keine Werbung und nutzen keine externen Tracker. Sie können Beiträge jederzeit löschen und Ihr Konto löschen, indem Sie Ihre NiceMatrix ID löschen. Schreiben Sie bei jeder Datenschutzfrage oder -anfrage an support@nicematrix.ca.
 
 ## 1. Wer wir sind
 
@@ -44,6 +44,8 @@ Nach kanadischem Datenschutzrecht stützen wir uns auf Ihre Einwilligung, die Si
 ## 4. Öffentliche Informationen
 
 Ihr Profil (Handle, Anzeigename, Avatar, Biografie, Beitrittsdatum, Anzahl der Beiträge, Follower, gefolgten Konten und erhaltenen Gefällt-mir-Angaben), Ihre Beiträge und Ihre Kommentare sind öffentlich. Jeder kann sie sehen, auch Personen ohne Konto; Suchmaschinen können sie indexieren; und andere Plattformen können Link-Vorschauen davon anzeigen. Der Spitzname im Kommentar eines Besuchers ist öffentlich. Die aus IP-Adressen und Browserkennungen abgeleiteten Codes werden niemals angezeigt.
+
+Beiträge, die Sie nur für sich sichtbar machen, sind nicht öffentlich: Nur Sie können sie sehen, und ihre Bilder und Audiodateien sind solange nicht öffentlich abrufbar.
 
 ## 5. Cookies
 

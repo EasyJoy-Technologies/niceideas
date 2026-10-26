@@ -373,6 +373,8 @@
       "delete": "Share",
       "edit": "Gyara",
       "like": "So",
+      "makePrivate": "Mai da shi ni kaɗai zan gani",
+      "makePublic": "Mai da shi na kowa",
       "more": "Ƙarin zaɓuɓɓuka",
       "reply": "Amsa",
       "report": "Kai rahoto",
@@ -421,7 +423,9 @@
       "preparing": {
         "body": "Abun ciki zai bayyana a nan cikin ɗan lokaci.",
         "title": "Ana shirya wannan rubutun"
-      }
+      },
+      "private": "Ni kaɗai",
+      "privateNote": "Kai kaɗai ne kake iya ganin wannan rubutun. Wasu za su iya buɗe shi da zarar ka mai da shi na kowa."
     },
     "report": {
       "done": "Na gode. Za mu duba shi.",
@@ -461,6 +465,9 @@
       "next": "Hoto na gaba",
       "previous": "Hoton baya",
       "zoom": "Zuƙowa"
+    },
+    "visibility": {
+      "failed": "Ba a iya canza waɗanda za su iya ganin wannan rubutun ba. Da fatan za a sake gwadawa."
     }
   },
   "status": {

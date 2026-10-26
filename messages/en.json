@@ -373,6 +373,8 @@
       "delete": "Delete",
       "edit": "Edit",
       "like": "Like",
+      "makePrivate": "Make visible only to me",
+      "makePublic": "Make public",
       "more": "More options",
       "reply": "Reply",
       "report": "Report",
@@ -421,7 +423,9 @@
       "preparing": {
         "body": "The content will appear here in a moment.",
         "title": "Getting this post ready"
-      }
+      },
+      "private": "Only me",
+      "privateNote": "Only you can see this post. Others can open it once you make it public."
     },
     "report": {
       "done": "Thanks. We'll review it.",
@@ -461,6 +465,9 @@
       "next": "Next image",
       "previous": "Previous image",
       "zoom": "Zoom"
+    },
+    "visibility": {
+      "failed": "Couldn’t change who can see this post. Please try again."
     }
   },
   "status": {

@@ -10,7 +10,8 @@ type Ctx = RouteContext<"/api/internal/v1/nicenote/posts/[id]">;
 export const GET = sourceRoute<Ctx>("nicenote.get", async ({ db }, ctx) => jsonOk({ post: toSourcePostDto(await loadShare(db, (await ctx.params).id)) }));
 
 export const PATCH = sourceRoute<Ctx>("nicenote.settings", async ({ db, json }, ctx) => {
-  const post = await updateShareSettings(db, (await ctx.params).id, parseBody(shareSettingsBody, json));
+  const { stores, cacheControl } = postRuntime();
+  const post = await updateShareSettings({ db, stores, cacheControl }, (await ctx.params).id, parseBody(shareSettingsBody, json));
   return jsonOk({ post: toSourcePostDto(post) });
 });
 

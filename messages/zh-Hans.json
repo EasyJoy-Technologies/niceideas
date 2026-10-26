@@ -373,6 +373,8 @@
       "delete": "删除",
       "edit": "编辑",
       "like": "赞",
+      "makePrivate": "设为仅自己可见",
+      "makePublic": "设为公开",
       "more": "更多操作",
       "reply": "回复",
       "report": "举报",
@@ -421,7 +423,9 @@
       "preparing": {
         "body": "内容马上就会显示在这里。",
         "title": "内容准备中"
-      }
+      },
+      "private": "仅自己可见",
+      "privateNote": "这条帖子仅自己可见，设为公开后别人才能查看。"
     },
     "report": {
       "done": "感谢反馈，我们会尽快处理。",
@@ -461,6 +465,9 @@
       "next": "下一张",
       "previous": "上一张",
       "zoom": "缩放"
+    },
+    "visibility": {
+      "failed": "未能更改帖子的可见范围，请重试。"
     }
   },
   "status": {

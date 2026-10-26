@@ -373,6 +373,8 @@
       "delete": "Eliminar",
       "edit": "Editar",
       "like": "Gosto",
+      "makePrivate": "Tornar visível só para mim",
+      "makePublic": "Tornar pública",
       "more": "Mais opções",
       "reply": "Responder",
       "report": "Denunciar",
@@ -421,7 +423,9 @@
       "preparing": {
         "body": "O conteúdo vai aparecer aqui dentro de momentos.",
         "title": "A preparar esta publicação"
-      }
+      },
+      "private": "Só eu",
+      "privateNote": "Só você pode ver esta publicação. Os outros poderão abri-la quando a tornar pública."
     },
     "report": {
       "done": "Obrigado. Vamos analisar.",
@@ -461,6 +465,9 @@
       "next": "Imagem seguinte",
       "previous": "Imagem anterior",
       "zoom": "Ampliar"
+    },
+    "visibility": {
+      "failed": "Não foi possível alterar quem pode ver esta publicação. Tente novamente."
     }
   },
   "status": {

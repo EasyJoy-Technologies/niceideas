@@ -9,7 +9,7 @@ export async function suggestedAuthors(db: Db, viewerId: string | null, limit: n
     .selectFrom("profile")
     .innerJoin(
       (eb) =>
-        eb.selectFrom("post").select(["author_id", sql<number>`sum(like_count)`.as("likes"), sql<Date>`max(published_at)`.as("last")]).where("status", "=", "active").groupBy("author_id").as("s"),
+        eb.selectFrom("post").select(["author_id", sql<number>`sum(like_count)`.as("likes"), sql<Date>`max(published_at)`.as("last")]).where("status", "=", "active").where("visibility", "=", "public").groupBy("author_id").as("s"),
       (join) => join.onRef("s.author_id", "=", "profile.user_id"),
     )
     .selectAll("profile")
@@ -30,6 +30,7 @@ export async function hotArticles(db: Db, days: number, limit: number): Promise<
     .selectAll("post")
     .select(["profile.handle as author_handle", "profile.display_name as author_name", "profile.avatar_url as author_avatar"])
     .where("post.status", "=", "active")
+    .where("post.visibility", "=", "public")
     .where("profile.status", "=", "active")
     .where("post.kind", "=", "article")
     .where("post.published_at", ">", sql<Date>`now() - make_interval(days => ${days})`)

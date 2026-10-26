@@ -1,4 +1,4 @@
-> **Qisqacha mazmuni.** Siz joylashtirgan narsa sizga tegishli bo'lib, uning uchun siz javobgarsiz. niceideas'dagi postlar ommaviy hisoblanadi. Noqonuniy yoki zararli biror narsani, yoki ulashish huquqingiz bo'lmagan hech narsani joylashtirmang. Postni istalgan vaqtda o'chirishingiz mumkin; o'chirilgan postlar 30 kundan keyin butunlay o'chiriladi. niceideas bepul va "bor holicha" taqdim etiladi. Ushbu Shartlar Kanadaning Alberta provinsiyasi qonunlariga muvofiq boshqariladi. Ushbu qisqacha mazmun faqat qulaylik uchun berilgan; quyidagi to'liq Shartlar amal qiladi.
+> **Qisqacha mazmuni.** Siz joylashtirgan narsa sizga tegishli bo'lib, uning uchun siz javobgarsiz. niceideas'dagi postlar, ularni faqat o'zingizga ko'rinadigan qilmasangiz, ommaviy hisoblanadi. Noqonuniy yoki zararli biror narsani, yoki ulashish huquqingiz bo'lmagan hech narsani joylashtirmang. Postni istalgan vaqtda o'chirishingiz mumkin; o'chirilgan postlar 30 kundan keyin butunlay o'chiriladi. niceideas bepul va "bor holicha" taqdim etiladi. Ushbu Shartlar Kanadaning Alberta provinsiyasi qonunlariga muvofiq boshqariladi. Ushbu qisqacha mazmun faqat qulaylik uchun berilgan; quyidagi to'liq Shartlar amal qiladi.
 
 ## 1. Ushbu Shartlar haqida
 
@@ -26,13 +26,15 @@ Xizmatdan foydalanish, shu jumladan hisobsiz ko'rish, layk qo'yish yoki izoh qol
 
 ## 4. Ommaviy mazmun va havolalar
 
-4.1 Siz nashr etgan postlar ommaviy hisoblanadi. Ular profilingizda, lentalarda, Kashf qilish sahifasida va qidiruv natijalarida paydo bo'lishi mumkin, va havolaga ega bo'lgan har qanday kishi, hisobga ega bo'lsa ham, bo'lmasa ham, ularni ocha oladi. Qidiruv tizimlari va boshqa platformalar ham ommaviy sahifalar va havola ko'rinishlarini ko'rsatishi mumkin.
+4.1 Siz nashr etgan postlar ommaviy hisoblanadi (ularni faqat o'zingizga ko'rinadigan qilmasangiz, 4.5 ga qarang). Ular profilingizda, lentalarda, Kashf qilish sahifasida va qidiruv natijalarida paydo bo'lishi mumkin, va havolaga ega bo'lgan har qanday kishi, hisobga ega bo'lsa ham, bo'lmasa ham, ularni ocha oladi. Qidiruv tizimlari va boshqa platformalar ham ommaviy sahifalar va havola ko'rinishlarini ko'rsatishi mumkin.
 
 4.2 Izohlar ommaviy bo'lib, post ostida ko'rinadi. Hisobi bo'lmagan tashrif buyuruvchilar postlarni yoqtirishi va ixtiyoriy taxallus ostida izoh qoldirishi mumkin.
 
 4.3 Maxfiy saqlamoqchi bo'lgan hech narsani nashr etmang. Biror narsa ommaviy bo'lgach, siz uni o'chirishdan oldin boshqalar uni nusxalashi yoki saqlashi mumkin, va biz bunday nusxalarni qaytarib ola olmaymiz.
 
 4.4 Materik Xitoydan ulanadigan tashrif buyuruvchilar uchun faqat alohida ulashilgan post sahifalari va ularga qo'yilgan layklar va izohlar mavjud; boshqa sahifalar mavjud emas. Bu Xizmatning hozirgi taqdim etilish usulini aks ettiradi va o'zgarishi mumkin.
+
+4.5 Istalgan postingizni istalgan vaqtda faqat o'zingizga ko'rinadigan qilib, keyin yana ommaviy qilishingiz mumkin. Post faqat sizga ko'rinadigan ekan, u Xizmatning hech bir joyida boshqalarga ko'rsatilmaydi va uning havolasi faqat siz uchun ochiladi; u ommaviy bo'lganda boshqalar olgan nusxalarga bu ta'sir qilmaydi (4.3 ga qarang).
 
 ## 5. Sizning mazmuningiz
 

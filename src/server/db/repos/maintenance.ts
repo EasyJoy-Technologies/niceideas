@@ -62,7 +62,7 @@ export async function deleteMediaRows(db: Db, ids: string[]): Promise<void> {
   });
 }
 
-/** Media marked public although no active post of an active author uses them (a check that failed). */
+/** Media marked public although no active public post of an active author uses them (a check that failed). */
 export async function listStrayPublicMedia(db: Db, limit: number): Promise<string[]> {
   const rows = await db
     .selectFrom("media as m")
@@ -77,6 +77,7 @@ export async function listStrayPublicMedia(db: Db, limit: number): Promise<strin
             .select(sql`1`.as("x"))
             .whereRef("rm.media_id", "=", "m.id")
             .where("p.status", "=", "active")
+            .where("p.visibility", "=", "public")
             .where("a.status", "=", "active"),
         ),
       ),

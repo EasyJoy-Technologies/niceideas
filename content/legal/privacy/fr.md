@@ -1,4 +1,4 @@
-> **Résumé.** Nous ne collectons que ce qui est nécessaire pour faire fonctionner niceideas : votre profil, ce que vous publiez, et des données techniques limitées pour assurer la sécurité du Service. Vos publications sont publiques. Nous ne vendons pas d'informations personnelles, n'affichons pas de publicités et n'utilisons pas de traceurs externes. Vous pouvez supprimer des publications à tout moment et supprimer votre compte en supprimant votre NiceMatrix ID. Écrivez à support@nicematrix.ca pour toute question ou demande relative à la confidentialité.
+> **Résumé.** Nous ne collectons que ce qui est nécessaire pour faire fonctionner niceideas : votre profil, ce que vous publiez, et des données techniques limitées pour assurer la sécurité du Service. Vos publications sont publiques, sauf si vous les rendez visibles par vous seul. Nous ne vendons pas d'informations personnelles, n'affichons pas de publicités et n'utilisons pas de traceurs externes. Vous pouvez supprimer des publications à tout moment et supprimer votre compte en supprimant votre NiceMatrix ID. Écrivez à support@nicematrix.ca pour toute question ou demande relative à la confidentialité.
 
 ## 1. Qui nous sommes
 
@@ -44,6 +44,8 @@ En vertu de la législation canadienne relative à la vie privée, nous nous app
 ## 4. Informations publiques
 
 Votre profil (identifiant, nom d'affichage, avatar, biographie, date d'inscription, nombre de publications, d'abonnés, de comptes suivis et de mentions « j'aime » reçues), vos publications et vos commentaires sont publics. Tout le monde peut les consulter, y compris les personnes sans compte ; les moteurs de recherche peuvent les indexer ; et d'autres plateformes peuvent en afficher des aperçus de liens. Le pseudonyme figurant sur le commentaire d'un visiteur est public. Les codes dérivés des adresses IP et des identifiants de navigateur ne sont jamais affichés.
+
+Les publications que vous rendez visibles par vous seul ne sont pas publiques : vous seul pouvez les voir, et leurs images et sons ne sont pas accessibles publiquement tant qu'elles le restent.
 
 ## 5. Cookies
 

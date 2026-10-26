@@ -373,6 +373,8 @@
       "delete": "Löschen",
       "edit": "Bearbeiten",
       "like": "Gefällt mir",
+      "makePrivate": "Nur für mich sichtbar machen",
+      "makePublic": "Öffentlich machen",
       "more": "Weitere Optionen",
       "reply": "Antworten",
       "report": "Melden",
@@ -421,7 +423,9 @@
       "preparing": {
         "body": "Der Inhalt wird gleich hier erscheinen.",
         "title": "Dieser Beitrag wird vorbereitet"
-      }
+      },
+      "private": "Nur ich",
+      "privateNote": "Nur Sie können diesen Beitrag sehen. Andere können ihn erst öffnen, wenn Sie ihn öffentlich machen."
     },
     "report": {
       "done": "Danke. Wir prüfen das.",
@@ -461,6 +465,9 @@
       "next": "Nächstes Bild",
       "previous": "Vorheriges Bild",
       "zoom": "Zoomen"
+    },
+    "visibility": {
+      "failed": "Die Sichtbarkeit dieses Beitrags konnte nicht geändert werden. Bitte versuchen Sie es erneut."
     }
   },
   "status": {

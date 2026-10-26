@@ -1,9 +1,10 @@
 import { createReadStream, createWriteStream } from "node:fs";
 import { pipeline } from "node:stream/promises";
-import { access, copyFile, mkdir, readdir, rm, writeFile } from "node:fs/promises";
+import { access, copyFile, mkdir, readdir, rm, stat, writeFile } from "node:fs/promises";
 import path from "node:path";
 import type { Readable } from "node:stream";
-import { assertSafeKey, ObjectMissingError, type ObjectStore } from "./types";
+import { resolveByteRange } from "./range";
+import { assertSafeKey, ObjectMissingError, RangeNotSatisfiableError, type ObjectRead, type ObjectStore } from "./types";
 
 /** Filesystem store for development and tests (content type / cache headers are not persisted). */
 export class LocalStore implements ObjectStore {
@@ -40,6 +41,16 @@ export class LocalStore implements ObjectStore {
       stream.once("error", reject);
     });
     return stream;
+  }
+
+  async read(key: string, range: string | null): Promise<ObjectRead> {
+    const target = this.resolve(key);
+    const size = await stat(target).then((s) => s.size, () => null);
+    if (size === null) throw new ObjectMissingError(key);
+    if (!range) return { body: createReadStream(target), contentLength: size, contentRange: null };
+    const r = resolveByteRange(range, size);
+    if (!r) throw new RangeNotSatisfiableError(size);
+    return { body: createReadStream(target, r), contentLength: r.end - r.start + 1, contentRange: `bytes ${r.start}-${r.end}/${size}` };
   }
 
   async exists(key: string): Promise<boolean> {

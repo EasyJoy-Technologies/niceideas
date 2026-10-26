@@ -10,6 +10,8 @@ export type SourcePostDto = {
   mediaState: Post["media_state"];
   syncMode: Post["sync_mode"];
   commentsMode: Post["comments_mode"];
+  /** public / private (author only), v1.0.75. */
+  visibility: Post["visibility"];
   sourceRevision: number | null;
   updatedAt: string;
 };
@@ -23,6 +25,7 @@ export function toSourcePostDto(p: Post): SourcePostDto {
     mediaState: p.media_state,
     syncMode: p.sync_mode,
     commentsMode: p.comments_mode,
+    visibility: p.visibility,
     sourceRevision: p.source_revision === null ? null : Number(p.source_revision),
     updatedAt: p.updated_at.toISOString(),
   };

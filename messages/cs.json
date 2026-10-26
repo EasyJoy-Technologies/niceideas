@@ -373,6 +373,8 @@
       "delete": "Smazat",
       "edit": "Upravit",
       "like": "Líbí se mi",
+      "makePrivate": "Zobrazit jen mně",
+      "makePublic": "Zveřejnit",
       "more": "Další možnosti",
       "reply": "Odpovědět",
       "report": "Nahlásit",
@@ -421,7 +423,9 @@
       "preparing": {
         "body": "Obsah se tu zobrazí za okamžik.",
         "title": "Příspěvek se připravuje"
-      }
+      },
+      "private": "Jen já",
+      "privateNote": "Tento příspěvek vidíte jen vy. Ostatní ho otevřou, až když ho zveřejníte."
     },
     "report": {
       "done": "Děkujeme. Prověříme to.",
@@ -461,6 +465,9 @@
       "next": "Další obrázek",
       "previous": "Předchozí obrázek",
       "zoom": "Přiblížit"
+    },
+    "visibility": {
+      "failed": "Nepodařilo se změnit, kdo tento příspěvek uvidí. Zkuste to prosím znovu."
     }
   },
   "status": {

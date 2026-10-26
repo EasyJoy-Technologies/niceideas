@@ -1,4 +1,4 @@
-> **Shrnutí.** Vlastníte to, co zveřejňujete, a nesete za to odpovědnost. Příspěvky na niceideas jsou veřejné. Nezveřejňujte nic nezákonného nebo škodlivého, ani nic, k čemu nemáte právo. Příspěvek můžete kdykoli smazat; smazané příspěvky jsou trvale odstraněny po 30 dnech. niceideas je zdarma a poskytováno „tak, jak je". Tyto Podmínky se řídí právem provincie Alberta, Kanada. Toto shrnutí slouží pouze pro usnadnění; platí úplné Podmínky uvedené níže.
+> **Shrnutí.** Vlastníte to, co zveřejňujete, a nesete za to odpovědnost. Příspěvky na niceideas jsou veřejné, pokud je nenastavíte jako viditelné jen pro vás. Nezveřejňujte nic nezákonného nebo škodlivého, ani nic, k čemu nemáte právo. Příspěvek můžete kdykoli smazat; smazané příspěvky jsou trvale odstraněny po 30 dnech. niceideas je zdarma a poskytováno „tak, jak je". Tyto Podmínky se řídí právem provincie Alberta, Kanada. Toto shrnutí slouží pouze pro usnadnění; platí úplné Podmínky uvedené níže.
 
 ## 1. O těchto Podmínkách
 
@@ -26,13 +26,15 @@ Používáním Služby, včetně prohlížení, lajkování nebo komentování b
 
 ## 4. Veřejný obsah a odkazy
 
-4.1 Příspěvky, které zveřejníte, jsou veřejné. Mohou se zobrazovat na vašem profilu, v časových osách, na stránce Objevit a ve výsledcích vyhledávání, a kdokoli, kdo má odkaz, je může otevřít, s účtem nebo bez něj. Vyhledávače a jiné platformy mohou také zobrazovat veřejné stránky a náhledy odkazů.
+4.1 Příspěvky, které zveřejníte, jsou veřejné (pokud je nenastavíte jako viditelné jen pro vás, viz 4.5). Mohou se zobrazovat na vašem profilu, v časových osách, na stránce Objevit a ve výsledcích vyhledávání, a kdokoli, kdo má odkaz, je může otevřít, s účtem nebo bez něj. Vyhledávače a jiné platformy mohou také zobrazovat veřejné stránky a náhledy odkazů.
 
 4.2 Komentáře jsou veřejné a zobrazují se pod příspěvkem. Návštěvníci bez účtu mohou lajkovat příspěvky a komentovat pod nepovinnou přezdívkou.
 
 4.3 Nezveřejňujte nic, co chcete zachovat v soukromí. Jakmile se něco stane veřejným, mohou to ostatní zkopírovat nebo uložit, než příspěvek smažete, a takové kopie nemůžeme stáhnout zpět.
 
 4.4 Pro návštěvníky připojující se z Číny na pevnině jsou dostupné pouze jednotlivé stránky sdílených příspěvků a lajky a komentáře k nim; ostatní stránky nejsou dostupné. To odráží způsob, jakým je Služba v současnosti poskytována, a může se změnit.
+
+4.5 Kterýkoli svůj příspěvek můžete kdykoli nastavit jako viditelný jen pro vás a zase ho zveřejnit. Dokud je příspěvek viditelný jen pro vás, nezobrazuje se ostatním nikde ve Službě a jeho odkaz se otevře jen vám; kopie, které si jiní pořídili, když byl veřejný, tím nejsou dotčeny (viz 4.3).
 
 ## 5. Váš obsah
 

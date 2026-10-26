@@ -1,4 +1,4 @@
-> **Rezumat.** Colectăm doar ceea ce avem nevoie pentru a opera niceideas: profilul dumneavoastră, ceea ce publicați și date tehnice limitate pentru a menține Serviciul în siguranță. Postările dumneavoastră sunt publice. Nu vindem date cu caracter personal, nu afișăm reclame și nu utilizăm instrumente externe de urmărire. Puteți șterge postările în orice moment și vă puteți șterge contul ștergând NiceMatrix ID-ul dumneavoastră. Scrieți la support@nicematrix.ca cu orice întrebare sau cerere privind confidențialitatea.
+> **Rezumat.** Colectăm doar ceea ce avem nevoie pentru a opera niceideas: profilul dumneavoastră, ceea ce publicați și date tehnice limitate pentru a menține Serviciul în siguranță. Postările dumneavoastră sunt publice, cu excepția celor pe care le faceți vizibile doar pentru dumneavoastră. Nu vindem date cu caracter personal, nu afișăm reclame și nu utilizăm instrumente externe de urmărire. Puteți șterge postările în orice moment și vă puteți șterge contul ștergând NiceMatrix ID-ul dumneavoastră. Scrieți la support@nicematrix.ca cu orice întrebare sau cerere privind confidențialitatea.
 
 ## 1. Cine suntem
 
@@ -44,6 +44,8 @@ Conform legislației canadiene privind confidențialitatea, ne bazăm pe consim�
 ## 4. Informații publice
 
 Profilul dumneavoastră (handle, nume de afișare, avatar, biografie, data înscrierii, numărul de postări, urmăritori, conturi urmărite și aprecieri primite), postările dumneavoastră și comentariile dumneavoastră sunt publice. Oricine le poate vedea, inclusiv persoanele fără cont; motoarele de căutare le pot indexa; și alte platforme pot afișa previzualizări de link-uri ale acestora. Pseudonimul dintr-un comentariu al unui vizitator este public. Codurile derivate din adresele IP și identificatorii de browser nu sunt afișate niciodată.
+
+Postările pe care le faceți vizibile doar pentru dumneavoastră nu sunt publice: doar dumneavoastră le puteți vedea, iar imaginile și înregistrările audio ale acestora nu sunt accesibile public cât timp rămân astfel.
 
 ## 5. Module cookie
 

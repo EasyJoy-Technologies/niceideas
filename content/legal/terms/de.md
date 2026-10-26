@@ -1,4 +1,4 @@
-> **Zusammenfassung.** Was Sie veröffentlichen, gehört Ihnen, und Sie sind dafür verantwortlich. Beiträge auf niceideas sind öffentlich. Veröffentlichen Sie nichts Illegales oder Schädliches und nichts, zu dessen Weitergabe Sie nicht berechtigt sind. Sie können einen Beitrag jederzeit löschen; gelöschte Beiträge werden nach 30 Tagen endgültig entfernt. niceideas ist kostenlos und wird wie besehen bereitgestellt. Diese Nutzungsbedingungen unterliegen dem Recht von Alberta, Kanada. Diese Zusammenfassung dient nur der Übersicht; es gelten die vollständigen Bedingungen unten.
+> **Zusammenfassung.** Was Sie veröffentlichen, gehört Ihnen, und Sie sind dafür verantwortlich. Beiträge auf niceideas sind öffentlich, sofern Sie sie nicht nur für sich sichtbar machen. Veröffentlichen Sie nichts Illegales oder Schädliches und nichts, zu dessen Weitergabe Sie nicht berechtigt sind. Sie können einen Beitrag jederzeit löschen; gelöschte Beiträge werden nach 30 Tagen endgültig entfernt. niceideas ist kostenlos und wird wie besehen bereitgestellt. Diese Nutzungsbedingungen unterliegen dem Recht von Alberta, Kanada. Diese Zusammenfassung dient nur der Übersicht; es gelten die vollständigen Bedingungen unten.
 
 ## 1. Über diese Bedingungen
 
@@ -26,13 +26,15 @@ Durch die Nutzung des Dienstes, einschließlich des Ansehens, Gefällt-mir-Marki
 
 ## 4. Öffentliche Inhalte und Links
 
-4.1 Von Ihnen veröffentlichte Beiträge sind öffentlich. Sie können auf Ihrem Profil, in Zeitleisten, auf der Entdecken-Seite und in Suchergebnissen erscheinen, und jeder mit dem Link kann sie öffnen, mit oder ohne Konto. Suchmaschinen und andere Plattformen können ebenfalls öffentliche Seiten und Link-Vorschauen anzeigen.
+4.1 Von Ihnen veröffentlichte Beiträge sind öffentlich (sofern Sie sie nicht nur für sich sichtbar machen, siehe 4.5). Sie können auf Ihrem Profil, in Zeitleisten, auf der Entdecken-Seite und in Suchergebnissen erscheinen, und jeder mit dem Link kann sie öffnen, mit oder ohne Konto. Suchmaschinen und andere Plattformen können ebenfalls öffentliche Seiten und Link-Vorschauen anzeigen.
 
 4.2 Kommentare sind öffentlich und erscheinen unter dem Beitrag. Besucher ohne Konto können Beiträge mit Gefällt-mir markieren und unter einem optionalen Spitznamen kommentieren.
 
 4.3 Veröffentlichen Sie nichts, was Sie privat halten möchten. Sobald etwas öffentlich ist, können andere es kopieren oder speichern, bevor Sie es löschen, und wir können solche Kopien nicht zurückrufen.
 
 4.4 Für Besucher, deren Verbindung aus Festlandchina stammt, sind nur einzelne geteilte Beitragsseiten sowie die Gefällt-mir-Angaben und Kommentare dazu verfügbar; andere Seiten sind es nicht. Dies spiegelt wider, wie der Dienst derzeit angeboten wird, und kann sich ändern.
+
+4.5 Sie können jeden Ihrer Beiträge jederzeit nur für sich sichtbar und wieder öffentlich machen. Solange ein Beitrag nur für Sie sichtbar ist, erscheint er für andere nirgends im Dienst, und sein Link öffnet sich nur für Sie; Kopien, die andere angefertigt haben, während er öffentlich war, bleiben davon unberührt (siehe 4.3).
 
 ## 5. Ihre Inhalte
 

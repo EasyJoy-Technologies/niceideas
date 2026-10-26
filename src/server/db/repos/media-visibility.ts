@@ -38,13 +38,13 @@ export async function lockDueMedia(trx: Db, id: string): Promise<Media | undefin
   return trx.selectFrom("media").selectAll().where("id", "=", id).where("visibility_due_at", "<=", sql<Date>`now()`).forUpdate().skipLocked().executeTakeFirst();
 }
 
-/** Whether the current revision of an active post of an active author uses the media; and of any post. */
+/** Whether the current revision of an active public post of an active author uses the media; and of any post. */
 export async function mediaReferences(db: Db, id: string): Promise<{ live: boolean; referenced: boolean }> {
   const row = await db
     .selectFrom("revision_media as rm")
     .innerJoin("post as p", "p.current_revision_id", "rm.revision_id")
     .innerJoin("profile as a", "a.user_id", "p.author_id")
-    .select(sql<boolean>`bool_or(p.status = 'active' AND a.status = 'active')`.as("live"))
+    .select(sql<boolean>`bool_or(p.status = 'active' AND p.visibility = 'public' AND a.status = 'active')`.as("live"))
     .where("rm.media_id", "=", id)
     .executeTakeFirst();
   return { live: row?.live === true, referenced: row?.live !== null && row?.live !== undefined };

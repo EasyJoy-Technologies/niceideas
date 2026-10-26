@@ -1,4 +1,4 @@
-> **Özet.** Sadece niceideas'ı çalıştırmak için gerekli olanı topluyoruz: profilinizi, yayınladıklarınızı ve Hizmeti güvenli tutmak için sınırlı teknik verileri. Paylaşımlarınız herkese açıktır. Kişisel bilgileri satmıyoruz, reklam göstermiyoruz veya harici izleyiciler kullanmıyoruz. Paylaşımlarınızı istediğiniz zaman silebilir ve NiceMatrix ID'nizi silerek hesabınızı silebilirsiniz. Herhangi bir gizlilik sorusu veya talebi için support@nicematrix.ca adresine yazın.
+> **Özet.** Sadece niceideas'ı çalıştırmak için gerekli olanı topluyoruz: profilinizi, yayınladıklarınızı ve Hizmeti güvenli tutmak için sınırlı teknik verileri. Paylaşımlarınız, yalnızca size görünür yapmadığınız sürece herkese açıktır. Kişisel bilgileri satmıyoruz, reklam göstermiyoruz veya harici izleyiciler kullanmıyoruz. Paylaşımlarınızı istediğiniz zaman silebilir ve NiceMatrix ID'nizi silerek hesabınızı silebilirsiniz. Herhangi bir gizlilik sorusu veya talebi için support@nicematrix.ca adresine yazın.
 
 ## 1. Biz kimiz
 
@@ -44,6 +44,8 @@ Kanada gizlilik yasasına göre, bu politikayı okuduktan sonra Hizmeti kullanar
 ## 4. Herkese açık bilgiler
 
 Profiliniz (kullanıcı adı, görünen ad, avatar, biyografi, katılım tarihi, paylaşım sayısı, takipçiler, takip edilen hesaplar ve alınan beğeniler), paylaşımlarınız ve yorumlarınız herkese açıktır. Hesabı olmayan kişiler dahil herkes bunları görebilir; arama motorları bunları dizine ekleyebilir; ve diğer platformlar bunların bağlantı önizlemelerini gösterebilir. Bir ziyaretçinin yorumundaki takma ad herkese açıktır. IP adreslerinden ve tarayıcı tanımlayıcılarından türetilen kodlar asla gösterilmez.
+
+Yalnızca size görünür yaptığınız paylaşımlar herkese açık değildir: onları yalnızca siz görebilirsiniz ve bu durumda kaldıkları sürece görselleri ve sesleri herkese açık olarak erişilebilir değildir.
 
 ## 5. Çerezler
 

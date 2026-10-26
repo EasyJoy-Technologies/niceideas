@@ -23,8 +23,9 @@ export async function setPostLike(db: Db, slug: string, visitor: Visitor, liked:
 export async function setCommentLike(db: Db, commentId: string, visitor: Visitor, liked: boolean): Promise<{ liked: boolean; likeCount: number }> {
   const comment = /^[0-9a-f-]{36}$/i.test(commentId) ? await findComment(db, commentId) : undefined;
   if (!comment || comment.status !== "visible") throw notFound("comment.not_found");
-  const post = await db.selectFrom("post").select("status").where("id", "=", comment.post_id).executeTakeFirst();
-  if (post?.status !== "active") throw new ApiError("post.gone", 410);
+  const post = await db.selectFrom("post").select(["status", "visibility"]).where("id", "=", comment.post_id).executeTakeFirst();
+  if (post?.visibility !== "public") throw notFound("comment.not_found");
+  if (post.status !== "active") throw new ApiError("post.gone", 410);
   if (!liked) return { liked, likeCount: await removeLike(db, COMMENT_LIKE, comment.id, visitor.key) };
   await assertLikeBudget(db, visitor);
   return { liked, likeCount: await addLike(db, COMMENT_LIKE, comment.id, { likerKey: visitor.key, userId: null, ipHash: visitor.ipHash }) };

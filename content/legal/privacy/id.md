@@ -1,4 +1,4 @@
-> **Ringkasan.** Kami hanya mengumpulkan apa yang kami perlukan untuk menjalankan niceideas: profil Anda, apa yang Anda terbitkan, dan data teknis terbatas untuk menjaga keamanan Layanan. Unggahan Anda bersifat publik. Kami tidak menjual informasi pribadi, menampilkan iklan, atau menggunakan pelacak eksternal. Anda dapat menghapus unggahan kapan saja dan menghapus akun Anda dengan menghapus NiceMatrix ID Anda. Tulislah ke support@nicematrix.ca untuk pertanyaan atau permintaan privasi apa pun.
+> **Ringkasan.** Kami hanya mengumpulkan apa yang kami perlukan untuk menjalankan niceideas: profil Anda, apa yang Anda terbitkan, dan data teknis terbatas untuk menjaga keamanan Layanan. Unggahan Anda bersifat publik, kecuali Anda menjadikannya hanya terlihat oleh Anda. Kami tidak menjual informasi pribadi, menampilkan iklan, atau menggunakan pelacak eksternal. Anda dapat menghapus unggahan kapan saja dan menghapus akun Anda dengan menghapus NiceMatrix ID Anda. Tulislah ke support@nicematrix.ca untuk pertanyaan atau permintaan privasi apa pun.
 
 ## 1. Siapa kami
 
@@ -44,6 +44,8 @@ Berdasarkan hukum privasi Kanada, kami mengandalkan persetujuan Anda, yang Anda 
 ## 4. Informasi publik
 
 Profil Anda (handel, nama tampilan, avatar, biografi, tanggal bergabung, jumlah unggahan, pengikut, akun yang diikuti, dan suka yang diterima), unggahan Anda, dan komentar Anda bersifat publik. Siapa pun dapat melihatnya, termasuk orang tanpa akun; mesin pencari dapat mengindeksnya; dan platform lain dapat menampilkan pratinjau tautannya. Nama panggilan pada komentar pengunjung bersifat publik. Kode yang diturunkan dari alamat IP dan pengenal peramban tidak pernah ditampilkan.
+
+Unggahan yang Anda jadikan hanya terlihat oleh Anda tidak bersifat publik: hanya Anda yang dapat melihatnya, dan gambar serta audionya tidak dapat diakses publik selama tetap demikian.
 
 ## 5. Cookie
 

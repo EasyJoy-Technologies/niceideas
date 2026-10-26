@@ -1,4 +1,4 @@
-> **Ringkasan.** Kami hanya mengumpul apa yang kami perlukan untuk mengendalikan niceideas: profil anda, apa yang anda terbitkan, dan data teknikal terhad untuk mengekalkan keselamatan Perkhidmatan. Hantaran anda adalah bersifat awam. Kami tidak menjual maklumat peribadi, memaparkan iklan atau menggunakan penjejak luar. Anda boleh memadam hantaran pada bila-bila masa dan memadam akaun anda dengan memadam NiceMatrix ID anda. Tulis kepada support@nicematrix.ca untuk sebarang soalan atau permintaan privasi.
+> **Ringkasan.** Kami hanya mengumpul apa yang kami perlukan untuk mengendalikan niceideas: profil anda, apa yang anda terbitkan, dan data teknikal terhad untuk mengekalkan keselamatan Perkhidmatan. Hantaran anda adalah bersifat awam kecuali anda menjadikannya hanya kelihatan kepada anda. Kami tidak menjual maklumat peribadi, memaparkan iklan atau menggunakan penjejak luar. Anda boleh memadam hantaran pada bila-bila masa dan memadam akaun anda dengan memadam NiceMatrix ID anda. Tulis kepada support@nicematrix.ca untuk sebarang soalan atau permintaan privasi.
 
 ## 1. Siapa kami
 
@@ -44,6 +44,8 @@ Di bawah undang-undang privasi Kanada, kami bergantung kepada persetujuan anda, 
 ## 4. Maklumat awam
 
 Profil anda (nama pengendali, nama paparan, avatar, bio, tarikh menyertai, bilangan hantaran, pengikut, akaun yang diikuti dan suka yang diterima), hantaran anda dan komen anda adalah bersifat awam. Sesiapa boleh melihatnya, termasuk orang tanpa akaun; enjin carian boleh mengindeksnya; dan platform lain boleh memaparkan pratonton pautannya. Nama panggilan pada komen pelawat adalah bersifat awam. Kod yang diperoleh daripada alamat IP dan pengecam pelayar tidak pernah dipaparkan.
+
+Hantaran yang anda jadikan hanya kelihatan kepada anda tidak bersifat awam: hanya anda boleh melihatnya, dan imej serta audionya tidak boleh diakses secara awam selagi ia kekal begitu.
 
 ## 5. Kuki
 

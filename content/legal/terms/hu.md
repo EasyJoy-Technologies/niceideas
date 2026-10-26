@@ -1,4 +1,4 @@
-> **Összefoglaló.** Az Ön tulajdona, amit közzétesz, és Ön felelős érte. A niceideas-en közzétett bejegyzések nyilvánosak. Ne tegyen közzé semmi jogellenest vagy ártalmast, illetve olyat, amelynek megosztására nincs joga. Egy bejegyzés bármikor törölhető; a törölt bejegyzések 30 nap elteltével véglegesen eltávolításra kerülnek. A niceideas ingyenes, és „ahogy van" alapon biztosított. A jelen Feltételekre Alberta tartomány (Kanada) joga az irányadó. Ez az összefoglaló csak a kényelem céljából szolgál; az alábbi teljes Feltételek alkalmazandók.
+> **Összefoglaló.** Az Ön tulajdona, amit közzétesz, és Ön felelős érte. A niceideas-en közzétett bejegyzések nyilvánosak, kivéve, ha csak az Ön számára láthatóvá teszi őket. Ne tegyen közzé semmi jogellenest vagy ártalmast, illetve olyat, amelynek megosztására nincs joga. Egy bejegyzés bármikor törölhető; a törölt bejegyzések 30 nap elteltével véglegesen eltávolításra kerülnek. A niceideas ingyenes, és „ahogy van" alapon biztosított. A jelen Feltételekre Alberta tartomány (Kanada) joga az irányadó. Ez az összefoglaló csak a kényelem céljából szolgál; az alábbi teljes Feltételek alkalmazandók.
 
 ## 1. A jelen Feltételekről
 
@@ -26,13 +26,15 @@ A Szolgáltatás használatával, beleértve a megtekintést, kedvelést vagy ko
 
 ## 4. Nyilvános tartalom és linkek
 
-4.1 Az Ön által közzétett bejegyzések nyilvánosak. Megjelenhetnek a profilján, az idővonalakon, a Felfedezés oldalon és a keresési eredményekben, és a linkkel rendelkező bárki megnyithatja azokat, fiókkal vagy anélkül. A keresőmotorok és más platformok is megjeleníthetnek nyilvános oldalakat és linkelőnézeteket.
+4.1 Az Ön által közzétett bejegyzések nyilvánosak (kivéve, ha csak az Ön számára láthatóvá teszi őket, lásd 4.5). Megjelenhetnek a profilján, az idővonalakon, a Felfedezés oldalon és a keresési eredményekben, és a linkkel rendelkező bárki megnyithatja azokat, fiókkal vagy anélkül. A keresőmotorok és más platformok is megjeleníthetnek nyilvános oldalakat és linkelőnézeteket.
 
 4.2 A hozzászólások nyilvánosak, és a bejegyzés alatt jelennek meg. A fiók nélküli látogatók kedvelhetnek bejegyzéseket, és hozzászólhatnak egy opcionális álnév alatt.
 
 4.3 Ne tegyen közzé semmit, amit szeretne privátban tartani. Ha valami nyilvánossá válik, mások lemásolhatják vagy elmenthetik, mielőtt törölné a bejegyzést, és az ilyen másolatokat nem tudjuk visszahívni.
 
 4.4 A kínai szárazföldről csatlakozó látogatók számára csak az egyes megosztott bejegyzés-oldalak, illetve az azokon lévő kedvelések és hozzászólások érhetők el; más oldalak nem. Ez tükrözi azt, ahogyan a Szolgáltatást jelenleg kínáljuk, és változhat.
+
+4.5 Bármelyik bejegyzését bármikor csak az Ön számára láthatóvá teheti, majd ismét nyilvánossá. Amíg egy bejegyzés csak az Ön számára látható, mások számára sehol nem jelenik meg a Szolgáltatásban, és a linkje csak Önnek nyílik meg; a mások által a nyilvános időszakban készített másolatokat ez nem érinti (lásd 4.3).
 
 ## 5. Az Ön tartalma
 

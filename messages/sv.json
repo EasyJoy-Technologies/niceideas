@@ -373,6 +373,8 @@
       "delete": "Ta bort",
       "edit": "Redigera",
       "like": "Gilla",
+      "makePrivate": "Gör synlig bara för mig",
+      "makePublic": "Gör offentlig",
       "more": "Fler alternativ",
       "reply": "Svara",
       "report": "Anmäl",
@@ -421,7 +423,9 @@
       "preparing": {
         "body": "Innehållet visas här inom en stund.",
         "title": "Inlägget förbereds"
-      }
+      },
+      "private": "Bara jag",
+      "privateNote": "Bara du kan se det här inlägget. Andra kan öppna det när du gör det offentligt."
     },
     "report": {
       "done": "Tack. Vi granskar det.",
@@ -461,6 +465,9 @@
       "next": "Nästa bild",
       "previous": "Föregående bild",
       "zoom": "Zooma"
+    },
+    "visibility": {
+      "failed": "Det gick inte att ändra vem som kan se inlägget. Försök igen."
     }
   },
   "status": {

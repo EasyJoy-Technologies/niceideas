@@ -1,6 +1,6 @@
 import { GLOSSARY } from "@/i18n/glossary";
 import { withTitleInText } from "@/server/documents/short-title";
-import { publicUrl } from "@/server/media/keys";
+import { mediaUrlFor } from "@/server/posts/media-url";
 import { postUrl } from "@/server/posts/post-dto";
 import { renderDocumentHtml } from "@/server/render/document-html";
 import { escapeHtml } from "@/server/render/escape";
@@ -84,31 +84,42 @@ function backLink(ctx: ChromeContext): string {
 function bodyHtml(ctx: ChromeContext, data: SharePost): string {
   const { t } = ctx.intl;
   if (data.document.blocks.length === 0) return `<p class="ni-empty-body">${escapeHtml(t("share.post.empty"))}</p>`;
-  return renderDocumentHtml(data.document, data.media, publicUrl, { jobs: data.jobs, labels: { processing: t("share.media.processing"), unavailable: t("share.media.unavailable") } });
+  return renderDocumentHtml(data.document, data.media, mediaUrlFor(data.post), { jobs: data.jobs, labels: { processing: t("share.media.processing"), unavailable: t("share.media.unavailable") } });
 }
 
-/** Result of the author's last action on this page (`?n=delete_failed`). */
-const noticeHtml = (ctx: ChromeContext, deleteFailed: boolean) =>
-  deleteFailed ? `<p class="ni-compose-err" role="status">${escapeHtml(ctx.intl.t("share.delete.failed"))}</p>` : "";
+/** Result of the author's last failed action on this page (`?n=delete_failed` / `?n=visibility_failed`). */
+export type PageNotice = "delete_failed" | "visibility_failed" | null;
+const NOTICE_KEYS = { delete_failed: "share.delete.failed", visibility_failed: "share.visibility.failed" } as const;
+export const pageNotice = (url: URL): PageNotice => {
+  const n = url.searchParams.get("n");
+  return n === "delete_failed" || n === "visibility_failed" ? n : null;
+};
+const noticeHtml = (ctx: ChromeContext, notice: PageNotice) =>
+  notice ? `<p class="ni-compose-err" role="status">${escapeHtml(ctx.intl.t(NOTICE_KEYS[notice]))}</p>` : "";
+
+/** Private post (its author is the only one who can open it): a short note above the post. */
+const privateNote = (ctx: ChromeContext, post: Post) =>
+  post.visibility === "private" ? `<p class="ni-private-note" role="note">${icon("lock")}<span>${escapeHtml(ctx.intl.t("share.post.privateNote"))}</span></p>` : "";
 
 /** Server-rendered post page (plan §6, §16): complete without JS. */
-export function renderPostPage(ctx: ChromeContext, data: SharePost, social: PageInteractions, aside: PostAside | null = null, following = false, deleteFailed = false): string {
+export function renderPostPage(ctx: ChromeContext, data: SharePost, social: PageInteractions, aside: PostAside | null = null, following = false, notice: PageNotice = null): string {
   const { post } = data;
   const url = postUrl(post.slug);
   const short = post.kind === "short";
   const title = post.title && !short ? `<h1 class="ni-title">${escapeHtml(post.title)}</h1>` : "";
   const body = bodyHtml(ctx, { ...data, document: withTitleInText(post.kind, data.document) });
   const main =
-    `<main class="ni-main">${aside ? backLink(ctx) : ""}${noticeHtml(ctx, deleteFailed)}<article class="ni-post${short ? " ni-short" : ""}">` +
+    `<main class="ni-main">${aside ? backLink(ctx) : ""}${noticeHtml(ctx, notice)}${privateNote(ctx, post)}<article class="ni-post${short ? " ni-short" : ""}">` +
     `${authorBlock(ctx, data, following)}${title}<div class="ni-body">${body}</div>` +
     `${postFoot(ctx, data)}${postActions(ctx, post, social.liked)}</article>` +
     `${commentsSection(ctx, post, social, ctx.path)}${reportDialog(ctx, post.slug)}</main>`;
   const card = shareCard(post);
-  // WeChat's in-app browser picks the first sizeable <img> as the thumbnail.
-  const wx = `<div class="ni-wx"><img src="${escapeHtml(card.thumbUrl)}" width="600" height="600" alt=""></div>`;
+  const open = post.visibility === "public";
+  // WeChat's in-app browser picks the first sizeable <img> as the thumbnail. Private posts: no card, never indexed.
+  const wx = open ? `<div class="ni-wx"><img src="${escapeHtml(card.thumbUrl)}" width="600" height="600" alt=""></div>` : "";
   return renderPage(ctx, {
     title: `${card.title} · ${GLOSSARY.brand}`,
-    head: cardHead(ctx, data, url),
+    head: open ? cardHead(ctx, data, url) : '<meta name="robots" content="noindex">',
     main: wx + main,
     // Wide-screen shell only outside mainland China (no site navigation there, plan §4.2).
     side: !!aside,

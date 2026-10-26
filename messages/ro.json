@@ -373,6 +373,8 @@
       "delete": "Șterge",
       "edit": "Editează",
       "like": "Îmi place",
+      "makePrivate": "Fă vizibil doar pentru mine",
+      "makePublic": "Fă public",
       "more": "Mai multe opțiuni",
       "reply": "Răspunde",
       "report": "Raportează",
@@ -421,7 +423,9 @@
       "preparing": {
         "body": "Conținutul va apărea aici imediat.",
         "title": "Postarea se pregătește"
-      }
+      },
+      "private": "Doar eu",
+      "privateNote": "Doar tu poți vedea această postare. Ceilalți o vor putea deschide după ce o faci publică."
     },
     "report": {
       "done": "Mulțumim. Vom analiza.",
@@ -461,6 +465,9 @@
       "next": "Imaginea următoare",
       "previous": "Imaginea anterioară",
       "zoom": "Mărește"
+    },
+    "visibility": {
+      "failed": "Nu s-a putut schimba cine poate vedea această postare. Încearcă din nou."
     }
   },
   "status": {

@@ -1,4 +1,4 @@
-> **Summary.** You own what you post, and you are responsible for it. Posts on niceideas are public. Do not post anything illegal or harmful, or anything you do not have the right to share. You can delete a post at any time; deleted posts are permanently removed after 30 days. niceideas is free and provided as is. These Terms are governed by the laws of Alberta, Canada. This summary is for convenience only; the full Terms below apply.
+> **Summary.** You own what you post, and you are responsible for it. Posts on niceideas are public unless you make them visible only to you. Do not post anything illegal or harmful, or anything you do not have the right to share. You can delete a post at any time; deleted posts are permanently removed after 30 days. niceideas is free and provided as is. These Terms are governed by the laws of Alberta, Canada. This summary is for convenience only; the full Terms below apply.
 
 ## 1. About these Terms
 
@@ -26,13 +26,15 @@ By using the Service, including viewing, liking or commenting without an account
 
 ## 4. Public content and links
 
-4.1 Posts you publish are public. They can appear on your profile, in timelines, on the Discover page and in search results, and anyone with the link can open them, with or without an account. Search engines and other platforms may also show public pages and link previews.
+4.1 Posts you publish are public (unless you make them visible only to you, see 4.5). They can appear on your profile, in timelines, on the Discover page and in search results, and anyone with the link can open them, with or without an account. Search engines and other platforms may also show public pages and link previews.
 
 4.2 Comments are public and appear under the post. Visitors without an account may like posts and comment under an optional nickname.
 
 4.3 Do not publish anything you want to keep private. Once something is public, others may copy or save it before you delete it, and we cannot recall such copies.
 
 4.4 For visitors whose connection comes from mainland China, only individual shared post pages and the likes and comments on them are available; other pages are not. This reflects how the Service is currently offered and may change.
+
+4.5 You can make any of your posts visible only to you, and public again, at any time. While a post is visible only to you, it does not appear anywhere on the Service for others and its link opens for you alone; copies others made while it was public are not affected (see 4.3).
 
 ## 5. Your content
 

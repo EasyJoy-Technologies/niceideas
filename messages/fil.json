@@ -373,6 +373,8 @@
       "delete": "Burahin",
       "edit": "I-edit",
       "like": "I-like",
+      "makePrivate": "Gawing ako lang ang makakakita",
+      "makePublic": "Gawing pampubliko",
       "more": "Higit pang opsyon",
       "reply": "Sumagot",
       "report": "I-report",
@@ -421,7 +423,9 @@
       "preparing": {
         "body": "Lalabas dito ang content sa ilang saglit.",
         "title": "Inihahanda ang post na ito"
-      }
+      },
+      "private": "Ako lang",
+      "privateNote": "Ikaw lang ang nakakakita sa post na ito. Mabubuksan ito ng iba kapag ginawa mo itong pampubliko."
     },
     "report": {
       "done": "Salamat. Susuriin namin ito.",
@@ -461,6 +465,9 @@
       "next": "Susunod na larawan",
       "previous": "Nakaraang larawan",
       "zoom": "I-zoom"
+    },
+    "visibility": {
+      "failed": "Hindi mabago kung sino ang makakakita sa post na ito. Pakisubukang muli."
     }
   },
   "status": {

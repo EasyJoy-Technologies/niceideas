@@ -1,4 +1,4 @@
-> **Taƙaitawa.** Kai ne mai mallakar abin da kake fitowa, kuma kai ne mai alhakinsa. Saƙonnin da ake fitowa a niceideas na jama'a ne. Kada ka fitar da wani abu da ba shi da doka ko mai cutarwa, ko wani abu da ba ka da haƙƙin raba shi. Za ka iya share saƙo a kowane lokaci; saƙonnin da aka share za a goge su har abada bayan kwana 30. niceideas kyauta ne kuma ana bayar da shi kamar yadda yake. Waɗannan Sharuɗɗa suna ƙarƙashin dokokin Alberta, Kanada. Wannan taƙaitawa don sauƙi ne kawai; cikakkun Sharuɗɗa da ke ƙasa su ne suke aiki.
+> **Taƙaitawa.** Kai ne mai mallakar abin da kake fitowa, kuma kai ne mai alhakinsa. Saƙonnin da ake fitowa a niceideas na jama'a ne, sai dai idan ka mai da su kai kaɗai za ka gani. Kada ka fitar da wani abu da ba shi da doka ko mai cutarwa, ko wani abu da ba ka da haƙƙin raba shi. Za ka iya share saƙo a kowane lokaci; saƙonnin da aka share za a goge su har abada bayan kwana 30. niceideas kyauta ne kuma ana bayar da shi kamar yadda yake. Waɗannan Sharuɗɗa suna ƙarƙashin dokokin Alberta, Kanada. Wannan taƙaitawa don sauƙi ne kawai; cikakkun Sharuɗɗa da ke ƙasa su ne suke aiki.
 
 ## 1. Game da waɗannan Sharuɗɗa
 
@@ -26,13 +26,15 @@ Ta amfani da Hidimar, hade da duban, son abu ko yin sharhi ba tare da asusu ba, 
 
 ## 4. Abun ciki na jama'a da hanyoyin haɗi
 
-4.1 Saƙonni da ka fitowa na jama'a ne. Za su bayyana a bayanin martaba naka, cikin layin lokaci, a shafin Gano da kuma cikin sakamakon bincike, kuma duk wanda ke da hanyar haɗin zai iya buɗe su, tare da asusu ko ba tare da asusu ba. Injunan bincike da wasu dandamali kuma na iya nuna shafukan jama'a da kallon hanyar haɗi.
+4.1 Saƙonni da ka fitowa na jama'a ne (sai dai idan ka mai da su kai kaɗai za ka gani, duba 4.5). Za su bayyana a bayanin martaba naka, cikin layin lokaci, a shafin Gano da kuma cikin sakamakon bincike, kuma duk wanda ke da hanyar haɗin zai iya buɗe su, tare da asusu ko ba tare da asusu ba. Injunan bincike da wasu dandamali kuma na iya nuna shafukan jama'a da kallon hanyar haɗi.
 
 4.2 Sharhi na jama'a ne kuma suna bayyana ƙarƙashin saƙon. Baƙi marasa asusu za su iya son saƙonni da yin sharhi ƙarƙashin wani laƙabi na zaɓi.
 
 4.3 Kada ka fitowa wani abu da kake son ya kasance na sirri. Da zarar wani abu ya zama na jama'a, wasu na iya kwafa ko ajiye shi kafin ka share shi, kuma ba za mu iya tuno kwafin nan ba.
 
 4.4 Ga baƙi da hanyar sadarwarsu ta zo daga babban yankin China, kawai shafukan saƙonnin da aka raba daban-daban da sonsu da sharhi akansu ne suke samuwa; wasu shafuka ba su samuwa. Wannan ya nuna yadda ake bayar da Hidimar yanzu kuma na iya canzawa.
+
+4.5 Za ka iya mai da kowane saƙonka kai kaɗai za ka gani, kuma ka sake mai da shi na jama'a, a kowane lokaci. Muddin saƙo kai kaɗai kake gani, ba zai bayyana ga wasu ko'ina a Hidimar ba, kuma mahaɗinsa zai buɗe maka kai kaɗai; kwafin da wasu suka yi lokacin da yake na jama'a ba zai shafu ba (duba 4.3).
 
 ## 5. Abun cikin naka
 

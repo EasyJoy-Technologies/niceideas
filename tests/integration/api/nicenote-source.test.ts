@@ -136,7 +136,16 @@ describe("NiceNote source API: share lifecycle", () => {
     const patched = await json(await PATCH(signed("PATCH", `/posts/${post.id}`, { syncMode: "frozen", commentsMode: "closed" }), params({ id: post.id })));
     expect(patched.body.post).toMatchObject({ syncMode: "frozen", commentsMode: "closed" });
     expect((await json(await push(post.id, { sourceRevision: 7, document: doc({ type: "text", text: "x" }) }))).body.error.code).toBe("post.frozen");
-    expect((await json(await GET(signed("GET", `/posts/${post.id}`), params({ id: post.id })))).body.post.id).toBe(post.id);
+    expect((await json(await GET(signed("GET", `/posts/${post.id}`), params({ id: post.id })))).body.post).toMatchObject({ id: post.id, visibility: "public" });
+    // Visibility (v1.0.75): private = the author only; the backend made the change, so no event goes back.
+    const slug = post.url.split("/p/")[1];
+    const hidden = await json(await PATCH(signed("PATCH", `/posts/${post.id}`, { visibility: "private" }), params({ id: post.id })));
+    expect(hidden.body.post).toMatchObject({ visibility: "private", syncMode: "frozen" });
+    expect((await page(slug)).status).toBe(404);
+    expect((await json(await PATCH(signed("PATCH", `/posts/${post.id}`, { visibility: "secret" }), params({ id: post.id })))).status).toBe(400);
+    expect((await json(await PATCH(signed("PATCH", `/posts/${post.id}`, { visibility: "public" }), params({ id: post.id })))).body.post.visibility).toBe("public");
+    expect((await page(slug)).status).toBe(200);
+    expect(await ctx.db.selectFrom("outbox").select("id").where("kind", "=", "post_event").where("payload", "@>", JSON.stringify({ postId: post.id, event: "visibility_changed" }) as never).executeTakeFirst()).toBeUndefined();
     const web = await publishAs(ctx, "nn-user", { version: 1, blocks: [{ type: "text", text: "web post" }] });
     expect((await GET(signed("GET", `/posts/${web.id}`), params({ id: web.id }))).status).toBe(404);
     const del = await json(await DELETE(signed("DELETE", `/posts/${post.id}`), params({ id: post.id })));

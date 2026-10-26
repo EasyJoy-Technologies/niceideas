@@ -74,9 +74,10 @@ export async function profileResponse(request: Request, rawHandle: string): Prom
       if (!profile || profile.status !== "active") return { html: renderStatusPage(pctx, "profileNotFound"), status: 404 };
       const url = new URL(request.url);
       const tab = feedTab(url);
+      const own = ctx.viewer?.user_id === profile.user_id;
       const [stats, page, asideData, followed] = await Promise.all([
-        profileStats(db, profile.user_id),
-        loadFeed(db, { ...tabFilter(tab), authorId: profile.user_id }, parseCursor(url.searchParams.get("before")), peekVisitorKey(request.headers)),
+        profileStats(db, profile.user_id, own),
+        loadFeed(db, { ...tabFilter(tab), authorId: profile.user_id, includePrivate: own }, parseCursor(url.searchParams.get("before")), peekVisitorKey(request.headers)),
         loadDiscoverAside(db, ctx.viewer?.user_id ?? null),
         ctx.viewer ? followingAmong(db, ctx.viewer.user_id, [profile.user_id]) : Promise.resolve(new Set<string>()),
       ]);

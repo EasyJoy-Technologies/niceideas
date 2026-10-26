@@ -373,6 +373,8 @@
       "delete": "Verwijderen",
       "edit": "Bewerken",
       "like": "Vind ik leuk",
+      "makePrivate": "Alleen zichtbaar voor mij maken",
+      "makePublic": "Openbaar maken",
       "more": "Meer opties",
       "reply": "Reageren",
       "report": "Melden",
@@ -421,7 +423,9 @@
       "preparing": {
         "body": "De inhoud verschijnt hier zo.",
         "title": "Dit bericht wordt voorbereid"
-      }
+      },
+      "private": "Alleen ik",
+      "privateNote": "Alleen jij kunt dit bericht zien. Anderen kunnen het openen zodra je het openbaar maakt."
     },
     "report": {
       "done": "Bedankt. We bekijken het.",
@@ -461,6 +465,9 @@
       "next": "Volgende afbeelding",
       "previous": "Vorige afbeelding",
       "zoom": "Zoomen"
+    },
+    "visibility": {
+      "failed": "Kan niet wijzigen wie dit bericht kan zien. Probeer het opnieuw."
     }
   },
   "status": {

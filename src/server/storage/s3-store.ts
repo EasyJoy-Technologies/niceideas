@@ -2,7 +2,7 @@ import { createReadStream } from "node:fs";
 import { stat } from "node:fs/promises";
 import type { Readable } from "node:stream";
 import { CopyObjectCommand, DeleteObjectsCommand, GetObjectCommand, HeadObjectCommand, ListObjectsV2Command, PutObjectCommand, S3Client } from "@aws-sdk/client-s3";
-import { assertSafeKey, ObjectMissingError, type ObjectStore, type PutOptions } from "./types";
+import { assertSafeKey, ObjectMissingError, RangeNotSatisfiableError, type ObjectRead, type ObjectStore, type PutOptions } from "./types";
 
 /** S3-compatible store (Cloudflare R2). */
 export class S3Store implements ObjectStore {
@@ -52,6 +52,20 @@ export class S3Store implements ObjectStore {
     const out = await this.client.send(new GetObjectCommand({ Bucket: this.bucket, Key: key }));
     if (!out.Body) throw new Error(`empty body for ${key}`);
     return out.Body as Readable;
+  }
+
+  async read(key: string, range: string | null): Promise<ObjectRead> {
+    assertSafeKey(key);
+    try {
+      const out = await this.client.send(new GetObjectCommand({ Bucket: this.bucket, Key: key, Range: range ?? undefined }));
+      if (!out.Body) throw new Error(`empty body for ${key}`);
+      return { body: out.Body as Readable, contentLength: out.ContentLength ?? 0, contentRange: range ? (out.ContentRange ?? null) : null };
+    } catch (err) {
+      if (notFound(err)) throw new ObjectMissingError(key);
+      const e = err as { name?: string; $metadata?: { httpStatusCode?: number } };
+      if (e?.name === "InvalidRange" || e?.$metadata?.httpStatusCode === 416) throw new RangeNotSatisfiableError(null);
+      throw err;
+    }
   }
 
   async exists(key: string): Promise<boolean> {

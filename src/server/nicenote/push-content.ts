@@ -56,7 +56,7 @@ export async function pushShareContent(db: Db, stores: MediaStores, cacheControl
   const resolved = await resolveShareMedia(db, before.author_id, doc);
   // Moved ahead of the commit when the post will likely be live (publication.ts); settled after it.
   const rt = { db, stores, cacheControl };
-  const goesLive = statusAfterPush(before.status, await readAuthorState(db, before.author_id)) === "active";
+  const goesLive = before.visibility === "public" && statusAfterPush(before.status, await readAuthorState(db, before.author_id)) === "active";
   const projection = goesLive ? await projectMediaPublic(rt, resolved.media) : NO_PROJECTION;
   let touched: string[] = [];
   try {
@@ -97,7 +97,7 @@ async function commitPush(db: Db, before: Post, input: PushContentInput, doc: So
     await linkRevisionMedia(trx, rev.id, resolved.mediaIds);
     // Media this push stopped using (they may have to leave the public store).
     const dropped = prev ? (await listRevisionMediaIds(trx, prev.id)).filter((id) => !resolved.mediaIds.includes(id)) : [];
-    const touched = await recordPublication(trx, projection, status === "active" ? resolved.mediaIds : [], dropped);
+    const touched = await recordPublication(trx, projection, status === "active" && post.visibility === "public" ? resolved.mediaIds : [], dropped);
     const updated = await updatePost(trx, post.id, {
       ...derivedFields(doc, post, resolved),
       current_revision_id: rev.id,

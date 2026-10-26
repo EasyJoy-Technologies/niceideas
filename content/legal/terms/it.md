@@ -1,4 +1,4 @@
-> **Riepilogo.** Lei è proprietario di ciò che pubblica e ne è responsabile. Le pubblicazioni su niceideas sono pubbliche. Non pubblichi nulla di illegale o dannoso, né nulla che non abbia il diritto di condividere. Può eliminare una pubblicazione in qualsiasi momento; le pubblicazioni eliminate vengono rimosse definitivamente dopo 30 giorni. niceideas è gratuito e fornito così com'è. Le presenti Condizioni sono regolate dalle leggi dell'Alberta, Canada. Questo riepilogo è fornito solo per comodità; si applicano le Condizioni complete di seguito.
+> **Riepilogo.** Lei è proprietario di ciò che pubblica e ne è responsabile. Le pubblicazioni su niceideas sono pubbliche, a meno che non le renda visibili solo a lei. Non pubblichi nulla di illegale o dannoso, né nulla che non abbia il diritto di condividere. Può eliminare una pubblicazione in qualsiasi momento; le pubblicazioni eliminate vengono rimosse definitivamente dopo 30 giorni. niceideas è gratuito e fornito così com'è. Le presenti Condizioni sono regolate dalle leggi dell'Alberta, Canada. Questo riepilogo è fornito solo per comodità; si applicano le Condizioni complete di seguito.
 
 ## 1. Informazioni su queste Condizioni
 
@@ -26,13 +26,15 @@ Utilizzando il Servizio, anche visualizzando, mettendo "mi piace" o commentando 
 
 ## 4. Contenuti pubblici e link
 
-4.1 Le pubblicazioni che lei pubblica sono pubbliche. Possono apparire sul suo profilo, nelle timeline, nella pagina Scopri e nei risultati di ricerca, e chiunque disponga del link può aprirle, con o senza account. I motori di ricerca e altre piattaforme possono inoltre mostrare pagine pubbliche e anteprime dei link.
+4.1 Le pubblicazioni che lei pubblica sono pubbliche (a meno che non le renda visibili solo a lei, vedi 4.5). Possono apparire sul suo profilo, nelle timeline, nella pagina Scopri e nei risultati di ricerca, e chiunque disponga del link può aprirle, con o senza account. I motori di ricerca e altre piattaforme possono inoltre mostrare pagine pubbliche e anteprime dei link.
 
 4.2 I commenti sono pubblici e appaiono sotto la pubblicazione. I visitatori senza account possono mettere "mi piace" alle pubblicazioni e commentare con un soprannome facoltativo.
 
 4.3 Non pubblichi nulla che desideri mantenere privato. Una volta che un contenuto è pubblico, altri possono copiarlo o salvarlo prima che lei lo elimini, e noi non possiamo recuperare tali copie.
 
 4.4 Per i visitatori la cui connessione proviene dalla Cina continentale, sono disponibili solo le singole pagine delle pubblicazioni condivise e i "mi piace" e i commenti ad esse relativi; le altre pagine non lo sono. Ciò riflette il modo in cui il Servizio è attualmente offerto e può cambiare.
+
+4.5 Può rendere in qualsiasi momento qualunque sua pubblicazione visibile solo a lei, e di nuovo pubblica. Finché una pubblicazione è visibile solo a lei, non compare da nessuna parte nel Servizio per gli altri e il suo link si apre solo per lei; le copie fatte da altri quando era pubblica non sono interessate (vedi 4.3).
 
 ## 5. I suoi contenuti
 

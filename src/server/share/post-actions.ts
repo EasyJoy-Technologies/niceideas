@@ -7,6 +7,7 @@ import { isOwnPost, ownPostMenu } from "./post-menu";
 /**
  * Like / comment / share actions under a post, then "⋯": the author's menu (delete) or, for
  * others, report; plus the fixed bottom bar on phones (approved v2 design). Interactive with /scripts/interact.js.
+ * Private posts (seen by their author only) take no likes and are not shared: comments link and menu only.
  */
 export function postActions(ctx: ChromeContext, post: Post, liked: boolean): string {
   const { t } = ctx.intl;
@@ -18,6 +19,7 @@ export function postActions(ctx: ChromeContext, post: Post, liked: boolean): str
   const report = isOwnPost(ctx, post)
     ? ownPostMenu(ctx, post, `/p/${post.slug}`)
     : `<button type="button" class="ni-act" data-report="" aria-label="${escapeHtml(t("share.action.report"))}">${icon("more")}</button>`;
+  if (post.visibility === "private") return `<div class="ni-actions">${comment}<span class="ni-sp"></span>${report}</div>`;
   return (
     `<div class="ni-actions">${like("")}${comment}${share}<span class="ni-sp"></span>${report}</div>` +
     `<nav class="ni-mbar">${like("")}${comment}${share}</nav>`

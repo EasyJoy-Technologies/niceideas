@@ -89,7 +89,8 @@ export async function restorePost(rt: ModerationRuntime, op: Operator, slug: str
   const post = await postBySlug(rt.db, slug);
   if (post.status !== "removed") throw new ModerationError(`post is ${post.status}`);
   const mediaIds = post.current_revision_id ? await listRevisionMediaIds(rt.db, post.current_revision_id) : [];
-  const projection = (await readAuthorState(rt.db, post.author_id)) === "active" ? await projectMediaPublic(rt, await findMediaByIds(rt.db, mediaIds)) : NO_PROJECTION;
+  const goesLive = post.visibility === "public" && (await readAuthorState(rt.db, post.author_id)) === "active";
+  const projection = goesLive ? await projectMediaPublic(rt, await findMediaByIds(rt.db, mediaIds)) : NO_PROJECTION;
   let touched: string[] = [];
   try {
     await rt.db.transaction().execute(async (trx) => {
@@ -100,7 +101,7 @@ export async function restorePost(rt: ModerationRuntime, op: Operator, slug: str
       const status = author === "active" ? "active" : "author_deleting";
       await updatePost(trx, post.id, { status, status_changed_at: new Date(), status_reason: null, purge_after: null });
       // A removed post takes no content updates, so its media are the ones read above.
-      touched = await recordPublication(trx, projection, status === "active" ? mediaIds : []);
+      touched = await recordPublication(trx, projection, status === "active" && locked.visibility === "public" ? mediaIds : []);
       await recordModeration(trx, { action: "restore", actorId: op.actorId, reason: op.reason, postId: post.id });
       await queuePostEvent(trx, post, "restored");
     });

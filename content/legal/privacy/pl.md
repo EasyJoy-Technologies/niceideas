@@ -1,4 +1,4 @@
-> **Podsumowanie.** Zbieramy tylko to, czego potrzebujemy do prowadzenia niceideas: Twój profil, to, co publikujesz, oraz ograniczone dane techniczne niezbędne do zapewnienia bezpieczeństwa Usługi. Twoje wpisy są publiczne. Nie sprzedajemy danych osobowych, nie wyświetlamy reklam i nie korzystamy z zewnętrznych narzędzi śledzących. Możesz usunąć wpisy w każdej chwili i usunąć konto, usuwając swoje NiceMatrix ID. Napisz na support@nicematrix.ca z każdym pytaniem lub żądaniem dotyczącym prywatności.
+> **Podsumowanie.** Zbieramy tylko to, czego potrzebujemy do prowadzenia niceideas: Twój profil, to, co publikujesz, oraz ograniczone dane techniczne niezbędne do zapewnienia bezpieczeństwa Usługi. Twoje wpisy są publiczne, chyba że ustawisz je jako widoczne tylko dla Ciebie. Nie sprzedajemy danych osobowych, nie wyświetlamy reklam i nie korzystamy z zewnętrznych narzędzi śledzących. Możesz usunąć wpisy w każdej chwili i usunąć konto, usuwając swoje NiceMatrix ID. Napisz na support@nicematrix.ca z każdym pytaniem lub żądaniem dotyczącym prywatności.
 
 ## 1. Kim jesteśmy
 
@@ -44,6 +44,8 @@ Zgodnie z kanadyjskim prawem o ochronie prywatności opieramy się na Twojej zgo
 ## 4. Informacje publiczne
 
 Twój profil (uchwyt, nazwa wyświetlana, awatar, opis, data przystąpienia, liczba wpisów, obserwujących, obserwowanych kont i otrzymanych polubień), Twoje wpisy i Twoje komentarze są publiczne. Każdy może je zobaczyć, w tym osoby bez konta; wyszukiwarki mogą je indeksować; a inne platformy mogą wyświetlać podglądy linków do nich. Pseudonim w komentarzu odwiedzającego jest publiczny. Kody uzyskane z adresów IP i identyfikatorów przeglądarki nigdy nie są wyświetlane.
+
+Wpisy ustawione jako widoczne tylko dla Ciebie nie są publiczne: tylko Ty je widzisz, a ich obrazy i nagrania dźwiękowe nie są w tym czasie publicznie dostępne.
 
 ## 5. Pliki cookie
 

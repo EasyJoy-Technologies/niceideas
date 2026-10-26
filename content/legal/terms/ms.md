@@ -1,4 +1,4 @@
-> **Ringkasan.** Anda memiliki apa yang anda hantar, dan anda bertanggungjawab terhadapnya. Hantaran di niceideas adalah bersifat awam. Jangan hantar apa-apa yang menyalahi undang-undang atau berbahaya, atau apa-apa yang anda tidak mempunyai hak untuk berkongsi. Anda boleh memadam hantaran pada bila-bila masa; hantaran yang dipadam akan dipadam secara kekal selepas 30 hari. niceideas disediakan secara percuma dan "seadanya". Terma ini tertakluk kepada undang-undang Alberta, Kanada. Ringkasan ini hanya untuk tujuan kemudahan; Terma penuh di bawah yang terpakai.
+> **Ringkasan.** Anda memiliki apa yang anda hantar, dan anda bertanggungjawab terhadapnya. Hantaran di niceideas adalah bersifat awam kecuali anda menjadikannya hanya kelihatan kepada anda. Jangan hantar apa-apa yang menyalahi undang-undang atau berbahaya, atau apa-apa yang anda tidak mempunyai hak untuk berkongsi. Anda boleh memadam hantaran pada bila-bila masa; hantaran yang dipadam akan dipadam secara kekal selepas 30 hari. niceideas disediakan secara percuma dan "seadanya". Terma ini tertakluk kepada undang-undang Alberta, Kanada. Ringkasan ini hanya untuk tujuan kemudahan; Terma penuh di bawah yang terpakai.
 
 ## 1. Mengenai Terma ini
 
@@ -26,13 +26,15 @@ Dengan menggunakan Perkhidmatan, termasuk melihat, menyukai atau memberi komen t
 
 ## 4. Kandungan awam dan pautan
 
-4.1 Hantaran yang anda terbitkan adalah bersifat awam. Ia boleh muncul di profil anda, dalam garis masa, di halaman Terokai dan dalam keputusan carian, dan sesiapa yang mempunyai pautan boleh membukanya, sama ada dengan atau tanpa akaun. Enjin carian dan platform lain juga boleh memaparkan halaman awam dan pratonton pautan.
+4.1 Hantaran yang anda terbitkan adalah bersifat awam (kecuali anda menjadikannya hanya kelihatan kepada anda, lihat 4.5). Ia boleh muncul di profil anda, dalam garis masa, di halaman Terokai dan dalam keputusan carian, dan sesiapa yang mempunyai pautan boleh membukanya, sama ada dengan atau tanpa akaun. Enjin carian dan platform lain juga boleh memaparkan halaman awam dan pratonton pautan.
 
 4.2 Komen adalah bersifat awam dan muncul di bawah hantaran. Pelawat tanpa akaun boleh menyukai hantaran dan memberi komen dengan nama panggilan pilihan.
 
 4.3 Jangan terbitkan apa-apa yang anda mahu kekal sulit. Setelah sesuatu menjadi awam, orang lain mungkin telah menyalin atau menyimpannya sebelum anda memadamnya, dan kami tidak boleh menarik balik salinan tersebut.
 
 4.4 Bagi pelawat yang sambungannya berasal dari China tanah besar, hanya halaman hantaran kongsi individu serta suka dan komen di atasnya yang boleh diakses; halaman lain tidak boleh diakses. Ini mencerminkan cara Perkhidmatan ditawarkan pada masa ini dan boleh berubah.
+
+4.5 Anda boleh menjadikan mana-mana hantaran anda hanya kelihatan kepada anda, dan menjadikannya awam semula, pada bila-bila masa. Selagi hantaran hanya kelihatan kepada anda, ia tidak dipaparkan kepada orang lain di mana-mana dalam Perkhidmatan dan pautannya hanya dibuka untuk anda; salinan yang dibuat oleh orang lain semasa ia awam tidak terjejas (lihat 4.3).
 
 ## 5. Kandungan anda
 

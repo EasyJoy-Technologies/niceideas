@@ -25,7 +25,7 @@ export const pushContentBody = z.object({
     .transform((v) => v ?? {}),
 });
 
-export const shareSettingsBody = z.object({ syncMode: syncMode.optional(), commentsMode: commentsMode.nullable().optional() });
+export const shareSettingsBody = z.object({ syncMode: syncMode.optional(), commentsMode: commentsMode.nullable().optional(), visibility: z.enum(["public", "private"]).optional() });
 
 export type CreateShareInput = z.infer<typeof createShareBody>;
 export type PushContentInput = z.infer<typeof pushContentBody>;

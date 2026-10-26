@@ -1,4 +1,4 @@
-> **Resumen.** Usted es propietario de lo que publica y es responsable de ello. Las publicaciones en niceideas son públicas. No publique nada ilegal o dañino, ni nada que no tenga derecho a compartir. Puede eliminar una publicación en cualquier momento; las publicaciones eliminadas se borran permanentemente después de 30 días. niceideas es gratuito y se ofrece tal cual. Estas Condiciones se rigen por las leyes de Alberta, Canadá. Este resumen es solo para su comodidad; se aplican las Condiciones completas que figuran a continuación.
+> **Resumen.** Usted es propietario de lo que publica y es responsable de ello. Las publicaciones en niceideas son públicas, salvo que las haga visibles solo para usted. No publique nada ilegal o dañino, ni nada que no tenga derecho a compartir. Puede eliminar una publicación en cualquier momento; las publicaciones eliminadas se borran permanentemente después de 30 días. niceideas es gratuito y se ofrece tal cual. Estas Condiciones se rigen por las leyes de Alberta, Canadá. Este resumen es solo para su comodidad; se aplican las Condiciones completas que figuran a continuación.
 
 ## 1. Sobre estas Condiciones
 
@@ -26,13 +26,15 @@ Al usar el Servicio, incluido ver, dar "me gusta" o comentar sin una cuenta, ust
 
 ## 4. Contenido público y enlaces
 
-4.1 Las publicaciones que usted publica son públicas. Pueden aparecer en su perfil, en las líneas de tiempo, en la página Descubrir y en los resultados de búsqueda, y cualquier persona con el enlace puede abrirlas, con o sin cuenta. Los motores de búsqueda y otras plataformas también pueden mostrar páginas públicas y vistas previas de enlaces.
+4.1 Las publicaciones que usted publica son públicas (salvo que las haga visibles solo para usted, véase 4.5). Pueden aparecer en su perfil, en las líneas de tiempo, en la página Descubrir y en los resultados de búsqueda, y cualquier persona con el enlace puede abrirlas, con o sin cuenta. Los motores de búsqueda y otras plataformas también pueden mostrar páginas públicas y vistas previas de enlaces.
 
 4.2 Los comentarios son públicos y aparecen debajo de la publicación. Los visitantes sin cuenta pueden dar "me gusta" a las publicaciones y comentar bajo un apodo opcional.
 
 4.3 No publique nada que desee mantener privado. Una vez que algo es público, otras personas pueden copiarlo o guardarlo antes de que usted lo elimine, y no podemos recuperar dichas copias.
 
 4.4 Para los visitantes cuya conexión proviene de China continental, solo están disponibles las páginas individuales de publicaciones compartidas y los "me gusta" y comentarios en ellas; las demás páginas no lo están. Esto refleja cómo se ofrece actualmente el Servicio y puede cambiar.
+
+4.5 Puede hacer que cualquiera de sus publicaciones sea visible solo para usted, y volver a hacerla pública, en cualquier momento. Mientras una publicación sea visible solo para usted, no aparecerá para los demás en ningún lugar del Servicio y su enlace solo se abrirá para usted; las copias que otros hicieran mientras era pública no se ven afectadas (véase 4.3).
 
 ## 5. Su contenido
 

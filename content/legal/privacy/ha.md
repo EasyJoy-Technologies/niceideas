@@ -1,4 +1,4 @@
-> **Taƙaitawa.** Muna tattara kawai abin da muke buƙata don gudanar da niceideas: bayanin martabarka, abin da ka fitowa, da taƙaitattun bayanan fasaha don kiyaye Hidimar lafiya. Saƙonninka na jama'a ne. Ba mu sayar da bayanan sirri, ba mu nuna talla ko amfani da masu bibiya na waje. Za ka iya share saƙonni a kowane lokaci kuma share asusunka ta share NiceMatrix ID naka. Rubuta zuwa support@nicematrix.ca da kowace tambaya ta keɓantawa ko buƙata.
+> **Taƙaitawa.** Muna tattara kawai abin da muke buƙata don gudanar da niceideas: bayanin martabarka, abin da ka fitowa, da taƙaitattun bayanan fasaha don kiyaye Hidimar lafiya. Saƙonninka na jama'a ne, sai dai idan ka mai da su kai kaɗai za ka gani. Ba mu sayar da bayanan sirri, ba mu nuna talla ko amfani da masu bibiya na waje. Za ka iya share saƙonni a kowane lokaci kuma share asusunka ta share NiceMatrix ID naka. Rubuta zuwa support@nicematrix.ca da kowace tambaya ta keɓantawa ko buƙata.
 
 ## 1. Wanene mu
 
@@ -44,6 +44,8 @@ Mutane ne suke yanke shawara kan abun ciki da asusu. Iyakokin kima na injina kaw
 ## 4. Bayanin jama'a
 
 Bayanin martabarka (sunan amfani, sunan nuni, hoto, bayanin taƙaitacce, ranar shiga, yawan saƙonni, masu bibiya, asusun da kake bi da sonsu da ka samu), saƙonninka da sharhinka na jama'a ne. Kowa zai iya ganin su, hade da mutane marasa asusu; injunan bincike na iya jera su; kuma wasu dandamali na iya nuna kallon hanyoyin haɗinsu. Laƙabin da ke kan sharhin baƙo na jama'a ne. Lambobin da suka fito daga adireshin IP da masu gano injin bincike ba a nuna su ko kaɗan.
+
+Saƙonnin da ka mai da kai kaɗai za ka gani ba na jama'a ba ne: kai kaɗai ne za ka iya ganin su, kuma hotunansu da sautunansu ba sa samuwa ga jama'a muddin suna haka.
 
 ## 5. Kukis
 

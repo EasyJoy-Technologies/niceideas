@@ -373,6 +373,8 @@
       "delete": "刪除",
       "edit": "編輯",
       "like": "讚",
+      "makePrivate": "設為僅自己可見",
+      "makePublic": "設為公開",
       "more": "更多操作",
       "reply": "回覆",
       "report": "檢舉",
@@ -421,7 +423,9 @@
       "preparing": {
         "body": "內容稍後就會顯示在這裡。",
         "title": "貼文準備中"
-      }
+      },
+      "private": "僅自己可見",
+      "privateNote": "這則貼文僅自己可見，設為公開後別人才能查看。"
     },
     "report": {
       "done": "感謝回報，我們會盡快處理。",
@@ -461,6 +465,9 @@
       "next": "下一張",
       "previous": "上一張",
       "zoom": "縮放"
+    },
+    "visibility": {
+      "failed": "未能變更貼文的可見範圍，請重試。"
     }
   },
   "status": {

@@ -1,4 +1,4 @@
-> **Qisqacha mazmuni.** Biz niceideas'ni ishlatish uchun faqat zarur bo'lgan narsalarni to'playmiz: profilingiz, siz nashr etgan narsa, va Xizmatni xavfsiz saqlash uchun cheklangan texnik ma'lumotlar. Postlaringiz ommaviy hisoblanadi. Biz shaxsiy ma'lumotlarni sotmaymiz, reklama ko'rsatmaymiz yoki tashqi kuzatuvchilardan foydalanmaymiz. Siz istalgan vaqtda postlarni o'chirishingiz va NiceMatrix ID'ingizni o'chirib hisobingizni o'chirishingiz mumkin. Har qanday maxfiylik savoli yoki so'rovi bilan support@nicematrix.ca manziliga yozing.
+> **Qisqacha mazmuni.** Biz niceideas'ni ishlatish uchun faqat zarur bo'lgan narsalarni to'playmiz: profilingiz, siz nashr etgan narsa, va Xizmatni xavfsiz saqlash uchun cheklangan texnik ma'lumotlar. Postlaringiz, ularni faqat o'zingizga ko'rinadigan qilmasangiz, ommaviy hisoblanadi. Biz shaxsiy ma'lumotlarni sotmaymiz, reklama ko'rsatmaymiz yoki tashqi kuzatuvchilardan foydalanmaymiz. Siz istalgan vaqtda postlarni o'chirishingiz va NiceMatrix ID'ingizni o'chirib hisobingizni o'chirishingiz mumkin. Har qanday maxfiylik savoli yoki so'rovi bilan support@nicematrix.ca manziliga yozing.
 
 ## 1. Biz kimmiz
 
@@ -44,6 +44,8 @@ Kanada maxfiylik qonuniga ko'ra, biz ushbu siyosatni o'qiganingizdan keyin Xizma
 ## 4. Ommaviy ma'lumot
 
 Profilingiz (taxallus, ko'rsatiladigan ism, avatar, bio, qo'shilgan sana, postlar, kuzatuvchilar, kuzatilgan hisoblar va olingan layklar soni), postlaringiz va izohlaringiz ommaviy hisoblanadi. Hisobsiz odamlar ham kiradi, ularni har kim ko'rishi mumkin; qidiruv tizimlari ularni indekslashi mumkin; va boshqa platformalar ularning havola ko'rinishlarini ko'rsatishi mumkin. Tashrif buyuruvchining izohidagi taxallus ommaviy hisoblanadi. IP manzillari va brauzer identifikatorlaridan olingan kodlar hech qachon ko'rsatilmaydi.
+
+Faqat o'zingizga ko'rinadigan qilgan postlaringiz ommaviy emas: ularni faqat siz ko'ra olasiz va shunday turgan ekan, ularning rasmlari va audiolari hammaga ochiq bo'lmaydi.
 
 ## 5. Cookie'lar
 

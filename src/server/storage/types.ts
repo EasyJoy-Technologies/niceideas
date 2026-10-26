@@ -8,6 +8,12 @@ export interface ObjectStore {
   putBuffer(key: string, body: Buffer, options: PutOptions): Promise<void>;
   putStream(key: string, body: Readable, options: PutOptions & { contentLength: number }): Promise<void>;
   getStream(key: string): Promise<Readable>;
+  /**
+   * Reads an object, or one byte range of it (`range`: a single `bytes=a-b` / `bytes=a-` / `bytes=-n`
+   * header value, see range.ts) — audio players seek with ranges. Throws ObjectMissingError when absent,
+   * RangeNotSatisfiableError when the range lies outside the object.
+   */
+  read(key: string, range: string | null): Promise<ObjectRead>;
   /** Deletes keys; missing keys are not an error. */
   deleteMany(keys: string[]): Promise<void>;
   /** Keys starting with `prefix` (all pages). */
@@ -18,6 +24,16 @@ export interface ObjectStore {
    * process; headers are replaced by `options`. Throws ObjectMissingError when the key is absent.
    */
   copyTo(target: ObjectStore, key: string, options: PutOptions): Promise<void>;
+}
+
+/** `contentRange` is set for a partial read (206). */
+export type ObjectRead = { body: Readable; contentLength: number; contentRange: string | null };
+
+/** `size`: the object's size when known (sent back in the 416 Content-Range header). */
+export class RangeNotSatisfiableError extends Error {
+  constructor(readonly size: number | null) {
+    super("range not satisfiable");
+  }
 }
 
 export class ObjectMissingError extends Error {

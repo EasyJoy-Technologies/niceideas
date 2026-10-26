@@ -1,4 +1,4 @@
-> **Résumé.** Vous êtes propriétaire de ce que vous publiez et vous en êtes responsable. Les publications sur niceideas sont publiques. Ne publiez rien d'illégal ou de nuisible, ni rien que vous n'avez pas le droit de partager. Vous pouvez supprimer une publication à tout moment ; les publications supprimées sont effacées définitivement après 30 jours. niceideas est gratuit et fourni en l'état. Les présentes Conditions sont régies par les lois de l'Alberta, au Canada. Ce résumé n'est fourni qu'à titre pratique ; les Conditions complètes ci-dessous s'appliquent.
+> **Résumé.** Vous êtes propriétaire de ce que vous publiez et vous en êtes responsable. Les publications sur niceideas sont publiques, sauf si vous les rendez visibles par vous seul. Ne publiez rien d'illégal ou de nuisible, ni rien que vous n'avez pas le droit de partager. Vous pouvez supprimer une publication à tout moment ; les publications supprimées sont effacées définitivement après 30 jours. niceideas est gratuit et fourni en l'état. Les présentes Conditions sont régies par les lois de l'Alberta, au Canada. Ce résumé n'est fourni qu'à titre pratique ; les Conditions complètes ci-dessous s'appliquent.
 
 ## 1. À propos des présentes Conditions
 
@@ -26,13 +26,15 @@ En utilisant le Service, y compris en le consultant, en aimant ou en commentant 
 
 ## 4. Contenu public et liens
 
-4.1 Les publications que vous publiez sont publiques. Elles peuvent apparaître sur votre profil, dans les fils d'actualité, sur la page Découvrir et dans les résultats de recherche, et toute personne disposant du lien peut les ouvrir, avec ou sans compte. Les moteurs de recherche et d'autres plateformes peuvent également afficher des pages publiques et des aperçus de liens.
+4.1 Les publications que vous publiez sont publiques (sauf si vous les rendez visibles par vous seul, voir 4.5). Elles peuvent apparaître sur votre profil, dans les fils d'actualité, sur la page Découvrir et dans les résultats de recherche, et toute personne disposant du lien peut les ouvrir, avec ou sans compte. Les moteurs de recherche et d'autres plateformes peuvent également afficher des pages publiques et des aperçus de liens.
 
 4.2 Les commentaires sont publics et apparaissent sous la publication. Les visiteurs sans compte peuvent aimer des publications et commenter sous un pseudonyme facultatif.
 
 4.3 Ne publiez rien que vous souhaitez garder privé. Une fois qu'un contenu est public, d'autres personnes peuvent le copier ou l'enregistrer avant que vous ne le supprimiez, et nous ne pouvons pas rappeler ces copies.
 
 4.4 Pour les visiteurs dont la connexion provient de Chine continentale, seules les pages individuelles de publications partagées ainsi que les mentions « j'aime » et les commentaires qui s'y rapportent sont accessibles ; les autres pages ne le sont pas. Cela reflète la manière dont le Service est actuellement proposé et peut évoluer.
+
+4.5 Vous pouvez à tout moment rendre n'importe laquelle de vos publications visible par vous seul, puis à nouveau publique. Tant qu'une publication n'est visible que par vous, elle n'apparaît nulle part sur le Service pour les autres et son lien ne s'ouvre que pour vous ; les copies faites par d'autres lorsqu'elle était publique ne sont pas concernées (voir 4.3).
 
 ## 5. Votre contenu
 

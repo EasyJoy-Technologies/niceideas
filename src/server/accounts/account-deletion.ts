@@ -29,8 +29,10 @@ import type { MediaStores } from "@/server/storage/types";
  */
 export type DeletionRuntime = { db: Db; stores: MediaStores; cacheControl: string };
 
-async function currentMediaIds(db: Db, postIds: string[]): Promise<string[]> {
-  const rows = postIds.length ? await db.selectFrom("post").select("current_revision_id").where("id", "in", postIds).execute() : [];
+/** Media of the posts' current revisions (`publicOnly`: of their public posts only — private ones stay private). */
+async function currentMediaIds(db: Db, postIds: string[], publicOnly = false): Promise<string[]> {
+  const q = db.selectFrom("post").select("current_revision_id").where("id", "in", postIds);
+  const rows = postIds.length ? await (publicOnly ? q.where("visibility", "=", "public") : q).execute() : [];
   const ids = await Promise.all(rows.map((r) => (r.current_revision_id ? listRevisionMediaIds(db, r.current_revision_id) : [])));
   return [...new Set(ids.flat())];
 }
@@ -57,7 +59,7 @@ export async function startCoolingOff(rt: DeletionRuntime, userId: string): Prom
 
 /** Cooling-off cancelled: everything offline because of it goes back online with the same links. */
 export async function cancelCoolingOff(rt: DeletionRuntime, userId: string): Promise<void> {
-  const before = await currentMediaIds(rt.db, await postIdsOfAuthor(rt.db, userId, "author_deleting"));
+  const before = await currentMediaIds(rt.db, await postIdsOfAuthor(rt.db, userId, "author_deleting"), true);
   const projection = await projectMediaPublic(rt, await findMediaByIds(rt.db, before));
   let touched: string[] = [];
   try {
@@ -65,7 +67,7 @@ export async function cancelCoolingOff(rt: DeletionRuntime, userId: string): Pro
       if (!(await lockProfileForStatusChange(trx, userId)) || (await isDeletedAccount(trx, userId))) return;
       await setProfileStatus(trx, userId, "active");
       // Includes posts that first got content during the cooling-off period.
-      touched = await recordPublication(trx, projection, await currentMediaIds(trx, await switchAuthorPosts(trx, userId, "author_deleting", "active")));
+      touched = await recordPublication(trx, projection, await currentMediaIds(trx, await switchAuthorPosts(trx, userId, "author_deleting", "active"), true));
     });
   } finally {
     await finishPublication(rt, projection, touched);

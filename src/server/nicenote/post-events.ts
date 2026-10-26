@@ -4,7 +4,7 @@ import type { MediaState, Post } from "@/server/db/schema";
 import { enqueueOutbox } from "@/server/db/repos/outbox";
 import type { FailedRef } from "./share-media";
 
-export type SharePostEvent = "unpublished" | "removed" | "restored" | "media_failed" | "media_ready";
+export type SharePostEvent = "unpublished" | "removed" | "restored" | "media_failed" | "media_ready" | "visibility_changed";
 
 /**
  * Queues a post status event for the NiceMatrix backend (contract niceideas-share.md §4.2),

@@ -2,6 +2,7 @@ import type { Db } from "@/server/db/client";
 import type { Post } from "@/server/db/schema";
 import { findPostById, updatePost } from "@/server/db/repos/posts";
 import { ApiError, notFound } from "@/server/http/errors";
+import { setPostVisibility, type VisibilityRuntime } from "@/server/posts/set-visibility";
 import { unpublishPost } from "@/server/posts/withdraw-post";
 import type { MediaStores } from "@/server/storage/types";
 import type { ShareSettingsInput } from "./requests";
@@ -21,14 +22,18 @@ export function assertShareOpen(post: Post): void {
   if (post.status === "unpublished") throw new ApiError("post.unpublished", 409);
 }
 
-/** PATCH: sync mode / comments mode (`null` = NiceIdeas default, open). */
-export async function updateShareSettings(db: Db, postId: string, input: ShareSettingsInput): Promise<Post> {
-  const post = await loadShare(db, postId);
+/**
+ * PATCH: sync mode / comments mode (`null` = NiceIdeas default, open) / visibility (private = the author
+ * only; set-visibility.ts). The backend made the change, so no event goes back.
+ */
+export async function updateShareSettings(rt: VisibilityRuntime, postId: string, input: ShareSettingsInput): Promise<Post> {
+  const post = await loadShare(rt.db, postId);
   assertShareOpen(post);
   const patch: { sync_mode?: Post["sync_mode"]; comments_mode?: Post["comments_mode"] } = {};
   if (input.syncMode && input.syncMode !== post.sync_mode) patch.sync_mode = input.syncMode;
   if (input.commentsMode !== undefined && (input.commentsMode ?? "open") !== post.comments_mode) patch.comments_mode = input.commentsMode ?? "open";
-  return Object.keys(patch).length ? updatePost(db, post.id, patch) : post;
+  const updated = Object.keys(patch).length ? await updatePost(rt.db, post.id, patch) : post;
+  return input.visibility ? (await setPostVisibility(rt, post.id, input.visibility)).post : updated;
 }
 
 /** DELETE (the user deleted the share in NiceNote): link offline at once, idempotent. No event back to the backend. */

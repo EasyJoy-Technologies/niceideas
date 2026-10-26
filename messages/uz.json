@@ -373,6 +373,8 @@
       "delete": "O'chirish",
       "edit": "Tahrirlash",
       "like": "Yoqdi",
+      "makePrivate": "Faqat menga ko‘rinadigan qilish",
+      "makePublic": "Ommaviy qilish",
       "more": "Qo'shimcha amallar",
       "reply": "Javob berish",
       "report": "Shikoyat qilish",
@@ -421,7 +423,9 @@
       "preparing": {
         "body": "Mazmun bir zumda shu yerda ko'rinadi.",
         "title": "Bu post tayyorlanmoqda"
-      }
+      },
+      "private": "Faqat men",
+      "privateNote": "Bu postni faqat siz ko‘ra olasiz. Uni ommaviy qilganingizdan keyin boshqalar ham ocha oladi."
     },
     "report": {
       "done": "Rahmat. Ko‘rib chiqamiz.",
@@ -461,6 +465,9 @@
       "next": "Keyingi rasm",
       "previous": "Oldingi rasm",
       "zoom": "Kattalashtirish"
+    },
+    "visibility": {
+      "failed": "Bu postni kim ko‘ra olishini o‘zgartirib bo‘lmadi. Qaytadan urinib ko‘ring."
     }
   },
   "status": {

@@ -1,4 +1,4 @@
-> **Buod.** Kinokolekta lamang namin ang kinakailangan para patakbuhin ang niceideas: ang iyong profile, ang iyong ipinapaskil, at limitadong teknikal na data upang mapanatiling ligtas ang Serbisyo. Pampubliko ang iyong mga post. Hindi namin ibinebenta ang personal na impormasyon, nagpapakita ng mga ad, o gumagamit ng mga third-party tracker. Maaari mong burahin ang mga post anumang oras at burahin ang iyong account sa pagbura ng iyong NiceMatrix ID. Sumulat sa support@nicematrix.ca para sa anumang tanong o kahilingan tungkol sa privacy.
+> **Buod.** Kinokolekta lamang namin ang kinakailangan para patakbuhin ang niceideas: ang iyong profile, ang iyong ipinapaskil, at limitadong teknikal na data upang mapanatiling ligtas ang Serbisyo. Pampubliko ang iyong mga post maliban kung gawin mong ikaw lang ang makakakita. Hindi namin ibinebenta ang personal na impormasyon, nagpapakita ng mga ad, o gumagamit ng mga third-party tracker. Maaari mong burahin ang mga post anumang oras at burahin ang iyong account sa pagbura ng iyong NiceMatrix ID. Sumulat sa support@nicematrix.ca para sa anumang tanong o kahilingan tungkol sa privacy.
 
 ## 1. Sino kami
 
@@ -44,6 +44,8 @@ Sa ilalim ng batas sa privacy ng Canada, inaasahan namin ang iyong pahintulot, n
 ## 4. Pampublikong impormasyon
 
 Ang iyong profile (handle, display name, avatar, bio, petsa ng pagsali, bilang ng mga post, follower, mga account na sinusundan, at mga natanggap na like), ang iyong mga post, at ang iyong mga komento ay pampubliko. Kahit sino ang makakita nito, kasama ang mga walang account; maaaring i-index ito ng mga search engine; at maaaring ipakita ng ibang mga platform ang mga link preview nito. Pampubliko ang palayaw sa komento ng isang bisita. Hindi kailanman ipinapakita ang mga code na nagmula sa mga IP address at browser identifier.
+
+Hindi pampubliko ang mga post na ginawa mong ikaw lang ang makakakita: ikaw lang ang nakakakita sa mga ito, at hindi pampublikong maa-access ang mga larawan at audio nito habang ganoon ang setting.
 
 ## 5. Mga Cookie
 

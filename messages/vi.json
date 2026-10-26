@@ -373,6 +373,8 @@
       "delete": "Xóa",
       "edit": "Chỉnh sửa",
       "like": "Thích",
+      "makePrivate": "Chỉ mình tôi xem được",
+      "makePublic": "Đặt công khai",
       "more": "Thêm tùy chọn",
       "reply": "Trả lời",
       "report": "Báo cáo",
@@ -421,7 +423,9 @@
       "preparing": {
         "body": "Nội dung sẽ xuất hiện ở đây trong chốc lát.",
         "title": "Đang chuẩn bị bài viết này"
-      }
+      },
+      "private": "Chỉ mình tôi",
+      "privateNote": "Chỉ bạn xem được bài viết này. Người khác có thể mở khi bạn đặt công khai."
     },
     "report": {
       "done": "Cảm ơn bạn. Chúng tôi sẽ xem xét.",
@@ -461,6 +465,9 @@
       "next": "Hình ảnh tiếp theo",
       "previous": "Hình ảnh trước",
       "zoom": "Thu phóng"
+    },
+    "visibility": {
+      "failed": "Không thể thay đổi người xem được bài viết này. Vui lòng thử lại."
     }
   },
   "status": {

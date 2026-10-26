@@ -62,6 +62,7 @@ export async function listNotifications(db: Db, userId: string, after: Date | nu
       .where("parent.author_id", "=", userId)
       .where("p.author_id", "<>", userId)
       .where("p.status", "=", "active")
+      .where("p.visibility", "=", "public")
       .where("c.status", "=", "visible")
       .where((eb) => eb.or([eb("c.author_id", "is", null), eb("c.author_id", "<>", userId)]))
       .where("c.created_at", ">", since)

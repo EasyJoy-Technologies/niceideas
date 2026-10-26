@@ -1,4 +1,4 @@
-> **Resumen.** Solo recopilamos lo necesario para operar niceideas: su perfil, lo que publica y datos técnicos limitados para mantener el Servicio seguro. Sus publicaciones son públicas. No vendemos información personal, no mostramos anuncios ni usamos rastreadores externos. Puede eliminar publicaciones en cualquier momento y eliminar su cuenta eliminando su NiceMatrix ID. Escriba a support@nicematrix.ca ante cualquier pregunta o solicitud sobre privacidad.
+> **Resumen.** Solo recopilamos lo necesario para operar niceideas: su perfil, lo que publica y datos técnicos limitados para mantener el Servicio seguro. Sus publicaciones son públicas, salvo que las haga visibles solo para usted. No vendemos información personal, no mostramos anuncios ni usamos rastreadores externos. Puede eliminar publicaciones en cualquier momento y eliminar su cuenta eliminando su NiceMatrix ID. Escriba a support@nicematrix.ca ante cualquier pregunta o solicitud sobre privacidad.
 
 ## 1. Quiénes somos
 
@@ -44,6 +44,8 @@ Conforme a la legislación canadiense de privacidad, nos basamos en su consentim
 ## 4. Información pública
 
 Su perfil (identificador, nombre para mostrar, avatar, biografía, fecha de registro, número de publicaciones, seguidores, cuentas seguidas y "me gusta" recibidos), sus publicaciones y sus comentarios son públicos. Cualquier persona puede verlos, incluidas las personas sin cuenta; los motores de búsqueda pueden indexarlos; y otras plataformas pueden mostrar vistas previas de enlaces de ellos. El apodo en el comentario de un visitante es público. Los códigos derivados de direcciones IP e identificadores de navegador nunca se muestran.
+
+Las publicaciones que haga visibles solo para usted no son públicas: solo usted puede verlas, y sus imágenes y audios no son accesibles públicamente mientras sigan así.
 
 ## 5. Cookies
 

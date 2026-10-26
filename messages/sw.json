@@ -373,6 +373,8 @@
       "delete": "Futa",
       "edit": "Hariri",
       "like": "Penda",
+      "makePrivate": "Ifanye ionekane kwangu tu",
+      "makePublic": "Ifanye ya umma",
       "more": "Chaguo zaidi",
       "reply": "Jibu",
       "report": "Ripoti",
@@ -421,7 +423,9 @@
       "preparing": {
         "body": "Maudhui yataonekana hapa muda mfupi.",
         "title": "Chapisho hili linatayarishwa"
-      }
+      },
+      "private": "Mimi tu",
+      "privateNote": "Ni wewe tu unayeweza kuona chapisho hili. Wengine wataweza kulifungua utakapolifanya la umma."
     },
     "report": {
       "done": "Asante. Tutaikagua.",
@@ -461,6 +465,9 @@
       "next": "Picha inayofuata",
       "previous": "Picha iliyotangulia",
       "zoom": "Kuza"
+    },
+    "visibility": {
+      "failed": "Imeshindikana kubadilisha nani anaweza kuona chapisho hili. Tafadhali jaribu tena."
     }
   },
   "status": {

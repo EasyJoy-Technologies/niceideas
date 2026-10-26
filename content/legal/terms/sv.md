@@ -1,4 +1,4 @@
-> **Sammanfattning.** Du äger det du publicerar och ansvarar för det. Inlägg på niceideas är offentliga. Publicera inget olagligt eller skadligt, eller något du inte har rätt att dela. Du kan ta bort ett inlägg när som helst; borttagna inlägg raderas permanent efter 30 dagar. niceideas är kostnadsfritt och tillhandahålls i befintligt skick. Dessa Villkor regleras av lagarna i Alberta, Kanada. Denna sammanfattning är enbart för bekvämlighet; de fullständiga Villkoren nedan gäller.
+> **Sammanfattning.** Du äger det du publicerar och ansvarar för det. Inlägg på niceideas är offentliga om du inte gör dem synliga bara för dig. Publicera inget olagligt eller skadligt, eller något du inte har rätt att dela. Du kan ta bort ett inlägg när som helst; borttagna inlägg raderas permanent efter 30 dagar. niceideas är kostnadsfritt och tillhandahålls i befintligt skick. Dessa Villkor regleras av lagarna i Alberta, Kanada. Denna sammanfattning är enbart för bekvämlighet; de fullständiga Villkoren nedan gäller.
 
 ## 1. Om dessa Villkor
 
@@ -26,13 +26,15 @@ Genom att använda Tjänsten, inklusive att visa, gilla eller kommentera utan ko
 
 ## 4. Offentligt innehåll och länkar
 
-4.1 Inlägg du publicerar är offentliga. De kan visas på din profil, i flöden, på sidan Upptäck och i sökresultat, och vem som helst med länken kan öppna dem, med eller utan konto. Sökmotorer och andra plattformar kan också visa offentliga sidor och länkförhandsvisningar.
+4.1 Inlägg du publicerar är offentliga (om du inte gör dem synliga bara för dig, se 4.5). De kan visas på din profil, i flöden, på sidan Upptäck och i sökresultat, och vem som helst med länken kan öppna dem, med eller utan konto. Sökmotorer och andra plattformar kan också visa offentliga sidor och länkförhandsvisningar.
 
 4.2 Kommentarer är offentliga och visas under inlägget. Besökare utan konto kan gilla inlägg och kommentera under ett valfritt smeknamn.
 
 4.3 Publicera inget som du vill hålla privat. När något blivit offentligt kan andra kopiera eller spara det innan du tar bort det, och vi kan inte återkalla sådana kopior.
 
 4.4 För besökare vars anslutning kommer från Fastlandskina är endast enskilda delade inläggssidor samt gilla-markeringar och kommentarer på dem tillgängliga; andra sidor är det inte. Detta speglar hur Tjänsten för närvarande erbjuds och kan ändras.
+
+4.5 Du kan när som helst göra vilket som helst av dina inlägg synligt bara för dig, och offentligt igen. Så länge ett inlägg bara är synligt för dig visas det inte för andra någonstans i Tjänsten och länken öppnas bara för dig; kopior som andra gjorde medan det var offentligt påverkas inte (se 4.3).
 
 ## 5. Ditt innehåll
 

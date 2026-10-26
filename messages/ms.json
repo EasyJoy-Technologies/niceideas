@@ -373,6 +373,8 @@
       "delete": "Padam",
       "edit": "Sunting",
       "like": "Suka",
+      "makePrivate": "Jadikan hanya kelihatan kepada saya",
+      "makePublic": "Jadikan awam",
       "more": "Lagi pilihan",
       "reply": "Balas",
       "report": "Laporkan",
@@ -421,7 +423,9 @@
       "preparing": {
         "body": "Kandungan akan dipaparkan di sini sebentar lagi.",
         "title": "Menyediakan siaran ini"
-      }
+      },
+      "private": "Saya sahaja",
+      "privateNote": "Hanya anda yang boleh melihat siaran ini. Orang lain boleh membukanya selepas anda menjadikannya awam."
     },
     "report": {
       "done": "Terima kasih. Kami akan menyemaknya.",
@@ -461,6 +465,9 @@
       "next": "Imej seterusnya",
       "previous": "Imej sebelumnya",
       "zoom": "Zum"
+    },
+    "visibility": {
+      "failed": "Tidak dapat menukar siapa yang boleh melihat siaran ini. Sila cuba lagi."
     }
   },
   "status": {

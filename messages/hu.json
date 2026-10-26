@@ -373,6 +373,8 @@
       "delete": "Törlés",
       "edit": "Szerkesztés",
       "like": "Tetszik",
+      "makePrivate": "Csak számomra látható",
+      "makePublic": "Nyilvánossá tétel",
       "more": "További lehetőségek",
       "reply": "Válasz",
       "report": "Jelentés",
@@ -421,7 +423,9 @@
       "preparing": {
         "body": "A tartalom hamarosan megjelenik itt.",
         "title": "A bejegyzés előkészítése"
-      }
+      },
+      "private": "Csak én",
+      "privateNote": "Ezt a bejegyzést csak Ön látja. Mások akkor nyithatják meg, ha nyilvánossá teszi."
     },
     "report": {
       "done": "Köszönjük. Megvizsgáljuk.",
@@ -461,6 +465,9 @@
       "next": "Következő kép",
       "previous": "Előző kép",
       "zoom": "Nagyítás"
+    },
+    "visibility": {
+      "failed": "Nem sikerült módosítani, ki láthatja ezt a bejegyzést. Próbálja újra."
     }
   },
   "status": {

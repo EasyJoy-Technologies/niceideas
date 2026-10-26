@@ -3,6 +3,7 @@ import { findPostById, listSharesUsingRef, lockPost, updatePost } from "@/server
 import { findRevision, linkRevisionMedia, listRevisionMediaIds } from "@/server/db/repos/revisions";
 import { isSourceDocument, type StoredDocument } from "@/server/documents/stored";
 import { lockAuthor } from "@/server/accounts/author-gate";
+import { isPublicLive } from "@/server/posts/visibility";
 import { finishPublication, NO_PROJECTION, projectMediaPublic, recordPublication } from "@/server/media/publication";
 import { derivedFields } from "@/server/posts/derived-fields";
 import type { MediaStores } from "@/server/storage/types";
@@ -36,7 +37,7 @@ async function refreshOnce(rt: ShareMediaRuntime, postId: string, reportFailed: 
   const resolved = await resolveShareMedia(rt.db, post.author_id, doc);
   const linked = new Set(await listRevisionMediaIds(rt.db, rev.id));
   const added = resolved.media.filter((m) => !linked.has(m.id));
-  const projection = post.status === "active" ? await projectMediaPublic(rt, added) : NO_PROJECTION;
+  const projection = isPublicLive(post) ? await projectMediaPublic(rt, added) : NO_PROJECTION;
   let touched: string[] = [];
   try {
     return await rt.db.transaction().execute(async (trx) => {
@@ -46,7 +47,7 @@ async function refreshOnce(rt: ShareMediaRuntime, postId: string, reportFailed: 
       if (!locked || author === "gone") return "done";
       if (locked.current_revision_id !== rev.id) return "content_changed";
       await linkRevisionMedia(trx, rev.id, added.map((m) => m.id));
-      touched = await recordPublication(trx, projection, locked.status === "active" && author === "active" ? added.map((m) => m.id) : []);
+      touched = await recordPublication(trx, projection, isPublicLive(locked) && author === "active" ? added.map((m) => m.id) : []);
       const updated = await updatePost(trx, postId, { ...derivedFields(doc, locked, resolved), media_state: resolved.state });
       const failed = resolved.failed.filter((f) => reportFailed.some((r) => r.ref === f.ref));
       await queueMediaEvents(trx, updated, { before: locked.media_state, failed });

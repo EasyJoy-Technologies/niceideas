@@ -373,6 +373,8 @@
       "delete": "Hapus",
       "edit": "Edit",
       "like": "Suka",
+      "makePrivate": "Jadikan hanya terlihat oleh saya",
+      "makePublic": "Jadikan publik",
       "more": "Opsi lainnya",
       "reply": "Balas",
       "report": "Laporkan",
@@ -421,7 +423,9 @@
       "preparing": {
         "body": "Konten akan muncul di sini sebentar lagi.",
         "title": "Menyiapkan postingan ini"
-      }
+      },
+      "private": "Hanya saya",
+      "privateNote": "Hanya Anda yang dapat melihat postingan ini. Orang lain dapat membukanya setelah Anda menjadikannya publik."
     },
     "report": {
       "done": "Terima kasih. Kami akan meninjaunya.",
@@ -461,6 +465,9 @@
       "next": "Gambar berikutnya",
       "previous": "Gambar sebelumnya",
       "zoom": "Perbesar"
+    },
+    "visibility": {
+      "failed": "Tidak dapat mengubah siapa yang bisa melihat postingan ini. Silakan coba lagi."
     }
   },
   "status": {

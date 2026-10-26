@@ -5,6 +5,7 @@ import { findProfile } from "@/server/db/repos/profiles";
 import { findRevision } from "@/server/db/repos/revisions";
 import { parseStoredDocument, type StoredDocument } from "@/server/documents/stored";
 import { SLUG_PATTERN } from "@/server/posts/slug";
+import { canSee } from "@/server/posts/visibility";
 import { loadDocumentMedia, type DocumentMedia } from "./document-media";
 
 export type SharePost = DocumentMedia & {
@@ -22,12 +23,14 @@ export type ShareLoad =
 
 /**
  * Active posts are shown; a just-shared post is `preparing`; everything else (and every post of an
- * account being deleted) is gone (410) until purged (then 404).
+ * account being deleted) is gone (410) until purged (then 404). Private posts only to their author
+ * (`viewerId`, posts/visibility.ts); to everyone else they do not exist.
  */
-export async function loadSharePost(db: Db, slug: string): Promise<ShareLoad> {
+export async function loadSharePost(db: Db, slug: string, viewerId: string | null = null): Promise<ShareLoad> {
   if (!SLUG_PATTERN.test(slug)) return { state: "not_found" };
   const post = await findPostBySlug(db, slug);
-  if (!post) return { state: "not_found" };
+  // Private posts: nonexistent to everyone but their author, and once offline to the author too (no "deleted" / "removed" hint).
+  if (!post || (post.visibility === "private" && (!canSee(post, viewerId) || (post.status !== "active" && post.status !== "preparing")))) return { state: "not_found" };
   if (post.status !== "active" && post.status !== "preparing") return { state: "gone", reason: post.status === "removed" ? "removed" : "withdrawn" };
   // post.author_id references profile (FK); a missing row means the account is being deleted.
   const author = await findProfile(db, post.author_id);

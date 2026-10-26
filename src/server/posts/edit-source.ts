@@ -3,24 +3,24 @@ import { withTitleInText } from "@/server/documents/short-title";
 import type { SourceBlock } from "@/server/documents/source-schema";
 import type { StoredDocument } from "@/server/documents/stored";
 import type { DocBlock } from "@/server/documents/schema";
-import { publicUrl } from "@/server/media/keys";
+import { mediaUrlFor, type MediaUrl } from "./media-url";
 import { blockMarkdown, type PmNode } from "./editor-markdown";
 import { markdownToEditor, plainToEditor } from "./markdown-editor";
 import { linesToEditor, runsToEditor } from "./source-editor";
 
 /** Kept details of an existing media block (caption / description / audio title). */
 export type MediaMeta = { alt?: string; caption?: string; title?: string };
-/** An already stored image / audio shown in the editor (thumbnail or player from the public store). */
+/** An already stored image / audio shown in the editor (thumbnail or player; private posts: author-only URLs). */
 export type EditMedia = { mediaId: string; kind: "image" | "audio"; url: string; meta: MediaMeta };
 
 /** What the edit page opens with: the editor document, short-post media (tray), and the no-JS text. */
 export type EditPrefill = { mode: "short" | "long"; title: string; doc: PmNode; tray: EditMedia[]; text: string; keep: Pick<EditMedia, "mediaId" | "kind">[] };
 
-function mediaOf(m: Media | undefined, meta: MediaMeta): EditMedia | null {
+function mediaOf(m: Media | undefined, meta: MediaMeta, url: MediaUrl): EditMedia | null {
   if (!m) return null;
   const v = m.variants;
   const key = v.kind === "image" ? (v.webp[0] ?? v.fallback).key : v.original.key;
-  return { mediaId: m.id, kind: m.kind === "audio" ? "audio" : "image", url: publicUrl(key), meta };
+  return { mediaId: m.id, kind: m.kind === "audio" ? "audio" : "image", url: url(key), meta };
 }
 
 const metaOf = (b: { alt?: string; caption?: string; title?: string }): MediaMeta =>
@@ -32,7 +32,7 @@ const todo = (items: { checked: boolean; content: PmNode[] }[]): PmNode => ({
 });
 
 /** One document block → editor nodes or a media item; null for blocks without content (pending media). */
-function blockNodes(b: DocBlock | SourceBlock, media: ReadonlyMap<string, Media>): PmNode[] | EditMedia | null {
+function blockNodes(b: DocBlock | SourceBlock, media: ReadonlyMap<string, Media>, url: MediaUrl): PmNode[] | EditMedia | null {
   switch (b.type) {
     case "text":
       return "format" in b && b.format === "markdown" ? markdownToEditor(b.text) : plainToEditor(b.text);
@@ -42,8 +42,8 @@ function blockNodes(b: DocBlock | SourceBlock, media: ReadonlyMap<string, Media>
       return [todo(b.items.map((i) => ({ checked: i.checked, content: "runs" in i ? runsToEditor(i.runs) : i.text ? [{ type: "text", text: i.text }] : [] })))];
     case "image":
     case "audio": {
-      if ("mediaId" in b) return mediaOf(media.get(b.mediaId), metaOf(b));
-      return b.state === "ready" ? mediaOf(media.get(b.ref), metaOf(b)) : null;
+      if ("mediaId" in b) return mediaOf(media.get(b.mediaId), metaOf(b), url);
+      return b.state === "ready" ? mediaOf(media.get(b.ref), metaOf(b), url) : null;
     }
   }
 }
@@ -53,14 +53,14 @@ function blockNodes(b: DocBlock | SourceBlock, media: ReadonlyMap<string, Media>
  * Short posts keep their media under the text (tray) and their title as the bold first line;
  * articles have them in place.
  */
-export function editPrefill(post: Pick<Post, "kind">, doc: StoredDocument, media: ReadonlyMap<string, Media>): EditPrefill {
+export function editPrefill(post: Pick<Post, "kind" | "slug" | "visibility">, doc: StoredDocument, media: ReadonlyMap<string, Media>): EditPrefill {
   const mode = post.kind === "short" ? "short" : "long";
   const content: PmNode[] = [];
   const shown = withTitleInText(post.kind, doc);
   const tray: EditMedia[] = [];
   const placed: EditMedia[] = [];
   for (const b of shown.blocks) {
-    const r = blockNodes(b, media);
+    const r = blockNodes(b, media, mediaUrlFor(post));
     if (!r) continue;
     if (Array.isArray(r)) content.push(...r);
     else if (mode === "short") tray.push(r);

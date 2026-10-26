@@ -1,4 +1,4 @@
-> **Muhtasari.** Unamiliki kile unachochapisha, na unawajibika kwa hilo. Machapisho kwenye niceideas ni ya umma. Usichapishe chochote kisicho halali au chenye madhara, au chochote ambacho hauna haki ya kukishiriki. Unaweza kufuta chapisho wakati wowote; machapisho yaliyofutwa yanafutwa kabisa baada ya siku 30. niceideas ni bure na inatolewa kama ilivyo. Masharti haya yanaongozwa na sheria za Alberta, Kanada. Muhtasari huu ni kwa urahisi tu; Masharti kamili yaliyo hapa chini ndiyo yanayotumika.
+> **Muhtasari.** Unamiliki kile unachochapisha, na unawajibika kwa hilo. Machapisho kwenye niceideas ni ya umma isipokuwa ukiyafanya yaonekane kwako tu. Usichapishe chochote kisicho halali au chenye madhara, au chochote ambacho hauna haki ya kukishiriki. Unaweza kufuta chapisho wakati wowote; machapisho yaliyofutwa yanafutwa kabisa baada ya siku 30. niceideas ni bure na inatolewa kama ilivyo. Masharti haya yanaongozwa na sheria za Alberta, Kanada. Muhtasari huu ni kwa urahisi tu; Masharti kamili yaliyo hapa chini ndiyo yanayotumika.
 
 ## 1. Kuhusu Masharti haya
 
@@ -26,13 +26,15 @@ Kwa kutumia Huduma, ikiwa ni pamoja na kutazama, kupenda au kutoa maoni bila aka
 
 ## 4. Maudhui ya umma na viungo
 
-4.1 Machapisho unayochapisha ni ya umma. Yanaweza kuonekana kwenye wasifu wako, kwenye mijadala ya wakati, kwenye ukurasa wa Gundua na katika matokeo ya utafutaji, na mtu yeyote aliye na kiungo anaweza kuyafungua, akiwa na akaunti au bila. Mitambo ya utafutaji na majukwaa mengine yanaweza pia kuonyesha kurasa za umma na hakikisho za viungo.
+4.1 Machapisho unayochapisha ni ya umma (isipokuwa ukiyafanya yaonekane kwako tu, angalia 4.5). Yanaweza kuonekana kwenye wasifu wako, kwenye mijadala ya wakati, kwenye ukurasa wa Gundua na katika matokeo ya utafutaji, na mtu yeyote aliye na kiungo anaweza kuyafungua, akiwa na akaunti au bila. Mitambo ya utafutaji na majukwaa mengine yanaweza pia kuonyesha kurasa za umma na hakikisho za viungo.
 
 4.2 Maoni ni ya umma na yanaonekana chini ya chapisho. Watembeleaji wasio na akaunti wanaweza kupenda machapisho na kutoa maoni chini ya jina la utani la hiari.
 
 4.3 Usichapishe chochote unachotaka kukibaki faragha. Mara kitu kinapokuwa cha umma, wengine wanaweza kukinakili au kukihifadhi kabla hujakifuta, na hatuwezi kuzirejesha nakala hizo.
 
 4.4 Kwa watembeleaji ambao muunganisho wao unatoka China bara, kurasa za machapisho binafsi yaliyoshirikiwa na mapendekezo na maoni juu yake pekee ndizo zinazopatikana; kurasa nyingine hazipatikani. Hii inaonyesha jinsi Huduma inavyotolewa kwa sasa na inaweza kubadilika.
+
+4.5 Unaweza kufanya chapisho lako lolote lionekane kwako tu, na kulifanya la umma tena, wakati wowote. Wakati chapisho linaonekana kwako tu, halionyeshwi kwa wengine popote kwenye Huduma na kiungo chake hufunguka kwako peke yako; nakala ambazo wengine walitengeneza lilipokuwa la umma haziathiriwi (angalia 4.3).
 
 ## 5. Maudhui yako
 

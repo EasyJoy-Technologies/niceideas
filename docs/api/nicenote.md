@@ -69,9 +69,20 @@ shares with others must **not** carry the parameter. Other values are dropped wi
     `failed` (a new grant queues it again); permanent ones (`too_large`, `unsupported_format`, `decode_failed`,
     `transcode_failed`) leave it `rejected` and that owner's ref is never fetched again.
 - **Delete** by the backend: `unpublished`, page 410, media withdrawn, purged after 30 days; no event back.
+- **Visibility** (v1.0.75, Xianglin 2026-10-26): `PATCH /posts/{id}` accepts `visibility: "public" | "private"` (with or
+  without the other settings); every `post` object carries `visibility`. Private = the author only: page, share card, likes,
+  comments and reports answer 404 to everyone else (as if the post did not exist; a deleted private post stays 404),
+  it leaves timelines, Discover, search and other people's view of the profile, and its media leave the public store and
+  the CDN edge. The author, signed in on the web, still sees it ("only you" note, media through
+  `/p/{slug}/media/{key}`, author-only, byte ranges). Public again: media move back before the change commits, the post
+  returns to its old place (published_at unchanged), nobody is notified. Allowed for `preparing`, `active` and
+  `author_deleting` posts; `removed` → 409 `post.removed`, `unpublished` → 409 `post.unpublished`; same value → no-op.
+  Pushes, moderation (remove / restore) and account deletion never change it. A change made by the backend sends no
+  event back; a change the author makes on the web sends `visibility_changed` with `details.visibility`.
 - **Events to the backend** (`outbox`, delivered by the worker, signed, `X-NM-Service: niceideas`; retried after 1 min,
   5 min, 30 min, then hourly for 24 h; 400 / 404 / 409 / 410 / 413 / 422 are not retried): `user_registered` on first
   profile (existing users were queued by migration 0014); post events `unpublished` (author deleted on the web),
+  `visibility_changed` (author made the post private / public on the web, `details.visibility`, v1.0.75),
   `removed` / `restored` (moderation), `media_failed` (`details.refs` + `reason`, per reason; split into several events
   so each stays ≤ 7000 bytes, v1.0.71) and `media_ready` (the post's media became complete — by the worker or by a push).
 - **Media in the public store** (v1.0.71): media are public exactly while the current revision of an active post of an

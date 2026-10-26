@@ -1,4 +1,4 @@
-> **Muhtasari.** Tunakusanya tu kile tunachohitaji kuendesha niceideas: wasifu wako, kile unachochapisha, na data ndogo ya kiufundi kuilinda Huduma. Machapisho yako ni ya umma. Hatuuzi taarifa binafsi, hatuonyeshi matangazo au kutumia vifuatiliaji vya nje. Unaweza kufuta machapisho wakati wowote na kufuta akaunti yako kwa kufuta NiceMatrix ID yako. Andika kwa support@nicematrix.ca kwa swali lolote la faragha au ombi.
+> **Muhtasari.** Tunakusanya tu kile tunachohitaji kuendesha niceideas: wasifu wako, kile unachochapisha, na data ndogo ya kiufundi kuilinda Huduma. Machapisho yako ni ya umma isipokuwa ukiyafanya yaonekane kwako tu. Hatuuzi taarifa binafsi, hatuonyeshi matangazo au kutumia vifuatiliaji vya nje. Unaweza kufuta machapisho wakati wowote na kufuta akaunti yako kwa kufuta NiceMatrix ID yako. Andika kwa support@nicematrix.ca kwa swali lolote la faragha au ombi.
 
 ## 1. Sisi ni nani
 
@@ -44,6 +44,8 @@ Chini ya sheria ya faragha ya Kanada, tunategemea ridhaa yako, unayoitoa kwa kut
 ## 4. Taarifa za umma
 
 Wasifu wako (jina la mtumiaji, jina la kuonyesha, picha, maelezo mafupi, tarehe ya kujiunga, idadi ya machapisho, wafuasi, akaunti unazofuata na mapendo uliyopokea), machapisho yako na maoni yako ni ya umma. Mtu yeyote anaweza kuyaona, ikiwa ni pamoja na watu wasio na akaunti; mitambo ya utafutaji inaweza kuyaorodhesha; na majukwaa mengine yanaweza kuonyesha hakikisho za viungo vyake. Jina la utani kwenye maoni ya mtembeleaji ni la umma. Misimbo inayotokana na anwani za IP na vitambulisho vya kivinjari haionyeshwi kamwe.
+
+Machapisho unayoyafanya yaonekane kwako tu si ya umma: ni wewe tu unayeweza kuyaona, na picha na sauti zake hazipatikani kwa umma kwa muda wote yanapobaki hivyo.
 
 ## 5. Vidakuzi
 

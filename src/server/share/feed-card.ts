@@ -2,7 +2,7 @@ import type { Media } from "@/server/db/schema";
 import { withTitleInText } from "@/server/documents/short-title";
 import { blockMediaKey, withBlocks, type AnyBlock } from "@/server/documents/stored";
 import { cardTitle } from "./card";
-import { publicUrl } from "@/server/media/keys";
+import { mediaUrlFor, type MediaUrl } from "@/server/posts/media-url";
 import { renderDocumentHtml } from "@/server/render/document-html";
 import { escapeHtml } from "@/server/render/escape";
 import { responsivePicture, zoomLink } from "@/server/render/media-html";
@@ -16,9 +16,9 @@ import { badgeAppName, sourceBadge } from "./sources";
 const COVER_SIZES = "(min-width: 48rem) 37rem, 100vw";
 const NO_MEDIA: ReadonlyMap<string, Media> = new Map();
 
-function coverImage(media: Media): string {
+function coverImage(media: Media, url: MediaUrl): string {
   if (media.variants.kind !== "image") return "";
-  return responsivePicture(media.variants, COVER_SIZES, 'alt="" loading="lazy"', publicUrl);
+  return responsivePicture(media.variants, COVER_SIZES, 'alt="" loading="lazy"', url);
 }
 
 function articleBlock(ctx: ChromeContext, item: FeedItem): string {
@@ -27,7 +27,7 @@ function articleBlock(ctx: ChromeContext, item: FeedItem): string {
   const facts = [t("feed.readingTime", { minutes: item.readingMinutes })];
   if (item.images) facts.push(t("feed.images", { count: item.images }));
   if (item.audios) facts.push(t("feed.audios", { count: item.audios }));
-  const cover = item.cover ? coverImage(item.cover) : "";
+  const cover = item.cover ? coverImage(item.cover, mediaUrlFor(post)) : "";
   // The "Article" label shares the facts line (one row less per card).
   return (
     `<a class="ni-fc-article" href="/p/${post.slug}">${cover}<div class="ni-fc-t">` +
@@ -41,6 +41,7 @@ function articleBlock(ctx: ChromeContext, item: FeedItem): string {
  * image viewer) and audio players, in document order (compose v2 design).
  */
 function shortBlock(item: FeedItem): string {
+  const url = mediaUrlFor(item.post);
   const key = (b: AnyBlock) => blockMediaKey(b) ?? "";
   const text = withBlocks(withTitleInText("short", item.document), (b) => b.type === "text" || b.type === "rich" || b.type === "todo");
   const thumbs = (item.document.blocks as AnyBlock[])
@@ -48,15 +49,19 @@ function shortBlock(item: FeedItem): string {
     .flatMap((m) => (m && m.variants.kind === "image" ? [m.variants] : []))
     .map((v) => {
       const small = v.webp[0] ?? v.fallback;
-      const thumb = `<img src="${publicUrl(small.key)}" width="${small.width}" height="${small.height}" alt="" loading="lazy" decoding="async">`;
-      return zoomLink(v, thumb, publicUrl, { cropped: true });
+      const thumb = `<img src="${url(small.key)}" width="${small.width}" height="${small.height}" alt="" loading="lazy" decoding="async">`;
+      return zoomLink(v, thumb, url, { cropped: true });
     })
     .join("");
   const audios = withBlocks(item.document, (b) => b.type === "audio" && item.media.has(key(b)));
-  const body = text.blocks.length ? renderDocumentHtml(text, NO_MEDIA, publicUrl) : "";
-  const media = (thumbs ? `<div class="ni-fc-thumbs">${thumbs}</div>` : "") + (audios.blocks.length ? renderDocumentHtml(audios, item.media, publicUrl) : "");
+  const body = text.blocks.length ? renderDocumentHtml(text, NO_MEDIA, url) : "";
+  const media = (thumbs ? `<div class="ni-fc-thumbs">${thumbs}</div>` : "") + (audios.blocks.length ? renderDocumentHtml(audios, item.media, url) : "");
   return `<div class="ni-body ni-fc-text">${body}${media}</div>`;
 }
+
+/** "Only you" marker of a private post in the meta line. */
+const privateMark = (ctx: ChromeContext, post: FeedItem["post"]) =>
+  post.visibility === "private" ? `<i class="ni-dot"></i><span class="ni-private">${icon("lock")}${escapeHtml(ctx.intl.t("share.post.private"))}</span>` : "";
 
 /**
  * Timeline / profile card (approved v2 design): author row (avatar, name / @handle · time,
@@ -79,13 +84,15 @@ export function feedCard(ctx: ChromeContext, item: FeedItem): string {
   const head =
     `<div class="ni-fc-head"><a href="${href}" tabindex="-1" aria-hidden="true">${avatarHtml(name, post.author_avatar, 42)}</a><div class="ni-who">` +
     `<a class="ni-name" href="${href}">${escapeHtml(name)}</a><span class="ni-meta"><span class="ni-handle">@${escapeHtml(post.author_handle)}</span><i class="ni-dot"></i>` +
-    `<a href="/p/${post.slug}"><time datetime="${at.toISOString()}" data-rel>${escapeHtml(ctx.intl.format.dateTime(at, { dateStyle: "medium" }))}</time></a></span></div>${source}</div>`;
+    `<a href="/p/${post.slug}"><time datetime="${at.toISOString()}" data-rel>${escapeHtml(ctx.intl.format.dateTime(at, { dateStyle: "medium" }))}</time></a>${privateMark(ctx, post)}</span></div>${source}</div>`;
   const body = post.kind === "short" ? shortBlock(item) : articleBlock(ctx, item);
+  // Private posts (only on their author's own profile) take no likes and are not shared.
+  const open = post.visibility === "public";
   const actions =
-    `<div class="ni-actions ni-fc-actions"><button type="button" class="ni-act" data-like="post" data-id="${post.slug}" aria-pressed="${item.liked}" aria-label="${escapeHtml(t("share.action.like"))}">` +
-    `${icon("heart")}<span>${post.like_count}</span></button>` +
+    `<div class="ni-actions ni-fc-actions">${open ? `<button type="button" class="ni-act" data-like="post" data-id="${post.slug}" aria-pressed="${item.liked}" aria-label="${escapeHtml(t("share.action.like"))}">` +
+    `${icon("heart")}<span>${post.like_count}</span></button>` : ""}` +
     `<a class="ni-act" href="/p/${post.slug}#comments" aria-label="${escapeHtml(t("share.comments.title"))}">${icon("comment")}<span>${post.comment_count}</span></a>` +
-    `<button type="button" class="ni-act ni-share" data-url="/p/${post.slug}" hidden>${icon("share")}${escapeHtml(t("share.action.share"))}</button>` +
+    `${open ? `<button type="button" class="ni-act ni-share" data-url="/p/${post.slug}" hidden>${icon("share")}${escapeHtml(t("share.action.share"))}</button>` : ""}` +
     `${isOwnPost(ctx, post) ? `<span class="ni-sp"></span>${ownPostMenu(ctx, post, ctx.path)}` : ""}</div>`;
   return `<article class="ni-card ni-fc">${head}${body}${actions}</article>`;
 }

@@ -25,7 +25,8 @@ function commentItem(ctx: ChromeContext, post: Post, c: CommentRow, liked: boole
   const avatar = anonymous || !c.author_avatar
     ? `<span class="ni-cmt-ava" aria-hidden="true">${icon("person")}</span>`
     : `<img class="ni-cmt-ava" src="${escapeHtml(c.author_avatar)}" width="36" height="36" alt="">`;
-  const actions =
+  // Private posts take no interactions: their comments are read-only.
+  const actions = post.visibility === "private" ? "" :
     `<div class="ni-cmt-actions"><button type="button" class="ni-act" data-like="comment" data-id="${c.id}" aria-pressed="${liked}" aria-label="${escapeHtml(t("share.action.like"))}">` +
     `${icon("heart")}<span>${c.like_count || ""}</span></button>` +
     (c.parent_id ? "" : `<button type="button" class="ni-act" data-reply="${c.id}" data-name="${escapeHtml(name)}">${icon("comment")}${escapeHtml(t("share.action.reply"))}</button>`) +
@@ -43,6 +44,7 @@ function thread(ctx: ChromeContext, post: Post, th: CommentThread, data: PageInt
 
 function composer(ctx: ChromeContext, post: Post): string {
   const { t } = ctx.intl;
+  if (post.visibility === "private") return "";
   if (post.comments_mode !== "open") {
     const key = post.comments_mode === "closed" ? "share.comments.closed" : "share.comments.signedInOnly";
     return `<p class="ni-note">${escapeHtml(t(key))}</p>`;
