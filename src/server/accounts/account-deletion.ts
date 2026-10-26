@@ -1,4 +1,4 @@
-import { queueMediaPurge, queuePostPurge } from "@/server/cdn/purge-queue";
+import { queueMediaPurge, queuePostPurge, queueReturningMediaPurge } from "@/server/cdn/purge-queue";
 import type { Db } from "@/server/db/client";
 import {
   deleteProfileCascade,
@@ -67,7 +67,9 @@ export async function cancelCoolingOff(rt: DeletionRuntime, userId: string): Pro
       if (!(await lockProfileForStatusChange(trx, userId)) || (await isDeletedAccount(trx, userId))) return;
       await setProfileStatus(trx, userId, "active");
       // Includes posts that first got content during the cooling-off period.
-      touched = await recordPublication(trx, projection, await currentMediaIds(trx, await switchAuthorPosts(trx, userId, "author_deleting", "active"), true));
+      const live = await currentMediaIds(trx, await switchAuthorPosts(trx, userId, "author_deleting", "active"), true);
+      touched = await recordPublication(trx, projection, live);
+      await queueReturningMediaPurge(trx, live);
     });
   } finally {
     await finishPublication(rt, projection, touched);

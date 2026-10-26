@@ -8,7 +8,7 @@ import { findMediaByIds } from "@/server/db/repos/media";
 import { lockAuthor, readAuthorState } from "@/server/accounts/author-gate";
 import { finishPublication, NO_PROJECTION, projectMediaPublic, queueVisibilityCheck, recordPublication } from "@/server/media/publication";
 import { checkMediaVisibility } from "@/server/media/visibility";
-import { queuePostPurge } from "@/server/cdn/purge-queue";
+import { queuePostPurge, queueReturningMediaPurge } from "@/server/cdn/purge-queue";
 import { queuePostEvent } from "@/server/nicenote/post-events";
 import type { MediaStores } from "@/server/storage/types";
 
@@ -101,7 +101,9 @@ export async function restorePost(rt: ModerationRuntime, op: Operator, slug: str
       const status = author === "active" ? "active" : "author_deleting";
       await updatePost(trx, post.id, { status, status_changed_at: new Date(), status_reason: null, purge_after: null });
       // A removed post takes no content updates, so its media are the ones read above.
-      touched = await recordPublication(trx, projection, status === "active" && locked.visibility === "public" ? mediaIds : []);
+      const live = status === "active" && locked.visibility === "public" ? mediaIds : [];
+      touched = await recordPublication(trx, projection, live);
+      await queueReturningMediaPurge(trx, live);
       await recordModeration(trx, { action: "restore", actorId: op.actorId, reason: op.reason, postId: post.id });
       await queuePostEvent(trx, post, "restored");
     });

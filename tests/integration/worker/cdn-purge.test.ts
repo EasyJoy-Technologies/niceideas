@@ -8,8 +8,9 @@ import { runNextCdnPurge } from "@/server/cdn/purge-runner";
 import { resetConfigForTests } from "@/server/config/env";
 import { mediaKeys } from "@/server/media/keys";
 import { removePost } from "@/server/moderation/admin";
+import { setPostVisibility } from "@/server/posts/set-visibility";
 import { startAppContext } from "../../helpers/app-context";
-import { jpegWithExif } from "../../helpers/media-fixtures";
+import { jpegWithExif, smallPngWithAlpha } from "../../helpers/media-fixtures";
 import { deleteAs, publishAs, uploadAs } from "../../helpers/publish";
 
 /** F22: content taken offline is purged from the Cloudflare edge (fake Cloudflare API). */
@@ -118,6 +119,19 @@ describe("CDN purge (F22)", () => {
     await drain();
     await applyAccountEvent(rt, { eventId: "cdn-leaving-del", event: "deletion_completed", userId: "cdn-leaving", occurredAt: new Date().toISOString() });
     expect(await queued()).toContain(`https://site.test.example/p/${post.slug}/og/wide.jpg`);
+  });
+
+  it("a post made private purges cards and media; public again purges the media's cached 404s", async () => {
+    const mediaId = await uploadAs(ctx, "cdn-user", await smallPngWithAlpha());
+    const post = await publishAs(ctx, "cdn-user", { version: 1, blocks: [{ type: "image", mediaId }] });
+    const rt = { db: ctx.db, stores: ctx.stores, cacheControl: "x" };
+    const media = await ctx.db.selectFrom("media").selectAll().where("id", "=", mediaId).executeTakeFirstOrThrow();
+    const mediaUrls = mediaKeys(media).map((k) => `https://media.test.example/${k}`).sort();
+    await setPostVisibility(rt, post.id, "private");
+    expect(await queued()).toEqual([...mediaUrls, `https://site.test.example/p/${post.slug}/og/square.jpg`, `https://site.test.example/p/${post.slug}/og/wide.jpg`].sort());
+    await drain();
+    await setPostVisibility(rt, post.id, "public");
+    expect(await queued()).toEqual(mediaUrls);
   });
 
   it("nothing is queued without a token", async () => {

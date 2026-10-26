@@ -2,6 +2,7 @@ import { getConfig } from "@/server/config/env";
 import type { Db } from "@/server/db/client";
 import type { Media } from "@/server/db/schema";
 import { insertCdnPurges } from "@/server/db/repos/cdn-purge";
+import { findMediaByIds } from "@/server/db/repos/media";
 import { mediaKeys, publicUrl } from "@/server/media/keys";
 import { postUrl } from "@/server/posts/post-dto";
 import { OG_VARIANTS } from "@/server/share/og-image";
@@ -16,6 +17,15 @@ const enabled = () => !!getConfig().CLOUDFLARE_PURGE_TOKEN;
 export async function queueMediaPurge(trx: Db, media: Pick<Media, "variants">[]): Promise<void> {
   if (!enabled()) return;
   await insertCdnPurges(trx, media.flatMap((m) => mediaKeys(m).map(publicUrl)));
+}
+
+/**
+ * Media going back to the public store after being taken offline (post made public again, restored,
+ * account deletion cancelled): the edge may still hold the 404 it cached meanwhile.
+ */
+export async function queueReturningMediaPurge(trx: Db, mediaIds: string[]): Promise<void> {
+  if (!enabled() || mediaIds.length === 0) return;
+  await queueMediaPurge(trx, await findMediaByIds(trx, mediaIds));
 }
 
 /** Share-card images of posts that went offline (the page itself is cached for seconds only). */

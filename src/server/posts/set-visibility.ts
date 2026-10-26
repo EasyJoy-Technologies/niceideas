@@ -1,5 +1,5 @@
 import { lockAuthor, readAuthorState } from "@/server/accounts/author-gate";
-import { queuePostPurge } from "@/server/cdn/purge-queue";
+import { queuePostPurge, queueReturningMediaPurge } from "@/server/cdn/purge-queue";
 import type { Db } from "@/server/db/client";
 import type { Post, PostVisibility } from "@/server/db/schema";
 import { findMediaByIds } from "@/server/db/repos/media";
@@ -53,7 +53,9 @@ export async function setPostVisibility(
         await queueVisibilityCheck(trx, current);
         touched = current;
       } else {
-        touched = await recordPublication(trx, projection, post.status === "active" && author === "active" ? current : []);
+        const live = post.status === "active" && author === "active" ? current : [];
+        touched = await recordPublication(trx, projection, live);
+        await queueReturningMediaPurge(trx, live);
       }
       await onChanged?.(trx, updated);
       return { post: updated, changed: true };
