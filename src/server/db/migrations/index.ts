@@ -16,6 +16,7 @@ import * as m0014 from "./0014_share_worker";
 import * as m0015 from "./0015_work_notify";
 import * as m0016 from "./0016_post_edits";
 import * as m0017 from "./0017_account_deletion_fence";
+import * as m0018 from "./0018_media_reliability";
 
 /**
  * Static registry (bundler-friendly; no filesystem scanning at runtime).
@@ -39,6 +40,7 @@ const MIGRATIONS: Record<string, Migration> = {
   "0015_work_notify": m0015,
   "0016_post_edits": m0016,
   "0017_account_deletion_fence": m0017,
+  "0018_media_reliability": m0018,
 };
 
 export const migrationProvider: MigrationProvider = {

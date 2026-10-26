@@ -6,7 +6,7 @@ import { contentHash } from "@/server/documents/hash";
 import type { PostDocument } from "@/server/documents/schema";
 import { ApiError } from "@/server/http/errors";
 import { accountDeleting, assertAuthorActive, readAuthorState } from "@/server/accounts/author-gate";
-import { projectMediaPublic, recordMediaPublic, settlePublication, withdrawUnreferencedMedia } from "@/server/media/publication";
+import { finishPublication, projectMediaPublic, recordPublication, type Projection } from "@/server/media/publication";
 import type { MediaStores } from "@/server/storage/types";
 import { derivedFields } from "./derived-fields";
 import { resolveDocumentMedia } from "./media-refs";
@@ -38,37 +38,35 @@ export async function switchRevision(db: Db, stores: MediaStores, actorId: strin
   if ((await readAuthorState(db, before.author_id)) !== "active") throw accountDeleting();
   await assertCanCreateRevision(db, actorId);
   const media = await resolveDocumentMedia(db, before.author_id, document);
-  await projectMediaPublic(stores, media, opts.cacheControl);
-  const moved = media.map((m) => m.id);
-
-  const outcome = await commitSwitch(db, before, document, hash, media, opts).catch(async (err: unknown) => {
-    await settlePublication(db, stores, opts.cacheControl, { moved, live: [] }).catch((e) => console.error("[revision] media settle failed", before.id, e));
-    throw err;
-  });
-  // Unchanged after all (re-checked under the lock): the media moved for nothing go back.
-  if (!outcome.changed) await settlePublication(db, stores, opts.cacheControl, { moved, live: [] }).catch((e) => console.error("[revision] media settle failed", before.id, e));
-
-  // Media dropped by this change leave the public store (failures are retried by reconciliation).
-  const dropped = outcome.previousMedia.filter((id) => !moved.includes(id));
-  await withdrawUnreferencedMedia(db, stores, dropped).catch((e) => console.error("[revision] media withdrawal failed", outcome.post.id, e));
-  return { post: outcome.post, contentHash: hash, changed: outcome.changed };
+  const rt = { db, stores, cacheControl: opts.cacheControl };
+  const projection = await projectMediaPublic(rt, media);
+  let touched: string[] = [];
+  try {
+    const outcome = await commitSwitch(db, before, document, hash, media, projection, opts);
+    touched = outcome.touched;
+    return { post: outcome.post, contentHash: hash, changed: outcome.changed };
+  } finally {
+    // Unchanged or refused under the lock: the media moved for nothing go back; dropped ones leave.
+    await finishPublication(rt, projection, touched);
+  }
 }
 
 /** The switch itself, under the author lock then the post lock (author-gate.ts). */
-async function commitSwitch(db: Db, before: Post, document: PostDocument, hash: string, media: Media[], opts: SwitchOptions) {
+async function commitSwitch(db: Db, before: Post, document: PostDocument, hash: string, media: Media[], projection: Projection, opts: SwitchOptions) {
   return db.transaction().execute(async (trx) => {
     await assertAuthorActive(trx, before.author_id);
     const post = await lockPost(trx, before.id);
     if (!post) throw new ApiError("post.not_found", 404);
-    if (!opts.check(post)) return { post, changed: false, previousMedia: [] as string[] };
+    if (!opts.check(post)) return { post, changed: false, touched: [] as string[] };
     const prev = post.current_revision_id ? await findRevision(trx, post.current_revision_id) : undefined;
-    if (prev?.content_hash === hash) return { post, changed: false, previousMedia: [] as string[] };
+    if (prev?.content_hash === hash) return { post, changed: false, touched: [] as string[] };
 
     const rev = await insertRevision(trx, { postId: post.id, document, contentHash: hash, sourceUpdatedAt: opts.sourceUpdatedAt });
-    await linkRevisionMedia(trx, rev.id, media.map((m) => m.id));
-    await recordMediaPublic(trx, media.map((m) => m.id));
+    const ids = media.map((m) => m.id);
+    await linkRevisionMedia(trx, rev.id, ids);
+    const dropped = prev ? (await listRevisionMediaIds(trx, prev.id)).filter((id) => !ids.includes(id)) : [];
+    const touched = await recordPublication(trx, projection, ids, dropped);
     const updated = await updatePost(trx, post.id, { ...derivedFields(document, post), current_revision_id: rev.id, ...opts.extra(post) });
-    const previousMedia = prev ? await listRevisionMediaIds(trx, prev.id) : [];
-    return { post: updated, changed: true, previousMedia };
+    return { post: updated, changed: true, touched };
   });
 }

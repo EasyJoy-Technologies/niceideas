@@ -1,7 +1,7 @@
 import { createReadStream } from "node:fs";
 import { stat } from "node:fs/promises";
 import type { Readable } from "node:stream";
-import { CopyObjectCommand, DeleteObjectsCommand, GetObjectCommand, HeadObjectCommand, PutObjectCommand, S3Client } from "@aws-sdk/client-s3";
+import { CopyObjectCommand, DeleteObjectsCommand, GetObjectCommand, HeadObjectCommand, ListObjectsV2Command, PutObjectCommand, S3Client } from "@aws-sdk/client-s3";
 import { assertSafeKey, ObjectMissingError, type ObjectStore, type PutOptions } from "./types";
 
 /** S3-compatible store (Cloudflare R2). */
@@ -94,6 +94,17 @@ export class S3Store implements ObjectStore {
       );
       if (res.Errors?.length) throw new Error(`delete failed for ${res.Errors.length} objects in ${this.bucket}`);
     }
+  }
+
+  async listKeys(prefix: string): Promise<string[]> {
+    const keys: string[] = [];
+    let token: string | undefined;
+    do {
+      const res = await this.client.send(new ListObjectsV2Command({ Bucket: this.bucket, Prefix: prefix, ContinuationToken: token }));
+      for (const o of res.Contents ?? []) if (o.Key) keys.push(o.Key);
+      token = res.IsTruncated ? res.NextContinuationToken : undefined;
+    } while (token);
+    return keys;
   }
 }
 

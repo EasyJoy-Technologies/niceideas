@@ -1,10 +1,12 @@
 import type { Principal } from "@/server/auth/principal";
+import { getConfig } from "@/server/config/env";
 import type { Db } from "@/server/db/client";
 import type { Post } from "@/server/db/schema";
 import { lockPost, updatePost } from "@/server/db/repos/posts";
 import { listRevisionMediaIds } from "@/server/db/repos/revisions";
 import { ApiError, notFound } from "@/server/http/errors";
-import { withdrawUnreferencedMedia } from "@/server/media/publication";
+import { queueVisibilityCheck } from "@/server/media/publication";
+import { checkMediaVisibility } from "@/server/media/visibility";
 import type { MediaStores } from "@/server/storage/types";
 import { loadOwnPost } from "./access";
 
@@ -33,9 +35,11 @@ export async function unpublishPost(
     });
     await onDeleted?.(trx, updated);
     const mediaIds = post.current_revision_id ? await listRevisionMediaIds(trx, post.current_revision_id) : [];
+    await queueVisibilityCheck(trx, mediaIds);
     return { post: updated, changed: true, mediaIds };
   });
-  await withdrawUnreferencedMedia(db, stores, result.mediaIds).catch((e) => console.error("[delete] media withdrawal failed", postId, e));
+  // Checked now; anything failing stays due for the worker.
+  await checkMediaVisibility({ db, stores, cacheControl: getConfig().MEDIA_CACHE_CONTROL }, result.mediaIds);
   return { post: result.post, changed: result.changed };
 }
 

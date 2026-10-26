@@ -22,8 +22,17 @@ export interface MediaJobTable {
   attempts: Generated<number>;
   error: string | null;
   run_after: DefaultedTimestamp;
+  /** The shares using this settled job still have to be refreshed (a future time = retry delay). */
+  refresh_due_at: Timestamp | null;
   created_at: CreatedAt;
   updated_at: DefaultedTimestamp;
+}
+
+/** Objects being stored under `prefix` (private store) before their media row exists. */
+export interface MediaUploadTable {
+  prefix: string;
+  owner_id: string;
+  created_at: CreatedAt;
 }
 
 export type OutboxKind = "user_registered" | "post_event";

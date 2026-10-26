@@ -5,7 +5,8 @@ import { migrateToLatest } from "@/server/db/migrate";
 import { insertProfileIfAbsent } from "@/server/db/repos/profiles";
 import { findLivePostBySource, insertPost, updatePost } from "@/server/db/repos/posts";
 import { insertRevision, linkRevisionMedia } from "@/server/db/repos/revisions";
-import { filterPubliclyReferenced, insertMediaOrGet } from "@/server/db/repos/media";
+import { insertMediaOrGet } from "@/server/db/repos/media";
+import { mediaReferences } from "@/server/db/repos/media-visibility";
 import { claimIdempotency, completeIdempotency, releaseIdempotency } from "@/server/db/repos/idempotency";
 import { startTestDb } from "../helpers/pg";
 
@@ -26,10 +27,12 @@ describe("migrations", () => {
 });
 
 describe("profiles", () => {
-  it("returns existing row for same user, undefined on handle collision", async () => {
-    const again = await insertProfileIfAbsent(db, { user_id: "u1", handle: "other_handle", display_name: "", bio: "" });
-    expect(again?.handle).toBe("user_one");
+  it("inserts only new users: undefined for an existing user, a taken handle or a deleted account", async () => {
+    expect(await insertProfileIfAbsent(db, { user_id: "u1", handle: "other_handle", display_name: "", bio: "" })).toBeUndefined();
     expect(await insertProfileIfAbsent(db, { user_id: "u2", handle: "user_one", display_name: "", bio: "" })).toBeUndefined();
+    await db.insertInto("deleted_account").values({ user_id: "u-gone" }).execute();
+    expect(await insertProfileIfAbsent(db, { user_id: "u-gone", handle: "gone_handle", display_name: "", bio: "" })).toBeUndefined();
+    expect((await insertProfileIfAbsent(db, { user_id: "u4", handle: "user_four", display_name: "", bio: "" }))?.handle).toBe("user_four");
   });
   it("rejects invalid handles", async () => {
     await expect(insertProfileIfAbsent(db, { user_id: "u3", handle: "Bad-Handle", display_name: "", bio: "" })).rejects.toThrow();
@@ -79,11 +82,14 @@ describe("media", () => {
     const post = await insertPost(db, { author_id: "u1", kind: "article", source: "web", source_ref: null, slug: "slugslugslug07" });
     const rev = await insertRevision(db, { postId: post.id, document: {}, contentHash: HASH, sourceUpdatedAt: null });
     await linkRevisionMedia(db, rev.id, [a.media.id, a.media.id]);
-    expect((await filterPubliclyReferenced(db, [a.media.id])).size).toBe(0);
+    expect(await mediaReferences(db, a.media.id)).toEqual({ live: false, referenced: false });
     await updatePost(db, post.id, { current_revision_id: rev.id });
-    expect((await filterPubliclyReferenced(db, [a.media.id])).has(a.media.id)).toBe(true);
+    expect(await mediaReferences(db, a.media.id)).toEqual({ live: true, referenced: true });
+    await db.updateTable("profile").set({ status: "deleting" }).where("user_id", "=", "u1").execute();
+    expect(await mediaReferences(db, a.media.id)).toEqual({ live: false, referenced: true });
+    await db.updateTable("profile").set({ status: "active" }).where("user_id", "=", "u1").execute();
     await updatePost(db, post.id, { status: "unpublished" });
-    expect((await filterPubliclyReferenced(db, [a.media.id])).size).toBe(0);
+    expect(await mediaReferences(db, a.media.id)).toEqual({ live: false, referenced: true });
   });
 });
 

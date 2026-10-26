@@ -9,7 +9,7 @@ import type { SpooledBody } from "@/server/util/temp-file";
 import { AudioUnusableError, toWebAudio } from "./audio-transcode";
 import { ImageRejectedError, processImage } from "./image";
 import { convertToPng, type ConvertibleFormat } from "./image-convert";
-import { insertStoredMedia, newMediaPrefix, storeAudioFile, storeImageRenditions } from "./store-media";
+import { abandonUpload, beginUpload, insertStoredMedia, storeAudioFile, storeImageRenditions } from "./store-media";
 
 /** Permanent problem with a NiceNote media file (contract §4.2 reason codes); the same ref would fail again. */
 export class MediaUnusableError extends Error {
@@ -52,16 +52,17 @@ export async function ingestShareMedia(db: Db, store: ObjectStore, input: Input)
     if (existing.kind !== input.kind) throw new MediaUnusableError("unsupported_format", `stored as ${existing.kind}`);
     return existing;
   }
-  const prefix = newMediaPrefix();
   const workDir = path.join(input.file.dir, "out");
   await mkdir(workDir, { recursive: true });
+  const prefix = await beginUpload(db, input.ownerId);
   let stored;
   try {
     stored = input.kind === "image" ? await imageVariants(store, prefix, input, workDir) : await audioVariants(store, prefix, input, workDir);
   } catch (err) {
+    await abandonUpload(db, store, prefix);
     if (err instanceof ImageRejectedError || err instanceof AudioUnusableError) throw new MediaUnusableError(err.reason, err.message);
     throw err;
   }
-  const { media } = await insertStoredMedia(db, store, { ownerId: input.ownerId, sha256: input.file.sha256, kind: input.kind, ...stored });
+  const { media } = await insertStoredMedia(db, store, prefix, { ownerId: input.ownerId, sha256: input.file.sha256, kind: input.kind, ...stored });
   return media;
 }

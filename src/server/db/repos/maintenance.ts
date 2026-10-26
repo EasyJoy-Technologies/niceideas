@@ -62,7 +62,7 @@ export async function deleteMediaRows(db: Db, ids: string[]): Promise<void> {
   });
 }
 
-/** Media marked public although no active post uses them (a withdrawal that failed half-way). */
+/** Media marked public although no active post of an active author uses them (a check that failed). */
 export async function listStrayPublicMedia(db: Db, limit: number): Promise<string[]> {
   const rows = await db
     .selectFrom("media as m")
@@ -73,9 +73,11 @@ export async function listStrayPublicMedia(db: Db, limit: number): Promise<strin
         exists(
           selectFrom("revision_media as rm")
             .innerJoin("post as p", "p.current_revision_id", "rm.revision_id")
+            .innerJoin("profile as a", "a.user_id", "p.author_id")
             .select(sql`1`.as("x"))
             .whereRef("rm.media_id", "=", "m.id")
-            .where("p.status", "=", "active"),
+            .where("p.status", "=", "active")
+            .where("a.status", "=", "active"),
         ),
       ),
     )

@@ -10,12 +10,14 @@ import {
   switchAuthorPosts,
 } from "@/server/db/repos/accounts";
 import { findMediaByIds } from "@/server/db/repos/media";
+import { uploadsOfOwner } from "@/server/db/repos/media-uploads";
 import { deletePosts } from "@/server/db/repos/maintenance";
 import { findProfile } from "@/server/db/repos/profiles";
 import { listRevisionMediaIds } from "@/server/db/repos/revisions";
 import { deleteSessionsOfUser } from "@/server/db/repos/sessions";
 import { mediaKeys } from "@/server/media/keys";
-import { projectMediaPublic, recordMediaPublic, settlePublication, withdrawUnreferencedMedia } from "@/server/media/publication";
+import { finishPublication, projectMediaPublic, queueVisibilityCheck, recordPublication } from "@/server/media/publication";
+import { checkMediaVisibility } from "@/server/media/visibility";
 import { ownAvatarKey } from "@/server/profiles/avatars";
 import type { MediaStores } from "@/server/storage/types";
 
@@ -34,29 +36,34 @@ async function currentMediaIds(db: Db, postIds: string[]): Promise<string[]> {
 
 /** Cooling-off starts: profile and posts go offline at once (pages answer 410), sessions end. */
 export async function startCoolingOff(rt: DeletionRuntime, userId: string): Promise<void> {
-  await rt.db.transaction().execute(async (trx) => {
-    if (!(await lockProfileForStatusChange(trx, userId))) return;
+  const media = await rt.db.transaction().execute(async (trx) => {
+    if (!(await lockProfileForStatusChange(trx, userId))) return [];
     await setProfileStatus(trx, userId, "deleting");
     await deleteSessionsOfUser(trx, userId);
     await switchAuthorPosts(trx, userId, "active", "author_deleting");
+    // All offline posts, not only the ones switched now: a redelivery finishes a withdrawal that failed.
+    const ids = await currentMediaIds(trx, await postIdsOfAuthor(trx, userId, "author_deleting"));
+    await queueVisibilityCheck(trx, ids);
+    return ids;
   });
-  // All offline posts, not only the ones switched now: a redelivery finishes a withdrawal that failed.
-  await withdrawUnreferencedMedia(rt.db, rt.stores, await currentMediaIds(rt.db, await postIdsOfAuthor(rt.db, userId, "author_deleting")));
+  await checkMediaVisibility(rt, media);
 }
 
 /** Cooling-off cancelled: everything offline because of it goes back online with the same links. */
 export async function cancelCoolingOff(rt: DeletionRuntime, userId: string): Promise<void> {
-  const moved = await currentMediaIds(rt.db, await postIdsOfAuthor(rt.db, userId, "author_deleting"));
-  await projectMediaPublic(rt.stores, await findMediaByIds(rt.db, moved), rt.cacheControl);
-  const live = await rt.db.transaction().execute(async (trx) => {
-    if (!(await lockProfileForStatusChange(trx, userId)) || (await isDeletedAccount(trx, userId))) return [];
-    await setProfileStatus(trx, userId, "active");
-    // Includes posts that first got content during the cooling-off period.
-    const ids = await currentMediaIds(trx, await switchAuthorPosts(trx, userId, "author_deleting", "active"));
-    await recordMediaPublic(trx, ids.filter((id) => moved.includes(id)));
-    return ids;
-  });
-  await settlePublication(rt.db, rt.stores, rt.cacheControl, { moved, live });
+  const before = await currentMediaIds(rt.db, await postIdsOfAuthor(rt.db, userId, "author_deleting"));
+  const projection = await projectMediaPublic(rt, await findMediaByIds(rt.db, before));
+  let touched: string[] = [];
+  try {
+    await rt.db.transaction().execute(async (trx) => {
+      if (!(await lockProfileForStatusChange(trx, userId)) || (await isDeletedAccount(trx, userId))) return;
+      await setProfileStatus(trx, userId, "active");
+      // Includes posts that first got content during the cooling-off period.
+      touched = await recordPublication(trx, projection, await currentMediaIds(trx, await switchAuthorPosts(trx, userId, "author_deleting", "active")));
+    });
+  } finally {
+    await finishPublication(rt, projection, touched);
+  }
 }
 
 /**
@@ -75,6 +82,8 @@ export async function completeDeletion(rt: DeletionRuntime, userId: string): Pro
   const keys = media.flatMap((m) => mediaKeys(m));
   await rt.stores.publicStore.deleteMany(keys);
   await rt.stores.privateStore.deleteMany(keys);
+  // Objects of uploads that never got their media row (their records go with the profile).
+  for (const prefix of await uploadsOfOwner(rt.db, userId)) await rt.stores.privateStore.deleteMany(await rt.stores.privateStore.listKeys(`${prefix}/`));
   await deletePosts(rt.db, await postIdsOfAuthor(rt.db, userId));
   // An avatar stored by the worker after the read above (the profile row is gone after this).
   const lastAvatar = ownAvatarKey(await deleteProfileCascade(rt.db, userId, media.map((m) => m.id)));

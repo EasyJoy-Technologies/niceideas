@@ -6,7 +6,7 @@ import { contentHash } from "@/server/documents/hash";
 import type { SourceDocument } from "@/server/documents/source-schema";
 import { ApiError, notFound } from "@/server/http/errors";
 import { accountDeleting, lockAuthor, readAuthorState, type AuthorState } from "@/server/accounts/author-gate";
-import { projectMediaPublic, recordMediaPublic, settlePublication, withdrawUnreferencedMedia } from "@/server/media/publication";
+import { finishPublication, NO_PROJECTION, projectMediaPublic, recordPublication, type Projection } from "@/server/media/publication";
 import { derivedFields } from "@/server/posts/derived-fields";
 import type { MediaStores } from "@/server/storage/types";
 import { assertShareOpen, loadShare } from "./manage-share";
@@ -54,33 +54,32 @@ export async function pushShareContent(db: Db, stores: MediaStores, cacheControl
   const hash = contentHash(doc);
   await queueShareMedia(db, before.author_id, doc, input.media);
   const resolved = await resolveShareMedia(db, before.author_id, doc);
-  // Moved ahead of the commit when the post will likely be live; settled after it (§ settlePublication).
-  const moved = statusAfterPush(before.status, await readAuthorState(db, before.author_id)) === "active" ? resolved.mediaIds : [];
-  await projectMediaPublic(stores, moved.length ? resolved.media : [], cacheControl);
-
-  const outcome = await commitPush(db, before, input, doc, hash, resolved, moved).catch(async (err: unknown) => {
-    await settlePublication(db, stores, cacheControl, { moved, live: [] }).catch((e) => console.error("[nicenote] media settle failed", before.id, e));
-    throw err;
-  });
-  await settlePublication(db, stores, cacheControl, { moved, live: outcome.live }).catch((e) => console.error("[nicenote] media settle failed", before.id, e));
-
-  // Media dropped by this push leave the public bucket (failures are retried by reconciliation).
-  const dropped = outcome.previousMedia.filter((id) => !resolved.mediaIds.includes(id));
-  await withdrawUnreferencedMedia(db, stores, dropped).catch((e) => console.error("[nicenote] media withdrawal failed", outcome.post.id, e));
-  return { post: outcome.post, changed: outcome.changed };
+  // Moved ahead of the commit when the post will likely be live (publication.ts); settled after it.
+  const rt = { db, stores, cacheControl };
+  const goesLive = statusAfterPush(before.status, await readAuthorState(db, before.author_id)) === "active";
+  const projection = goesLive ? await projectMediaPublic(rt, resolved.media) : NO_PROJECTION;
+  let touched: string[] = [];
+  try {
+    const outcome = await commitPush(db, before, input, doc, hash, resolved, projection);
+    touched = outcome.touched;
+    return { post: outcome.post, changed: outcome.changed };
+  } finally {
+    await finishPublication(rt, projection, touched);
+  }
 }
 
-type PushOutcome = PushResult & { previousMedia: string[]; live: string[] };
+/** `touched`: media to check after the commit (now live, or no longer used by this post). */
+type PushOutcome = PushResult & { touched: string[] };
 
-/** The push itself, under the author lock then the post lock (author-gate.ts). `live` = media now served publicly. */
-async function commitPush(db: Db, before: Post, input: PushContentInput, doc: SourceDocument, hash: string, resolved: ResolvedShareMedia, moved: string[]): Promise<PushOutcome> {
+/** The push itself, under the author lock then the post lock (author-gate.ts). */
+async function commitPush(db: Db, before: Post, input: PushContentInput, doc: SourceDocument, hash: string, resolved: ResolvedShareMedia, projection: Projection): Promise<PushOutcome> {
   return db.transaction().execute(async (trx): Promise<PushOutcome> => {
     const author = await lockAuthor(trx, before.author_id);
     if (author === "gone") throw accountDeleting();
     const post = await lockPost(trx, before.id);
     if (!post) throw notFound("post.not_found");
     assertPushable(post, input.sourceRevision);
-    const unchanged = (p: Post): PushOutcome => ({ post: p, changed: false, previousMedia: [], live: [] });
+    const unchanged = (p: Post): PushOutcome => ({ post: p, changed: false, touched: [] });
     if (keepsWebEdit(post, input.sourceRevision)) return unchanged(post);
     const prev = post.current_revision_id ? await findRevision(trx, post.current_revision_id) : undefined;
     // The backend learns about media changes from events: ready when complete now; failures when the post
@@ -94,10 +93,11 @@ async function commitPush(db: Db, before: Post, input: PushContentInput, doc: So
       return unchanged(updated);
     }
     const status = statusAfterPush(post.status, author);
-    const live = status === "active" ? resolved.mediaIds : [];
     const rev = await insertRevision(trx, { postId: post.id, document: doc, contentHash: hash, sourceUpdatedAt: null });
     await linkRevisionMedia(trx, rev.id, resolved.mediaIds);
-    await recordMediaPublic(trx, live.filter((id) => moved.includes(id)));
+    // Media this push stopped using (they may have to leave the public store).
+    const dropped = prev ? (await listRevisionMediaIds(trx, prev.id)).filter((id) => !resolved.mediaIds.includes(id)) : [];
+    const touched = await recordPublication(trx, projection, status === "active" ? resolved.mediaIds : [], dropped);
     const updated = await updatePost(trx, post.id, {
       ...derivedFields(doc, post, resolved),
       current_revision_id: rev.id,
@@ -110,7 +110,6 @@ async function commitPush(db: Db, before: Post, input: PushContentInput, doc: So
       ...(prev && post.status !== "preparing" && input.sourceRevision > Number(post.source_revision ?? 0) ? { edited_at: new Date() } : {}),
     });
     await events(updated, true);
-    const previousMedia = prev ? await listRevisionMediaIds(trx, prev.id) : [];
-    return { post: updated, changed: true, previousMedia, live };
+    return { post: updated, changed: true, touched };
   });
 }

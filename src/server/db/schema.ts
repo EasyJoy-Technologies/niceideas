@@ -1,7 +1,7 @@
 import type { ColumnType, Generated, Insertable, JSONColumnType, Selectable, Updateable } from "kysely";
 import type { CreatedAt, DefaultedTimestamp, JsonColumn, Timestamp } from "./schema-columns";
 import type { AccountEventTable, DeletedAccountTable } from "./schema-accounts";
-import type { AvatarJobTable, MediaJobTable, OutboxTable, ServiceNonceTable } from "./schema-share";
+import type { AvatarJobTable, MediaJobTable, MediaUploadTable, OutboxTable, ServiceNonceTable } from "./schema-share";
 
 export type { MediaJobState, OutboxKind } from "./schema-share";
 export type { AccountEventKind } from "./schema-accounts";
@@ -110,6 +110,8 @@ export interface MediaTable {
   variants: JSONColumnType<MediaVariants, string, string>;
   public_at: Timestamp | null;
   detached_at: Timestamp | null;
+  /** Check against its references due (media/visibility.ts); a future time is a lease or retry delay. */
+  visibility_due_at: Timestamp | null;
   created_at: CreatedAt;
 }
 
@@ -265,6 +267,7 @@ export interface Database {
   pow_used: PowUsedTable;
   admin_member: AdminMemberTable;
   media_job: MediaJobTable;
+  media_upload: MediaUploadTable;
   avatar_job: AvatarJobTable;
   outbox: OutboxTable;
   service_nonce: ServiceNonceTable;

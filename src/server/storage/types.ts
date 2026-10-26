@@ -10,6 +10,8 @@ export interface ObjectStore {
   getStream(key: string): Promise<Readable>;
   /** Deletes keys; missing keys are not an error. */
   deleteMany(keys: string[]): Promise<void>;
+  /** Keys starting with `prefix` (all pages). */
+  listKeys(prefix: string): Promise<string[]>;
   exists(key: string): Promise<boolean>;
   /**
    * Copies `key` into `target` (a store of the same kind) without passing the bytes through this

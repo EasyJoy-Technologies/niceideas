@@ -31,6 +31,17 @@ async function tagsOf(buf: Buffer): Promise<Record<string, string>> {
     await removeTempDir(file.dir);
   }
 }
+/** The file with extra tags written by ffmpeg (stream copied). */
+async function withTags(buf: Buffer, ext: string, tags: Record<string, string>): Promise<Buffer> {
+  const file = spooled(buf);
+  try {
+    const out = `${file.file}.${ext}`;
+    await runTool("ffmpeg", ["-v", "error", "-y", "-i", file.file, "-c", "copy", ...Object.entries(tags).flatMap(([k, v]) => ["-metadata", `${k}=${v}`]), out], { timeoutMs: 30_000 });
+    return Buffer.concat(await (await import("node:fs")).createReadStream(out).toArray());
+  } finally {
+    await removeTempDir(file.dir);
+  }
+}
 const reason = (p: Promise<unknown>) => p.then(() => "stored", (e: unknown) => (e instanceof MediaUnusableError ? e.reason : `error: ${String(e)}`));
 const stored = async (key: string) => Buffer.concat(await (await ctx.stores.privateStore.getStream(key)).toArray());
 
@@ -88,18 +99,21 @@ describe.skipIf(!hasMediaTools())("NiceNote media pipeline (ffmpeg / ImageMagick
     expect(await reason(ingest(mp3Tone(), "image"))).toBe("unsupported_format");
   });
 
-  it("audio: AAC is re-wrapped, MP3 kept as it is, other formats become AAC / M4A; tags kept, location removed", async () => {
+  it("audio: AAC and MP3 are re-wrapped, other formats become AAC / M4A; only the kept tags survive (F21)", async () => {
     const m4a = await ingest(m4aTone(), "audio");
     expect([m4a.mime, Math.round((m4a.duration_ms ?? 0) / 1000)]).toEqual(["audio/mp4", 2]);
-    const mp3 = await ingest(mp3Tone(), "audio", undefined, FRESH);
-    expect(mp3.mime).toBe("audio/mpeg");
+    const taggedMp3 = await withTags(mp3Tone(), "mp3", { title: "Walk", artist: "Me", location: "+51.0447-114.0719/", gps: "51.0447,-114.0719", device: "Phone 12" });
+    const mp3 = await ingest(taggedMp3, "audio", undefined, FRESH);
+    expect([mp3.mime, Math.round((mp3.duration_ms ?? 0) / 1000)]).toEqual(["audio/mpeg", 3]);
     if (mp3.variants.kind !== "audio") throw new Error("not audio");
-    expect((await stored(mp3.variants.original.key)).equals(mp3Tone())).toBe(true);
+    const mp3Bytes = await stored(mp3.variants.original.key);
+    expect(await tagsOf(mp3Bytes)).toEqual({ title: "Walk", artist: "Me" });
+    expect(mp3Bytes.includes(Buffer.from("51.0447"))).toBe(false);
     const tagged = await ingest(taggedM4a(), "audio");
     if (tagged.variants.kind !== "audio") throw new Error("not audio");
     const tags = await tagsOf(await stored(tagged.variants.original.key));
     expect(tags).toMatchObject({ title: "My Rec", artist: "Me", comment: "Recorded with NiceNote" });
-    expect(Object.keys(tags).filter((k) => k.includes("location"))).toEqual([]);
+    expect(Object.keys(tags).filter((k) => !["title", "artist", "comment", "album", "date", "genre", "major_brand", "minor_version", "compatible_brands"].includes(k))).toEqual([]);
     for (const tone of [wavTone(), flacTone(), opusTone()]) {
       const a = await ingest(tone, "audio");
       expect(a.mime).toBe("audio/mp4");

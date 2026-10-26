@@ -1,6 +1,6 @@
 import { createReadStream, createWriteStream } from "node:fs";
 import { pipeline } from "node:stream/promises";
-import { access, copyFile, mkdir, rm, writeFile } from "node:fs/promises";
+import { access, copyFile, mkdir, readdir, rm, writeFile } from "node:fs/promises";
 import path from "node:path";
 import type { Readable } from "node:stream";
 import { assertSafeKey, ObjectMissingError, type ObjectStore } from "./types";
@@ -57,5 +57,16 @@ export class LocalStore implements ObjectStore {
 
   async deleteMany(keys: string[]): Promise<void> {
     await Promise.all(keys.map((k) => rm(this.resolve(k), { force: true })));
+  }
+
+  async listKeys(prefix: string): Promise<string[]> {
+    // Prefixes here are directories ("m/<id>/"); list everything below the deepest one and filter.
+    const dir = prefix.includes("/") ? prefix.slice(0, prefix.lastIndexOf("/")) : "";
+    const base = dir ? this.resolve(dir) : this.root;
+    const entries = await readdir(base, { recursive: true, withFileTypes: true }).catch(() => []);
+    return entries
+      .filter((e) => e.isFile())
+      .map((e) => path.relative(this.root, path.join(e.parentPath, e.name)).split(path.sep).join("/"))
+      .filter((k) => k.startsWith(prefix));
   }
 }

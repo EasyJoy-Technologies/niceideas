@@ -7,7 +7,7 @@ import { isUniqueViolation } from "@/server/db/repos/profiles";
 import { contentHash } from "@/server/documents/hash";
 import type { PostDocument } from "@/server/documents/schema";
 import { accountDeleting, assertAuthorActive, readAuthorState } from "@/server/accounts/author-gate";
-import { projectMediaPublic, recordMediaPublic, settlePublication } from "@/server/media/publication";
+import { finishPublication, projectMediaPublic, recordPublication } from "@/server/media/publication";
 import type { MediaStores } from "@/server/storage/types";
 import { derivedFields } from "./derived-fields";
 import { resolveDocumentMedia } from "./media-refs";
@@ -51,12 +51,12 @@ export async function createPost(
   await assertCanCreatePost(db, principal.userId);
   if (principal.apiClientId) await assertClientBudget(db, principal.apiClientId, principal.userId);
   const media = await resolveDocumentMedia(db, principal.userId, input.document);
-  await projectMediaPublic(stores, media, cacheControl);
+  const rt = { db, stores, cacheControl };
+  const projection = await projectMediaPublic(rt, media);
 
   const hash = contentHash(input.document);
   const fields = derivedFields(input.document);
-  const moved = media.map((m) => m.id);
-  let live: string[] = [];
+  let touched: string[] = [];
   try {
     for (let attempt = 1; ; attempt++) {
       try {
@@ -77,10 +77,9 @@ export async function createPost(
           });
           const rev = await insertRevision(trx, { postId: row.id, document: input.document, contentHash: hash, sourceUpdatedAt: input.sourceUpdatedAt });
           await linkRevisionMedia(trx, rev.id, media.map((m) => m.id));
-          await recordMediaPublic(trx, media.map((m) => m.id));
+          touched = await recordPublication(trx, projection, media.map((m) => m.id));
           return updatePost(trx, row.id, { current_revision_id: rev.id });
         });
-        live = moved;
         return { post, contentHash: hash, created: true };
       } catch (err) {
         if (isUniqueViolation(err, "post_live_source_key")) {
@@ -93,6 +92,6 @@ export async function createPost(
     }
   } finally {
     // Media moved for a post that was not created (account being deleted, error, raced) go back.
-    await settlePublication(db, stores, cacheControl, { moved, live }).catch((e) => console.error("[posts] media settle failed", e));
+    await finishPublication(rt, projection, touched);
   }
 }

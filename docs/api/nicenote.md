@@ -52,11 +52,11 @@ Base: `https://niceideas.app/api/internal/v1/nicenote` (staging `https://t.nicei
   - Images: JPEG / PNG / WebP / GIF / AVIF / TIFF with sharp; HEIC / HEIF / BMP decoded by ImageMagick (`MAGICK_PATH`)
     first; ≤ 100 MP (`too_large`); animated GIF / WebP stay animated; renditions taller than 16383 px are JPEG / PNG and
     at most 65500 px high (narrowed, no slicing).
-  - Audio (`FFMPEG_PATH`, `FFPROBE_PATH`): MP3 stored exactly as received (all ID3 tags); AAC re-wrapped into a
-    fast-start M4A; everything else encoded to 128 kbps AAC / M4A. Converted files keep the standard tags (title,
-    artist, album, comment, …) without location tags; ffmpeg rewrites `encoder` and drops non-standard M4A tags, so an
-    app name belongs in `comment` (Xianglin 2026-10-24: ID tags are kept). No duration limit; video or no audio →
-    `unsupported_format`.
+  - Audio (`FFMPEG_PATH`, `FFPROBE_PATH`): MP3 re-wrapped as MP3 and AAC into a fast-start M4A (no re-encoding);
+    everything else encoded to 128 kbps AAC / M4A. **Tags (v1.0.71, Xianglin 2026-10-26): only title, artist, album,
+    album artist, track, disc, date, genre, composer and comment are kept** (an app name belongs in `comment`); cover
+    art, chapters, location, device, encoder and every other tag are dropped. No duration limit; video or no audio →
+    `unsupported_format`. Audio `markers` are accepted but not shown on the page.
   - Failures: temporary ones (`fetch_failed` after 3 tries, `fetch_expired`, `temporarily_unavailable`) leave the job
     `failed` (a new grant queues it again); permanent ones (`too_large`, `unsupported_format`, `decode_failed`,
     `transcode_failed`) leave it `rejected` and that owner's ref is never fetched again.
@@ -64,8 +64,12 @@ Base: `https://niceideas.app/api/internal/v1/nicenote` (staging `https://t.nicei
 - **Events to the backend** (`outbox`, delivered by the worker, signed, `X-NM-Service: niceideas`; retried after 1 min,
   5 min, 30 min, then hourly for 24 h; 400 / 404 / 409 / 410 / 413 / 422 are not retried): `user_registered` on first
   profile (existing users were queued by migration 0014); post events `unpublished` (author deleted on the web),
-  `removed` / `restored` (moderation), `media_failed` (`details.refs` + `reason`, per reason) and `media_ready` (the
-  post's media became complete — by the worker or by a push).
+  `removed` / `restored` (moderation), `media_failed` (`details.refs` + `reason`, per reason; split into several events
+  so each stays ≤ 7000 bytes, v1.0.71) and `media_ready` (the post's media became complete — by the worker or by a push).
+- **Media in the public store** (v1.0.71): media are public exactly while the current revision of an active post of an
+  active author uses them. Publishing moves them before the commit (under a 2-minute lease); taking a post offline
+  marks them in the same transaction and moves them right after; anything left (failure, crash) is finished by the
+  worker (`media.visibility_due_at`).
 - **Profiles**: one rule set for web sign-in, the create request and `profile_updated` (`src/server/profiles/profile-follow.ts`):
   handle follows the NiceMatrix username (none → user id; unusable / taken → kept); display name follows unless changed on
   NiceIdeas (`profile.name_locked`; clearing it follows again); avatar always follows: `profile.avatar_source` is the

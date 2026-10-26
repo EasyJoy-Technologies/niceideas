@@ -1,7 +1,7 @@
+import { sql } from "kysely";
 import type { Db } from "@/server/db/client";
 import type { Profile } from "@/server/db/schema";
 import { queueAvatarJob } from "@/server/db/repos/avatar-jobs";
-import { isUniqueViolation } from "@/server/db/repos/profiles";
 import { HANDLE_PATTERN, handleFromUserId, isGeneratedHandle, isValidHandle, RESERVED_HANDLES } from "./handles";
 
 /**
@@ -60,23 +60,30 @@ export async function followNiceMatrixProfile(db: Db, profile: Profile, nm: Nice
     if (source !== profile.avatar_source) patch.avatar_source = source;
   }
   if (Object.keys(patch).length === 0) return profile;
-  const saved = await savePatch(db, profile, patch);
-  // The worker downloads the new avatar (or removes ours, source ""); the current one shows until then.
-  if (patch.avatar_source !== undefined) await queueAvatarJob(db, profile.user_id, patch.avatar_source ?? "");
-  return saved;
+  // The change and its avatar job are written together (F19).
+  return db.transaction().execute(async (trx) => {
+    const saved = await savePatch(trx, profile, patch);
+    // The worker downloads the new avatar (or removes ours, source ""); the current one shows until then.
+    if (patch.avatar_source !== undefined) await queueAvatarJob(trx, profile.user_id, patch.avatar_source ?? "");
+    return saved;
+  });
 }
 
+/** Saves the patch; a handle held by another profile (an older generated or renamed one) is skipped for now. */
 async function savePatch(db: Db, profile: Profile, patch: FollowPatch): Promise<Profile> {
-  const save = (p: typeof patch) =>
-    db.updateTable("profile").set({ ...p, updated_at: new Date() }).where("user_id", "=", profile.user_id).returningAll().executeTakeFirstOrThrow();
-  try {
-    return await save(patch);
-  } catch (err) {
-    if (!patch.handle || !isUniqueViolation(err, "profile_handle_key")) throw err;
-    // Another profile still holds the handle (an older generated or renamed one): keep ours for now.
-    console.warn(JSON.stringify({ event: "handle_sync", result: "taken" }));
-    const { handle: _taken, ...rest } = patch;
-    void _taken;
-    return Object.keys(rest).length ? save(rest) : profile;
-  }
+  const { handle, ...rest } = patch;
+  const saved = await db
+    .updateTable("profile")
+    .set({
+      ...rest,
+      ...(handle
+        ? { handle: sql<string>`CASE WHEN EXISTS (SELECT 1 FROM profile o WHERE o.handle = ${handle} AND o.user_id <> ${profile.user_id}) THEN profile.handle ELSE ${handle} END` }
+        : {}),
+      updated_at: new Date(),
+    })
+    .where("user_id", "=", profile.user_id)
+    .returningAll()
+    .executeTakeFirstOrThrow();
+  if (handle && saved.handle !== handle) console.warn(JSON.stringify({ event: "handle_sync", result: "taken" }));
+  return saved;
 }

@@ -21,13 +21,41 @@ export async function queuePostEvent(db: Db, post: Pick<Post, "id" | "source" | 
 }
 
 /**
+ * Largest serialized event (bytes): the backend accepts 8 KiB per request (API 1.2.745; 64 KiB from
+ * 1.2.750); the rest is room for the envelope fields.
+ */
+const MAX_EVENT_BYTES = 7000;
+const PAYLOAD_ENVELOPE_BYTES = 400;
+
+/** Splits refs into groups whose `media_failed` payload stays within MAX_EVENT_BYTES (F15). */
+export function chunkRefs(refs: string[], reason: string): string[][] {
+  const budget = MAX_EVENT_BYTES - PAYLOAD_ENVELOPE_BYTES - Buffer.byteLength(JSON.stringify(reason));
+  const chunks: string[][] = [];
+  let current: string[] = [];
+  let size = 2;
+  for (const ref of refs) {
+    const bytes = Buffer.byteLength(JSON.stringify(ref)) + 1;
+    if (current.length && size + bytes > budget) {
+      chunks.push(current);
+      current = [];
+      size = 2;
+    }
+    current.push(ref);
+    size += bytes;
+  }
+  if (current.length) chunks.push(current);
+  return chunks;
+}
+
+/**
  * Media events of a live share (contract §4.2): `media_ready` when its media became complete,
- * one `media_failed` per reason for the given failed refs. Call in the transaction that updated the post.
+ * `media_failed` per reason for the given failed refs (several events when the refs would not fit
+ * one request). Call in the transaction that updated the post.
  */
 export async function queueMediaEvents(db: Db, post: Pick<Post, "id" | "source" | "share_id" | "status" | "media_state">, opts: { before: MediaState; failed: FailedRef[] }): Promise<void> {
   if (post.status !== "active") return;
   if (post.media_state === "complete" && opts.before !== "complete") await queuePostEvent(db, post, "media_ready");
   const byReason = new Map<string, string[]>();
   for (const f of opts.failed) byReason.set(f.reason, [...(byReason.get(f.reason) ?? []), f.ref]);
-  for (const [reason, refs] of byReason) await queuePostEvent(db, post, "media_failed", { refs, reason });
+  for (const [reason, refs] of byReason) for (const chunk of chunkRefs(refs, reason)) await queuePostEvent(db, post, "media_failed", { refs: chunk, reason });
 }

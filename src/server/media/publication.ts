@@ -1,66 +1,54 @@
 import type { Db } from "@/server/db/client";
 import type { Media } from "@/server/db/schema";
-import { filterPubliclyReferenced, filterReferencedByAnyPost, findMediaByIds, markMediaPublic, markMediaWithdrawn } from "@/server/db/repos/media";
+import { markMediaPublic } from "@/server/db/repos/media";
+import { leaseVisibility, releaseVisibilityLease, requestVisibilityCheck } from "@/server/db/repos/media-visibility";
 import { moveObject } from "@/server/storage/move";
-import type { MediaStores } from "@/server/storage/types";
 import { renditionsOf } from "./keys";
+import { checkMediaVisibility, type VisibilityRuntime } from "./visibility";
 
 /**
- * Moves media renditions from the private store to the public store (server-side; one stored copy
- * per file) so the share page can reference them. Idempotent: renditions already public stay.
- * Run BEFORE committing the transaction that makes the post reference them; after a failure the
- * files sit public under unguessable keys until a later publish or withdrawal moves them again.
+ * Publication of media in the public store (plan §16, S2 F06). Publishing moves the objects BEFORE
+ * the commit that makes a post use them (no broken images), under a lease that keeps visibility
+ * checks away; `finishPublication` ends the lease after the commit (or failure) and checks
+ * everything touched, so media that did not go live go back at once. A crash in between leaves the
+ * media due when the lease runs out: the worker checks them then.
+ * Taking media offline: `requestVisibilityCheck` in the transaction, `checkMediaVisibility` after it.
  */
-export async function projectMediaPublic(stores: MediaStores, media: Media[], cacheControl: string): Promise<void> {
+export type Projection = { media: string[]; owned: string[]; until: Date };
+
+/** Lease, after which a check takes back media moved for a publish that never committed. */
+const LEASE_SECONDS = 120;
+
+export async function projectMediaPublic(rt: VisibilityRuntime, media: Media[]): Promise<Projection> {
+  const ids = media.map((m) => m.id);
+  const lease = await leaseVisibility(rt.db, ids, LEASE_SECONDS);
   for (const m of media) {
-    for (const r of renditionsOf(m)) await moveObject(stores.privateStore, stores.publicStore, r.key, { contentType: r.mime, cacheControl });
+    for (const r of renditionsOf(m)) await moveObject(rt.stores.privateStore, rt.stores.publicStore, r.key, { contentType: r.mime, cacheControl: rt.cacheControl });
   }
+  return { media: ids, ...lease };
 }
 
-/** Moves media renditions back to the private store (withdrawal); idempotent. */
-async function moveMediaPrivate(stores: MediaStores, media: Media[]): Promise<void> {
-  for (const m of media) {
-    for (const r of renditionsOf(m)) await moveObject(stores.publicStore, stores.privateStore, r.key, { contentType: r.mime });
-  }
-}
-
-/** Records that the given media are now publicly served. Call inside the publishing transaction. */
-export async function recordMediaPublic(db: Db, mediaIds: string[]): Promise<void> {
-  await markMediaPublic(db, mediaIds);
-}
+/** No media moved (the post will not be live). */
+export const NO_PROJECTION: Projection = { media: [], owned: [], until: new Date(0) };
 
 /**
- * After a commit that may have stopped referencing media (sync dropped an image,
- * post withdrawn, …): moves back to the private store every candidate that is no
- * longer referenced by any active post, and starts the detach clock for media
- * no post references at all. Safe to re-run; failures are logged and retried by
- * the daily reconciliation job.
+ * In the publishing transaction: records the live media as public (the moved ones) and marks the
+ * others among `live` and the `dropped` ones for a check. Returns every id to check after the commit.
  */
-export async function withdrawUnreferencedMedia(db: Db, stores: MediaStores, candidateIds: string[]): Promise<void> {
-  const ids = [...new Set(candidateIds)];
-  if (ids.length === 0) return;
-  const stillPublic = await filterPubliclyReferenced(db, ids);
-  const toWithdraw = ids.filter((id) => !stillPublic.has(id));
-  if (toWithdraw.length === 0) return;
-  const media = await findMediaByIds(db, toWithdraw);
-  await moveMediaPrivate(stores, media);
-  const anyRef = await filterReferencedByAnyPost(db, toWithdraw);
-  await markMediaWithdrawn(db, toWithdraw.filter((id) => anyRef.has(id)), false);
-  await markMediaWithdrawn(db, toWithdraw.filter((id) => !anyRef.has(id)), true);
+export async function recordPublication(trx: Db, p: Projection, live: string[], dropped: string[] = []): Promise<string[]> {
+  const moved = new Set(p.media);
+  await markMediaPublic(trx, live.filter((id) => moved.has(id)));
+  await requestVisibilityCheck(trx, [...live.filter((id) => !moved.has(id)), ...dropped]);
+  return [...live, ...dropped];
 }
 
-/**
- * After the commit that decided which media are live (author / post state re-checked under the
- * locks): media moved to the public store beforehand but not live go back (unless another active
- * post uses them); live media not moved yet are moved and recorded now. Safe to re-run.
- */
-export async function settlePublication(db: Db, stores: MediaStores, cacheControl: string, s: { moved: string[]; live: string[] }): Promise<void> {
-  const moved = new Set(s.moved);
-  const live = new Set(s.live);
-  const late = [...live].filter((id) => !moved.has(id));
-  if (late.length) {
-    await projectMediaPublic(stores, await findMediaByIds(db, late), cacheControl);
-    await recordMediaPublic(db, late);
-  }
-  await withdrawUnreferencedMedia(db, stores, s.moved.filter((id) => !live.has(id)));
+/** After the commit or failure: ends the lease and checks the moved and touched media now. Never throws. */
+export async function finishPublication(rt: VisibilityRuntime, p: Projection, touched: string[] = []): Promise<void> {
+  await releaseVisibilityLease(rt.db, p.owned, p.until).catch((e) => console.error("[media] lease release failed", e));
+  await checkMediaVisibility(rt, [...p.media, ...touched]);
+}
+
+/** Marks media for a check in the transaction that may have stopped using them. */
+export async function queueVisibilityCheck(trx: Db, ids: string[]): Promise<void> {
+  await requestVisibilityCheck(trx, ids);
 }

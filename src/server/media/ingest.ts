@@ -10,7 +10,7 @@ import { Semaphore } from "@/server/util/semaphore";
 import { probeAudio, AudioRejectedError } from "./audio";
 import { detectMediaType } from "./detect";
 import { processImage, ImageRejectedError } from "./image";
-import { insertStoredMedia, newMediaPrefix, storeAudioFile, storeImageRenditions } from "./store-media";
+import { abandonUpload, beginUpload, insertStoredMedia, storeAudioFile, storeImageRenditions } from "./store-media";
 
 export type MediaLimits = {
   maxImageBytes: number;
@@ -43,9 +43,9 @@ export async function ingestUpload(
   const maxBytes = type.kind === "image" ? limits.maxImageBytes : limits.maxAudioBytes;
   if (upload.bytes > maxBytes) throw new ApiError("media.too_large", 413, { maxBytes });
 
-  const prefix = newMediaPrefix();
   const workDir = path.join(upload.dir, "out");
   await mkdir(workDir);
+  const prefix = await beginUpload(db, ownerId);
 
   let variants: MediaVariants;
   let dims: { width: number | null; height: number | null; durationMs: number | null };
@@ -60,10 +60,11 @@ export async function ingestUpload(
       dims = { width: null, height: null, durationMs: audio.durationMs };
     }
   } catch (err) {
+    await abandonUpload(db, store, prefix);
     if (err instanceof ImageRejectedError || err instanceof AudioRejectedError) {
       throw new ApiError("media.unprocessable", 422, { reason: err.message });
     }
     throw err;
   }
-  return insertStoredMedia(db, store, { ownerId, sha256: upload.sha256, kind: type.kind, mime: type.mime, variants, ...dims });
+  return insertStoredMedia(db, store, prefix, { ownerId, sha256: upload.sha256, kind: type.kind, mime: type.mime, variants, ...dims });
 }

@@ -79,15 +79,17 @@ export async function claimMediaJob(db: Db, leaseSeconds: number): Promise<Media
   return r.rows[0];
 }
 
-/** When the next media job falls due (same filter as `claimMediaJob`); null when none is waiting. */
+/** When the next media job or share refresh falls due (same filters as the claims); null when none is waiting. */
 export async function nextMediaJobDueAt(db: Db): Promise<Date | null> {
-  const r = await db
+  const job = await db
     .selectFrom("media_job")
     .select((eb) => eb.fn.min("run_after").as("at"))
     .where("state", "in", ["pending", "running"])
     .where("url", "is not", null)
     .executeTakeFirst();
-  return r?.at ?? null;
+  const refresh = await db.selectFrom("media_job").select((eb) => eb.fn.min("refresh_due_at").as("at")).executeTakeFirst();
+  const times = [job?.at, refresh?.at].filter((t): t is Date => t instanceof Date);
+  return times.length ? new Date(Math.min(...times.map((t) => t.getTime()))) : null;
 }
 
 /** Extends the lease of a running job (long downloads / transcodes). */
@@ -101,17 +103,60 @@ export async function extendMediaJobLease(db: Db, j: Pick<MediaJob, "owner_id" |
     .execute();
 }
 
-/** Final outcome of a running job: stored (`done`), temporary failure (`failed`) or permanent (`rejected`). */
+/** Refresh due times are tokens compared in JavaScript: millisecond precision. */
+const REFRESH_NOW = sql<Date>`date_trunc('milliseconds', now())`;
+
+/**
+ * Final outcome of a running job: stored (`done`), temporary failure (`failed`) or permanent
+ * (`rejected`). The shares using it are due for a refresh in the same write (F12); returns that due
+ * time, the token for `finishMediaRefresh`.
+ */
 export async function settleMediaJob(
   db: Db,
   j: Pick<MediaJob, "owner_id" | "ref">,
   outcome: { state: "done"; mediaId: string } | { state: "failed" | "rejected"; error: string },
-): Promise<void> {
-  await db
+): Promise<Date | null> {
+  const r = await db
     .updateTable("media_job")
-    .set(outcome.state === "done" ? { state: "done", media_id: outcome.mediaId, error: null, updated_at: sql`now()` } : { state: outcome.state, error: outcome.error, updated_at: sql`now()` })
+    .set({
+      ...(outcome.state === "done" ? { state: "done" as const, media_id: outcome.mediaId, error: null } : { state: outcome.state, error: outcome.error }),
+      refresh_due_at: REFRESH_NOW,
+      updated_at: sql`now()`,
+    })
     .where("owner_id", "=", j.owner_id)
     .where("ref", "=", j.ref)
+    .returning("refresh_due_at")
+    .executeTakeFirst();
+  return r?.refresh_due_at ?? null;
+}
+
+/** Takes the next settled job whose shares still need a refresh, leased for `leaseSeconds` (the new token). */
+export async function claimMediaRefresh(db: Db, leaseSeconds: number): Promise<MediaJob | undefined> {
+  const r = await sql<MediaJob>`
+    UPDATE media_job j SET refresh_due_at = date_trunc('milliseconds', now() + make_interval(secs => ${leaseSeconds}))
+    FROM (
+      SELECT owner_id, ref FROM media_job
+      WHERE refresh_due_at <= now() AND state IN ('done', 'failed', 'rejected')
+      ORDER BY refresh_due_at LIMIT 1 FOR UPDATE SKIP LOCKED
+    ) due
+    WHERE j.owner_id = due.owner_id AND j.ref = due.ref
+    RETURNING j.*`.execute(db);
+  return r.rows[0];
+}
+
+/** The refresh for `token` is done (a newer settle keeps its own). */
+export async function finishMediaRefresh(db: Db, j: Pick<MediaJob, "owner_id" | "ref">, token: Date): Promise<void> {
+  await db.updateTable("media_job").set({ refresh_due_at: null }).where("owner_id", "=", j.owner_id).where("ref", "=", j.ref).where("refresh_due_at", "=", token).execute();
+}
+
+/** The refresh for `token` failed: due again after `seconds`. */
+export async function deferMediaRefresh(db: Db, j: Pick<MediaJob, "owner_id" | "ref">, token: Date, seconds: number): Promise<void> {
+  await db
+    .updateTable("media_job")
+    .set({ refresh_due_at: sql<Date>`now() + make_interval(secs => ${seconds})` })
+    .where("owner_id", "=", j.owner_id)
+    .where("ref", "=", j.ref)
+    .where("refresh_due_at", "=", token)
     .execute();
 }
 

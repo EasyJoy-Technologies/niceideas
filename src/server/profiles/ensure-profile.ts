@@ -21,11 +21,17 @@ export async function ensureProfile(db: Db, userId: string): Promise<Profile> {
   const existing = await findProfile(db, userId);
   if (existing) return existing;
   for (let attempt = 0; attempt < MAX_ATTEMPTS; attempt++) {
-    const row = await insertProfileIfAbsent(db, { user_id: userId, handle: (attempt === 0 && handleFromUserId(userId)) || generateHandle(), display_name: "", bio: "" });
-    if (row) {
-      await enqueueOutbox(db, { kind: "user_registered", dedupeKey: `user_registered:${userId}`, payload: { userId } });
-      return row;
-    }
+    const handle = (attempt === 0 && handleFromUserId(userId)) || generateHandle();
+    // The profile and its registration with the backend are written together (F19).
+    const row = await db.transaction().execute(async (trx) => {
+      const inserted = await insertProfileIfAbsent(trx, { user_id: userId, handle, display_name: "", bio: "" });
+      if (inserted) await enqueueOutbox(trx, { kind: "user_registered", dedupeKey: `user_registered:${userId}`, payload: { userId } });
+      return inserted;
+    });
+    if (row) return row;
+    // Not inserted: created concurrently, deleted for good, or the handle is taken (next attempt).
+    const raced = await findProfile(db, userId);
+    if (raced) return raced;
     if (await isDeletedAccount(db, userId)) throw accountDeleting();
   }
   throw new Error("could not allocate a unique handle");
