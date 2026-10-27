@@ -45,7 +45,7 @@
 .ni-tag-author { background: var(--ni-color-surface-2); color: var(--ni-color-primary); }
 .ni-cmt.ni-new { animation: ni-flash 1.6s ease-out; }
 @keyframes ni-flash { from { background: var(--ni-color-surface-2); } to { background: transparent; } }
-.ni-more { display: block; text-align: center; font-size: 0.8125rem; font-weight: 600; color: var(--ni-color-primary); padding: 0.75rem 0 0.125rem; }
+.ni-cmt-more { display: block; text-align: center; font-size: 0.8125rem; font-weight: 600; color: var(--ni-color-primary); padding: 0.75rem 0 0.125rem; }
 
 .ni-dialog { background: var(--ni-color-surface); color: var(--ni-color-text-primary); border: 0; border-radius: var(--ni-radius-lg); padding: 1.5rem; width: min(24rem, calc(100vw - 2rem)); box-shadow: 0 24px 48px rgb(31 41 55 / 0.2); }
 .ni-dialog::backdrop { background: rgb(17 24 39 / 0.45); }

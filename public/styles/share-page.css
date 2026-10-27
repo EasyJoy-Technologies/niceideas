@@ -107,6 +107,8 @@ a { color: inherit; text-decoration: none; }
 }
 .ni-act:hover { background: var(--ni-color-hover); color: var(--ni-color-primary); }
 .ni-act[hidden] { display: none; }
+/* Menus in the actions row (repost, author's ⋯): a flex box, so the inline button adds no line-box height (34px row). */
+.ni-actions > .ni-menu { display: flex; }
 
 /* footer */
 .ni-ftr { border-top: 1px solid var(--ni-color-border); background: var(--ni-color-surface); margin-top: 3rem; }

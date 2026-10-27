@@ -46,13 +46,13 @@
 .ni-fc-more { flex: none; display: inline-flex; align-items: center; gap: 0.125rem; color: var(--ni-color-primary); font-weight: 600; white-space: nowrap; }
 .ni-fc-more .ni-i { width: 0.875rem; height: 0.875rem; stroke-width: 2.5; }
 [dir="rtl"] .ni-fc-more .ni-i { transform: scaleX(-1); }
-/* Framed box: 10px above and below the frame (actions row: 3px + the button's own padding). */
-.ni-fc-article + .ni-fc-actions { margin-top: 0.1875rem; }
+/* Framed box: 10px above the frame, 17px below it to the action icons (actions row: 10px + the button's own padding). */
+.ni-fc-article + .ni-fc-actions { margin-top: 0.625rem; }
 /* Article without a cover: no frame, text laid out like a short post's text — same ink gap under the author row
-   (≈12px); above the actions 3px less than a short post (≈16px vs ≈19px), as the light facts line reads airier. */
+   (≈12px); above the actions 3px less than a short post (≈23px vs ≈26px), as the light facts line reads airier. */
 .ni-fc-plain { margin-top: 0.59375rem; border: 0; border-radius: 0; }
 .ni-fc-plain .ni-fc-t { padding: 0; }
-.ni-fc-plain + .ni-fc-actions { margin-top: 0.28125rem; }
+.ni-fc-plain + .ni-fc-actions { margin-top: 0.71875rem; }
 /* Cards open their post (share.js adds ni-fc-link): for mouse users the card lifts — near-white tint, soft purple
    ring and deeper shadow, so it stays apart from the page background; a framed article box also turns purple. */
 @media (hover: hover) {
@@ -65,7 +65,8 @@
 .ni-fc-src span { min-width: 0; overflow: hidden; text-overflow: ellipsis; }
 .ni-fc-src:hover { text-decoration: underline; }
 .ni-fc-src img { flex: none; width: 0.875rem; height: 0.875rem; border-radius: 0.25rem; }
-.ni-fc-actions { margin: 0.375rem -0.625rem 0; padding-top: 0; border-top: 0; }
+/* Actions row with room around it (7px more above and below than the bare buttons), the same with or without the author's ⋯ menu. */
+.ni-fc-actions { margin: 0.8125rem -0.625rem 0.4375rem; padding-top: 0; border-top: 0; }
 
 /* avatars */
 .ni-av-42 { width: 2.625rem; height: 2.625rem; font-size: 1.0625rem; }

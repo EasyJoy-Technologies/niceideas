@@ -95,7 +95,7 @@ export function commentsSection(ctx: ChromeContext, post: Post, data: PageIntera
   const list = data.threads.length
     ? data.threads.map((th) => thread(ctx, post, th, data)).join("")
     : data.page === 1 ? `<p class="ni-note">${escapeHtml(t("share.comments.empty"))}</p>` : "";
-  const more = data.hasMore ? `<a class="ni-more" href="${escapeHtml(`${path}?cpage=${data.page + 1}#comments`)}">${escapeHtml(t("share.comments.more"))}</a>` : "";
+  const more = data.hasMore ? `<a class="ni-cmt-more" href="${escapeHtml(`${path}?cpage=${data.page + 1}#comments`)}">${escapeHtml(t("share.comments.more"))}</a>` : "";
   return (
     `<section class="ni-card ni-comments" id="comments"><h2>${escapeHtml(t("share.comments.title"))} <span>${post.comment_count}</span></h2>` +
     `${composer(ctx, post)}<div class="ni-cmt-list">${list}</div>${more}</section>`
