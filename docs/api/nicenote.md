@@ -12,6 +12,7 @@ Base: `https://niceideas.app/api/internal/v1/nicenote` (staging `https://t.nicei
 | POST | `/posts` | `src/server/nicenote/create-share.ts` |
 | PUT | `/posts/{id}/content` | `src/server/nicenote/push-content.ts` |
 | PATCH / DELETE / GET | `/posts/{id}` | `src/server/nicenote/manage-share.ts` |
+| POST | `/web-tickets` (contract §10.2, v1.0.78) | `src/server/nicenote/web-ticket.ts` |
 
 - Signature: `X-NM-*` HMAC (contract §3.1), `src/server/service-auth/` — byte-for-byte the backend's
   `shared/service-auth.js` algorithm; ±300 s; nonces stored once (`service_nonce`, purged daily); signature checked
@@ -31,6 +32,35 @@ the same cookie as the page's theme menu (`ni_theme`, 1 year) and 303-redirects 
 first paint is right and the address bar stays clean; the rest of the site keeps that mode in that browser until the app
 sends another value or the visitor picks one in the menu. Works in mainland China too (`/p/` only). Links the user
 shares with others must **not** carry the parameter. Other values are dropped without a cookie.
+
+## Signing the app's WebView in: one-time tickets (contract §10, v1.0.78)
+Plan `docs/plan/2026-10-26-app-sign-in-ticket.md` (Xianglin 2026-10-26 21:47, including mainland China).
+- **Issue** `POST /web-tickets` `{ userId, profile }` (signed like every source call): profile prepared exactly as for
+  `POST /posts` (created + registered on first contact, then follows NiceMatrix; shared code `source-author.ts`); 201
+  `{ ticket, expiresAt, exchangeUrl }`. Ticket: 32 random bytes, base64url (43 characters); only its SHA-256 is stored
+  (`web_ticket`, migration 0022); valid 60 s (database clock); not idempotent. Account being deleted or deleted → 409
+  `user.deleting` (checked again under the profile lock when the ticket is written).
+- **Exchange** `POST /auth/app-ticket` (`exchangeUrl`), form `ticket=…&next=…` (`application/x-www-form-urlencoded`, or no
+  `Content-Type` at all; ≤ 4 KB; anything else = no ticket). Always `303` + `Cache-Control: no-store` to `next` (same-site
+  path, not `/auth/…`, otherwise `/`; non-ASCII percent-encoded). One transaction: ticket used up atomically (concurrent
+  uses: exactly one wins) → account share-locked and active → the browser's live session of the same user is **kept**,
+  any other session is **ended** and a new session (`web_session.source = 'app'`) starts; `ni_sso` cleared. Expired /
+  used / unknown ticket, inactive account or internal error → the browser's session **ends**, lands signed out.
+- **Other sites**: `Sec-Fetch-Site` `cross-site` / `same-site` / unknown value, or an `Origin` other than this site or
+  `null` → no exchange, session untouched, plain 303 (login CSRF). The app's own load is expected without `Origin` (or
+  `null`) and with `Sec-Fetch-Site: none` (or none).
+- **Logs** (`event: "app_ticket"`): `action: "issue"`; `action: "exchange"` with `result` (`ok` / `kept` / `switched` /
+  `expired` / `used` / `unknown` / `inactive` / `cross_site` / `error`), `fetchSite`, `origin` (`absent` / `null` / `self`
+  / `other`), `contentType` (`form` / `absent` / `other`). Never the ticket, never the user.
+- **App sessions**: same table, lifetime and sliding renewal as web sign-in. "Sign out" on a page ends only the
+  NiceIdeas session and returns home (no NiceMatrix sign-out: the WebView has no NiceMatrix sign-in), and sets `ni_sso`
+  so the home page does not try silent sign-in. Account deletion / ban rules unchanged.
+- **Mainland China**: the exchange is open there (access class `app_sign_in`, excluded from the 451 proxy). Post pages
+  (`/p/…`) know the signed-in viewer there too, so authors see their own private posts; the restricted chrome still shows
+  no account menu, notifications or navigation, and the author's "⋯" menu has no Edit (the edit page is 451 there);
+  Make private / public and Delete work. Every other page stays 451.
+- Likes and comments on the web are not tied to the signed-in user yet (likes per browser, comments anonymous) — the
+  same for app sessions.
 
 ## Configuration (`/etc/niceideas/env.<env>`)
 | Variable | Meaning |

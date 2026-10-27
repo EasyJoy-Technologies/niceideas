@@ -4,10 +4,9 @@ import { findPostByShareId, insertPost } from "@/server/db/repos/posts";
 import { isUniqueViolation } from "@/server/db/repos/profiles";
 import { ApiError } from "@/server/http/errors";
 import { generateSlug } from "@/server/posts/slug";
-import { accountDeleting, assertAuthorActive } from "@/server/accounts/author-gate";
-import { ensureProfile } from "@/server/profiles/ensure-profile";
-import { followNiceMatrixProfile } from "@/server/profiles/profile-follow";
+import { assertAuthorActive } from "@/server/accounts/author-gate";
 import type { CreateShareInput } from "./requests";
+import { prepareSourceAuthor } from "./source-author";
 
 const MAX_SLUG_ATTEMPTS = 3;
 
@@ -27,9 +26,7 @@ async function existing(db: Db, input: CreateShareInput): Promise<{ post: Post; 
 export async function createShare(db: Db, input: CreateShareInput): Promise<{ post: Post; created: boolean }> {
   const found = await existing(db, input);
   if (found) return found;
-  const profile = await ensureProfile(db, input.userId);
-  if (profile.status !== "active") throw accountDeleting();
-  if (input.profile) await followNiceMatrixProfile(db, profile, input.profile);
+  await prepareSourceAuthor(db, input.userId, input.profile);
   for (let attempt = 1; ; attempt++) {
     try {
       // Re-checked under the profile lock: a deletion request committed meanwhile wins.

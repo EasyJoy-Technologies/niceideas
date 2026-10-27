@@ -9,7 +9,8 @@ import { badgeAppName, sourceBadge } from "./sources";
 export const isOwnPost = (ctx: ChromeContext, post: Pick<Post, "author_id">) => !!ctx.viewer && ctx.viewer.user_id === post.author_id;
 
 /**
- * Author's "⋯" menu (no JS needed: nested <details>): Edit (while the post can be edited), Make
+ * Author's "⋯" menu (no JS needed: nested <details>): Edit (while the post can be edited; not in mainland
+ * China, where the edit page is not available), Make
  * private / Make public (reversible, no confirmation), then Delete, which opens an inline confirmation with
  * the consequences; posts shared from an app say the original there is not affected.
  * `back`: same-site page to return to after deleting.
@@ -37,7 +38,7 @@ export function ownPostMenu(ctx: ChromeContext, post: Pick<Post, "slug" | "sourc
     `<button type="submit" class="ni-btn ni-btn-sm ni-btn-danger">${del}</button></form>`;
   return (
     `<details class="ni-menu ni-more"><summary class="ni-act ni-more-btn" aria-label="${more}" title="${more}">${icon("more")}</summary>` +
-    `<ul>${editBlocker(post) ? "" : `<li><a href="/p/${escapeHtml(post.slug)}/edit">${icon("edit")}<span>${escapeHtml(t("share.action.edit"))}</span></a></li>`}` +
+    `<ul>${ctx.restricted || editBlocker(post) ? "" : `<li><a href="/p/${escapeHtml(post.slug)}/edit">${icon("edit")}<span>${escapeHtml(t("share.action.edit"))}</span></a></li>`}` +
     `${visibilityItem(ctx, post, back)}<li><details class="ni-del"><summary>${icon("withdrawn")}<span>${del}</span></summary>${form}</details></li></ul></details>`
   );
 }

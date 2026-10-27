@@ -46,14 +46,18 @@ async function unreadNotifications(db: Db, viewer: Profile): Promise<number> {
 /**
  * Page context of a server-rendered page. Blocking of `site` pages in mainland China
  * happens in `src/proxy.ts`; here the decision only selects the restricted chrome.
+ * The signed-in viewer is known wherever the page is allowed: in mainland China that is the post
+ * pages, where a session (from an app's sign-in ticket, contract niceideas-share.md §10) shows
+ * the author's own private posts; the restricted chrome still shows no account controls.
  */
 export async function pageContext(request: Request, access: AccessClass = "share"): Promise<ChromeContext> {
   const path = new URL(request.url).pathname;
   const decision = decideAccess({ country: countryFromHeaders(request.headers), access, mode: getConfig().REGION_POLICY_CN });
   logRegionDecision(path, access, decision);
   await ensureSourceRegistry(getDb()).catch(() => undefined);
-  const viewer = decision.restricted ? null : await sessionProfile(getDb(), request.headers).catch(() => null);
-  const unread = viewer ? await unreadNotifications(getDb(), viewer).catch(() => 0) : 0;
+  const viewer = decision.allowed ? await sessionProfile(getDb(), request.headers).catch(() => null) : null;
+  // The notification badge is not shown in the restricted chrome.
+  const unread = viewer && !decision.restricted ? await unreadNotifications(getDb(), viewer).catch(() => 0) : 0;
   return { intl: await pageIntl(requestLocale(request)), restricted: decision.restricted, path, viewer, unread, theme: requestTheme(request) };
 }
 

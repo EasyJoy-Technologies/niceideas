@@ -36,3 +36,4 @@ pnpm build
 - Execution plan: docs/plan/2026-10-19-execution-plan.md
 - Phase 1 architecture: docs/design/phase1-architecture.md
 - Build vs Sharkey evaluation: docs/plan/2026-10-19-build-vs-sharkey-evaluation.md
+- NiceNote source API, app sign-in tickets and app sessions (`ni_sid`): docs/api/nicenote.md

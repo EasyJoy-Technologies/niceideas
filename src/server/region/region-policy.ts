@@ -15,6 +15,8 @@ export type AccessClass =
   | "third_party_api"
   /** Health / version metadata. */
   | "public_meta"
+  /** An app's one-time sign-in ticket exchange (contract niceideas-share.md §10.3): signs the app's WebView in for post pages. */
+  | "app_sign_in"
   /** Any other page (home, discover, profiles, search, login, settings, web compose). */
   | "site"
   /** Any other API (timeline, follow, search, profile, …). */
@@ -27,7 +29,7 @@ export type RegionDecision = { allowed: true; restricted: boolean } | { allowed:
 /** Mainland China only; Hong Kong (HK), Macau (MO) and Taiwan (TW) are separate codes and unaffected. */
 const RESTRICTED_COUNTRY = "CN";
 
-const ALLOWED_WHEN_RESTRICTED: ReadonlySet<AccessClass> = new Set(["share", "interaction", "publish_api", "third_party_api", "public_meta"]);
+const ALLOWED_WHEN_RESTRICTED: ReadonlySet<AccessClass> = new Set(["share", "interaction", "publish_api", "third_party_api", "public_meta", "app_sign_in"]);
 
 /** Normalizes Cloudflare's `CF-IPCountry` (two letters; "XX"/"T1" etc. are not CN). */
 export function countryFromHeaders(headers: Headers): string | null {

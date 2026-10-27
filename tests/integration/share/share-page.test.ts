@@ -178,6 +178,10 @@ describe("page-level mainland-China rule", () => {
 
   it("the 451 rewrite covers exactly the proxy's paths", () => {
     expect(proxyConfig.matcher).toEqual([`/(${SITE_PATH_EXCLUSIONS}.*)`]);
+    // The app sign-in ticket exchange is open in mainland China; the web sign-in pages are not.
+    const site = new RegExp(`^/(${SITE_PATH_EXCLUSIONS}.*)$`);
+    expect(site.test("/auth/app-ticket")).toBe(false);
+    expect(["/auth/sign-in", "/auth/callback", "/auth/sign-out", "/", "/discover"].every((p) => site.test(p))).toBe(true);
   });
 
   it("451 page has no in-site links", async () => {

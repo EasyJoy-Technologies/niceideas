@@ -8,12 +8,16 @@ import { ensureProfile } from "@/server/profiles/ensure-profile";
 import { syncProfileFromClaims } from "@/server/profiles/sync-from-claims";
 import { FLOW_COOKIE, FLOW_MAX_AGE, newFlow, openFlow, pkceChallenge, sealFlow, SILENT_STATE_PREFIX } from "./flow-cookie";
 import { oidcProvider } from "./oidc-provider";
+import { seeOther as redirect } from "./redirect";
 import { endSession, SESSION_COOKIE, startSession } from "./session";
 import { safeNext, webAuthSettings } from "./settings";
 
 /** Set after a silent (prompt=none) attempt so a signed-out visitor is not bounced again for a day. */
 export const SSO_TRIED_COOKIE = "ni_sso";
 const SSO_TRIED_MAX_AGE = 86_400;
+/** Marks the browser as done with silent sign-in (signed out on purpose, or not signed in at NiceMatrix): no silent sign-in for a day. */
+const ssoTriedCookie = () => serializeCookie(SSO_TRIED_COOKIE, "1", { maxAge: SSO_TRIED_MAX_AGE });
+
 /** Errors of a silent attempt that just mean "not signed in at NiceMatrix". */
 /** Marker on the fallback redirect when cookies are blocked (stops silent retries). */
 const SSO_OFF_PARAM = "sso";
@@ -21,12 +25,6 @@ const BOT = /bot|crawl|spider|slurp|preview|facebookthird-partyhit|embedly|whats
 const SILENT_MISSES = new Set(["login_required", "consent_required", "interaction_required", "account_selection_required"]);
 
 export type SignInFailure = "disabled" | "expired" | "failed" | "deleting";
-
-function redirect(location: string, cookies: string[] = []): Response {
-  const headers = new Headers({ Location: location, "Cache-Control": "no-store" });
-  for (const c of cookies) headers.append("Set-Cookie", c);
-  return new Response(null, { status: 303, headers });
-}
 
 /** GET /auth/sign-in?next=/path[&silent=1]: redirect to NiceMatrix sign-in (Logto). */
 export async function startSignIn(request: Request): Promise<Response | SignInFailure> {
@@ -54,7 +52,7 @@ export async function finishSignIn(request: Request): Promise<Response | SignInF
   const error = url.searchParams.get("error");
   if (error) {
     if (flow.silent && SILENT_MISSES.has(error)) {
-      return redirect(flow.next, [clearFlow, serializeCookie(SSO_TRIED_COOKIE, "1", { maxAge: SSO_TRIED_MAX_AGE })]);
+      return redirect(flow.next, [clearFlow, ssoTriedCookie()]);
     }
     console.warn(JSON.stringify({ event: "web_sign_in", result: "provider_error", error: error.slice(0, 64) }));
     return "failed";
@@ -82,13 +80,15 @@ export async function finishSignIn(request: Request): Promise<Response | SignInF
 /**
  * POST /auth/sign-out (same-origin form): ends the NiceIdeas session, then the
  * NiceMatrix one (otherwise silent sign-in would sign the user straight back in).
+ * A session opened by an app's ticket (contract §10.4) only ends here: the app's WebView
+ * has no NiceMatrix sign-in to end, so it goes back to the home page.
  */
 export async function signOut(request: Request): Promise<Response> {
   if (!isSameOrigin(request)) return new Response(null, { status: 403 });
-  const cleared = await endSession(getDb(), request.headers);
-  const s = webAuthSettings();
+  const { setCookie, source } = await endSession(getDb(), request.headers);
+  const s = source === "app" ? null : webAuthSettings();
   const target = s ? await oidcProvider(s).endSessionUrl().catch(() => "/") : "/";
-  return redirect(target, [cleared, serializeCookie(SSO_TRIED_COOKIE, "1", { maxAge: SSO_TRIED_MAX_AGE })]);
+  return redirect(target, [setCookie, ssoTriedCookie()]);
 }
 
 /**

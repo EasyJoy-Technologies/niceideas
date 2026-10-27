@@ -9,4 +9,4 @@ export const REGION_PAGE = "/status/region";
  * proxy matcher (a literal there; equality is tested) and the 451 rewrite, so a
  * forged marker on other paths (e.g. /p/…) is never acted on.
  */
-export const SITE_PATH_EXCLUSIONS = "(?!api/|p/|status/|_next/|media-local/|brand/|styles/|scripts/|fonts/|favicon\\.ico|robots\\.txt)";
+export const SITE_PATH_EXCLUSIONS = "(?!api/|p/|auth/app-ticket|status/|_next/|media-local/|brand/|styles/|scripts/|fonts/|favicon\\.ico|robots\\.txt)";

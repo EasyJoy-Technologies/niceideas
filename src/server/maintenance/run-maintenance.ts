@@ -5,6 +5,7 @@ import { purgeSpentChallenges } from "@/server/db/repos/pow";
 import { purgeDeliveredOutbox } from "@/server/db/repos/outbox";
 import { purgeExpiredServiceNonces } from "@/server/db/repos/service-nonces";
 import { purgeExpiredSessions } from "@/server/db/repos/sessions";
+import { purgeExpiredWebTickets } from "@/server/db/repos/web-tickets";
 import { deleteMediaRows, deletePosts, listDeletableMedia, listExpiredPosts, listStrayPublicMedia, mediaOfPosts, purgeExpiredBans } from "@/server/db/repos/maintenance";
 import { mediaKeys } from "@/server/media/keys";
 import { getConfig } from "@/server/config/env";
@@ -23,17 +24,17 @@ const ACCOUNT_EVENT_KEEP_DAYS = 90;
 /** An upload without its media row after this long failed (the longest transcode is 1 hour). */
 const UPLOAD_STALE_HOURS = 24;
 
-export type MaintenanceReport = { postsPurged: number; mediaDeleted: number; strayPublicWithdrawn: number; uploadsCleaned: number; idempotencyPurged: number; bansExpired: number; sessionsExpired: number; challengesExpired: number; noncesExpired: number; outboxPurged: number; accountEventsPurged: number };
+export type MaintenanceReport = { postsPurged: number; mediaDeleted: number; strayPublicWithdrawn: number; uploadsCleaned: number; idempotencyPurged: number; bansExpired: number; sessionsExpired: number; ticketsExpired: number; challengesExpired: number; noncesExpired: number; outboxPurged: number; accountEventsPurged: number };
 
 /**
  * Daily job (plan §10): physically deletes posts past their 30-day retention,
  * then media no post uses any more (objects first, rows after), re-checks media
- * public without a live post, removes objects of failed uploads, and drops expired idempotency keys, bans, web sessions, spent PoW challenges, service-signature nonces
+ * public without a live post, removes objects of failed uploads, and drops expired idempotency keys, bans, web sessions, app sign-in tickets, spent PoW challenges, service-signature nonces
  * backend notifications delivered over 30 days ago and account-event ids processed over 90 days ago.
  * Safe to re-run; each step is idempotent.
  */
 export async function runMaintenance(db: Db, stores: MediaStores): Promise<MaintenanceReport> {
-  const report: MaintenanceReport = { postsPurged: 0, mediaDeleted: 0, strayPublicWithdrawn: 0, uploadsCleaned: 0, idempotencyPurged: 0, bansExpired: 0, sessionsExpired: 0, challengesExpired: 0, noncesExpired: 0, outboxPurged: 0, accountEventsPurged: 0 };
+  const report: MaintenanceReport = { postsPurged: 0, mediaDeleted: 0, strayPublicWithdrawn: 0, uploadsCleaned: 0, idempotencyPurged: 0, bansExpired: 0, sessionsExpired: 0, ticketsExpired: 0, challengesExpired: 0, noncesExpired: 0, outboxPurged: 0, accountEventsPurged: 0 };
 
   const visibility = { db, stores, cacheControl: getConfig().MEDIA_CACHE_CONTROL };
   for (;;) {
@@ -57,6 +58,7 @@ export async function runMaintenance(db: Db, stores: MediaStores): Promise<Maint
   report.idempotencyPurged = await purgeExpiredIdempotency(db);
   report.bansExpired = await purgeExpiredBans(db);
   report.sessionsExpired = await purgeExpiredSessions(db);
+  report.ticketsExpired = await purgeExpiredWebTickets(db);
   report.challengesExpired = await purgeSpentChallenges(db);
   report.noncesExpired = await purgeExpiredServiceNonces(db);
   report.outboxPurged = await purgeDeliveredOutbox(db, OUTBOX_KEEP_DAYS);
