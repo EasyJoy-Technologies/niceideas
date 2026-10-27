@@ -229,6 +229,7 @@
     "error": {
       "empty": "Écrivez quelque chose ou ajoutez une image.",
       "failed": "Impossible de publier. Veuillez réessayer.",
+      "quote_gone": "La publication que vous citez n’est plus disponible.",
       "rate_limited": "Vous publiez trop vite. Patientez un instant.",
       "shortTooLongEdit": "Les publications courtes sont limitées à {max} caractères.",
       "short_too_long": "Les publications courtes sont limitées à {max} caractères. Passez à « {article} » pour écrire davantage.",
@@ -261,6 +262,7 @@
     "placeholder": "Quelle est votre bonne idée ?",
     "posting": "Publication…",
     "publish": "Publier",
+    "quotePlaceholder": "Ajoutez votre commentaire…",
     "remove": "Retirer",
     "save": "Enregistrer",
     "saving": "Enregistrement…",
@@ -279,7 +281,10 @@
     "readingTime": "{minutes} min de lecture",
     "tab": {
       "all": "Tout",
-      "articles": "Articles"
+      "articles": "Articles",
+      "bookmarks": "Enregistrements",
+      "replies": "Réponses",
+      "reposts": "Republications"
     }
   },
   "follow": {
@@ -334,7 +339,9 @@
     "empty": "Aucune notification pour l’instant. Les j’aime, commentaires et nouveaux abonnés apparaîtront ici.",
     "follow": "{name} vous suit",
     "like": "{name} a aimé votre publication",
+    "quote": "{name} a cité votre publication",
     "reply": "{name} a répondu à votre commentaire",
+    "repost": "{name} a republié votre publication",
     "someone": "Quelqu’un",
     "title": "Notifications",
     "unread": "Notifications non lues : {count}"
@@ -382,9 +389,12 @@
       "makePrivate": "Rendre visible uniquement par moi",
       "makePublic": "Rendre public",
       "more": "Plus d’options",
+      "quote": "Citer",
       "reply": "Répondre",
       "report": "Signaler",
-      "share": "Partager"
+      "repost": "Republier",
+      "share": "Partager",
+      "undoRepost": "Annuler la republication"
     },
     "aside": {
       "moreArticles": "Autres articles de l’auteur"
@@ -432,7 +442,12 @@
         "title": "Préparation de la publication"
       },
       "private": "Moi uniquement",
-      "privateNote": "Vous seul pouvez voir cette publication. Les autres pourront l’ouvrir une fois que vous l’aurez rendue publique."
+      "privateNote": "Vous seul pouvez voir cette publication. Les autres pourront l’ouvrir une fois que vous l’aurez rendue publique.",
+      "repostedBy": "{name} a republié",
+      "repostedByYou": "Vous avez republié"
+    },
+    "quote": {
+      "unavailable": "Cette publication n’est plus disponible"
     },
     "report": {
       "done": "Merci. Nous allons l’examiner.",

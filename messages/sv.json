@@ -229,6 +229,7 @@
     "error": {
       "empty": "Skriv något eller lägg till en bild.",
       "failed": "Det gick inte att publicera. Försök igen.",
+      "quote_gone": "Inlägget du citerar är inte längre tillgängligt.",
       "rate_limited": "Du publicerar för snabbt. Vänta en stund.",
       "shortTooLongEdit": "Korta inlägg får ha högst {max} tecken.",
       "short_too_long": "Korta inlägg får ha högst {max} tecken. Byt till ”{article}” för att skriva mer.",
@@ -261,6 +262,7 @@
     "placeholder": "Vad är din goda idé?",
     "posting": "Publicerar…",
     "publish": "Publicera",
+    "quotePlaceholder": "Lägg till din kommentar…",
     "remove": "Ta bort",
     "save": "Spara",
     "saving": "Sparar…",
@@ -279,7 +281,10 @@
     "readingTime": "{minutes} min läsning",
     "tab": {
       "all": "Allt",
-      "articles": "Artiklar"
+      "articles": "Artiklar",
+      "bookmarks": "Sparat",
+      "replies": "Svar",
+      "reposts": "Delningar"
     }
   },
   "follow": {
@@ -334,7 +339,9 @@
     "empty": "Inga aviseringar än. Gillningar, kommentarer och nya följare visas här.",
     "follow": "{name} följer dig",
     "like": "{name} gillade ditt inlägg",
+    "quote": "{name} citerade ditt inlägg",
     "reply": "{name} svarade på din kommentar",
+    "repost": "{name} delade ditt inlägg vidare",
     "someone": "Någon",
     "title": "Aviseringar",
     "unread": "Olästa aviseringar: {count}"
@@ -382,9 +389,12 @@
       "makePrivate": "Gör synlig bara för mig",
       "makePublic": "Gör offentlig",
       "more": "Fler alternativ",
+      "quote": "Citera",
       "reply": "Svara",
       "report": "Anmäl",
-      "share": "Dela"
+      "repost": "Dela vidare",
+      "share": "Dela",
+      "undoRepost": "Ångra delning"
     },
     "aside": {
       "moreArticles": "Fler artiklar av skribenten"
@@ -432,7 +442,12 @@
         "title": "Inlägget förbereds"
       },
       "private": "Bara jag",
-      "privateNote": "Bara du kan se det här inlägget. Andra kan öppna det när du gör det offentligt."
+      "privateNote": "Bara du kan se det här inlägget. Andra kan öppna det när du gör det offentligt.",
+      "repostedBy": "{name} delade vidare",
+      "repostedByYou": "Du delade vidare"
+    },
+    "quote": {
+      "unavailable": "Det här inlägget är inte längre tillgängligt"
     },
     "report": {
       "done": "Tack. Vi granskar det.",

@@ -121,7 +121,7 @@ export async function deleteProfileCascade(db: Db, userId: string, mediaIds: str
       await trx.deleteFrom("revision_media").where("media_id", "in", mediaIds).execute();
       await trx.deleteFrom("media").where("id", "in", mediaIds).execute();
     }
-    // Profile cascade: comments, likes, bookmarks and follows of the user; the counters they were part of are recounted.
+    // Profile cascade: comments, likes, bookmarks, reposts and follows of the user; the counters they were part of are recounted.
     const touched = await countersTouchedBy(trx, userId);
     const row = await trx.deleteFrom("profile").where("user_id", "=", userId).returning("avatar_url").executeTakeFirst();
     await recountCounters(trx, touched);

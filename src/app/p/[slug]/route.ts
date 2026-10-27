@@ -6,6 +6,7 @@ import { peekVisitorKey } from "@/server/interactions/visitor";
 import { commentPage, loadPageInteractions } from "@/server/share/load-interactions";
 import { loadSharePost } from "@/server/share/load-post";
 import { loadPostAside } from "@/server/share/load-post-aside";
+import { loadQuoted } from "@/server/share/load-quotes";
 import { pageNotice, renderPostPage, renderPreparingPage } from "@/server/share/post-page";
 import { cachedPage } from "@/server/share/page-cache";
 import { pageContext } from "@/server/share/respond";
@@ -32,7 +33,9 @@ export async function GET(request: Request, ctx: RouteContext<"/p/[slug]">) {
       const authorId = result.data.author.user_id;
       const following = page.viewer ? (await followingAmong(db, page.viewer.user_id, [authorId])).has(authorId) : false;
       const aside = page.restricted ? null : { ...(await loadPostAside(db, result.data.author, result.data.post.id)), following };
-      return { html: renderPostPage(page, result.data, social, aside, following, pageNotice(url)), status: 200 };
+      const quoteOf = result.data.post.quote_of;
+      const quoted = quoteOf ? (await loadQuoted(db, [quoteOf])).get(quoteOf) ?? null : undefined;
+      return { html: renderPostPage(page, result.data, social, aside, following, pageNotice(url), quoted), status: 200 };
     }, await postPageVersion(db, slug));
   } catch (err) {
     console.error(`[share] page failed errorId=${randomUUID()}`, err);

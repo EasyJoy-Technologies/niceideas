@@ -1,7 +1,7 @@
 import { sql } from "kysely";
 import type { Db } from "../client";
 
-export type NotificationKind = "like" | "comment" | "reply" | "follow";
+export type NotificationKind = "like" | "comment" | "reply" | "follow" | "repost" | "quote";
 
 export type NotificationRow = {
   kind: NotificationKind;
@@ -19,12 +19,13 @@ export type NotificationRow = {
 const WINDOW_DAYS = 90;
 
 /**
- * Newest events for `userId` (likes / comments on their posts, replies to their
+ * Newest events for `userId` (likes / comments / reposts / quotes of their posts, replies to their
  * comments, new followers), newer than `after` when given. The user's own actions are skipped.
+ * A quote links to the quote itself (its text stands in for the post title).
  */
 export async function listNotifications(db: Db, userId: string, after: Date | null, limit: number): Promise<NotificationRow[]> {
   const since = after ?? sql<Date>`now() - make_interval(days => ${WINDOW_DAYS})`;
-  const [likes, comments, replies, follows] = await Promise.all([
+  const [likes, comments, replies, follows, reposts, quotes] = await Promise.all([
     db
       .selectFrom("post_like as l")
       .innerJoin("post as p", "p.id", "l.post_id")
@@ -79,6 +80,33 @@ export async function listNotifications(db: Db, userId: string, after: Date | nu
       .orderBy("f.created_at", "desc")
       .limit(limit)
       .execute(),
+    db
+      .selectFrom("post_repost as r")
+      .innerJoin("post as p", "p.id", "r.post_id")
+      .innerJoin("profile as a", "a.user_id", "r.user_id")
+      .select(["r.created_at as at", "a.display_name as actorName", "a.handle as actorHandle", "a.avatar_url as actorAvatar", "p.slug as postSlug", "p.title as postTitle", "p.summary as postSummary"])
+      .where("p.author_id", "=", userId)
+      .where("p.status", "=", "active")
+      .where("r.user_id", "<>", userId)
+      .where("a.status", "=", "active")
+      .where("r.created_at", ">", since)
+      .orderBy("r.created_at", "desc")
+      .limit(limit)
+      .execute(),
+    db
+      .selectFrom("post as q")
+      .innerJoin("post as p", "p.id", "q.quote_of")
+      .innerJoin("profile as a", "a.user_id", "q.author_id")
+      .select(["q.published_at as at", "a.display_name as actorName", "a.handle as actorHandle", "a.avatar_url as actorAvatar", "q.slug as postSlug", "q.title as postTitle", "q.summary as postSummary"])
+      .where("p.author_id", "=", userId)
+      .where("q.author_id", "<>", userId)
+      .where("q.status", "=", "active")
+      .where("q.visibility", "=", "public")
+      .where("a.status", "=", "active")
+      .where("q.published_at", ">", since)
+      .orderBy("q.published_at", "desc")
+      .limit(limit)
+      .execute(),
   ]);
   const none = { anonName: null, postSlug: null, postTitle: null, postSummary: null, excerpt: null };
   const rows: NotificationRow[] = [
@@ -86,6 +114,8 @@ export async function listNotifications(db: Db, userId: string, after: Date | nu
     ...comments.map(({ parentAuthor, ...r }) => ({ ...r, kind: (parentAuthor === userId ? "reply" : "comment") as NotificationKind })),
     ...replies.map((r) => ({ ...r, kind: "reply" as const })),
     ...follows.map((r) => ({ ...none, ...r, kind: "follow" as const })),
+    ...reposts.map((r) => ({ ...none, ...r, kind: "repost" as const })),
+    ...quotes.map((r) => ({ ...none, ...r, kind: "quote" as const })),
   ];
   return rows.sort((a, b) => b.at.getTime() - a.at.getTime()).slice(0, limit);
 }

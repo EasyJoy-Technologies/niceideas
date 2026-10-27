@@ -229,6 +229,7 @@
     "error": {
       "empty": "Scrie ceva sau adaugă o imagine.",
       "failed": "Nu s-a putut publica. Încearcă din nou.",
+      "quote_gone": "Postarea pe care o citezi nu mai este disponibilă.",
       "rate_limited": "Publici prea repede. Așteaptă puțin.",
       "shortTooLongEdit": "Postările scurte au cel mult {max} de caractere.",
       "short_too_long": "Postările scurte au cel mult {max} de caractere. Comută la „{article}” pentru a scrie mai mult.",
@@ -261,6 +262,7 @@
     "placeholder": "Care e ideea ta bună?",
     "posting": "Se publică…",
     "publish": "Publică",
+    "quotePlaceholder": "Adaugă comentariul tău…",
     "remove": "Elimină",
     "save": "Salvează",
     "saving": "Se salvează…",
@@ -279,7 +281,10 @@
     "readingTime": "{minutes} min de citit",
     "tab": {
       "all": "Toate",
-      "articles": "Articole"
+      "articles": "Articole",
+      "bookmarks": "Salvate",
+      "replies": "Răspunsuri",
+      "reposts": "Repostări"
     }
   },
   "follow": {
@@ -334,7 +339,9 @@
     "empty": "Nicio notificare încă. Aprecierile, comentariile și urmăritorii noi vor apărea aici.",
     "follow": "{name} te urmărește",
     "like": "{name} a apreciat postarea ta",
+    "quote": "{name} a citat postarea ta",
     "reply": "{name} a răspuns la comentariul tău",
+    "repost": "{name} a repostat postarea ta",
     "someone": "Cineva",
     "title": "Notificări",
     "unread": "Notificări necitite: {count}"
@@ -382,9 +389,12 @@
       "makePrivate": "Fă vizibil doar pentru mine",
       "makePublic": "Fă public",
       "more": "Mai multe opțiuni",
+      "quote": "Citează",
       "reply": "Răspunde",
       "report": "Raportează",
-      "share": "Distribuie"
+      "repost": "Repostează",
+      "share": "Distribuie",
+      "undoRepost": "Anulează repostarea"
     },
     "aside": {
       "moreArticles": "Alte articole ale autorului"
@@ -432,7 +442,12 @@
         "title": "Postarea se pregătește"
       },
       "private": "Doar eu",
-      "privateNote": "Doar tu poți vedea această postare. Ceilalți o vor putea deschide după ce o faci publică."
+      "privateNote": "Doar tu poți vedea această postare. Ceilalți o vor putea deschide după ce o faci publică.",
+      "repostedBy": "{name} a repostat",
+      "repostedByYou": "Ai repostat"
+    },
+    "quote": {
+      "unavailable": "Această postare nu mai este disponibilă"
     },
     "report": {
       "done": "Mulțumim. Vom analiza.",

@@ -229,6 +229,7 @@
     "error": {
       "empty": "내용을 쓰거나 이미지를 추가해 주세요.",
       "failed": "게시하지 못했어요. 다시 시도해 주세요.",
+      "quote_gone": "인용하려는 게시물을 더 이상 볼 수 없습니다.",
       "rate_limited": "너무 빨리 게시하고 있어요. 잠시 기다려 주세요.",
       "shortTooLongEdit": "짧은 글은 최대 {max}자까지 쓸 수 있어요.",
       "short_too_long": "짧은 글은 최대 {max}자까지 쓸 수 있어요. 더 쓰려면 ‘{article}’로 바꿔 주세요.",
@@ -261,6 +262,7 @@
     "placeholder": "어떤 좋은 아이디어가 있나요?",
     "posting": "게시하는 중…",
     "publish": "게시",
+    "quotePlaceholder": "의견을 추가하세요…",
     "remove": "삭제",
     "save": "저장",
     "saving": "저장하는 중…",
@@ -279,7 +281,10 @@
     "readingTime": "{minutes}분 분량",
     "tab": {
       "all": "전체",
-      "articles": "긴 글"
+      "articles": "긴 글",
+      "bookmarks": "저장한 글",
+      "replies": "답글",
+      "reposts": "재게시"
     }
   },
   "follow": {
@@ -334,7 +339,9 @@
     "empty": "아직 알림이 없어요. 좋아요, 댓글, 새 팔로워가 여기에 표시돼요.",
     "follow": "{name}님이 회원님을 팔로우해요",
     "like": "{name}님이 회원님의 게시물을 좋아해요",
+    "quote": "{name}님이 내 게시물을 인용했습니다",
     "reply": "{name}님이 회원님의 댓글에 답글을 남겼어요",
+    "repost": "{name}님이 내 게시물을 재게시했습니다",
     "someone": "누군가",
     "title": "알림",
     "unread": "읽지 않은 알림: {count}"
@@ -382,9 +389,12 @@
       "makePrivate": "나만 보기로 설정",
       "makePublic": "공개로 설정",
       "more": "더보기",
+      "quote": "인용",
       "reply": "답글",
       "report": "신고",
-      "share": "공유"
+      "repost": "재게시",
+      "share": "공유",
+      "undoRepost": "재게시 취소"
     },
     "aside": {
       "moreArticles": "작성자의 다른 글"
@@ -432,7 +442,12 @@
         "title": "게시물을 준비하고 있습니다"
       },
       "private": "나만 보기",
-      "privateNote": "이 게시물은 나만 볼 수 있습니다. 공개로 설정하면 다른 사람도 열 수 있습니다."
+      "privateNote": "이 게시물은 나만 볼 수 있습니다. 공개로 설정하면 다른 사람도 열 수 있습니다.",
+      "repostedBy": "{name}님이 재게시함",
+      "repostedByYou": "내가 재게시함"
+    },
+    "quote": {
+      "unavailable": "더 이상 볼 수 없는 게시물입니다"
     },
     "report": {
       "done": "감사합니다. 검토하겠습니다.",

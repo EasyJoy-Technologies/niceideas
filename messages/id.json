@@ -229,6 +229,7 @@
     "error": {
       "empty": "Tulis sesuatu atau tambahkan gambar.",
       "failed": "Gagal memposting. Silakan coba lagi.",
+      "quote_gone": "Postingan yang Anda kutip tidak tersedia lagi.",
       "rate_limited": "Kamu memposting terlalu cepat. Tunggu sebentar.",
       "shortTooLongEdit": "Postingan pendek maksimal {max} karakter.",
       "short_too_long": "Postingan pendek maksimal {max} karakter. Beralih ke “{article}” untuk menulis lebih banyak.",
@@ -261,6 +262,7 @@
     "placeholder": "Apa ide bagusmu?",
     "posting": "Memposting…",
     "publish": "Posting",
+    "quotePlaceholder": "Tambahkan komentar Anda…",
     "remove": "Hapus",
     "save": "Simpan",
     "saving": "Menyimpan…",
@@ -279,7 +281,10 @@
     "readingTime": "{minutes} menit baca",
     "tab": {
       "all": "Semua",
-      "articles": "Artikel"
+      "articles": "Artikel",
+      "bookmarks": "Disimpan",
+      "replies": "Balasan",
+      "reposts": "Posting ulang"
     }
   },
   "follow": {
@@ -334,7 +339,9 @@
     "empty": "Belum ada notifikasi. Suka, komentar, dan pengikut baru akan muncul di sini.",
     "follow": "{name} mulai mengikutimu",
     "like": "{name} menyukai postinganmu",
+    "quote": "{name} mengutip postingan Anda",
     "reply": "{name} membalas komentarmu",
+    "repost": "{name} memposting ulang postingan Anda",
     "someone": "Seseorang",
     "title": "Notifikasi",
     "unread": "Notifikasi belum dibaca: {count}"
@@ -382,9 +389,12 @@
       "makePrivate": "Jadikan hanya terlihat oleh saya",
       "makePublic": "Jadikan publik",
       "more": "Opsi lainnya",
+      "quote": "Kutip",
       "reply": "Balas",
       "report": "Laporkan",
-      "share": "Bagikan"
+      "repost": "Posting ulang",
+      "share": "Bagikan",
+      "undoRepost": "Batalkan posting ulang"
     },
     "aside": {
       "moreArticles": "Artikel lain dari penulis"
@@ -432,7 +442,12 @@
         "title": "Menyiapkan postingan ini"
       },
       "private": "Hanya saya",
-      "privateNote": "Hanya Anda yang dapat melihat postingan ini. Orang lain dapat membukanya setelah Anda menjadikannya publik."
+      "privateNote": "Hanya Anda yang dapat melihat postingan ini. Orang lain dapat membukanya setelah Anda menjadikannya publik.",
+      "repostedBy": "{name} memposting ulang",
+      "repostedByYou": "Anda memposting ulang"
+    },
+    "quote": {
+      "unavailable": "Postingan ini tidak tersedia lagi"
     },
     "report": {
       "done": "Terima kasih. Kami akan meninjaunya.",

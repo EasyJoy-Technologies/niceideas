@@ -12,7 +12,8 @@ const ago = (ctx: ChromeContext, at: Date) =>
   `<time datetime="${at.toISOString()}" data-rel>${escapeHtml(ctx.intl.format.dateTime(at, { dateStyle: "medium" }))}</time>`;
 
 /** Comment text is plain: escaped, line breaks kept, links not clickable (anti-spam). */
-const commentBody = (text: string) => `<p>${escapeHtml(text).replace(/\n/g, "<br>")}</p>`;
+/** Comment text: escaped, line breaks kept (also the profile "Replies" cards). */
+export const commentBody = (text: string) => `<p>${escapeHtml(text).replace(/\n/g, "<br>")}</p>`;
 
 function commentItem(ctx: ChromeContext, post: Post, c: CommentRow, liked: boolean, replies = ""): string {
   const { t } = ctx.intl;

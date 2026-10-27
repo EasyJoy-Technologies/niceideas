@@ -68,12 +68,12 @@ function modeToggle(ctx: ChromeContext): string {
   return `<div class="ni-compose-seg" role="radiogroup" aria-label="${escapeHtml(t("compose.mode.label"))}">${opt("short", true)}${opt("long", false)}</div>`;
 }
 
-/** `edit`: the post's fixed type and a Save button instead of the type switch and Post. */
-export function composeToolbar(ctx: ChromeContext, edit?: { mode: "short" | "long" }): string {
+/** `fixed`: a fixed type instead of the type switch (editing: the post's type, with Save instead of Post; quotes: short). */
+export function composeToolbar(ctx: ChromeContext, fixed?: { mode: "short" | "long"; save: boolean }): string {
   const row = ROW.map((f) => (f === "sep" ? '<span class="ni-tb-sep ni-ed-only" data-only="long"></span>' : rowButton(ctx, f))).join("");
   return (
     `<div class="ni-compose-bar">${mediaButton(ctx, "images")}${mediaButton(ctx, "audios")}<span class="ni-tb-sep ni-ed-only"></span>${row}${moreMenu(ctx)}` +
-    `<span class="ni-sp"></span><span class="ni-compose-count" data-compose-count hidden></span>${edit ? fixedMode(edit.mode) : modeToggle(ctx)}` +
-    `<button type="submit" class="ni-btn ni-btn-primary">${escapeHtml(ctx.intl.t(edit ? "compose.save" : "compose.publish"))}</button></div>`
+    `<span class="ni-sp"></span><span class="ni-compose-count" data-compose-count hidden></span>${fixed ? fixedMode(fixed.mode) : modeToggle(ctx)}` +
+    `<button type="submit" class="ni-btn ni-btn-primary">${escapeHtml(ctx.intl.t(fixed?.save ? "compose.save" : "compose.publish"))}</button></div>`
   );
 }

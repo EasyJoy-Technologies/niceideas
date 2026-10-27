@@ -229,6 +229,7 @@
     "error": {
       "empty": "Írj valamit, vagy adj hozzá egy képet.",
       "failed": "A közzététel nem sikerült. Próbáld újra.",
+      "quote_gone": "Az idézett bejegyzés már nem érhető el.",
       "rate_limited": "Túl gyorsan teszel közzé. Várj egy kicsit.",
       "shortTooLongEdit": "A rövid bejegyzések legfeljebb {max} karakteresek.",
       "short_too_long": "A rövid bejegyzések legfeljebb {max} karakteresek. Válts „{article}” módra, ha többet írnál.",
@@ -261,6 +262,7 @@
     "placeholder": "Mi a jó ötleted?",
     "posting": "Közzététel…",
     "publish": "Közzététel",
+    "quotePlaceholder": "Írd hozzá a megjegyzésed…",
     "remove": "Eltávolítás",
     "save": "Mentés",
     "saving": "Mentés…",
@@ -279,7 +281,10 @@
     "readingTime": "{minutes} perc olvasás",
     "tab": {
       "all": "Összes",
-      "articles": "Cikkek"
+      "articles": "Cikkek",
+      "bookmarks": "Mentett",
+      "replies": "Válaszok",
+      "reposts": "Újraposztok"
     }
   },
   "follow": {
@@ -334,7 +339,9 @@
     "empty": "Még nincs értesítés. Itt jelennek meg a kedvelések, hozzászólások és új követők.",
     "follow": "{name} követni kezdett",
     "like": "{name} kedvelte a bejegyzésedet",
+    "quote": "{name} idézte a bejegyzésedet",
     "reply": "{name} válaszolt a hozzászólásodra",
+    "repost": "{name} újraposztolta a bejegyzésedet",
     "someone": "Valaki",
     "title": "Értesítések",
     "unread": "Olvasatlan értesítések: {count}"
@@ -382,9 +389,12 @@
       "makePrivate": "Csak számomra látható",
       "makePublic": "Nyilvánossá tétel",
       "more": "További lehetőségek",
+      "quote": "Idézés",
       "reply": "Válasz",
       "report": "Jelentés",
-      "share": "Megosztás"
+      "repost": "Újraposztolás",
+      "share": "Megosztás",
+      "undoRepost": "Újraposztolás visszavonása"
     },
     "aside": {
       "moreArticles": "A szerző további cikkei"
@@ -432,7 +442,12 @@
         "title": "A bejegyzés előkészítése"
       },
       "private": "Csak én",
-      "privateNote": "Ezt a bejegyzést csak Ön látja. Mások akkor nyithatják meg, ha nyilvánossá teszi."
+      "privateNote": "Ezt a bejegyzést csak Ön látja. Mások akkor nyithatják meg, ha nyilvánossá teszi.",
+      "repostedBy": "{name} újraposztolta",
+      "repostedByYou": "Újraposztoltad"
+    },
+    "quote": {
+      "unavailable": "Ez a bejegyzés már nem érhető el"
     },
     "report": {
       "done": "Köszönjük. Megvizsgáljuk.",

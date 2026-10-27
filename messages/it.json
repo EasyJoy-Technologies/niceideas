@@ -229,6 +229,7 @@
     "error": {
       "empty": "Scrivi qualcosa o aggiungi un’immagine.",
       "failed": "Impossibile pubblicare. Riprova.",
+      "quote_gone": "Il post che stai citando non è più disponibile.",
       "rate_limited": "Stai pubblicando troppo in fretta. Attendi un momento.",
       "shortTooLongEdit": "I post brevi hanno al massimo {max} caratteri.",
       "short_too_long": "I post brevi hanno al massimo {max} caratteri. Passa a «{article}» per scrivere di più.",
@@ -261,6 +262,7 @@
     "placeholder": "Qual è la tua bella idea?",
     "posting": "Pubblicazione…",
     "publish": "Pubblica",
+    "quotePlaceholder": "Aggiungi il tuo commento…",
     "remove": "Rimuovi",
     "save": "Salva",
     "saving": "Salvataggio…",
@@ -279,7 +281,10 @@
     "readingTime": "{minutes} min di lettura",
     "tab": {
       "all": "Tutti",
-      "articles": "Articoli"
+      "articles": "Articoli",
+      "bookmarks": "Salvati",
+      "replies": "Risposte",
+      "reposts": "Ripubblicazioni"
     }
   },
   "follow": {
@@ -334,7 +339,9 @@
     "empty": "Ancora nessuna notifica. Qui vedrai Mi piace, commenti e nuovi follower.",
     "follow": "{name} ha iniziato a seguirti",
     "like": "A {name} piace il tuo post",
+    "quote": "{name} ha citato il tuo post",
     "reply": "{name} ha risposto al tuo commento",
+    "repost": "{name} ha ripubblicato il tuo post",
     "someone": "Qualcuno",
     "title": "Notifiche",
     "unread": "Notifiche non lette: {count}"
@@ -382,9 +389,12 @@
       "makePrivate": "Rendi visibile solo a me",
       "makePublic": "Rendi pubblico",
       "more": "Altre opzioni",
+      "quote": "Cita",
       "reply": "Rispondi",
       "report": "Segnala",
-      "share": "Condividi"
+      "repost": "Ripubblica",
+      "share": "Condividi",
+      "undoRepost": "Annulla ripubblicazione"
     },
     "aside": {
       "moreArticles": "Altri articoli dell’autore"
@@ -432,7 +442,12 @@
         "title": "Preparazione del post in corso"
       },
       "private": "Solo io",
-      "privateNote": "Solo tu puoi vedere questo post. Gli altri potranno aprirlo quando lo renderai pubblico."
+      "privateNote": "Solo tu puoi vedere questo post. Gli altri potranno aprirlo quando lo renderai pubblico.",
+      "repostedBy": "{name} ha ripubblicato",
+      "repostedByYou": "Hai ripubblicato"
+    },
+    "quote": {
+      "unavailable": "Questo post non è più disponibile"
     },
     "report": {
       "done": "Grazie. Lo esamineremo.",

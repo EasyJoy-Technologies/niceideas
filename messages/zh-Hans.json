@@ -229,6 +229,7 @@
     "error": {
       "empty": "请写点内容或添加图片。",
       "failed": "发布失败，请重试。",
+      "quote_gone": "你要引用的帖子已不可用。",
       "rate_limited": "发布太频繁了，请稍后再试。",
       "shortTooLongEdit": "短内容最多 {max} 个字。",
       "short_too_long": "短内容最多 {max} 个字。想写更多，请切换到“{article}”。",
@@ -261,6 +262,7 @@
     "placeholder": "有什么好主意？",
     "posting": "发布中…",
     "publish": "发布",
+    "quotePlaceholder": "添加你的评论…",
     "remove": "移除",
     "save": "保存",
     "saving": "保存中…",
@@ -279,7 +281,10 @@
     "readingTime": "阅读约 {minutes} 分钟",
     "tab": {
       "all": "全部",
-      "articles": "长文"
+      "articles": "长文",
+      "bookmarks": "收藏",
+      "replies": "回复",
+      "reposts": "转发"
     }
   },
   "follow": {
@@ -334,7 +339,9 @@
     "empty": "还没有通知。有人点赞、评论或关注你时会显示在这里。",
     "follow": "{name} 关注了你",
     "like": "{name} 赞了你的帖子",
+    "quote": "{name} 引用了你的帖子",
     "reply": "{name} 回复了你的评论",
+    "repost": "{name} 转发了你的帖子",
     "someone": "有人",
     "title": "通知",
     "unread": "未读通知：{count}"
@@ -382,9 +389,12 @@
       "makePrivate": "设为仅自己可见",
       "makePublic": "设为公开",
       "more": "更多操作",
+      "quote": "引用并评论",
       "reply": "回复",
       "report": "举报",
-      "share": "分享"
+      "repost": "转发",
+      "share": "分享",
+      "undoRepost": "撤销转发"
     },
     "aside": {
       "moreArticles": "作者的其他长文"
@@ -432,7 +442,12 @@
         "title": "内容准备中"
       },
       "private": "仅自己可见",
-      "privateNote": "这条帖子仅自己可见，设为公开后别人才能查看。"
+      "privateNote": "这条帖子仅自己可见，设为公开后别人才能查看。",
+      "repostedBy": "{name} 转发了",
+      "repostedByYou": "你转发了"
+    },
+    "quote": {
+      "unavailable": "原帖已不可用"
     },
     "report": {
       "done": "感谢反馈，我们会尽快处理。",

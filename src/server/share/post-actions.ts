@@ -4,13 +4,15 @@ import type { ChromeContext } from "./chrome";
 import { bookmarkAction } from "./bookmark-button";
 import { icon } from "./icons";
 import { isOwnPost, ownPostMenu } from "./post-menu";
+import { repostAction } from "./repost-button";
 
 /**
- * Like / comment / bookmark / share actions under a post, then "⋯": the author's menu (delete) or, for
+ * Like / comment / repost / bookmark / share actions under a post, then "⋯": the author's menu (delete) or, for
  * others, report; plus the fixed bottom bar on phones (approved v2 design). Interactive with /scripts/interact.js.
  * Private posts (seen by their author only) take no likes or bookmarks and are not shared: comments link and menu only.
  */
-export function postActions(ctx: ChromeContext, post: Post, liked: boolean, bookmarked: boolean): string {
+export function postActions(ctx: ChromeContext, post: Post, state: { liked: boolean; bookmarked: boolean; reposted: boolean; repostCount: number }): string {
+  const { liked, bookmarked } = state;
   const { t } = ctx.intl;
   const like = (cls: string) =>
     `<button type="button" class="ni-act ${cls}" data-like="post" data-id="${post.slug}" aria-pressed="${liked}" aria-label="${escapeHtml(t("share.action.like"))}">` +
@@ -22,8 +24,9 @@ export function postActions(ctx: ChromeContext, post: Post, liked: boolean, book
     : `<button type="button" class="ni-act" data-report="" aria-label="${escapeHtml(t("share.action.report"))}">${icon("more")}</button>`;
   if (post.visibility === "private") return `<div class="ni-actions">${comment}<span class="ni-sp"></span>${report}</div>`;
   const bookmark = bookmarkAction(ctx, post, bookmarked);
+  const repost = repostAction(ctx, post, state.repostCount, state.reposted, `/p/${post.slug}`);
   return (
-    `<div class="ni-actions">${like("")}${comment}${bookmark}${share}<span class="ni-sp"></span>${report}</div>` +
-    `<nav class="ni-mbar">${like("")}${comment}${bookmark}${share}</nav>`
+    `<div class="ni-actions">${like("")}${comment}${repost}${bookmark}${share}<span class="ni-sp"></span>${report}</div>` +
+    `<nav class="ni-mbar">${like("")}${comment}${repost}${bookmark}${share}</nav>`
   );
 }

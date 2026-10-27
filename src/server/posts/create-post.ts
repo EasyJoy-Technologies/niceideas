@@ -20,6 +20,8 @@ export type CreatePostInput = {
   sourceUpdatedAt: Date | null;
   kind?: PostKind;
   syncMode?: SyncMode;
+  /** A quote: id of the (live, public) post it quotes — checked by the caller. */
+  quoteOf?: string;
 };
 
 export type CreatePostResult = { post: Post; contentHash: string | null; created: boolean };
@@ -74,6 +76,7 @@ export async function createPost(
             kind: input.kind ?? fields.kind!,
             kind_locked: input.kind !== undefined,
             source_updated_at: input.sourceUpdatedAt,
+            quote_of: input.quoteOf ?? null,
           });
           const rev = await insertRevision(trx, { postId: row.id, document: input.document, contentHash: hash, sourceUpdatedAt: input.sourceUpdatedAt });
           await linkRevisionMedia(trx, rev.id, media.map((m) => m.id));

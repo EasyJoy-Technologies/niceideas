@@ -229,6 +229,7 @@
     "error": {
       "empty": "Schrijf iets of voeg een afbeelding toe.",
       "failed": "Plaatsen mislukt. Probeer het opnieuw.",
+      "quote_gone": "Het bericht dat je citeert is niet meer beschikbaar.",
       "rate_limited": "Je plaatst te snel. Wacht even.",
       "shortTooLongEdit": "Korte berichten hebben maximaal {max} tekens.",
       "short_too_long": "Korte berichten hebben maximaal {max} tekens. Schakel over naar ‘{article}’ om meer te schrijven.",
@@ -261,6 +262,7 @@
     "placeholder": "Wat is je goede idee?",
     "posting": "Bezig met plaatsen…",
     "publish": "Plaatsen",
+    "quotePlaceholder": "Voeg je reactie toe…",
     "remove": "Verwijderen",
     "save": "Opslaan",
     "saving": "Bezig met opslaan…",
@@ -279,7 +281,10 @@
     "readingTime": "{minutes} min. lezen",
     "tab": {
       "all": "Alles",
-      "articles": "Artikelen"
+      "articles": "Artikelen",
+      "bookmarks": "Bewaard",
+      "replies": "Reacties",
+      "reposts": "Opnieuw geplaatst"
     }
   },
   "follow": {
@@ -334,7 +339,9 @@
     "empty": "Nog geen meldingen. Likes, reacties en nieuwe volgers verschijnen hier.",
     "follow": "{name} volgt je nu",
     "like": "{name} vindt je bericht leuk",
+    "quote": "{name} heeft je bericht geciteerd",
     "reply": "{name} antwoordde op je reactie",
+    "repost": "{name} heeft je bericht opnieuw geplaatst",
     "someone": "Iemand",
     "title": "Meldingen",
     "unread": "Ongelezen meldingen: {count}"
@@ -382,9 +389,12 @@
       "makePrivate": "Alleen zichtbaar voor mij maken",
       "makePublic": "Openbaar maken",
       "more": "Meer opties",
+      "quote": "Citeren",
       "reply": "Reageren",
       "report": "Melden",
-      "share": "Delen"
+      "repost": "Opnieuw plaatsen",
+      "share": "Delen",
+      "undoRepost": "Opnieuw plaatsen ongedaan maken"
     },
     "aside": {
       "moreArticles": "Meer artikelen van de auteur"
@@ -432,7 +442,12 @@
         "title": "Dit bericht wordt voorbereid"
       },
       "private": "Alleen ik",
-      "privateNote": "Alleen jij kunt dit bericht zien. Anderen kunnen het openen zodra je het openbaar maakt."
+      "privateNote": "Alleen jij kunt dit bericht zien. Anderen kunnen het openen zodra je het openbaar maakt.",
+      "repostedBy": "{name} plaatste opnieuw",
+      "repostedByYou": "Je plaatste opnieuw"
+    },
+    "quote": {
+      "unavailable": "Dit bericht is niet meer beschikbaar"
     },
     "report": {
       "done": "Bedankt. We bekijken het.",

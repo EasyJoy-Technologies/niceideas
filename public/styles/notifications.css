@@ -7,6 +7,7 @@
 .ni-note-ico .ni-i { width: 1.125rem; height: 1.125rem; }
 .ni-note-like { color: var(--ni-color-like); }
 .ni-note-like .ni-i { fill: currentColor; }
+.ni-note-repost, .ni-note-quote { color: var(--ni-color-success); }
 .ni-note-body { flex: 1; min-width: 0; font-size: 0.9375rem; line-height: 1.5; }
 .ni-note-body .ni-name { font-weight: 650; }
 .ni-note-body p { margin: 0.25rem 0 0; color: var(--ni-color-text-primary); overflow-wrap: anywhere; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }

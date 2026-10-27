@@ -229,6 +229,7 @@
     "error": {
       "empty": "請寫點內容或新增圖片。",
       "failed": "發布失敗，請重試。",
+      "quote_gone": "你要引用的貼文已無法查看。",
       "rate_limited": "發布太頻繁了，請稍後再試。",
       "shortTooLongEdit": "短內容最多 {max} 個字。",
       "short_too_long": "短內容最多 {max} 個字。想寫更多，請切換到「{article}」。",
@@ -261,6 +262,7 @@
     "placeholder": "有什麼好主意？",
     "posting": "發布中…",
     "publish": "發布",
+    "quotePlaceholder": "加入你的評論…",
     "remove": "移除",
     "save": "儲存",
     "saving": "儲存中…",
@@ -279,7 +281,10 @@
     "readingTime": "閱讀約 {minutes} 分鐘",
     "tab": {
       "all": "全部",
-      "articles": "長文"
+      "articles": "長文",
+      "bookmarks": "收藏",
+      "replies": "回覆",
+      "reposts": "轉發"
     }
   },
   "follow": {
@@ -334,7 +339,9 @@
     "empty": "還沒有通知。有人按讚、留言或追蹤你時會顯示在這裡。",
     "follow": "{name} 開始追蹤你",
     "like": "{name} 對你的貼文按讚",
+    "quote": "{name} 引用了你的貼文",
     "reply": "{name} 回覆了你的留言",
+    "repost": "{name} 轉發了你的貼文",
     "someone": "有人",
     "title": "通知",
     "unread": "未讀通知：{count}"
@@ -382,9 +389,12 @@
       "makePrivate": "設為僅自己可見",
       "makePublic": "設為公開",
       "more": "更多操作",
+      "quote": "引用並評論",
       "reply": "回覆",
       "report": "檢舉",
-      "share": "分享"
+      "repost": "轉發",
+      "share": "分享",
+      "undoRepost": "取消轉發"
     },
     "aside": {
       "moreArticles": "作者的其他長文"
@@ -432,7 +442,12 @@
         "title": "貼文準備中"
       },
       "private": "僅自己可見",
-      "privateNote": "這則貼文僅自己可見，設為公開後別人才能查看。"
+      "privateNote": "這則貼文僅自己可見，設為公開後別人才能查看。",
+      "repostedBy": "{name} 轉發了",
+      "repostedByYou": "你轉發了"
+    },
+    "quote": {
+      "unavailable": "原貼文已無法查看"
     },
     "report": {
       "done": "感謝回報，我們會盡快處理。",

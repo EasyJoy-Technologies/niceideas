@@ -229,6 +229,7 @@
     "error": {
       "empty": "Rubuta wani abu ko ƙara hoto.",
       "failed": "An kasa wallafawa. Da fatan za a sake gwadawa.",
+      "quote_gone": "Rubutun da kake ambato ba ya samuwa yanzu.",
       "rate_limited": "Kana wallafawa da sauri sosai. Jira ɗan lokaci.",
       "shortTooLongEdit": "Gajerun saƙonni suna da iyakar haruffa {max}.",
       "short_too_long": "Gajerun saƙonni suna da iyakar haruffa {max}. Canja zuwa “{article}” don rubuta ƙari.",
@@ -261,6 +262,7 @@
     "placeholder": "Mene ne kyakkyawan ra'ayinka?",
     "posting": "Ana wallafawa…",
     "publish": "Wallafa",
+    "quotePlaceholder": "Ƙara sharhinka…",
     "remove": "Cire",
     "save": "Ajiye",
     "saving": "Ana ajiyewa…",
@@ -279,7 +281,10 @@
     "readingTime": "Karatun minti {minutes}",
     "tab": {
       "all": "Duka",
-      "articles": "Makaloli"
+      "articles": "Makaloli",
+      "bookmarks": "Abubuwan da aka ajiye",
+      "replies": "Amsoshi",
+      "reposts": "Sake wallafawa"
     }
   },
   "follow": {
@@ -334,7 +339,9 @@
     "empty": "Babu sanarwa tukuna. Abubuwan da aka so, sharhi da sabbin mabiya za su bayyana a nan.",
     "follow": "{name} ya fara bin ka",
     "like": "{name} ya so rubutunka",
+    "quote": "{name} ya ambato rubutunka",
     "reply": "{name} ya amsa sharhinka",
+    "repost": "{name} ya sake wallafa rubutunka",
     "someone": "Wani",
     "title": "Sanarwa",
     "unread": "Sanarwar da ba a karanta ba: {count}"
@@ -382,9 +389,12 @@
       "makePrivate": "Mai da shi ni kaɗai zan gani",
       "makePublic": "Mai da shi na kowa",
       "more": "Ƙarin zaɓuɓɓuka",
+      "quote": "Ambato",
       "reply": "Amsa",
       "report": "Kai rahoto",
-      "share": "Raba"
+      "repost": "Sake wallafa",
+      "share": "Raba",
+      "undoRepost": "Soke sake wallafawa"
     },
     "aside": {
       "moreArticles": "Ƙarin maƙalu daga marubucin"
@@ -432,7 +442,12 @@
         "title": "Ana shirya wannan rubutun"
       },
       "private": "Ni kaɗai",
-      "privateNote": "Kai kaɗai ne kake iya ganin wannan rubutun. Wasu za su iya buɗe shi da zarar ka mai da shi na kowa."
+      "privateNote": "Kai kaɗai ne kake iya ganin wannan rubutun. Wasu za su iya buɗe shi da zarar ka mai da shi na kowa.",
+      "repostedBy": "{name} ya sake wallafa",
+      "repostedByYou": "Kun sake wallafa"
+    },
+    "quote": {
+      "unavailable": "Wannan rubutun ba ya samuwa yanzu"
     },
     "report": {
       "done": "Na gode. Za mu duba shi.",

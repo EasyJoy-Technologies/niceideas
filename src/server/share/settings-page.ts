@@ -3,11 +3,18 @@ import { BIO_MAX, NAME_MAX, type ProfileEditError } from "@/server/profiles/upda
 import { escapeHtml } from "@/server/render/escape";
 import type { ChromeContext } from "./chrome";
 import { renderPage } from "./document";
+import { icon } from "./icons";
+
+const signOut = (ctx: ChromeContext) =>
+  `<form class="ni-card ni-settings ni-signout" method="post" action="/auth/sign-out"><button type="submit" class="ni-btn ni-btn-ghost">${icon("signOut")}<span>${escapeHtml(ctx.intl.t("auth.signOut"))}</span></button></form>`;
 
 export const SETTINGS_ERRORS: readonly ProfileEditError[] = ["too_long"];
 export type SettingsNotice = ProfileEditError | "saved" | null;
 
-/** Profile settings (name, bio; the handle is shown read-only) for the signed-in user; plain form, works without JS. */
+/**
+ * Profile settings (name, bio; the handle is shown read-only) for the signed-in user; plain form, works without JS.
+ * Sign out at the bottom (phones reach this page from their profile; the account menu is not in their header).
+ */
 export function renderSettingsPage(ctx: ChromeContext, notice: SettingsNotice): string {
   const { t } = ctx.intl;
   const v = ctx.viewer!;
@@ -26,7 +33,7 @@ export function renderSettingsPage(ctx: ChromeContext, notice: SettingsNotice): 
   return renderPage(ctx, {
     title: `${title} · ${GLOSSARY.brand}`,
     head: '<meta name="robots" content="noindex">',
-    main: `<main class="ni-main ni-feed-main"><div class="ni-feed-h"><h1>${escapeHtml(title)}</h1></div>${form}</main>`,
+    main: `<main class="ni-main ni-feed-main"><div class="ni-feed-h"><h1>${escapeHtml(title)}</h1></div>${form}${signOut(ctx)}</main>`,
     side: true,
   });
 }

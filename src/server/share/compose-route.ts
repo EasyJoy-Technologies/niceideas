@@ -22,13 +22,15 @@ export function composeErrorOf(err: unknown): ComposeError {
     "rate.limited": "rate_limited", "document.invalid": "too_much",
     "compose.short_too_long": "short_too_long", "compose.media_mismatch": "unsupported", "compose.invalid": "failed",
     "document.too_long": "too_much", "document.too_many_images": "too_much", "document.too_many_audios": "too_much",
+    "compose.quote_gone": "quote_gone",
   };
   return map[err.code] ?? "failed";
 }
 
 /**
  * POST /api/web/compose (same-origin multipart form, works without JS). Success →
- * the new post page; failure → home with `?compose=<error>#compose` (reopens the phone sheet). Under /api so the
+ * the new post page; failure → home with `?compose=<error>#compose` (reopens the phone sheet; a quote keeps
+ * `&quote=<slug>` unless the quoted post is gone). Under /api so the
  * page proxy (body-size capped) is not in the upload path; region rule applied here.
  */
 export async function composeRoute(request: Request): Promise<Response> {
@@ -37,14 +39,16 @@ export async function composeRoute(request: Request): Promise<Response> {
   const db = getDb();
   const viewer = await sessionProfile(db, request.headers);
   if (!viewer) return see("/auth/sign-in?next=%2F");
+  let quote: string | null = null;
   try {
-    const form = await request.formData();
-    const cfg = getConfig();
-    const post = await publishFromWeb(db, getMediaStores(), viewer.user_id, readComposeForm(form), cfg.MEDIA_CACHE_CONTROL);
+    const input = readComposeForm(await request.formData());
+    quote = input.quote ?? null;
+    const post = await publishFromWeb(db, getMediaStores(), viewer.user_id, input, getConfig().MEDIA_CACHE_CONTROL);
     return see(`/p/${post.slug}`);
   } catch (err) {
     const code = composeErrorOf(err);
     if (code === "failed") console.error(`[compose] failed errorId=${randomUUID()}`, err);
-    return see(`/?compose=${COMPOSE_ERRORS.includes(code) ? code : "failed"}#compose`);
+    const keep = quote && code !== "quote_gone" ? `&quote=${encodeURIComponent(quote)}` : "";
+    return see(`/?compose=${COMPOSE_ERRORS.includes(code) ? code : "failed"}${keep}#compose`);
   }
 }

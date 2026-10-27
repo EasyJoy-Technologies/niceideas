@@ -229,6 +229,7 @@
     "error": {
       "empty": "Andika kitu au ongeza picha.",
       "failed": "Imeshindwa kuchapisha. Tafadhali jaribu tena.",
+      "quote_gone": "Chapisho unalonukuu halipatikani tena.",
       "rate_limited": "Unachapisha haraka mno. Subiri kidogo.",
       "shortTooLongEdit": "Machapisho mafupi yana herufi zisizozidi {max}.",
       "short_too_long": "Machapisho mafupi yana herufi zisizozidi {max}. Badilisha kuwa “{article}” ili kuandika zaidi.",
@@ -261,6 +262,7 @@
     "placeholder": "Wazo lako zuri ni lipi?",
     "posting": "Inachapisha…",
     "publish": "Chapisha",
+    "quotePlaceholder": "Ongeza maoni yako…",
     "remove": "Ondoa",
     "save": "Hifadhi",
     "saving": "Inahifadhi…",
@@ -279,7 +281,10 @@
     "readingTime": "Dakika {minutes} za kusoma",
     "tab": {
       "all": "Zote",
-      "articles": "Makala"
+      "articles": "Makala",
+      "bookmarks": "Vilivyohifadhiwa",
+      "replies": "Majibu",
+      "reposts": "Machapisho upya"
     }
   },
   "follow": {
@@ -334,7 +339,9 @@
     "empty": "Hakuna arifa bado. Vipendwa, maoni na wafuasi wapya wataonekana hapa.",
     "follow": "{name} ameanza kukufuata",
     "like": "{name} amependa chapisho lako",
+    "quote": "{name} amenukuu chapisho lako",
     "reply": "{name} amejibu maoni yako",
+    "repost": "{name} amechapisha upya chapisho lako",
     "someone": "Mtu fulani",
     "title": "Arifa",
     "unread": "Arifa ambazo hazijasomwa: {count}"
@@ -382,9 +389,12 @@
       "makePrivate": "Ifanye ionekane kwangu tu",
       "makePublic": "Ifanye ya umma",
       "more": "Chaguo zaidi",
+      "quote": "Nukuu",
       "reply": "Jibu",
       "report": "Ripoti",
-      "share": "Shiriki"
+      "repost": "Chapisha upya",
+      "share": "Shiriki",
+      "undoRepost": "Tendua kuchapisha upya"
     },
     "aside": {
       "moreArticles": "Makala zaidi za mwandishi"
@@ -432,7 +442,12 @@
         "title": "Chapisho hili linatayarishwa"
       },
       "private": "Mimi tu",
-      "privateNote": "Ni wewe tu unayeweza kuona chapisho hili. Wengine wataweza kulifungua utakapolifanya la umma."
+      "privateNote": "Ni wewe tu unayeweza kuona chapisho hili. Wengine wataweza kulifungua utakapolifanya la umma.",
+      "repostedBy": "{name} amechapisha upya",
+      "repostedByYou": "Umechapisha upya"
+    },
+    "quote": {
+      "unavailable": "Chapisho hili halipatikani tena"
     },
     "report": {
       "done": "Asante. Tutaikagua.",

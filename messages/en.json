@@ -229,6 +229,7 @@
     "error": {
       "empty": "Write something or add an image.",
       "failed": "Couldn’t post. Please try again.",
+      "quote_gone": "The post you are quoting is no longer available.",
       "rate_limited": "You’re posting too fast. Please wait a moment.",
       "shortTooLongEdit": "Short posts are limited to {max} characters.",
       "short_too_long": "Short posts are limited to {max} characters. Switch to “{article}” to write more.",
@@ -261,6 +262,7 @@
     "placeholder": "What’s your nice idea?",
     "posting": "Posting…",
     "publish": "Post",
+    "quotePlaceholder": "Add your comment…",
     "remove": "Remove",
     "save": "Save",
     "saving": "Saving…",
@@ -279,7 +281,10 @@
     "readingTime": "{minutes} min read",
     "tab": {
       "all": "All",
-      "articles": "Articles"
+      "articles": "Articles",
+      "bookmarks": "Bookmarks",
+      "replies": "Replies",
+      "reposts": "Reposts"
     }
   },
   "follow": {
@@ -334,7 +339,9 @@
     "empty": "No notifications yet. Likes, comments and new followers will show up here.",
     "follow": "{name} followed you",
     "like": "{name} liked your post",
+    "quote": "{name} quoted your post",
     "reply": "{name} replied to your comment",
+    "repost": "{name} reposted your post",
     "someone": "Someone",
     "title": "Notifications",
     "unread": "Unread notifications: {count}"
@@ -382,9 +389,12 @@
       "makePrivate": "Make visible only to me",
       "makePublic": "Make public",
       "more": "More options",
+      "quote": "Quote",
       "reply": "Reply",
       "report": "Report",
-      "share": "Share"
+      "repost": "Repost",
+      "share": "Share",
+      "undoRepost": "Undo repost"
     },
     "aside": {
       "moreArticles": "More articles by the author"
@@ -432,7 +442,12 @@
         "title": "Getting this post ready"
       },
       "private": "Only me",
-      "privateNote": "Only you can see this post. Others can open it once you make it public."
+      "privateNote": "Only you can see this post. Others can open it once you make it public.",
+      "repostedBy": "{name} reposted",
+      "repostedByYou": "You reposted"
+    },
+    "quote": {
+      "unavailable": "This post is no longer available"
     },
     "report": {
       "done": "Thanks. We'll review it.",

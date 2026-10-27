@@ -12,6 +12,9 @@ import { icon } from "./icons";
 import type { FeedItem } from "./load-feed";
 import { avatarHtml, profilePath } from "./profile-bits";
 import { isOwnPost, ownPostMenu } from "./post-menu";
+import { quoteEmbed } from "./quote-embed";
+import { repostAction } from "./repost-button";
+import { repostedLine } from "./reposted-line";
 import { badgeAppName, sourceBadge } from "./sources";
 
 const COVER_SIZES = "(min-width: 48rem) 37rem, 100vw";
@@ -67,8 +70,9 @@ const privateMark = (ctx: ChromeContext, post: FeedItem["post"]) =>
   post.visibility === "private" ? `<i class="ni-dot"></i><span class="ni-private">${icon("lock")}${escapeHtml(ctx.intl.t("share.post.private"))}</span>` : "";
 
 /**
- * Timeline / profile card (approved v2 design): author row (avatar, name / @handle · time,
- * source badge at its end), body, like / comment / bookmark / share.
+ * Timeline / profile card (approved v2 design): "X reposted" line (home timeline, profile reposts), author
+ * row (avatar, name / @handle · time, source badge at its end), body (a quote: the quoted post under it),
+ * like / comment / repost / bookmark / share.
  */
 export function feedCard(ctx: ChromeContext, item: FeedItem): string {
   const { t } = ctx.intl;
@@ -88,17 +92,18 @@ export function feedCard(ctx: ChromeContext, item: FeedItem): string {
     `<div class="ni-fc-head"><a href="${href}" tabindex="-1" aria-hidden="true">${avatarHtml(name, post.author_avatar, 42)}</a><div class="ni-who">` +
     `<a class="ni-name" href="${href}">${escapeHtml(name)}</a><span class="ni-meta"><span class="ni-handle">@${escapeHtml(post.author_handle)}</span><i class="ni-dot"></i>` +
     `<a href="/p/${post.slug}"><time datetime="${at.toISOString()}" data-rel>${escapeHtml(ctx.intl.format.dateTime(at, { dateStyle: "medium" }))}</time></a>${privateMark(ctx, post)}</span></div>${source}</div>`;
-  const body = post.kind === "short" ? shortBlock(item) : articleBlock(ctx, item);
+  const quoted = item.quoted !== undefined ? quoteEmbed(ctx, item.quoted) : "";
+  const body = (post.kind === "short" ? shortBlock(item) : articleBlock(ctx, item)) + quoted;
   // Private posts (only on their author's own profile) take no likes or bookmarks and are not shared.
   const open = post.visibility === "public";
   const actions =
     `<div class="ni-actions ni-fc-actions">${open ? `<button type="button" class="ni-act" data-like="post" data-id="${post.slug}" aria-pressed="${item.liked}" aria-label="${escapeHtml(t("share.action.like"))}">` +
     `${icon("heart")}<span>${post.like_count}</span></button>` : ""}` +
     `<a class="ni-act" href="/p/${post.slug}#comments" aria-label="${escapeHtml(t("share.comments.title"))}">${icon("comment")}<span>${post.comment_count}</span></a>` +
-    `${open ? bookmarkAction(ctx, post, item.bookmarked) : ""}` +
+    `${repostAction(ctx, post, item.repostCount, item.reposted, ctx.path)}${open ? bookmarkAction(ctx, post, item.bookmarked) : ""}` +
     `${open ? `<button type="button" class="ni-act ni-share" data-url="/p/${post.slug}" hidden>${icon("share")}${escapeHtml(t("share.action.share"))}</button>` : ""}` +
     `${isOwnPost(ctx, post) ? `<span class="ni-sp"></span>${ownPostMenu(ctx, post, ctx.path)}` : ""}</div>`;
   // Short cards open their post when tapped outside links / buttons / media (/scripts/interact.js).
   const cardHref = post.kind === "short" ? ` data-href="/p/${post.slug}"` : "";
-  return `<article class="ni-card ni-fc"${cardHref}>${head}${body}${actions}</article>`;
+  return `<article class="ni-card ni-fc"${cardHref}>${repostedLine(ctx, post)}${head}${body}${actions}</article>`;
 }

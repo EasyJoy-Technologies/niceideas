@@ -229,6 +229,7 @@
     "error": {
       "empty": "Biror narsa yozing yoki rasm qo‘shing.",
       "failed": "Joylab bo‘lmadi. Qayta urinib ko‘ring.",
+      "quote_gone": "Iqtibos keltirayotgan postingiz endi mavjud emas.",
       "rate_limited": "Juda tez joylayapsiz. Biroz kuting.",
       "shortTooLongEdit": "Qisqa postlar ko‘pi bilan {max} belgidan iborat.",
       "short_too_long": "Qisqa postlar ko‘pi bilan {max} belgidan iborat. Ko‘proq yozish uchun “{article}” rejimiga o‘ting.",
@@ -261,6 +262,7 @@
     "placeholder": "Qanday yaxshi g‘oyangiz bor?",
     "posting": "Joylanmoqda…",
     "publish": "Joylash",
+    "quotePlaceholder": "Izohingizni qo‘shing…",
     "remove": "Olib tashlash",
     "save": "Saqlash",
     "saving": "Saqlanmoqda…",
@@ -279,7 +281,10 @@
     "readingTime": "{minutes} daqiqalik oʻqish",
     "tab": {
       "all": "Hammasi",
-      "articles": "Maqolalar"
+      "articles": "Maqolalar",
+      "bookmarks": "Saqlanganlar",
+      "replies": "Javoblar",
+      "reposts": "Qayta joylashlar"
     }
   },
   "follow": {
@@ -334,7 +339,9 @@
     "empty": "Hozircha bildirishnoma yo‘q. Layklar, izohlar va yangi kuzatuvchilar shu yerda chiqadi.",
     "follow": "{name} sizni kuzata boshladi",
     "like": "{name} postingizni yoqtirdi",
+    "quote": "{name} postingizdan iqtibos keltirdi",
     "reply": "{name} izohingizga javob berdi",
+    "repost": "{name} postingizni qayta joyladi",
     "someone": "Kimdir",
     "title": "Bildirishnomalar",
     "unread": "O‘qilmagan bildirishnomalar: {count}"
@@ -382,9 +389,12 @@
       "makePrivate": "Faqat menga ko‘rinadigan qilish",
       "makePublic": "Ommaviy qilish",
       "more": "Qo'shimcha amallar",
+      "quote": "Iqtibos keltirish",
       "reply": "Javob berish",
       "report": "Shikoyat qilish",
-      "share": "Ulashish"
+      "repost": "Qayta joylash",
+      "share": "Ulashish",
+      "undoRepost": "Qayta joylashni bekor qilish"
     },
     "aside": {
       "moreArticles": "Muallifning boshqa maqolalari"
@@ -432,7 +442,12 @@
         "title": "Bu post tayyorlanmoqda"
       },
       "private": "Faqat men",
-      "privateNote": "Bu postni faqat siz ko‘ra olasiz. Uni ommaviy qilganingizdan keyin boshqalar ham ocha oladi."
+      "privateNote": "Bu postni faqat siz ko‘ra olasiz. Uni ommaviy qilganingizdan keyin boshqalar ham ocha oladi.",
+      "repostedBy": "{name} qayta joyladi",
+      "repostedByYou": "Siz qayta joyladingiz"
+    },
+    "quote": {
+      "unavailable": "Bu post endi mavjud emas"
     },
     "report": {
       "done": "Rahmat. Ko‘rib chiqamiz.",

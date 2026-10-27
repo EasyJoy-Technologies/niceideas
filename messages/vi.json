@@ -229,6 +229,7 @@
     "error": {
       "empty": "Hãy viết gì đó hoặc thêm hình ảnh.",
       "failed": "Không thể đăng. Vui lòng thử lại.",
+      "quote_gone": "Bài đăng bạn trích dẫn không còn khả dụng.",
       "rate_limited": "Bạn đăng quá nhanh. Vui lòng đợi một chút.",
       "shortTooLongEdit": "Bài ngắn tối đa {max} ký tự.",
       "short_too_long": "Bài ngắn tối đa {max} ký tự. Chuyển sang “{article}” để viết thêm.",
@@ -261,6 +262,7 @@
     "placeholder": "Bạn có ý tưởng hay nào?",
     "posting": "Đang đăng…",
     "publish": "Đăng",
+    "quotePlaceholder": "Thêm bình luận của bạn…",
     "remove": "Xóa",
     "save": "Lưu",
     "saving": "Đang lưu…",
@@ -279,7 +281,10 @@
     "readingTime": "{minutes} phút đọc",
     "tab": {
       "all": "Tất cả",
-      "articles": "Bài viết dài"
+      "articles": "Bài viết dài",
+      "bookmarks": "Đã lưu",
+      "replies": "Trả lời",
+      "reposts": "Đăng lại"
     }
   },
   "follow": {
@@ -334,7 +339,9 @@
     "empty": "Chưa có thông báo. Lượt thích, bình luận và người theo dõi mới sẽ hiện ở đây.",
     "follow": "{name} đã theo dõi bạn",
     "like": "{name} đã thích bài đăng của bạn",
+    "quote": "{name} đã trích dẫn bài đăng của bạn",
     "reply": "{name} đã trả lời bình luận của bạn",
+    "repost": "{name} đã đăng lại bài đăng của bạn",
     "someone": "Ai đó",
     "title": "Thông báo",
     "unread": "Thông báo chưa đọc: {count}"
@@ -382,9 +389,12 @@
       "makePrivate": "Chỉ mình tôi xem được",
       "makePublic": "Đặt công khai",
       "more": "Thêm tùy chọn",
+      "quote": "Trích dẫn",
       "reply": "Trả lời",
       "report": "Báo cáo",
-      "share": "Chia sẻ"
+      "repost": "Đăng lại",
+      "share": "Chia sẻ",
+      "undoRepost": "Hủy đăng lại"
     },
     "aside": {
       "moreArticles": "Bài viết khác của tác giả"
@@ -432,7 +442,12 @@
         "title": "Đang chuẩn bị bài viết này"
       },
       "private": "Chỉ mình tôi",
-      "privateNote": "Chỉ bạn xem được bài viết này. Người khác có thể mở khi bạn đặt công khai."
+      "privateNote": "Chỉ bạn xem được bài viết này. Người khác có thể mở khi bạn đặt công khai.",
+      "repostedBy": "{name} đã đăng lại",
+      "repostedByYou": "Bạn đã đăng lại"
+    },
+    "quote": {
+      "unavailable": "Bài đăng này không còn khả dụng"
     },
     "report": {
       "done": "Cảm ơn bạn. Chúng tôi sẽ xem xét.",

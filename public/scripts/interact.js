@@ -43,6 +43,38 @@
     });
   }
 
+  // ---- reposts (signed in; menu form Repost / Undo repost, sent in place; twice on post pages) ----
+  for (const form of d.querySelectorAll("form[data-repost]")) {
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const slug = form.dataset.repost;
+      const menus = [...d.querySelectorAll("details[data-repost-menu]")].filter((m) => m.dataset.repostMenu === slug);
+      const buttons = menus.map((m) => m.querySelector("form[data-repost] button"));
+      buttons.forEach((b) => (b.disabled = true));
+      try {
+        const res = await fetch(form.action, { method: "POST", body: new FormData(form), credentials: "same-origin", headers: { Accept: "application/json" } });
+        if (res.status === 401) {
+          location.href = new URL(`/auth/sign-in?next=${encodeURIComponent(location.pathname + location.search)}`, location.href).href;
+          return;
+        }
+        if (!res.ok) throw new Error(String(res.status));
+        const data = await res.json();
+        for (const m of menus) {
+          m.open = false;
+          m.toggleAttribute("data-reposted", data.reposted);
+          m.querySelector("[data-repost-count]").textContent = String(data.repostCount);
+          m.querySelector('form[data-repost] input[name="on"]').value = data.reposted ? "0" : "1";
+          const b = m.querySelector("form[data-repost] button");
+          b.querySelector("span").textContent = data.reposted ? b.dataset.offLabel : b.dataset.onLabel;
+        }
+      } catch {
+        toast(labels.commentErrorLabel || "");
+      } finally {
+        buttons.forEach((b) => (b.disabled = false));
+      }
+    });
+  }
+
   // ---- bookmarks (signed in; post buttons appear twice on post pages: action row + phone bar) ----
   for (const btn of d.querySelectorAll("button[data-bookmark]")) {
     btn.addEventListener("click", async () => {

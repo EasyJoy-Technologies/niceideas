@@ -10,6 +10,8 @@ import { renderPage } from "./document";
 import { followButton } from "./follow-button";
 import { icon } from "./icons";
 import type { SharePost } from "./load-post";
+import type { QuotedPost } from "./load-quotes";
+import { quoteEmbed } from "./quote-embed";
 import type { Post, Profile } from "@/server/db/schema";
 import { commentsSection, reportDialog } from "./comments-section";
 import type { PageInteractions } from "./load-interactions";
@@ -102,7 +104,10 @@ const privateNote = (ctx: ChromeContext, post: Post) =>
   post.visibility === "private" ? `<p class="ni-private-note" role="note">${icon("lock")}<span>${escapeHtml(ctx.intl.t("share.post.privateNote"))}</span></p>` : "";
 
 /** Server-rendered post page (plan §6, §16): complete without JS. */
-export function renderPostPage(ctx: ChromeContext, data: SharePost, social: PageInteractions, aside: PostAside | null = null, following = false, notice: PageNotice = null): string {
+/**
+ * `quoted`: a quote's quoted post (null: no longer available), shown under the body; undefined for other posts.
+ */
+export function renderPostPage(ctx: ChromeContext, data: SharePost, social: PageInteractions, aside: PostAside | null = null, following = false, notice: PageNotice = null, quoted?: QuotedPost | null): string {
   const { post } = data;
   const url = postUrl(post.slug);
   const short = post.kind === "short";
@@ -110,8 +115,8 @@ export function renderPostPage(ctx: ChromeContext, data: SharePost, social: Page
   const body = bodyHtml(ctx, { ...data, document: withTitleInText(post.kind, data.document) });
   const main =
     `<main class="ni-main">${aside ? backLink(ctx) : ""}${noticeHtml(ctx, notice)}${privateNote(ctx, post)}<article class="ni-post${short ? " ni-short" : ""}">` +
-    `${authorBlock(ctx, data, following)}${title}<div class="ni-body">${body}</div>` +
-    `${postFoot(ctx, data)}${postActions(ctx, post, social.liked, social.bookmarked)}</article>` +
+    `${authorBlock(ctx, data, following)}${title}<div class="ni-body">${body}</div>${quoted !== undefined ? quoteEmbed(ctx, quoted) : ""}` +
+    `${postFoot(ctx, data)}${postActions(ctx, post, social)}</article>` +
     `${commentsSection(ctx, post, social, ctx.path)}${reportDialog(ctx, post.slug)}</main>`;
   const card = shareCard(post);
   const open = post.visibility === "public";

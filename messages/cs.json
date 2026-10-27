@@ -229,6 +229,7 @@
     "error": {
       "empty": "Napište něco nebo přidejte obrázek.",
       "failed": "Zveřejnění se nezdařilo. Zkuste to znovu.",
+      "quote_gone": "Citovaný příspěvek už není dostupný.",
       "rate_limited": "Zveřejňujete příliš rychle. Chvíli počkejte.",
       "shortTooLongEdit": "Krátké příspěvky mají nejvýše {max} znaků.",
       "short_too_long": "Krátké příspěvky mají nejvýše {max} znaků. Pro delší text přepněte na „{article}“.",
@@ -261,6 +262,7 @@
     "placeholder": "Jaký máte dobrý nápad?",
     "posting": "Publikuje se…",
     "publish": "Zveřejnit",
+    "quotePlaceholder": "Přidejte svůj komentář…",
     "remove": "Odebrat",
     "save": "Uložit",
     "saving": "Ukládá se…",
@@ -279,7 +281,10 @@
     "readingTime": "{minutes} min čtení",
     "tab": {
       "all": "Vše",
-      "articles": "Články"
+      "articles": "Články",
+      "bookmarks": "Uložené",
+      "replies": "Odpovědi",
+      "reposts": "Přeposlané"
     }
   },
   "follow": {
@@ -334,7 +339,9 @@
     "empty": "Zatím žádná oznámení. Zobrazí se tu lajky, komentáře a noví sledující.",
     "follow": "{name} vás začal(a) sledovat",
     "like": "{name} se líbí váš příspěvek",
+    "quote": "{name} citoval(a) váš příspěvek",
     "reply": "{name} odpověděl(a) na váš komentář",
+    "repost": "{name} přeposlal(a) váš příspěvek",
     "someone": "Někdo",
     "title": "Oznámení",
     "unread": "Nepřečtená oznámení: {count}"
@@ -382,9 +389,12 @@
       "makePrivate": "Zobrazit jen mně",
       "makePublic": "Zveřejnit",
       "more": "Další možnosti",
+      "quote": "Citovat",
       "reply": "Odpovědět",
       "report": "Nahlásit",
-      "share": "Sdílet"
+      "repost": "Přeposlat",
+      "share": "Sdílet",
+      "undoRepost": "Zrušit přeposlání"
     },
     "aside": {
       "moreArticles": "Další články autora"
@@ -432,7 +442,12 @@
         "title": "Příspěvek se připravuje"
       },
       "private": "Jen já",
-      "privateNote": "Tento příspěvek vidíte jen vy. Ostatní ho otevřou, až když ho zveřejníte."
+      "privateNote": "Tento příspěvek vidíte jen vy. Ostatní ho otevřou, až když ho zveřejníte.",
+      "repostedBy": "{name} přeposlal(a)",
+      "repostedByYou": "Přeposlali jste"
+    },
+    "quote": {
+      "unavailable": "Tento příspěvek už není dostupný"
     },
     "report": {
       "done": "Děkujeme. Prověříme to.",

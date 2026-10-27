@@ -11,6 +11,7 @@ import { mediaLimitsFromConfig } from "@/server/media/limits";
 import type { MediaStores } from "@/server/storage/types";
 import { removeTempDir, spoolBody } from "@/server/util/temp-file";
 import { createPost } from "./create-post";
+import { findQuotable, quoteSlugOf } from "./quote";
 import { assertCanUploadMedia } from "./rate-limit";
 import { editorBlocks, type DraftBlock, type DraftMeta } from "./web-compose-doc";
 
@@ -21,7 +22,8 @@ export const WEB_MAX_TEXT = 20_000;
 
 /** "short": short post (≤ SHORT_MAX_CHARS, media under the text); "long": article. null: derived (older form). */
 export type ComposeMode = "short" | "long";
-export type WebComposeInput = { mode: ComposeMode | null; title: string; blocks: DraftBlock[]; files: File[] };
+/** `quote`: slug of the post a new quote quotes (a quote is always a short post). */
+export type WebComposeInput = { mode: ComposeMode | null; title: string; blocks: DraftBlock[]; files: File[]; quote?: string | null };
 
 const filesOf = (form: FormData, name: string) => form.getAll(name).filter((f): f is File => typeof f !== "string" && f.size > 0);
 
@@ -33,11 +35,12 @@ const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
  * (`keep_image` / `keep_audio` ids, edit page), then `images`, then `audios`.
  */
 export function readComposeForm(form: FormData): WebComposeInput {
+  const quote = quoteSlugOf(form.get("quote"));
   const m = String(form.get("mode") ?? "");
-  const mode: ComposeMode | null = m === "short" || m === "long" ? m : null;
+  const mode: ComposeMode | null = quote ? "short" : m === "short" || m === "long" ? m : null;
   const title = mode === "short" ? "" : String(form.get("title") ?? "").trim();
   const doc = form.get("doc");
-  if (typeof doc === "string" && doc) return { mode, title, blocks: editorBlocks(doc), files: filesOf(form, "media") };
+  if (typeof doc === "string" && doc) return { mode, title, blocks: editorBlocks(doc), files: filesOf(form, "media"), quote };
   const images = filesOf(form, "images");
   const audios = filesOf(form, "audios");
   const text = String(form.get("text") ?? "").trim();
@@ -48,7 +51,7 @@ export function readComposeForm(form: FormData): WebComposeInput {
   }
   images.forEach((_, i) => blocks.push({ type: "media", kind: "image", file: i }));
   audios.forEach((_, i) => blocks.push({ type: "media", kind: "audio", file: images.length + i }));
-  return { mode, title, blocks, files: [...images, ...audios] };
+  return { mode, title, blocks, files: [...images, ...audios], quote };
 }
 
 const isMedia = (b: DraftBlock) => b.type === "media" || b.type === "stored";
@@ -102,12 +105,16 @@ export async function draftDocument(db: Db, stores: MediaStores, userId: string,
   return parseDocument({ version: 1, ...(input.title ? { title: input.title } : {}), blocks });
 }
 
-/** Publishes a web post (source `web`, no badge) with media in place; the chosen mode sets the kind. */
+/**
+ * Publishes a web post (source `web`, no badge) with media in place; the chosen mode sets the kind.
+ * A quote (`input.quote`) is a short post pointing at a live public post (checked before any upload).
+ */
 export async function publishFromWeb(db: Db, stores: MediaStores, userId: string, input: WebComposeInput, cacheControl: string): Promise<Post> {
   if (input.blocks.some((b) => b.type === "stored")) throw badRequest("compose.invalid");
+  const quoted = input.quote ? await findQuotable(db, input.quote) : null;
   const document = await draftDocument(db, stores, userId, input);
   const principal: Principal = { userId, clientId: "web", kind: "first_party", source: "web" };
   const kind = input.mode === "short" ? "short" : input.mode === "long" ? "article" : undefined;
-  const result = await createPost(db, stores, principal, { document, sourceRef: `web-${randomUUID()}`, sourceUpdatedAt: null, kind }, cacheControl);
+  const result = await createPost(db, stores, principal, { document, sourceRef: `web-${randomUUID()}`, sourceUpdatedAt: null, kind, quoteOf: quoted?.id }, cacheControl);
   return result.post;
 }

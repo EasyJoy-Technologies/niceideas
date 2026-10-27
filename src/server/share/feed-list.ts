@@ -18,7 +18,8 @@ export function tabFilter(tab: FeedTab): FeedFilter {
   return {};
 }
 
-const tabHref = (base: string, tab: FeedTab) => (tab === "all" ? base : `${base}${base.includes("?") ? "&" : "?"}tab=${tab}`);
+/** Tab link (`all` is the bare page); shared with the profile tabs (profile-tabs.ts). */
+export const tabHref = (base: string, tab: string) => (tab === "all" ? base : `${base}${base.includes("?") ? "&" : "?"}tab=${tab}`);
 
 /** Tab strip: underlined tabs (profile card) or a segmented control (feed heading). */
 export function feedTabs(ctx: ChromeContext, base: string, current: FeedTab, style: "tabs" | "seg"): string {
@@ -29,13 +30,17 @@ export function feedTabs(ctx: ChromeContext, base: string, current: FeedTab, sty
   return `<nav class="ni-${style}">${links}</nav>`;
 }
 
-/** Cards of one page plus a no-JS "load more" link (keyset cursor). */
-export function feedList(ctx: ChromeContext, page: FeedPage, base: string, tab: FeedTab): string {
+/** Cards of one page plus a no-JS "load more" link (keyset cursor). `tab`: the list's tab (feed or profile). */
+export function feedList(ctx: ChromeContext, page: FeedPage, base: string, tab: string): string {
   const { t } = ctx.intl;
   if (page.items.length === 0) return `<p class="ni-card ni-feed-empty">${escapeHtml(t("feed.empty"))}</p>`;
-  const cards = page.items.map((item) => feedCard(ctx, item)).join("");
-  if (!page.next) return cards;
+  return page.items.map((item) => feedCard(ctx, item)).join("") + moreLink(ctx, page.next, base, tab);
+}
+
+/** No-JS "load more" link to the next page of a list (empty on the last page). */
+export function moreLink(ctx: ChromeContext, next: string | null, base: string, tab: string): string {
+  if (!next) return "";
   const first = tabHref(base, tab);
-  const href = `${first}${first.includes("?") ? "&" : "?"}before=${encodeURIComponent(page.next)}`;
-  return `${cards}<a class="ni-btn ni-btn-ghost ni-feed-more" href="${escapeHtml(href)}">${escapeHtml(t("feed.more"))}</a>`;
+  const href = `${first}${first.includes("?") ? "&" : "?"}before=${encodeURIComponent(next)}`;
+  return `<a class="ni-btn ni-btn-ghost ni-feed-more" href="${escapeHtml(href)}">${escapeHtml(ctx.intl.t("feed.more"))}</a>`;
 }

@@ -155,7 +155,8 @@ describe("account deletion", () => {
     await bookmarkRoute(jsonRequest("POST", "/x", null, undefined, as(leaver)), slug());
     const { comment } = (await json(await commentRoute(jsonRequest("POST", "/x", null, { body: "bye" }, as(leaver)), slug()))).body;
     const replied = (await json(await commentRoute(jsonRequest("POST", "/x", null, { body: "reply to leaver", parentId: comment.id }, as(reader)), slug()))).body.comment;
-    const readerComment = (await ctx.db.selectFrom("comment").select("id").where("author_id", "=", "ai-reader").executeTakeFirstOrThrow()).id;
+    // The reader's earlier comment (not the reply just written; rows have no inherent order).
+    const readerComment = (await ctx.db.selectFrom("comment").select("id").where("author_id", "=", "ai-reader").where("id", "<>", replied.id).orderBy("created_at", "asc").executeTakeFirstOrThrow()).id;
     await commentLikeRoute(jsonRequest("POST", "/x", null, undefined, as(leaver)), params({ id: readerComment }));
     const mid = await postRow();
     expect([mid.like_count, mid.bookmark_count, mid.comment_count]).toEqual([before.like_count + 1, before.bookmark_count + 1, before.comment_count + 2]);

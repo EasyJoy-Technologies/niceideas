@@ -229,6 +229,7 @@
     "error": {
       "empty": "Bir şeyler yaz veya görsel ekle.",
       "failed": "Paylaşılamadı. Lütfen tekrar dene.",
+      "quote_gone": "Alıntıladığın gönderi artık mevcut değil.",
       "rate_limited": "Çok hızlı paylaşıyorsun. Lütfen biraz bekle.",
       "shortTooLongEdit": "Kısa gönderiler en fazla {max} karakter olabilir.",
       "short_too_long": "Kısa gönderiler en fazla {max} karakter olabilir. Daha fazla yazmak için “{article}” moduna geç.",
@@ -261,6 +262,7 @@
     "placeholder": "Güzel fikrin ne?",
     "posting": "Yayınlanıyor…",
     "publish": "Paylaş",
+    "quotePlaceholder": "Yorumunu ekle…",
     "remove": "Kaldır",
     "save": "Kaydet",
     "saving": "Kaydediliyor…",
@@ -279,7 +281,10 @@
     "readingTime": "{minutes} dk okuma",
     "tab": {
       "all": "Tümü",
-      "articles": "Makaleler"
+      "articles": "Makaleler",
+      "bookmarks": "Kaydedilenler",
+      "replies": "Yanıtlar",
+      "reposts": "Yeniden paylaşımlar"
     }
   },
   "follow": {
@@ -334,7 +339,9 @@
     "empty": "Henüz bildirim yok. Beğeniler, yorumlar ve yeni takipçiler burada görünür.",
     "follow": "{name} seni takip etmeye başladı",
     "like": "{name} gönderini beğendi",
+    "quote": "{name} gönderini alıntıladı",
     "reply": "{name} yorumuna yanıt verdi",
+    "repost": "{name} gönderini yeniden paylaştı",
     "someone": "Biri",
     "title": "Bildirimler",
     "unread": "Okunmamış bildirimler: {count}"
@@ -382,9 +389,12 @@
       "makePrivate": "Yalnızca bana görünür yap",
       "makePublic": "Herkese açık yap",
       "more": "Diğer seçenekler",
+      "quote": "Alıntıla",
       "reply": "Yanıtla",
       "report": "Şikayet et",
-      "share": "Paylaş"
+      "repost": "Yeniden paylaş",
+      "share": "Paylaş",
+      "undoRepost": "Yeniden paylaşımı geri al"
     },
     "aside": {
       "moreArticles": "Yazarın diğer makaleleri"
@@ -432,7 +442,12 @@
         "title": "Bu gönderi hazırlanıyor"
       },
       "private": "Yalnızca ben",
-      "privateNote": "Bu gönderiyi yalnızca siz görebilirsiniz. Herkese açık yaptığınızda başkaları da açabilir."
+      "privateNote": "Bu gönderiyi yalnızca siz görebilirsiniz. Herkese açık yaptığınızda başkaları da açabilir.",
+      "repostedBy": "{name} yeniden paylaştı",
+      "repostedByYou": "Yeniden paylaştın"
+    },
+    "quote": {
+      "unavailable": "Bu gönderi artık mevcut değil"
     },
     "report": {
       "done": "Teşekkürler. İnceleyeceğiz.",

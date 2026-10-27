@@ -1,5 +1,6 @@
 import { sql, type RawBuilder, type SelectQueryBuilder } from "kysely";
 import type { Db } from "../client";
+import { listHomeFeed } from "./home-feed";
 import type { Database, Post, PostKind, PostRevision } from "../schema";
 
 /** Keyset position in a newest-first feed. */
@@ -19,43 +20,24 @@ export type FeedFilter = {
 /** LIKE pattern matching `text` literally anywhere. */
 export const containsPattern = (text: string) => `%${text.replace(/[\\%_]/g, (c) => `\\${c}`)}%`;
 
-export type FeedRow = Post & { author_handle: string; author_name: string; author_avatar: string | null };
+export type FeedRow = Post & {
+  author_handle: string;
+  author_name: string;
+  author_avatar: string | null;
+  /** Position in a list that is not ordered by publishing time (home timeline with reposts, profile reposts). */
+  feed_at?: Date;
+  /** Shown because this account reposted it (home timeline, profile reposts); null / absent otherwise. */
+  reposter_handle?: string | null;
+  reposter_name?: string | null;
+};
 
 /** Live posts newest first (indexes: post_timeline_idx / post_author_published_idx). */
 export async function listFeed(db: Db, filter: FeedFilter, cursor: FeedCursor | null, limit: number): Promise<FeedRow[]> {
-  if (filter.followerId) return listHomeFeed(db, filter.followerId, filter, cursor, limit);
+  if (filter.followerId) return listHomeFeed(db, filter.followerId, filter.kind ?? null, cursor, limit);
   let q = db.selectFrom("post");
   if (filter.authorId) q = q.where("post.author_id", "=", filter.authorId);
   if (filter.query) q = q.where("post.search_text", "ilike", containsPattern(filter.query));
   return withAuthor(q.where(feedConditions(filter, cursor))).orderBy("post.published_at", "desc").orderBy("post.id", "desc").limit(limit).execute();
-}
-
-/**
- * Home timeline: own posts + followed authors. Reads the newest `limit` posts of each
- * author through post_author_published_idx and merges them, so the cost depends on the
- * number of followed authors, not on how rare their posts are in the global timeline.
- */
-async function listHomeFeed(db: Db, me: string, filter: FeedFilter, cursor: FeedCursor | null, limit: number): Promise<FeedRow[]> {
-  const authors = db
-    .selectFrom("follow")
-    .select("followee_id as a")
-    .where("follower_id", "=", me)
-    .unionAll(db.selectNoFrom(sql<string>`${me}::text`.as("a")))
-    .as("au");
-  return db
-    .selectFrom(authors)
-    .innerJoinLateral(
-      (eb) => eb.selectFrom("post").whereRef("post.author_id", "=", "au.a").where(feedConditions(filter, cursor)).selectAll("post").orderBy("post.published_at", "desc").orderBy("post.id", "desc").limit(limit).as("post"),
-      (join) => join.onTrue(),
-    )
-    .innerJoin("profile", "profile.user_id", "post.author_id")
-    .selectAll("post")
-    .select(["profile.handle as author_handle", "profile.display_name as author_name", "profile.avatar_url as author_avatar"])
-    .where("profile.status", "=", "active")
-    .orderBy("post.published_at", "desc")
-    .orderBy("post.id", "desc")
-    .limit(limit)
-    .execute();
 }
 
 type PostQuery = SelectQueryBuilder<Database, "post", object>;

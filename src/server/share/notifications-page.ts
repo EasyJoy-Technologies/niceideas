@@ -7,7 +7,7 @@ import { renderPage } from "./document";
 import { icon, type IconName } from "./icons";
 import { avatarHtml, profilePath } from "./profile-bits";
 
-const ICON: Record<NotificationRow["kind"], IconName> = { like: "heart", comment: "comment", reply: "comment", follow: "person" };
+const ICON: Record<NotificationRow["kind"], IconName> = { like: "heart", comment: "comment", reply: "comment", follow: "person", repost: "repost", quote: "repost" };
 
 /** Sentence with the actor's name as markup (the label is translated text; only the name element is markup). */
 function sentence(ctx: ChromeContext, n: NotificationRow): string {
@@ -21,7 +21,7 @@ function sentence(ctx: ChromeContext, n: NotificationRow): string {
 function row(ctx: ChromeContext, n: NotificationRow, unread: boolean): string {
   const at = `<time datetime="${n.at.toISOString()}" data-rel>${escapeHtml(ctx.intl.format.dateTime(n.at, { dateStyle: "medium" }))}</time>`;
   const avatar = n.actorHandle ? avatarHtml(n.actorName || `@${n.actorHandle}`, n.actorAvatar, 40) : `<span class="ni-avatar ni-av-40 ni-anon">${icon("person")}</span>`;
-  const post = n.postSlug ? `<a class="ni-note-post" href="/p/${n.postSlug}${n.kind === "like" ? "" : "#comments"}">${escapeHtml(cardTitle({ title: n.postTitle ?? "", summary: n.postSummary ?? "" }))}</a>` : "";
+  const post = n.postSlug ? `<a class="ni-note-post" href="/p/${n.postSlug}${n.kind === "comment" || n.kind === "reply" ? "#comments" : ""}">${escapeHtml(cardTitle({ title: n.postTitle ?? "", summary: n.postSummary ?? "" }))}</a>` : "";
   const excerpt = n.excerpt ? `<p>${escapeHtml(n.excerpt)}</p>` : "";
   return (
     `<li class="ni-note${unread ? " ni-unread" : ""}"><span class="ni-note-ico ni-note-${n.kind}">${icon(ICON[n.kind])}</span>${avatar}` +

@@ -229,6 +229,7 @@
     "error": {
       "empty": "Schreib etwas oder füge ein Bild hinzu.",
       "failed": "Veröffentlichen fehlgeschlagen. Bitte versuche es erneut.",
+      "quote_gone": "Der Beitrag, den du zitierst, ist nicht mehr verfügbar.",
       "rate_limited": "Du veröffentlichst zu schnell. Bitte warte einen Moment.",
       "shortTooLongEdit": "Kurze Beiträge haben höchstens {max} Zeichen.",
       "short_too_long": "Kurze Beiträge haben höchstens {max} Zeichen. Wechsle zu „{article}“, um mehr zu schreiben.",
@@ -261,6 +262,7 @@
     "placeholder": "Was ist deine Nice Idea?",
     "posting": "Wird veröffentlicht…",
     "publish": "Veröffentlichen",
+    "quotePlaceholder": "Füge deinen Kommentar hinzu …",
     "remove": "Entfernen",
     "save": "Speichern",
     "saving": "Wird gespeichert…",
@@ -279,7 +281,10 @@
     "readingTime": "{minutes} Min. Lesezeit",
     "tab": {
       "all": "Alle",
-      "articles": "Artikel"
+      "articles": "Artikel",
+      "bookmarks": "Gemerkt",
+      "replies": "Antworten",
+      "reposts": "Erneut gepostet"
     }
   },
   "follow": {
@@ -334,7 +339,9 @@
     "empty": "Noch keine Mitteilungen. Likes, Kommentare und neue Follower erscheinen hier.",
     "follow": "{name} folgt dir jetzt",
     "like": "{name} gefällt dein Beitrag",
+    "quote": "{name} hat deinen Beitrag zitiert",
     "reply": "{name} hat auf deinen Kommentar geantwortet",
+    "repost": "{name} hat deinen Beitrag repostet",
     "someone": "Jemand",
     "title": "Mitteilungen",
     "unread": "Ungelesene Mitteilungen: {count}"
@@ -382,9 +389,12 @@
       "makePrivate": "Nur für mich sichtbar machen",
       "makePublic": "Öffentlich machen",
       "more": "Weitere Optionen",
+      "quote": "Zitieren",
       "reply": "Antworten",
       "report": "Melden",
-      "share": "Teilen"
+      "repost": "Reposten",
+      "share": "Teilen",
+      "undoRepost": "Reposten rückgängig machen"
     },
     "aside": {
       "moreArticles": "Weitere Artikel des Autors"
@@ -432,7 +442,12 @@
         "title": "Dieser Beitrag wird vorbereitet"
       },
       "private": "Nur ich",
-      "privateNote": "Nur Sie können diesen Beitrag sehen. Andere können ihn erst öffnen, wenn Sie ihn öffentlich machen."
+      "privateNote": "Nur Sie können diesen Beitrag sehen. Andere können ihn erst öffnen, wenn Sie ihn öffentlich machen.",
+      "repostedBy": "{name} hat repostet",
+      "repostedByYou": "Du hast repostet"
+    },
+    "quote": {
+      "unavailable": "Dieser Beitrag ist nicht mehr verfügbar"
     },
     "report": {
       "done": "Danke. Wir prüfen das.",

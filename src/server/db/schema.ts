@@ -2,7 +2,7 @@ import type { ColumnType, Generated, Insertable, JSONColumnType, Selectable, Upd
 import type { CreatedAt, DefaultedTimestamp, JsonColumn, Timestamp } from "./schema-columns";
 import type { AccountEventTable, DeletedAccountTable } from "./schema-accounts";
 import type { WebSessionTable, WebTicketTable } from "./schema-auth";
-import type { PostBookmarkTable } from "./schema-social";
+import type { PostBookmarkTable, PostRepostTable } from "./schema-social";
 import type { AvatarJobTable, CdnPurgeTable, MediaJobTable, MediaUploadTable, OutboxTable, ServiceNonceTable } from "./schema-share";
 
 export type { MediaJobState, OutboxKind } from "./schema-share";
@@ -80,6 +80,8 @@ export interface PostTable {
   purge_after: Timestamp | null;
   like_count: Generated<number>;
   bookmark_count: Generated<number>;
+  /** Plain reposts (quotes are counted from their posts when shown). */
+  repost_count: Generated<number>;
   comment_count: Generated<number>;
   comments_mode: Generated<CommentsMode>;
   /** Title + plain body text (site search). */
@@ -93,6 +95,8 @@ export interface PostTable {
   edited_at: Timestamp | null;
   /** Edited on the web since the app's last update: an app update of the same version leaves it in place. */
   web_edited: Generated<boolean>;
+  /** A quote: the post it quotes (no foreign key: kept after the original is purged). Null for other posts. */
+  quote_of: string | null;
 }
 
 export interface PostRevisionTable {
@@ -266,6 +270,7 @@ export interface Database {
   web_session: WebSessionTable;
   web_ticket: WebTicketTable;
   post_bookmark: PostBookmarkTable;
+  post_repost: PostRepostTable;
   pow_used: PowUsedTable;
   admin_member: AdminMemberTable;
   media_job: MediaJobTable;

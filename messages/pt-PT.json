@@ -229,6 +229,7 @@
     "error": {
       "empty": "Escreva algo ou adicione uma imagem.",
       "failed": "Não foi possível publicar. Tente novamente.",
+      "quote_gone": "A publicação que está a citar já não está disponível.",
       "rate_limited": "Está a publicar demasiado depressa. Aguarde um momento.",
       "shortTooLongEdit": "As publicações curtas têm no máximo {max} caracteres.",
       "short_too_long": "As publicações curtas têm no máximo {max} caracteres. Mude para «{article}» para escrever mais.",
@@ -261,6 +262,7 @@
     "placeholder": "Qual é a sua boa ideia?",
     "posting": "A publicar…",
     "publish": "Publicar",
+    "quotePlaceholder": "Adicione o seu comentário…",
     "remove": "Remover",
     "save": "Guardar",
     "saving": "A guardar…",
@@ -279,7 +281,10 @@
     "readingTime": "{minutes} min de leitura",
     "tab": {
       "all": "Tudo",
-      "articles": "Artigos"
+      "articles": "Artigos",
+      "bookmarks": "Guardados",
+      "replies": "Respostas",
+      "reposts": "Republicações"
     }
   },
   "follow": {
@@ -334,7 +339,9 @@
     "empty": "Ainda não há notificações. Os gostos, comentários e novos seguidores aparecem aqui.",
     "follow": "{name} começou a segui-lo",
     "like": "{name} gostou da sua publicação",
+    "quote": "{name} citou a sua publicação",
     "reply": "{name} respondeu ao seu comentário",
+    "repost": "{name} republicou a sua publicação",
     "someone": "Alguém",
     "title": "Notificações",
     "unread": "Notificações por ler: {count}"
@@ -382,9 +389,12 @@
       "makePrivate": "Tornar visível só para mim",
       "makePublic": "Tornar pública",
       "more": "Mais opções",
+      "quote": "Citar",
       "reply": "Responder",
       "report": "Denunciar",
-      "share": "Partilhar"
+      "repost": "Republicar",
+      "share": "Partilhar",
+      "undoRepost": "Anular republicação"
     },
     "aside": {
       "moreArticles": "Mais artigos do autor"
@@ -432,7 +442,12 @@
         "title": "A preparar esta publicação"
       },
       "private": "Só eu",
-      "privateNote": "Só você pode ver esta publicação. Os outros poderão abri-la quando a tornar pública."
+      "privateNote": "Só você pode ver esta publicação. Os outros poderão abri-la quando a tornar pública.",
+      "repostedBy": "{name} republicou",
+      "repostedByYou": "Republicou"
+    },
+    "quote": {
+      "unavailable": "Esta publicação já não está disponível"
     },
     "report": {
       "done": "Obrigado. Vamos analisar.",

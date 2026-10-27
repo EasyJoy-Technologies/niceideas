@@ -65,3 +65,7 @@ Unification options to be decided by Xianglin (not part of this plan until chose
 - Hover (mouse): today only bordered article boxes react (border → light purple); short cards none. Proposed: whole card light-grey tint + pointer for every clickable card; borderless article title turns purple; bordered box keeps its border highlight.
 - Approved: repost hidden in mainland China; Replies/Reposts public on other profiles; quotes in All + Reposts, plain reposts only in Reposts.
 - Round 3 (Xianglin 12:23): footer links row without rules above/below. Hover: only short cards get the grey tint; articles (with or without cover) get the purple frame — the borderless article reserves a transparent 1 px frame (negative inline margin) so its text stays aligned with the post text and nothing shifts on hover.
+
+## Implemented
+- v1.0.80 (8bb1ee0): items 1, 3–6 (+ tagline hidden when it would wrap, Xianglin 12:29).
+- v1.0.81: items 2 and 7 — see changelog/v1.0.81.md. Decisions taken while building: repost count = plain reposts (`post.repost_count`) + live quotes (counted when shown, so a deleted / private quote needs no counter upkeep); `quote_of` without foreign key (a purged original leaves "no longer available", not an ordinary post); home timeline dedup at the newest occurrence; Quote opens `/?quote=<slug>#compose`; repost form works without JS (303 back) and in place with JS; Settings page got Sign out. Known gap: the edit page of a quote does not show the quoted post (the quote link is kept).

@@ -229,6 +229,7 @@
     "error": {
       "empty": "Napisz coś lub dodaj obraz.",
       "failed": "Nie udało się opublikować. Spróbuj ponownie.",
+      "quote_gone": "Cytowany wpis nie jest już dostępny.",
       "rate_limited": "Publikujesz zbyt szybko. Poczekaj chwilę.",
       "shortTooLongEdit": "Krótkie wpisy mogą mieć najwyżej {max} znaków.",
       "short_too_long": "Krótkie wpisy mogą mieć najwyżej {max} znaków. Przełącz na „{article}”, aby napisać więcej.",
@@ -261,6 +262,7 @@
     "placeholder": "Jaki masz dobry pomysł?",
     "posting": "Publikowanie…",
     "publish": "Opublikuj",
+    "quotePlaceholder": "Dodaj swój komentarz…",
     "remove": "Usuń",
     "save": "Zapisz",
     "saving": "Zapisywanie…",
@@ -279,7 +281,10 @@
     "readingTime": "{minutes} min czytania",
     "tab": {
       "all": "Wszystko",
-      "articles": "Artykuły"
+      "articles": "Artykuły",
+      "bookmarks": "Zapisane",
+      "replies": "Odpowiedzi",
+      "reposts": "Podane dalej"
     }
   },
   "follow": {
@@ -334,7 +339,9 @@
     "empty": "Brak powiadomień. Tutaj pojawią się polubienia, komentarze i nowi obserwujący.",
     "follow": "{name} obserwuje Cię",
     "like": "{name} polubił(a) Twój wpis",
+    "quote": "{name} cytuje Twój wpis",
     "reply": "{name} odpowiedział(a) na Twój komentarz",
+    "repost": "{name} podaje dalej Twój wpis",
     "someone": "Ktoś",
     "title": "Powiadomienia",
     "unread": "Nieprzeczytane powiadomienia: {count}"
@@ -382,9 +389,12 @@
       "makePrivate": "Widoczne tylko dla mnie",
       "makePublic": "Upublicznij",
       "more": "Więcej opcji",
+      "quote": "Cytuj",
       "reply": "Odpowiedz",
       "report": "Zgłoś",
-      "share": "Udostępnij"
+      "repost": "Podaj dalej",
+      "share": "Udostępnij",
+      "undoRepost": "Cofnij podanie dalej"
     },
     "aside": {
       "moreArticles": "Więcej artykułów autora"
@@ -432,7 +442,12 @@
         "title": "Przygotowywanie wpisu"
       },
       "private": "Tylko ja",
-      "privateNote": "Tylko Ty widzisz ten wpis. Inni będą mogli go otworzyć, gdy go upublicznisz."
+      "privateNote": "Tylko Ty widzisz ten wpis. Inni będą mogli go otworzyć, gdy go upublicznisz.",
+      "repostedBy": "{name} podaje dalej",
+      "repostedByYou": "Podajesz dalej"
+    },
+    "quote": {
+      "unavailable": "Ten wpis nie jest już dostępny"
     },
     "report": {
       "done": "Dziękujemy. Sprawdzimy to.",

@@ -3,6 +3,7 @@ import type { Post } from "@/server/db/schema";
 import { countVisibleTopLevel, listReplies, listTopLevel, type CommentRow } from "@/server/db/repos/comments";
 import { bookmarkedAmong } from "@/server/db/repos/bookmarks";
 import { COMMENT_LIKE, likedAmong, POST_LIKE } from "@/server/db/repos/likes";
+import { liveQuoteCounts, repostedAmong } from "@/server/db/repos/reposts";
 import { likerKeysOf } from "@/server/interactions/actor";
 
 export const COMMENTS_PER_PAGE = 30;
@@ -13,6 +14,9 @@ export type PageInteractions = {
   liked: boolean;
   /** Saved by the signed-in viewer. */
   bookmarked: boolean;
+  /** Reposted by the signed-in viewer; shown count = plain reposts + live quotes. */
+  reposted: boolean;
+  repostCount: number;
   likedComments: ReadonlySet<string>;
   threads: CommentThread[];
   /** 1-based page of top-level comments; `hasMore` links to the next one. */
@@ -21,7 +25,7 @@ export type PageInteractions = {
 };
 
 /**
- * Likes / comments / bookmark state shown on a post page for this viewer (`viewerId` null = signed out)
+ * Likes / comments / bookmark / repost state shown on a post page for this viewer (`viewerId` null = signed out)
  * and browser (`visitorKey` null = no cookie yet).
  */
 export async function loadPageInteractions(db: Db, post: Post, viewerId: string | null, visitorKey: string | null, page: number): Promise<PageInteractions> {
@@ -31,8 +35,17 @@ export async function loadPageInteractions(db: Db, post: Post, viewerId: string 
   const threads = top.map((comment) => ({ comment, replies: replies.filter((r) => r.parent_id === comment.id) }));
   const ids = [...top, ...replies].map((c) => c.id);
   const keys = likerKeysOf(viewerId, visitorKey);
-  const [liked, likedComments, bookmarked] = await Promise.all([likedAmong(db, POST_LIKE, [post.id], keys), likedAmong(db, COMMENT_LIKE, ids, keys), bookmarkedAmong(db, viewerId, [post.id])]);
-  return { liked: liked.has(post.id), bookmarked: bookmarked.has(post.id), likedComments, threads, page, hasMore: offset + top.length < total };
+  const [liked, likedComments, bookmarked, reposted, quotes] = await Promise.all([
+    likedAmong(db, POST_LIKE, [post.id], keys),
+    likedAmong(db, COMMENT_LIKE, ids, keys),
+    bookmarkedAmong(db, viewerId, [post.id]),
+    repostedAmong(db, viewerId, [post.id]),
+    liveQuoteCounts(db, [post.id]),
+  ]);
+  return {
+    liked: liked.has(post.id), bookmarked: bookmarked.has(post.id), reposted: reposted.has(post.id), repostCount: post.repost_count + (quotes.get(post.id) ?? 0),
+    likedComments, threads, page, hasMore: offset + top.length < total,
+  };
 }
 
 /** `?cpage=N` → page number (defaults to 1, bounded). */

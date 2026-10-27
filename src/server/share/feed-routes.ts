@@ -7,13 +7,15 @@ import { findProfileByHandle } from "@/server/db/repos/profiles";
 import { searchProfiles } from "@/server/db/repos/search";
 import { HANDLE_PATTERN } from "@/server/profiles/handles";
 import { peekVisitorKey } from "@/server/interactions/visitor";
-import { composeBox, composeError } from "./compose-box";
+import { homeCompose } from "./home-compose";
 import { loadDiscoverAside, renderDiscoverAside } from "./discover-aside";
 import { renderDiscoverPage, type FeedPageKind } from "./discover-page";
 import { feedTab, tabFilter } from "./feed-list";
 import { loadFeed, parseCursor, type FeedViewer } from "./load-feed";
 import type { ChromeContext } from "./chrome";
 import { renderProfilePage } from "./profile-page";
+import { loadProfileList } from "./profile-list";
+import { profileTab } from "./profile-tabs";
 import { renderSearchPage, type SearchType, type SearchView } from "./search-page";
 import { cachedPage } from "./page-cache";
 import { htmlResponse, pageContext } from "./respond";
@@ -60,7 +62,7 @@ async function feedResponse(request: Request, want: FeedPageKind): Promise<Respo
         loadFeed(db, filter, parseCursor(url.searchParams.get("before")), feedViewer(ctx, request)),
         loadDiscoverAside(db, ctx.viewer?.user_id ?? null),
       ]);
-      const compose = kind === "home" ? composeBox(ctx, composeError(url)) : "";
+      const compose = kind === "home" ? await homeCompose(ctx, db, url) : "";
       return { html: renderDiscoverPage(ctx, tab, page, base, renderDiscoverAside(ctx, asideData), kind, compose), status: 200 };
     });
   });
@@ -77,15 +79,15 @@ export async function profileResponse(request: Request, rawHandle: string): Prom
       const profile = HANDLE.test(handle) ? await findProfileByHandle(db, handle) : undefined;
       if (!profile || profile.status !== "active") return { html: renderStatusPage(pctx, "profileNotFound"), status: 404 };
       const url = new URL(request.url);
-      const tab = feedTab(url);
       const own = ctx.viewer?.user_id === profile.user_id;
-      const [stats, page, asideData, followed] = await Promise.all([
+      const tab = profileTab(url, own);
+      const [stats, list, asideData, followed] = await Promise.all([
         profileStats(db, profile.user_id, own),
-        loadFeed(db, { ...tabFilter(tab), authorId: profile.user_id, includePrivate: own }, parseCursor(url.searchParams.get("before")), feedViewer(ctx, request)),
+        loadProfileList(db, profile.user_id, own, tab, parseCursor(url.searchParams.get("before")), feedViewer(ctx, request)),
         loadDiscoverAside(db, ctx.viewer?.user_id ?? null),
         ctx.viewer ? followingAmong(db, ctx.viewer.user_id, [profile.user_id]) : Promise.resolve(new Set<string>()),
       ]);
-      return { html: renderProfilePage(pctx, { profile, stats, tab, page, following: followed.has(profile.user_id) }, renderDiscoverAside(pctx, asideData)), status: 200 };
+      return { html: renderProfilePage(pctx, { profile, stats, tab, own, list, following: followed.has(profile.user_id) }, renderDiscoverAside(pctx, asideData)), status: 200 };
     });
   });
 }

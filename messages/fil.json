@@ -229,6 +229,7 @@
     "error": {
       "empty": "Magsulat ng kahit ano o magdagdag ng larawan.",
       "failed": "Hindi ma-post. Pakisubukang muli.",
+      "quote_gone": "Hindi na available ang post na kino-quote mo.",
       "rate_limited": "Masyado kang mabilis mag-post. Maghintay sandali.",
       "shortTooLongEdit": "Hanggang {max} karakter lang ang maikling post.",
       "short_too_long": "Hanggang {max} karakter lang ang maikling post. Lumipat sa “{article}” para magsulat pa.",
@@ -261,6 +262,7 @@
     "placeholder": "Ano ang magandang ideya mo?",
     "posting": "Ipinopost…",
     "publish": "I-post",
+    "quotePlaceholder": "Idagdag ang iyong komento…",
     "remove": "Alisin",
     "save": "I-save",
     "saving": "Sine-save…",
@@ -279,7 +281,10 @@
     "readingTime": "{minutes} min na pagbasa",
     "tab": {
       "all": "Lahat",
-      "articles": "Mga artikulo"
+      "articles": "Mga artikulo",
+      "bookmarks": "Mga naka-save",
+      "replies": "Mga tugon",
+      "reposts": "Mga repost"
     }
   },
   "follow": {
@@ -334,7 +339,9 @@
     "empty": "Wala pang notification. Dito lalabas ang mga like, comment at bagong follower.",
     "follow": "Fina-follow ka na ni {name}",
     "like": "Ni-like ni {name} ang post mo",
+    "quote": "Kinuote ni {name} ang post mo",
     "reply": "Sumagot si {name} sa comment mo",
+    "repost": "Ni-repost ni {name} ang post mo",
     "someone": "May isang tao",
     "title": "Mga notification",
     "unread": "Mga hindi pa nababasang notification: {count}"
@@ -382,9 +389,12 @@
       "makePrivate": "Gawing ako lang ang makakakita",
       "makePublic": "Gawing pampubliko",
       "more": "Higit pang opsyon",
+      "quote": "I-quote",
       "reply": "Sumagot",
       "report": "I-report",
-      "share": "Ibahagi"
+      "repost": "I-repost",
+      "share": "Ibahagi",
+      "undoRepost": "I-undo ang repost"
     },
     "aside": {
       "moreArticles": "Iba pang artikulo ng author"
@@ -432,7 +442,12 @@
         "title": "Inihahanda ang post na ito"
       },
       "private": "Ako lang",
-      "privateNote": "Ikaw lang ang nakakakita sa post na ito. Mabubuksan ito ng iba kapag ginawa mo itong pampubliko."
+      "privateNote": "Ikaw lang ang nakakakita sa post na ito. Mabubuksan ito ng iba kapag ginawa mo itong pampubliko.",
+      "repostedBy": "Ni-repost ni {name}",
+      "repostedByYou": "Ni-repost mo"
+    },
+    "quote": {
+      "unavailable": "Hindi na available ang post na ito"
     },
     "report": {
       "done": "Salamat. Susuriin namin ito.",
