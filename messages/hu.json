@@ -275,6 +275,7 @@
     "empty": "Itt még nincs semmi.",
     "images": "{count, plural, one {# kép} other {# kép}}",
     "more": "Továbbiak",
+    "readMore": "Tovább",
     "readingTime": "{minutes} perc olvasás",
     "tab": {
       "all": "Összes",

@@ -12,11 +12,11 @@ function menuItems(ctx: ChromeContext): string {
   const { t } = ctx.intl;
   const v = ctx.viewer!;
   return (
-    `<ul><li><a href="${profilePath(v.handle)}">${icon("person")}${escapeHtml(t("auth.myProfile"))}</a></li>` +
-    `<li><a href="/bookmarks">${icon("bookmark")}${escapeHtml(t("bookmarks.title"))}</a></li>` +
-    `<li><a href="/settings">${icon("settings")}${escapeHtml(t("settings.title"))}</a></li>` +
-    (isAdmin(v) ? `<li><a href="/admin">${icon("restricted")}${escapeHtml(t("admin.title"))}</a></li>` : "") +
-    `<li><form method="post" action="/auth/sign-out"><button type="submit">${icon("signOut")}${escapeHtml(t("auth.signOut"))}</button></form></li></ul>`
+    `<ul><li><a href="${profilePath(v.handle)}">${icon("person")}<span>${escapeHtml(t("auth.myProfile"))}</span></a></li>` +
+    `<li><a href="/bookmarks">${icon("star")}<span>${escapeHtml(t("bookmarks.title"))}</span></a></li>` +
+    `<li><a href="/settings">${icon("settings")}<span>${escapeHtml(t("settings.title"))}</span></a></li>` +
+    (isAdmin(v) ? `<li><a href="/admin">${icon("restricted")}<span>${escapeHtml(t("admin.title"))}</span></a></li>` : "") +
+    `<li><form method="post" action="/auth/sign-out"><button type="submit">${icon("signOut")}<span>${escapeHtml(t("auth.signOut"))}</span></button></form></li></ul>`
   );
 }
 

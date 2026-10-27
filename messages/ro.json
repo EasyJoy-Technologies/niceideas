@@ -275,6 +275,7 @@
     "empty": "Încă nu este nimic aici.",
     "images": "{count, plural, one {# imagine} few {# imagini} other {# de imagini}}",
     "more": "Afișează mai mult",
+    "readMore": "Citește mai mult",
     "readingTime": "{minutes} min de citit",
     "tab": {
       "all": "Toate",

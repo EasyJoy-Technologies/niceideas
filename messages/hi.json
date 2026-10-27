@@ -275,6 +275,7 @@
     "empty": "यहाँ अभी कुछ नहीं है।",
     "images": "{count, plural, one {# तस्वीर} other {# तस्वीरें}}",
     "more": "और दिखाएँ",
+    "readMore": "पूरा पढ़ें",
     "readingTime": "{minutes} मिनट में पढ़ें",
     "tab": {
       "all": "सभी",

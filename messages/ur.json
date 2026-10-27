@@ -275,6 +275,7 @@
     "empty": "یہاں ابھی کچھ نہیں ہے۔",
     "images": "{count, plural, one {# تصویر} other {# تصاویر}}",
     "more": "مزید دکھائیں",
+    "readMore": "مزید پڑھیں",
     "readingTime": "{minutes} منٹ کی پڑھائی",
     "tab": {
       "all": "سب",

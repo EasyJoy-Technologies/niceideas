@@ -275,6 +275,7 @@
     "empty": "아직 아무것도 없어요.",
     "images": "{count, plural, other {이미지 #장}}",
     "more": "더 보기",
+    "readMore": "전체 읽기",
     "readingTime": "{minutes}분 분량",
     "tab": {
       "all": "전체",

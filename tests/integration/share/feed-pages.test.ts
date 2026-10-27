@@ -46,6 +46,21 @@ describe("discover and profile pages", () => {
     expect(html).toContain('<link rel="canonical" href="http://localhost:3000/discover">');
   });
 
+  it("cards: short ones open their post, articles without a cover are unframed with Read more; star; footer without language / theme", async () => {
+    const { html } = await discover();
+    expect(html).toContain(`<article class="ni-card ni-fc" data-href="/p/${short.slug}">`);
+    expect(html).not.toContain(`data-href="/p/${article.slug}"`);
+    expect(html).toContain(`<a class="ni-fc-article ni-fc-plain" href="/p/${article.slug}">`);
+    expect(html).toMatch(/<span class="ni-fc-more">Read more<svg/);
+    expect(html).toContain('<path d="M11.525 2.295');
+    expect(html).not.toContain('<path d="m19 21-7-4-7 4V5');
+    const footer = html.slice(html.indexOf('<footer class="ni-ftr'), html.indexOf("</footer>"));
+    expect(footer).toContain('<p class="ni-ftr-tag">');
+    expect(footer).toContain('<nav class="ni-ftr-links">');
+    // Language and theme stay in the footer markup for wide screens; phones hide them (share-page.css).
+    expect(footer).toContain('class="ni-lang"');
+  });
+
   it("tabs filter by kind", async () => {
     const { html } = await discover("?tab=articles");
     expect(html).toContain("Long read");

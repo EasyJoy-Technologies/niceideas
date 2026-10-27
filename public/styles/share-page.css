@@ -114,6 +114,7 @@ a { color: inherit; text-decoration: none; }
 .ni-ftr-brand p { margin: 0.5rem 0 0; color: var(--ni-color-text-secondary); font-size: 0.8125rem; max-width: 18rem; }
 .ni-ftr-links { display: flex; flex-wrap: wrap; gap: 0.5rem 1.25rem; font-size: 0.8125rem; color: var(--ni-color-text-secondary); }
 .ni-ftr-links a:hover { color: var(--ni-color-primary); }
+.ni-ftr-br { display: none; }
 .ni-ftr-meta {
   width: 100%; display: flex; justify-content: space-between; align-items: center; gap: 0.75rem; flex-wrap: wrap;
   font-size: 0.75rem; color: var(--ni-color-muted); border-top: 1px solid var(--ni-color-divider); padding-top: 1rem;
@@ -145,14 +146,24 @@ a { color: inherit; text-decoration: none; }
   .ni-post { border-radius: 0; box-shadow: none; padding: 1.25rem 1rem 0.75rem; }
   .ni-private-note { margin: 0; border-radius: 0; padding: 0.625rem 1rem; border-bottom: 1px solid var(--ni-color-divider); }
   .ni-title { font-size: 1.625rem; }
-  /* Compact phone footer: logo + tagline on one line, links, then © · version + language. */
+  /*
+   * Phone footer (2026-10-27 design): logo + tagline on one line — a tagline that would wrap moves to a
+   * second flex line, which the fixed height clips; site links edge to edge (2 × 2 when one row does not
+   * fit: share.js); ©. Language and theme are in the header.
+   */
   .ni-ftr { margin-top: 1rem; }
-  .ni-ftr-in { padding: 0.875rem 1rem 1rem; gap: 0.5rem; }
-  .ni-ftr-brand { display: flex; align-items: center; gap: 0.625rem; min-width: 0; }
-  .ni-ftr-brand .ni-brand img { height: 1.25rem; }
-  .ni-ftr-brand p { margin: 0; font-size: 0.75rem; min-width: 0; }
-  .ni-ftr-links { gap: 0.25rem 1rem; font-size: 0.75rem; }
+  .ni-ftr-in { flex-direction: column; flex-wrap: nowrap; align-items: stretch; gap: 0.75rem; padding: 1rem 1rem 1.125rem; }
+  .ni-ftr-brand { display: flex; flex-wrap: wrap; align-content: flex-start; align-items: center; gap: 0 0.625rem; height: 1.5rem; overflow: hidden; min-width: 0; }
+  .ni-ftr-brand .ni-brand { display: flex; align-items: center; height: 1.5rem; }
+  .ni-ftr-brand .ni-brand img { height: 1.25rem; width: auto; }
+  .ni-ftr-brand p { margin: 0; max-width: none; font-size: 0.75rem; line-height: 1.5rem; white-space: nowrap; }
+  .ni-ftr-links { justify-content: space-between; gap: 0.5rem 0.75rem; font-size: 0.75rem; }
+  .ni-ftr-links a { white-space: nowrap; }
+  /* 2 × 2: share.js puts a line break after the second link; each row stays edge to edge. */
+  .ni-ftr-links.ni-ftr-2 { row-gap: 0.25rem; }
+  .ni-ftr-links.ni-ftr-2 .ni-ftr-br { display: block; flex-basis: 100%; height: 0; }
   .ni-ftr-meta { border-top: 0; padding-top: 0; }
+  .ni-ftr-meta .ni-lang, .ni-ftr-meta .ni-theme, .ni-ftr-meta .ni-sp { display: none; }
 }
 
 /* information pages */

@@ -275,6 +275,7 @@
     "empty": "Rien ici pour le moment.",
     "images": "{count, plural, one {# image} other {# images}}",
     "more": "Voir plus",
+    "readMore": "Lire la suite",
     "readingTime": "{minutes} min de lecture",
     "tab": {
       "all": "Tout",

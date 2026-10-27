@@ -275,6 +275,7 @@
     "empty": "هنوز چیزی اینجا نیست.",
     "images": "{count, plural, one {# تصویر} other {# تصویر}}",
     "more": "نمایش بیشتر",
+    "readMore": "ادامه مطلب",
     "readingTime": "مطالعه در {minutes} دقیقه",
     "tab": {
       "all": "همه",

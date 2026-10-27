@@ -29,11 +29,13 @@ function articleBlock(ctx: ChromeContext, item: FeedItem): string {
   if (item.images) facts.push(t("feed.images", { count: item.images }));
   if (item.audios) facts.push(t("feed.audios", { count: item.audios }));
   const cover = item.cover ? coverImage(item.cover, mediaUrlFor(post)) : "";
-  // The "Article" label shares the facts line (one row less per card).
+  // The "Article" label shares the facts line (one row less per card); "Read more" ends it.
+  // Without a cover the box has no visible frame (only on hover), its text aligned with the post text.
+  const more = `<span class="ni-fc-more">${escapeHtml(t("feed.readMore"))}${icon("chevronRight")}</span>`;
   return (
-    `<a class="ni-fc-article" href="/p/${post.slug}">${cover}<div class="ni-fc-t">` +
+    `<a class="ni-fc-article${cover ? "" : " ni-fc-plain"}" href="/p/${post.slug}">${cover}<div class="ni-fc-t">` +
     `<h3>${escapeHtml(cardTitle(post))}</h3>${post.summary ? `<p>${escapeHtml(post.summary)}</p>` : ""}` +
-    `<div class="ni-fc-rt"><span class="ni-fc-kind">${escapeHtml(t("feed.article"))}</span> · ${escapeHtml(facts.join(" · "))}</div></div></a>`
+    `<div class="ni-fc-rt"><span><span class="ni-fc-kind">${escapeHtml(t("feed.article"))}</span> · ${escapeHtml(facts.join(" · "))}</span>${more}</div></div></a>`
   );
 }
 
@@ -96,5 +98,7 @@ export function feedCard(ctx: ChromeContext, item: FeedItem): string {
     `${open ? bookmarkAction(ctx, post, item.bookmarked) : ""}` +
     `${open ? `<button type="button" class="ni-act ni-share" data-url="/p/${post.slug}" hidden>${icon("share")}${escapeHtml(t("share.action.share"))}</button>` : ""}` +
     `${isOwnPost(ctx, post) ? `<span class="ni-sp"></span>${ownPostMenu(ctx, post, ctx.path)}` : ""}</div>`;
-  return `<article class="ni-card ni-fc">${head}${body}${actions}</article>`;
+  // Short cards open their post when tapped outside links / buttons / media (/scripts/interact.js).
+  const cardHref = post.kind === "short" ? ` data-href="/p/${post.slug}"` : "";
+  return `<article class="ni-card ni-fc"${cardHref}>${head}${body}${actions}</article>`;
 }

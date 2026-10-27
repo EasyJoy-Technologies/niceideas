@@ -275,6 +275,7 @@
     "empty": "Hier staat nog niets.",
     "images": "{count, plural, one {# afbeelding} other {# afbeeldingen}}",
     "more": "Meer tonen",
+    "readMore": "Verder lezen",
     "readingTime": "{minutes} min. lezen",
     "tab": {
       "all": "Alles",

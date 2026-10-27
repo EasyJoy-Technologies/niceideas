@@ -275,6 +275,7 @@
     "empty": "Chưa có gì ở đây.",
     "images": "{count, plural, other {# hình ảnh}}",
     "more": "Xem thêm",
+    "readMore": "Đọc tiếp",
     "readingTime": "{minutes} phút đọc",
     "tab": {
       "all": "Tất cả",

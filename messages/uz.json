@@ -275,6 +275,7 @@
     "empty": "Bu yerda hali hech narsa yoʻq.",
     "images": "{count, plural, one {# ta rasm} other {# ta rasm}}",
     "more": "Yana koʻrsatish",
+    "readMore": "Davomini o‘qish",
     "readingTime": "{minutes} daqiqalik oʻqish",
     "tab": {
       "all": "Hammasi",

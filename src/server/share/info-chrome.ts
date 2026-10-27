@@ -2,12 +2,12 @@ import { escapeHtml } from "@/server/render/escape";
 import { brand, languageMenu, type ChromeContext } from "./chrome";
 import { icon } from "./icons";
 import { themeMenu } from "./theme-menu";
-import { copyright, infoLinks } from "./site-footer";
+import { copyright, footerBrand, infoLinks } from "./site-footer";
 
 /**
  * Information pages (about, terms, privacy, help) — v4.1 design, round-5 header:
  * brand (= home link), page links, language, theme; on phones the page links move into a
- * hamburger menu (no JS: <details>) and the footer keeps only ©.
+ * hamburger menu (no JS: <details>) and the footer shows logo + tagline and © (no links).
  */
 export function infoHeader(ctx: ChromeContext): string {
   return (
@@ -26,7 +26,7 @@ function pageMenu(ctx: ChromeContext): string {
 
 export function infoFooter(ctx: ChromeContext): string {
   return (
-    `<footer class="ni-ftr ni-info-ftr"><div class="ni-ftr-in">${brand(ctx, 1.25)}${copyright()}<span class="ni-sp"></span>` +
+    `<footer class="ni-ftr ni-info-ftr"><div class="ni-ftr-in">${footerBrand(ctx, 1.25)}${copyright()}<span class="ni-sp"></span>` +
     `${infoLinks(ctx, "ni-ftr-links")}</div></footer>`
   );
 }

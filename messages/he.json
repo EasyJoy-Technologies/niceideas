@@ -275,6 +275,7 @@
     "empty": "אין כאן עדיין כלום.",
     "images": "{count, plural, one {תמונה אחת} two {שתי תמונות} other {# תמונות}}",
     "more": "הצגת עוד",
+    "readMore": "להמשך קריאה",
     "readingTime": "{minutes} דק׳ קריאה",
     "tab": {
       "all": "הכול",

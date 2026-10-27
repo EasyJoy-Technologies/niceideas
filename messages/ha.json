@@ -275,6 +275,7 @@
     "empty": "Babu komai a nan tukuna.",
     "images": "{count, plural, one {hoto #} other {hotuna #}}",
     "more": "Nuna ƙari",
+    "readMore": "Ƙara karantawa",
     "readingTime": "Karatun minti {minutes}",
     "tab": {
       "all": "Duka",

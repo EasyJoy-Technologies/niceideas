@@ -275,6 +275,7 @@
     "empty": "Мұнда әзірге ештеңе жоқ.",
     "images": "{count, plural, one {# сурет} other {# сурет}}",
     "more": "Тағы көрсету",
+    "readMore": "Толығырақ оқу",
     "readingTime": "{minutes} мин оқу",
     "tab": {
       "all": "Барлығы",

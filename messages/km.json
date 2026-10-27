@@ -275,6 +275,7 @@
     "empty": "មិនទាន់មានអ្វីនៅទីនេះទេ។",
     "images": "{count, plural, other {រូបភាព # សន្លឹក}}",
     "more": "បង្ហាញបន្ថែម",
+    "readMore": "អានបន្ត",
     "readingTime": "អាន {minutes} នាទី",
     "tab": {
       "all": "ទាំងអស់",

@@ -275,6 +275,7 @@
     "empty": "Belum ada apa pun di sini.",
     "images": "{count, plural, other {# gambar}}",
     "more": "Tampilkan lainnya",
+    "readMore": "Baca selengkapnya",
     "readingTime": "{minutes} menit baca",
     "tab": {
       "all": "Semua",

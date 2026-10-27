@@ -275,6 +275,7 @@
     "empty": "لا يوجد شيء هنا بعد.",
     "images": "{count, plural, zero {# صورة} one {صورة واحدة} two {صورتان} few {# صور} many {# صورة} other {# صورة}}",
     "more": "عرض المزيد",
+    "readMore": "اقرأ المزيد",
     "readingTime": "قراءة في {minutes} د",
     "tab": {
       "all": "الكل",

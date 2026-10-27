@@ -275,6 +275,7 @@
     "empty": "Тут поки нічого немає.",
     "images": "{count, plural, one {# зображення} few {# зображення} many {# зображень} other {# зображення}}",
     "more": "Показати ще",
+    "readMore": "Читати далі",
     "readingTime": "{minutes} хв читання",
     "tab": {
       "all": "Усе",

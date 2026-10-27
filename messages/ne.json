@@ -275,6 +275,7 @@
     "empty": "यहाँ अझै केही छैन।",
     "images": "{count, plural, one {# तस्बिर} other {# तस्बिरहरू}}",
     "more": "थप देखाउनुहोस्",
+    "readMore": "थप पढ्नुहोस्",
     "readingTime": "{minutes} मिनेट पढाइ",
     "tab": {
       "all": "सबै",

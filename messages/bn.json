@@ -275,6 +275,7 @@
     "empty": "এখানে এখনও কিছু নেই।",
     "images": "{count, plural, one {# টি ছবি} other {# টি ছবি}}",
     "more": "আরও দেখুন",
+    "readMore": "আরও পড়ুন",
     "readingTime": "{minutes} মিনিটে পড়া",
     "tab": {
       "all": "সব",

@@ -275,6 +275,7 @@
     "empty": "まだ何もありません。",
     "images": "{count, plural, other {画像 # 枚}}",
     "more": "もっと見る",
+    "readMore": "続きを読む",
     "readingTime": "約 {minutes} 分で読めます",
     "tab": {
       "all": "すべて",

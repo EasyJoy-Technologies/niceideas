@@ -275,6 +275,7 @@
     "empty": "እዚህ ገና ምንም የለም።",
     "images": "{count, plural, one {# ምስል} other {# ምስሎች}}",
     "more": "ተጨማሪ አሳይ",
+    "readMore": "ተጨማሪ ያንብቡ",
     "readingTime": "{minutes} ደቂቃ ንባብ",
     "tab": {
       "all": "ሁሉም",

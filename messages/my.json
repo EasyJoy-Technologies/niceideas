@@ -275,6 +275,7 @@
     "empty": "ဤနေရာတွင် ဘာမှမရှိသေးပါ။",
     "images": "{count, plural, other {ပုံ # ပုံ}}",
     "more": "ပိုပြရန်",
+    "readMore": "ဆက်ဖတ်ရန်",
     "readingTime": "ဖတ်ရန် {minutes} မိနစ်",
     "tab": {
       "all": "အားလုံး",

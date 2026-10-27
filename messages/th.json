@@ -275,6 +275,7 @@
     "empty": "ยังไม่มีอะไรที่นี่",
     "images": "{count, plural, other {รูปภาพ # รูป}}",
     "more": "ดูเพิ่มเติม",
+    "readMore": "อ่านต่อ",
     "readingTime": "อ่าน {minutes} นาที",
     "tab": {
       "all": "ทั้งหมด",

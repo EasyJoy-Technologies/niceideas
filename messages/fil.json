@@ -275,6 +275,7 @@
     "empty": "Wala pang laman dito.",
     "images": "{count, plural, one {# larawan} other {# larawan}}",
     "more": "Magpakita pa",
+    "readMore": "Basahin pa",
     "readingTime": "{minutes} min na pagbasa",
     "tab": {
       "all": "Lahat",

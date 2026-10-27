@@ -275,6 +275,7 @@
     "empty": "Här finns inget än.",
     "images": "{count, plural, one {# bild} other {# bilder}}",
     "more": "Visa fler",
+    "readMore": "Läs mer",
     "readingTime": "{minutes} min läsning",
     "tab": {
       "all": "Allt",

@@ -38,6 +38,50 @@
     find.querySelector("[data-close]")?.addEventListener("click", () => { find.open = false; });
   }
 
+  // Phone footer links sit edge to edge in one row; when they do not fit (long languages) they
+  // form two rows of two, each edge to edge (class ni-ftr-2 shows a line break after the second
+  // link; phones only). Without JS they simply wrap.
+  for (const nav of d.querySelectorAll("nav.ni-ftr-links")) {
+    const links = [...nav.querySelectorAll("a")];
+    if (links.length !== 4) continue;
+    const br = d.createElement("span");
+    br.className = "ni-ftr-br";
+    links[1].after(br);
+    const fit = () => {
+      if (!nav.clientWidth) return;
+      const gap = parseFloat(getComputedStyle(nav).columnGap) || 0;
+      const need = links.reduce((sum, a) => sum + a.getBoundingClientRect().width, 0) + gap * (links.length - 1);
+      nav.classList.toggle("ni-ftr-2", need > nav.clientWidth + 0.5);
+    };
+    fit();
+    if (window.ResizeObserver) new ResizeObserver(fit).observe(nav);
+  }
+
+  // Short feed cards (data-href) open their post when tapped anywhere outside links, buttons, form
+  // fields, menus and media; a text selection is left alone; Ctrl/⌘/Shift or the middle button
+  // open a new tab. Without JS the time link leads there. The class turns on the hover state (feed.css).
+  const INTERACTIVE = "a, button, input, textarea, select, label, summary, details, audio, video, dialog";
+  const cardTarget = (e) => {
+    const card = e.target.closest?.("article.ni-fc[data-href]");
+    if (!card || e.target.closest(INTERACTIVE)) return null;
+    const sel = window.getSelection?.();
+    if (sel && !sel.isCollapsed && card.contains(sel.anchorNode)) return null;
+    return card.dataset.href;
+  };
+  for (const card of d.querySelectorAll("article.ni-fc[data-href]")) card.classList.add("ni-fc-link");
+  // Capture phase: runs before the outside-click handler above, so a tap that only closes an open menu stays a tap.
+  d.addEventListener("click", (e) => {
+    if (e.button !== 0 || [...d.querySelectorAll(MENUS)].some((m) => m.open)) return;
+    const href = cardTarget(e);
+    if (!href) return;
+    if (e.ctrlKey || e.metaKey || e.shiftKey) window.open(href, "_blank", "noopener");
+    else location.assign(href);
+  }, true);
+  d.addEventListener("auxclick", (e) => {
+    const href = e.button === 1 ? cardTarget(e) : null;
+    if (href) window.open(href, "_blank", "noopener");
+  });
+
   const toast = (text) => {
     const el = d.createElement("div");
     el.className = "ni-toast";

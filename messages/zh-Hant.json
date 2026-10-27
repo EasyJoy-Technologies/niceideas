@@ -275,6 +275,7 @@
     "empty": "這裡還沒有內容。",
     "images": "{count, plural, other {# 張圖片}}",
     "more": "查看更多",
+    "readMore": "閱讀全文",
     "readingTime": "閱讀約 {minutes} 分鐘",
     "tab": {
       "all": "全部",

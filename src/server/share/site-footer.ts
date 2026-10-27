@@ -17,16 +17,21 @@ export function copyright(): string {
   return `<span>© ${year} ${GLOSSARY.brand}</span>`;
 }
 
+/** Logo + tagline. Phones keep them on one line and drop the tagline when it would wrap (CSS). */
+export function footerBrand(ctx: ChromeContext, heightRem: number): string {
+  return `<div class="ni-ftr-brand">${brand(ctx, heightRem)}<p class="ni-ftr-tag">${escapeHtml(ctx.intl.t("common.tagline"))}</p></div>`;
+}
+
 /**
  * Footer per approved v2 design: brand + tagline, site links, © + language + theme.
+ * Phones (2026-10-27 design): language and theme are in the header, so the footer shows
+ * logo + tagline, the site links edge to edge (none for mainland-China visitors), ©.
  * `narrowOnly`: feed pages show it below 75rem only — wider screens use the
  * three-column shell (shell.css), whose side columns carry the same content.
  */
 export function siteFooter(ctx: ChromeContext, narrowOnly = false): string {
-  const { t } = ctx.intl;
   return (
-    `<footer class="ni-ftr${narrowOnly ? " ni-ftr-narrow" : ""}"><div class="ni-ftr-in"><div class="ni-ftr-brand">${brand(ctx, 1.625)}` +
-    `<p>${escapeHtml(t("common.tagline"))}</p></div>${infoLinks(ctx, "ni-ftr-links")}` +
+    `<footer class="ni-ftr${narrowOnly ? " ni-ftr-narrow" : ""}"><div class="ni-ftr-in">${footerBrand(ctx, 1.625)}${infoLinks(ctx, "ni-ftr-links")}` +
     `<div class="ni-ftr-meta">${copyright()}<span class="ni-sp"></span>${languageMenu(ctx)}${themeMenu(ctx)}</div></div></footer>`
   );
 }

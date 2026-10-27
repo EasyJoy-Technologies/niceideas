@@ -275,6 +275,7 @@
     "empty": "Bado hakuna kitu hapa.",
     "images": "{count, plural, one {picha #} other {picha #}}",
     "more": "Onyesha zaidi",
+    "readMore": "Soma zaidi",
     "readingTime": "Dakika {minutes} za kusoma",
     "tab": {
       "all": "Zote",

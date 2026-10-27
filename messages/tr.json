@@ -275,6 +275,7 @@
     "empty": "Burada henüz bir şey yok.",
     "images": "{count, plural, one {# görsel} other {# görsel}}",
     "more": "Daha fazla göster",
+    "readMore": "Devamını oku",
     "readingTime": "{minutes} dk okuma",
     "tab": {
       "all": "Tümü",

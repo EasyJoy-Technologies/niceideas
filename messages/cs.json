@@ -275,6 +275,7 @@
     "empty": "Zatím tu nic není.",
     "images": "{count, plural, one {# obrázek} few {# obrázky} many {# obrázku} other {# obrázků}}",
     "more": "Zobrazit další",
+    "readMore": "Číst dál",
     "readingTime": "{minutes} min čtení",
     "tab": {
       "all": "Vše",
