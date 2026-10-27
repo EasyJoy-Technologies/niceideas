@@ -48,15 +48,17 @@
 [dir="rtl"] .ni-fc-more .ni-i { transform: scaleX(-1); }
 /* Framed box: 10px above and below the frame (actions row: 3px + the button's own padding). */
 .ni-fc-article + .ni-fc-actions { margin-top: 0.1875rem; }
-/* Article without a cover: no visible frame (purple on hover, like the framed box); text aligned with post text.
-   Same spacing as a short post's text (avatar → text, text → actions); the hover frame sits midway, ~7px around the text. */
-.ni-fc-plain { margin: 0.375rem -0.875rem 0; border-color: transparent; }
-.ni-fc-plain .ni-fc-t { padding-block: 0.15625rem; }
-.ni-fc-plain + .ni-fc-actions { margin-top: 0.25rem; }
-/* Short cards open their post (share.js adds ni-fc-link): grey tint + pointer for mouse users. */
+/* Article without a cover: no frame, text laid out like a short post's text — same ink gap under the author row
+   (≈12px); above the actions 3px less than a short post (≈16px vs ≈19px), as the light facts line reads airier. */
+.ni-fc-plain { margin-top: 0.59375rem; border: 0; border-radius: 0; }
+.ni-fc-plain .ni-fc-t { padding: 0; }
+.ni-fc-plain + .ni-fc-actions { margin-top: 0.28125rem; }
+/* Cards open their post (share.js adds ni-fc-link): for mouse users the card lifts — near-white tint, soft purple
+   ring and deeper shadow, so it stays apart from the page background; a framed article box also turns purple. */
 @media (hover: hover) {
   .ni-fc-link { cursor: pointer; }
-  .ni-fc-link:hover { background: var(--ni-color-hover); }
+  .ni-fc-link:hover { background: var(--ni-color-card-hover); box-shadow: var(--ni-shadow-card-hover); }
+  .ni-fc-link:hover .ni-fc-article { border-color: var(--ni-color-secondary); }
 }
 /* Source badge: icon + text; long localized labels end in an ellipsis. Phones: icon only. */
 .ni-fc-src { display: inline-flex; align-items: center; gap: 0.3125rem; flex: 0 1 auto; max-width: 45%; min-width: 0; color: var(--ni-color-text-secondary); font-size: 0.75rem; white-space: nowrap; }

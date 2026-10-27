@@ -30,6 +30,7 @@
   --ni-chart-7: #6d28d9;
   --ni-chart-8: #fcd34d;
   --ni-color-hover: #222631;
+  --ni-color-card-hover: #1b1f28;
   --ni-color-divider: #232733;
   --ni-color-muted: #7d8494;
   --ni-color-input: #1f232c;
@@ -46,6 +47,7 @@
   --ni-color-code-bg: #0b0d11;
   --ni-color-banner: linear-gradient(135deg, #2a2440 0%, #3b2f63 55%, #4c3d80 100%);
   --ni-shadow-card: 0 1px 2px rgb(0 0 0 / 0.4);
+  --ni-shadow-card-hover: 0 0 0 1px rgb(167 139 250 / 0.24), 0 1px 2px rgb(0 0 0 / 0.4), 0 12px 32px rgb(0 0 0 / 0.35);
   --ni-shadow-pop: 0 12px 32px rgb(0 0 0 / 0.5);
   --ni-shadow-chip: 0 1px 2px rgb(0 0 0 / 0.4);
   --ni-ring: 0 0 0 3px rgb(167 139 250 / 0.25);

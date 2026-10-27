@@ -46,10 +46,10 @@ describe("discover and profile pages", () => {
     expect(html).toContain('<link rel="canonical" href="http://localhost:3000/discover">');
   });
 
-  it("cards: short ones open their post, articles without a cover are unframed with Read more; star; footer without language / theme", async () => {
+  it("cards open their post (short and article), articles without a cover are unframed with Read more; star; footer without language / theme", async () => {
     const { html } = await discover();
     expect(html).toContain(`<article class="ni-card ni-fc" data-href="/p/${short.slug}">`);
-    expect(html).not.toContain(`data-href="/p/${article.slug}"`);
+    expect(html).toContain(`<article class="ni-card ni-fc" data-href="/p/${article.slug}">`);
     expect(html).toContain(`<a class="ni-fc-article ni-fc-plain" href="/p/${article.slug}">`);
     expect(html).toMatch(/<span class="ni-fc-more">Read more<svg/);
     expect(html).toContain('<path d="M11.525 2.295');

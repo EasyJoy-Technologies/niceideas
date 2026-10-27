@@ -57,7 +57,7 @@
     if (window.ResizeObserver) new ResizeObserver(fit).observe(nav);
   }
 
-  // Short feed cards (data-href) open their post when tapped anywhere outside links, buttons, form
+  // Feed cards (data-href) open their post when tapped anywhere outside links, buttons, form
   // fields, menus and media; a text selection is left alone; Ctrl/⌘/Shift or the middle button
   // open a new tab. Without JS the time link leads there. The class turns on the hover state (feed.css).
   const INTERACTIVE = "a, button, input, textarea, select, label, summary, details, audio, video, dialog";

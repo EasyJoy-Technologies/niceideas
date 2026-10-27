@@ -33,7 +33,7 @@ function articleBlock(ctx: ChromeContext, item: FeedItem): string {
   if (item.audios) facts.push(t("feed.audios", { count: item.audios }));
   const cover = item.cover ? coverImage(item.cover, mediaUrlFor(post)) : "";
   // The "Article" label shares the facts line (one row less per card); "Read more" ends it.
-  // Without a cover the box has no visible frame (only on hover), its text aligned with the post text.
+  // Without a cover the box has no frame, its text laid out like a short post's text.
   const more = `<span class="ni-fc-more">${escapeHtml(t("feed.readMore"))}${icon("chevronRight")}</span>`;
   return (
     `<a class="ni-fc-article${cover ? "" : " ni-fc-plain"}" href="/p/${post.slug}">${cover}<div class="ni-fc-t">` +
@@ -103,7 +103,6 @@ export function feedCard(ctx: ChromeContext, item: FeedItem): string {
     `${repostAction(ctx, post, item.repostCount, item.reposted, ctx.path)}${open ? bookmarkAction(ctx, post, item.bookmarked) : ""}` +
     `${open ? `<button type="button" class="ni-act ni-share" data-url="/p/${post.slug}" hidden>${icon("share")}${escapeHtml(t("share.action.share"))}</button>` : ""}` +
     `${isOwnPost(ctx, post) ? `<span class="ni-sp"></span>${ownPostMenu(ctx, post, ctx.path)}` : ""}</div>`;
-  // Short cards open their post when tapped outside links / buttons / media (/scripts/interact.js).
-  const cardHref = post.kind === "short" ? ` data-href="/p/${post.slug}"` : "";
-  return `<article class="ni-card ni-fc"${cardHref}>${repostedLine(ctx, post)}${head}${body}${actions}</article>`;
+  // Cards open their post when tapped outside links / buttons / media (/scripts/share.js).
+  return `<article class="ni-card ni-fc" data-href="/p/${post.slug}">${repostedLine(ctx, post)}${head}${body}${actions}</article>`;
 }
