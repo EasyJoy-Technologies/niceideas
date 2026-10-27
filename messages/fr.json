@@ -206,6 +206,10 @@
     "signIn": "Se connecter",
     "signOut": "Se déconnecter"
   },
+  "bookmarks": {
+    "empty": "Les publications que vous enregistrez apparaissent ici. Vous seul voyez vos enregistrements.",
+    "title": "Enregistrements"
+  },
   "common": {
     "brand": {
       "nicenote": "NiceNote"
@@ -367,6 +371,7 @@
   },
   "share": {
     "action": {
+      "bookmark": "Enregistrer",
       "cancel": "Annuler",
       "close": "Fermer",
       "copied": "Lien copié",
@@ -387,6 +392,7 @@
       "anonHint": "Vous commentez en tant que visiteur anonyme.",
       "anonTag": "Anonyme",
       "anonymous": "Visiteur anonyme",
+      "asUser": "Vous commentez en tant que {name}.",
       "authorTag": "Auteur",
       "closed": "Les commentaires sont fermés.",
       "empty": "Aucun commentaire pour l’instant. Soyez le premier !",

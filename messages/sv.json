@@ -206,6 +206,10 @@
     "signIn": "Logga in",
     "signOut": "Logga ut"
   },
+  "bookmarks": {
+    "empty": "Inlägg du sparar visas här. Bara du kan se det du har sparat.",
+    "title": "Sparat"
+  },
   "common": {
     "brand": {
       "nicenote": "NiceNote"
@@ -367,6 +371,7 @@
   },
   "share": {
     "action": {
+      "bookmark": "Spara",
       "cancel": "Avbryt",
       "close": "Stäng",
       "copied": "Länken har kopierats",
@@ -387,6 +392,7 @@
       "anonHint": "Du kommenterar som anonym besökare.",
       "anonTag": "Anonym",
       "anonymous": "Anonym besökare",
+      "asUser": "Du kommenterar som {name}.",
       "authorTag": "Författare",
       "closed": "Kommentarerna är stängda.",
       "empty": "Inga kommentarer än. Bli först!",

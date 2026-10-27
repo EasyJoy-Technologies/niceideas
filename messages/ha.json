@@ -206,6 +206,10 @@
     "signIn": "Shiga",
     "signOut": "Fita"
   },
+  "bookmarks": {
+    "empty": "Rubuce-rubucen da ka ajiye za su bayyana a nan. Kai kaɗai kake ganin abubuwan da ka ajiye.",
+    "title": "Abubuwan da aka ajiye"
+  },
   "common": {
     "brand": {
       "nicenote": "NiceNote"
@@ -367,6 +371,7 @@
   },
   "share": {
     "action": {
+      "bookmark": "Ajiye",
       "cancel": "Soke",
       "close": "Rufe",
       "copied": "An kwafi hanyar haɗi",
@@ -387,6 +392,7 @@
       "anonHint": "Kana sharhi a matsayin baƙo marar suna.",
       "anonTag": "Marar suna",
       "anonymous": "Baƙo marar suna",
+      "asUser": "Kana sharhi a matsayin {name}.",
       "authorTag": "Marubuci",
       "closed": "An rufe sharhi.",
       "empty": "Babu sharhi tukuna. Ka zama na farko!",

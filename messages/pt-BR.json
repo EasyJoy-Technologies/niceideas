@@ -206,6 +206,10 @@
     "signIn": "Entrar",
     "signOut": "Sair"
   },
+  "bookmarks": {
+    "empty": "Os posts que você salvar aparecem aqui. Só você vê os seus salvos.",
+    "title": "Salvos"
+  },
   "common": {
     "brand": {
       "nicenote": "NiceNote"
@@ -367,6 +371,7 @@
   },
   "share": {
     "action": {
+      "bookmark": "Salvar",
       "cancel": "Cancelar",
       "close": "Fechar",
       "copied": "Link copiado",
@@ -387,6 +392,7 @@
       "anonHint": "Você vai comentar como visitante anônimo.",
       "anonTag": "Anônimo",
       "anonymous": "Visitante anônimo",
+      "asUser": "Você vai comentar como {name}.",
       "authorTag": "Autor",
       "closed": "Os comentários estão encerrados.",
       "empty": "Ainda não há comentários. Seja o primeiro!",

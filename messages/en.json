@@ -206,6 +206,10 @@
     "signIn": "Sign in",
     "signOut": "Sign out"
   },
+  "bookmarks": {
+    "empty": "Posts you bookmark show up here. Only you can see your bookmarks.",
+    "title": "Bookmarks"
+  },
   "common": {
     "brand": {
       "nicenote": "NiceNote"
@@ -367,6 +371,7 @@
   },
   "share": {
     "action": {
+      "bookmark": "Bookmark",
       "cancel": "Cancel",
       "close": "Close",
       "copied": "Link copied",
@@ -387,6 +392,7 @@
       "anonHint": "You're commenting as an anonymous visitor.",
       "anonTag": "Anonymous",
       "anonymous": "Anonymous visitor",
+      "asUser": "Commenting as {name}",
       "authorTag": "Author",
       "closed": "Comments are closed.",
       "empty": "No comments yet. Be the first!",

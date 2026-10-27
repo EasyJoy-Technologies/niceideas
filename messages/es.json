@@ -206,6 +206,10 @@
     "signIn": "Iniciar sesión",
     "signOut": "Cerrar sesión"
   },
+  "bookmarks": {
+    "empty": "Aquí aparecerán las publicaciones que guardes. Solo tú puedes ver tus guardados.",
+    "title": "Guardados"
+  },
   "common": {
     "brand": {
       "nicenote": "NiceNote"
@@ -367,6 +371,7 @@
   },
   "share": {
     "action": {
+      "bookmark": "Guardar",
       "cancel": "Cancelar",
       "close": "Cerrar",
       "copied": "Enlace copiado",
@@ -387,6 +392,7 @@
       "anonHint": "Comentarás como visitante anónimo.",
       "anonTag": "Anónimo",
       "anonymous": "Visitante anónimo",
+      "asUser": "Comentarás como {name}.",
       "authorTag": "Autor",
       "closed": "Los comentarios están cerrados.",
       "empty": "Aún no hay comentarios. ¡Sé el primero!",

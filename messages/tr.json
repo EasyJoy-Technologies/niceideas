@@ -206,6 +206,10 @@
     "signIn": "Giriş yap",
     "signOut": "Çıkış yap"
   },
+  "bookmarks": {
+    "empty": "Kaydettiğin gönderiler burada görünür. Kaydettiklerini yalnızca sen görebilirsin.",
+    "title": "Kaydedilenler"
+  },
   "common": {
     "brand": {
       "nicenote": "NiceNote"
@@ -367,6 +371,7 @@
   },
   "share": {
     "action": {
+      "bookmark": "Kaydet",
       "cancel": "İptal",
       "close": "Kapat",
       "copied": "Bağlantı kopyalandı",
@@ -387,6 +392,7 @@
       "anonHint": "Anonim ziyaretçi olarak yorum yapıyorsun.",
       "anonTag": "Anonim",
       "anonymous": "Anonim ziyaretçi",
+      "asUser": "{name} olarak yorum yapıyorsun.",
       "authorTag": "Yazar",
       "closed": "Yorumlar kapalı.",
       "empty": "Henüz yorum yok. İlk yorumu sen yap!",

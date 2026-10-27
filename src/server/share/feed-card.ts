@@ -6,6 +6,7 @@ import { mediaUrlFor, type MediaUrl } from "@/server/posts/media-url";
 import { renderDocumentHtml } from "@/server/render/document-html";
 import { escapeHtml } from "@/server/render/escape";
 import { responsivePicture, zoomLink } from "@/server/render/media-html";
+import { bookmarkAction } from "./bookmark-button";
 import type { ChromeContext } from "./chrome";
 import { icon } from "./icons";
 import type { FeedItem } from "./load-feed";
@@ -65,7 +66,7 @@ const privateMark = (ctx: ChromeContext, post: FeedItem["post"]) =>
 
 /**
  * Timeline / profile card (approved v2 design): author row (avatar, name / @handle · time,
- * source badge at its end), body, like / comment / share.
+ * source badge at its end), body, like / comment / bookmark / share.
  */
 export function feedCard(ctx: ChromeContext, item: FeedItem): string {
   const { t } = ctx.intl;
@@ -86,12 +87,13 @@ export function feedCard(ctx: ChromeContext, item: FeedItem): string {
     `<a class="ni-name" href="${href}">${escapeHtml(name)}</a><span class="ni-meta"><span class="ni-handle">@${escapeHtml(post.author_handle)}</span><i class="ni-dot"></i>` +
     `<a href="/p/${post.slug}"><time datetime="${at.toISOString()}" data-rel>${escapeHtml(ctx.intl.format.dateTime(at, { dateStyle: "medium" }))}</time></a>${privateMark(ctx, post)}</span></div>${source}</div>`;
   const body = post.kind === "short" ? shortBlock(item) : articleBlock(ctx, item);
-  // Private posts (only on their author's own profile) take no likes and are not shared.
+  // Private posts (only on their author's own profile) take no likes or bookmarks and are not shared.
   const open = post.visibility === "public";
   const actions =
     `<div class="ni-actions ni-fc-actions">${open ? `<button type="button" class="ni-act" data-like="post" data-id="${post.slug}" aria-pressed="${item.liked}" aria-label="${escapeHtml(t("share.action.like"))}">` +
     `${icon("heart")}<span>${post.like_count}</span></button>` : ""}` +
     `<a class="ni-act" href="/p/${post.slug}#comments" aria-label="${escapeHtml(t("share.comments.title"))}">${icon("comment")}<span>${post.comment_count}</span></a>` +
+    `${open ? bookmarkAction(ctx, post, item.bookmarked) : ""}` +
     `${open ? `<button type="button" class="ni-act ni-share" data-url="/p/${post.slug}" hidden>${icon("share")}${escapeHtml(t("share.action.share"))}</button>` : ""}` +
     `${isOwnPost(ctx, post) ? `<span class="ni-sp"></span>${ownPostMenu(ctx, post, ctx.path)}` : ""}</div>`;
   return `<article class="ni-card ni-fc">${head}${body}${actions}</article>`;

@@ -206,6 +206,10 @@
     "signIn": "Zaloguj się",
     "signOut": "Wyloguj się"
   },
+  "bookmarks": {
+    "empty": "Tu pojawią się zapisane przez Ciebie posty. Tylko Ty widzisz swoje zapisane.",
+    "title": "Zapisane"
+  },
   "common": {
     "brand": {
       "nicenote": "NiceNote"
@@ -367,6 +371,7 @@
   },
   "share": {
     "action": {
+      "bookmark": "Zapisz",
       "cancel": "Anuluj",
       "close": "Zamknij",
       "copied": "Skopiowano link",
@@ -387,6 +392,7 @@
       "anonHint": "Komentujesz jako anonimowy gość.",
       "anonTag": "Anonim",
       "anonymous": "Anonimowy gość",
+      "asUser": "Komentujesz jako {name}.",
       "authorTag": "Autor",
       "closed": "Komentarze są zamknięte.",
       "empty": "Brak komentarzy. Bądź pierwszy!",

@@ -2,7 +2,9 @@ import { sql } from "kysely";
 import type { Db } from "../client";
 import type { Comment, CommentStatus, NewComment } from "../schema";
 
-export type CommentRow = Comment & { author_handle: string | null; author_name: string | null; author_avatar: string | null };
+/** Profile of a signed-in comment's author (all null for anonymous comments). */
+export type CommentAuthor = { author_handle: string | null; author_name: string | null; author_avatar: string | null };
+export type CommentRow = Comment & CommentAuthor;
 
 const withAuthor = (db: Db) =>
   db
@@ -75,7 +77,7 @@ export async function setCommentStatus(db: Db, id: string, status: CommentStatus
   });
 }
 
-export async function countCommentsSince(db: Db, column: "ip_hash" | "visitor_key", value: string, seconds: number): Promise<number> {
+export async function countCommentsSince(db: Db, column: "ip_hash" | "visitor_key" | "author_id", value: string, seconds: number): Promise<number> {
   const row = await db
     .selectFrom("comment")
     .select(sql<string>`count(*)`.as("n"))
@@ -85,10 +87,10 @@ export async function countCommentsSince(db: Db, column: "ip_hash" | "visitor_ke
   return Number(row?.n ?? 0);
 }
 
-/** Recent comments for moderation (any status). */
-export async function listRecentComments(db: Db, limit: number, postId?: string): Promise<Comment[]> {
-  let q = db.selectFrom("comment").selectAll().orderBy("created_at", "desc").limit(limit);
-  if (postId) q = q.where("post_id", "=", postId);
+/** Recent comments (any status) with their signed-in author's profile. */
+export async function listRecentComments(db: Db, limit: number, postId?: string): Promise<CommentRow[]> {
+  let q = withAuthor(db).orderBy("comment.created_at", "desc").limit(limit);
+  if (postId) q = q.where("comment.post_id", "=", postId);
   return q.execute();
 }
 

@@ -28,7 +28,7 @@ export async function GET(request: Request, ctx: RouteContext<"/p/[slug]">) {
       if (result.state === "not_found") return { html: renderStatusPage(page, "notFound"), status: 404 };
       if (result.state === "gone") return { html: renderStatusPage(page, result.reason), status: 410 };
       if (result.state === "preparing") return { html: renderPreparingPage(page, result.post, result.author), status: 200 };
-      const social = await loadPageInteractions(db, result.data.post, peekVisitorKey(request.headers), commentPage(url));
+      const social = await loadPageInteractions(db, result.data.post, page.viewer?.user_id ?? null, peekVisitorKey(request.headers), commentPage(url));
       const authorId = result.data.author.user_id;
       const following = page.viewer ? (await followingAmong(db, page.viewer.user_id, [authorId])).has(authorId) : false;
       const aside = page.restricted ? null : { ...(await loadPostAside(db, result.data.author, result.data.post.id)), following };

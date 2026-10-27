@@ -206,6 +206,10 @@
     "signIn": "登录 / 注册",
     "signOut": "退出登录"
   },
+  "bookmarks": {
+    "empty": "你收藏的帖子会显示在这里。收藏只有你自己能看到。",
+    "title": "我的收藏"
+  },
   "common": {
     "brand": {
       "nicenote": "乐趣记事本"
@@ -367,6 +371,7 @@
   },
   "share": {
     "action": {
+      "bookmark": "收藏",
       "cancel": "取消",
       "close": "关闭",
       "copied": "链接已复制",
@@ -387,6 +392,7 @@
       "anonHint": "你将以匿名访客身份发表。",
       "anonTag": "匿名",
       "anonymous": "匿名访客",
+      "asUser": "将以 {name} 的身份发表。",
       "authorTag": "作者",
       "closed": "评论已关闭。",
       "empty": "还没有评论，来抢沙发吧！",

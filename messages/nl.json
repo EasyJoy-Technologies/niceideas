@@ -206,6 +206,10 @@
     "signIn": "Inloggen",
     "signOut": "Uitloggen"
   },
+  "bookmarks": {
+    "empty": "Berichten die je bewaart, verschijnen hier. Alleen jij ziet wat je hebt bewaard.",
+    "title": "Bewaard"
+  },
   "common": {
     "brand": {
       "nicenote": "NiceNote"
@@ -367,6 +371,7 @@
   },
   "share": {
     "action": {
+      "bookmark": "Bewaren",
       "cancel": "Annuleren",
       "close": "Sluiten",
       "copied": "Link gekopieerd",
@@ -387,6 +392,7 @@
       "anonHint": "Je reageert als anonieme bezoeker.",
       "anonTag": "Anoniem",
       "anonymous": "Anonieme bezoeker",
+      "asUser": "Je reageert als {name}.",
       "authorTag": "Auteur",
       "closed": "Reacties zijn gesloten.",
       "empty": "Nog geen reacties. Wees de eerste!",

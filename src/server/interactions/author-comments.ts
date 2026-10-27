@@ -11,7 +11,7 @@ const AUTHOR_LIST_LIMIT = 200;
 /** Latest visible comments on the caller's own post (management in the app). */
 export async function listCommentsForAuthor(db: Db, principal: Principal, postId: string): Promise<CommentDto[]> {
   const post = await loadOwnPost(db, principal, postId);
-  return (await listRecentComments(db, AUTHOR_LIST_LIMIT, post.id)).filter((c) => c.status === "visible").map(toCommentDto);
+  return (await listRecentComments(db, AUTHOR_LIST_LIMIT, post.id)).filter((c) => c.status === "visible").map((c) => toCommentDto(c));
 }
 
 /** The author may delete any comment under their own post (plan §16.2); audited. Idempotent. */

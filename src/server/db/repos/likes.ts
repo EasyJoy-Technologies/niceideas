@@ -7,12 +7,16 @@ export const COMMENT_LIKE: LikeTarget = { table: "comment_like", column: "commen
 
 type Liker = { likerKey: string; userId: string | null; ipHash: string };
 
-/** Adds a like and bumps the counter in one statement pair; returns the new count. Idempotent. */
-export async function addLike(db: Db, target: LikeTarget, id: string, liker: Liker): Promise<number> {
+/**
+ * Adds a like and bumps the counter in one transaction; returns the new count. Idempotent. No like is
+ * added while one under any of `likedAs` exists (a signed-in viewer's earlier guest like in this browser).
+ */
+export async function addLike(db: Db, target: LikeTarget, id: string, liker: Liker, likedAs: string[] = []): Promise<number> {
   return db.transaction().execute(async (trx) => {
+    const already = likedAs.length ? sql`AND NOT EXISTS (SELECT 1 FROM ${sql.table(target.table)} WHERE ${sql.ref(target.column)} = ${id} AND liker_key IN (${sql.join(likedAs)}))` : sql``;
     const inserted = await sql<{ n: number }>`
       INSERT INTO ${sql.table(target.table)} (${sql.ref(target.column)}, liker_key, user_id, ip_hash)
-      VALUES (${id}, ${liker.likerKey}, ${liker.userId}, ${liker.ipHash})
+      SELECT ${id}::uuid, ${liker.likerKey}, ${liker.userId}, ${liker.ipHash} WHERE true ${already}
       ON CONFLICT DO NOTHING RETURNING 1 AS n`.execute(trx);
     const delta = inserted.rows.length;
     const row = await sql<{ like_count: number }>`
@@ -21,10 +25,11 @@ export async function addLike(db: Db, target: LikeTarget, id: string, liker: Lik
   });
 }
 
-export async function removeLike(db: Db, target: LikeTarget, id: string, likerKey: string): Promise<number> {
+/** Removes the likes under the given keys (a signed-in viewer: account and this browser); returns the new count. */
+export async function removeLike(db: Db, target: LikeTarget, id: string, likerKeys: string[]): Promise<number> {
   return db.transaction().execute(async (trx) => {
     const deleted = await sql`
-      DELETE FROM ${sql.table(target.table)} WHERE ${sql.ref(target.column)} = ${id} AND liker_key = ${likerKey} RETURNING 1`.execute(trx);
+      DELETE FROM ${sql.table(target.table)} WHERE ${sql.ref(target.column)} = ${id} AND liker_key IN (${sql.join(likerKeys)}) RETURNING 1`.execute(trx);
     const delta = deleted.rows.length;
     const row = await sql<{ like_count: number }>`
       UPDATE ${sql.table(target.parent)} SET like_count = greatest(like_count - ${delta}, 0) WHERE id = ${id} RETURNING like_count`.execute(trx);
@@ -32,12 +37,12 @@ export async function removeLike(db: Db, target: LikeTarget, id: string, likerKe
   });
 }
 
-/** Which of the given targets this liker has liked (page rendering). */
-export async function likedAmong(db: Db, target: LikeTarget, ids: string[], likerKey: string): Promise<Set<string>> {
-  if (ids.length === 0) return new Set();
+/** Which of the given targets were liked under any of these keys (page rendering). */
+export async function likedAmong(db: Db, target: LikeTarget, ids: string[], likerKeys: string[]): Promise<Set<string>> {
+  if (ids.length === 0 || likerKeys.length === 0) return new Set();
   const rows = await sql<{ id: string }>`
-    SELECT ${sql.ref(target.column)} AS id FROM ${sql.table(target.table)}
-    WHERE liker_key = ${likerKey} AND ${sql.ref(target.column)} IN (${sql.join(ids)})`.execute(db);
+    SELECT DISTINCT ${sql.ref(target.column)} AS id FROM ${sql.table(target.table)}
+    WHERE liker_key IN (${sql.join(likerKeys)}) AND ${sql.ref(target.column)} IN (${sql.join(ids)})`.execute(db);
   return new Set(rows.rows.map((r) => r.id));
 }
 

@@ -4,9 +4,9 @@ import { interactionRoute } from "@/server/interactions/route";
 
 type Ctx = RouteContext<"/api/v1/comments/[id]/like">;
 
-export const POST = interactionRoute<Ctx>("comments.like", async ({ context, db, visitor }) =>
-  jsonOk(await setCommentLike(db, (await context.params).id, visitor, true)),
+export const POST = interactionRoute<Ctx>("comments.like", async ({ context, db, actor }) =>
+  jsonOk(await setCommentLike(db, (await context.params).id, actor, true)),
 );
-export const DELETE = interactionRoute<Ctx>("comments.unlike", async ({ context, db, visitor }) =>
-  jsonOk(await setCommentLike(db, (await context.params).id, visitor, false)),
+export const DELETE = interactionRoute<Ctx>("comments.unlike", async ({ context, db, actor }) =>
+  jsonOk(await setCommentLike(db, (await context.params).id, actor, false)),
 );

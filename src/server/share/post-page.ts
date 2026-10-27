@@ -111,7 +111,7 @@ export function renderPostPage(ctx: ChromeContext, data: SharePost, social: Page
   const main =
     `<main class="ni-main">${aside ? backLink(ctx) : ""}${noticeHtml(ctx, notice)}${privateNote(ctx, post)}<article class="ni-post${short ? " ni-short" : ""}">` +
     `${authorBlock(ctx, data, following)}${title}<div class="ni-body">${body}</div>` +
-    `${postFoot(ctx, data)}${postActions(ctx, post, social.liked)}</article>` +
+    `${postFoot(ctx, data)}${postActions(ctx, post, social.liked, social.bookmarked)}</article>` +
     `${commentsSection(ctx, post, social, ctx.path)}${reportDialog(ctx, post.slug)}</main>`;
   const card = shareCard(post);
   const open = post.visibility === "public";

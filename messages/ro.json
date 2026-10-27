@@ -206,6 +206,10 @@
     "signIn": "Conectează-te",
     "signOut": "Deconectează-te"
   },
+  "bookmarks": {
+    "empty": "Postările pe care le salvezi apar aici. Doar tu vezi ce ai salvat.",
+    "title": "Salvate"
+  },
   "common": {
     "brand": {
       "nicenote": "NiceNote"
@@ -367,6 +371,7 @@
   },
   "share": {
     "action": {
+      "bookmark": "Salvează",
       "cancel": "Anulează",
       "close": "Închide",
       "copied": "Link copiat",
@@ -387,6 +392,7 @@
       "anonHint": "Comentezi ca vizitator anonim.",
       "anonTag": "Anonim",
       "anonymous": "Vizitator anonim",
+      "asUser": "Comentezi ca {name}.",
       "authorTag": "Autor",
       "closed": "Comentariile sunt închise.",
       "empty": "Încă nu există comentarii. Fii primul!",

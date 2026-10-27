@@ -206,6 +206,10 @@
     "signIn": "Mag-sign in",
     "signOut": "Mag-sign out"
   },
+  "bookmarks": {
+    "empty": "Dito lalabas ang mga post na sine-save mo. Ikaw lang ang nakakakita ng mga naka-save mo.",
+    "title": "Mga naka-save"
+  },
   "common": {
     "brand": {
       "nicenote": "NiceNote"
@@ -367,6 +371,7 @@
   },
   "share": {
     "action": {
+      "bookmark": "I-save",
       "cancel": "Kanselahin",
       "close": "Isara",
       "copied": "Nakopya ang link",
@@ -387,6 +392,7 @@
       "anonHint": "Magkokomento ka bilang di-kilalang bisita.",
       "anonTag": "Di-kilala",
       "anonymous": "Di-kilalang bisita",
+      "asUser": "Magkokomento ka bilang {name}.",
       "authorTag": "May-akda",
       "closed": "Sarado na ang mga komento.",
       "empty": "Wala pang komento. Ikaw na ang mauna!",

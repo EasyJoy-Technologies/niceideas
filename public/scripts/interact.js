@@ -1,4 +1,4 @@
-// Post-page interactions: likes, anonymous comments (with proof of work), replies, reports.
+// Post-page interactions: likes, bookmarks, comments (anonymous ones with proof of work), replies, reports.
 // Labels come from data-* attributes on <body>; the page works read-only without this script.
 (() => {
   const d = document;
@@ -34,6 +34,34 @@
         twins.forEach((b) => {
           b.setAttribute("aria-pressed", String(data.liked));
           b.querySelector("span").textContent = data.likeCount || (like === "post" ? "0" : "");
+        });
+      } catch {
+        toast(labels.commentErrorLabel || "");
+      } finally {
+        twins.forEach((b) => (b.disabled = false));
+      }
+    });
+  }
+
+  // ---- bookmarks (signed in; post buttons appear twice on post pages: action row + phone bar) ----
+  for (const btn of d.querySelectorAll("button[data-bookmark]")) {
+    btn.addEventListener("click", async () => {
+      const slug = btn.dataset.bookmark;
+      const twins = d.querySelectorAll(`button[data-bookmark="${slug}"]`);
+      const next = btn.getAttribute("aria-pressed") !== "true";
+      twins.forEach((b) => (b.disabled = true));
+      try {
+        const res = await api(`/api/v1/p/${slug}/bookmark`, next ? "POST" : "DELETE");
+        // Signed out meanwhile: sign in and come back.
+        if (res.status === 401) {
+          location.href = new URL(`/auth/sign-in?next=${encodeURIComponent(location.pathname + location.search)}`, location.href).href;
+          return;
+        }
+        if (!res.ok) throw new Error(String(res.status));
+        const data = await res.json();
+        twins.forEach((b) => {
+          b.setAttribute("aria-pressed", String(data.bookmarked));
+          b.querySelector("span").textContent = String(data.bookmarkCount);
         });
       } catch {
         toast(labels.commentErrorLabel || "");
@@ -113,11 +141,13 @@
       submit.disabled = true;
       try {
         const slug = form.dataset.slug;
-        const ch = await (await api(`/api/v1/p/${slug}/comments/challenge`, "GET")).json();
-        const nonce = await solve(ch.challenge, ch.bits);
-        const res = await api(`/api/v1/p/${slug}/comments`, "POST", {
-          body, name: form.elements.name.value.trim() || undefined, parentId: parentId || undefined, challenge: ch.challenge, nonce,
-        });
+        // Signed in: the comment is the account's (no nickname, no proof of work).
+        const payload = { body, parentId: parentId || undefined };
+        if (!("account" in form.dataset)) {
+          const ch = await (await api(`/api/v1/p/${slug}/comments/challenge`, "GET")).json();
+          Object.assign(payload, { name: form.elements.name.value.trim() || undefined, challenge: ch.challenge, nonce: await solve(ch.challenge, ch.bits) });
+        }
+        const res = await api(`/api/v1/p/${slug}/comments`, "POST", payload);
         if (res.status === 429) return showError(labels.rateLimitedLabel || "");
         if (!res.ok) return showError(labels.commentErrorLabel || "");
         const { comment, page } = await res.json();

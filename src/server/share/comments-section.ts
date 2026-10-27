@@ -5,6 +5,7 @@ import { REPORT_REASONS } from "@/server/interactions/reports";
 import { escapeHtml } from "@/server/render/escape";
 import type { ChromeContext } from "./chrome";
 import { icon } from "./icons";
+import { avatarHtml, profilePath } from "./profile-bits";
 import type { CommentThread, PageInteractions } from "./load-interactions";
 
 const ago = (ctx: ChromeContext, at: Date) =>
@@ -22,9 +23,12 @@ function commentItem(ctx: ChromeContext, post: Post, c: CommentRow, liked: boole
     : c.author_id === post.author_id
       ? `<span class="ni-tag ni-tag-author">${escapeHtml(t("share.comments.authorTag"))}</span>`
       : "";
-  const avatar = anonymous || !c.author_avatar
+  // Account comments: the profile's avatar (or its initial) and a link to the profile (no in-site links in mainland China).
+  const avatar = anonymous
     ? `<span class="ni-cmt-ava" aria-hidden="true">${icon("person")}</span>`
-    : `<img class="ni-cmt-ava" src="${escapeHtml(c.author_avatar)}" width="36" height="36" alt="">`;
+    : avatarHtml(name, c.author_avatar, 36, "ni-avatar ni-cmt-ava");
+  const profile = !anonymous && c.author_handle && !ctx.restricted ? profilePath(c.author_handle) : null;
+  const nameHtml = profile ? `<a class="ni-name" href="${profile}">${escapeHtml(name)}</a>` : `<span class="ni-name">${escapeHtml(name)}</span>`;
   // Private posts take no interactions: their comments are read-only.
   const actions = post.visibility === "private" ? "" :
     `<div class="ni-cmt-actions"><button type="button" class="ni-act" data-like="comment" data-id="${c.id}" aria-pressed="${liked}" aria-label="${escapeHtml(t("share.action.like"))}">` +
@@ -32,7 +36,7 @@ function commentItem(ctx: ChromeContext, post: Post, c: CommentRow, liked: boole
     (c.parent_id ? "" : `<button type="button" class="ni-act" data-reply="${c.id}" data-name="${escapeHtml(name)}">${icon("comment")}${escapeHtml(t("share.action.reply"))}</button>`) +
     `<span class="ni-sp"></span><button type="button" class="ni-act" data-report="${c.id}" aria-label="${escapeHtml(t("share.action.report"))}">${icon("more")}</button></div>`;
   return (
-    `<div class="ni-cmt" id="c-${c.id}">${avatar}<div class="ni-cmt-main"><div class="ni-cmt-top"><span class="ni-name">${escapeHtml(name)}</span>${tag}` +
+    `<div class="ni-cmt" id="c-${c.id}">${avatar}<div class="ni-cmt-main"><div class="ni-cmt-top">${nameHtml}${tag}` +
     `<span class="ni-meta">${ago(ctx, c.created_at)}</span></div>${commentBody(c.body)}${actions}${replies}</div></div>`
   );
 }
@@ -42,19 +46,28 @@ function thread(ctx: ChromeContext, post: Post, th: CommentThread, data: PageInt
   return commentItem(ctx, post, th.comment, data.likedComments.has(th.comment.id), replies ? `<div class="ni-replies">${replies}</div>` : "");
 }
 
+/**
+ * Comment form. Signed in: the comment is the account's (its name and avatar; `data-account` tells
+ * /scripts/interact.js to skip the anonymous proof of work). Signed out: anonymous with an optional
+ * nickname, unless the post takes comments from signed-in users only.
+ */
 function composer(ctx: ChromeContext, post: Post): string {
   const { t } = ctx.intl;
+  const v = ctx.viewer;
   if (post.visibility === "private") return "";
-  if (post.comments_mode !== "open") {
+  if (post.comments_mode === "closed" || (post.comments_mode === "signed_in" && !v)) {
     const key = post.comments_mode === "closed" ? "share.comments.closed" : "share.comments.signedInOnly";
     return `<p class="ni-note">${escapeHtml(t(key))}</p>`;
   }
+  const who = v
+    ? `<span class="ni-hint">${escapeHtml(t("share.comments.asUser", { name: v.display_name || `@${v.handle}` }))}</span>`
+    : `<input name="name" maxlength="${NAME_MAX_CHARS}" autocomplete="nickname" placeholder="${escapeHtml(t("share.comments.name"))}" aria-label="${escapeHtml(t("share.comments.name"))}">` +
+      `<span class="ni-hint">${escapeHtml(t("share.comments.anonHint"))}</span>`;
   return (
-    `<form class="ni-composer" data-slug="${post.slug}" novalidate>` +
+    `<form class="ni-composer" data-slug="${post.slug}"${v ? ' data-account=""' : ""} novalidate>` +
     `<div class="ni-reply-to" hidden><span></span><button type="button" class="ni-link">${escapeHtml(t("share.action.cancel"))}</button></div>` +
     `<textarea name="body" rows="3" maxlength="${COMMENT_MAX_CHARS}" required placeholder="${escapeHtml(t("share.comments.placeholder"))}" aria-label="${escapeHtml(t("share.comments.placeholder"))}"></textarea>` +
-    `<div class="ni-composer-row"><input name="name" maxlength="${NAME_MAX_CHARS}" autocomplete="nickname" placeholder="${escapeHtml(t("share.comments.name"))}" aria-label="${escapeHtml(t("share.comments.name"))}">` +
-    `<span class="ni-hint">${escapeHtml(t("share.comments.anonHint"))}</span>` +
+    `<div class="ni-composer-row">${who}` +
     `<button type="submit" class="ni-btn ni-btn-primary ni-btn-sm">${escapeHtml(t("share.comments.submit"))}</button></div>` +
     `<p class="ni-form-error" role="alert" hidden></p></form>`
   );

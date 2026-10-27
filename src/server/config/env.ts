@@ -88,6 +88,7 @@ const schema = z.object({
   /** Anonymous commenting: proof-of-work difficulty (leading zero bits) and limits. */
   COMMENT_POW_BITS: z.coerce.number().int().min(0).max(24).default(16),
   RATE_ANON_COMMENTS_PER_10MIN: z.coerce.number().int().positive().default(5),
+  RATE_USER_COMMENTS_PER_10MIN: z.coerce.number().int().positive().default(10),
   RATE_IP_COMMENTS_PER_10MIN: z.coerce.number().int().positive().default(20),
   RATE_IP_COMMENTS_PER_DAY: z.coerce.number().int().positive().default(200),
   RATE_IP_LIKES_PER_HOUR: z.coerce.number().int().positive().default(300),

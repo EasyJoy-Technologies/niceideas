@@ -206,6 +206,10 @@
     "signIn": "Kirish",
     "signOut": "Chiqish"
   },
+  "bookmarks": {
+    "empty": "Saqlagan postlaringiz shu yerda chiqadi. Saqlanganlaringizni faqat siz koʻrasiz.",
+    "title": "Saqlanganlar"
+  },
   "common": {
     "brand": {
       "nicenote": "NiceNote"
@@ -367,6 +371,7 @@
   },
   "share": {
     "action": {
+      "bookmark": "Saqlash",
       "cancel": "Bekor qilish",
       "close": "Yopish",
       "copied": "Havola nusxalandi",
@@ -387,6 +392,7 @@
       "anonHint": "Siz anonim mehmon sifatida izoh qoldiryapsiz.",
       "anonTag": "Anonim",
       "anonymous": "Anonim mehmon",
+      "asUser": "Siz {name} sifatida izoh qoldiryapsiz.",
       "authorTag": "Muallif",
       "closed": "Izohlar yopilgan.",
       "empty": "Hali izohlar yo‘q. Birinchi bo‘ling!",

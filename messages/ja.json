@@ -206,6 +206,10 @@
     "signIn": "ログイン",
     "signOut": "ログアウト"
   },
+  "bookmarks": {
+    "empty": "保存した投稿がここに表示されます。保存済みの一覧はあなただけが見られます。",
+    "title": "保存済み"
+  },
   "common": {
     "brand": {
       "nicenote": "NiceNote"
@@ -367,6 +371,7 @@
   },
   "share": {
     "action": {
+      "bookmark": "保存",
       "cancel": "キャンセル",
       "close": "閉じる",
       "copied": "リンクをコピーしました",
@@ -387,6 +392,7 @@
       "anonHint": "匿名の訪問者としてコメントします。",
       "anonTag": "匿名",
       "anonymous": "匿名の訪問者",
+      "asUser": "{name} としてコメントします。",
       "authorTag": "作成者",
       "closed": "コメントは締め切られています。",
       "empty": "まだコメントはありません。最初のコメントを書いてみましょう！",

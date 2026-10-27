@@ -22,6 +22,7 @@ export type PostDto = {
   updatedAt: string;
   purgeAfter: string | null;
   likeCount: number;
+  bookmarkCount: number;
   commentCount: number;
   commentsMode: Post["comments_mode"];
 };
@@ -54,6 +55,7 @@ export function toPostDto(p: Post, contentHash: string | null): PostDto {
     updatedAt: p.updated_at.toISOString(),
     purgeAfter: iso(p.purge_after),
     likeCount: p.like_count,
+    bookmarkCount: p.bookmark_count,
     commentCount: p.comment_count,
     commentsMode: p.comments_mode,
   };

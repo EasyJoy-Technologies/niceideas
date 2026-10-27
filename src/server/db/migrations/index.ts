@@ -21,6 +21,7 @@ import * as m0019 from "./0019_cdn_purge";
 import * as m0020 from "./0020_lease_tokens";
 import * as m0021 from "./0021_post_visibility";
 import * as m0022 from "./0022_app_sign_in";
+import * as m0023 from "./0023_bookmarks";
 
 /**
  * Static registry (bundler-friendly; no filesystem scanning at runtime).
@@ -49,6 +50,7 @@ const MIGRATIONS: Record<string, Migration> = {
   "0020_lease_tokens": m0020,
   "0021_post_visibility": m0021,
   "0022_app_sign_in": m0022,
+  "0023_bookmarks": m0023,
 };
 
 export const migrationProvider: MigrationProvider = {

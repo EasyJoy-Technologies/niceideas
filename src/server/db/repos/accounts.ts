@@ -1,5 +1,6 @@
 import { sql } from "kysely";
 import type { Db } from "../client";
+import { countersTouchedBy, recountCounters } from "./interaction-counts";
 import type { AccountEventKind, PostStatus, Profile, ProfileStatus } from "../schema";
 
 /** `until` is the claim's lease end, its token for `releaseAccountEvent`. */
@@ -120,8 +121,10 @@ export async function deleteProfileCascade(db: Db, userId: string, mediaIds: str
       await trx.deleteFrom("revision_media").where("media_id", "in", mediaIds).execute();
       await trx.deleteFrom("media").where("id", "in", mediaIds).execute();
     }
-    // Profile cascade: comments, likes and follows authored by the user.
+    // Profile cascade: comments, likes, bookmarks and follows of the user; the counters they were part of are recounted.
+    const touched = await countersTouchedBy(trx, userId);
     const row = await trx.deleteFrom("profile").where("user_id", "=", userId).returning("avatar_url").executeTakeFirst();
+    await recountCounters(trx, touched);
     return row?.avatar_url ?? null;
   });
 }

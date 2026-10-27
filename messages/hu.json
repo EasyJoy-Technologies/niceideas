@@ -206,6 +206,10 @@
     "signIn": "Bejelentkezés",
     "signOut": "Kijelentkezés"
   },
+  "bookmarks": {
+    "empty": "Az elmentett bejegyzéseid itt jelennek meg. A mentéseidet csak te látod.",
+    "title": "Mentett"
+  },
   "common": {
     "brand": {
       "nicenote": "NiceNote"
@@ -367,6 +371,7 @@
   },
   "share": {
     "action": {
+      "bookmark": "Mentés",
       "cancel": "Mégse",
       "close": "Bezárás",
       "copied": "Link másolva",
@@ -387,6 +392,7 @@
       "anonHint": "Névtelen látogatóként szólsz hozzá.",
       "anonTag": "Névtelen",
       "anonymous": "Névtelen látogató",
+      "asUser": "{name} néven szólsz hozzá.",
       "authorTag": "Szerző",
       "closed": "A hozzászólás le van zárva.",
       "empty": "Még nincs hozzászólás. Légy az első!",

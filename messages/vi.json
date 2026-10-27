@@ -206,6 +206,10 @@
     "signIn": "Đăng nhập",
     "signOut": "Đăng xuất"
   },
+  "bookmarks": {
+    "empty": "Các bài viết bạn lưu sẽ hiện ở đây. Chỉ bạn mới thấy mục đã lưu của mình.",
+    "title": "Đã lưu"
+  },
   "common": {
     "brand": {
       "nicenote": "NiceNote"
@@ -367,6 +371,7 @@
   },
   "share": {
     "action": {
+      "bookmark": "Lưu",
       "cancel": "Hủy",
       "close": "Đóng",
       "copied": "Đã sao chép liên kết",
@@ -387,6 +392,7 @@
       "anonHint": "Bạn đang bình luận với tư cách khách ẩn danh.",
       "anonTag": "Ẩn danh",
       "anonymous": "Khách ẩn danh",
+      "asUser": "Bạn đang bình luận với tư cách {name}.",
       "authorTag": "Tác giả",
       "closed": "Đã đóng bình luận.",
       "empty": "Chưa có bình luận nào. Hãy là người đầu tiên!",

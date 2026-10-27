@@ -11,7 +11,8 @@ import { composeBox, composeError } from "./compose-box";
 import { loadDiscoverAside, renderDiscoverAside } from "./discover-aside";
 import { renderDiscoverPage, type FeedPageKind } from "./discover-page";
 import { feedTab, tabFilter } from "./feed-list";
-import { loadFeed, parseCursor } from "./load-feed";
+import { loadFeed, parseCursor, type FeedViewer } from "./load-feed";
+import type { ChromeContext } from "./chrome";
 import { renderProfilePage } from "./profile-page";
 import { renderSearchPage, type SearchType, type SearchView } from "./search-page";
 import { cachedPage } from "./page-cache";
@@ -19,6 +20,9 @@ import { htmlResponse, pageContext } from "./respond";
 import { renderStatusPage } from "./status-page";
 
 const HANDLE = HANDLE_PATTERN;
+
+/** Whose likes and bookmarks the cards show: the signed-in viewer's and this browser's. */
+export const feedViewer = (ctx: ChromeContext, request: Request): FeedViewer => ({ viewerId: ctx.viewer?.user_id ?? null, visitorKey: peekVisitorKey(request.headers) });
 
 async function guarded(request: Request, render: () => Promise<Response>): Promise<Response> {
   // Signed-out browser, first site-page visit: try SSO with other NiceMatrix sites (prompt=none) once.
@@ -53,7 +57,7 @@ async function feedResponse(request: Request, want: FeedPageKind): Promise<Respo
       const tab = feedTab(url);
       const filter = kind === "home" ? { ...tabFilter(tab), followerId: ctx.viewer!.user_id } : tabFilter(tab);
       const [page, asideData] = await Promise.all([
-        loadFeed(db, filter, parseCursor(url.searchParams.get("before")), peekVisitorKey(request.headers)),
+        loadFeed(db, filter, parseCursor(url.searchParams.get("before")), feedViewer(ctx, request)),
         loadDiscoverAside(db, ctx.viewer?.user_id ?? null),
       ]);
       const compose = kind === "home" ? composeBox(ctx, composeError(url)) : "";
@@ -77,7 +81,7 @@ export async function profileResponse(request: Request, rawHandle: string): Prom
       const own = ctx.viewer?.user_id === profile.user_id;
       const [stats, page, asideData, followed] = await Promise.all([
         profileStats(db, profile.user_id, own),
-        loadFeed(db, { ...tabFilter(tab), authorId: profile.user_id, includePrivate: own }, parseCursor(url.searchParams.get("before")), peekVisitorKey(request.headers)),
+        loadFeed(db, { ...tabFilter(tab), authorId: profile.user_id, includePrivate: own }, parseCursor(url.searchParams.get("before")), feedViewer(ctx, request)),
         loadDiscoverAside(db, ctx.viewer?.user_id ?? null),
         ctx.viewer ? followingAmong(db, ctx.viewer.user_id, [profile.user_id]) : Promise.resolve(new Set<string>()),
       ]);
@@ -99,7 +103,7 @@ export async function searchResponse(request: Request): Promise<Response> {
     const db = getDb();
     const view: SearchView = { query, type, posts: null, people: null };
     if (query && type === "people") view.people = await searchProfiles(db, query, PEOPLE_LIMIT);
-    if (query && type === "posts") view.posts = await loadFeed(db, { query }, parseCursor(url.searchParams.get("before")), peekVisitorKey(request.headers));
+    if (query && type === "posts") view.posts = await loadFeed(db, { query }, parseCursor(url.searchParams.get("before")), feedViewer(ctx, request));
     return htmlResponse(renderSearchPage(ctx, view), 200);
   });
 }

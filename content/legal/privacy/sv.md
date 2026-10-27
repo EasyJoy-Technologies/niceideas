@@ -12,7 +12,7 @@ Denna policy förklarar vilken information niceideas samlar in, varför, hur lä
 
 **Innehåll du publicerar.** Inlägg (text, titlar, bilder och ljud), deras tidigare versioner, inläggsinställningar (till exempel om kommentarer är tillåtna), var varje inlägg kom ifrån (webben, NiceNote eller en annan app) och när det publicerades eller ändrades. Bilder omkodas vid uppladdning, vilket tar bort inbäddad metadata som plats (EXIF). Ljudfiler lagras som uppladdade, inklusive all information inbäddad i dem.
 
-**Interaktioner.** Gillanden, kommentarer, följare och rapporter. Om du kommenterar utan konto lagrar vi din kommentar och det valfria smeknamn du anger.
+**Interaktioner.** Gillanden, kommentarer, följare och rapporter. Om du kommenterar utan konto lagrar vi din kommentar och det valfria smeknamn du anger. Sparade inlägg ser bara du; ett inlägg visar bara hur många som har sparat det. Du kan ta bort ett sparat inlägg när som helst, och alla raderas tillsammans med ditt konto.
 
 **Teknisk information och säkerhetsinformation.** För att förhindra missbruk skapar vi nyckelbaserade envägskoder ("hashar") från en slumpmässig webbläsaridentifierare och din IP-adress, och lagrar dessa koder tillsammans med gillanden, kommentarer och rapporter istället för IP-adressen själv. Vår webbserver för åtkomstloggar med IP-adress, tid, begärd sida och webbläsartyp. Vår nätverksleverantör berättar för oss vilket land en begäran kommer från; vi använder detta endast för att tillämpa de regionala reglerna i avsnitt 8 och lagrar det inte tillsammans med din profil eller ditt innehåll. För att avskräcka från automatiserad skräppost löser din webbläsare en liten beräkningskontroll när du kommenterar utan konto; vi använder ingen extern CAPTCHA.
 

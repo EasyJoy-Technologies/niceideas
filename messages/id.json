@@ -206,6 +206,10 @@
     "signIn": "Masuk",
     "signOut": "Keluar"
   },
+  "bookmarks": {
+    "empty": "Postingan yang kamu simpan akan muncul di sini. Hanya kamu yang bisa melihat simpananmu.",
+    "title": "Disimpan"
+  },
   "common": {
     "brand": {
       "nicenote": "NiceNote"
@@ -367,6 +371,7 @@
   },
   "share": {
     "action": {
+      "bookmark": "Simpan",
       "cancel": "Batal",
       "close": "Tutup",
       "copied": "Tautan disalin",
@@ -387,6 +392,7 @@
       "anonHint": "Kamu berkomentar sebagai pengunjung anonim.",
       "anonTag": "Anonim",
       "anonymous": "Pengunjung anonim",
+      "asUser": "Kamu berkomentar sebagai {name}.",
       "authorTag": "Penulis",
       "closed": "Komentar ditutup.",
       "empty": "Belum ada komentar. Jadilah yang pertama!",

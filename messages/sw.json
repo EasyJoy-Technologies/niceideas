@@ -206,6 +206,10 @@
     "signIn": "Ingia",
     "signOut": "Toka"
   },
+  "bookmarks": {
+    "empty": "Machapisho unayohifadhi yataonekana hapa. Ni wewe tu unayeweza kuona ulivyohifadhi.",
+    "title": "Vilivyohifadhiwa"
+  },
   "common": {
     "brand": {
       "nicenote": "NiceNote"
@@ -367,6 +371,7 @@
   },
   "share": {
     "action": {
+      "bookmark": "Hifadhi",
       "cancel": "Ghairi",
       "close": "Funga",
       "copied": "Kiungo kimenakiliwa",
@@ -387,6 +392,7 @@
       "anonHint": "Unatoa maoni kama mgeni asiyejulikana.",
       "anonTag": "Bila jina",
       "anonymous": "Mgeni asiyejulikana",
+      "asUser": "Unatoa maoni kama {name}.",
       "authorTag": "Mwandishi",
       "closed": "Maoni yamefungwa.",
       "empty": "Bado hakuna maoni. Kuwa wa kwanza!",

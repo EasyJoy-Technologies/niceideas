@@ -206,6 +206,10 @@
     "signIn": "Přihlásit se",
     "signOut": "Odhlásit se"
   },
+  "bookmarks": {
+    "empty": "Zde se zobrazí příspěvky, které si uložíte. Vaše uložené příspěvky vidíte jen vy.",
+    "title": "Uložené"
+  },
   "common": {
     "brand": {
       "nicenote": "NiceNote"
@@ -367,6 +371,7 @@
   },
   "share": {
     "action": {
+      "bookmark": "Uložit",
       "cancel": "Zrušit",
       "close": "Zavřít",
       "copied": "Odkaz zkopírován",
@@ -387,6 +392,7 @@
       "anonHint": "Komentujete jako anonymní návštěvník.",
       "anonTag": "Anonym",
       "anonymous": "Anonymní návštěvník",
+      "asUser": "Komentujete jako {name}.",
       "authorTag": "Autor",
       "closed": "Komentáře jsou uzavřené.",
       "empty": "Zatím žádné komentáře. Buďte první!",

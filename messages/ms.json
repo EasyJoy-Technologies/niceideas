@@ -206,6 +206,10 @@
     "signIn": "Log masuk",
     "signOut": "Log keluar"
   },
+  "bookmarks": {
+    "empty": "Siaran yang anda simpan akan dipaparkan di sini. Hanya anda yang boleh melihat simpanan anda.",
+    "title": "Disimpan"
+  },
   "common": {
     "brand": {
       "nicenote": "NiceNote"
@@ -367,6 +371,7 @@
   },
   "share": {
     "action": {
+      "bookmark": "Simpan",
       "cancel": "Batal",
       "close": "Tutup",
       "copied": "Pautan disalin",
@@ -387,6 +392,7 @@
       "anonHint": "Anda mengulas sebagai pelawat tanpa nama.",
       "anonTag": "Tanpa nama",
       "anonymous": "Pelawat tanpa nama",
+      "asUser": "Anda mengulas sebagai {name}.",
       "authorTag": "Penulis",
       "closed": "Ulasan telah ditutup.",
       "empty": "Belum ada ulasan. Jadilah yang pertama!",

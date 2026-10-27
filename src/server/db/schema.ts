@@ -2,6 +2,7 @@ import type { ColumnType, Generated, Insertable, JSONColumnType, Selectable, Upd
 import type { CreatedAt, DefaultedTimestamp, JsonColumn, Timestamp } from "./schema-columns";
 import type { AccountEventTable, DeletedAccountTable } from "./schema-accounts";
 import type { WebSessionTable, WebTicketTable } from "./schema-auth";
+import type { PostBookmarkTable } from "./schema-social";
 import type { AvatarJobTable, CdnPurgeTable, MediaJobTable, MediaUploadTable, OutboxTable, ServiceNonceTable } from "./schema-share";
 
 export type { MediaJobState, OutboxKind } from "./schema-share";
@@ -78,6 +79,7 @@ export interface PostTable {
   status_reason: string | null;
   purge_after: Timestamp | null;
   like_count: Generated<number>;
+  bookmark_count: Generated<number>;
   comment_count: Generated<number>;
   comments_mode: Generated<CommentsMode>;
   /** Title + plain body text (site search). */
@@ -263,6 +265,7 @@ export interface Database {
   deleted_account: DeletedAccountTable;
   web_session: WebSessionTable;
   web_ticket: WebTicketTable;
+  post_bookmark: PostBookmarkTable;
   pow_used: PowUsedTable;
   admin_member: AdminMemberTable;
   media_job: MediaJobTable;

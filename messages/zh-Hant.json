@@ -206,6 +206,10 @@
     "signIn": "登入 / 註冊",
     "signOut": "登出"
   },
+  "bookmarks": {
+    "empty": "你收藏的貼文會顯示在這裡。收藏只有你自己看得到。",
+    "title": "我的收藏"
+  },
   "common": {
     "brand": {
       "nicenote": "樂趣記事本"
@@ -367,6 +371,7 @@
   },
   "share": {
     "action": {
+      "bookmark": "收藏",
       "cancel": "取消",
       "close": "關閉",
       "copied": "已複製連結",
@@ -387,6 +392,7 @@
       "anonHint": "你將以匿名訪客身分發表。",
       "anonTag": "匿名",
       "anonymous": "匿名訪客",
+      "asUser": "將以 {name} 的身分發表。",
       "authorTag": "作者",
       "closed": "留言已關閉。",
       "empty": "還沒有留言，來搶頭香吧！",
