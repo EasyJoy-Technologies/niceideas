@@ -60,11 +60,13 @@
 @media (max-width: 47.99rem) {
   .ni-comments { border-radius: 0; box-shadow: none; margin-top: 0.625rem; padding: 1.125rem 1rem; }
   .ni-mbar {
-    position: fixed; inset-inline: 0; bottom: 0; z-index: 6; height: 3.5rem; display: flex; align-items: center; justify-content: space-around;
+    /* Like the tab bar (nav.css): the home-indicator inset is added below the 3.5rem row, not taken from it
+       (iOS Safari reports it once its bottom toolbar collapses on scroll). */
+    position: fixed; inset-inline: 0; bottom: 0; z-index: 6; height: calc(3.5rem + env(safe-area-inset-bottom)); display: flex; align-items: center; justify-content: space-around;
     background: var(--ni-color-surface); border-top: 1px solid var(--ni-color-border); color: var(--ni-color-text-secondary);
     padding-bottom: env(safe-area-inset-bottom);
   }
-  body:has(.ni-mbar) .ni-ftr { padding-bottom: 3.5rem; }
+  body:has(.ni-mbar) .ni-ftr { padding-bottom: calc(3.5rem + env(safe-area-inset-bottom)); }
   /* The bottom bar carries every action, "⋯" included: no row under the post (Xianglin 2026-10-28). */
   .ni-post .ni-actions { display: none; }
   /* Without that row the post ends on its content: bottom inset = top inset (1.25rem, share-page.css). */
