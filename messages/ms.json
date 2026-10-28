@@ -268,6 +268,13 @@
     "saving": "Menyimpan…",
     "title": "Tajuk"
   },
+  "consent": {
+    "accept": "Terima",
+    "reject": "Tolak",
+    "settings": "Tetapan kuki",
+    "text": "Dengan kebenaran anda, kami menggunakan Google Analytics dan Microsoft Clarity untuk memahami cara laman ini digunakan dan menambah baiknya. Ia hanya dimuatkan jika anda menerima, dan anda boleh menukar pilihan anda pada bila-bila masa.",
+    "title": "Kuki analitik"
+  },
   "discover": {
     "title": "Teroka"
   },

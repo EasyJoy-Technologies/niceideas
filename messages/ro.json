@@ -268,6 +268,13 @@
     "saving": "Se salvează…",
     "title": "Titlu"
   },
+  "consent": {
+    "accept": "Accept",
+    "reject": "Refuz",
+    "settings": "Setări cookie-uri",
+    "text": "Cu permisiunea ta, folosim Google Analytics și Microsoft Clarity pentru a înțelege cum este folosit site-ul și a-l îmbunătăți. Se încarcă doar dacă accepți și îți poți schimba alegerea oricând.",
+    "title": "Cookie-uri de analiză"
+  },
   "discover": {
     "title": "Descoperă"
   },

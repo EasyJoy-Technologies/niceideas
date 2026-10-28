@@ -1,4 +1,4 @@
-> **Podsumowanie.** Zbieramy tylko to, czego potrzebujemy do prowadzenia niceideas: Twój profil, to, co publikujesz, oraz ograniczone dane techniczne niezbędne do zapewnienia bezpieczeństwa Usługi. Twoje wpisy są publiczne, chyba że ustawisz je jako widoczne tylko dla Ciebie. Nie sprzedajemy danych osobowych, nie wyświetlamy reklam i nie korzystamy z zewnętrznych narzędzi śledzących. Możesz usunąć wpisy w każdej chwili i usunąć konto, usuwając swoje NiceMatrix ID. Napisz na support@nicematrix.ca z każdym pytaniem lub żądaniem dotyczącym prywatności.
+> **Podsumowanie.** Zbieramy tylko to, czego potrzebujemy do prowadzenia niceideas: Twój profil, to, co publikujesz, oraz ograniczone dane techniczne niezbędne do zapewnienia bezpieczeństwa Usługi. Twoje wpisy są publiczne, chyba że ustawisz je jako widoczne tylko dla Ciebie. Nie sprzedajemy danych osobowych i nie wyświetlamy reklam. Tylko jeśli zaakceptujesz analityczne pliki cookie, korzystamy z Google Analytics i Microsoft Clarity, aby zrozumieć, jak używana jest Usługa. Możesz usunąć wpisy w każdej chwili i usunąć konto, usuwając swoje NiceMatrix ID. Napisz na support@nicematrix.ca z każdym pytaniem lub żądaniem dotyczącym prywatności.
 
 ## 1. Kim jesteśmy
 
@@ -22,7 +22,9 @@ Niniejsza polityka wyjaśnia, jakie informacje gromadzi niceideas, dlaczego, jak
 
 **Informacje od autoryzowanych aplikacji.** Autoryzowane przez Ciebie aplikacje wysyłają nam wpisy i media, które publikujesz za ich pomocą, wraz z identyfikatorem aplikacji.
 
-**Czego nie zbieramy.** Nie korzystamy z narzędzi reklamowych, analitycznych lub śledzących w mediach społecznościowych, nie tworzymy profili reklamowych i nie gromadzimy precyzyjnej lokalizacji. Nie żądamy informacji wrażliwych, ale Twoje wpisy mogą je ujawniać, jeśli zdecydujesz się je opublikować.
+**Analityka korzystania (tylko za Twoją zgodą).** Jeśli zaakceptujesz analityczne pliki cookie, korzystamy z Google Analytics (Google) i Microsoft Clarity (Microsoft), aby zrozumieć, jak używane są strony internetowe, i je ulepszać. Narzędzia te zbierają odwiedzane przez Ciebie strony, kliknięcia, przewijanie i ruchy myszy, Twoją przybliżoną lokalizację ustaloną na podstawie adresu IP, informacje o urządzeniu i przeglądarce oraz pseudonimowe identyfikatory przechowywane w plikach cookie. Microsoft Clarity tworzy także nagrania sesji i mapy cieplne; konfigurujemy je tak, aby ukrywało cały tekst na stronie, w tym to, co wpisujesz, dzięki czemu nie rejestruje treści wpisów, komentarzy ani formularzy. Wyłączamy funkcje reklamowe Google i nie używamy tych narzędzi na stronie Ustawienia, na stronach moderacji ani przy połączeniach z Chin kontynentalnych. Jeśli odrzucisz analityczne pliki cookie lub nie dokonasz wyboru, narzędzia te nie są ładowane.
+
+**Czego nie zbieramy.** Nie korzystamy z narzędzi reklamowych ani śledzących w mediach społecznościowych, nie tworzymy profili reklamowych i nie gromadzimy precyzyjnej lokalizacji. Nie żądamy informacji wrażliwych, ale Twoje wpisy mogą je ujawniać, jeśli zdecydujesz się je opublikować.
 
 ## 3. Jak i dlaczego wykorzystujemy informacje
 
@@ -36,6 +38,7 @@ Niniejsza polityka wyjaśnia, jakie informacje gromadzi niceideas, dlaczego, jak
 | Przetwarzanie usunięcia konta | Identyfikator konta, powiadomienia o usunięciu | Umowa; obowiązki prawne |
 | Odpowiadanie na Twoje żądania i obsługa roszczeń prawnych | Informacje w Twoim żądaniu | Obowiązki prawne; uzasadniony interes |
 | Wyświetlanie Usługi w Twoim języku | Język wybrany w linku, język przeglądarki | Uzasadniony interes |
+| Zrozumienie, jak używana jest Usługa, i jej ulepszanie (analityka korzystania) | Informacje o korzystaniu i urządzeniu, analityczne pliki cookie | Twoja zgoda, którą możesz w każdej chwili wycofać |
 
 Decyzje dotyczące treści i kont podejmowane są przez ludzi. Automatyczne limity częstotliwości tylko zwalniają lub chwilowo blokują działania; nie podejmujemy zautomatyzowanych decyzji, które mają dla Ciebie skutki prawne lub podobnie istotne.
 
@@ -49,7 +52,9 @@ Wpisy ustawione jako widoczne tylko dla Ciebie nie są publiczne: tylko Ty je wi
 
 ## 5. Pliki cookie
 
-Korzystamy tylko z plików cookie niezbędnych do działania Usługi. Nie korzystamy z plików cookie reklamowych lub analitycznych.
+Korzystamy z plików cookie niezbędnych do działania Usługi oraz, tylko jeśli je zaakceptujesz, z analitycznych plików cookie. Nie korzystamy z plików cookie reklamowych.
+
+**Niezbędne pliki cookie**
 
 | Plik cookie | Cel | Czas trwania |
 |---|---|---|
@@ -57,14 +62,27 @@ Korzystamy tylko z plików cookie niezbędnych do działania Usługi. Nie korzys
 | `ni_oidc` | Chroni proces logowania | 10 minut |
 | `ni_sso` | Pamięta, że automatyczne logowanie zostało już wypróbowane, aby uniknąć powtarzających się przekierowań | 24 godziny |
 | `ni_vid` | Losowy identyfikator dla polubień i komentarzy bez konta oraz do zapobiegania nadużyciom | 400 dni |
+| `ni_locale` | Zapamiętuje wybrany przez Ciebie język | 1 rok |
+| `ni_theme` | Zapamiętuje wybrany przez Ciebie motyw kolorystyczny | 1 rok |
+| `ni_consent` | Zapamiętuje, czy zaakceptowałeś(-aś), czy odrzuciłeś(-aś) analityczne pliki cookie | 180 dni |
 
 Jeśli usuniesz te pliki cookie, zostaniesz wylogowany i traktowany jako nowy odwiedzający.
+
+**Analityczne pliki cookie (tylko za Twoją zgodą)**
+
+| Plik cookie | Cel | Czas trwania |
+|---|---|---|
+| `_ga`, `_ga_<ID>` | Google Analytics: rozróżnia odwiedzających i wizyty | 13 miesięcy |
+| `_clck` | Microsoft Clarity: przechowuje pseudonimowy identyfikator odwiedzającego | 1 rok |
+| `_clsk` | Microsoft Clarity: łączy wyświetlenia stron w jedną wizytę | 1 dzień |
+
+Podczas ładowania Clarity Microsoft może także ustawiać pliki cookie we własnych domenach; są one opisane w oświadczeniu o ochronie prywatności Microsoft. Analityczne pliki cookie możesz zaakceptować lub odrzucić w komunikacie wyświetlanym przy pierwszej wizycie, a swój wybór możesz zmienić w każdej chwili za pomocą przycisku „Ustawienia plików cookie” na początku niniejszej polityki. Gdy wycofasz zgodę, usuwamy analityczne pliki cookie ustawione w niceideas i przestajemy ładować te narzędzia.
 
 ## 6. Udostępnianie
 
 Nie sprzedajemy ani nie wynajmujemy danych osobowych, i nie udostępniamy ich do reklam behawioralnych międzykontekstowych. Udostępniamy je tylko:
 
-- **Dostawcom usług**, które przetwarzają je dla nas na podstawie umowy: Hetzner Online GmbH (serwery i baza danych, Niemcy) oraz Cloudflare, Inc. (bezpieczeństwo sieci, dostarczanie treści i przechowywanie mediów w Europie Zachodniej; jej sieć działa na całym świecie).
+- **Dostawcom usług**, które przetwarzają je dla nas na podstawie umowy: Hetzner Online GmbH (serwery i baza danych, Niemcy) oraz Cloudflare, Inc. (bezpieczeństwo sieci, dostarczanie treści i przechowywanie mediów w Europie Zachodniej; jej sieć działa na całym świecie); oraz, tylko jeśli zaakceptujesz analityczne pliki cookie, Google (Google Analytics) i Microsoft (Microsoft Clarity), które przetwarzają dane analityczne głównie w Stanach Zjednoczonych.
 - **NiceMatrix ID**, usłudze logowania, którą obsługujemy, w celu zalogowania Cię i przetworzenia usunięcia konta.
 - **Autoryzowanym przez Ciebie aplikacjom**, które otrzymują tylko to, na co zezwoliłeś, takie jak opublikowane za ich pomocą wpisy i Twój publiczny profil.
 - **Publiczności**, jak opisano w sekcji 4.
@@ -75,11 +93,13 @@ Nie sprzedajemy ani nie wynajmujemy danych osobowych, i nie udostępniamy ich do
 
 NiceMatrix ma siedzibę w Kanadzie. Nasze serwery i miejsce przechowywania mediów znajdują się w Europie (Niemcy i Europa Zachodnia), a nasz dostawca sieci przetwarza żądania w kraju najbliższym Tobie. Twoje informacje mogą więc być przetwarzane w Niemczech, innych krajach europejskich, Kanadzie i innych krajach, w których działają nasi dostawcy, których przepisy prawa mogą różnić się od przepisów Twojego kraju.
 
-Przekazywanie danych z Europejskiego Obszaru Gospodarczego, Zjednoczonego Królestwa i Szwajcarii do Kanady odbywa się na podstawie decyzji o adekwatności dla Kanady. Inne przekazywanie odbywa się na podstawie Standardowych Klauzul Umownych zawartych w warunkach przetwarzania danych naszych dostawców, lub na podstawie innych zabezpieczeń uznanych przez prawo.
+Jeśli zaakceptujesz analityczne pliki cookie, Google i Microsoft przetwarzają dane analityczne w Stanach Zjednoczonych i innych krajach, w których prowadzą działalność.
+
+Przekazywanie danych z Europejskiego Obszaru Gospodarczego, Zjednoczonego Królestwa i Szwajcarii do Kanady odbywa się na podstawie decyzji o adekwatności dla Kanady. Przekazywanie do Google i Microsoft w Stanach Zjednoczonych odbywa się na podstawie Ramowego porozumienia UE-USA dotyczącego ochrony danych (Data Privacy Framework) i jego rozszerzeń dla Wielkiej Brytanii i Szwajcarii, w ramach którego obie firmy posiadają certyfikację, lub na podstawie Standardowych Klauzul Umownych. Inne przekazywanie odbywa się na podstawie Standardowych Klauzul Umownych zawartych w warunkach przetwarzania danych naszych dostawców, lub na podstawie innych zabezpieczeń uznanych przez prawo.
 
 ## 8. Chiny kontynentalne
 
-Dla połączeń z Chin kontynentalnych dostępne są tylko poszczególne strony udostępnionych wpisów oraz polubienia i komentarze do nich. Jeśli wyświetlasz, polubiasz lub komentujesz taką stronę z Chin kontynentalnych, informacje opisane w sekcji 2 są przetwarzane i przechowywane poza Chinami kontynentalnymi, głównie w Niemczech. Interakcja z tą stroną oznacza zgodę na takie przekazanie. Możesz skorzystać ze swoich praw wynikających z Ustawy o ochronie informacji osobowych Chińskiej Republiki Ludowej, pisząc na support@nicematrix.ca.
+Dla połączeń z Chin kontynentalnych dostępne są tylko poszczególne strony udostępnionych wpisów oraz polubienia i komentarze do nich. Jeśli wyświetlasz, polubiasz lub komentujesz taką stronę z Chin kontynentalnych, informacje opisane w sekcji 2 są przetwarzane i przechowywane poza Chinami kontynentalnymi, głównie w Niemczech. Interakcja z tą stroną oznacza zgodę na takie przekazanie. Narzędzia analityczne nie są używane przy połączeniach z Chin kontynentalnych. Możesz skorzystać ze swoich praw wynikających z Ustawy o ochronie informacji osobowych Chińskiej Republiki Ludowej, pisząc na support@nicematrix.ca.
 
 ## 9. Okres przechowywania informacji
 
@@ -95,6 +115,9 @@ Dla połączeń z Chin kontynentalnych dostępne są tylko poszczególne strony 
 | Sesje logowania | Do wylogowania lub po 30 dniach bez użycia; wygasłe zapisy są usuwane codziennie |
 | Blokady odwiedzających i kontrole antyspamowe | Do ich wygaśnięcia; wygasłe zapisy są usuwane codziennie |
 | Dzienniki dostępu serwera internetowego | 14 dni |
+| Dane Google Analytics powiązane z plikami cookie lub identyfikatorami odwiedzających | Do 14 miesięcy |
+| Nagrania sesji Microsoft Clarity | 30 dni; nagrania zapisane przez nas do przeglądu do 13 miesięcy |
+| Pozostałe dane Microsoft Clarity (mapy cieplne, statystyki) | Do 13 miesięcy |
 | Dzienniki aplikacji (błędy i zdarzenia usługi, bez adresów IP lub treści) | Usuwane automatycznie po osiągnięciu limitu przechowywania dzienników serwera |
 | Kopie zapasowe bazy danych | Do 14 dni, po czym usunięte informacje również zanikają z kopii zapasowych |
 | Powiadomienia o usunięciu konta (identyfikator konta, zdarzenie, czas) | Tak długo, jak jest to potrzebne, aby wykazać, że usunięcie zostało przeprowadzone |
@@ -130,11 +153,11 @@ Usługa nie jest skierowana do dzieci poniżej 13 lat, i nie zbieramy świadomie
 
 ## 13. Bezpieczeństwo
 
-Chronimy informacje za pomocą szyfrowania podczas transmisji (HTTPS), jednostronnych hashów zamiast surowych kodów sesji, adresów IP i identyfikatorów przeglądarki, podpisanych komunikatów między naszymi usługami, dostępu ograniczonego do upoważnionego personelu, ścisłej polityki bezpieczeństwa treści bez zewnętrznych skryptów, oraz codziennych kopii zapasowych przechowywanych przez ograniczony czas. Żaden system nie jest całkowicie bezpieczny. Jeśli naruszenie bezpieczeństwa stworzy rzeczywiste ryzyko znaczącej szkody, powiadomimy Cię i odpowiednie władze zgodnie z wymogami prawa.
+Chronimy informacje za pomocą szyfrowania podczas transmisji (HTTPS), jednostronnych hashów zamiast surowych kodów sesji, adresów IP i identyfikatorów przeglądarki, podpisanych komunikatów między naszymi usługami, dostępu ograniczonego do upoważnionego personelu, ścisłej polityki bezpieczeństwa treści, która nie dopuszcza zewnętrznych skryptów poza opcjonalnymi narzędziami analitycznymi z sekcji 2, ładowanymi dopiero po Twojej akceptacji, oraz codziennych kopii zapasowych przechowywanych przez ograniczony czas. Żaden system nie jest całkowicie bezpieczny. Jeśli naruszenie bezpieczeństwa stworzy rzeczywiste ryzyko znaczącej szkody, powiadomimy Cię i odpowiednie władze zgodnie z wymogami prawa.
 
 ## 14. Informacja dla mieszkańców Kalifornii
 
-W ciągu ostatnich 12 miesięcy zbieraliśmy identyfikatory (identyfikator konta, uchwyt, zahashowane adresy IP i identyfikatory przeglądarki), aktywność internetową (dzienniki i interakcje) oraz treści, które publikujesz, ze źródeł i dla celów opisanych w sekcjach 2 i 3. Udostępnialiśmy te informacje wyłącznie w celach biznesowych dostawcom usług wymienionym w sekcji 6. Nie sprzedajemy ani nie udostępniamy danych osobowych do reklam behawioralnych międzykontekstowych i nie wykorzystujemy wrażliwych danych osobowych do wnioskowania o Twoich cechach. Okres przechowywania opisany jest w sekcji 9.
+W ciągu ostatnich 12 miesięcy zbieraliśmy identyfikatory (identyfikator konta, uchwyt, zahashowane adresy IP i identyfikatory przeglądarki), aktywność internetową (dzienniki, interakcje oraz, jeśli zaakceptujesz analityczne pliki cookie, dane analityczne) oraz treści, które publikujesz, ze źródeł i dla celów opisanych w sekcjach 2 i 3. Udostępnialiśmy te informacje wyłącznie w celach biznesowych dostawcom usług wymienionym w sekcji 6, w tym Google i Microsoft na potrzeby analityki korzystania, jeśli zaakceptujesz analityczne pliki cookie. Nie sprzedajemy ani nie udostępniamy danych osobowych do reklam behawioralnych międzykontekstowych i nie wykorzystujemy wrażliwych danych osobowych do wnioskowania o Twoich cechach. Okres przechowywania opisany jest w sekcji 9.
 
 ## 15. Zmiany niniejszej polityki
 

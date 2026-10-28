@@ -268,6 +268,13 @@
     "saving": "Đang lưu…",
     "title": "Tiêu đề"
   },
+  "consent": {
+    "accept": "Chấp nhận",
+    "reject": "Từ chối",
+    "settings": "Cài đặt cookie",
+    "text": "Khi bạn cho phép, chúng tôi dùng Google Analytics và Microsoft Clarity để hiểu cách trang web được sử dụng và cải thiện nó. Các công cụ này chỉ được tải nếu bạn chấp nhận, và bạn có thể thay đổi lựa chọn bất cứ lúc nào.",
+    "title": "Cookie phân tích"
+  },
   "discover": {
     "title": "Khám phá"
   },

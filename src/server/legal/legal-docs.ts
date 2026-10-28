@@ -11,8 +11,8 @@ import { renderMarkdown } from "@/server/render/markdown";
 export const LEGAL_DOCS = ["terms", "privacy"] as const;
 export type LegalDoc = (typeof LEGAL_DOCS)[number];
 
-/** Effective date of the current versions (ISO date). Bump with every published change. */
-export const LEGAL_EFFECTIVE_DATE = "2026-10-26";
+/** Effective date of the current version of each document (ISO date). Bump with every published change. */
+export const LEGAL_EFFECTIVE_DATES: Record<LegalDoc, string> = { terms: "2026-10-26", privacy: "2026-10-27" };
 
 export type LegalSection = { id: string; title: string; html: string };
 export type LegalDocument = { summaryHtml: string; sections: LegalSection[] };

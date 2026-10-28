@@ -97,6 +97,13 @@ const schema = z.object({
   /** Shared secret for NiceMatrix account events (HMAC-SHA256). Unset = endpoint disabled (503). */
   ACCOUNT_EVENTS_SECRET: z.string().min(32).optional(),
 
+  /**
+   * Usage analytics, loaded only after the visitor accepts analytics cookies (src/server/analytics).
+   * Empty = that tool is off; both empty = no consent banner and no third-party origins in the CSP.
+   */
+  ANALYTICS_GA4_ID: z.string().regex(/^(G-[A-Z0-9]{4,20})?$/, "must be a GA4 measurement id (G-XXXXXXX)").default(""),
+  ANALYTICS_CLARITY_ID: z.string().regex(/^([a-z0-9]{6,20})?$/, "must be a Microsoft Clarity project id").default(""),
+
   /** Mainland-China rule (plan §4): `link_only` = only share links / publish APIs; `off` = no restriction. */
   REGION_POLICY_CN: z.enum(["link_only", "off"]).default("link_only"),
 

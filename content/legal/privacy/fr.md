@@ -1,4 +1,4 @@
-> **Résumé.** Nous ne collectons que ce qui est nécessaire pour faire fonctionner niceideas : votre profil, ce que vous publiez, et des données techniques limitées pour assurer la sécurité du Service. Vos publications sont publiques, sauf si vous les rendez visibles par vous seul. Nous ne vendons pas d'informations personnelles, n'affichons pas de publicités et n'utilisons pas de traceurs externes. Vous pouvez supprimer des publications à tout moment et supprimer votre compte en supprimant votre NiceMatrix ID. Écrivez à support@nicematrix.ca pour toute question ou demande relative à la confidentialité.
+> **Résumé.** Nous ne collectons que ce qui est nécessaire pour faire fonctionner niceideas : votre profil, ce que vous publiez, et des données techniques limitées pour assurer la sécurité du Service. Vos publications sont publiques, sauf si vous les rendez visibles par vous seul. Nous ne vendons pas d'informations personnelles et n'affichons pas de publicités. Uniquement si vous acceptez les cookies de mesure d'audience, nous utilisons Google Analytics et Microsoft Clarity pour comprendre comment le Service est utilisé. Vous pouvez supprimer des publications à tout moment et supprimer votre compte en supprimant votre NiceMatrix ID. Écrivez à support@nicematrix.ca pour toute question ou demande relative à la confidentialité.
 
 ## 1. Qui nous sommes
 
@@ -22,7 +22,9 @@ Cette politique explique quelles informations niceideas collecte, pourquoi, pend
 
 **Informations provenant des applications que vous autorisez.** Les applications que vous autorisez nous envoient les publications et les médias que vous publiez par leur intermédiaire, ainsi que l'identifiant de l'application.
 
-**Ce que nous ne collectons pas.** Nous n'utilisons pas d'outils de publicité, d'analyse ou de suivi sur les réseaux sociaux, nous ne constituons pas de profils publicitaires et ne collectons pas de données de localisation précises. Nous ne demandons pas d'informations sensibles, mais vos publications peuvent les révéler si vous choisissez de les publier.
+**Mesure d'audience (uniquement avec votre consentement).** Si vous acceptez les cookies de mesure d'audience, nous utilisons Google Analytics (Google) et Microsoft Clarity (Microsoft) pour comprendre comment les pages web sont utilisées et les améliorer. Ces outils collectent les pages que vous consultez, les clics, le défilement et les mouvements de la souris, votre localisation approximative déduite de votre adresse IP, des informations sur l'appareil et le navigateur, ainsi que des identifiants pseudonymes stockés dans des cookies. Microsoft Clarity crée également des enregistrements de sessions et des cartes de chaleur ; nous le configurons pour masquer tout le texte de la page, y compris ce que vous saisissez, afin qu'il n'enregistre pas le contenu des publications, des commentaires ou des formulaires. Nous désactivons les fonctionnalités publicitaires de Google et nous n'utilisons pas ces outils sur la page Paramètres, sur les pages de modération ni pour les connexions provenant de Chine continentale. Si vous refusez les cookies de mesure d'audience ou ne faites pas de choix, ces outils ne sont pas chargés.
+
+**Ce que nous ne collectons pas.** Nous n'utilisons pas d'outils de publicité ou de suivi sur les réseaux sociaux, nous ne constituons pas de profils publicitaires et ne collectons pas de données de localisation précises. Nous ne demandons pas d'informations sensibles, mais vos publications peuvent les révéler si vous choisissez de les publier.
 
 ## 3. Comment nous utilisons les informations et pourquoi
 
@@ -36,6 +38,7 @@ Cette politique explique quelles informations niceideas collecte, pourquoi, pend
 | Traiter la suppression du compte | Identifiant de compte, avis de suppression | Contrat ; obligations légales |
 | Répondre à vos demandes et traiter les réclamations légales | Informations contenues dans votre demande | Obligations légales ; intérêt légitime |
 | Afficher le Service dans votre langue | Langue choisie dans le lien, langue du navigateur | Intérêt légitime |
+| Comprendre comment le Service est utilisé et l'améliorer (mesure d'audience) | Informations d'utilisation et sur l'appareil, cookies de mesure d'audience | Votre consentement, que vous pouvez retirer à tout moment |
 
 Les décisions relatives au contenu et aux comptes sont prises par des personnes. Les limites de fréquence automatiques ne font que ralentir ou bloquer brièvement des actions ; nous ne prenons pas de décisions automatisées ayant des effets juridiques ou similairement significatifs à votre égard.
 
@@ -49,7 +52,9 @@ Les publications que vous rendez visibles par vous seul ne sont pas publiques : 
 
 ## 5. Cookies
 
-Nous n'utilisons que les cookies nécessaires au fonctionnement du Service. Nous n'utilisons pas de cookies publicitaires ou analytiques.
+Nous utilisons les cookies nécessaires au fonctionnement du Service et, uniquement si vous les acceptez, des cookies de mesure d'audience. Nous n'utilisons pas de cookies publicitaires.
+
+**Cookies nécessaires**
 
 | Cookie | Finalité | Durée |
 |---|---|---|
@@ -57,14 +62,27 @@ Nous n'utilisons que les cookies nécessaires au fonctionnement du Service. Nous
 | `ni_oidc` | Protège le processus de connexion | 10 minutes |
 | `ni_sso` | Se souvient qu'une connexion automatique a déjà été tentée, afin d'éviter des redirections répétées | 24 heures |
 | `ni_vid` | Identifiant aléatoire pour les mentions « j'aime » et les commentaires sans compte, et pour la prévention des abus | 400 jours |
+| `ni_locale` | Mémorise la langue que vous avez choisie | 1 an |
+| `ni_theme` | Mémorise le thème de couleurs que vous avez choisi | 1 an |
+| `ni_consent` | Mémorise si vous avez accepté ou refusé les cookies de mesure d'audience | 180 jours |
 
 Si vous supprimez ces cookies, vous êtes déconnecté et traité comme un nouveau visiteur.
+
+**Cookies de mesure d'audience (uniquement avec votre consentement)**
+
+| Cookie | Finalité | Durée |
+|---|---|---|
+| `_ga`, `_ga_<ID>` | Google Analytics : distingue les visiteurs et les visites | 13 mois |
+| `_clck` | Microsoft Clarity : conserve un identifiant pseudonyme du visiteur | 1 an |
+| `_clsk` | Microsoft Clarity : relie les pages vues en une seule visite | 1 jour |
+
+Microsoft peut également déposer des cookies sur ses propres domaines lors du chargement de Clarity ; ils sont décrits dans la déclaration de confidentialité de Microsoft. Vous pouvez accepter ou refuser les cookies de mesure d'audience dans le bandeau affiché lors de votre première visite, et modifier votre choix à tout moment avec le bouton « Paramètres des cookies » en haut de la présente politique. Lorsque vous retirez votre consentement, nous supprimons les cookies de mesure d'audience déposés sur niceideas et cessons de charger les outils.
 
 ## 6. Partage
 
 Nous ne vendons ni ne louons d'informations personnelles, et nous ne les partageons pas à des fins de publicité comportementale intercontextuelle. Nous les partageons uniquement avec :
 
-- **Des prestataires de services** qui les traitent pour notre compte en vertu d'un contrat : Hetzner Online GmbH (serveurs et base de données, Allemagne) et Cloudflare, Inc. (sécurité réseau, diffusion de contenu et stockage des médias en Europe de l'Ouest ; son réseau opère dans le monde entier).
+- **Des prestataires de services** qui les traitent pour notre compte en vertu d'un contrat : Hetzner Online GmbH (serveurs et base de données, Allemagne) et Cloudflare, Inc. (sécurité réseau, diffusion de contenu et stockage des médias en Europe de l'Ouest ; son réseau opère dans le monde entier) ; et, uniquement si vous acceptez les cookies de mesure d'audience, Google (Google Analytics) et Microsoft (Microsoft Clarity), qui traitent les données de mesure d'audience principalement aux États-Unis.
 - **NiceMatrix ID**, le service de connexion que nous exploitons, pour vous connecter et traiter la suppression de compte.
 - **Les applications que vous autorisez**, qui ne reçoivent que ce que vous autorisez, comme les publications qu'elles ont publiées et votre profil public.
 - **Le public**, comme décrit à la section 4.
@@ -75,11 +93,13 @@ Nous ne vendons ni ne louons d'informations personnelles, et nous ne les partage
 
 NiceMatrix est basée au Canada. Nos serveurs et le stockage des médias se trouvent en Europe (Allemagne et Europe de l'Ouest), et notre fournisseur de réseau traite les requêtes dans le pays le plus proche de vous. Vos informations peuvent donc être traitées en Allemagne, dans d'autres pays européens, au Canada et dans d'autres pays où nos prestataires opèrent, dont les lois peuvent différer de celles de votre pays.
 
-Les transferts depuis l'Espace économique européen, le Royaume-Uni et la Suisse vers le Canada s'appuient sur les décisions d'adéquation relatives au Canada. Les autres transferts s'appuient sur les clauses contractuelles types incluses dans les conditions de traitement des données de nos prestataires, ou sur d'autres garanties reconnues par la loi.
+Si vous acceptez les cookies de mesure d'audience, Google et Microsoft traitent les données de mesure d'audience aux États-Unis et dans d'autres pays où ils exercent leurs activités.
+
+Les transferts depuis l'Espace économique européen, le Royaume-Uni et la Suisse vers le Canada s'appuient sur les décisions d'adéquation relatives au Canada. Les transferts vers Google et Microsoft aux États-Unis s'appuient sur le cadre de protection des données UE–États-Unis (Data Privacy Framework) et ses extensions au Royaume-Uni et à la Suisse, au titre duquel les deux sociétés sont certifiées, ou sur des clauses contractuelles types. Les autres transferts s'appuient sur les clauses contractuelles types incluses dans les conditions de traitement des données de nos prestataires, ou sur d'autres garanties reconnues par la loi.
 
 ## 8. Chine continentale
 
-Pour les connexions provenant de Chine continentale, seules les pages individuelles de publications partagées ainsi que les mentions « j'aime » et les commentaires qui s'y rapportent sont accessibles. Si vous consultez, aimez ou commentez une telle page depuis la Chine continentale, les informations décrites à la section 2 sont traitées et stockées hors de Chine continentale, principalement en Allemagne. En interagissant avec la page, vous consentez à ce transfert. Vous pouvez exercer vos droits en vertu de la loi sur la protection des informations personnelles de la République populaire de Chine en écrivant à support@nicematrix.ca.
+Pour les connexions provenant de Chine continentale, seules les pages individuelles de publications partagées ainsi que les mentions « j'aime » et les commentaires qui s'y rapportent sont accessibles. Si vous consultez, aimez ou commentez une telle page depuis la Chine continentale, les informations décrites à la section 2 sont traitées et stockées hors de Chine continentale, principalement en Allemagne. En interagissant avec la page, vous consentez à ce transfert. Les outils de mesure d'audience ne sont pas utilisés pour les connexions provenant de Chine continentale. Vous pouvez exercer vos droits en vertu de la loi sur la protection des informations personnelles de la République populaire de Chine en écrivant à support@nicematrix.ca.
 
 ## 9. Durée de conservation des informations
 
@@ -95,6 +115,9 @@ Pour les connexions provenant de Chine continentale, seules les pages individuel
 | Sessions de connexion | Jusqu'à la déconnexion ou après 30 jours sans utilisation ; les enregistrements expirés sont supprimés quotidiennement |
 | Blocages de visiteurs et contrôles anti-spam | Jusqu'à leur expiration ; les enregistrements expirés sont supprimés quotidiennement |
 | Journaux d'accès du serveur web | 14 jours |
+| Données Google Analytics liées à des cookies ou à des identifiants de visiteur | Jusqu'à 14 mois |
+| Enregistrements de sessions Microsoft Clarity | 30 jours ; enregistrements que nous conservons pour examen : jusqu'à 13 mois |
+| Autres données Microsoft Clarity (cartes de chaleur, statistiques) | Jusqu'à 13 mois |
 | Journaux d'application (erreurs et événements de service, sans adresses IP ni contenu) | Supprimés automatiquement lorsque la limite de stockage des journaux du serveur est atteinte |
 | Sauvegardes de la base de données | Jusqu'à 14 jours, après quoi les informations supprimées disparaissent également des sauvegardes |
 | Avis de suppression de compte (identifiant de compte, événement, heure) | Aussi longtemps que nécessaire pour démontrer que la suppression a été effectuée |
@@ -130,11 +153,11 @@ Le Service ne s'adresse pas aux enfants de moins de 13 ans, et nous ne collecton
 
 ## 13. Sécurité
 
-Nous protégeons les informations grâce au chiffrement en transit (HTTPS), à des hashes à sens unique à la place des codes de session en clair, des adresses IP et des identifiants de navigateur, à des messages signés entre nos services, à un accès limité au personnel autorisé, à une politique de sécurité du contenu stricte sans scripts externes, et à des sauvegardes quotidiennes conservées pendant une durée limitée. Aucun système n'est parfaitement sécurisé. Si une violation de sécurité crée un risque réel de préjudice important, nous vous en informerons, ainsi que les autorités, comme l'exige la loi.
+Nous protégeons les informations grâce au chiffrement en transit (HTTPS), à des hashes à sens unique à la place des codes de session en clair, des adresses IP et des identifiants de navigateur, à des messages signés entre nos services, à un accès limité au personnel autorisé, à une politique de sécurité du contenu stricte qui n'autorise aucun script externe autre que les outils facultatifs de mesure d'audience décrits à la section 2, chargés uniquement après votre acceptation, et à des sauvegardes quotidiennes conservées pendant une durée limitée. Aucun système n'est parfaitement sécurisé. Si une violation de sécurité crée un risque réel de préjudice important, nous vous en informerons, ainsi que les autorités, comme l'exige la loi.
 
 ## 14. Avis destiné aux résidents de Californie
 
-Au cours des 12 derniers mois, nous avons collecté des identifiants (identifiant de compte, identifiant d'utilisateur, adresses IP et identifiants de navigateur sous forme de hash), des données d'activité sur Internet (journaux et interactions) et le contenu que vous publiez, à partir des sources et aux fins décrites aux sections 2 et 3. Nous avons divulgué ces informations à des fins commerciales uniquement aux prestataires de services mentionnés à la section 6. Nous ne vendons ni ne partageons d'informations personnelles à des fins de publicité comportementale intercontextuelle, et nous n'utilisons pas d'informations personnelles sensibles pour déduire des caractéristiques vous concernant. La conservation est décrite à la section 9.
+Au cours des 12 derniers mois, nous avons collecté des identifiants (identifiant de compte, identifiant d'utilisateur, adresses IP et identifiants de navigateur sous forme de hash), des données d'activité sur Internet (journaux, interactions et, si vous acceptez les cookies de mesure d'audience, données de mesure d'audience) et le contenu que vous publiez, à partir des sources et aux fins décrites aux sections 2 et 3. Nous avons divulgué ces informations à des fins commerciales uniquement aux prestataires de services mentionnés à la section 6, y compris Google et Microsoft pour la mesure d'audience si vous acceptez les cookies de mesure d'audience. Nous ne vendons ni ne partageons d'informations personnelles à des fins de publicité comportementale intercontextuelle, et nous n'utilisons pas d'informations personnelles sensibles pour déduire des caractéristiques vous concernant. La conservation est décrite à la section 9.
 
 ## 15. Modifications de la présente politique
 

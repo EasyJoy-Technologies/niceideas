@@ -1,4 +1,4 @@
-> **Összefoglaló.** Csak azt gyűjtjük, amire a niceideas működéséhez szükségünk van: az Ön profilját, amit közzétesz, és korlátozott technikai adatokat a Szolgáltatás biztonságának fenntartásához. Az Ön bejegyzései nyilvánosak, kivéve, ha csak az Ön számára láthatóvá teszi őket. Nem adunk el személyes adatokat, nem jelenítünk meg hirdetéseket, és nem használunk külső nyomkövetőket. Bejegyzéseit bármikor törölheti, és fiókját a NiceMatrix ID törlésével törölheti. Írjon a support@nicematrix.ca címre bármilyen adatvédelmi kérdéssel vagy kéréssel.
+> **Összefoglaló.** Csak azt gyűjtjük, amire a niceideas működéséhez szükségünk van: az Ön profilját, amit közzétesz, és korlátozott technikai adatokat a Szolgáltatás biztonságának fenntartásához. Az Ön bejegyzései nyilvánosak, kivéve, ha csak az Ön számára láthatóvá teszi őket. Nem adunk el személyes adatokat, és nem jelenítünk meg hirdetéseket. Csak ha Ön elfogadja az analitikai cookie-kat, használjuk a Google Analytics és a Microsoft Clarity szolgáltatást annak megértésére, hogyan használják a Szolgáltatást. Bejegyzéseit bármikor törölheti, és fiókját a NiceMatrix ID törlésével törölheti. Írjon a support@nicematrix.ca címre bármilyen adatvédelmi kérdéssel vagy kéréssel.
 
 ## 1. Kik vagyunk
 
@@ -22,7 +22,9 @@ A jelen szabályzat elmagyarázza, milyen információkat gyűjt a niceideas, mi
 
 **Az Ön által engedélyezett alkalmazásoktól származó információk.** Az Ön által engedélyezett alkalmazások elküldik nekünk az általuk közzétett bejegyzéseket és médiafájlokat, az alkalmazás azonosítójával együtt.
 
-**Amit nem gyűjtünk.** Nem használunk hirdetési, analitikai vagy közösségi média nyomkövető eszközöket, nem építünk hirdetési profilokat, és nem gyűjtünk pontos helyadatokat. Nem kérünk érzékeny információkat, de bejegyzései felfedhetik azokat, ha Ön úgy választja, hogy közzéteszi.
+**Használati analitika (csak az Ön hozzájárulásával).** Ha elfogadja az analitikai cookie-kat, a Google Analytics (Google) és a Microsoft Clarity (Microsoft) segítségével megértjük, hogyan használják a weboldalakat, és fejlesztjük azokat. Ezek az eszközök gyűjtik az Ön által meglátogatott oldalakat, a kattintásokat, a görgetést és az egérmozgásokat, az IP-címéből levezetett hozzávetőleges tartózkodási helyét, az eszközre és a böngészőre vonatkozó információkat, valamint a cookie-kban tárolt álneves azonosítókat. A Microsoft Clarity munkamenet-felvételeket és hőtérképeket is készít; úgy állítjuk be, hogy az oldalon lévő összes szöveget elrejtse, beleértve az Ön által begépelt szöveget is, így nem rögzíti a bejegyzések, hozzászólások és űrlapok tartalmát. A Google hirdetési funkcióit kikapcsoljuk, és ezeket az eszközöket nem használjuk a Beállítások oldalon, a moderálási oldalakon, sem a kínai szárazföldről érkező kapcsolatoknál. Ha elutasítja az analitikai cookie-kat, vagy nem választ, ezek az eszközök nem töltődnek be.
+
+**Amit nem gyűjtünk.** Nem használunk hirdetési vagy közösségi média nyomkövető eszközöket, nem építünk hirdetési profilokat, és nem gyűjtünk pontos helyadatokat. Nem kérünk érzékeny információkat, de bejegyzései felfedhetik azokat, ha Ön úgy választja, hogy közzéteszi.
 
 ## 3. Hogyan és miért használjuk az információkat
 
@@ -36,6 +38,7 @@ A jelen szabályzat elmagyarázza, milyen információkat gyűjt a niceideas, mi
 | Fióktörlés feldolgozása | Fiókazonosító, törlési értesítések | Szerződés; jogi kötelezettségek |
 | Kérések megválaszolása és jogi követelések kezelése | A kérésben szereplő információk | Jogi kötelezettségek; jogos érdek |
 | A Szolgáltatás megjelenítése az Ön nyelvén | A linkben kiválasztott nyelv, böngésző nyelve | Jogos érdek |
+| Annak megértése, hogyan használják a Szolgáltatást, és annak fejlesztése (használati analitika) | Használati és eszközadatok, analitikai cookie-k | Az Ön hozzájárulása, amelyet bármikor visszavonhat |
 
 A tartalommal és fiókokkal kapcsolatos döntéseket emberek hozzák. Az automatikus sebességkorlátok csak lassítják vagy röviden blokkolják a cselekvéseket; nem hozunk olyan automatizált döntéseket, amelyek jogi vagy hasonlóan jelentős hatással vannak Önre.
 
@@ -49,7 +52,9 @@ A csak az Ön számára láthatóvá tett bejegyzések nem nyilvánosak: csak Ö
 
 ## 5. Cookie-k
 
-Csak olyan cookie-kat használunk, amelyek a Szolgáltatás működéséhez szükségesek. Nem használunk hirdetési vagy analitikai cookie-kat.
+A Szolgáltatás működéséhez szükséges cookie-kat, valamint – csak ha Ön elfogadja őket – analitikai cookie-kat használunk. Hirdetési cookie-kat nem használunk.
+
+**Szükséges cookie-k**
 
 | Cookie | Cél | Időtartam |
 |---|---|---|
@@ -57,14 +62,27 @@ Csak olyan cookie-kat használunk, amelyek a Szolgáltatás működéséhez szü
 | `ni_oidc` | Védi a bejelentkezési folyamatot | 10 perc |
 | `ni_sso` | Megjegyzi, hogy az automatikus bejelentkezést már megpróbálták, az ismétlődő átirányítások elkerülésére | 24 óra |
 | `ni_vid` | Véletlenszerű azonosító a fiók nélküli kedvelésekhez és hozzászólásokhoz, valamint a visszaélés-megelőzéshez | 400 nap |
+| `ni_locale` | Megjegyzi a választott nyelvet | 1 év |
+| `ni_theme` | Megjegyzi a választott színtémát | 1 év |
+| `ni_consent` | Megjegyzi, hogy elfogadta vagy elutasította-e az analitikai cookie-kat | 180 nap |
 
 Ha törli ezeket a cookie-kat, kijelentkezik, és új látogatóként kezeljük.
+
+**Analitikai cookie-k (csak az Ön hozzájárulásával)**
+
+| Cookie | Cél | Időtartam |
+|---|---|---|
+| `_ga`, `_ga_<ID>` | Google Analytics: megkülönbözteti a látogatókat és a látogatásokat | 13 hónap |
+| `_clck` | Microsoft Clarity: álneves látogatóazonosítót tárol | 1 év |
+| `_clsk` | Microsoft Clarity: az oldalmegtekintéseket egy látogatássá kapcsolja össze | 1 nap |
+
+A Clarity betöltésekor a Microsoft a saját domainjein is elhelyezhet cookie-kat; ezeket a Microsoft adatvédelmi nyilatkozata ismerteti. Az analitikai cookie-kat az első látogatáskor megjelenő értesítésben fogadhatja el vagy utasíthatja el, és döntését bármikor megváltoztathatja a szabályzat tetején található „Sütibeállítások” gombbal. Ha visszavonja hozzájárulását, töröljük a niceideas által elhelyezett analitikai cookie-kat, és többé nem töltjük be az eszközöket.
 
 ## 6. Megosztás
 
 Nem adunk el vagy bérbe adunk személyes adatokat, és nem osztjuk meg azokat kontextusok közötti viselkedési hirdetés céljából. Csak a következőkkel osztjuk meg:
 
-- **Szolgáltatók**, akik szerződés alapján feldolgozzák azokat számunkra: Hetzner Online GmbH (szerverek és adatbázis, Németország) és Cloudflare, Inc. (hálózati biztonság, tartalomszolgáltatás és médiatárolás Nyugat-Európában; hálózata világszerte működik).
+- **Szolgáltatók**, akik szerződés alapján feldolgozzák azokat számunkra: Hetzner Online GmbH (szerverek és adatbázis, Németország) és Cloudflare, Inc. (hálózati biztonság, tartalomszolgáltatás és médiatárolás Nyugat-Európában; hálózata világszerte működik); valamint – csak ha Ön elfogadja az analitikai cookie-kat – a Google (Google Analytics) és a Microsoft (Microsoft Clarity), amelyek a használati analitikai adatokat elsősorban az Egyesült Államokban kezelik.
 - **NiceMatrix ID**, az általunk üzemeltetett bejelentkezési szolgáltatás, az Ön bejelentkezéséhez és a fióktörlés feldolgozásához.
 - **Az Ön által engedélyezett alkalmazások**, amelyek csak azt kapják meg, amit engedélyez, mint például az általuk közzétett bejegyzéseket és az Ön nyilvános profilját.
 - **A nyilvánosság**, a 4. szakaszban leírtak szerint.
@@ -75,11 +93,13 @@ Nem adunk el vagy bérbe adunk személyes adatokat, és nem osztjuk meg azokat k
 
 A NiceMatrix Kanadában működik. Szervereink és médiatárolónk Európában (Németországban és Nyugat-Európában) találhatók, és hálózati szolgáltatónk az Önhöz legközelebbi országban dolgozza fel a kéréseket. Információi ezért feldolgozhatók Németországban, más európai országokban, Kanadában és más országokban, ahol szolgáltatóink működnek, amelyek jogrendszere eltérhet az Ön országáétól.
 
-Az Európai Gazdasági Térségből, az Egyesült Királyságból és Svájcból Kanadába irányuló adattovábbítás a Kanadára vonatkozó megfelelőségi határozatokra épül. Más adattovábbítások a szolgáltatóink adatkezelési feltételeiben szereplő Általános Szerződési Feltételekre (Standard Contractual Clauses), vagy más, jog által elismert garanciákra épülnek.
+Ha Ön elfogadja az analitikai cookie-kat, a Google és a Microsoft az analitikai adatokat az Egyesült Államokban és más országokban kezeli, ahol tevékenységet folytat.
+
+Az Európai Gazdasági Térségből, az Egyesült Királyságból és Svájcból Kanadába irányuló adattovábbítás a Kanadára vonatkozó megfelelőségi határozatokra épül. A Google és a Microsoft részére az Egyesült Államokba történő továbbítás az EU–USA adatvédelmi keretrendszerre (Data Privacy Framework) és annak az Egyesült Királyságra és Svájcra kiterjedő kiegészítéseire épül, amelyek alapján mindkét vállalat tanúsítvánnyal rendelkezik, vagy általános szerződési feltételekre. Más adattovábbítások a szolgáltatóink adatkezelési feltételeiben szereplő Általános Szerződési Feltételekre (Standard Contractual Clauses), vagy más, jog által elismert garanciákra épülnek.
 
 ## 8. A kínai szárazföld
 
-A kínai szárazföldről érkező kapcsolatok esetében csak az egyes megosztott bejegyzés-oldalak, illetve az azokon lévő kedvelések és hozzászólások érhetők el. Ha a kínai szárazföldről megtekint, kedvel vagy kommentál egy ilyen oldalt, a 2. szakaszban leírt információk a kínai szárazföldön kívül, elsősorban Németországban kerülnek feldolgozásra és tárolásra. Az oldallal való interakcióval Ön hozzájárul ehhez az adattovábbításhoz. A Kínai Népköztársaság Személyes Információk Védelméről szóló törvénye szerinti jogait a support@nicematrix.ca címre írva érvényesíthet.
+A kínai szárazföldről érkező kapcsolatok esetében csak az egyes megosztott bejegyzés-oldalak, illetve az azokon lévő kedvelések és hozzászólások érhetők el. Ha a kínai szárazföldről megtekint, kedvel vagy kommentál egy ilyen oldalt, a 2. szakaszban leírt információk a kínai szárazföldön kívül, elsősorban Németországban kerülnek feldolgozásra és tárolásra. Az oldallal való interakcióval Ön hozzájárul ehhez az adattovábbításhoz. A kínai szárazföldről érkező kapcsolatoknál analitikai eszközöket nem használunk. A Kínai Népköztársaság Személyes Információk Védelméről szóló törvénye szerinti jogait a support@nicematrix.ca címre írva érvényesíthet.
 
 ## 9. Mennyi ideig tartjuk meg az információkat
 
@@ -95,6 +115,9 @@ A kínai szárazföldről érkező kapcsolatok esetében csak az egyes megosztot
 | Bejelentkezési munkamenetek | A kijelentkezésig, vagy 30 napos inaktivitás után; a lejárt feljegyzéseket naponta töröljük |
 | Látogatók letiltása és spam-ellenőrzések | A lejáratukig; a lejárt feljegyzéseket naponta töröljük |
 | Webszerver hozzáférési naplók | 14 nap |
+| Cookie-khoz vagy látogatóazonosítókhoz kapcsolt Google Analytics-adatok | Legfeljebb 14 hónap |
+| Microsoft Clarity munkamenet-felvételek | 30 nap; az áttekintésre mentett felvételek legfeljebb 13 hónap |
+| Egyéb Microsoft Clarity-adatok (hőtérképek, statisztikák) | Legfeljebb 13 hónap |
 | Alkalmazásnaplók (hibák és szolgáltatási események, IP-cím vagy tartalom nélkül) | Automatikusan törlődik, amikor a szerver naplótárolási korlátját elérik |
 | Adatbázis biztonsági mentések | Legfeljebb 14 nap, ezután a törölt információ is eltűnik a biztonsági mentésekből |
 | Fióktörlési értesítések (fiókazonosító, esemény, idő) | Amíg szükséges annak igazolásához, hogy a törlés elvégzésre került |
@@ -130,11 +153,11 @@ A Szolgáltatás nem 13 év alatti gyermekeknek szól, és nem gyűjtünk tudato
 
 ## 13. Biztonság
 
-Információit titkosítással (HTTPS) védjük az átvitel során, egyirányú hash-ekkel a nyers munkamenet-kódok, IP-címek és böngésző-azonosítók helyett, szolgáltatásaink közötti aláírt üzenetekkel, a hozzáférés jogosult munkatársakra korlátozásával, szigorú, külső szkriptek nélküli tartalombiztonsági politikával, és korlátozott ideig tárolt napi biztonsági mentésekkel. Nincs tökéletesen biztonságos rendszer. Ha egy biztonsági incidens jelentős kár valódi kockázatát jelenti, értesítjük Önt és a hatóságokat, a törvény által előírt módon.
+Információit titkosítással (HTTPS) védjük az átvitel során, egyirányú hash-ekkel a nyers munkamenet-kódok, IP-címek és böngésző-azonosítók helyett, szolgáltatásaink közötti aláírt üzenetekkel, a hozzáférés jogosult munkatársakra korlátozásával, szigorú tartalombiztonsági politikával, amely a 2. szakaszban leírt, csak az Ön elfogadása után betöltődő opcionális analitikai eszközökön kívül nem enged külső szkripteket, és korlátozott ideig tárolt napi biztonsági mentésekkel. Nincs tökéletesen biztonságos rendszer. Ha egy biztonsági incidens jelentős kár valódi kockázatát jelenti, értesítjük Önt és a hatóságokat, a törvény által előírt módon.
 
 ## 14. Tájékoztatás kaliforniai lakosok számára
 
-Az elmúlt 12 hónapban azonosítókat (fiókazonosító, felhasználónév, hash-elt IP-címek és böngésző-azonosítók), internetes tevékenységet (naplók és interakciók) és az Ön által közzétett tartalmat gyűjtöttük, a 2. és 3. szakaszban leírt forrásokból és célokra. Ezeket az információkat csak üzleti célokra tettük hozzáférhetővé a 6. szakaszban felsorolt szolgáltatók számára. Nem adunk el vagy osztunk meg személyes adatokat kontextusok közötti viselkedési hirdetés céljából, és nem használunk érzékeny személyes adatokat az Ön jellemzőinek kikövetkeztetésére. A megőrzés a 9. szakaszban van leírva.
+Az elmúlt 12 hónapban azonosítókat (fiókazonosító, felhasználónév, hash-elt IP-címek és böngésző-azonosítók), internetes tevékenységet (naplók, interakciók és – ha Ön elfogadja az analitikai cookie-kat – használati analitika) és az Ön által közzétett tartalmat gyűjtöttük, a 2. és 3. szakaszban leírt forrásokból és célokra. Ezeket az információkat csak üzleti célokra tettük hozzáférhetővé a 6. szakaszban felsorolt szolgáltatók számára, ideértve – ha Ön elfogadja az analitikai cookie-kat – a Google-t és a Microsoftot a használati analitika céljára. Nem adunk el vagy osztunk meg személyes adatokat kontextusok közötti viselkedési hirdetés céljából, és nem használunk érzékeny személyes adatokat az Ön jellemzőinek kikövetkeztetésére. A megőrzés a 9. szakaszban van leírva.
 
 ## 15. A jelen szabályzat módosításai
 

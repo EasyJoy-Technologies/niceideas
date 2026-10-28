@@ -268,6 +268,13 @@
     "saving": "Sparar…",
     "title": "Rubrik"
   },
+  "consent": {
+    "accept": "Godkänn",
+    "reject": "Avvisa",
+    "settings": "Cookieinställningar",
+    "text": "Med ditt samtycke använder vi Google Analytics och Microsoft Clarity för att förstå hur webbplatsen används och förbättra den. De laddas bara om du godkänner, och du kan ändra ditt val när som helst.",
+    "title": "Analyscookies"
+  },
   "discover": {
     "title": "Upptäck"
   },

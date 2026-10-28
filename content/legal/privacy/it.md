@@ -1,4 +1,4 @@
-> **Riepilogo.** Raccogliamo solo ciò che è necessario per gestire niceideas: il suo profilo, ciò che pubblica e dati tecnici limitati per mantenere sicuro il Servizio. Le sue pubblicazioni sono pubbliche, a meno che non le renda visibili solo a lei. Non vendiamo informazioni personali, non mostriamo pubblicità e non utilizziamo tracker esterni. Può eliminare pubblicazioni in qualsiasi momento ed eliminare il suo account eliminando il suo NiceMatrix ID. Scriva a support@nicematrix.ca per qualsiasi domanda o richiesta relativa alla privacy.
+> **Riepilogo.** Raccogliamo solo ciò che è necessario per gestire niceideas: il suo profilo, ciò che pubblica e dati tecnici limitati per mantenere sicuro il Servizio. Le sue pubblicazioni sono pubbliche, a meno che non le renda visibili solo a lei. Non vendiamo informazioni personali e non mostriamo pubblicità. Solo se accetta i cookie analitici, utilizziamo Google Analytics e Microsoft Clarity per capire come viene utilizzato il Servizio. Può eliminare pubblicazioni in qualsiasi momento ed eliminare il suo account eliminando il suo NiceMatrix ID. Scriva a support@nicematrix.ca per qualsiasi domanda o richiesta relativa alla privacy.
 
 ## 1. Chi siamo
 
@@ -22,7 +22,9 @@ Questa informativa spiega quali informazioni raccoglie niceideas, perché, per q
 
 **Informazioni dalle app che autorizza.** Le app che lei autorizza ci inviano le pubblicazioni e i media che pubblica tramite esse, insieme all'identificativo dell'app.
 
-**Cosa non raccogliamo.** Non utilizziamo strumenti di pubblicità, analisi o tracciamento sui social media, non creiamo profili pubblicitari e non raccogliamo la posizione precisa. Non chiediamo informazioni sensibili, ma le sue pubblicazioni potrebbero rivelarle se decide di pubblicarle.
+**Analisi dell'utilizzo (solo con il suo consenso).** Se accetta i cookie analitici, utilizziamo Google Analytics (Google) e Microsoft Clarity (Microsoft) per capire come vengono utilizzate le pagine web e migliorarle. Questi strumenti raccolgono le pagine che visita, i clic, lo scorrimento e i movimenti del mouse, la sua posizione approssimativa ricavata dall'indirizzo IP, informazioni sul dispositivo e sul browser, e identificativi pseudonimi memorizzati nei cookie. Microsoft Clarity crea inoltre registrazioni delle sessioni e mappe di calore; lo configuriamo in modo da nascondere tutto il testo della pagina, compreso ciò che lei digita, così da non registrare il contenuto di pubblicazioni, commenti o moduli. Disattiviamo le funzioni pubblicitarie di Google e non utilizziamo questi strumenti nella pagina Impostazioni, nelle pagine di moderazione né per le connessioni dalla Cina continentale. Se rifiuta i cookie analitici o non effettua una scelta, questi strumenti non vengono caricati.
+
+**Cosa non raccogliamo.** Non utilizziamo strumenti di pubblicità o di tracciamento sui social media, non creiamo profili pubblicitari e non raccogliamo la posizione precisa. Non chiediamo informazioni sensibili, ma le sue pubblicazioni potrebbero rivelarle se decide di pubblicarle.
 
 ## 3. Come utilizziamo le informazioni e perché
 
@@ -36,6 +38,7 @@ Questa informativa spiega quali informazioni raccoglie niceideas, perché, per q
 | Elaborare l'eliminazione dell'account | Identificativo dell'account, avvisi di eliminazione | Contratto; obblighi legali |
 | Rispondere alle sue richieste e gestire reclami legali | Informazioni contenute nella sua richiesta | Obblighi legali; interesse legittimo |
 | Mostrare il Servizio nella sua lingua | Lingua scelta nel link, lingua del browser | Interesse legittimo |
+| Capire come viene utilizzato il Servizio e migliorarlo (analisi dell'utilizzo) | Informazioni sull'utilizzo e sul dispositivo, cookie analitici | Il suo consenso, che può revocare in qualsiasi momento |
 
 Le decisioni su contenuti e account sono prese da persone. I limiti automatici di frequenza si limitano a rallentare o bloccare brevemente le azioni; non prendiamo decisioni automatizzate che abbiano effetti giuridici o similmente significativi su di lei.
 
@@ -49,7 +52,9 @@ Le pubblicazioni che rende visibili solo a lei non sono pubbliche: solo lei può
 
 ## 5. Cookie
 
-Utilizziamo solo i cookie necessari al funzionamento del Servizio. Non utilizziamo cookie pubblicitari o di analisi.
+Utilizziamo i cookie necessari al funzionamento del Servizio e, solo se li accetta, cookie analitici. Non utilizziamo cookie pubblicitari.
+
+**Cookie necessari**
 
 | Cookie | Finalità | Durata |
 |---|---|---|
@@ -57,14 +62,27 @@ Utilizziamo solo i cookie necessari al funzionamento del Servizio. Non utilizzia
 | `ni_oidc` | Protegge il processo di accesso | 10 minuti |
 | `ni_sso` | Ricorda che l'accesso automatico è già stato tentato, per evitare reindirizzamenti ripetuti | 24 ore |
 | `ni_vid` | Identificativo casuale per "mi piace" e commenti senza account, e per la prevenzione degli abusi | 400 giorni |
+| `ni_locale` | Ricorda la lingua che ha scelto | 1 anno |
+| `ni_theme` | Ricorda il tema di colori che ha scelto | 1 anno |
+| `ni_consent` | Ricorda se ha accettato o rifiutato i cookie analitici | 180 giorni |
 
 Se elimina questi cookie, viene disconnesso e trattato come un nuovo visitatore.
+
+**Cookie analitici (solo con il suo consenso)**
+
+| Cookie | Finalità | Durata |
+|---|---|---|
+| `_ga`, `_ga_<ID>` | Google Analytics: distingue visitatori e visite | 13 mesi |
+| `_clck` | Microsoft Clarity: conserva un identificativo pseudonimo del visitatore | 1 anno |
+| `_clsk` | Microsoft Clarity: collega le pagine visualizzate in un'unica visita | 1 giorno |
+
+Quando Clarity viene caricato, Microsoft può anche impostare cookie sui propri domini; sono descritti nell'informativa sulla privacy di Microsoft. Può accettare o rifiutare i cookie analitici nell'avviso mostrato alla sua prima visita e modificare la sua scelta in qualsiasi momento con il pulsante "Impostazioni cookie" in cima a questa informativa. Quando revoca il consenso, eliminiamo i cookie analitici impostati su niceideas e smettiamo di caricare gli strumenti.
 
 ## 6. Condivisione
 
 Non vendiamo né affittiamo informazioni personali, e non le condividiamo per pubblicità comportamentale cross-context. Le condividiamo solo con:
 
-- **Fornitori di servizi** che le trattano per nostro conto in base a un contratto: Hetzner Online GmbH (server e database, Germania) e Cloudflare, Inc. (sicurezza di rete, distribuzione di contenuti e archiviazione di media in Europa occidentale; la sua rete opera in tutto il mondo).
+- **Fornitori di servizi** che le trattano per nostro conto in base a un contratto: Hetzner Online GmbH (server e database, Germania) e Cloudflare, Inc. (sicurezza di rete, distribuzione di contenuti e archiviazione di media in Europa occidentale; la sua rete opera in tutto il mondo); e, solo se accetta i cookie analitici, Google (Google Analytics) e Microsoft (Microsoft Clarity), che trattano i dati di analisi dell'utilizzo principalmente negli Stati Uniti.
 - **NiceMatrix ID**, il servizio di accesso che gestiamo, per farla accedere e per elaborare l'eliminazione dell'account.
 - **App che lei autorizza**, che ricevono solo ciò che lei consente, come le pubblicazioni che hanno pubblicato e il suo profilo pubblico.
 - **Il pubblico**, come descritto nella Sezione 4.
@@ -75,11 +93,13 @@ Non vendiamo né affittiamo informazioni personali, e non le condividiamo per pu
 
 NiceMatrix ha sede in Canada. I nostri server e l'archiviazione dei media si trovano in Europa (Germania ed Europa occidentale), e il nostro fornitore di rete elabora le richieste nel paese più vicino a lei. Le sue informazioni possono quindi essere trattate in Germania, in altri paesi europei, in Canada e in altri paesi in cui operano i nostri fornitori, le cui leggi possono differire da quelle del suo paese.
 
-I trasferimenti dallo Spazio economico europeo, dal Regno Unito e dalla Svizzera verso il Canada si basano sulle decisioni di adeguatezza relative al Canada. Altri trasferimenti si basano sulle Clausole Contrattuali Standard incluse nelle condizioni di trattamento dei dati dei nostri fornitori, o su altre garanzie riconosciute dalla legge.
+Se accetta i cookie analitici, Google e Microsoft trattano i dati di analisi negli Stati Uniti e in altri paesi in cui operano.
+
+I trasferimenti dallo Spazio economico europeo, dal Regno Unito e dalla Svizzera verso il Canada si basano sulle decisioni di adeguatezza relative al Canada. I trasferimenti verso Google e Microsoft negli Stati Uniti si basano sul quadro UE-USA per la protezione dei dati personali (Data Privacy Framework) e sulle sue estensioni per il Regno Unito e la Svizzera, nell'ambito del quale entrambe le società sono certificate, o sulle Clausole Contrattuali Standard. Altri trasferimenti si basano sulle Clausole Contrattuali Standard incluse nelle condizioni di trattamento dei dati dei nostri fornitori, o su altre garanzie riconosciute dalla legge.
 
 ## 8. Cina continentale
 
-Per le connessioni dalla Cina continentale, sono disponibili solo le singole pagine delle pubblicazioni condivise e i "mi piace" e i commenti ad esse relativi. Se visualizza, metta "mi piace" o commenti su una di tali pagine dalla Cina continentale, le informazioni descritte nella Sezione 2 vengono trattate e archiviate fuori dalla Cina continentale, principalmente in Germania. Interagendo con la pagina, lei accetta tale trasferimento. Può esercitare i suoi diritti ai sensi della legge sulla protezione delle informazioni personali della Repubblica Popolare Cinese scrivendo a support@nicematrix.ca.
+Per le connessioni dalla Cina continentale, sono disponibili solo le singole pagine delle pubblicazioni condivise e i "mi piace" e i commenti ad esse relativi. Se visualizza, metta "mi piace" o commenti su una di tali pagine dalla Cina continentale, le informazioni descritte nella Sezione 2 vengono trattate e archiviate fuori dalla Cina continentale, principalmente in Germania. Interagendo con la pagina, lei accetta tale trasferimento. Gli strumenti di analisi non vengono utilizzati per le connessioni dalla Cina continentale. Può esercitare i suoi diritti ai sensi della legge sulla protezione delle informazioni personali della Repubblica Popolare Cinese scrivendo a support@nicematrix.ca.
 
 ## 9. Per quanto tempo conserviamo le informazioni
 
@@ -95,6 +115,9 @@ Per le connessioni dalla Cina continentale, sono disponibili solo le singole pag
 | Sessioni di accesso | Finché non si disconnette o dopo 30 giorni senza utilizzo; i record scaduti vengono eliminati quotidianamente |
 | Blocchi dei visitatori e controlli anti-spam | Fino alla scadenza; i record scaduti vengono eliminati quotidianamente |
 | Registri di accesso del server web | 14 giorni |
+| Dati di Google Analytics collegati a cookie o identificativi del visitatore | Fino a 14 mesi |
+| Registrazioni delle sessioni di Microsoft Clarity | 30 giorni; le registrazioni che salviamo per esaminarle, fino a 13 mesi |
+| Altri dati di Microsoft Clarity (mappe di calore, statistiche) | Fino a 13 mesi |
 | Registri dell'applicazione (errori ed eventi del servizio, senza indirizzi IP o contenuto) | Eliminati automaticamente quando viene raggiunto il limite di archiviazione dei registri del server |
 | Backup del database | Fino a 14 giorni, dopodiché le informazioni eliminate scompaiono anche dai backup |
 | Avvisi di eliminazione dell'account (identificativo dell'account, evento, ora) | Per il tempo necessario a dimostrare che l'eliminazione è stata effettuata |
@@ -130,11 +153,11 @@ Il Servizio non è destinato a minori di 13 anni, e non raccogliamo consapevolme
 
 ## 13. Sicurezza
 
-Proteggiamo le informazioni mediante crittografia in transito (HTTPS), hash unidirezionali invece di codici di sessione in chiaro, indirizzi IP e identificativi del browser, messaggi firmati tra i nostri servizi, accesso limitato al personale autorizzato, una rigida politica di sicurezza dei contenuti senza script esterni, e backup quotidiani conservati per un tempo limitato. Nessun sistema è perfettamente sicuro. Se una violazione della sicurezza crea un rischio reale di danno significativo, notificheremo lei e le autorità come richiesto dalla legge.
+Proteggiamo le informazioni mediante crittografia in transito (HTTPS), hash unidirezionali invece di codici di sessione in chiaro, indirizzi IP e identificativi del browser, messaggi firmati tra i nostri servizi, accesso limitato al personale autorizzato, una rigida politica di sicurezza dei contenuti che non consente script esterni diversi dagli strumenti di analisi facoltativi descritti nella Sezione 2, caricati solo dopo che lei li ha accettati, e backup quotidiani conservati per un tempo limitato. Nessun sistema è perfettamente sicuro. Se una violazione della sicurezza crea un rischio reale di danno significativo, notificheremo lei e le autorità come richiesto dalla legge.
 
 ## 14. Avviso per i residenti della California
 
-Negli ultimi 12 mesi abbiamo raccolto identificativi (identificativo dell'account, handle, indirizzi IP e identificativi del browser con hash), attività su internet (registri e interazioni) e i contenuti che pubblica, dalle fonti e per le finalità descritte nelle Sezioni 2 e 3. Abbiamo divulgato queste informazioni per finalità commerciali solo ai fornitori di servizi elencati nella Sezione 6. Non vendiamo né condividiamo informazioni personali per pubblicità comportamentale cross-context, e non utilizziamo informazioni personali sensibili per dedurre caratteristiche su di lei. La conservazione è descritta nella Sezione 9.
+Negli ultimi 12 mesi abbiamo raccolto identificativi (identificativo dell'account, handle, indirizzi IP e identificativi del browser con hash), attività su internet (registri, interazioni e, se accetta i cookie analitici, analisi dell'utilizzo) e i contenuti che pubblica, dalle fonti e per le finalità descritte nelle Sezioni 2 e 3. Abbiamo divulgato queste informazioni per finalità commerciali solo ai fornitori di servizi elencati nella Sezione 6, compresi Google e Microsoft per l'analisi dell'utilizzo se accetta i cookie analitici. Non vendiamo né condividiamo informazioni personali per pubblicità comportamentale cross-context, e non utilizziamo informazioni personali sensibili per dedurre caratteristiche su di lei. La conservazione è descritta nella Sezione 9.
 
 ## 15. Modifiche a questa informativa
 

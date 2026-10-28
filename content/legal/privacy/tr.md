@@ -1,4 +1,4 @@
-> **Özet.** Sadece niceideas'ı çalıştırmak için gerekli olanı topluyoruz: profilinizi, yayınladıklarınızı ve Hizmeti güvenli tutmak için sınırlı teknik verileri. Paylaşımlarınız, yalnızca size görünür yapmadığınız sürece herkese açıktır. Kişisel bilgileri satmıyoruz, reklam göstermiyoruz veya harici izleyiciler kullanmıyoruz. Paylaşımlarınızı istediğiniz zaman silebilir ve NiceMatrix ID'nizi silerek hesabınızı silebilirsiniz. Herhangi bir gizlilik sorusu veya talebi için support@nicematrix.ca adresine yazın.
+> **Özet.** Sadece niceideas'ı çalıştırmak için gerekli olanı topluyoruz: profilinizi, yayınladıklarınızı ve Hizmeti güvenli tutmak için sınırlı teknik verileri. Paylaşımlarınız, yalnızca size görünür yapmadığınız sürece herkese açıktır. Kişisel bilgileri satmıyoruz ve reklam göstermiyoruz. Yalnızca analiz çerezlerini kabul ederseniz, Hizmetin nasıl kullanıldığını anlamak için Google Analytics ve Microsoft Clarity kullanıyoruz. Paylaşımlarınızı istediğiniz zaman silebilir ve NiceMatrix ID'nizi silerek hesabınızı silebilirsiniz. Herhangi bir gizlilik sorusu veya talebi için support@nicematrix.ca adresine yazın.
 
 ## 1. Biz kimiz
 
@@ -22,7 +22,9 @@ Bu politika, niceideas'ın hangi bilgileri topladığını, nedenini, ne kadar s
 
 **Yetkilendirdiğiniz uygulamalardan gelen bilgiler.** Yetkilendirdiğiniz uygulamalar, bunlar aracılığıyla yayınladığınız paylaşımları ve medyayı, uygulama kimliğiyle birlikte bize gönderir.
 
-**Toplamadığımız şeyler.** Reklam, analiz veya sosyal medya izleme araçları kullanmıyoruz, reklam profilleri oluşturmuyoruz ve hassas konum toplamıyoruz. Hassas bilgiler istemiyoruz, ancak paylaşmayı seçerseniz paylaşımlarınız bunları ortaya çıkarabilir.
+**Kullanım analizi (yalnızca izninizle).** Analiz çerezlerini kabul ederseniz, web sayfalarının nasıl kullanıldığını anlamak ve onları geliştirmek için Google Analytics (Google) ve Microsoft Clarity (Microsoft) kullanırız. Bu araçlar ziyaret ettiğiniz sayfaları, tıklamaları, kaydırmaları ve fare hareketlerini, IP adresinizden çıkarılan yaklaşık konumunuzu, cihaz ve tarayıcı bilgilerini ve çerezlerde saklanan takma adlı tanımlayıcıları toplar. Microsoft Clarity ayrıca oturum kayıtları ve ısı haritaları oluşturur; bunu, yazdıklarınız dahil sayfadaki tüm metni gizleyecek şekilde yapılandırırız; böylece gönderilerin, yorumların veya formların içeriğini kaydetmez. Google'ın reklam özelliklerini kapatırız ve bu araçları Ayarlar sayfasında, moderasyon sayfalarında veya Çin anakarasından gelen bağlantılarda kullanmayız. Analiz çerezlerini reddederseniz veya bir seçim yapmazsanız bu araçlar yüklenmez.
+
+**Toplamadığımız şeyler.** Reklam veya sosyal medya izleme araçları kullanmıyoruz, reklam profilleri oluşturmuyoruz ve hassas konum toplamıyoruz. Hassas bilgiler istemiyoruz, ancak paylaşmayı seçerseniz paylaşımlarınız bunları ortaya çıkarabilir.
 
 ## 3. Bilgileri nasıl ve neden kullanıyoruz
 
@@ -36,6 +38,7 @@ Bu politika, niceideas'ın hangi bilgileri topladığını, nedenini, ne kadar s
 | Hesap silme işlemi | Hesap kimliği, silme bildirimleri | Sözleşme; hukuki yükümlülükler |
 | Taleplerinizi yanıtlama ve yasal talepleri işleme | Talebinizdeki bilgiler | Hukuki yükümlülükler; meşru menfaat |
 | Hizmeti kendi dilinizde gösterme | Bağlantıda seçilen dil, tarayıcı dili | Meşru menfaat |
+| Hizmetin nasıl kullanıldığını anlamak ve onu geliştirmek (kullanım analizi) | Kullanım ve cihaz bilgileri, analiz çerezleri | İstediğiniz zaman geri çekebileceğiniz izniniz |
 
 İçerik ve hesaplarla ilgili kararlar insanlar tarafından verilir. Otomatik hız sınırları yalnızca eylemleri yavaşlatır veya kısa süreliğine engeller; sizin üzerinizde yasal veya benzer şekilde önemli etkileri olan otomatik kararlar vermiyoruz.
 
@@ -49,7 +52,9 @@ Yalnızca size görünür yaptığınız paylaşımlar herkese açık değildir:
 
 ## 5. Çerezler
 
-Yalnızca Hizmetin çalışması için gerekli çerezleri kullanıyoruz. Reklam veya analiz çerezleri kullanmıyoruz.
+Hizmetin çalışması için gerekli çerezleri ve yalnızca kabul etmeniz halinde analiz çerezlerini kullanıyoruz. Reklam çerezleri kullanmıyoruz.
+
+**Gerekli çerezler**
 
 | Çerez | Amaç | Süre |
 |---|---|---|
@@ -57,14 +62,27 @@ Yalnızca Hizmetin çalışması için gerekli çerezleri kullanıyoruz. Reklam 
 | `ni_oidc` | Giriş işlemini korur | 10 dakika |
 | `ni_sso` | Tekrarlanan yönlendirmelerden kaçınmak için otomatik girişin zaten denendiğini hatırlar | 24 saat |
 | `ni_vid` | Hesapsız beğeniler ve yorumlar için, ve suistimali önlemek için rastgele tanımlayıcı | 400 gün |
+| `ni_locale` | Seçtiğiniz dili hatırlar | 1 yıl |
+| `ni_theme` | Seçtiğiniz renk temasını hatırlar | 1 yıl |
+| `ni_consent` | Analiz çerezlerini kabul edip etmediğinizi hatırlar | 180 gün |
 
 Bu çerezleri silerseniz, oturumunuz kapatılır ve yeni bir ziyaretçi olarak değerlendirilirsiniz.
+
+**Analiz çerezleri (yalnızca izninizle)**
+
+| Çerez | Amaç | Süre |
+|---|---|---|
+| `_ga`, `_ga_<ID>` | Google Analytics: ziyaretçileri ve ziyaretleri ayırt eder | 13 ay |
+| `_clck` | Microsoft Clarity: takma adlı bir ziyaretçi tanımlayıcısı saklar | 1 yıl |
+| `_clsk` | Microsoft Clarity: sayfa görüntülemelerini tek bir ziyarette birleştirir | 1 gün |
+
+Clarity yüklendiğinde Microsoft kendi alan adlarında da çerez ayarlayabilir; bunlar Microsoft'un gizlilik bildiriminde açıklanmıştır. Analiz çerezlerini ilk ziyaretinizde gösterilen bildirimde kabul edebilir veya reddedebilir, seçiminizi istediğiniz zaman bu politikanın başındaki "Çerez ayarları" düğmesiyle değiştirebilirsiniz. İzninizi geri çektiğinizde niceideas üzerinde ayarlanan analiz çerezlerini siler ve araçları yüklemeyi bırakırız.
 
 ## 6. Paylaşım
 
 Kişisel bilgileri satmıyoruz veya kiraya vermiyoruz, ve bunları bağlamlar arası davranışsal reklamcılık için paylaşmıyoruz. Bunları sadece şunlarla paylaşıyoruz:
 
-- Bizim için sözleşme kapsamında işleyen **hizmet sağlayıcılar**: Hetzner Online GmbH (sunucular ve veritabanı, Almanya) ve Cloudflare, Inc. (ağ güvenliği, içerik dağıtımı ve Batı Avrupa'da medya depolama; ağı dünya çapında çalışır).
+- Bizim için sözleşme kapsamında işleyen **hizmet sağlayıcılar**: Hetzner Online GmbH (sunucular ve veritabanı, Almanya) ve Cloudflare, Inc. (ağ güvenliği, içerik dağıtımı ve Batı Avrupa'da medya depolama; ağı dünya çapında çalışır); ve yalnızca analiz çerezlerini kabul ederseniz, kullanım analizi verilerini başlıca Amerika Birleşik Devletleri'nde işleyen Google (Google Analytics) ve Microsoft (Microsoft Clarity).
 - İşlettiğimiz giriş hizmeti olan **NiceMatrix ID**, sizi giriş yapmak ve hesap silme işlemini gerçekleştirmek için.
 - Yalnızca izin verdiğiniz şeyi alan **yetkilendirdiğiniz uygulamalar**, örneğin yayınladıkları paylaşımları ve herkese açık profilinizi.
 - Bölüm 4'te açıklandığı şekilde **halk**.
@@ -75,11 +93,13 @@ Kişisel bilgileri satmıyoruz veya kiraya vermiyoruz, ve bunları bağlamlar ar
 
 NiceMatrix Kanada merkezlidir. Sunucularımız ve medya depolamamız Avrupa'da (Almanya ve Batı Avrupa) bulunur, ve ağ sağlayıcımız istekleri size en yakın ülkede işler. Bilgileriniz dolayısıyla Almanya'da, diğer Avrupa ülkelerinde, Kanada'da ve sağlayıcılarımızın faaliyet gösterdiği, yasaları ülkenizden farklı olabilecek diğer ülkelerde işlenebilir.
 
-Avrupa Ekonomik Alanı, Birleşik Krallık ve İsviçre'den Kanada'ya yapılan transferler, Kanada için yeterlilik kararlarına dayanır. Diğer transferler, sağlayıcılarımızın veri işleme şartlarında yer alan Standart Sözleşme Maddelerine, veya yasa tarafından tanınan diğer güvencelere dayanır.
+Analiz çerezlerini kabul ederseniz, Google ve Microsoft analiz verilerini Amerika Birleşik Devletleri'nde ve faaliyet gösterdikleri diğer ülkelerde işler.
+
+Avrupa Ekonomik Alanı, Birleşik Krallık ve İsviçre'den Kanada'ya yapılan transferler, Kanada için yeterlilik kararlarına dayanır. Amerika Birleşik Devletleri'ndeki Google ve Microsoft'a yapılan transferler, her iki şirketin de sertifikalı olduğu AB-ABD Veri Gizliliği Çerçevesi'ne (Data Privacy Framework) ve bunun Birleşik Krallık ve İsviçre uzantılarına ya da Standart Sözleşme Maddelerine dayanır. Diğer transferler, sağlayıcılarımızın veri işleme şartlarında yer alan Standart Sözleşme Maddelerine, veya yasa tarafından tanınan diğer güvencelere dayanır.
 
 ## 8. Çin anakarası
 
-Çin anakarasından bağlantılar için, yalnızca paylaşılan bireysel gönderi sayfaları ve bunların altındaki beğeniler ve yorumlar erişilebilir. Çin anakarasından böyle bir sayfayı görüntülerseniz, beğenirseniz veya yorumlarsanız, Bölüm 2'de açıklanan bilgiler Çin anakarası dışında, öncelikle Almanya'da işlenir ve saklanır. Sayfayla etkileşime girerek bu transferi kabul edersiniz. Çin Halk Cumhuriyeti Kişisel Bilgilerin Korunması Kanunu kapsamındaki haklarınızı support@nicematrix.ca adresine yazarak kullanabilirsiniz.
+Çin anakarasından bağlantılar için, yalnızca paylaşılan bireysel gönderi sayfaları ve bunların altındaki beğeniler ve yorumlar erişilebilir. Çin anakarasından böyle bir sayfayı görüntülerseniz, beğenirseniz veya yorumlarsanız, Bölüm 2'de açıklanan bilgiler Çin anakarası dışında, öncelikle Almanya'da işlenir ve saklanır. Sayfayla etkileşime girerek bu transferi kabul edersiniz. Çin anakarasından gelen bağlantılarda analiz araçları kullanılmaz. Çin Halk Cumhuriyeti Kişisel Bilgilerin Korunması Kanunu kapsamındaki haklarınızı support@nicematrix.ca adresine yazarak kullanabilirsiniz.
 
 ## 9. Bilgileri ne kadar süreyle saklıyoruz
 
@@ -95,6 +115,9 @@ Avrupa Ekonomik Alanı, Birleşik Krallık ve İsviçre'den Kanada'ya yapılan t
 | Oturum açma oturumları | Çıkış yapana veya 30 gün kullanılmayana kadar; süresi dolan kayıtlar her gün silinir |
 | Ziyaretçi engellemeleri ve spam karşıtı kontroller | Süreleri dolana kadar; süresi dolan kayıtlar her gün silinir |
 | Web sunucusu erişim günlükleri | 14 gün |
+| Çerezlere veya ziyaretçi tanımlayıcılarına bağlı Google Analytics verileri | En fazla 14 ay |
+| Microsoft Clarity oturum kayıtları | 30 gün; inceleme için kaydettiğimiz kayıtlar en fazla 13 ay |
+| Diğer Microsoft Clarity verileri (ısı haritaları, istatistikler) | En fazla 13 ay |
 | Uygulama günlükleri (hatalar ve hizmet olayları, IP adresleri veya içerik olmadan) | Sunucunun günlük depolama sınırına ulaşıldığında otomatik olarak silinir |
 | Veritabanı yedeklemeleri | En fazla 14 gün, bundan sonra silinen bilgiler yedeklemelerden de kaybolur |
 | Hesap silme bildirimleri (hesap kimliği, olay, zaman) | Silmenin gerçekleştirildiğini göstermek için gerektiği kadar |
@@ -130,11 +153,11 @@ Hizmet, 13 yaşından küçük çocuklara yönelik değildir, ve bilerek onlarda
 
 ## 13. Güvenlik
 
-Bilgileri, aktarım sırasında şifreleme (HTTPS), ham oturum kodları, IP adresleri ve tarayıcı tanımlayıcıları yerine tek yönlü hash'ler, hizmetlerimiz arasında imzalı mesajlar, yetkili personelle sınırlı erişim, harici komut dosyaları olmadan sıkı bir içerik güvenliği politikası, ve sınırlı bir süre için saklanan günlük yedeklemelerle koruyoruz. Hiçbir sistem tamamen güvenli değildir. Bir güvenlik ihlali önemli zarar riski oluşturursa, yasanın gerektirdiği şekilde sizi ve yetkilileri bilgilendireceğiz.
+Bilgileri, aktarım sırasında şifreleme (HTTPS), ham oturum kodları, IP adresleri ve tarayıcı tanımlayıcıları yerine tek yönlü hash'ler, hizmetlerimiz arasında imzalı mesajlar, yetkili personelle sınırlı erişim, Bölüm 2'de açıklanan ve yalnızca kabul etmenizden sonra yüklenen isteğe bağlı analiz araçları dışında harici komut dosyalarına izin vermeyen sıkı bir içerik güvenliği politikası, ve sınırlı bir süre için saklanan günlük yedeklemelerle koruyoruz. Hiçbir sistem tamamen güvenli değildir. Bir güvenlik ihlali önemli zarar riski oluşturursa, yasanın gerektirdiği şekilde sizi ve yetkilileri bilgilendireceğiz.
 
 ## 14. Kaliforniya sakinleri için bildirim
 
-Son 12 ayda, Bölüm 2 ve 3'te açıklanan kaynaklardan ve amaçlar için tanımlayıcılar (hesap kimliği, kullanıcı adı, hash'lenmiş IP adresleri ve tarayıcı tanımlayıcıları), internet etkinliği (günlükler ve etkileşimler) ve yayınladığınız içeriği topladık. Bu bilgileri yalnızca iş amaçları için Bölüm 6'da listelenen hizmet sağlayıcılara ifşa ettik. Bağlamlar arası davranışsal reklamcılık için kişisel bilgileri satmıyoruz veya paylaşmıyoruz, ve hakkınızda özellikler çıkarmak için hassas kişisel bilgileri kullanmıyoruz. Saklama, Bölüm 9'da açıklanmıştır.
+Son 12 ayda, Bölüm 2 ve 3'te açıklanan kaynaklardan ve amaçlar için tanımlayıcılar (hesap kimliği, kullanıcı adı, hash'lenmiş IP adresleri ve tarayıcı tanımlayıcıları), internet etkinliği (günlükler, etkileşimler ve analiz çerezlerini kabul ederseniz kullanım analizi) ve yayınladığınız içeriği topladık. Bu bilgileri yalnızca iş amaçları için Bölüm 6'da listelenen hizmet sağlayıcılara ifşa ettik; buna, analiz çerezlerini kabul ederseniz kullanım analizi için Google ve Microsoft da dahildir. Bağlamlar arası davranışsal reklamcılık için kişisel bilgileri satmıyoruz veya paylaşmıyoruz, ve hakkınızda özellikler çıkarmak için hassas kişisel bilgileri kullanmıyoruz. Saklama, Bölüm 9'da açıklanmıştır.
 
 ## 15. Bu politikadaki değişiklikler
 

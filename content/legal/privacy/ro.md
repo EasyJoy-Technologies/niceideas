@@ -1,4 +1,4 @@
-> **Rezumat.** Colectăm doar ceea ce avem nevoie pentru a opera niceideas: profilul dumneavoastră, ceea ce publicați și date tehnice limitate pentru a menține Serviciul în siguranță. Postările dumneavoastră sunt publice, cu excepția celor pe care le faceți vizibile doar pentru dumneavoastră. Nu vindem date cu caracter personal, nu afișăm reclame și nu utilizăm instrumente externe de urmărire. Puteți șterge postările în orice moment și vă puteți șterge contul ștergând NiceMatrix ID-ul dumneavoastră. Scrieți la support@nicematrix.ca cu orice întrebare sau cerere privind confidențialitatea.
+> **Rezumat.** Colectăm doar ceea ce avem nevoie pentru a opera niceideas: profilul dumneavoastră, ceea ce publicați și date tehnice limitate pentru a menține Serviciul în siguranță. Postările dumneavoastră sunt publice, cu excepția celor pe care le faceți vizibile doar pentru dumneavoastră. Nu vindem date cu caracter personal și nu afișăm reclame. Numai dacă acceptați modulele cookie analitice, utilizăm Google Analytics și Microsoft Clarity pentru a înțelege cum este utilizat Serviciul. Puteți șterge postările în orice moment și vă puteți șterge contul ștergând NiceMatrix ID-ul dumneavoastră. Scrieți la support@nicematrix.ca cu orice întrebare sau cerere privind confidențialitatea.
 
 ## 1. Cine suntem
 
@@ -22,7 +22,9 @@ Această politică explică ce informații colectează niceideas, de ce, cât ti
 
 **Informații de la aplicațiile pe care le autorizați.** Aplicațiile pe care le autorizați ne trimit postările și materialele media pe care le publicați prin intermediul lor, împreună cu identificatorul aplicației.
 
-**Ce nu colectăm.** Nu utilizăm instrumente de publicitate, analitice sau de urmărire pe rețele sociale, nu construim profiluri publicitare și nu colectăm locația precisă. Nu solicităm informații sensibile, dar postările dumneavoastră le pot dezvălui dacă alegeți să le publicați.
+**Analiza utilizării (numai cu consimțământul dumneavoastră).** Dacă acceptați modulele cookie analitice, utilizăm Google Analytics (Google) și Microsoft Clarity (Microsoft) pentru a înțelege cum sunt utilizate paginile web și a le îmbunătăți. Aceste instrumente colectează paginile pe care le vizitați, clicurile, derularea și mișcările mouse-ului, locația aproximativă dedusă din adresa IP, informații despre dispozitiv și browser, precum și identificatori pseudonimi stocați în module cookie. Microsoft Clarity creează și înregistrări ale sesiunilor și hărți termice; îl configurăm să ascundă tot textul de pe pagină, inclusiv ceea ce tastați, astfel încât să nu înregistreze conținutul postărilor, comentariilor sau formularelor. Dezactivăm funcțiile publicitare ale Google și nu utilizăm aceste instrumente pe pagina Setări, pe paginile de moderare sau pentru conexiunile din China continentală. Dacă refuzați modulele cookie analitice sau nu faceți o alegere, aceste instrumente nu sunt încărcate.
+
+**Ce nu colectăm.** Nu utilizăm instrumente de publicitate sau de urmărire pe rețele sociale, nu construim profiluri publicitare și nu colectăm locația precisă. Nu solicităm informații sensibile, dar postările dumneavoastră le pot dezvălui dacă alegeți să le publicați.
 
 ## 3. Cum și de ce folosim informațiile
 
@@ -36,6 +38,7 @@ Această politică explică ce informații colectează niceideas, de ce, cât ti
 | Procesarea ștergerii contului | Identificatorul contului, notificări de ștergere | Contract; obligații legale |
 | Răspunsul la cererile dumneavoastră și gestionarea pretențiilor legale | Informații din cererea dumneavoastră | Obligații legale; interes legitim |
 | Afișarea Serviciului în limba dumneavoastră | Limba aleasă în link, limba browserului | Interes legitim |
+| Înțelegerea modului în care este utilizat Serviciul și îmbunătățirea acestuia (analiza utilizării) | Informații despre utilizare și dispozitiv, module cookie analitice | Consimțământul dumneavoastră, pe care îl puteți retrage oricând |
 
 Deciziile privind conținutul și conturile sunt luate de persoane. Limitele automate de rată doar încetinesc sau blochează temporar acțiuni; nu luăm decizii automatizate care au efecte legale sau similare semnificative asupra dumneavoastră.
 
@@ -49,7 +52,9 @@ Postările pe care le faceți vizibile doar pentru dumneavoastră nu sunt public
 
 ## 5. Module cookie
 
-Utilizăm numai module cookie necesare pentru funcționarea Serviciului. Nu utilizăm module cookie publicitare sau analitice.
+Utilizăm module cookie necesare pentru funcționarea Serviciului și, numai dacă le acceptați, module cookie analitice. Nu utilizăm module cookie publicitare.
+
+**Module cookie necesare**
 
 | Modul cookie | Scop | Durata |
 |---|---|---|
@@ -57,14 +62,27 @@ Utilizăm numai module cookie necesare pentru funcționarea Serviciului. Nu util
 | `ni_oidc` | Protejează procesul de conectare | 10 minute |
 | `ni_sso` | Reține că conectarea automată a fost deja încercată, pentru a evita redirecționări repetate | 24 de ore |
 | `ni_vid` | Identificator aleatoriu pentru aprecieri și comentarii fără cont, și pentru prevenirea abuzurilor | 400 de zile |
+| `ni_locale` | Reține limba pe care ați ales-o | 1 an |
+| `ni_theme` | Reține tema de culori pe care ați ales-o | 1 an |
+| `ni_consent` | Reține dacă ați acceptat sau ați refuzat modulele cookie analitice | 180 de zile |
 
 Dacă ștergeți aceste module cookie, veți fi deconectat și tratat ca vizitator nou.
+
+**Module cookie analitice (numai cu consimțământul dumneavoastră)**
+
+| Modul cookie | Scop | Durata |
+|---|---|---|
+| `_ga`, `_ga_<ID>` | Google Analytics: distinge vizitatorii și vizitele | 13 luni |
+| `_clck` | Microsoft Clarity: păstrează un identificator pseudonim al vizitatorului | 1 an |
+| `_clsk` | Microsoft Clarity: leagă afișările de pagini într-o singură vizită | 1 zi |
+
+Microsoft poate seta și module cookie pe propriile domenii atunci când se încarcă Clarity; acestea sunt descrise în declarația de confidențialitate Microsoft. Puteți accepta sau refuza modulele cookie analitice în mesajul afișat la prima vizită și vă puteți schimba alegerea oricând cu butonul „Setări cookie-uri” din partea de sus a acestei politici. Când vă retrageți consimțământul, ștergem modulele cookie analitice setate pe niceideas și nu mai încărcăm instrumentele.
 
 ## 6. Partajare
 
 Nu vindem și nu dăm cu chirie date cu caracter personal, și nu le partajăm pentru publicitate comportamentală trans-contextuală. Le partajăm numai cu:
 
-- **Furnizori de servicii** care le procesează pentru noi pe bază de contract: Hetzner Online GmbH (servere și bază de date, Germania) și Cloudflare, Inc. (securitate de rețea, livrarea conținutului și stocarea media în Europa de Vest; rețeaua sa funcționează la nivel mondial).
+- **Furnizori de servicii** care le procesează pentru noi pe bază de contract: Hetzner Online GmbH (servere și bază de date, Germania) și Cloudflare, Inc. (securitate de rețea, livrarea conținutului și stocarea media în Europa de Vest; rețeaua sa funcționează la nivel mondial); și, numai dacă acceptați modulele cookie analitice, Google (Google Analytics) și Microsoft (Microsoft Clarity), care procesează datele de analiză a utilizării în principal în Statele Unite.
 - **NiceMatrix ID**, serviciul de conectare pe care îl operăm, pentru a vă conecta și a procesa ștergerea contului.
 - **Aplicații pe care le autorizați**, care primesc numai ceea ce permiteți, cum ar fi postările publicate prin intermediul lor și profilul dumneavoastră public.
 - **Publicul**, conform descrierii din Secțiunea 4.
@@ -75,11 +93,13 @@ Nu vindem și nu dăm cu chirie date cu caracter personal, și nu le partajăm p
 
 NiceMatrix are sediul în Canada. Serverele noastre și stocarea media se află în Europa (Germania și Europa de Vest), iar furnizorul nostru de rețea procesează cererile în țara cea mai apropiată de dumneavoastră. Informațiile dumneavoastră pot fi, prin urmare, procesate în Germania, alte țări europene, Canada și alte țări în care operează furnizorii noștri, ale căror legi pot diferi de cele din țara dumneavoastră.
 
-Transferurile din Spațiul Economic European, Regatul Unit și Elveția către Canada se bazează pe deciziile privind caracterul adecvat pentru Canada. Alte transferuri se bazează pe Clauzele Contractuale Standard incluse în termenii de procesare a datelor ai furnizorilor noștri, sau pe alte garanții recunoscute de lege.
+Dacă acceptați modulele cookie analitice, Google și Microsoft procesează datele analitice în Statele Unite și în alte țări în care își desfășoară activitatea.
+
+Transferurile din Spațiul Economic European, Regatul Unit și Elveția către Canada se bazează pe deciziile privind caracterul adecvat pentru Canada. Transferurile către Google și Microsoft în Statele Unite se bazează pe Cadrul UE-SUA privind protecția datelor (Data Privacy Framework) și pe extensiile sale pentru Regatul Unit și Elveția, în cadrul căruia ambele companii sunt certificate, sau pe Clauzele Contractuale Standard. Alte transferuri se bazează pe Clauzele Contractuale Standard incluse în termenii de procesare a datelor ai furnizorilor noștri, sau pe alte garanții recunoscute de lege.
 
 ## 8. China continentală
 
-Pentru conexiunile din China continentală, sunt disponibile numai paginile individuale ale postărilor partajate și aprecierile și comentariile de pe acestea. Dacă vizualizați, apreciați sau comentați o astfel de pagină din China continentală, informațiile descrise în Secțiunea 2 sunt procesate și stocate în afara Chinei continentale, în principal în Germania. Prin interacțiunea cu pagina, sunteți de acord cu acest transfer. Vă puteți exercita drepturile conform Legii privind protecția informațiilor cu caracter personal a Republicii Populare Chineze scriind la support@nicematrix.ca.
+Pentru conexiunile din China continentală, sunt disponibile numai paginile individuale ale postărilor partajate și aprecierile și comentariile de pe acestea. Dacă vizualizați, apreciați sau comentați o astfel de pagină din China continentală, informațiile descrise în Secțiunea 2 sunt procesate și stocate în afara Chinei continentale, în principal în Germania. Prin interacțiunea cu pagina, sunteți de acord cu acest transfer. Instrumentele de analiză nu sunt utilizate pentru conexiunile din China continentală. Vă puteți exercita drepturile conform Legii privind protecția informațiilor cu caracter personal a Republicii Populare Chineze scriind la support@nicematrix.ca.
 
 ## 9. Cât timp păstrăm informațiile
 
@@ -95,6 +115,9 @@ Pentru conexiunile din China continentală, sunt disponibile numai paginile indi
 | Sesiuni de conectare | Până la deconectare sau după 30 de zile fără utilizare; înregistrările expirate sunt șterse zilnic |
 | Blocări ale vizitatorilor și verificări anti-spam | Până la expirare; înregistrările expirate sunt șterse zilnic |
 | Jurnale de acces server web | 14 zile |
+| Date Google Analytics asociate modulelor cookie sau identificatorilor de vizitator | Până la 14 luni |
+| Înregistrări ale sesiunilor Microsoft Clarity | 30 de zile; înregistrările pe care le salvăm pentru analiză, până la 13 luni |
+| Alte date Microsoft Clarity (hărți termice, statistici) | Până la 13 luni |
 | Jurnale de aplicație (erori și evenimente de serviciu, fără adrese IP sau conținut) | Șterse automat la atingerea limitei de stocare a jurnalelor serverului |
 | Copii de rezervă ale bazei de date | Până la 14 zile, după care informațiile șterse dispar și din copiile de rezervă |
 | Notificări de ștergere a contului (identificatorul contului, eveniment, oră) | Atât timp cât este necesar pentru a demonstra că ștergerea a fost efectuată |
@@ -130,11 +153,11 @@ Serviciul nu este destinat copiilor sub 13 ani, și nu colectăm cu bună știin
 
 ## 13. Securitate
 
-Protejăm informațiile prin criptare în timpul transmiterii (HTTPS), hash-uri unidirecționale în locul codurilor brute de sesiune, adrese IP și identificatori de browser, mesaje semnate între serviciile noastre, acces limitat la personalul autorizat, o politică strictă de securitate a conținutului fără scripturi externe, și copii de rezervă zilnice păstrate pentru o perioadă limitată. Niciun sistem nu este perfect sigur. Dacă o breșă de securitate creează un risc real de daune semnificative, vă vom notifica pe dumneavoastră și autoritățile, conform cerințelor legii.
+Protejăm informațiile prin criptare în timpul transmiterii (HTTPS), hash-uri unidirecționale în locul codurilor brute de sesiune, adrese IP și identificatori de browser, mesaje semnate între serviciile noastre, acces limitat la personalul autorizat, o politică strictă de securitate a conținutului care nu permite scripturi externe în afara instrumentelor analitice opționale din Secțiunea 2, încărcate numai după ce le acceptați, și copii de rezervă zilnice păstrate pentru o perioadă limitată. Niciun sistem nu este perfect sigur. Dacă o breșă de securitate creează un risc real de daune semnificative, vă vom notifica pe dumneavoastră și autoritățile, conform cerințelor legii.
 
 ## 14. Notificare pentru rezidenții din California
 
-În ultimele 12 luni, am colectat identificatori (identificatorul contului, handle, adrese IP și identificatori de browser hash-uiți), activitate pe internet (jurnale și interacțiuni) și conținutul pe care îl publicați, din sursele și pentru scopurile descrise în Secțiunile 2 și 3. Am divulgat aceste informații numai în scopuri comerciale către furnizorii de servicii enumerați în Secțiunea 6. Nu vindem și nu partajăm date cu caracter personal pentru publicitate comportamentală trans-contextuală, și nu utilizăm date sensibile cu caracter personal pentru a deduce caracteristici despre dumneavoastră. Păstrarea este descrisă în Secțiunea 9.
+În ultimele 12 luni, am colectat identificatori (identificatorul contului, handle, adrese IP și identificatori de browser hash-uiți), activitate pe internet (jurnale, interacțiuni și, dacă acceptați modulele cookie analitice, analiza utilizării) și conținutul pe care îl publicați, din sursele și pentru scopurile descrise în Secțiunile 2 și 3. Am divulgat aceste informații numai în scopuri comerciale către furnizorii de servicii enumerați în Secțiunea 6, inclusiv Google și Microsoft pentru analiza utilizării, dacă acceptați modulele cookie analitice. Nu vindem și nu partajăm date cu caracter personal pentru publicitate comportamentală trans-contextuală, și nu utilizăm date sensibile cu caracter personal pentru a deduce caracteristici despre dumneavoastră. Păstrarea este descrisă în Secțiunea 9.
 
 ## 15. Modificări ale acestei politici
 

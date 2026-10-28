@@ -268,6 +268,13 @@
     "saving": "Sine-save…",
     "title": "Pamagat"
   },
+  "consent": {
+    "accept": "Tanggapin",
+    "reject": "Tanggihan",
+    "settings": "Mga setting ng cookie",
+    "text": "Kapag pumayag ka, gumagamit kami ng Google Analytics at Microsoft Clarity para maunawaan kung paano ginagamit ang site at mapahusay ito. Naglo-load lang ang mga ito kung tatanggapin mo, at puwede mong baguhin ang pinili mo anumang oras.",
+    "title": "Cookies para sa analytics"
+  },
   "discover": {
     "title": "Tuklasin"
   },

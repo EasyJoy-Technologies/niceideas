@@ -1,4 +1,4 @@
-> **Shrnutí.** Shromažďujeme pouze to, co potřebujeme k provozu niceideas: váš profil, to, co zveřejňujete, a omezené technické údaje pro zajištění bezpečnosti Služby. Vaše příspěvky jsou veřejné, pokud je nenastavíte jako viditelné jen pro vás. Osobní údaje neprodáváme, nezobrazujeme reklamy ani nevyužíváme externí sledovací nástroje. Příspěvky můžete kdykoli smazat a účet odstranit odstraněním svého NiceMatrix ID. S jakýmkoli dotazem nebo žádostí týkající se ochrany osobních údajů nás kontaktujte na support@nicematrix.ca.
+> **Shrnutí.** Shromažďujeme pouze to, co potřebujeme k provozu niceideas: váš profil, to, co zveřejňujete, a omezené technické údaje pro zajištění bezpečnosti Služby. Vaše příspěvky jsou veřejné, pokud je nenastavíte jako viditelné jen pro vás. Osobní údaje neprodáváme a nezobrazujeme reklamy. Pouze pokud přijmete analytické soubory cookie, používáme Google Analytics a Microsoft Clarity, abychom porozuměli, jak se Služba používá. Příspěvky můžete kdykoli smazat a účet odstranit odstraněním svého NiceMatrix ID. S jakýmkoli dotazem nebo žádostí týkající se ochrany osobních údajů nás kontaktujte na support@nicematrix.ca.
 
 ## 1. Kdo jsme
 
@@ -22,7 +22,9 @@ Tyto zásady vysvětlují, jaké informace niceideas shromažďuje, proč, jak d
 
 **Informace od autorizovaných aplikací.** Aplikace, které autorizujete, nám odesílají příspěvky a média, které prostřednictvím nich zveřejníte, společně s identifikátorem aplikace.
 
-**Co neshromažďujeme.** Nepoužíváme reklamní, analytické nástroje ani nástroje pro sledování na sociálních sítích, nevytváříme reklamní profily ani neshromažďujeme přesnou polohu. Nežádáme o citlivé informace, ale vaše příspěvky je mohou odhalit, pokud se rozhodnete je zveřejnit.
+**Analýza používání (pouze s vaším souhlasem).** Pokud přijmete analytické soubory cookie, používáme Google Analytics (Google) a Microsoft Clarity (Microsoft), abychom porozuměli, jak se webové stránky používají, a mohli je zlepšovat. Tyto nástroje shromažďují stránky, které navštívíte, kliknutí, posouvání a pohyby myši, vaši přibližnou polohu odvozenou z IP adresy, informace o zařízení a prohlížeči a pseudonymní identifikátory uložené v souborech cookie. Microsoft Clarity také vytváří záznamy relací a teplotní mapy; nastavujeme ho tak, aby skrýval veškerý text na stránce včetně toho, co píšete, takže nezaznamenává obsah příspěvků, komentářů ani formulářů. Vypínáme reklamní funkce Google a tyto nástroje nepoužíváme na stránce Nastavení, na stránkách moderování ani u připojení z Číny na pevnině. Pokud analytické soubory cookie odmítnete nebo nic nezvolíte, tyto nástroje se nenačtou.
+
+**Co neshromažďujeme.** Nepoužíváme reklamní nástroje ani nástroje pro sledování na sociálních sítích, nevytváříme reklamní profily ani neshromažďujeme přesnou polohu. Nežádáme o citlivé informace, ale vaše příspěvky je mohou odhalit, pokud se rozhodnete je zveřejnit.
 
 ## 3. Jak a proč informace používáme
 
@@ -36,6 +38,7 @@ Tyto zásady vysvětlují, jaké informace niceideas shromažďuje, proč, jak d
 | Zpracování odstranění účtu | Identifikátor účtu, oznámení o odstranění | Smlouva; právní povinnosti |
 | Odpovídání na vaše žádosti a řešení právních nároků | Informace ve vaší žádosti | Právní povinnosti; oprávněný zájem |
 | Zobrazování Služby ve vašem jazyce | Jazyk zvolený v odkazu, jazyk prohlížeče | Oprávněný zájem |
+| Porozumět tomu, jak se Služba používá, a zlepšovat ji (analýza používání) | Informace o používání a zařízení, analytické soubory cookie | Váš souhlas, který můžete kdykoli odvolat |
 
 Rozhodnutí o obsahu a účtech přijímají lidé. Automatické limity rychlosti pouze zpomalí nebo krátce blokují akce; nepřijímáme automatizovaná rozhodnutí, která by na vás měla právní nebo podobně významné účinky.
 
@@ -49,7 +52,9 @@ Příspěvky, které nastavíte jako viditelné jen pro vás, nejsou veřejné: 
 
 ## 5. Soubory cookie
 
-Používáme pouze soubory cookie, které Služba potřebuje k fungování. Nepoužíváme reklamní ani analytické soubory cookie.
+Používáme soubory cookie, které Služba potřebuje k fungování, a pouze pokud je přijmete, analytické soubory cookie. Nepoužíváme reklamní soubory cookie.
+
+**Nezbytné soubory cookie**
 
 | Soubor cookie | Účel | Doba trvání |
 |---|---|---|
@@ -57,14 +62,27 @@ Používáme pouze soubory cookie, které Služba potřebuje k fungování. Nepo
 | `ni_oidc` | Chrání proces přihlášení | 10 minut |
 | `ni_sso` | Pamatuje si, že automatické přihlášení již bylo vyzkoušeno, aby se zabránilo opakovaným přesměrováním | 24 hodin |
 | `ni_vid` | Náhodný identifikátor pro lajky a komentáře bez účtu a pro prevenci zneužití | 400 dní |
+| `ni_locale` | Pamatuje si zvolený jazyk | 1 rok |
+| `ni_theme` | Pamatuje si zvolený barevný motiv | 1 rok |
+| `ni_consent` | Pamatuje si, zda jste analytické soubory cookie přijali, nebo odmítli | 180 dní |
 
 Pokud tyto soubory cookie odstraníte, budete odhlášeni a budete považováni za nového návštěvníka.
+
+**Analytické soubory cookie (pouze s vaším souhlasem)**
+
+| Soubor cookie | Účel | Doba trvání |
+|---|---|---|
+| `_ga`, `_ga_<ID>` | Google Analytics: rozlišuje návštěvníky a návštěvy | 13 měsíců |
+| `_clck` | Microsoft Clarity: uchovává pseudonymní identifikátor návštěvníka | 1 rok |
+| `_clsk` | Microsoft Clarity: spojuje zobrazení stránek do jedné návštěvy | 1 den |
+
+Při načtení Clarity může Microsoft také nastavit soubory cookie ve svých vlastních doménách; jsou popsány v prohlášení Microsoftu o zásadách ochrany osobních údajů. Analytické soubory cookie můžete přijmout nebo odmítnout v oznámení zobrazeném při první návštěvě a svou volbu můžete kdykoli změnit tlačítkem „Nastavení cookies“ na začátku těchto zásad. Když souhlas odvoláte, smažeme analytické soubory cookie nastavené na niceideas a přestaneme nástroje načítat.
 
 ## 6. Sdílení
 
 Osobní údaje neprodáváme ani nepronajímáme a nesdílíme je pro behaviorální reklamu napříč kontexty. Sdílíme je pouze s:
 
-- **Poskytovateli služeb**, kteří je pro nás zpracovávají na základě smlouvy: Hetzner Online GmbH (servery a databáze, Německo) a Cloudflare, Inc. (síťová bezpečnost, doručování obsahu a ukládání médií v západní Evropě; její síť funguje po celém světě).
+- **Poskytovateli služeb**, kteří je pro nás zpracovávají na základě smlouvy: Hetzner Online GmbH (servery a databáze, Německo) a Cloudflare, Inc. (síťová bezpečnost, doručování obsahu a ukládání médií v západní Evropě; její síť funguje po celém světě); a pouze pokud přijmete analytické soubory cookie, Google (Google Analytics) a Microsoft (Microsoft Clarity), které zpracovávají údaje o analýze používání především ve Spojených státech.
 - **NiceMatrix ID**, přihlašovací službou, kterou provozujeme, za účelem přihlášení a zpracování odstranění účtu.
 - **Autorizovanými aplikacemi**, které obdrží pouze to, co povolíte, jako jsou příspěvky, které zveřejnily, a váš veřejný profil.
 - **Veřejností**, jak je popsáno v oddílu 4.
@@ -75,11 +93,13 @@ Osobní údaje neprodáváme ani nepronajímáme a nesdílíme je pro behaviorá
 
 NiceMatrix sídlí v Kanadě. Naše servery a úložiště médií se nacházejí v Evropě (Německo a západní Evropa), a náš síťový poskytovatel zpracovává požadavky v zemi nejbližší vám. Vaše informace mohou být proto zpracovávány v Německu, dalších evropských zemích, Kanadě a dalších zemích, kde působí naši poskytovatelé, jejichž právní předpisy se mohou lišit od předpisů vaší země.
 
-Přenosy z Evropského hospodářského prostoru, Spojeného království a Švýcarska do Kanady se zakládají na rozhodnutích o odpovídající úrovni ochrany pro Kanadu. Jiné přenosy se zakládají na standardních smluvních doložkách obsažených v podmínkách zpracování údajů našich poskytovatelů, nebo na jiných zárukách uznávaných zákonem.
+Pokud přijmete analytické soubory cookie, Google a Microsoft zpracovávají analytické údaje ve Spojených státech a v dalších zemích, kde působí.
+
+Přenosy z Evropského hospodářského prostoru, Spojeného království a Švýcarska do Kanady se zakládají na rozhodnutích o odpovídající úrovni ochrany pro Kanadu. Přenosy společnostem Google a Microsoft ve Spojených státech se zakládají na rámci pro ochranu osobních údajů mezi EU a USA (Data Privacy Framework) a jeho rozšířeních pro Spojené království a Švýcarsko, v jehož rámci jsou obě společnosti certifikovány, nebo na standardních smluvních doložkách. Jiné přenosy se zakládají na standardních smluvních doložkách obsažených v podmínkách zpracování údajů našich poskytovatelů, nebo na jiných zárukách uznávaných zákonem.
 
 ## 8. Čína na pevnině
 
-Pro připojení z Číny na pevnině jsou dostupné pouze jednotlivé stránky sdílených příspěvků a lajky a komentáře k nim. Pokud si takovou stránku z Číny na pevnině zobrazíte, lajkujete nebo komentujete, informace popsané v oddílu 2 jsou zpracovávány a uchovávány mimo Čínu na pevnině, zejména v Německu. Interakcí se stránkou s tímto přenosem souhlasíte. Svá práva podle zákona o ochraně osobních údajů Čínské lidové republiky můžete uplatnit zasláním zprávy na support@nicematrix.ca.
+Pro připojení z Číny na pevnině jsou dostupné pouze jednotlivé stránky sdílených příspěvků a lajky a komentáře k nim. Pokud si takovou stránku z Číny na pevnině zobrazíte, lajkujete nebo komentujete, informace popsané v oddílu 2 jsou zpracovávány a uchovávány mimo Čínu na pevnině, zejména v Německu. Interakcí se stránkou s tímto přenosem souhlasíte. Analytické nástroje se u připojení z Číny na pevnině nepoužívají. Svá práva podle zákona o ochraně osobních údajů Čínské lidové republiky můžete uplatnit zasláním zprávy na support@nicematrix.ca.
 
 ## 9. Jak dlouho informace uchováváme
 
@@ -95,6 +115,9 @@ Pro připojení z Číny na pevnině jsou dostupné pouze jednotlivé stránky s
 | Přihlašovací relace | Do odhlášení nebo po 30 dnech bez použití; expirované záznamy se odstraňují denně |
 | Blokace návštěvníků a kontroly proti spamu | Do vypršení; expirované záznamy se odstraňují denně |
 | Přístupové protokoly webového serveru | 14 dní |
+| Údaje Google Analytics spojené se soubory cookie nebo identifikátory návštěvníků | Až 14 měsíců |
+| Záznamy relací Microsoft Clarity | 30 dní; záznamy, které uložíme ke kontrole, až 13 měsíců |
+| Ostatní údaje Microsoft Clarity (teplotní mapy, statistiky) | Až 13 měsíců |
 | Protokoly aplikací (chyby a události služby, bez IP adres nebo obsahu) | Odstraněny automaticky po dosažení limitu úložiště protokolů serveru |
 | Zálohy databáze | Až 14 dní, po nichž zmizí odstraněné informace i ze záloh |
 | Oznámení o odstranění účtu (identifikátor účtu, událost, čas) | Po dobu nezbytnou k prokázání, že odstranění bylo provedeno |
@@ -130,11 +153,11 @@ Služba není určena dětem mladším 13 let a vědomě od nich osobní údaje 
 
 ## 13. Bezpečnost
 
-Informace chráníme pomocí šifrování při přenosu (HTTPS), jednosměrných hashů namísto surových kódů relace, IP adres a identifikátorů prohlížeče, podepsaných zpráv mezi našimi službami, přístupu omezeného na oprávněné pracovníky, striktní zásady zabezpečení obsahu bez externích skriptů a denních záloh uchovávaných po omezenou dobu. Žádný systém není zcela bezpečný. Pokud bezpečnostní incident vytvoří reálné riziko významné újmy, oznámíme to vám i příslušným úřadům, jak to vyžaduje zákon.
+Informace chráníme pomocí šifrování při přenosu (HTTPS), jednosměrných hashů namísto surových kódů relace, IP adres a identifikátorů prohlížeče, podepsaných zpráv mezi našimi službami, přístupu omezeného na oprávněné pracovníky, striktní zásady zabezpečení obsahu, které nepovolují externí skripty kromě volitelných analytických nástrojů z oddílu 2, načítaných až po vašem souhlasu, a denních záloh uchovávaných po omezenou dobu. Žádný systém není zcela bezpečný. Pokud bezpečnostní incident vytvoří reálné riziko významné újmy, oznámíme to vám i příslušným úřadům, jak to vyžaduje zákon.
 
 ## 14. Oznámení pro obyvatele Kalifornie
 
-Za posledních 12 měsíců jsme shromažďovali identifikátory (identifikátor účtu, přihlašovací jméno, hashované IP adresy a identifikátory prohlížeče), internetovou aktivitu (protokoly a interakce) a obsah, který zveřejňujete, ze zdrojů a za účely popsanými v oddílech 2 a 3. Tyto informace jsme zveřejnili pouze pro obchodní účely poskytovatelům služeb uvedeným v oddílu 6. Osobní údaje neprodáváme ani nesdílíme pro behaviorální reklamu napříč kontexty a nevyužíváme citlivé osobní údaje k odvozování charakteristik o vás. Uchovávání je popsáno v oddílu 9.
+Za posledních 12 měsíců jsme shromažďovali identifikátory (identifikátor účtu, přihlašovací jméno, hashované IP adresy a identifikátory prohlížeče), internetovou aktivitu (protokoly, interakce a, pokud přijmete analytické soubory cookie, analýzu používání) a obsah, který zveřejňujete, ze zdrojů a za účely popsanými v oddílech 2 a 3. Tyto informace jsme zveřejnili pouze pro obchodní účely poskytovatelům služeb uvedeným v oddílu 6, včetně společností Google a Microsoft pro analýzu používání, pokud přijmete analytické soubory cookie. Osobní údaje neprodáváme ani nesdílíme pro behaviorální reklamu napříč kontexty a nevyužíváme citlivé osobní údaje k odvozování charakteristik o vás. Uchovávání je popsáno v oddílu 9.
 
 ## 15. Změny těchto zásad
 

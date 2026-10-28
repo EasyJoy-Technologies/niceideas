@@ -1,4 +1,4 @@
-> **Sammanfattning.** Vi samlar bara in vad som behövs för att driva niceideas: din profil, vad du publicerar, och begränsade tekniska uppgifter för att hålla Tjänsten säker. Dina inlägg är offentliga om du inte gör dem synliga bara för dig. Vi säljer inte personuppgifter, visar ingen reklam och använder inga externa spårare. Du kan ta bort inlägg när som helst och radera ditt konto genom att radera ditt NiceMatrix ID. Skriv till support@nicematrix.ca med alla frågor eller begäranden om integritet.
+> **Sammanfattning.** Vi samlar bara in vad som behövs för att driva niceideas: din profil, vad du publicerar, och begränsade tekniska uppgifter för att hålla Tjänsten säker. Dina inlägg är offentliga om du inte gör dem synliga bara för dig. Vi säljer inte personuppgifter och visar ingen reklam. Endast om du godkänner analyscookies använder vi Google Analytics och Microsoft Clarity för att förstå hur Tjänsten används. Du kan ta bort inlägg när som helst och radera ditt konto genom att radera ditt NiceMatrix ID. Skriv till support@nicematrix.ca med alla frågor eller begäranden om integritet.
 
 ## 1. Vilka vi är
 
@@ -22,7 +22,9 @@ Denna policy förklarar vilken information niceideas samlar in, varför, hur lä
 
 **Information från appar du auktoriserar.** Appar du auktoriserar skickar oss inlägg och media du publicerar genom dem, tillsammans med appens identifierare.
 
-**Vad vi inte samlar in.** Vi använder inga reklam-, analys- eller sociala medier-spårningsverktyg, skapar inga reklamprofiler och samlar inte in exakt platsdata. Vi begär inte känslig information, men dina inlägg kan avslöja det om du väljer att publicera det.
+**Användningsanalys (endast med ditt samtycke).** Om du godkänner analyscookies använder vi Google Analytics (Google) och Microsoft Clarity (Microsoft) för att förstå hur webbsidorna används och förbättra dem. Verktygen samlar in vilka sidor du besöker, klick, scrollning och musrörelser, din ungefärliga plats härledd från din IP-adress, enhets- och webbläsarinformation samt pseudonyma identifierare som lagras i cookies. Microsoft Clarity skapar också sessionsinspelningar och värmekartor; vi ställer in det så att all text på sidan döljs, även det du skriver, så att innehållet i inlägg, kommentarer och formulär inte registreras. Vi stänger av Googles reklamfunktioner och använder inte verktygen på sidan Inställningar, på modereringssidor eller för anslutningar från Fastlandskina. Om du avvisar analyscookies eller inte gör något val laddas verktygen inte.
+
+**Vad vi inte samlar in.** Vi använder inga reklam- eller sociala medier-spårningsverktyg, skapar inga reklamprofiler och samlar inte in exakt platsdata. Vi begär inte känslig information, men dina inlägg kan avslöja det om du väljer att publicera det.
 
 ## 3. Hur vi använder information och varför
 
@@ -36,6 +38,7 @@ Denna policy förklarar vilken information niceideas samlar in, varför, hur lä
 | Behandla kontoradering | Kontoidentifierare, raderingsmeddelanden | Avtal; rättsliga skyldigheter |
 | Besvara dina förfrågningar och hantera rättsliga anspråk | Information i din förfrågan | Rättsliga skyldigheter; berättigat intresse |
 | Visa Tjänsten på ditt språk | Språk valt i länken, webbläsarspråk | Berättigat intresse |
+| Förstå hur Tjänsten används och förbättra den (användningsanalys) | Användnings- och enhetsinformation, analyscookies | Ditt samtycke, som du kan återkalla när som helst |
 
 Beslut om innehåll och konton fattas av människor. Automatiska frekvensgränser bromsar eller blockerar bara kortvarigt åtgärder; vi fattar inga automatiserade beslut som har rättsliga eller liknande betydande effekter för dig.
 
@@ -49,7 +52,9 @@ Inlägg som du gör synliga bara för dig är inte offentliga: bara du kan se de
 
 ## 5. Cookies
 
-Vi använder endast cookies som Tjänsten behöver för att fungera. Vi använder inga reklam- eller analyscookies.
+Vi använder cookies som Tjänsten behöver för att fungera och, endast om du godkänner dem, analyscookies. Vi använder inga reklamcookies.
+
+**Nödvändiga cookies**
 
 | Cookie | Syfte | Varaktighet |
 |---|---|---|
@@ -57,14 +62,27 @@ Vi använder endast cookies som Tjänsten behöver för att fungera. Vi använde
 | `ni_oidc` | Skyddar inloggningsprocessen | 10 minuter |
 | `ni_sso` | Minns att automatisk inloggning redan har försökts, för att undvika upprepade omdirigeringar | 24 timmar |
 | `ni_vid` | Slumpmässig identifierare för gillanden och kommentarer utan konto, och för missbruksförebyggande | 400 dagar |
+| `ni_locale` | Kommer ihåg språket du valt | 1 år |
+| `ni_theme` | Kommer ihåg färgtemat du valt | 1 år |
+| `ni_consent` | Kommer ihåg om du godkänt eller avvisat analyscookies | 180 dagar |
 
 Om du raderar dessa cookies loggas du ut och behandlas som en ny besökare.
+
+**Analyscookies (endast med ditt samtycke)**
+
+| Cookie | Syfte | Varaktighet |
+|---|---|---|
+| `_ga`, `_ga_<ID>` | Google Analytics: skiljer mellan besökare och besök | 13 månader |
+| `_clck` | Microsoft Clarity: sparar en pseudonym besökaridentifierare | 1 år |
+| `_clsk` | Microsoft Clarity: kopplar ihop sidvisningar till ett besök | 1 dag |
+
+Microsoft kan också sätta cookies på sina egna domäner när Clarity laddas; de beskrivs i Microsofts sekretesspolicy. Du kan godkänna eller avvisa analyscookies i meddelandet som visas vid ditt första besök och ändra ditt val när som helst med knappen ”Cookieinställningar” högst upp i denna policy. När du återkallar ditt samtycke raderar vi de analyscookies som satts på niceideas och slutar ladda verktygen.
 
 ## 6. Delning
 
 Vi säljer eller hyr inte ut personuppgifter, och vi delar dem inte för kontextöverskridande beteendebaserad reklam. Vi delar dem endast med:
 
-- **Tjänsteleverantörer** som behandlar den för oss enligt avtal: Hetzner Online GmbH (servrar och databas, Tyskland) och Cloudflare, Inc. (nätverkssäkerhet, innehållsleverans och mediallagring i Västeuropa; dess nätverk verkar globalt).
+- **Tjänsteleverantörer** som behandlar den för oss enligt avtal: Hetzner Online GmbH (servrar och databas, Tyskland) och Cloudflare, Inc. (nätverkssäkerhet, innehållsleverans och mediallagring i Västeuropa; dess nätverk verkar globalt); samt, endast om du godkänner analyscookies, Google (Google Analytics) och Microsoft (Microsoft Clarity), som behandlar användningsanalysdata främst i USA.
 - **NiceMatrix ID**, inloggningstjänsten vi driver, för att logga in dig och behandla kontoradering.
 - **Appar du auktoriserar**, som endast får det du tillåter, såsom de inlägg de har publicerat och din offentliga profil.
 - **Allmänheten**, som beskrivs i avsnitt 4.
@@ -75,11 +93,13 @@ Vi säljer eller hyr inte ut personuppgifter, och vi delar dem inte för kontext
 
 NiceMatrix är baserat i Kanada. Våra servrar och mediallagring finns i Europa (Tyskland och Västeuropa), och vår nätverksleverantör behandlar förfrågningar i det land som ligger närmast dig. Din information kan därför behandlas i Tyskland, andra europeiska länder, Kanada och andra länder där våra leverantörer verkar, vars lagar kan skilja sig från ditt lands.
 
-Överföringar från Europeiska ekonomiska samarbetsområdet, Storbritannien och Schweiz till Kanada bygger på adekvansbesluten för Kanada. Andra överföringar bygger på de standardavtalsklausuler som ingår i våra leverantörers databehandlingsvillkor, eller på andra lagligt erkända skyddsåtgärder.
+Om du godkänner analyscookies behandlar Google och Microsoft analysdata i USA och andra länder där de är verksamma.
+
+Överföringar från Europeiska ekonomiska samarbetsområdet, Storbritannien och Schweiz till Kanada bygger på adekvansbesluten för Kanada. Överföringar till Google och Microsoft i USA bygger på ramverket för dataskydd mellan EU och USA (Data Privacy Framework) och dess tillägg för Storbritannien och Schweiz, enligt vilket båda företagen är certifierade, eller på standardavtalsklausuler. Andra överföringar bygger på de standardavtalsklausuler som ingår i våra leverantörers databehandlingsvillkor, eller på andra lagligt erkända skyddsåtgärder.
 
 ## 8. Fastlandskina
 
-För anslutningar från Fastlandskina är endast enskilda delade inläggssidor samt gillanden och kommentarer på dem tillgängliga. Om du visar, gillar eller kommenterar en sådan sida från Fastlandskina, behandlas och lagras informationen beskriven i avsnitt 2 utanför Fastlandskina, huvudsakligen i Tyskland. Genom att interagera med sidan samtycker du till denna överföring. Du kan utöva dina rättigheter enligt Kinas lag om skydd av personuppgifter genom att skriva till support@nicematrix.ca.
+För anslutningar från Fastlandskina är endast enskilda delade inläggssidor samt gillanden och kommentarer på dem tillgängliga. Om du visar, gillar eller kommenterar en sådan sida från Fastlandskina, behandlas och lagras informationen beskriven i avsnitt 2 utanför Fastlandskina, huvudsakligen i Tyskland. Genom att interagera med sidan samtycker du till denna överföring. Analysverktyg används inte för anslutningar från Fastlandskina. Du kan utöva dina rättigheter enligt Kinas lag om skydd av personuppgifter genom att skriva till support@nicematrix.ca.
 
 ## 9. Hur länge vi behåller information
 
@@ -95,6 +115,9 @@ För anslutningar från Fastlandskina är endast enskilda delade inläggssidor s
 | Inloggningssessioner | Tills du loggar ut eller efter 30 dagar utan användning; utgångna registreringar raderas dagligen |
 | Besöksblockeringar och antiskräppostkontroller | Tills de löper ut; utgångna registreringar raderas dagligen |
 | Webbserverns åtkomstloggar | 14 dagar |
+| Google Analytics-data kopplade till cookies eller besökaridentifierare | Upp till 14 månader |
+| Sessionsinspelningar i Microsoft Clarity | 30 dagar; inspelningar som vi sparar för granskning upp till 13 månader |
+| Övriga data i Microsoft Clarity (värmekartor, statistik) | Upp till 13 månader |
 | Applikationsloggar (fel och tjänstehändelser, utan IP-adresser eller innehåll) | Raderas automatiskt när serverns logglagringsgräns nås |
 | Databassäkerhetskopior | Upp till 14 dagar, efter vilket raderad information även försvinner från säkerhetskopiorna |
 | Meddelanden om kontoradering (kontoidentifierare, händelse, tid) | Så länge det behövs för att visa att raderingen genomfördes |
@@ -130,11 +153,11 @@ Tjänsten riktar sig inte till barn under 13 år, och vi samlar inte medvetet in
 
 ## 13. Säkerhet
 
-Vi skyddar information med kryptering under överföring (HTTPS), envägshashar istället för råa sessionskoder, IP-adresser och webbläsaridentifierare, signerade meddelanden mellan våra tjänster, åtkomst begränsad till behörig personal, en strikt innehållssäkerhetspolicy utan externa skript, och dagliga säkerhetskopior som sparas under en begränsad tid. Inget system är helt säkert. Om ett säkerhetsintrång skapar en verklig risk för betydande skada kommer vi att meddela dig och myndigheterna enligt lagens krav.
+Vi skyddar information med kryptering under överföring (HTTPS), envägshashar istället för råa sessionskoder, IP-adresser och webbläsaridentifierare, signerade meddelanden mellan våra tjänster, åtkomst begränsad till behörig personal, en strikt innehållssäkerhetspolicy som inte tillåter några externa skript utöver de valfria analysverktygen i avsnitt 2, som laddas först när du har godkänt dem, och dagliga säkerhetskopior som sparas under en begränsad tid. Inget system är helt säkert. Om ett säkerhetsintrång skapar en verklig risk för betydande skada kommer vi att meddela dig och myndigheterna enligt lagens krav.
 
 ## 14. Meddelande för invånare i Kalifornien
 
-Under de senaste 12 månaderna har vi samlat in identifierare (kontoidentifierare, handtag, hashade IP-adresser och webbläsaridentifierare), internetaktivitet (loggar och interaktioner) och innehållet du publicerar, från de källor och för de syften som beskrivs i avsnitt 2 och 3. Vi har lämnat ut denna information för affärsändamål endast till de tjänsteleverantörer som anges i avsnitt 6. Vi säljer eller delar inte personuppgifter för kontextöverskridande beteendebaserad reklam, och vi använder inte känsliga personuppgifter för att dra slutsatser om dina egenskaper. Lagring beskrivs i avsnitt 9.
+Under de senaste 12 månaderna har vi samlat in identifierare (kontoidentifierare, handtag, hashade IP-adresser och webbläsaridentifierare), internetaktivitet (loggar, interaktioner och, om du godkänner analyscookies, användningsanalys) och innehållet du publicerar, från de källor och för de syften som beskrivs i avsnitt 2 och 3. Vi har lämnat ut denna information för affärsändamål endast till de tjänsteleverantörer som anges i avsnitt 6, inklusive Google och Microsoft för användningsanalys om du godkänner analyscookies. Vi säljer eller delar inte personuppgifter för kontextöverskridande beteendebaserad reklam, och vi använder inte känsliga personuppgifter för att dra slutsatser om dina egenskaper. Lagring beskrivs i avsnitt 9.
 
 ## 15. Ändringar av denna policy
 

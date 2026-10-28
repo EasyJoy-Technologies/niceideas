@@ -1,5 +1,6 @@
 import { sessionProfile } from "@/server/auth/web/session";
 import { webAuthSettings } from "@/server/auth/web/settings";
+import { analyticsCspSources } from "@/server/analytics/analytics";
 import { getConfig } from "@/server/config/env";
 import { getDb } from "@/server/db";
 import type { Db } from "@/server/db/client";
@@ -18,7 +19,8 @@ function signInOrigin(): string {
 
 /**
  * Server-rendered pages carry no inline script or style: everything is same-origin,
- * except media (public bucket domain) and avatars (any https host).
+ * except media (public bucket domain), avatars (any https host) and, when configured, the
+ * analytics vendors (src/server/analytics; their scripts load only after consent).
  */
 function contentSecurityPolicy(): string {
   const media = new URL(getConfig().MEDIA_PUBLIC_BASE_URL).origin;
@@ -26,10 +28,10 @@ function contentSecurityPolicy(): string {
     "default-src 'self'",
     `img-src 'self' ${media} https: data:`,
     `media-src 'self' ${media}`,
-    "script-src 'self'",
+    `script-src 'self'${analyticsCspSources("script-src")}`,
     "style-src 'self'",
     "font-src 'self'",
-    "connect-src 'self'",
+    `connect-src 'self'${analyticsCspSources("connect-src")}`,
     "object-src 'none'",
     "base-uri 'none'",
     // Sign-out posts here and is redirected to the NiceMatrix sign-out page.

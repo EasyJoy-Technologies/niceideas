@@ -1,4 +1,4 @@
-> **Buod.** Kinokolekta lamang namin ang kinakailangan para patakbuhin ang niceideas: ang iyong profile, ang iyong ipinapaskil, at limitadong teknikal na data upang mapanatiling ligtas ang Serbisyo. Pampubliko ang iyong mga post maliban kung gawin mong ikaw lang ang makakakita. Hindi namin ibinebenta ang personal na impormasyon, nagpapakita ng mga ad, o gumagamit ng mga third-party tracker. Maaari mong burahin ang mga post anumang oras at burahin ang iyong account sa pagbura ng iyong NiceMatrix ID. Sumulat sa support@nicematrix.ca para sa anumang tanong o kahilingan tungkol sa privacy.
+> **Buod.** Kinokolekta lamang namin ang kinakailangan para patakbuhin ang niceideas: ang iyong profile, ang iyong ipinapaskil, at limitadong teknikal na data upang mapanatiling ligtas ang Serbisyo. Pampubliko ang iyong mga post maliban kung gawin mong ikaw lang ang makakakita. Hindi namin ibinebenta ang personal na impormasyon o nagpapakita ng mga ad. Kung tatanggapin mo lamang ang mga analytics cookie, gumagamit kami ng Google Analytics at Microsoft Clarity upang maunawaan kung paano ginagamit ang Serbisyo. Maaari mong burahin ang mga post anumang oras at burahin ang iyong account sa pagbura ng iyong NiceMatrix ID. Sumulat sa support@nicematrix.ca para sa anumang tanong o kahilingan tungkol sa privacy.
 
 ## 1. Sino kami
 
@@ -22,7 +22,9 @@ Ipinapaliwanag ng patakarang ito kung anong impormasyon kinokolekta ng niceideas
 
 **Impormasyon mula sa mga app na iyong awtorisado.** Ipinapadala sa amin ng mga app na iyong awtorisado ang mga post at media na iyong ipinapaskil sa pamamagitan ng mga ito, kasama ang identifier ng app.
 
-**Ang hindi namin kinokolekta.** Hindi kami gumagamit ng mga advertising, analytics, o social-media tracking tool, hindi gumagawa ng mga advertising profile, o kumokolekta ng tumpak na lokasyon. Hindi kami humihingi ng sensitibong impormasyon, ngunit maaaring ihayag ito ng iyong mga post kung pinili mong ipaskil ito.
+**Analytics ng paggamit (sa iyong pahintulot lamang).** Kung tatanggapin mo ang mga analytics cookie, gumagamit kami ng Google Analytics (Google) at Microsoft Clarity (Microsoft) upang maunawaan kung paano ginagamit ang mga web page at mapahusay ang mga ito. Kinokolekta ng mga tool na ito ang mga page na binibisita mo, mga click, pag-scroll at galaw ng mouse, ang iyong tinatayang lokasyon na hinango mula sa iyong IP address, impormasyon tungkol sa device at browser, at mga pseudonymous identifier na nakaimbak sa mga cookie. Gumagawa rin ang Microsoft Clarity ng mga session replay at heatmap; isinasaayos namin ito upang itago ang lahat ng teksto sa page, kasama ang anumang tina-type mo, kaya hindi nito nire-record ang nilalaman ng mga post, komento, o form. Pinapatay namin ang mga advertising feature ng Google, at hindi namin ginagamit ang mga tool na ito sa page ng Mga setting, sa mga moderation page, o para sa mga koneksyon mula sa mainland China. Kung tatanggihan mo ang mga analytics cookie o hindi ka pipili, hindi nilo-load ang mga tool na ito.
+
+**Ang hindi namin kinokolekta.** Hindi kami gumagamit ng mga advertising o social-media tracking tool, hindi gumagawa ng mga advertising profile, o kumokolekta ng tumpak na lokasyon. Hindi kami humihingi ng sensitibong impormasyon, ngunit maaaring ihayag ito ng iyong mga post kung pinili mong ipaskil ito.
 
 ## 3. Paano namin ginagamit ang impormasyon at bakit
 
@@ -36,6 +38,7 @@ Ipinapaliwanag ng patakarang ito kung anong impormasyon kinokolekta ng niceideas
 | Iproseso ang pagbura ng account | Account identifier, mga abiso ng pagbura | Kontrata; legal na obligasyon |
 | Sagutin ang iyong mga kahilingan at pangasiwaan ang mga legal na claim | Impormasyon sa iyong kahilingan | Legal na obligasyon; lehitimong interes |
 | Ipakita ang Serbisyo sa iyong wika | Wikang pinili sa link, wika ng browser | Lehitimong interes |
+| Unawain kung paano ginagamit ang Serbisyo at pahusayin ito (analytics ng paggamit) | Impormasyon sa paggamit at device, mga analytics cookie | Ang iyong pahintulot, na maaari mong bawiin anumang oras |
 
 Ang mga desisyon tungkol sa nilalaman at mga account ay ginagawa ng mga tao. Ang automatic rate limit ay nagpapabagal o panandaliang humaharang lamang sa mga aksyon; hindi kami gumagawa ng automated na desisyon na may legal o katulad na malaking epekto sa iyo.
 
@@ -49,7 +52,9 @@ Hindi pampubliko ang mga post na ginawa mong ikaw lang ang makakakita: ikaw lang
 
 ## 5. Mga Cookie
 
-Gumagamit lamang kami ng mga cookie na kinakailangan ng Serbisyo upang gumana. Hindi kami gumagamit ng mga cookie para sa advertising o analytics.
+Gumagamit kami ng mga cookie na kinakailangan ng Serbisyo upang gumana at, kung tatanggapin mo lamang ang mga ito, ng mga analytics cookie. Hindi kami gumagamit ng mga cookie para sa advertising.
+
+**Mga kinakailangang cookie**
 
 | Cookie | Layunin | Tagal |
 |---|---|---|
@@ -57,14 +62,27 @@ Gumagamit lamang kami ng mga cookie na kinakailangan ng Serbisyo upang gumana. H
 | `ni_oidc` | Pinoprotektahan ang proseso ng sign-in | 10 minuto |
 | `ni_sso` | Ina-alala na nasubukan na ang automatic sign-in, upang maiwasan ang paulit-ulit na mga redirect | 24 oras |
 | `ni_vid` | Random na identifier para sa mga like at komento nang walang account, at para sa pagpigil sa abuso | 400 araw |
+| `ni_locale` | Tinatandaan ang wikang pinili mo | 1 taon |
+| `ni_theme` | Tinatandaan ang color theme na pinili mo | 1 taon |
+| `ni_consent` | Tinatandaan kung tinanggap o tinanggihan mo ang mga analytics cookie | 180 araw |
 
 Kung bubura mo ang mga cookie na ito, masign out ka at ituturing na bagong bisita.
+
+**Mga analytics cookie (sa iyong pahintulot lamang)**
+
+| Cookie | Layunin | Tagal |
+|---|---|---|
+| `_ga`, `_ga_<ID>` | Google Analytics: pinag-iiba ang mga bisita at pagbisita | 13 buwan |
+| `_clck` | Microsoft Clarity: nagtatago ng pseudonymous na identifier ng bisita | 1 taon |
+| `_clsk` | Microsoft Clarity: pinag-uugnay ang mga page view sa iisang pagbisita | 1 araw |
+
+Maaari ring maglagay ang Microsoft ng mga cookie sa sarili nitong mga domain kapag nag-load ang Clarity; inilalarawan ang mga ito sa privacy statement ng Microsoft. Maaari mong tanggapin o tanggihan ang mga analytics cookie sa abisong ipinapakita sa iyong unang pagbisita, at baguhin ang iyong pinili anumang oras gamit ang button na "Mga setting ng cookie" sa itaas ng patakarang ito. Kapag binawi mo ang iyong pahintulot, binubura namin ang mga analytics cookie na inilagay sa niceideas at hindi na namin nilo-load ang mga tool.
 
 ## 6. Pagbahagi
 
 Hindi namin ibinebenta o pinaupahan ang personal na impormasyon, at hindi namin ito ibinabahagi para sa cross-context behavioral advertising. Ibinabahagi lamang namin ito sa:
 
-- **Mga service provider** na nagproseso nito para sa amin sa ilalim ng kontrata: Hetzner Online GmbH (mga server at database, Germany) at Cloudflare, Inc. (network security, content delivery, at media storage sa Western Europe; gumagana ang network nito sa buong mundo).
+- **Mga service provider** na nagproseso nito para sa amin sa ilalim ng kontrata: Hetzner Online GmbH (mga server at database, Germany) at Cloudflare, Inc. (network security, content delivery, at media storage sa Western Europe; gumagana ang network nito sa buong mundo); at, kung tatanggapin mo lamang ang mga analytics cookie, ang Google (Google Analytics) at Microsoft (Microsoft Clarity), na nagpoproseso ng analytics ng paggamit pangunahin sa United States.
 - **NiceMatrix ID**, ang serbisyo ng sign-in na pinapatakbo namin, upang sign in ka at iproseso ang pagbura ng account.
 - **Mga app na iyong awtorisado**, na tumatanggap lamang ng ipinahintulot mo, tulad ng mga post na kanilang ipinaskil at ang iyong pampublikong profile.
 - **Ang publiko**, gaya ng inilalarawan sa Seksyon 4.
@@ -75,11 +93,13 @@ Hindi namin ibinebenta o pinaupahan ang personal na impormasyon, at hindi namin 
 
 Base ang NiceMatrix sa Canada. Ang aming mga server at media storage ay nasa Europe (Germany at Western Europe), at pinoproseso ng aming network provider ang mga kahilingan sa bansang pinakamalapit sa iyo. Kaya, ang iyong impormasyon ay maaaring maproseso sa Germany, ibang mga bansa sa Europe, Canada, at ibang mga bansa kung saan nagpapatakbo ang aming mga provider, na ang mga batas nito ay maaaring iba sa mga batas ng iyong bansa.
 
-Ang mga paglipat mula sa European Economic Area, United Kingdom, at Switzerland patungo sa Canada ay umaasa sa mga adequacy decision para sa Canada. Umaasa ang ibang mga paglipat sa Standard Contractual Clauses na nasa mga data processing terms ng aming mga provider, o sa ibang mga pangangalaga na kinikilala ng batas.
+Kung tatanggapin mo ang mga analytics cookie, pinoproseso ng Google at Microsoft ang analytics data sa United States at sa iba pang bansa kung saan sila nagpapatakbo.
+
+Ang mga paglipat mula sa European Economic Area, United Kingdom, at Switzerland patungo sa Canada ay umaasa sa mga adequacy decision para sa Canada. Ang mga paglipat sa Google at Microsoft sa United States ay umaasa sa EU-U.S. Data Privacy Framework at sa mga extension nito para sa UK at Switzerland, kung saan sertipikado ang dalawang kumpanya, o sa Standard Contractual Clauses. Umaasa ang ibang mga paglipat sa Standard Contractual Clauses na nasa mga data processing terms ng aming mga provider, o sa ibang mga pangangalaga na kinikilala ng batas.
 
 ## 8. Mainland China
 
-Para sa mga koneksyon mula sa mainland China, ang mga indibidwal na pinapaskil na post page lamang at ang mga like at komento dito ang maa-access. Kung ikaw ay titingin, mag-like, o magkomento sa gayong page mula sa mainland China, ang impormasyong inilalarawan sa Seksyon 2 ay pinoproseso at iniimbak sa labas ng mainland China, pangunahin sa Germany. Sa pag-interact sa page, sumasang-ayon ka sa paglipat na ito. Maaari mong gamitin ang iyong mga karapatan sa ilalim ng Personal Information Protection Law ng People's Republic of China sa pagsulat sa support@nicematrix.ca.
+Para sa mga koneksyon mula sa mainland China, ang mga indibidwal na pinapaskil na post page lamang at ang mga like at komento dito ang maa-access. Kung ikaw ay titingin, mag-like, o magkomento sa gayong page mula sa mainland China, ang impormasyong inilalarawan sa Seksyon 2 ay pinoproseso at iniimbak sa labas ng mainland China, pangunahin sa Germany. Sa pag-interact sa page, sumasang-ayon ka sa paglipat na ito. Hindi ginagamit ang mga analytics tool para sa mga koneksyon mula sa mainland China. Maaari mong gamitin ang iyong mga karapatan sa ilalim ng Personal Information Protection Law ng People's Republic of China sa pagsulat sa support@nicematrix.ca.
 
 ## 9. Gaano katagal namin itinatago ang impormasyon
 
@@ -95,6 +115,9 @@ Para sa mga koneksyon mula sa mainland China, ang mga indibidwal na pinapaskil n
 | Mga sign-in session | Hanggang sa magsign out ka o pagkalipas ng 30 araw na walang paggamit; nabubura araw-araw ang mga nag-expire na rekord |
 | Mga bara sa bisita at anti-spam check | Hanggang sa mag-expire; nabubura araw-araw ang mga nag-expire na rekord |
 | Web server access log | 14 araw |
+| Google Analytics data na naka-link sa mga cookie o identifier ng bisita | Hanggang 14 buwan |
+| Mga session replay ng Microsoft Clarity | 30 araw; ang mga replay na sine-save namin para suriin, hanggang 13 buwan |
+| Iba pang data ng Microsoft Clarity (heatmap, istatistika) | Hanggang 13 buwan |
 | Application log (mga error at service event, walang IP address o nilalaman) | Automatic na nabubura kapag naabot ang limitasyon ng log storage ng server |
 | Database backup | Hanggang 14 araw, pagkatapos na nawawala rin sa backup ang mga binurang impormasyon |
 | Mga abiso ng pagbura ng account (account identifier, kaganapan, oras) | Hanggang sa kinakailangan upang ipakita na naisagawa ang pagbura |
@@ -130,11 +153,11 @@ Hindi naglalayon ang Serbisyo sa mga bata sa ilalim ng 13 taong gulang, at sadya
 
 ## 13. Seguridad
 
-Pinoprotektahan namin ang impormasyon sa pamamagitan ng encryption habang naipapadala (HTTPS), one-way hash sa lugar ng raw session code, IP address, at browser identifier, mga signed message sa pagitan ng aming mga serbisyo, access na limitado sa mga awtorisadong staff, isang mahigpit na content security policy na walang third-party script, at mga araw-araw na backup na itinatago sa limitadong panahon. Walang system na perpektong ligtas. Kung lumikha ng isang totoong panganib ng malaking pinsala ang isang security breach, aabisuhan namin ikaw at ang mga awtoridad ayon sa kinakailangan ng batas.
+Pinoprotektahan namin ang impormasyon sa pamamagitan ng encryption habang naipapadala (HTTPS), one-way hash sa lugar ng raw session code, IP address, at browser identifier, mga signed message sa pagitan ng aming mga serbisyo, access na limitado sa mga awtorisadong staff, isang mahigpit na content security policy na hindi nagpapahintulot ng third-party script maliban sa mga opsyonal na analytics tool sa Seksyon 2, na naglo-load lamang pagkatapos mong tanggapin ang mga ito, at mga araw-araw na backup na itinatago sa limitadong panahon. Walang system na perpektong ligtas. Kung lumikha ng isang totoong panganib ng malaking pinsala ang isang security breach, aabisuhan namin ikaw at ang mga awtoridad ayon sa kinakailangan ng batas.
 
 ## 14. Abiso para sa mga residente ng California
 
-Sa nakaraang 12 buwan, kinolekta namin ang mga identifier (account identifier, handle, hashed IP address at browser identifier), internet activity (log at interaksyon), at ang nilalamang iyong ipinapaskil, mula sa mga source at para sa mga layunin na inilalarawan sa Seksyon 2 at 3. Ibinunyag namin ang impormasyong ito para sa mga layuning pangnegosyo lamang sa mga service provider na nakalista sa Seksyon 6. Hindi namin ibinebenta o ibinabahagi ang personal na impormasyon para sa cross-context behavioral advertising, at hindi namin ginagamit ang sensitive personal na impormasyon upang mag-hinuha ng mga katangian tungkol sa iyo. Inilalarawan ang pananatili sa Seksyon 9.
+Sa nakaraang 12 buwan, kinolekta namin ang mga identifier (account identifier, handle, hashed IP address at browser identifier), internet activity (log, interaksyon, at, kung tatanggapin mo ang mga analytics cookie, analytics ng paggamit), at ang nilalamang iyong ipinapaskil, mula sa mga source at para sa mga layunin na inilalarawan sa Seksyon 2 at 3. Ibinunyag namin ang impormasyong ito para sa mga layuning pangnegosyo lamang sa mga service provider na nakalista sa Seksyon 6, kasama ang Google at Microsoft para sa analytics ng paggamit kung tatanggapin mo ang mga analytics cookie. Hindi namin ibinebenta o ibinabahagi ang personal na impormasyon para sa cross-context behavioral advertising, at hindi namin ginagamit ang sensitive personal na impormasyon upang mag-hinuha ng mga katangian tungkol sa iyo. Inilalarawan ang pananatili sa Seksyon 9.
 
 ## 15. Mga pagbabago sa patakarang ito
 

@@ -1,4 +1,4 @@
-> **Samenvatting.** Wij verzamelen alleen wat nodig is om niceideas te laten werken: uw profiel, wat u plaatst, en beperkte technische gegevens om de Dienst veilig te houden. Uw berichten zijn openbaar, tenzij u ze alleen voor uzelf zichtbaar maakt. Wij verkopen geen persoonsgegevens, tonen geen advertenties en gebruiken geen externe trackers. U kunt berichten op elk moment verwijderen en uw account verwijderen door uw NiceMatrix ID te verwijderen. Schrijf naar support@nicematrix.ca met elke privacyvraag of verzoek.
+> **Samenvatting.** Wij verzamelen alleen wat nodig is om niceideas te laten werken: uw profiel, wat u plaatst, en beperkte technische gegevens om de Dienst veilig te houden. Uw berichten zijn openbaar, tenzij u ze alleen voor uzelf zichtbaar maakt. Wij verkopen geen persoonsgegevens en tonen geen advertenties. Alleen als u analytische cookies accepteert, gebruiken wij Google Analytics en Microsoft Clarity om te begrijpen hoe de Dienst wordt gebruikt. U kunt berichten op elk moment verwijderen en uw account verwijderen door uw NiceMatrix ID te verwijderen. Schrijf naar support@nicematrix.ca met elke privacyvraag of verzoek.
 
 ## 1. Wie wij zijn
 
@@ -22,7 +22,9 @@ Dit beleid legt uit welke informatie niceideas verzamelt, waarom, hoe lang wij d
 
 **Informatie van apps die u machtigt.** Apps die u machtigt, sturen ons de berichten en media die u via hen publiceert, samen met de identificatie van de app.
 
-**Wat wij niet verzamelen.** Wij gebruiken geen reclame-, analyse- of socialemediatrackingtools, stellen geen reclameprofielen op en verzamelen geen precieze locatiegegevens. Wij vragen niet om gevoelige informatie, maar uw berichten kunnen deze onthullen als u ervoor kiest ze te publiceren.
+**Gebruiksanalyse (alleen met uw toestemming).** Als u analytische cookies accepteert, gebruiken wij Google Analytics (Google) en Microsoft Clarity (Microsoft) om te begrijpen hoe de webpagina's worden gebruikt en ze te verbeteren. Deze tools verzamelen de pagina's die u bezoekt, klikken, scrollen en muisbewegingen, uw bij benadering bepaalde locatie op basis van uw IP-adres, apparaat- en browsergegevens, en pseudonieme identificaties die in cookies worden opgeslagen. Microsoft Clarity maakt ook sessie-opnamen en heatmaps; wij stellen het zo in dat alle tekst op de pagina wordt verborgen, inclusief wat u typt, zodat de inhoud van berichten, reacties en formulieren niet wordt vastgelegd. Wij schakelen de advertentiefuncties van Google uit en gebruiken deze tools niet op de pagina Instellingen, op moderatiepagina's of voor verbindingen vanuit vasteland-China. Als u analytische cookies weigert of geen keuze maakt, worden deze tools niet geladen.
+
+**Wat wij niet verzamelen.** Wij gebruiken geen reclame- of socialemediatrackingtools, stellen geen reclameprofielen op en verzamelen geen precieze locatiegegevens. Wij vragen niet om gevoelige informatie, maar uw berichten kunnen deze onthullen als u ervoor kiest ze te publiceren.
 
 ## 3. Hoe wij informatie gebruiken en waarom
 
@@ -36,6 +38,7 @@ Dit beleid legt uit welke informatie niceideas verzamelt, waarom, hoe lang wij d
 | Accountverwijdering verwerken | Accountidentificatie, verwijderingsmeldingen | Contract; wettelijke verplichtingen |
 | Uw verzoeken beantwoorden en juridische claims behandelen | Informatie in uw verzoek | Wettelijke verplichtingen; gerechtvaardigd belang |
 | De Dienst in uw taal weergeven | In de link gekozen taal, browsertaal | Gerechtvaardigd belang |
+| Begrijpen hoe de Dienst wordt gebruikt en deze verbeteren (gebruiksanalyse) | Gebruiks- en apparaatgegevens, analytische cookies | Uw toestemming, die u op elk moment kunt intrekken |
 
 Beslissingen over inhoud en accounts worden door mensen genomen. Automatische snelheidslimieten vertragen of blokkeren acties alleen kort; wij nemen geen geautomatiseerde besluiten die rechtsgevolgen of soortgelijke ingrijpende gevolgen voor u hebben.
 
@@ -49,7 +52,9 @@ Berichten die u alleen voor uzelf zichtbaar maakt, zijn niet openbaar: alleen u 
 
 ## 5. Cookies
 
-Wij gebruiken alleen cookies die de Dienst nodig heeft om te functioneren. Wij gebruiken geen advertentie- of analysecookies.
+Wij gebruiken cookies die de Dienst nodig heeft om te functioneren en, alleen als u ze accepteert, analytische cookies. Wij gebruiken geen advertentiecookies.
+
+**Noodzakelijke cookies**
 
 | Cookie | Doel | Duur |
 |---|---|---|
@@ -57,14 +62,27 @@ Wij gebruiken alleen cookies die de Dienst nodig heeft om te functioneren. Wij g
 | `ni_oidc` | Beschermt het inlogproces | 10 minuten |
 | `ni_sso` | Onthoudt dat automatisch inloggen al is geprobeerd, om herhaalde omleidingen te voorkomen | 24 uur |
 | `ni_vid` | Willekeurige identificatie voor likes en reacties zonder account, en voor misbruikpreventie | 400 dagen |
+| `ni_locale` | Onthoudt de taal die u hebt gekozen | 1 jaar |
+| `ni_theme` | Onthoudt het kleurenthema dat u hebt gekozen | 1 jaar |
+| `ni_consent` | Onthoudt of u analytische cookies hebt geaccepteerd of geweigerd | 180 dagen |
 
 Als u deze cookies verwijdert, wordt u uitgelogd en als nieuwe bezoeker behandeld.
+
+**Analytische cookies (alleen met uw toestemming)**
+
+| Cookie | Doel | Duur |
+|---|---|---|
+| `_ga`, `_ga_<ID>` | Google Analytics: onderscheidt bezoekers en bezoeken | 13 maanden |
+| `_clck` | Microsoft Clarity: bewaart een pseudonieme bezoekersidentificatie | 1 jaar |
+| `_clsk` | Microsoft Clarity: koppelt paginaweergaven aan één bezoek | 1 dag |
+
+Microsoft kan bij het laden van Clarity ook cookies plaatsen op zijn eigen domeinen; deze worden beschreven in de privacyverklaring van Microsoft. U kunt analytische cookies accepteren of weigeren in de melding die bij uw eerste bezoek wordt getoond, en uw keuze op elk moment wijzigen met de knop ‘Cookie-instellingen’ bovenaan dit beleid. Wanneer u uw toestemming intrekt, verwijderen wij de analytische cookies die op niceideas zijn geplaatst en laden wij de tools niet meer.
 
 ## 6. Delen
 
 Wij verkopen of verhuren geen persoonsgegevens, en delen deze niet voor contextoverschrijdende gedragsgerichte reclame. Wij delen deze alleen met:
 
-- **Dienstverleners** die deze contractueel voor ons verwerken: Hetzner Online GmbH (servers en database, Duitsland) en Cloudflare, Inc. (netwerkbeveiliging, contentlevering en mediaopslag in West-Europa; haar netwerk opereert wereldwijd).
+- **Dienstverleners** die deze contractueel voor ons verwerken: Hetzner Online GmbH (servers en database, Duitsland) en Cloudflare, Inc. (netwerkbeveiliging, contentlevering en mediaopslag in West-Europa; haar netwerk opereert wereldwijd); en, alleen als u analytische cookies accepteert, Google (Google Analytics) en Microsoft (Microsoft Clarity), die gebruiksanalysegegevens voornamelijk in de Verenigde Staten verwerken.
 - **NiceMatrix ID**, de inlogdienst die wij exploiteren, om u in te loggen en accountverwijdering te verwerken.
 - **Apps die u machtigt**, die alleen ontvangen wat u toestaat, zoals de berichten die zij hebben gepubliceerd en uw openbare profiel.
 - **Het publiek**, zoals beschreven in Sectie 4.
@@ -75,11 +93,13 @@ Wij verkopen of verhuren geen persoonsgegevens, en delen deze niet voor contexto
 
 NiceMatrix is gevestigd in Canada. Onze servers en mediaopslag bevinden zich in Europa (Duitsland en West-Europa), en onze netwerkprovider verwerkt verzoeken in het land dat het dichtst bij u ligt. Uw informatie kan daarom worden verwerkt in Duitsland, andere Europese landen, Canada en andere landen waar onze leveranciers actief zijn, waarvan de wetten kunnen afwijken van die van uw land.
 
-Overdrachten vanuit de Europese Economische Ruimte, het Verenigd Koninkrijk en Zwitserland naar Canada zijn gebaseerd op de adequaatheidsbesluiten voor Canada. Andere overdrachten zijn gebaseerd op de Standaardcontractbepalingen opgenomen in de gegevensverwerkingsvoorwaarden van onze leveranciers, of op andere wettelijk erkende waarborgen.
+Als u analytische cookies accepteert, verwerken Google en Microsoft analysegegevens in de Verenigde Staten en in andere landen waar zij actief zijn.
+
+Overdrachten vanuit de Europese Economische Ruimte, het Verenigd Koninkrijk en Zwitserland naar Canada zijn gebaseerd op de adequaatheidsbesluiten voor Canada. Overdrachten aan Google en Microsoft in de Verenigde Staten zijn gebaseerd op het EU-VS-kader voor gegevensbescherming (Data Privacy Framework) en de uitbreidingen daarvan voor het Verenigd Koninkrijk en Zwitserland, waaronder beide bedrijven gecertificeerd zijn, of op Standaardcontractbepalingen. Andere overdrachten zijn gebaseerd op de Standaardcontractbepalingen opgenomen in de gegevensverwerkingsvoorwaarden van onze leveranciers, of op andere wettelijk erkende waarborgen.
 
 ## 8. Vasteland-China
 
-Voor verbindingen vanuit vasteland-China zijn alleen individuele gedeelde berichtpagina's en de likes en reacties daarop beschikbaar. Als u een dergelijke pagina vanuit vasteland-China bekijkt, liket of erop reageert, worden de in Sectie 2 beschreven informatie buiten vasteland-China verwerkt en opgeslagen, voornamelijk in Duitsland. Door te interageren met de pagina, stemt u in met deze overdracht. U kunt uw rechten onder de wet op de bescherming van persoonsgegevens van de Volksrepubliek China uitoefenen door te schrijven naar support@nicematrix.ca.
+Voor verbindingen vanuit vasteland-China zijn alleen individuele gedeelde berichtpagina's en de likes en reacties daarop beschikbaar. Als u een dergelijke pagina vanuit vasteland-China bekijkt, liket of erop reageert, worden de in Sectie 2 beschreven informatie buiten vasteland-China verwerkt en opgeslagen, voornamelijk in Duitsland. Door te interageren met de pagina, stemt u in met deze overdracht. Analysetools worden niet gebruikt voor verbindingen vanuit vasteland-China. U kunt uw rechten onder de wet op de bescherming van persoonsgegevens van de Volksrepubliek China uitoefenen door te schrijven naar support@nicematrix.ca.
 
 ## 9. Hoe lang wij informatie bewaren
 
@@ -95,6 +115,9 @@ Voor verbindingen vanuit vasteland-China zijn alleen individuele gedeelde berich
 | Inlogsessies | Totdat u uitlogt of na 30 dagen zonder gebruik; verlopen records worden dagelijks verwijderd |
 | Bezoekersblokkades en antispamcontroles | Totdat ze verlopen; verlopen records worden dagelijks verwijderd |
 | Toegangslogs van de webserver | 14 dagen |
+| Google Analytics-gegevens gekoppeld aan cookies of bezoekersidentificaties | Tot 14 maanden |
+| Sessie-opnamen van Microsoft Clarity | 30 dagen; opnamen die wij bewaren voor beoordeling tot 13 maanden |
+| Overige gegevens van Microsoft Clarity (heatmaps, statistieken) | Tot 13 maanden |
 | Applicatielogs (fouten en servicegebeurtenissen, zonder IP-adressen of inhoud) | Automatisch verwijderd wanneer de opslaglimiet van de serverlogs wordt bereikt |
 | Databaseback-ups | Tot 14 dagen, waarna verwijderde informatie ook uit de back-ups verdwijnt |
 | Meldingen van accountverwijdering (accountidentificatie, gebeurtenis, tijd) | Zolang nodig om aan te tonen dat de verwijdering is uitgevoerd |
@@ -130,11 +153,11 @@ De Dienst is niet gericht op kinderen onder 13 jaar, en wij verzamelen niet bewu
 
 ## 13. Beveiliging
 
-Wij beschermen informatie met versleuteling tijdens verzending (HTTPS), eenrichtingshashes in plaats van ruwe sessiecodes, IP-adressen en browseridentificaties, ondertekende berichten tussen onze diensten, toegang beperkt tot bevoegd personeel, een strikt contentbeveiligingsbeleid zonder externe scripts, en dagelijkse back-ups die een beperkte tijd worden bewaard. Geen systeem is perfect veilig. Als een beveiligingsinbreuk een reëel risico op aanzienlijke schade met zich meebrengt, zullen wij u en de autoriteiten informeren zoals de wet vereist.
+Wij beschermen informatie met versleuteling tijdens verzending (HTTPS), eenrichtingshashes in plaats van ruwe sessiecodes, IP-adressen en browseridentificaties, ondertekende berichten tussen onze diensten, toegang beperkt tot bevoegd personeel, een strikt contentbeveiligingsbeleid dat geen externe scripts toestaat behalve de optionele analysetools uit Sectie 2, die pas worden geladen nadat u ze hebt geaccepteerd, en dagelijkse back-ups die een beperkte tijd worden bewaard. Geen systeem is perfect veilig. Als een beveiligingsinbreuk een reëel risico op aanzienlijke schade met zich meebrengt, zullen wij u en de autoriteiten informeren zoals de wet vereist.
 
 ## 14. Kennisgeving voor inwoners van Californië
 
-In de afgelopen 12 maanden hebben wij identificatoren (accountidentificatie, handle, gehashte IP-adressen en browseridentificaties), internetactiviteit (logs en interacties) en de inhoud die u publiceert verzameld, uit de bronnen en voor de doeleinden beschreven in Secties 2 en 3. Wij hebben deze informatie voor zakelijke doeleinden alleen bekendgemaakt aan de dienstverleners vermeld in Sectie 6. Wij verkopen of delen geen persoonsgegevens voor contextoverschrijdende gedragsgerichte reclame, en gebruiken geen gevoelige persoonsgegevens om kenmerken over u af te leiden. De bewaartermijn is beschreven in Sectie 9.
+In de afgelopen 12 maanden hebben wij identificatoren (accountidentificatie, handle, gehashte IP-adressen en browseridentificaties), internetactiviteit (logs, interacties en, als u analytische cookies accepteert, gebruiksanalyse) en de inhoud die u publiceert verzameld, uit de bronnen en voor de doeleinden beschreven in Secties 2 en 3. Wij hebben deze informatie voor zakelijke doeleinden alleen bekendgemaakt aan de dienstverleners vermeld in Sectie 6, waaronder Google en Microsoft voor gebruiksanalyse als u analytische cookies accepteert. Wij verkopen of delen geen persoonsgegevens voor contextoverschrijdende gedragsgerichte reclame, en gebruiken geen gevoelige persoonsgegevens om kenmerken over u af te leiden. De bewaartermijn is beschreven in Sectie 9.
 
 ## 15. Wijzigingen in dit beleid
 

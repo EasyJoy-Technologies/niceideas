@@ -268,6 +268,13 @@
     "saving": "Bezig met opslaan…",
     "title": "Titel"
   },
+  "consent": {
+    "accept": "Accepteren",
+    "reject": "Weigeren",
+    "settings": "Cookie-instellingen",
+    "text": "Met je toestemming gebruiken we Google Analytics en Microsoft Clarity om te begrijpen hoe de site wordt gebruikt en hem te verbeteren. Ze worden alleen geladen als je accepteert, en je kunt je keuze altijd wijzigen.",
+    "title": "Analytische cookies"
+  },
   "discover": {
     "title": "Ontdekken"
   },

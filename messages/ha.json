@@ -268,6 +268,13 @@
     "saving": "Ana ajiyewa…",
     "title": "Take"
   },
+  "consent": {
+    "accept": "Amince",
+    "reject": "Ƙi",
+    "settings": "Saitunan kukis",
+    "text": "Da izininka, muna amfani da Google Analytics da Microsoft Clarity don fahimtar yadda ake amfani da shafin da kuma inganta shi. Ana loda su ne kawai idan ka amince, kuma za ka iya canza zaɓinka a kowane lokaci.",
+    "title": "Kukis na nazari"
+  },
   "discover": {
     "title": "Bincika"
   },

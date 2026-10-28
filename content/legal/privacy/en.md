@@ -1,4 +1,4 @@
-> **Summary.** We collect only what we need to run niceideas: your profile, what you publish, and limited technical data to keep the Service safe. Your posts are public unless you make them visible only to you. We do not sell personal information, show ads or use third-party trackers. You can delete posts at any time and delete your account by deleting your NiceMatrix ID. Write to support@nicematrix.ca with any privacy question or request.
+> **Summary.** We collect only what we need to run niceideas: your profile, what you publish, and limited technical data to keep the Service safe. Your posts are public unless you make them visible only to you. We do not sell personal information or show ads. Only if you accept analytics cookies, we use Google Analytics and Microsoft Clarity to understand how the Service is used. You can delete posts at any time and delete your account by deleting your NiceMatrix ID. Write to support@nicematrix.ca with any privacy question or request.
 
 ## 1. Who we are
 
@@ -22,7 +22,9 @@ This policy explains what information niceideas collects, why, how long we keep 
 
 **Information from apps you authorise.** Apps you authorise send us the posts and media you publish through them, together with the app's identifier.
 
-**What we do not collect.** We do not use advertising, analytics or social-media tracking tools, build advertising profiles or collect precise location. We do not ask for sensitive information, but your posts may reveal it if you choose to publish it.
+**Usage analytics (only with your consent).** If you accept analytics cookies, we use Google Analytics (Google) and Microsoft Clarity (Microsoft) to understand how people use the web pages and improve them. These tools collect the pages you visit, clicks, scrolling and mouse movements, your approximate location derived from your IP address, device and browser information, and pseudonymous identifiers stored in cookies. Microsoft Clarity also creates session replays and heatmaps; we configure it to hide all text on the page, including anything you type, so it does not record the content of posts, comments or forms. We turn off Google's advertising features, and we do not use these tools on the Settings page, on moderation pages or for connections from mainland China. If you reject analytics cookies or do not choose, these tools are not loaded.
+
+**What we do not collect.** We do not use advertising or social-media tracking tools, build advertising profiles or collect precise location. We do not ask for sensitive information, but your posts may reveal it if you choose to publish it.
 
 ## 3. How we use information and why
 
@@ -36,6 +38,7 @@ This policy explains what information niceideas collects, why, how long we keep 
 | Process account deletion | Account identifier, deletion notices | Contract; legal obligations |
 | Answer your requests and handle legal claims | Information in your request | Legal obligations; legitimate interest |
 | Show the Service in your language | Language chosen in the link, browser language | Legitimate interest |
+| Understand how the Service is used and improve it (usage analytics) | Usage and device information, analytics cookies | Your consent, which you can withdraw at any time |
 
 Decisions about content and accounts are made by people. Automatic rate limits only slow down or briefly block actions; we do not make automated decisions that have legal or similarly significant effects on you.
 
@@ -49,7 +52,9 @@ Posts you make visible only to you are not public: only you can see them, and th
 
 ## 5. Cookies
 
-We use only cookies that the Service needs to work. We do not use advertising or analytics cookies.
+We use cookies that the Service needs to work and, only if you accept them, analytics cookies. We do not use advertising cookies.
+
+**Necessary cookies**
 
 | Cookie | Purpose | Duration |
 |---|---|---|
@@ -57,14 +62,27 @@ We use only cookies that the Service needs to work. We do not use advertising or
 | `ni_oidc` | Protects the sign-in process | 10 minutes |
 | `ni_sso` | Remembers that automatic sign-in was already tried, to avoid repeated redirects | 24 hours |
 | `ni_vid` | Random identifier for likes and comments without an account, and for abuse prevention | 400 days |
+| `ni_locale` | Remembers the language you chose | 1 year |
+| `ni_theme` | Remembers the colour theme you chose | 1 year |
+| `ni_consent` | Remembers whether you accepted or rejected analytics cookies | 180 days |
 
 If you delete these cookies, you are signed out and treated as a new visitor.
+
+**Analytics cookies (only with your consent)**
+
+| Cookie | Purpose | Duration |
+|---|---|---|
+| `_ga`, `_ga_<ID>` | Google Analytics: distinguishes visitors and visits | 13 months |
+| `_clck` | Microsoft Clarity: keeps a pseudonymous visitor identifier | 1 year |
+| `_clsk` | Microsoft Clarity: links page views into one visit | 1 day |
+
+Microsoft may also set cookies on its own domains when Clarity loads; they are described in Microsoft's privacy statement. You can accept or reject analytics cookies in the banner shown on your first visit, and change your choice at any time with the "Cookie settings" button at the top of this policy. When you withdraw your consent, we delete the analytics cookies set on niceideas and stop loading the tools.
 
 ## 6. Sharing
 
 We do not sell or rent personal information, and we do not share it for cross-context behavioural advertising. We share it only with:
 
-- **Service providers** that process it for us under contract: Hetzner Online GmbH (servers and database, Germany) and Cloudflare, Inc. (network security, content delivery and media storage in Western Europe; its network operates worldwide).
+- **Service providers** that process it for us under contract: Hetzner Online GmbH (servers and database, Germany) and Cloudflare, Inc. (network security, content delivery and media storage in Western Europe; its network operates worldwide); and, only if you accept analytics cookies, Google (Google Analytics) and Microsoft (Microsoft Clarity), which process usage analytics mainly in the United States.
 - **NiceMatrix ID**, the sign-in service we operate, to sign you in and process account deletion.
 - **Apps you authorise**, which receive only what you allow, such as the posts they published and your public profile.
 - **The public**, as described in Section 4.
@@ -75,11 +93,13 @@ We do not sell or rent personal information, and we do not share it for cross-co
 
 NiceMatrix is based in Canada. Our servers and media storage are in Europe (Germany and Western Europe), and our network provider processes requests in the country nearest to you. Your information may therefore be processed in Germany, other European countries, Canada and other countries where our providers operate, whose laws may differ from those of your country.
 
-Transfers from the European Economic Area, the United Kingdom and Switzerland to Canada rely on the adequacy decisions for Canada. Other transfers rely on the Standard Contractual Clauses included in our providers' data processing terms, or on other safeguards recognised by law.
+If you accept analytics cookies, Google and Microsoft process analytics data in the United States and other countries where they operate.
+
+Transfers from the European Economic Area, the United Kingdom and Switzerland to Canada rely on the adequacy decisions for Canada. Transfers to Google and Microsoft in the United States rely on the EU-U.S. Data Privacy Framework and its UK and Swiss extensions, under which both companies are certified, or on Standard Contractual Clauses. Other transfers rely on the Standard Contractual Clauses included in our providers' data processing terms, or on other safeguards recognised by law.
 
 ## 8. Mainland China
 
-For connections from mainland China, only individual shared post pages and the likes and comments on them are available. If you view, like or comment on such a page from mainland China, the information described in Section 2 is processed and stored outside mainland China, mainly in Germany. By interacting with the page, you agree to this transfer. You can exercise your rights under the Personal Information Protection Law of the People's Republic of China by writing to support@nicematrix.ca.
+For connections from mainland China, only individual shared post pages and the likes and comments on them are available. If you view, like or comment on such a page from mainland China, the information described in Section 2 is processed and stored outside mainland China, mainly in Germany. By interacting with the page, you agree to this transfer. Analytics tools are not used for connections from mainland China. You can exercise your rights under the Personal Information Protection Law of the People's Republic of China by writing to support@nicematrix.ca.
 
 ## 9. How long we keep information
 
@@ -95,6 +115,9 @@ For connections from mainland China, only individual shared post pages and the l
 | Sign-in sessions | Until you sign out or after 30 days without use; expired records are deleted daily |
 | Visitor blocks and anti-spam checks | Until they expire; expired records are deleted daily |
 | Web server access logs | 14 days |
+| Google Analytics data linked to cookies or visitor identifiers | Up to 14 months |
+| Microsoft Clarity session replays | 30 days; replays we save for review up to 13 months |
+| Other Microsoft Clarity data (heatmaps, statistics) | Up to 13 months |
 | Application logs (errors and service events, without IP addresses or content) | Deleted automatically when the server's log storage limit is reached |
 | Database backups | Up to 14 days, after which deleted information is also gone from backups |
 | Account deletion notices (account identifier, event, time) | As long as needed to show that the deletion was carried out |
@@ -130,11 +153,11 @@ The Service is not directed to children under 13, and we do not knowingly collec
 
 ## 13. Security
 
-We protect information with encryption in transit (HTTPS), one-way hashes instead of raw session codes, IP addresses and browser identifiers, signed messages between our services, access limited to authorised staff, a strict content security policy without third-party scripts, and daily backups kept for a limited time. No system is perfectly secure. If a security breach creates a real risk of significant harm, we will notify you and the authorities as the law requires.
+We protect information with encryption in transit (HTTPS), one-way hashes instead of raw session codes, IP addresses and browser identifiers, signed messages between our services, access limited to authorised staff, a strict content security policy that allows no third-party scripts other than the optional analytics tools in Section 2, which load only after you accept them, and daily backups kept for a limited time. No system is perfectly secure. If a security breach creates a real risk of significant harm, we will notify you and the authorities as the law requires.
 
 ## 14. Notice for California residents
 
-In the past 12 months we collected identifiers (account identifier, handle, hashed IP addresses and browser identifiers), internet activity (logs and interactions) and the content you publish, from the sources and for the purposes described in Sections 2 and 3. We disclosed this information for business purposes only to the service providers listed in Section 6. We do not sell or share personal information for cross-context behavioural advertising, and we do not use sensitive personal information to infer characteristics about you. Retention is described in Section 9.
+In the past 12 months we collected identifiers (account identifier, handle, hashed IP addresses and browser identifiers), internet activity (logs, interactions and, if you accept analytics cookies, usage analytics) and the content you publish, from the sources and for the purposes described in Sections 2 and 3. We disclosed this information for business purposes only to the service providers listed in Section 6, including Google and Microsoft for usage analytics if you accept analytics cookies. We do not sell or share personal information for cross-context behavioural advertising, and we do not use sensitive personal information to infer characteristics about you. Retention is described in Section 9.
 
 ## 15. Changes to this policy
 

@@ -268,6 +268,13 @@
     "saving": "保存中…",
     "title": "标题"
   },
+  "consent": {
+    "accept": "接受",
+    "reject": "拒绝",
+    "settings": "Cookie 设置",
+    "text": "经你允许，我们会使用 Google Analytics 和 Microsoft Clarity 了解网站的使用情况并加以改进。只有你接受后它们才会加载，你也可以随时更改选择。",
+    "title": "分析类 Cookie"
+  },
   "discover": {
     "title": "发现"
   },

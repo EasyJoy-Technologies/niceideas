@@ -3,6 +3,7 @@ import { escapeHtml } from "@/server/render/escape";
 import { ZOOM_LINK_MARKER } from "@/server/render/media-html";
 import { APP_VERSION } from "@/server/version";
 import { siteHeader, type ChromeContext } from "./chrome";
+import { CONSENT_SCRIPT, CONSENT_STYLE, pageConsent } from "./consent";
 import { searchBox } from "./search-box";
 import { siteAside, siteRail } from "./site-columns";
 import { siteFooter } from "./site-footer";
@@ -30,6 +31,8 @@ export type PageDocument = {
   scripts?: string[];
   /** Phone bottom tab bar; default: on for feed pages (`side`). The post page has its own action bar. */
   tabBar?: boolean;
+  /** Usage analytics (after consent) when configured; default: on. Off for the settings page. */
+  analytics?: boolean;
 };
 
 /** Same-origin asset URL with the release as cache buster. */
@@ -56,8 +59,9 @@ export function renderPage(ctx: ChromeContext, page: PageDocument): string {
       ? [label("viewer", "share.viewer.label"), label("zoom", "share.viewer.zoom"), label("prev", "share.viewer.previous"), label("next", "share.viewer.next"), label("image-error", "share.viewer.error")]
       : []),
   ].join(" ");
-  const stylesheets = [...(page.stylesheets ?? []), ...(viewer ? ["/styles/photoswipe.css", "/styles/viewer.css"] : [])];
-  const scripts = [...(page.scripts ?? []), ...(viewer ? ["/scripts/viewer.js"] : [])];
+  const consent = pageConsent(ctx, page.analytics ?? true);
+  const stylesheets = [...(page.stylesheets ?? []), ...(viewer ? ["/styles/photoswipe.css", "/styles/viewer.css"] : []), ...(consent ? [CONSENT_STYLE] : [])];
+  const scripts = [...(page.scripts ?? []), ...(viewer ? ["/scripts/viewer.js"] : []), ...(consent ? [CONSENT_SCRIPT] : [])];
   const main = page.side ? `<div class="ni-shell">${siteRail(ctx)}${page.main}${siteAside(ctx, searchBox(ctx, page.query) + (page.aside ?? ""))}</div>` : page.main;
   return (
     `<!doctype html><html lang="${locale}" dir="${directionOf(locale)}"><head><meta charset="utf-8">` +
@@ -67,6 +71,6 @@ export function renderPage(ctx: ChromeContext, page: PageDocument): string {
     `<link rel="stylesheet" href="${asset("/styles/fonts.css")}"><link rel="stylesheet" href="${asset("/styles/tokens.css")}">` +
     `<link rel="stylesheet" href="${asset("/styles/post-body.css")}"><link rel="stylesheet" href="${asset("/styles/share-page.css")}"><link rel="stylesheet" href="${asset("/styles/interact.css")}"><link rel="stylesheet" href="${asset("/styles/feed.css")}"><link rel="stylesheet" href="${asset("/styles/repost.css")}"><link rel="stylesheet" href="${asset("/styles/account.css")}"><link rel="stylesheet" href="${asset("/styles/search.css")}"><link rel="stylesheet" href="${asset("/styles/nav.css")}">${ctx.viewer ? `<link rel="stylesheet" href="${asset("/styles/compose.css")}"><link rel="stylesheet" href="${asset("/styles/settings.css")}"><link rel="stylesheet" href="${asset("/styles/notifications.css")}">` : ""}${page.side ? `<link rel="stylesheet" href="${asset("/styles/shell.css")}"><link rel="stylesheet" href="${asset("/styles/aside.css")}">` : ""}` +
     `${stylesheets.map((s) => `<link rel="stylesheet" href="${asset(s)}">`).join("")}${themeHead(ctx.theme, asset("/styles/dark.css"))}${page.head ?? ""}<script src="${asset("/scripts/share.js")}" defer></script><script src="${asset("/scripts/interact.js")}" defer></script>${scripts.map((s) => `<script src="${asset(s)}" defer></script>`).join("")}</head>` +
-    `<body ${data}>${page.header ?? siteHeader(ctx)}${main}${page.footer ?? siteFooter(ctx, page.side)}${(page.tabBar ?? !!page.side) ? phoneTabBar(ctx) : ""}</body></html>`
+    `<body ${data}${consent?.bodyAttrs ?? ""}>${page.header ?? siteHeader(ctx)}${main}${page.footer ?? siteFooter(ctx, page.side)}${(page.tabBar ?? !!page.side) ? phoneTabBar(ctx) : ""}${consent?.banner ?? ""}</body></html>`
   );
 }

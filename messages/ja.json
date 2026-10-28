@@ -268,6 +268,13 @@
     "saving": "保存中…",
     "title": "タイトル"
   },
+  "consent": {
+    "accept": "同意する",
+    "reject": "拒否する",
+    "settings": "Cookie 設定",
+    "text": "同意いただいた場合に限り、サイトの利用状況を把握して改善するために Google Analytics と Microsoft Clarity を使用します。同意した場合にのみ読み込まれ、選択はいつでも変更できます。",
+    "title": "分析用 Cookie"
+  },
   "discover": {
     "title": "発見"
   },

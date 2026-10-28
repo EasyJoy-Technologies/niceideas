@@ -268,6 +268,13 @@
     "saving": "Mentés…",
     "title": "Cím"
   },
+  "consent": {
+    "accept": "Elfogadom",
+    "reject": "Elutasítom",
+    "settings": "Sütibeállítások",
+    "text": "Az engedélyeddel a Google Analytics és a Microsoft Clarity segítségével megértjük, hogyan használják az oldalt, és fejlesztjük. Csak akkor töltődnek be, ha elfogadod, és a döntésedet bármikor megváltoztathatod.",
+    "title": "Analitikai sütik"
+  },
   "discover": {
     "title": "Felfedezés"
   },

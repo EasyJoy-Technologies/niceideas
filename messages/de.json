@@ -268,6 +268,13 @@
     "saving": "Wird gespeichert…",
     "title": "Titel"
   },
+  "consent": {
+    "accept": "Akzeptieren",
+    "reject": "Ablehnen",
+    "settings": "Cookie-Einstellungen",
+    "text": "Mit deiner Zustimmung nutzen wir Google Analytics und Microsoft Clarity, um zu verstehen, wie die Website genutzt wird, und sie zu verbessern. Sie werden nur geladen, wenn du zustimmst, und du kannst deine Wahl jederzeit ändern.",
+    "title": "Analyse-Cookies"
+  },
   "discover": {
     "title": "Entdecken"
   },

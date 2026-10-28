@@ -1,4 +1,4 @@
-> **Muhtasari.** Tunakusanya tu kile tunachohitaji kuendesha niceideas: wasifu wako, kile unachochapisha, na data ndogo ya kiufundi kuilinda Huduma. Machapisho yako ni ya umma isipokuwa ukiyafanya yaonekane kwako tu. Hatuuzi taarifa binafsi, hatuonyeshi matangazo au kutumia vifuatiliaji vya nje. Unaweza kufuta machapisho wakati wowote na kufuta akaunti yako kwa kufuta NiceMatrix ID yako. Andika kwa support@nicematrix.ca kwa swali lolote la faragha au ombi.
+> **Muhtasari.** Tunakusanya tu kile tunachohitaji kuendesha niceideas: wasifu wako, kile unachochapisha, na data ndogo ya kiufundi kuilinda Huduma. Machapisho yako ni ya umma isipokuwa ukiyafanya yaonekane kwako tu. Hatuuzi taarifa binafsi wala hatuonyeshi matangazo. Ikiwa tu utakubali vidakuzi vya uchambuzi, tunatumia Google Analytics na Microsoft Clarity kuelewa jinsi Huduma inavyotumiwa. Unaweza kufuta machapisho wakati wowote na kufuta akaunti yako kwa kufuta NiceMatrix ID yako. Andika kwa support@nicematrix.ca kwa swali lolote la faragha au ombi.
 
 ## 1. Sisi ni nani
 
@@ -22,7 +22,9 @@ Sera hii inaeleza taarifa gani niceideas inakusanya, kwa nini, kwa muda gani tun
 
 **Taarifa kutoka programu unazoidhinisha.** Programu unazoidhinisha zinatutumia machapisho na media unayochapisha kupitia hizo, pamoja na kitambulisho cha programu.
 
-**Kile hatukikusanyi.** Hatutumii matangazo, uchambuzi au zana za kufuatilia mitandao ya kijamii, kujenga wasifu wa matangazo au kukusanya eneo sahihi. Hatuulizi taarifa nyeti, lakini machapisho yako yanaweza kuzifichua ikiwa utachagua kuzichapisha.
+**Uchambuzi wa matumizi (kwa idhini yako pekee).** Ukikubali vidakuzi vya uchambuzi, tunatumia Google Analytics (Google) na Microsoft Clarity (Microsoft) kuelewa jinsi kurasa za wavuti zinavyotumiwa na kuziboresha. Zana hizi hukusanya kurasa unazotembelea, mibofyo, usogezaji na misogeo ya kipanya, eneo lako la takriban linalotokana na anwani yako ya IP, taarifa za kifaa na kivinjari, na vitambulisho bandia vinavyohifadhiwa kwenye vidakuzi. Microsoft Clarity pia huunda marudio ya vipindi na ramani za joto; tunaisanidi ili ifiche maandishi yote kwenye ukurasa, ikiwa ni pamoja na chochote unachoandika, kwa hivyo hairekodi maudhui ya machapisho, maoni au fomu. Tunazima vipengele vya matangazo vya Google, na hatutumii zana hizi kwenye ukurasa wa Mipangilio, kwenye kurasa za udhibiti wala kwa muunganisho kutoka China bara. Ukikataa vidakuzi vya uchambuzi au usipochagua, zana hizi hazipakiwi.
+
+**Kile hatukikusanyi.** Hatutumii matangazo au zana za kufuatilia mitandao ya kijamii, kujenga wasifu wa matangazo au kukusanya eneo sahihi. Hatuulizi taarifa nyeti, lakini machapisho yako yanaweza kuzifichua ikiwa utachagua kuzichapisha.
 
 ## 3. Jinsi tunavyotumia taarifa na kwa nini
 
@@ -36,6 +38,7 @@ Sera hii inaeleza taarifa gani niceideas inakusanya, kwa nini, kwa muda gani tun
 | Kuchakata ufutaji wa akaunti | Kitambulisho cha akaunti, taarifa za ufutaji | Mkataba; wajibu wa kisheria |
 | Kujibu maombi yako na kushughulikia madai ya kisheria | Taarifa katika ombi lako | Wajibu wa kisheria; maslahi halali |
 | Kuonyesha Huduma kwa lugha yako | Lugha iliyochaguliwa kwenye kiungo, lugha ya kivinjari | Maslahi halali |
+| Kuelewa jinsi Huduma inavyotumiwa na kuiboresha (uchambuzi wa matumizi) | Taarifa za matumizi na kifaa, vidakuzi vya uchambuzi | Idhini yako, ambayo unaweza kuiondoa wakati wowote |
 
 Maamuzi kuhusu maudhui na akaunti yanafanywa na watu. Vikomo vya kiotomatiki vya kiwango vinapunguza kasi au kuzuia kwa muda mfupi vitendo tu; hatufanyi maamuzi ya kiotomatiki yenye athari za kisheria au muhimu sawa kwako.
 
@@ -49,7 +52,9 @@ Machapisho unayoyafanya yaonekane kwako tu si ya umma: ni wewe tu unayeweza kuya
 
 ## 5. Vidakuzi
 
-Tunatumia tu vidakuzi vinavyohitajika na Huduma kufanya kazi. Hatutumii vidakuzi vya matangazo au uchambuzi.
+Tunatumia vidakuzi vinavyohitajika na Huduma kufanya kazi na, ikiwa tu utavikubali, vidakuzi vya uchambuzi. Hatutumii vidakuzi vya matangazo.
+
+**Vidakuzi vya lazima**
 
 | Kidakuzi | Kusudi | Muda |
 |---|---|---|
@@ -57,14 +62,27 @@ Tunatumia tu vidakuzi vinavyohitajika na Huduma kufanya kazi. Hatutumii vidakuzi
 | `ni_oidc` | Kinalinda mchakato wa kujiunga | Dakika 10 |
 | `ni_sso` | Kinakumbuka kuwa kujiunga kwa kiotomatiki kulikuwa kimekwisha jaribiwa, kuzuia kurejeleza mara kwa mara | Masaa 24 |
 | `ni_vid` | Kitambulisho cha nasibu kwa mapendo na maoni bila akaunti, na kwa kuzuia unyanyasaji | Siku 400 |
+| `ni_locale` | Hukumbuka lugha uliyochagua | Mwaka 1 |
+| `ni_theme` | Hukumbuka mandhari ya rangi uliyochagua | Mwaka 1 |
+| `ni_consent` | Hukumbuka kama ulikubali au ulikataa vidakuzi vya uchambuzi | Siku 180 |
 
 Ukifuta vidakuzi hivi, unatolewa nje na kutendewa kama mtembeleaji mpya.
+
+**Vidakuzi vya uchambuzi (kwa idhini yako pekee)**
+
+| Kidakuzi | Kusudi | Muda |
+|---|---|---|
+| `_ga`, `_ga_<ID>` | Google Analytics: hutofautisha wageni na ziara | Miezi 13 |
+| `_clck` | Microsoft Clarity: huhifadhi kitambulisho bandia cha mgeni | Mwaka 1 |
+| `_clsk` | Microsoft Clarity: huunganisha mitazamo ya kurasa kuwa ziara moja | Siku 1 |
+
+Microsoft pia inaweza kuweka vidakuzi kwenye vikoa vyake yenyewe Clarity inapopakiwa; vimeelezwa katika taarifa ya faragha ya Microsoft. Unaweza kukubali au kukataa vidakuzi vya uchambuzi katika ilani inayoonyeshwa kwenye ziara yako ya kwanza, na kubadilisha chaguo lako wakati wowote kwa kitufe cha "Mipangilio ya vidakuzi" kilicho juu ya sera hii. Unapoondoa idhini yako, tunafuta vidakuzi vya uchambuzi vilivyowekwa kwenye niceideas na kuacha kupakia zana hizo.
 
 ## 6. Kushiriki
 
 Hatuuzi au kukodisha taarifa binafsi, na hatuzishiriki kwa matangazo ya kitabia ya mipaka tofauti. Tunazishiriki tu na:
 
-- **Watoa huduma** wanaozichakata kwa niaba yetu chini ya mkataba: Hetzner Online GmbH (seva na hifadhidata, Ujerumani) na Cloudflare, Inc. (usalama wa mtandao, uwasilishaji wa maudhui na hifadhi ya media katika Ulaya ya Magharibi; mtandao wake unafanya kazi duniani kote).
+- **Watoa huduma** wanaozichakata kwa niaba yetu chini ya mkataba: Hetzner Online GmbH (seva na hifadhidata, Ujerumani) na Cloudflare, Inc. (usalama wa mtandao, uwasilishaji wa maudhui na hifadhi ya media katika Ulaya ya Magharibi; mtandao wake unafanya kazi duniani kote); na, ikiwa tu utakubali vidakuzi vya uchambuzi, Google (Google Analytics) na Microsoft (Microsoft Clarity), zinazochakata data ya uchambuzi wa matumizi hasa nchini Marekani.
 - **NiceMatrix ID**, huduma ya kujiunga tunayoiendesha, kukuingiza na kuchakata ufutaji wa akaunti.
 - **Programu unazoidhinisha**, zinazopokea tu kile unachokiruhusu, kama machapisho yaliyochapishwa na wasifu wako wa umma.
 - **Umma**, kama ilivyoelezwa katika Kifungu cha 4.
@@ -75,11 +93,13 @@ Hatuuzi au kukodisha taarifa binafsi, na hatuzishiriki kwa matangazo ya kitabia 
 
 NiceMatrix inategemea Kanada. Seva zetu na hifadhi ya media ziko Ulaya (Ujerumani na Ulaya ya Magharibi), na mtoa huduma wetu wa mtandao anachakata maombi katika nchi iliyo karibu zaidi na wewe. Taarifa yako inaweza hivyo kuchakatwa Ujerumani, nchi nyingine za Ulaya, Kanada na nchi nyingine ambapo watoa huduma wetu wanafanya kazi, ambazo sheria zake zinaweza kutofautiana na za nchi yako.
 
-Uhamishaji kutoka Eneo la Kiuchumi la Ulaya, Uingereza na Uswisi kwenda Kanada unategemea maamuzi ya ufaafu kwa Kanada. Uhamishaji mwingine unategemea Vifungu vya Kawaida vya Mkataba vilivyomo kwenye masharti ya uchakataji wa data ya watoa huduma wetu, au ulinzi mwingine unaotambuliwa na sheria.
+Ukikubali vidakuzi vya uchambuzi, Google na Microsoft huchakata data ya uchambuzi nchini Marekani na katika nchi nyingine zinakofanyia kazi.
+
+Uhamishaji kutoka Eneo la Kiuchumi la Ulaya, Uingereza na Uswisi kwenda Kanada unategemea maamuzi ya ufaafu kwa Kanada. Uhamishaji kwa Google na Microsoft nchini Marekani unategemea Mfumo wa Faragha ya Data kati ya EU na Marekani (EU-U.S. Data Privacy Framework) na nyongeza zake kwa Uingereza na Uswisi, ambao kampuni zote mbili zimethibitishwa chini yake, au Vifungu vya Kawaida vya Mkataba. Uhamishaji mwingine unategemea Vifungu vya Kawaida vya Mkataba vilivyomo kwenye masharti ya uchakataji wa data ya watoa huduma wetu, au ulinzi mwingine unaotambuliwa na sheria.
 
 ## 8. China bara
 
-Kwa muunganisho kutoka China bara, kurasa za machapisho binafsi yaliyoshirikiwa na mapendo na maoni juu yake pekee ndizo zinazopatikana. Ikiwa unatazama, kupenda au kutoa maoni kwenye ukurasa huo kutoka China bara, taarifa iliyoelezwa katika Kifungu cha 2 inachakatwa na kuhifadhiwa nje ya China bara, hasa Ujerumani. Kwa kuingiliana na ukurasa, unakubali uhamishaji huu. Unaweza kutekeleza haki zako chini ya Sheria ya Ulinzi wa Taarifa Binafsi ya Jamhuri ya Watu wa China kwa kuandika kwa support@nicematrix.ca.
+Kwa muunganisho kutoka China bara, kurasa za machapisho binafsi yaliyoshirikiwa na mapendo na maoni juu yake pekee ndizo zinazopatikana. Ikiwa unatazama, kupenda au kutoa maoni kwenye ukurasa huo kutoka China bara, taarifa iliyoelezwa katika Kifungu cha 2 inachakatwa na kuhifadhiwa nje ya China bara, hasa Ujerumani. Kwa kuingiliana na ukurasa, unakubali uhamishaji huu. Zana za uchambuzi hazitumiki kwa muunganisho kutoka China bara. Unaweza kutekeleza haki zako chini ya Sheria ya Ulinzi wa Taarifa Binafsi ya Jamhuri ya Watu wa China kwa kuandika kwa support@nicematrix.ca.
 
 ## 9. Tunahifadhi taarifa kwa muda gani
 
@@ -95,6 +115,9 @@ Kwa muunganisho kutoka China bara, kurasa za machapisho binafsi yaliyoshirikiwa 
 | Vipindi vya kujiunga | Hadi ujitoe au baada ya siku 30 bila matumizi; rekodi zilizopita muda zinafutwa kila siku |
 | Vizuizi vya watembeleaji na ukaguzi wa kuzuia spam | Hadi vitakapokwisha muda; rekodi zilizopita muda zinafutwa kila siku |
 | Kumbukumbu za ufikiaji za seva ya wavuti | Siku 14 |
+| Data ya Google Analytics iliyounganishwa na vidakuzi au vitambulisho vya wageni | Hadi miezi 14 |
+| Marudio ya vipindi ya Microsoft Clarity | Siku 30; marudio tunayohifadhi kwa ukaguzi, hadi miezi 13 |
+| Data nyingine ya Microsoft Clarity (ramani za joto, takwimu) | Hadi miezi 13 |
 | Kumbukumbu za programu (makosa na matukio ya huduma, bila anwani za IP au maudhui) | Zinafutwa kiotomatiki kikomo cha hifadhi ya kumbukumbu ya seva kikifikiwa |
 | Nakala za hifadhidata | Hadi siku 14, baada ya hapo taarifa zilizofutwa zinaondoka pia kwenye nakala |
 | Taarifa za ufutaji wa akaunti (kitambulisho cha akaunti, tukio, muda) | Kwa muda unaohitajika kuonyesha kuwa ufutaji ulifanyika |
@@ -130,11 +153,11 @@ Huduma haielekezwi kwa watoto chini ya miaka 13, na hatukusanyi kwa makusudi taa
 
 ## 13. Usalama
 
-Tunalinda taarifa kwa usimbaji wakati wa usafirishaji (HTTPS), misimbo ya njia moja badala ya misimbo ghafi ya vipindi, anwani za IP na vitambulisho vya kivinjari, ujumbe uliosainiwa kati ya huduma zetu, ufikiaji uliopunguzwa kwa wafanyakazi walioidhinishwa, sera kali ya usalama wa maudhui bila hati za nje, na nakala za kila siku zinazohifadhiwa kwa muda mdogo. Hakuna mfumo ulio salama kikamilifu. Ikiwa uvunjaji wa usalama unaleta hatari halisi ya madhara makubwa, tutawajulisha wewe na mamlaka kama sheria inavyohitaji.
+Tunalinda taarifa kwa usimbaji wakati wa usafirishaji (HTTPS), misimbo ya njia moja badala ya misimbo ghafi ya vipindi, anwani za IP na vitambulisho vya kivinjari, ujumbe uliosainiwa kati ya huduma zetu, ufikiaji uliopunguzwa kwa wafanyakazi walioidhinishwa, sera kali ya usalama wa maudhui isiyoruhusu hati za nje isipokuwa zana za hiari za uchambuzi zilizoelezwa katika Kifungu cha 2, ambazo hupakiwa tu baada ya wewe kuzikubali, na nakala za kila siku zinazohifadhiwa kwa muda mdogo. Hakuna mfumo ulio salama kikamilifu. Ikiwa uvunjaji wa usalama unaleta hatari halisi ya madhara makubwa, tutawajulisha wewe na mamlaka kama sheria inavyohitaji.
 
 ## 14. Taarifa kwa wakazi wa California
 
-Katika miezi 12 iliyopita tulikusanya vitambulisho (kitambulisho cha akaunti, jina la mtumiaji, anwani za IP zilizosimbwa na vitambulisho vya kivinjari), shughuli za mtandao (kumbukumbu na mwingiliano) na maudhui unayochapisha, kutoka vyanzo na kwa malengo yaliyoelezwa katika Vifungu vya 2 na 3. Tuliyafichua taarifa hii kwa malengo ya biashara pekee kwa watoa huduma walioorodheshwa katika Kifungu cha 6. Hatuuzi au kushiriki taarifa binafsi kwa matangazo ya kitabia ya mipaka tofauti, na hatutumii taarifa binafsi nyeti kudhani sifa zako. Uhifadhi umeelezwa katika Kifungu cha 9.
+Katika miezi 12 iliyopita tulikusanya vitambulisho (kitambulisho cha akaunti, jina la mtumiaji, anwani za IP zilizosimbwa na vitambulisho vya kivinjari), shughuli za mtandao (kumbukumbu, mwingiliano na, ukikubali vidakuzi vya uchambuzi, uchambuzi wa matumizi) na maudhui unayochapisha, kutoka vyanzo na kwa malengo yaliyoelezwa katika Vifungu vya 2 na 3. Tuliyafichua taarifa hii kwa malengo ya biashara pekee kwa watoa huduma walioorodheshwa katika Kifungu cha 6, ikiwa ni pamoja na Google na Microsoft kwa uchambuzi wa matumizi ukikubali vidakuzi vya uchambuzi. Hatuuzi au kushiriki taarifa binafsi kwa matangazo ya kitabia ya mipaka tofauti, na hatutumii taarifa binafsi nyeti kudhani sifa zako. Uhifadhi umeelezwa katika Kifungu cha 9.
 
 ## 15. Mabadiliko kwa sera hii
 

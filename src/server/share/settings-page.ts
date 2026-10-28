@@ -35,5 +35,6 @@ export function renderSettingsPage(ctx: ChromeContext, notice: SettingsNotice): 
     head: '<meta name="robots" content="noindex">',
     main: `<main class="ni-main ni-feed-main"><div class="ni-feed-h"><h1>${escapeHtml(title)}</h1></div>${form}${signOut(ctx)}</main>`,
     side: true,
+    analytics: false,
   });
 }

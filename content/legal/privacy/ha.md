@@ -1,4 +1,4 @@
-> **Taƙaitawa.** Muna tattara kawai abin da muke buƙata don gudanar da niceideas: bayanin martabarka, abin da ka fitowa, da taƙaitattun bayanan fasaha don kiyaye Hidimar lafiya. Saƙonninka na jama'a ne, sai dai idan ka mai da su kai kaɗai za ka gani. Ba mu sayar da bayanan sirri, ba mu nuna talla ko amfani da masu bibiya na waje. Za ka iya share saƙonni a kowane lokaci kuma share asusunka ta share NiceMatrix ID naka. Rubuta zuwa support@nicematrix.ca da kowace tambaya ta keɓantawa ko buƙata.
+> **Taƙaitawa.** Muna tattara kawai abin da muke buƙata don gudanar da niceideas: bayanin martabarka, abin da ka fitowa, da taƙaitattun bayanan fasaha don kiyaye Hidimar lafiya. Saƙonninka na jama'a ne, sai dai idan ka mai da su kai kaɗai za ka gani. Ba mu sayar da bayanan sirri kuma ba mu nuna talla. Sai idan ka amince da kukis na nazari ne kawai, muke amfani da Google Analytics da Microsoft Clarity don fahimtar yadda ake amfani da Hidimar. Za ka iya share saƙonni a kowane lokaci kuma share asusunka ta share NiceMatrix ID naka. Rubuta zuwa support@nicematrix.ca da kowace tambaya ta keɓantawa ko buƙata.
 
 ## 1. Wanene mu
 
@@ -22,7 +22,9 @@ Wannan manufa tana bayyana wane bayanai niceideas take tattara, dalili, tsawon l
 
 **Bayanai daga aikace-aikace da ka yarda musu.** Aikace-aikace da ka yarda musu suna aika mana saƙonni da kafofin watsa labarai da ka fitowa ta hanyarsu, tare da mai gano aikace-aikacen.
 
-**Abin da ba mu tattara.** Ba mu amfani da talla, bincike ko kayan bibiya na kafofin sada zumunta, ƙirƙirar bayanan talla ko tattara wuri daidai. Ba mu tambayar bayanai na musamman masu muhimmanci, amma saƙonninka na iya bayyana su idan ka zaɓi fitowa su.
+**Nazarin amfani (da izininka kawai).** Idan ka amince da kukis na nazari, muna amfani da Google Analytics (Google) da Microsoft Clarity (Microsoft) don fahimtar yadda ake amfani da shafukan yanar gizo da kuma inganta su. Waɗannan kayan aiki suna tattara shafukan da ka ziyarta, dannawa, gungurawa da motsin linzamin kwamfuta, kimanin wurinka da aka samo daga adireshin IP naka, bayanan na'ura da injin bincike, da masu ganowa na laƙabi da ake ajiyewa a cikin kukis. Microsoft Clarity kuma tana ƙirƙirar maimaita zaman bincike da taswirorin zafi; muna saita ta don ta ɓoye duk rubutun da ke shafin, har da duk abin da kake rubutawa, don haka ba ta naɗar abun cikin saƙonni, sharhi ko fom. Muna kashe fasalolin talla na Google, kuma ba mu amfani da waɗannan kayan aiki a shafin Saituna, a shafukan daidaitawa ko don haɗuwa daga babban yankin China. Idan ka ƙi kukis na nazari ko ba ka zaɓa ba, ba a loda waɗannan kayan aiki.
+
+**Abin da ba mu tattara.** Ba mu amfani da talla ko kayan bibiya na kafofin sada zumunta, ƙirƙirar bayanan talla ko tattara wuri daidai. Ba mu tambayar bayanai na musamman masu muhimmanci, amma saƙonninka na iya bayyana su idan ka zaɓi fitowa su.
 
 ## 3. Yadda muke amfani da bayanai da dalili
 
@@ -36,6 +38,7 @@ Wannan manufa tana bayyana wane bayanai niceideas take tattara, dalili, tsawon l
 | Sarrafa sharewar asusu | Mai gano asusu, sanarwar sharewa | Yarjejeniya; wajibi na doka |
 | Amsa buƙatunka da sarrafa ƙararrakin doka | Bayani a cikin buƙatarka | Wajibi na doka; sha'awar inganci |
 | Nuna Hidimar a harshenka | Harshe da aka zaɓa a hanyar haɗi, harshen injin bincike | Sha'awar inganci |
+| Fahimtar yadda ake amfani da Hidimar da inganta ta (nazarin amfani) | Bayanan amfani da na'ura, kukis na nazari | Izininka, wanda za ka iya janyewa a kowane lokaci |
 
 Mutane ne suke yanke shawara kan abun ciki da asusu. Iyakokin kima na injina kawai suna raguwar gudu ko toshe ayyuka na ɗan lokaci; ba mu yanke shawarwari na injina da suke da tasiri na doka ko mai muhimmanci irin sa gare ka.
 
@@ -49,7 +52,9 @@ Saƙonnin da ka mai da kai kaɗai za ka gani ba na jama'a ba ne: kai kaɗai ne z
 
 ## 5. Kukis
 
-Muna amfani da kukis da Hidimar take buƙata don aiki kawai. Ba mu amfani da kukis na talla ko bincike.
+Muna amfani da kukis da Hidimar take buƙata don aiki kuma, sai idan ka amince da su kawai, kukis na nazari. Ba mu amfani da kukis na talla.
+
+**Kukis masu muhimmanci**
 
 | Kuki | Manufa | Tsawon lokaci |
 |---|---|---|
@@ -57,14 +62,27 @@ Muna amfani da kukis da Hidimar take buƙata don aiki kawai. Ba mu amfani da kuk
 | `ni_oidc` | Yana kare tsarin shiga | Mintuna 10 |
 | `ni_sso` | Yana tunawa cewa shiga na injina an riga an gwada, don hana maimaita tura-turawa | Awanni 24 |
 | `ni_vid` | Mai gano kai tsaye don so da sharhi ba tare da asusu ba, da hana cin zarafi | Kwana 400 |
+| `ni_locale` | Yana tuna harshen da ka zaɓa | Shekara 1 |
+| `ni_theme` | Yana tuna jigon launi da ka zaɓa | Shekara 1 |
+| `ni_consent` | Yana tuna ko ka amince ko ka ƙi kukis na nazari | Kwana 180 |
 
 Idan ka share waɗannan kukis, za a fitar da kai kuma za a kula da kai kamar sabon baƙo.
+
+**Kukis na nazari (da izininka kawai)**
+
+| Kuki | Manufa | Tsawon lokaci |
+|---|---|---|
+| `_ga`, `_ga_<ID>` | Google Analytics: yana bambanta baƙi da ziyarori | Watanni 13 |
+| `_clck` | Microsoft Clarity: yana ajiye mai gano baƙo na laƙabi | Shekara 1 |
+| `_clsk` | Microsoft Clarity: yana haɗa kallon shafuka zuwa ziyara ɗaya | Kwana 1 |
+
+Microsoft kuma na iya saita kukis a kan yankunanta idan aka loda Clarity; an bayyana su a cikin sanarwar keɓantawa ta Microsoft. Za ka iya amincewa ko ƙin kukis na nazari a sanarwar da ake nunawa a ziyararka ta farko, kuma ka canza zaɓinka a kowane lokaci da maɓallin "Saitunan kukis" da ke saman wannan manufa. Idan ka janye izininka, muna share kukis na nazari da aka saita a niceideas kuma mu daina loda kayan aikin.
 
 ## 6. Raba bayanai
 
 Ba mu sayar ko haya bayanan sirri, kuma ba mu raba su don talla mai dogara kan halaye tsakanin shafuka daban-daban. Muna raba su kawai tare da:
 
-- **Masu bayar da sabis** da suke sarrafa su gare mu ƙarƙashin yarjejeniya: Hetzner Online GmbH (sabobin da ma'ajiyar bayanai, Jamus) da Cloudflare, Inc. (tsaron hanyar sadarwa, isar da abun ciki da ma'ajiyar kafofin watsa labarai a Yammacin Turai; hanyar sadarwarta tana aiki a duniya).
+- **Masu bayar da sabis** da suke sarrafa su gare mu ƙarƙashin yarjejeniya: Hetzner Online GmbH (sabobin da ma'ajiyar bayanai, Jamus) da Cloudflare, Inc. (tsaron hanyar sadarwa, isar da abun ciki da ma'ajiyar kafofin watsa labarai a Yammacin Turai; hanyar sadarwarta tana aiki a duniya); kuma, sai idan ka amince da kukis na nazari kawai, Google (Google Analytics) da Microsoft (Microsoft Clarity), waɗanda ke sarrafa bayanan nazarin amfani galibi a Amurka.
 - **NiceMatrix ID**, sabis na shiga da muke gudanarwa, don shigar ka kuma sarrafa sharewar asusu.
 - **Aikace-aikace da ka yarda musu**, da suke karɓa kawai abin da ka yarda, kamar saƙonnin da suka fitowa da bayanin martabarka na jama'a.
 - **Jama'a**, kamar yadda aka bayyana a Sashe na 4.
@@ -75,11 +93,13 @@ Ba mu sayar ko haya bayanan sirri, kuma ba mu raba su don talla mai dogara kan h
 
 NiceMatrix tana da tushenta a Kanada. Sabobinmu da ma'ajiyar kafofin watsa labarai suna Turai (Jamus da Yammacin Turai), kuma mai bayar da sabis na hanyar sadarwarmu yana sarrafa buƙatu a ƙasar da ta fi kusa da kai. Bayaninka saboda haka za a iya sarrafa shi a Jamus, wasu ƙasashen Turai, Kanada da wasu ƙasashen da masu bayar da sabis namu suke aiki, waɗanda dokokinsu za su iya bambanta da na ƙasarka.
 
-Canja wuri daga Yankin Tattalin Arziki na Turai, Ingila da Switzerland zuwa Kanada suna dogaro kan shawarwarin isasshen tsaro ga Kanada. Wasu canja wuri suna dogaro kan Daidaitattun Sharuɗɗan Yarjejeniya da ke cikin sharuɗɗan sarrafa bayanai na masu bayar da sabis namu, ko wasu kariya da doka ta amince da su.
+Idan ka amince da kukis na nazari, Google da Microsoft suna sarrafa bayanan nazari a Amurka da sauran ƙasashen da suke aiki.
+
+Canja wuri daga Yankin Tattalin Arziki na Turai, Ingila da Switzerland zuwa Kanada suna dogaro kan shawarwarin isasshen tsaro ga Kanada. Canja wuri zuwa Google da Microsoft a Amurka suna dogaro kan Tsarin Keɓantawar Bayanai na EU da Amurka (EU-U.S. Data Privacy Framework) da ƙarin sa na Ingila da Switzerland, wanda kamfanonin biyu suka sami takardar shaida a ƙarƙashinsa, ko kan Daidaitattun Sharuɗɗan Yarjejeniya. Wasu canja wuri suna dogaro kan Daidaitattun Sharuɗɗan Yarjejeniya da ke cikin sharuɗɗan sarrafa bayanai na masu bayar da sabis namu, ko wasu kariya da doka ta amince da su.
 
 ## 8. Babban yankin China
 
-Don haɗuwa daga babban yankin China, kawai shafukan saƙonnin da aka raba daban-daban da sonsu da sharhi akansu ne suke samuwa. Idan ka duba, so ko yi sharhi akan irin wannan shafi daga babban yankin China, bayanin da aka bayyana a Sashe na 2 ana sarrafa shi kuma ana ajiye shi a wajen babban yankin China, musamman a Jamus. Ta hulɗa da shafin, kana yarda da wannan canja wurin. Za ka iya aiwatar da haƙƙoƙinka ƙarƙashin Dokar Kariyar Bayanan Sirri na Jamhuriyar Jama'ar China ta rubuta zuwa support@nicematrix.ca.
+Don haɗuwa daga babban yankin China, kawai shafukan saƙonnin da aka raba daban-daban da sonsu da sharhi akansu ne suke samuwa. Idan ka duba, so ko yi sharhi akan irin wannan shafi daga babban yankin China, bayanin da aka bayyana a Sashe na 2 ana sarrafa shi kuma ana ajiye shi a wajen babban yankin China, musamman a Jamus. Ta hulɗa da shafin, kana yarda da wannan canja wurin. Ba a amfani da kayan aikin nazari don haɗuwa daga babban yankin China. Za ka iya aiwatar da haƙƙoƙinka ƙarƙashin Dokar Kariyar Bayanan Sirri na Jamhuriyar Jama'ar China ta rubuta zuwa support@nicematrix.ca.
 
 ## 9. Tsawon lokacin da muke ajiye bayanai
 
@@ -95,6 +115,9 @@ Don haɗuwa daga babban yankin China, kawai shafukan saƙonnin da aka raba daban
 | Zaman shiga | Har sai ka fita ko bayan kwana 30 ba a amfani da shi ba; bayanan da suka ƙare a share su kowace rana |
 | Toshewar baƙi da bincike na hana saƙonni | Har sai sun ƙare; bayanan da suka ƙare a share su kowace rana |
 | Bayanan shiga na sabar yanar gizo | Kwana 14 |
+| Bayanan Google Analytics da ke da alaƙa da kukis ko masu gano baƙi | Har zuwa watanni 14 |
+| Maimaita zaman bincike na Microsoft Clarity | Kwana 30; maimaitawar da muka ajiye don dubawa, har zuwa watanni 13 |
+| Sauran bayanan Microsoft Clarity (taswirorin zafi, ƙididdiga) | Har zuwa watanni 13 |
 | Bayanan aikace-aikace (kurakurai da abubuwan da suka faru na hidima, ba tare da adireshin IP ko abun ciki ba) | A share su kai tsaye idan iyakar ma'ajiyar bayanan sabar ta kai |
 | Madadin ma'ajiyar bayanai | Har kwana 14, bayan haka bayanan da aka share sun ɓace daga madadi kuma |
 | Sanarwar sharewar asusu (mai gano asusu, taron, lokaci) | Muddin ake buƙata don nuna cewa sharewa ta faru |
@@ -130,11 +153,11 @@ Hidimar ba a yi niyyar ta ga yara ƴan ƙasa da shekara 13, kuma ba mu tattara d
 
 ## 13. Tsaro
 
-Muna kiyaye bayanai ta hanyar ɓoye su a lokacin tafiya (HTTPS), lambobi na hanya-ɗaya maimakon lambobin zama na asali, adireshin IP da masu gano injin bincike, saƙonni da aka sanya hannu tsakanin hidimominmu, shiga mai iyaka ga ma'aikata masu izini, tsarin tsaron abun ciki mai tsauri ba tare da rubutattun waje ba, da madadi na kullum da ake ajiye su na ɗan gajeren lokaci. Babu tsarin da yake mai tsaro ɗari ɗaya. Idan keta tsaro ta ƙirƙiri haɗari na gaskiya na babban rauni, za mu sanar da kai da hukumomi kamar yadda doka ta buƙaci.
+Muna kiyaye bayanai ta hanyar ɓoye su a lokacin tafiya (HTTPS), lambobi na hanya-ɗaya maimakon lambobin zama na asali, adireshin IP da masu gano injin bincike, saƙonni da aka sanya hannu tsakanin hidimominmu, shiga mai iyaka ga ma'aikata masu izini, tsarin tsaron abun ciki mai tsauri wanda ba ya ba da izinin rubutattun waje sai kayan aikin nazari na zaɓi da ke Sashe na 2, waɗanda ake lodawa sai bayan ka amince da su, da madadi na kullum da ake ajiye su na ɗan gajeren lokaci. Babu tsarin da yake mai tsaro ɗari ɗaya. Idan keta tsaro ta ƙirƙiri haɗari na gaskiya na babban rauni, za mu sanar da kai da hukumomi kamar yadda doka ta buƙaci.
 
 ## 14. Sanarwa ga mazauna California
 
-A cikin watanni 12 da suka gabata mun tattara masu ganowa (mai gano asusu, sunan amfani, adireshin IP da aka sanya lamba da masu gano injin bincike), ayyukan intanet (bayanan shiga da hulɗa) da abun cikin da ka fitowa, daga tushe da manufofin da aka bayyana a Sassan 2 da 3. Mun bayyana wannan bayani don manufofin kasuwanci kawai ga masu bayar da sabis da aka lissafa a Sashe na 6. Ba mu sayar ko raba bayanan sirri don talla mai dogara kan halaye tsakanin shafuka daban-daban, kuma ba mu amfani da bayanan sirri na musamman masu muhimmanci don tantance halaye naka. Riƙe lokaci an bayyana a Sashe na 9.
+A cikin watanni 12 da suka gabata mun tattara masu ganowa (mai gano asusu, sunan amfani, adireshin IP da aka sanya lamba da masu gano injin bincike), ayyukan intanet (bayanan shiga, hulɗa da, idan ka amince da kukis na nazari, nazarin amfani) da abun cikin da ka fitowa, daga tushe da manufofin da aka bayyana a Sassan 2 da 3. Mun bayyana wannan bayani don manufofin kasuwanci kawai ga masu bayar da sabis da aka lissafa a Sashe na 6, har da Google da Microsoft don nazarin amfani idan ka amince da kukis na nazari. Ba mu sayar ko raba bayanan sirri don talla mai dogara kan halaye tsakanin shafuka daban-daban, kuma ba mu amfani da bayanan sirri na musamman masu muhimmanci don tantance halaye naka. Riƙe lokaci an bayyana a Sashe na 9.
 
 ## 15. Canje-canje ga wannan manufa
 

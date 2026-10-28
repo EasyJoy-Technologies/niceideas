@@ -16,7 +16,7 @@
 .ni-toc a { display: block; padding: 0.375rem 0.625rem; border-radius: 0.5rem; color: var(--ni-color-text-secondary); line-height: 1.4; }
 .ni-toc a:hover { background: var(--ni-color-surface-2); color: var(--ni-color-primary); }
 
-.ni-legal-meta { margin-top: 0.625rem; }
+.ni-legal-meta { margin-top: 0.625rem; display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem; }
 .ni-pill { display: inline-block; border: 1px solid var(--ni-color-border); border-radius: 999px; padding: 0.125rem 0.625rem; font-size: 0.8125rem; color: var(--ni-color-text-secondary); }
 .ni-legal-sum { margin-top: 1.25rem; background: var(--ni-color-surface-2); border-radius: var(--ni-radius-md); padding: 0.875rem 1.125rem; font-size: 0.9375rem; line-height: 1.65; }
 .ni-legal-sum p { margin: 0; }

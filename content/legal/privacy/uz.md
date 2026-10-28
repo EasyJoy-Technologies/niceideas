@@ -1,4 +1,4 @@
-> **Qisqacha mazmuni.** Biz niceideas'ni ishlatish uchun faqat zarur bo'lgan narsalarni to'playmiz: profilingiz, siz nashr etgan narsa, va Xizmatni xavfsiz saqlash uchun cheklangan texnik ma'lumotlar. Postlaringiz, ularni faqat o'zingizga ko'rinadigan qilmasangiz, ommaviy hisoblanadi. Biz shaxsiy ma'lumotlarni sotmaymiz, reklama ko'rsatmaymiz yoki tashqi kuzatuvchilardan foydalanmaymiz. Siz istalgan vaqtda postlarni o'chirishingiz va NiceMatrix ID'ingizni o'chirib hisobingizni o'chirishingiz mumkin. Har qanday maxfiylik savoli yoki so'rovi bilan support@nicematrix.ca manziliga yozing.
+> **Qisqacha mazmuni.** Biz niceideas'ni ishlatish uchun faqat zarur bo'lgan narsalarni to'playmiz: profilingiz, siz nashr etgan narsa, va Xizmatni xavfsiz saqlash uchun cheklangan texnik ma'lumotlar. Postlaringiz, ularni faqat o'zingizga ko'rinadigan qilmasangiz, ommaviy hisoblanadi. Biz shaxsiy ma'lumotlarni sotmaymiz yoki reklama ko'rsatmaymiz. Faqat tahlil cookie'larini qabul qilsangiz, biz Xizmatdan foydalanishni tushunish uchun Google Analytics va Microsoft Clarity'dan foydalanamiz. Siz istalgan vaqtda postlarni o'chirishingiz va NiceMatrix ID'ingizni o'chirib hisobingizni o'chirishingiz mumkin. Har qanday maxfiylik savoli yoki so'rovi bilan support@nicematrix.ca manziliga yozing.
 
 ## 1. Biz kimmiz
 
@@ -22,7 +22,9 @@ Ushbu siyosat niceideas qanday ma'lumotlarni to'plashini, nima uchun, qancha mud
 
 **Siz ruxsat bergan ilovalardan olingan ma'lumotlar.** Siz ruxsat bergan ilovalar o'zlari orqali nashr etgan postlar va mediani, ilova identifikatori bilan birga bizga yuboradi.
 
-**Biz to'plamagan narsalar.** Biz reklama, tahlil yoki ijtimoiy tarmoq kuzatuv vositalaridan foydalanmaymiz, reklama profillarini yaratmaymiz yoki aniq joylashuvni to'plamaymiz. Biz sezgir ma'lumotlarni so'ramaymiz, ammo nashr etishni tanlasangiz, postlaringiz ularni oshkor qilishi mumkin.
+**Foydalanish tahlili (faqat sizning roziligingiz bilan).** Agar tahlil cookie'larini qabul qilsangiz, odamlar veb-sahifalardan qanday foydalanishini tushunish va ularni yaxshilash uchun biz Google Analytics (Google) va Microsoft Clarity (Microsoft)'dan foydalanamiz. Bu vositalar siz tashrif buyurgan sahifalarni, bosishlarni, aylantirishni va sichqoncha harakatlarini, IP manzilingizdan olingan taxminiy joylashuvingizni, qurilma va brauzer ma'lumotlarini va cookie'larda saqlanadigan taxallusli identifikatorlarni to'playdi. Microsoft Clarity shuningdek seans takrorlashlari va issiqlik xaritalarini ham yaratadi; biz uni sahifadagi barcha matnni, shu jumladan siz yozgan har qanday narsani, yashirish uchun sozlaymiz, shunda u postlar, izohlar yoki shakllarning mazmunini yozib olmaydi. Biz Google'ning reklama xususiyatlarini o'chiramiz va bu vositalardan Sozlamalar sahifasida, moderatsiya sahifalarida yoki materik Xitoydan ulanishlar uchun foydalanmaymiz. Agar tahlil cookie'larini rad etsangiz yoki tanlamasangiz, bu vositalar yuklanmaydi.
+
+**Biz to'plamagan narsalar.** Biz reklama yoki ijtimoiy tarmoq kuzatuv vositalaridan foydalanmaymiz, reklama profillarini yaratmaymiz yoki aniq joylashuvni to'plamaymiz. Biz sezgir ma'lumotlarni so'ramaymiz, ammo nashr etishni tanlasangiz, postlaringiz ularni oshkor qilishi mumkin.
 
 ## 3. Ma'lumotlardan qanday va nima uchun foydalanamiz
 
@@ -36,6 +38,7 @@ Ushbu siyosat niceideas qanday ma'lumotlarni to'plashini, nima uchun, qancha mud
 | Hisobni o'chirishni qayta ishlash | Hisob identifikatori, o'chirish bildirishnomalari | Shartnoma; huquqiy majburiyatlar |
 | So'rovlaringizga javob berish va huquqiy da'volarni ko'rib chiqish | So'rovingizdagi ma'lumot | Huquqiy majburiyatlar; qonuniy manfaat |
 | Xizmatni tilingizda ko'rsatish | Havolada tanlangan til, brauzer tili | Qonuniy manfaat |
+| Xizmatdan qanday foydalanilayotganini tushunish va uni yaxshilash (foydalanish tahlili) | Foydalanish va qurilma ma'lumotlari, tahlil cookie'lari | Roziligingiz, uni istalgan vaqtda bekor qilishingiz mumkin |
 
 Mazmun va hisoblar haqidagi qarorlarni odamlar qabul qiladi. Avtomatik tezlik cheklovlari faqat harakatlarni sekinlashtiradi yoki qisqa vaqtga bloklaydi; biz sizga qonuniy yoki shunga o'xshash muhim ta'sir ko'rsatadigan avtomatlashtirilgan qarorlar qabul qilmaymiz.
 
@@ -49,7 +52,9 @@ Faqat o'zingizga ko'rinadigan qilgan postlaringiz ommaviy emas: ularni faqat siz
 
 ## 5. Cookie'lar
 
-Biz faqat Xizmatga kerak bo'lgan cookie'lardan foydalanamiz. Biz reklama yoki tahlil cookie'laridan foydalanmaymiz.
+Biz Xizmatga kerak bo'lgan cookie'lardan, va faqat ularni qabul qilsangiz, tahlil cookie'laridan foydalanamiz. Biz reklama cookie'laridan foydalanmaymiz.
+
+**Zarur cookie'lar**
 
 | Cookie | Maqsad | Davomiyligi |
 |---|---|---|
@@ -57,14 +62,27 @@ Biz faqat Xizmatga kerak bo'lgan cookie'lardan foydalanamiz. Biz reklama yoki ta
 | `ni_oidc` | Kirish jarayonini himoya qiladi | 10 daqiqa |
 | `ni_sso` | Avtomatik kirishning allaqachon sinab ko'rilganini eslab qoladi, takroriy yo'naltirishlarni oldini olish uchun | 24 soat |
 | `ni_vid` | Hisobsiz layklar va izohlar uchun, va suiiste'molning oldini olish uchun tasodifiy identifikator | 400 kun |
+| `ni_locale` | Tanlagan tilingizni eslab qoladi | 1 yil |
+| `ni_theme` | Tanlagan rang mavzungizni eslab qoladi | 1 yil |
+| `ni_consent` | Tahlil cookie'larini qabul qilganingizni yoki rad etganingizni eslab qoladi | 180 kun |
 
 Agar ushbu cookie'larni o'chirsangiz, siz chiqib ketasiz va yangi tashrif buyuruvchi sifatida ko'riladi.
+
+**Tahlil cookie'lari (faqat sizning roziligingiz bilan)**
+
+| Cookie | Maqsad | Davomiyligi |
+|---|---|---|
+| `_ga`, `_ga_<ID>` | Google Analytics: tashrif buyuruvchilar va tashriflarni ajratadi | 13 oy |
+| `_clck` | Microsoft Clarity: taxallusli tashrif buyuruvchi identifikatorini saqlaydi | 1 yil |
+| `_clsk` | Microsoft Clarity: sahifa ko'rishlarini bitta tashrifga bog'laydi | 1 kun |
+
+Clarity yuklanganda Microsoft o'zining domenlarida ham cookie'lar o'rnatishi mumkin; ular Microsoft'ning maxfiylik bayonotida tasvirlangan. Siz birinchi tashrifingizda ko'rsatilgan bannerda tahlil cookie'larini qabul qilishingiz yoki rad etishingiz mumkin va ushbu siyosat tepasidagi "Cookie sozlamalari" tugmasi orqali istalgan vaqtda tanlovingizni o'zgartirishingiz mumkin. Roziligingizni bekor qilganingizda, biz niceideas'da o'rnatilgan tahlil cookie'larini o'chiramiz va vositalarni yuklashni to'xtatamiz.
 
 ## 6. Bo'lishish
 
 Biz shaxsiy ma'lumotlarni sotmaymiz yoki ijaraga bermaymiz, va uni kontekstlararo xulq-atvor reklamasi uchun bo'lishmaymiz. Biz uni faqat quyidagilar bilan bo'lishamiz:
 
-- **Xizmat ta'minotchilari**, shartnoma asosida biz uchun uni qayta ishlaydiganlar: Hetzner Online GmbH (serverlar va ma'lumotlar bazasi, Germaniya) va Cloudflare, Inc. (tarmoq xavfsizligi, mazmun yetkazib berish va media saqlash G'arbiy Yevropada; uning tarmog'i butun dunyo bo'yicha ishlaydi).
+- **Xizmat ta'minotchilari**, shartnoma asosida biz uchun uni qayta ishlaydiganlar: Hetzner Online GmbH (serverlar va ma'lumotlar bazasi, Germaniya) va Cloudflare, Inc. (tarmoq xavfsizligi, mazmun yetkazib berish va media saqlash G'arbiy Yevropada; uning tarmog'i butun dunyo bo'yicha ishlaydi); va, faqat tahlil cookie'larini qabul qilsangiz, Google (Google Analytics) va Microsoft (Microsoft Clarity), ular asosan Amerika Qo'shma Shtatlarida foydalanish tahlilini qayta ishlaydi.
 - **NiceMatrix ID**, biz boshqaradigan kirish xizmati, sizni kiritish va hisob o'chirishni qayta ishlash uchun.
 - **Siz ruxsat bergan ilovalar**, faqat siz ruxsat bergan narsani oladi, masalan ular nashr etgan postlar va ommaviy profilingiz.
 - **Jamoatchilik**, 4-bo'limda tasvirlangandek.
@@ -75,11 +93,13 @@ Biz shaxsiy ma'lumotlarni sotmaymiz yoki ijaraga bermaymiz, va uni kontekstlarar
 
 NiceMatrix Kanadada joylashgan. Bizning serverlar va media saqlash joyimiz Yevropada (Germaniya va G'arbiy Yevropa), va tarmoq ta'minotchimiz so'rovlarni sizga eng yaqin davlatda qayta ishlaydi. Shuning uchun ma'lumotlaringiz Germaniya, boshqa Yevropa davlatlari, Kanada va bizning ta'minotchilarimiz ishlaydigan boshqa davlatlarda qayta ishlanishi mumkin, ularning qonunlari mamlakatingiz qonunlaridan farq qilishi mumkin.
 
-Yevropa Iqtisodiy Hududi, Buyuk Britaniya va Shveytsariyadan Kanadaga o'tkazishlar Kanada uchun yetarlilik qarorlariga tayanadi. Boshqa o'tkazishlar bizning ta'minotchilarimizning ma'lumotlarni qayta ishlash shartlariga kiritilgan Standart Shartnoma Bandlariga, yoki qonun tomonidan tanilgan boshqa kafolatlarga tayanadi.
+Agar tahlil cookie'larini qabul qilsangiz, Google va Microsoft Amerika Qo'shma Shtatlarida va ular ishlaydigan boshqa davlatlarda tahlil ma'lumotlarini qayta ishlaydi.
+
+Yevropa Iqtisodiy Hududi, Buyuk Britaniya va Shveytsariyadan Kanadaga o'tkazishlar Kanada uchun yetarlilik qarorlariga tayanadi. Amerika Qo'shma Shtatlaridagi Google va Microsoft'ga o'tkazishlar EU-AQSh Ma'lumotlar Maxfiyligi Doirasiga (EU-U.S. Data Privacy Framework) va uning Buyuk Britaniya va Shveytsariya kengaytmalariga tayanadi, ularga ko'ra ikki kompaniya ham sertifikatlangan, yoki Standart Shartnoma Bandlariga. Boshqa o'tkazishlar bizning ta'minotchilarimizning ma'lumotlarni qayta ishlash shartlariga kiritilgan Standart Shartnoma Bandlariga, yoki qonun tomonidan tanilgan boshqa kafolatlarga tayanadi.
 
 ## 8. Materik Xitoy
 
-Materik Xitoydan ulanishlar uchun faqat alohida ulashilgan post sahifalari va ularga qo'yilgan layklar va izohlar mavjud. Agar siz materik Xitoydan shunday sahifani ko'rsangiz, yoqtirsangiz yoki izoh qoldirsangiz, 2-bo'limda tasvirlangan ma'lumot materik Xitoydan tashqarida, asosan Germaniyada, qayta ishlanadi va saqlanadi. Sahifa bilan o'zaro ta'sirlashish orqali siz ushbu o'tkazishga rozilik bildirasiz. Siz Xitoy Xalq Respublikasining Shaxsiy Ma'lumotlarni Himoya Qilish Qonuni bo'yicha huquqlaringizni support@nicematrix.ca manziliga yozish orqali amalga oshirishingiz mumkin.
+Materik Xitoydan ulanishlar uchun faqat alohida ulashilgan post sahifalari va ularga qo'yilgan layklar va izohlar mavjud. Agar siz materik Xitoydan shunday sahifani ko'rsangiz, yoqtirsangiz yoki izoh qoldirsangiz, 2-bo'limda tasvirlangan ma'lumot materik Xitoydan tashqarida, asosan Germaniyada, qayta ishlanadi va saqlanadi. Sahifa bilan o'zaro ta'sirlashish orqali siz ushbu o'tkazishga rozilik bildirasiz. Materik Xitoydan ulanishlar uchun tahlil vositalaridan foydalanilmaydi. Siz Xitoy Xalq Respublikasining Shaxsiy Ma'lumotlarni Himoya Qilish Qonuni bo'yicha huquqlaringizni support@nicematrix.ca manziliga yozish orqali amalga oshirishingiz mumkin.
 
 ## 9. Ma'lumotlarni qancha muddat saqlaymiz
 
@@ -95,6 +115,9 @@ Materik Xitoydan ulanishlar uchun faqat alohida ulashilgan post sahifalari va ul
 | Kirish seanslari | Chiqib ketmaguningizcha yoki 30 kun foydalanilmaganidan keyin; muddati tugagan yozuvlar har kuni o'chiriladi |
 | Tashrif buyuruvchi bloklari va spamga qarshi tekshiruvlar | Muddati tugaguncha; muddati tugagan yozuvlar har kuni o'chiriladi |
 | Veb-server kirish jurnallari | 14 kun |
+| Cookie'lar yoki tashrif buyuruvchi identifikatorlariga bog'langan Google Analytics ma'lumotlari | 14 oygacha |
+| Microsoft Clarity seans takrorlashlari | 30 kun; ko'rib chiqish uchun saqlangan takrorlashlar 13 oygacha |
+| Boshqa Microsoft Clarity ma'lumotlari (issiqlik xaritalari, statistikalar) | 13 oygacha |
 | Dastur jurnallari (xatolar va xizmat hodisalari, IP manzillari yoki mazmunisiz) | Server jurnal saqlash chegarasiga yetganda avtomatik o'chiriladi |
 | Ma'lumotlar bazasi zaxira nusxalari | 14 kungacha, shundan keyin o'chirilgan ma'lumotlar zaxira nusxalaridan ham yo'qoladi |
 | Hisob o'chirish bildirishnomalari (hisob identifikatori, hodisa, vaqt) | O'chirish amalga oshirilganini ko'rsatish uchun zarur bo'lgan muddatda |
@@ -130,11 +153,11 @@ Xizmat 13 yoshdan kichik bolalarga mo'ljallanmagan, va biz ulardan ongli ravishd
 
 ## 13. Xavfsizlik
 
-Biz ma'lumotlarni uzatish paytida shifrlash (HTTPS), xom seans kodlari o'rniga bir tomonlama hashlar, IP manzillari va brauzer identifikatorlari, xizmatlarimiz o'rtasidagi imzolangan xabarlar, vakolatli xodimlarga cheklangan kirish, tashqi skriptlarsiz qattiq mazmun xavfsizligi siyosati, va cheklangan muddat saqlanadigan kunlik zaxira nusxalari bilan himoya qilamiz. Hech qanday tizim mutlaqo xavfsiz emas. Agar xavfsizlik buzilishi sezilarli zararning real xavfini yaratsa, biz qonun talab qilgandek sizga va hokimiyat organlariga xabar beramiz.
+Biz ma'lumotlarni uzatish paytida shifrlash (HTTPS), xom seans kodlari o'rniga bir tomonlama hashlar, IP manzillari va brauzer identifikatorlari, xizmatlarimiz o'rtasidagi imzolangan xabarlar, vakolatli xodimlarga cheklangan kirish, 2-bo'limda tasvirlangan ixtiyoriy tahlil vositalaridan boshqa hech qanday tashqi skriptga ruxsat bermaydigan qattiq mazmun xavfsizligi siyosati, ular faqat siz qabul qilganingizdan keyin yuklanadi, va cheklangan muddat saqlanadigan kunlik zaxira nusxalari bilan himoya qilamiz. Hech qanday tizim mutlaqo xavfsiz emas. Agar xavfsizlik buzilishi sezilarli zararning real xavfini yaratsa, biz qonun talab qilgandek sizga va hokimiyat organlariga xabar beramiz.
 
 ## 14. Kaliforniya rezidentlari uchun bildirishnoma
 
-O'tgan 12 oy ichida biz identifikatorlarni (hisob identifikatori, taxallus, hashlangan IP manzillari va brauzer identifikatorlari), internet faoliyatini (jurnallar va o'zaro ta'sirlar) va siz nashr etgan mazmunni, 2 va 3-bo'limlarda tasvirlangan manbalardan va maqsadlar uchun to'pladik. Biz ushbu ma'lumotni faqat biznes maqsadlari uchun 6-bo'limda sanab o'tilgan xizmat ta'minotchilariga oshkor qildik. Biz shaxsiy ma'lumotlarni kontekstlararo xulq-atvor reklamasi uchun sotmaymiz yoki bo'lishmaymiz, va sizning xususiyatlaringizni aniqlash uchun sezgir shaxsiy ma'lumotlardan foydalanmaymiz. Saqlash muddati 9-bo'limda tasvirlangan.
+O'tgan 12 oy ichida biz identifikatorlarni (hisob identifikatori, taxallus, hashlangan IP manzillari va brauzer identifikatorlari), internet faoliyatini (jurnallar, o'zaro ta'sirlar va, agar tahlil cookie'larini qabul qilsangiz, foydalanish tahlili) va siz nashr etgan mazmunni, 2 va 3-bo'limlarda tasvirlangan manbalardan va maqsadlar uchun to'pladik. Biz ushbu ma'lumotni faqat biznes maqsadlari uchun 6-bo'limda sanab o'tilgan xizmat ta'minotchilariga oshkor qildik, shu jumladan agar tahlil cookie'larini qabul qilsangiz foydalanish tahlili uchun Google va Microsoft'ga. Biz shaxsiy ma'lumotlarni kontekstlararo xulq-atvor reklamasi uchun sotmaymiz yoki bo'lishmaymiz, va sizning xususiyatlaringizni aniqlash uchun sezgir shaxsiy ma'lumotlardan foydalanmaymiz. Saqlash muddati 9-bo'limda tasvirlangan.
 
 ## 15. Ushbu siyosatga o'zgartirishlar
 

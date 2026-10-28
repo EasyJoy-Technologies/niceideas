@@ -1,4 +1,4 @@
-> **Ringkasan.** Kami hanya mengumpul apa yang kami perlukan untuk mengendalikan niceideas: profil anda, apa yang anda terbitkan, dan data teknikal terhad untuk mengekalkan keselamatan Perkhidmatan. Hantaran anda adalah bersifat awam kecuali anda menjadikannya hanya kelihatan kepada anda. Kami tidak menjual maklumat peribadi, memaparkan iklan atau menggunakan penjejak luar. Anda boleh memadam hantaran pada bila-bila masa dan memadam akaun anda dengan memadam NiceMatrix ID anda. Tulis kepada support@nicematrix.ca untuk sebarang soalan atau permintaan privasi.
+> **Ringkasan.** Kami hanya mengumpul apa yang kami perlukan untuk mengendalikan niceideas: profil anda, apa yang anda terbitkan, dan data teknikal terhad untuk mengekalkan keselamatan Perkhidmatan. Hantaran anda adalah bersifat awam kecuali anda menjadikannya hanya kelihatan kepada anda. Kami tidak menjual maklumat peribadi atau memaparkan iklan. Hanya jika anda menerima kuki analitik, kami menggunakan Google Analytics dan Microsoft Clarity untuk memahami bagaimana Perkhidmatan digunakan. Anda boleh memadam hantaran pada bila-bila masa dan memadam akaun anda dengan memadam NiceMatrix ID anda. Tulis kepada support@nicematrix.ca untuk sebarang soalan atau permintaan privasi.
 
 ## 1. Siapa kami
 
@@ -22,7 +22,9 @@ Dasar ini menerangkan maklumat yang dikumpul oleh niceideas, sebabnya, berapa la
 
 **Maklumat daripada aplikasi yang anda benarkan.** Aplikasi yang anda benarkan menghantar kepada kami hantaran dan media yang anda terbitkan melaluinya, bersama pengecam aplikasi tersebut.
 
-**Apa yang tidak kami kumpul.** Kami tidak menggunakan alat pengiklanan, analitik atau penjejakan media sosial, membina profil pengiklanan, atau mengumpul lokasi tepat. Kami tidak meminta maklumat sensitif, tetapi hantaran anda mungkin mendedahkannya jika anda memilih untuk menerbitkannya.
+**Analitik penggunaan (hanya dengan persetujuan anda).** Jika anda menerima kuki analitik, kami menggunakan Google Analytics (Google) dan Microsoft Clarity (Microsoft) untuk memahami bagaimana orang menggunakan halaman web dan menambah baiknya. Alat-alat ini mengumpul halaman yang anda lawati, klik, skrol dan gerakan tetikus, lokasi anggaran yang diperoleh daripada alamat IP anda, maklumat peranti dan pelayar, serta pengecam pseudonim yang disimpan dalam kuki. Microsoft Clarity juga mencipta tayang semula sesi dan peta haba; kami mengkonfigurasikannya untuk menyembunyikan semua teks pada halaman, termasuk apa-apa yang anda taip, supaya ia tidak merekod kandungan hantaran, komen atau borang. Kami mematikan ciri pengiklanan Google, dan kami tidak menggunakan alat-alat ini pada halaman Tetapan, pada halaman kesederhanaan atau untuk sambungan dari China tanah besar. Jika anda menolak kuki analitik atau tidak membuat pilihan, alat-alat ini tidak dimuatkan.
+
+**Apa yang tidak kami kumpul.** Kami tidak menggunakan alat pengiklanan atau penjejakan media sosial, membina profil pengiklanan, atau mengumpul lokasi tepat. Kami tidak meminta maklumat sensitif, tetapi hantaran anda mungkin mendedahkannya jika anda memilih untuk menerbitkannya.
 
 ## 3. Bagaimana kami menggunakan maklumat dan sebabnya
 
@@ -36,6 +38,7 @@ Dasar ini menerangkan maklumat yang dikumpul oleh niceideas, sebabnya, berapa la
 | Memproses pemadaman akaun | Pengecam akaun, notis pemadaman | Kontrak; kewajipan undang-undang |
 | Menjawab permintaan anda dan mengendalikan tuntutan undang-undang | Maklumat dalam permintaan anda | Kewajipan undang-undang; kepentingan sah |
 | Memaparkan Perkhidmatan dalam bahasa anda | Bahasa yang dipilih dalam pautan, bahasa pelayar | Kepentingan sah |
+| Memahami bagaimana Perkhidmatan digunakan dan menambah baiknya (analitik penggunaan) | Maklumat penggunaan dan peranti, kuki analitik | Persetujuan anda, yang boleh anda tarik balik pada bila-bila masa |
 
 Keputusan mengenai kandungan dan akaun dibuat oleh manusia. Had kadar automatik hanya melambatkan atau menghalang tindakan secara sekejap; kami tidak membuat keputusan automatik yang memberi kesan undang-undang atau kesan serupa yang ketara kepada anda.
 
@@ -49,7 +52,9 @@ Hantaran yang anda jadikan hanya kelihatan kepada anda tidak bersifat awam: hany
 
 ## 5. Kuki
 
-Kami hanya menggunakan kuki yang diperlukan oleh Perkhidmatan untuk berfungsi. Kami tidak menggunakan kuki pengiklanan atau analitik.
+Kami menggunakan kuki yang diperlukan oleh Perkhidmatan untuk berfungsi dan, hanya jika anda menerimanya, kuki analitik. Kami tidak menggunakan kuki pengiklanan.
+
+**Kuki yang diperlukan**
 
 | Kuki | Tujuan | Tempoh |
 |---|---|---|
@@ -57,14 +62,27 @@ Kami hanya menggunakan kuki yang diperlukan oleh Perkhidmatan untuk berfungsi. K
 | `ni_oidc` | Melindungi proses log masuk | 10 minit |
 | `ni_sso` | Mengingati bahawa log masuk automatik telah dicuba, untuk mengelakkan pengalihan berulang | 24 jam |
 | `ni_vid` | Pengecam rawak untuk suka dan komen tanpa akaun, dan pencegahan penyalahgunaan | 400 hari |
+| `ni_locale` | Mengingati bahasa yang anda pilih | 1 tahun |
+| `ni_theme` | Mengingati tema warna yang anda pilih | 1 tahun |
+| `ni_consent` | Mengingati sama ada anda menerima atau menolak kuki analitik | 180 hari |
 
 Jika anda memadam kuki ini, anda akan dilog keluar dan dianggap sebagai pelawat baharu.
+
+**Kuki analitik (hanya dengan persetujuan anda)**
+
+| Kuki | Tujuan | Tempoh |
+|---|---|---|
+| `_ga`, `_ga_<ID>` | Google Analytics: membezakan pelawat dan lawatan | 13 bulan |
+| `_clck` | Microsoft Clarity: menyimpan pengecam pelawat pseudonim | 1 tahun |
+| `_clsk` | Microsoft Clarity: menghubungkan beberapa paparan halaman ke dalam satu lawatan | 1 hari |
+
+Microsoft juga boleh menetapkan kuki pada domainnya sendiri apabila Clarity dimuatkan; ia diterangkan dalam penyataan privasi Microsoft. Anda boleh menerima atau menolak kuki analitik dalam sepanduk yang dipaparkan semasa lawatan pertama anda, dan menukar pilihan anda pada bila-bila masa dengan butang "Tetapan kuki" di bahagian atas dasar ini. Apabila anda menarik balik persetujuan anda, kami memadam kuki analitik yang ditetapkan pada niceideas dan berhenti memuatkan alat-alat tersebut.
 
 ## 6. Perkongsian
 
 Kami tidak menjual atau menyewakan maklumat peribadi, dan kami tidak berkongsinya untuk pengiklanan tingkah laku merentas konteks. Kami hanya berkongsinya dengan:
 
-- **Pembekal perkhidmatan** yang memprosesnya untuk kami berdasarkan kontrak: Hetzner Online GmbH (pelayan dan pangkalan data, Jerman) dan Cloudflare, Inc. (keselamatan rangkaian, penyampaian kandungan dan penyimpanan media di Eropah Barat; rangkaiannya beroperasi di seluruh dunia).
+- **Pembekal perkhidmatan** yang memprosesnya untuk kami berdasarkan kontrak: Hetzner Online GmbH (pelayan dan pangkalan data, Jerman) dan Cloudflare, Inc. (keselamatan rangkaian, penyampaian kandungan dan penyimpanan media di Eropah Barat; rangkaiannya beroperasi di seluruh dunia); dan, hanya jika anda menerima kuki analitik, Google (Google Analytics) dan Microsoft (Microsoft Clarity), yang memproses analitik penggunaan terutamanya di Amerika Syarikat.
 - **NiceMatrix ID**, perkhidmatan log masuk yang kami kendalikan, untuk melog masukkan anda dan memproses pemadaman akaun.
 - **Aplikasi yang anda benarkan**, yang hanya menerima apa yang anda benarkan, seperti hantaran yang diterbitkannya dan profil awam anda.
 - **Orang ramai**, sebagaimana diterangkan dalam Seksyen 4.
@@ -75,11 +93,13 @@ Kami tidak menjual atau menyewakan maklumat peribadi, dan kami tidak berkongsiny
 
 NiceMatrix berpusat di Kanada. Pelayan dan penyimpanan media kami berada di Eropah (Jerman dan Eropah Barat), dan pembekal rangkaian kami memproses permintaan di negara yang paling dekat dengan anda. Oleh itu, maklumat anda mungkin diproses di Jerman, negara Eropah lain, Kanada dan negara lain tempat pembekal kami beroperasi, yang undang-undangnya mungkin berbeza daripada undang-undang negara anda.
 
-Pemindahan daripada Kawasan Ekonomi Eropah, United Kingdom dan Switzerland ke Kanada bergantung kepada keputusan kecukupan untuk Kanada. Pemindahan lain bergantung kepada Klausa Kontrak Standard yang terdapat dalam terma pemprosesan data pembekal kami, atau perlindungan lain yang diiktiraf oleh undang-undang.
+Jika anda menerima kuki analitik, Google dan Microsoft memproses data analitik di Amerika Syarikat dan negara lain tempat mereka beroperasi.
+
+Pemindahan daripada Kawasan Ekonomi Eropah, United Kingdom dan Switzerland ke Kanada bergantung kepada keputusan kecukupan untuk Kanada. Pemindahan kepada Google dan Microsoft di Amerika Syarikat bergantung kepada Kerangka Privasi Data EU-A.S. (EU-U.S. Data Privacy Framework) dan lanjutannya untuk United Kingdom dan Switzerland, yang kedua-dua syarikat tersebut diperakui, atau bergantung kepada Klausa Kontrak Standard. Pemindahan lain bergantung kepada Klausa Kontrak Standard yang terdapat dalam terma pemprosesan data pembekal kami, atau perlindungan lain yang diiktiraf oleh undang-undang.
 
 ## 8. China tanah besar
 
-Bagi sambungan dari China tanah besar, hanya halaman hantaran kongsi individu serta suka dan komen di atasnya yang boleh diakses. Jika anda melihat, menyukai atau memberi komen pada halaman sedemikian dari China tanah besar, maklumat yang diterangkan di Seksyen 2 diproses dan disimpan di luar China tanah besar, terutamanya di Jerman. Dengan berinteraksi dengan halaman tersebut, anda bersetuju dengan pemindahan ini. Anda boleh menjalankan hak anda di bawah Undang-Undang Perlindungan Maklumat Peribadi Republik Rakyat China dengan menulis kepada support@nicematrix.ca.
+Bagi sambungan dari China tanah besar, hanya halaman hantaran kongsi individu serta suka dan komen di atasnya yang boleh diakses. Jika anda melihat, menyukai atau memberi komen pada halaman sedemikian dari China tanah besar, maklumat yang diterangkan di Seksyen 2 diproses dan disimpan di luar China tanah besar, terutamanya di Jerman. Dengan berinteraksi dengan halaman tersebut, anda bersetuju dengan pemindahan ini. Alat analitik tidak digunakan untuk sambungan dari China tanah besar. Anda boleh menjalankan hak anda di bawah Undang-Undang Perlindungan Maklumat Peribadi Republik Rakyat China dengan menulis kepada support@nicematrix.ca.
 
 ## 9. Berapa lama kami menyimpan maklumat
 
@@ -95,6 +115,9 @@ Bagi sambungan dari China tanah besar, hanya halaman hantaran kongsi individu se
 | Sesi log masuk | Sehingga anda log keluar atau selepas 30 hari tidak digunakan; rekod tamat tempoh dipadam setiap hari |
 | Sekatan pelawat dan semakan anti-spam | Sehingga tamat tempoh; rekod tamat tempoh dipadam setiap hari |
 | Log akses pelayan web | 14 hari |
+| Data Google Analytics yang dikaitkan dengan kuki atau pengecam pelawat | Sehingga 14 bulan |
+| Tayang semula sesi Microsoft Clarity | 30 hari; tayang semula yang kami simpan untuk semakan sehingga 13 bulan |
+| Data Microsoft Clarity lain (peta haba, statistik) | Sehingga 13 bulan |
 | Log aplikasi (ralat dan acara perkhidmatan, tanpa alamat IP atau kandungan) | Dipadam secara automatik apabila had penyimpanan log pelayan dicapai |
 | Sandaran pangkalan data | Sehingga 14 hari, selepas itu maklumat yang dipadam juga hilang daripada sandaran |
 | Notis pemadaman akaun (pengecam akaun, acara, masa) | Selagi diperlukan untuk menunjukkan bahawa pemadaman telah dilaksanakan |
@@ -130,11 +153,11 @@ Perkhidmatan ini tidak diarahkan kepada kanak-kanak bawah umur 13 tahun, dan kam
 
 ## 13. Keselamatan
 
-Kami melindungi maklumat dengan penyulitan semasa penghantaran (HTTPS), hash sehala sebagai ganti kod sesi mentah, alamat IP dan pengecam pelayar, mesej bertandatangan antara perkhidmatan kami, akses terhad kepada kakitangan yang diberi kuasa, dasar keselamatan kandungan yang ketat tanpa skrip luar, dan sandaran harian yang disimpan untuk tempoh terhad. Tiada sistem yang selamat secara sempurna. Jika pelanggaran keselamatan mewujudkan risiko sebenar bahaya yang ketara, kami akan memberitahu anda dan pihak berkuasa sebagaimana dikehendaki oleh undang-undang.
+Kami melindungi maklumat dengan penyulitan semasa penghantaran (HTTPS), hash sehala sebagai ganti kod sesi mentah, alamat IP dan pengecam pelayar, mesej bertandatangan antara perkhidmatan kami, akses terhad kepada kakitangan yang diberi kuasa, dasar keselamatan kandungan yang ketat yang tidak membenarkan skrip luar selain alat analitik pilihan di Seksyen 2, yang hanya dimuatkan selepas anda menerimanya, dan sandaran harian yang disimpan untuk tempoh terhad. Tiada sistem yang selamat secara sempurna. Jika pelanggaran keselamatan mewujudkan risiko sebenar bahaya yang ketara, kami akan memberitahu anda dan pihak berkuasa sebagaimana dikehendaki oleh undang-undang.
 
 ## 14. Notis untuk penduduk California
 
-Dalam 12 bulan yang lepas kami mengumpul pengecam (pengecam akaun, nama pengendali, alamat IP dan pengecam pelayar yang di-hash), aktiviti internet (log dan interaksi) dan kandungan yang anda terbitkan, daripada sumber dan untuk tujuan yang diterangkan di Seksyen 2 dan 3. Kami mendedahkan maklumat ini untuk tujuan perniagaan hanya kepada pembekal perkhidmatan yang disenaraikan di Seksyen 6. Kami tidak menjual atau berkongsi maklumat peribadi untuk pengiklanan tingkah laku merentas konteks, dan kami tidak menggunakan maklumat peribadi sensitif untuk membuat kesimpulan tentang ciri-ciri anda. Pengekalan diterangkan di Seksyen 9.
+Dalam 12 bulan yang lepas kami mengumpul pengecam (pengecam akaun, nama pengendali, alamat IP dan pengecam pelayar yang di-hash), aktiviti internet (log, interaksi dan, jika anda menerima kuki analitik, analitik penggunaan) dan kandungan yang anda terbitkan, daripada sumber dan untuk tujuan yang diterangkan di Seksyen 2 dan 3. Kami mendedahkan maklumat ini untuk tujuan perniagaan hanya kepada pembekal perkhidmatan yang disenaraikan di Seksyen 6, termasuk Google dan Microsoft untuk analitik penggunaan jika anda menerima kuki analitik. Kami tidak menjual atau berkongsi maklumat peribadi untuk pengiklanan tingkah laku merentas konteks, dan kami tidak menggunakan maklumat peribadi sensitif untuk membuat kesimpulan tentang ciri-ciri anda. Pengekalan diterangkan di Seksyen 9.
 
 ## 15. Perubahan kepada dasar ini
 

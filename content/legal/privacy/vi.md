@@ -1,4 +1,4 @@
-> **Tóm tắt.** Chúng tôi chỉ thu thập những gì cần thiết để vận hành niceideas: hồ sơ của bạn, những gì bạn công khai, và một lượng dữ liệu kỹ thuật hạn chế để giữ an toàn cho Dịch vụ. Các bài đăng của bạn là công khai, trừ khi bạn đặt chỉ mình bạn xem được. Chúng tôi không bán thông tin cá nhân, không hiển thị quảng cáo và không sử dụng các công cụ theo dõi bên ngoài. Bạn có thể xóa bài đăng bất cứ lúc nào và xóa tài khoản của mình bằng cách xóa NiceMatrix ID của bạn. Hãy viết thư tới support@nicematrix.ca với bất kỳ câu hỏi hoặc yêu cầu nào về quyền riêng tư.
+> **Tóm tắt.** Chúng tôi chỉ thu thập những gì cần thiết để vận hành niceideas: hồ sơ của bạn, những gì bạn công khai, và một lượng dữ liệu kỹ thuật hạn chế để giữ an toàn cho Dịch vụ. Các bài đăng của bạn là công khai, trừ khi bạn đặt chỉ mình bạn xem được. Chúng tôi không bán thông tin cá nhân, cũng không hiển thị quảng cáo. Chỉ khi bạn chấp nhận cookie phân tích, chúng tôi mới sử dụng Google Analytics và Microsoft Clarity để hiểu cách Dịch vụ được sử dụng. Bạn có thể xóa bài đăng bất cứ lúc nào và xóa tài khoản của mình bằng cách xóa NiceMatrix ID của bạn. Hãy viết thư tới support@nicematrix.ca với bất kỳ câu hỏi hoặc yêu cầu nào về quyền riêng tư.
 
 ## 1. Chúng tôi là ai
 
@@ -22,7 +22,9 @@ Chính sách này giải thích thông tin mà niceideas thu thập, tại sao, 
 
 **Thông tin từ các ứng dụng bạn ủy quyền.** Các ứng dụng bạn ủy quyền gửi cho chúng tôi các bài đăng và phương tiện bạn công khai qua chúng, cùng với mã định danh của ứng dụng.
 
-**Những gì chúng tôi không thu thập.** Chúng tôi không sử dụng các công cụ quảng cáo, phân tích hay theo dõi truyền thông xã hội, không xây dựng hồ sơ quảng cáo hay thu thập vị trí chính xác. Chúng tôi không yêu cầu thông tin nhạy cảm, nhưng các bài đăng của bạn có thể tiết lộ thông tin đó nếu bạn chọn công khai nó.
+**Phân tích sử dụng (chỉ khi có sự đồng ý của bạn).** Nếu bạn chấp nhận cookie phân tích, chúng tôi sử dụng Google Analytics (Google) và Microsoft Clarity (Microsoft) để hiểu cách mọi người sử dụng các trang web và cải thiện chúng. Các công cụ này thu thập các trang bạn truy cập, lượt nhấp, cuộn trang và di chuyển chuột, vị trí gần đúng suy ra từ địa chỉ IP của bạn, thông tin thiết bị và trình duyệt, và các mã định danh giả danh được lưu trong cookie. Microsoft Clarity cũng tạo bản ghi lại phiên (session replay) và bản đồ nhiệt; chúng tôi cấu hình để ẩn toàn bộ văn bản trên trang, bao gồm bất cứ điều gì bạn nhập, nên công cụ không ghi lại nội dung bài đăng, bình luận hoặc biểu mẫu. Chúng tôi tắt các tính năng quảng cáo của Google, và không sử dụng các công cụ này trên trang Cài đặt, trên các trang kiểm duyệt hoặc đối với các kết nối từ Trung Quốc đại lục. Nếu bạn từ chối cookie phân tích hoặc không chọn, các công cụ này sẽ không được tải.
+
+**Những gì chúng tôi không thu thập.** Chúng tôi không sử dụng các công cụ quảng cáo hay theo dõi truyền thông xã hội, không xây dựng hồ sơ quảng cáo hay thu thập vị trí chính xác. Chúng tôi không yêu cầu thông tin nhạy cảm, nhưng các bài đăng của bạn có thể tiết lộ thông tin đó nếu bạn chọn công khai nó.
 
 ## 3. Cách chúng tôi sử dụng thông tin và tại sao
 
@@ -36,6 +38,7 @@ Chính sách này giải thích thông tin mà niceideas thu thập, tại sao, 
 | Xử lý việc xóa tài khoản | Mã định danh tài khoản, thông báo xóa | Hợp đồng; nghĩa vụ pháp lý |
 | Trả lời yêu cầu của bạn và xử lý khiếu nại pháp lý | Thông tin trong yêu cầu của bạn | Nghĩa vụ pháp lý; lợi ích hợp pháp |
 | Hiển thị Dịch vụ bằng ngôn ngữ của bạn | Ngôn ngữ chọn trong liên kết, ngôn ngữ trình duyệt | Lợi ích hợp pháp |
+| Hiểu cách Dịch vụ được sử dụng và cải thiện nó (phân tích sử dụng) | Thông tin sử dụng và thiết bị, cookie phân tích | Sự đồng ý của bạn, mà bạn có thể thu hồi bất cứ lúc nào |
 
 Các quyết định về nội dung và tài khoản được đưa ra bởi con người. Giới hạn tốc độ tự động chỉ làm chậm hoặc chặn ngắn hạn các hành động; chúng tôi không đưa ra các quyết định tự động có hậu quả pháp lý hoặc hậu quả quan trọng tương đương đối với bạn.
 
@@ -49,7 +52,9 @@ Các bài đăng bạn đặt chỉ mình bạn xem được không công khai: 
 
 ## 5. Cookie
 
-Chúng tôi chỉ sử dụng các cookie mà Dịch vụ cần để hoạt động. Chúng tôi không sử dụng cookie quảng cáo hay phân tích.
+Chúng tôi sử dụng các cookie mà Dịch vụ cần để hoạt động và, chỉ khi bạn chấp nhận, cookie phân tích. Chúng tôi không sử dụng cookie quảng cáo.
+
+**Cookie cần thiết**
 
 | Cookie | Mục đích | Thời hạn |
 |---|---|---|
@@ -57,14 +62,27 @@ Chúng tôi chỉ sử dụng các cookie mà Dịch vụ cần để hoạt đ�
 | `ni_oidc` | Bảo vệ quá trình đăng nhập | 10 phút |
 | `ni_sso` | Ghi nhớ rằng đăng nhập tự động đã được thử, để tránh việc chuyển hướng lặp lại | 24 giờ |
 | `ni_vid` | Mã định danh ngẫu nhiên cho lượt thích và bình luận không có tài khoản, và phòng chống lạm dụng | 400 ngày |
+| `ni_locale` | Ghi nhớ ngôn ngữ bạn đã chọn | 1 năm |
+| `ni_theme` | Ghi nhớ chủ đề màu bạn đã chọn | 1 năm |
+| `ni_consent` | Ghi nhớ bạn đã chấp nhận hay từ chối cookie phân tích | 180 ngày |
 
 Nếu bạn xóa các cookie này, bạn sẽ bị đăng xuất và được coi là khách truy cập mới.
+
+**Cookie phân tích (chỉ khi có sự đồng ý của bạn)**
+
+| Cookie | Mục đích | Thời hạn |
+|---|---|---|
+| `_ga`, `_ga_<ID>` | Google Analytics: phân biệt khách truy cập và lượt truy cập | 13 tháng |
+| `_clck` | Microsoft Clarity: duy trì một mã định danh khách truy cập giả danh | 1 năm |
+| `_clsk` | Microsoft Clarity: liên kết các lượt xem trang thành một lượt truy cập | 1 ngày |
+
+Microsoft cũng có thể đặt cookie trên các miền của riêng họ khi Clarity được tải; chúng được mô tả trong tuyên bố về quyền riêng tư của Microsoft. Bạn có thể chấp nhận hoặc từ chối cookie phân tích trong banner hiển thị khi bạn truy cập lần đầu, và thay đổi lựa chọn của bạn bất cứ lúc nào bằng nút "Cài đặt cookie" ở đầu chính sách này. Khi bạn thu hồi sự đồng ý, chúng tôi xóa các cookie phân tích được đặt trên niceideas và ngừng tải các công cụ.
 
 ## 6. Chia sẻ
 
 Chúng tôi không bán hay cho thuê thông tin cá nhân, và chúng tôi không chia sẻ nó cho quảng cáo hành vi xuyên bối cảnh. Chúng tôi chỉ chia sẻ nó với:
 
-- **Nhà cung cấp dịch vụ** xử lý thông tin cho chúng tôi theo hợp đồng: Hetzner Online GmbH (máy chủ và cơ sở dữ liệu, Đức) và Cloudflare, Inc. (an ninh mạng, phân phối nội dung và lưu trữ phương tiện ở Tây Âu; mạng của họ hoạt động trên toàn thế giới).
+- **Nhà cung cấp dịch vụ** xử lý thông tin cho chúng tôi theo hợp đồng: Hetzner Online GmbH (máy chủ và cơ sở dữ liệu, Đức) và Cloudflare, Inc. (an ninh mạng, phân phối nội dung và lưu trữ phương tiện ở Tây Âu; mạng của họ hoạt động trên toàn thế giới); và, chỉ khi bạn chấp nhận cookie phân tích, Google (Google Analytics) và Microsoft (Microsoft Clarity), xử lý phân tích sử dụng chủ yếu tại Hoa Kỳ.
 - **NiceMatrix ID**, dịch vụ đăng nhập mà chúng tôi vận hành, để đăng nhập cho bạn và xử lý việc xóa tài khoản.
 - **Các ứng dụng bạn ủy quyền**, chỉ nhận những gì bạn cho phép, chẳng hạn như các bài đăng chúng đã công khai và hồ sơ công khai của bạn.
 - **Công chúng**, như được mô tả tại Mục 4.
@@ -75,11 +93,13 @@ Chúng tôi không bán hay cho thuê thông tin cá nhân, và chúng tôi khô
 
 NiceMatrix có trụ sở tại Canada. Máy chủ và lưu trữ phương tiện của chúng tôi ở châu Âu (Đức và Tây Âu), và nhà cung cấp mạng của chúng tôi xử lý các yêu cầu tại quốc gia gần bạn nhất. Do đó, thông tin của bạn có thể được xử lý tại Đức, các quốc gia châu Âu khác, Canada và các quốc gia khác nơi nhà cung cấp của chúng tôi hoạt động, mà pháp luật của họ có thể khác với pháp luật của quốc gia bạn.
 
-Việc chuyển giao từ Khu vực Kinh tế châu Âu, Vương quốc Anh và Thụy Sĩ sang Canada dựa trên các quyết định về mức độ bảo vệ đầy đủ đối với Canada. Các chuyển giao khác dựa trên các Điều khoản Hợp đồng Tiêu chuẩn bao gồm trong các điều khoản xử lý dữ liệu của nhà cung cấp của chúng tôi, hoặc trên các biện pháp bảo vệ khác được pháp luật công nhận.
+Nếu bạn chấp nhận cookie phân tích, Google và Microsoft xử lý dữ liệu phân tích tại Hoa Kỳ và các quốc gia khác nơi họ hoạt động.
+
+Việc chuyển giao từ Khu vực Kinh tế châu Âu, Vương quốc Anh và Thụy Sĩ sang Canada dựa trên các quyết định về mức độ bảo vệ đầy đủ đối với Canada. Việc chuyển giao tới Google và Microsoft tại Hoa Kỳ dựa trên Khung Quyền riêng tư Dữ liệu EU-Hoa Kỳ và các phần mở rộng cho Vương quốc Anh và Thụy Sĩ, theo đó cả hai công ty đều được chứng nhận, hoặc dựa trên các Điều khoản Hợp đồng Tiêu chuẩn. Các chuyển giao khác dựa trên các Điều khoản Hợp đồng Tiêu chuẩn bao gồm trong các điều khoản xử lý dữ liệu của nhà cung cấp của chúng tôi, hoặc trên các biện pháp bảo vệ khác được pháp luật công nhận.
 
 ## 8. Trung Quốc đại lục
 
-Đối với các kết nối từ Trung Quốc đại lục, chỉ có các trang bài đăng được chia sẻ riêng lẻ và các lượt thích, bình luận trên đó là có thể truy cập được. Nếu bạn xem, thích hoặc bình luận trên một trang như vậy từ Trung Quốc đại lục, thông tin được mô tả tại Mục 2 sẽ được xử lý và lưu trữ bên ngoài Trung Quốc đại lục, chủ yếu tại Đức. Bằng việc tương tác với trang đó, bạn đồng ý với việc chuyển giao này. Bạn có thể thực hiện các quyền của mình theo Luật Bảo vệ Thông tin Cá nhân của Cộng hòa Nhân dân Trung Hoa bằng cách viết thư tới support@nicematrix.ca.
+Đối với các kết nối từ Trung Quốc đại lục, chỉ có các trang bài đăng được chia sẻ riêng lẻ và các lượt thích, bình luận trên đó là có thể truy cập được. Nếu bạn xem, thích hoặc bình luận trên một trang như vậy từ Trung Quốc đại lục, thông tin được mô tả tại Mục 2 sẽ được xử lý và lưu trữ bên ngoài Trung Quốc đại lục, chủ yếu tại Đức. Bằng việc tương tác với trang đó, bạn đồng ý với việc chuyển giao này. Các công cụ phân tích không được sử dụng đối với các kết nối từ Trung Quốc đại lục. Bạn có thể thực hiện các quyền của mình theo Luật Bảo vệ Thông tin Cá nhân của Cộng hòa Nhân dân Trung Hoa bằng cách viết thư tới support@nicematrix.ca.
 
 ## 9. Thời gian chúng tôi lưu giữ thông tin
 
@@ -95,6 +115,9 @@ Việc chuyển giao từ Khu vực Kinh tế châu Âu, Vương quốc Anh và 
 | Phiên đăng nhập | Cho đến khi bạn đăng xuất hoặc sau 30 ngày không sử dụng; các bản ghi đã hết hạn bị xóa hàng ngày |
 | Chặn khách truy cập và kiểm tra chống thư rác | Cho đến khi hết hạn; các bản ghi đã hết hạn bị xóa hàng ngày |
 | Nhật ký truy cập máy chủ web | 14 ngày |
+| Dữ liệu Google Analytics liên kết với cookie hoặc mã định danh khách truy cập | Tối đa 14 tháng |
+| Bản ghi lại phiên của Microsoft Clarity | 30 ngày; các bản ghi chúng tôi lưu để xem xét tối đa 13 tháng |
+| Các dữ liệu Microsoft Clarity khác (bản đồ nhiệt, thống kê) | Tối đa 13 tháng |
 | Nhật ký ứng dụng (lỗi và các sự kiện dịch vụ, không có địa chỉ IP hay nội dung) | Bị xóa tự động khi đạt giới hạn lưu trữ nhật ký của máy chủ |
 | Bản sao lưu cơ sở dữ liệu | Tối đa 14 ngày, sau đó thông tin đã xóa cũng biến mất khỏi bản sao lưu |
 | Thông báo xóa tài khoản (mã định danh tài khoản, sự kiện, thời gian) | Trong thời gian cần thiết để chứng minh việc xóa đã được thực hiện |
@@ -130,11 +153,11 @@ Dịch vụ không hướng đến trẻ em dưới 13 tuổi, và chúng tôi k
 
 ## 13. An ninh
 
-Chúng tôi bảo vệ thông tin bằng mã hóa trong quá trình truyền (HTTPS), các hash một chiều thay cho mã phiên thô, địa chỉ IP và mã định danh trình duyệt, các thông điệp được ký giữa các dịch vụ của chúng tôi, quyền truy cập hạn chế đối với nhân viên được ủy quyền, một chính sách an ninh nội dung nghiêm ngặt không có script bên ngoài, và các bản sao lưu hàng ngày được lưu giữ trong một thời gian hạn chế. Không có hệ thống nào hoàn toàn an toàn. Nếu một vi phạm an ninh tạo ra rủi ro thực sự về tổn hại nghiêm trọng, chúng tôi sẽ thông báo cho bạn và các cơ quan chức năng theo yêu cầu của pháp luật.
+Chúng tôi bảo vệ thông tin bằng mã hóa trong quá trình truyền (HTTPS), các hash một chiều thay cho mã phiên thô, địa chỉ IP và mã định danh trình duyệt, các thông điệp được ký giữa các dịch vụ của chúng tôi, quyền truy cập hạn chế đối với nhân viên được ủy quyền, một chính sách an ninh nội dung nghiêm ngặt không cho phép script bên ngoài ngoài các công cụ phân tích tùy chọn tại Mục 2, chỉ được tải sau khi bạn chấp nhận chúng, và các bản sao lưu hàng ngày được lưu giữ trong một thời gian hạn chế. Không có hệ thống nào hoàn toàn an toàn. Nếu một vi phạm an ninh tạo ra rủi ro thực sự về tổn hại nghiêm trọng, chúng tôi sẽ thông báo cho bạn và các cơ quan chức năng theo yêu cầu của pháp luật.
 
 ## 14. Thông báo cho cư dân California
 
-Trong 12 tháng qua, chúng tôi đã thu thập các mã định danh (mã định danh tài khoản, tên người dùng, địa chỉ IP và mã định danh trình duyệt đã hash), hoạt động internet (nhật ký và tương tác) và nội dung bạn công khai, từ các nguồn và vì các mục đích được mô tả tại Mục 2 và 3. Chúng tôi đã tiết lộ thông tin này cho mục đích kinh doanh chỉ với các nhà cung cấp dịch vụ được liệt kê tại Mục 6. Chúng tôi không bán hoặc chia sẻ thông tin cá nhân cho quảng cáo hành vi xuyên bối cảnh, và chúng tôi không sử dụng thông tin cá nhân nhạy cảm để suy ra các đặc điểm về bạn. Thời gian lưu giữ được mô tả tại Mục 9.
+Trong 12 tháng qua, chúng tôi đã thu thập các mã định danh (mã định danh tài khoản, tên người dùng, địa chỉ IP và mã định danh trình duyệt đã hash), hoạt động internet (nhật ký, tương tác và, nếu bạn chấp nhận cookie phân tích, phân tích sử dụng) và nội dung bạn công khai, từ các nguồn và vì các mục đích được mô tả tại Mục 2 và 3. Chúng tôi đã tiết lộ thông tin này cho mục đích kinh doanh chỉ với các nhà cung cấp dịch vụ được liệt kê tại Mục 6, bao gồm Google và Microsoft cho phân tích sử dụng nếu bạn chấp nhận cookie phân tích. Chúng tôi không bán hoặc chia sẻ thông tin cá nhân cho quảng cáo hành vi xuyên bối cảnh, và chúng tôi không sử dụng thông tin cá nhân nhạy cảm để suy ra các đặc điểm về bạn. Thời gian lưu giữ được mô tả tại Mục 9.
 
 ## 15. Thay đổi đối với chính sách này
 
