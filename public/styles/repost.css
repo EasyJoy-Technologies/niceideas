@@ -43,10 +43,12 @@ a.ni-qe:hover { border-color: var(--ni-color-secondary); }
 .ni-reply-to a { color: var(--ni-color-primary); font-weight: 600; }
 .ni-reply-body { margin-top: 0.25rem; overflow-wrap: anywhere; }
 .ni-reply-body p { margin: 0; }
-.ni-reply { padding-bottom: 0.875rem; }
+/* Bottom inset = card top inset (18px; phone 16px). */
+.ni-reply { padding-bottom: 1.125rem; }
 
 @media (max-width: 47.99rem) {
   .ni-tabs-even { padding: 0 0.25rem; }
   .ni-tabs-even a { padding-inline: 0.5rem; }
   .ni-fc-rp { padding-inline-start: 1.375rem; }
+  .ni-reply { padding-bottom: 1rem; }
 }
