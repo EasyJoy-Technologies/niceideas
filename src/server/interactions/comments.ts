@@ -61,7 +61,7 @@ export async function createComment(db: Db, slug: string, actor: Actor, payload:
   if (chars(text) > COMMENT_MAX_CHARS) throw badRequest("comment.too_long", { maxChars: COMMENT_MAX_CHARS });
   if (chars(name) > NAME_MAX_CHARS) throw badRequest("comment.name_too_long", { maxChars: NAME_MAX_CHARS });
 
-  const post = await interactivePost(db, slug);
+  const post = await interactivePost(db, slug, viewer?.user_id ?? null);
   if (post.comments_mode === "closed") throw forbidden("comments.closed");
   if (post.comments_mode === "signed_in" && !viewer) throw forbidden("comments.signed_in_only");
   if (!viewer && !(await verifyProof(db, input.challenge ?? "", input.nonce ?? ""))) throw new ApiError("comment.proof_invalid", 422);

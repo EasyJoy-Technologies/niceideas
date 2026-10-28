@@ -4,7 +4,7 @@ import { findComment } from "@/server/db/repos/comments";
 import { ApiError, notFound } from "@/server/http/errors";
 import { accountLikerKey, likerKeysOf, type Actor } from "./actor";
 import { limits, rateLimited } from "./guards";
-import { interactivePost } from "./target";
+import { interactivePost, mayInteract } from "./target";
 
 const HOUR = 3600;
 
@@ -26,15 +26,15 @@ async function setLike(db: Db, target: LikeTarget, id: string, actor: Actor, lik
 }
 
 export async function setPostLike(db: Db, slug: string, actor: Actor, liked: boolean): Promise<LikeResult> {
-  const post = await interactivePost(db, slug);
+  const post = await interactivePost(db, slug, actor.viewer?.user_id ?? null);
   return setLike(db, POST_LIKE, post.id, actor, liked);
 }
 
 export async function setCommentLike(db: Db, commentId: string, actor: Actor, liked: boolean): Promise<LikeResult> {
   const comment = /^[0-9a-f-]{36}$/i.test(commentId) ? await findComment(db, commentId) : undefined;
   if (!comment || comment.status !== "visible") throw notFound("comment.not_found");
-  const post = await db.selectFrom("post").select(["status", "visibility"]).where("id", "=", comment.post_id).executeTakeFirst();
-  if (post?.visibility !== "public") throw notFound("comment.not_found");
+  const post = await db.selectFrom("post").select(["status", "visibility", "author_id"]).where("id", "=", comment.post_id).executeTakeFirst();
+  if (!post || !mayInteract(post, actor.viewer?.user_id ?? null)) throw notFound("comment.not_found");
   if (post.status !== "active") throw new ApiError("post.gone", 410);
   return setLike(db, COMMENT_LIKE, comment.id, actor, liked);
 }

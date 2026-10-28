@@ -65,7 +65,14 @@
     padding-bottom: env(safe-area-inset-bottom);
   }
   body:has(.ni-mbar) .ni-ftr { padding-bottom: 3.5rem; }
-  .ni-post .ni-actions .ni-act:not([data-report]):not(.ni-more-btn) { display: none; }
+  /* The bottom bar carries every action, "⋯" included: no row under the post (Xianglin 2026-10-28). */
+  .ni-post .ni-actions { display: none; }
+  /* Without that row the post ends on its content: bottom inset = top inset (1.25rem, share-page.css). */
+  .ni-post:has(> .ni-mbar) { padding-bottom: 1.25rem; }
+  .ni-mbar > .ni-menu { display: flex; }
+  .ni-mbar .ni-share-t { display: none; }
+  /* Bar menus (repost, author's ⋯) open upward, clear of the bar's top edge. */
+  .ni-mbar .ni-more ul, .ni-mbar .ni-rp ul { top: auto; bottom: calc(100% + 0.875rem); }
 }
 
 /* Author's "⋯" menu under a post / card: inline delete confirmation (no JS). */

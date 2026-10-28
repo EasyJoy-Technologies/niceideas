@@ -1,6 +1,8 @@
 import { existsSync } from "node:fs";
 import { afterAll, beforeAll, describe, expect, it } from "vitest";
 import { POST as visibilityRoute } from "@/app/api/web/posts/visibility/route";
+import { POST as commentLikeRoute } from "@/app/api/v1/comments/[id]/like/route";
+import { POST as commentRoute } from "@/app/api/v1/p/[slug]/comments/route";
 import { POST as likeRoute } from "@/app/api/v1/p/[slug]/like/route";
 import { GET as discoverRoute } from "@/app/discover/route";
 import { GET as mediaRoute } from "@/app/p/[slug]/media/[...key]/route";
@@ -85,7 +87,9 @@ describe("private posts", () => {
     expect(own.html).toContain('<meta name="robots" content="noindex">');
     expect(own.html).not.toContain('property="og:image"');
     expect(own.html).toContain(`/p/${post.slug}/media/${key}`);
-    expect(own.html).not.toContain('data-like="post"');
+    expect(own.html).toContain('data-like="post"');
+    expect(own.html).not.toContain("data-bookmark=");
+    expect(own.html).not.toContain("data-repost-menu=");
     expect(own.html).toContain("Make public");
     const profile = await listing("profile", author);
     expect(profile).toContain(post.slug);
@@ -103,6 +107,32 @@ describe("private posts", () => {
     expect((await media(post.slug, key, stranger)).status).toBe(404);
     expect((await media(post.slug, key, "")).status).toBe(404);
     expect((await media(post.slug, "m/../etc/passwd")).status).toBe(404);
+  });
+
+  it("a private post takes likes and comments from its author only (Xianglin 2026-10-28)", async () => {
+    const post = await publishAs(ctx, "priv-author", { version: 1, blocks: [{ type: "text", text: "Note to self" }] });
+    await setVisibility(post.slug, "private");
+    const write = (cookie: string, body?: unknown) => jsonRequest("POST", "/x", null, body, { origin: BASE, cookie });
+
+    for (const cookie of ["", stranger]) {
+      expect((await likeRoute(write(cookie), params({ slug: post.slug }))).status).toBe(404);
+      expect((await commentRoute(write(cookie, { body: "Hi" }), params({ slug: post.slug }))).status).toBe(404);
+    }
+    const like = await likeRoute(write(author), params({ slug: post.slug }));
+    expect([like.status, (await like.json()).likeCount]).toEqual([200, 1]);
+    const comment = await commentRoute(write(author, { body: "Remember this" }), params({ slug: post.slug }));
+    expect(comment.status).toBe(201);
+    const commentId = (await comment.json()).comment.id as string;
+    expect((await commentLikeRoute(write(stranger), params({ id: commentId }))).status).toBe(404);
+    expect((await commentLikeRoute(write(author), params({ id: commentId }))).status).toBe(200);
+    expect((await postRow(post.id))).toMatchObject({ like_count: 1, comment_count: 1 });
+
+    const own = await view(post.slug, author);
+    expect(own.html).toContain("Remember this");
+    expect(own.html).toContain('data-like="comment"');
+    expect(own.html).toContain('name="body"');
+    expect(own.html).not.toContain(`data-report="${commentId}"`);
+    expect((await listing("profile", author)).match(new RegExp(`data-like="post" data-id="${post.slug}"`))).not.toBeNull();
   });
 
   it("making it public again brings the page, media and listings back", async () => {

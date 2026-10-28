@@ -30,12 +30,13 @@ function commentItem(ctx: ChromeContext, post: Post, c: CommentRow, liked: boole
     : avatarHtml(name, c.author_avatar, 36, "ni-avatar ni-cmt-ava");
   const profile = !anonymous && c.author_handle && !ctx.restricted ? profilePath(c.author_handle) : null;
   const nameHtml = profile ? `<a class="ni-name" href="${profile}">${escapeHtml(name)}</a>` : `<span class="ni-name">${escapeHtml(name)}</span>`;
-  // Private posts take no interactions: their comments are read-only.
-  const actions = post.visibility === "private" ? "" :
+  // Private posts (their author only): like and reply, nothing to report.
+  const report = post.visibility === "private" ? "" : `<span class="ni-sp"></span><button type="button" class="ni-act" data-report="${c.id}" aria-label="${escapeHtml(t("share.action.report"))}">${icon("more")}</button>`;
+  const actions =
     `<div class="ni-cmt-actions"><button type="button" class="ni-act" data-like="comment" data-id="${c.id}" aria-pressed="${liked}" aria-label="${escapeHtml(t("share.action.like"))}">` +
     `${icon("heart")}<span>${c.like_count || ""}</span></button>` +
     (c.parent_id ? "" : `<button type="button" class="ni-act" data-reply="${c.id}" data-name="${escapeHtml(name)}">${icon("comment")}${escapeHtml(t("share.action.reply"))}</button>`) +
-    `<span class="ni-sp"></span><button type="button" class="ni-act" data-report="${c.id}" aria-label="${escapeHtml(t("share.action.report"))}">${icon("more")}</button></div>`;
+    `${report}</div>`;
   return (
     `<div class="ni-cmt" id="c-${c.id}">${avatar}<div class="ni-cmt-main"><div class="ni-cmt-top">${nameHtml}${tag}` +
     `<span class="ni-meta">${ago(ctx, c.created_at)}</span></div>${commentBody(c.body)}${actions}${replies}</div></div>`
@@ -55,7 +56,6 @@ function thread(ctx: ChromeContext, post: Post, th: CommentThread, data: PageInt
 function composer(ctx: ChromeContext, post: Post): string {
   const { t } = ctx.intl;
   const v = ctx.viewer;
-  if (post.visibility === "private") return "";
   if (post.comments_mode === "closed" || (post.comments_mode === "signed_in" && !v)) {
     const key = post.comments_mode === "closed" ? "share.comments.closed" : "share.comments.signedInOnly";
     return `<p class="ni-note">${escapeHtml(t(key))}</p>`;
@@ -90,8 +90,6 @@ export function reportDialog(ctx: ChromeContext, slug: string): string {
 /** Comments card (plan §16.2): anonymous composer, threads with one reply level, paging. */
 export function commentsSection(ctx: ChromeContext, post: Post, data: PageInteractions, path: string): string {
   const { t } = ctx.intl;
-  // A private post takes no comments: only earlier ones are shown (read-only), no empty-state invitation.
-  if (post.visibility === "private" && data.threads.length === 0 && data.page === 1) return "";
   const list = data.threads.length
     ? data.threads.map((th) => thread(ctx, post, th, data)).join("")
     : data.page === 1 ? `<p class="ni-note">${escapeHtml(t("share.comments.empty"))}</p>` : "";

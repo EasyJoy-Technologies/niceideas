@@ -101,7 +101,7 @@ Plan `docs/plan/2026-10-26-app-sign-in-ticket.md` (Xianglin 2026-10-26 21:47, in
 - **Delete** by the backend: `unpublished`, page 410, media withdrawn, purged after 30 days; no event back.
 - **Visibility** (v1.0.75, Xianglin 2026-10-26): `PATCH /posts/{id}` accepts `visibility: "public" | "private"` (with or
   without the other settings); every `post` object carries `visibility`. Private = the author only: page, share card, likes,
-  comments and reports answer 404 to everyone else (as if the post did not exist; a deleted private post stays 404),
+  comments and reports answer 404 to everyone else (the author may still like and comment, v1.0.88) (as if the post did not exist; a deleted private post stays 404),
   it leaves timelines, Discover, search and other people's view of the profile, and its media leave the public store and
   the CDN edge. The author, signed in on the web, still sees it ("only you" note, media through
   `/p/{slug}/media/{key}`, author-only, byte ranges). Public again: media move back before the change commits, the post

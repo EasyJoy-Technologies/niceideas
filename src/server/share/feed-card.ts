@@ -94,10 +94,10 @@ export function feedCard(ctx: ChromeContext, item: FeedItem): string {
     `<a href="/p/${post.slug}"><time datetime="${at.toISOString()}" data-rel>${escapeHtml(ctx.intl.format.dateTime(at, { dateStyle: "medium" }))}</time></a>${privateMark(ctx, post)}</span></div>${source}</div>`;
   const quoted = item.quoted !== undefined ? quoteEmbed(ctx, item.quoted) : "";
   const body = (post.kind === "short" ? shortBlock(item) : articleBlock(ctx, item)) + quoted;
-  // Private posts (only on their author's own profile) take no likes or bookmarks and are not shared.
+  // Private posts (only on their author's own profile): the author's own like, no bookmarks, not shared.
   const open = post.visibility === "public";
   const actions =
-    `<div class="ni-actions ni-fc-actions">${open ? `<button type="button" class="ni-act" data-like="post" data-id="${post.slug}" aria-pressed="${item.liked}" aria-label="${escapeHtml(t("share.action.like"))}">` +
+    `<div class="ni-actions ni-fc-actions">${open || isOwnPost(ctx, post) ? `<button type="button" class="ni-act" data-like="post" data-id="${post.slug}" aria-pressed="${item.liked}" aria-label="${escapeHtml(t("share.action.like"))}">` +
     `${icon("heart")}<span>${post.like_count}</span></button>` : ""}` +
     `<a class="ni-act" href="/p/${post.slug}#comments" aria-label="${escapeHtml(t("share.comments.title"))}">${icon("comment")}<span>${post.comment_count}</span></a>` +
     `${repostAction(ctx, post, item.repostCount, item.reposted, ctx.path)}${open ? bookmarkAction(ctx, post, item.bookmarked) : ""}` +
