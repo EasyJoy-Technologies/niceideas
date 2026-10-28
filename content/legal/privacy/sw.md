@@ -64,7 +64,7 @@ Tunatumia vidakuzi vinavyohitajika na Huduma kufanya kazi na, ikiwa tu utavikuba
 | `ni_vid` | Kitambulisho cha nasibu kwa mapendo na maoni bila akaunti, na kwa kuzuia unyanyasaji | Siku 400 |
 | `ni_locale` | Hukumbuka lugha uliyochagua | Mwaka 1 |
 | `ni_theme` | Hukumbuka mandhari ya rangi uliyochagua | Mwaka 1 |
-| `ni_consent` | Hukumbuka kama ulikubali au ulikataa vidakuzi vya uchambuzi | Siku 180 |
+| `ni_consent` | Hukumbuka chaguo lako la vidakuzi: ni kategoria gani za hiari ulizokubali au kukataa | Siku 180 |
 
 Ukifuta vidakuzi hivi, unatolewa nje na kutendewa kama mtembeleaji mpya.
 
@@ -76,7 +76,7 @@ Ukifuta vidakuzi hivi, unatolewa nje na kutendewa kama mtembeleaji mpya.
 | `_clck` | Microsoft Clarity: huhifadhi kitambulisho bandia cha mgeni | Mwaka 1 |
 | `_clsk` | Microsoft Clarity: huunganisha mitazamo ya kurasa kuwa ziara moja | Siku 1 |
 
-Microsoft pia inaweza kuweka vidakuzi kwenye vikoa vyake yenyewe Clarity inapopakiwa; vimeelezwa katika taarifa ya faragha ya Microsoft. Unaweza kukubali au kukataa vidakuzi vya uchambuzi katika ilani inayoonyeshwa kwenye ziara yako ya kwanza, na kubadilisha chaguo lako wakati wowote kwa kitufe cha "Mipangilio ya vidakuzi" kilicho juu ya sera hii. Unapoondoa idhini yako, tunafuta vidakuzi vya uchambuzi vilivyowekwa kwenye niceideas na kuacha kupakia zana hizo.
+Microsoft pia inaweza kuweka vidakuzi kwenye vikoa vyake yenyewe Clarity inapopakiwa; vimeelezwa katika taarifa ya faragha ya Microsoft. Katika ilani ya vidakuzi inayoonyeshwa kwenye ziara yako ya kwanza, unaweza kukubali au kukataa vidakuzi vyote vya hiari au kuchagua kwa kategoria, na kubadilisha chaguo lako wakati wowote kwa kitufe cha "Mipangilio ya vidakuzi" kilicho juu ya sera hii. Unapoondoa idhini yako, tunafuta vidakuzi vya uchambuzi vilivyowekwa kwenye niceideas na kuacha kupakia zana hizo.
 
 ## 6. Kushiriki
 

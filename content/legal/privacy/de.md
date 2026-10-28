@@ -64,7 +64,7 @@ Wir verwenden Cookies, die der Dienst für seinen Betrieb benötigt, und – nur
 | `ni_vid` | Zufällige Kennung für Gefällt-mir-Angaben und Kommentare ohne Konto sowie zur Missbrauchsprävention | 400 Tage |
 | `ni_locale` | Speichert die von Ihnen gewählte Sprache | 1 Jahr |
 | `ni_theme` | Speichert das von Ihnen gewählte Farbschema | 1 Jahr |
-| `ni_consent` | Speichert, ob Sie Analyse-Cookies akzeptiert oder abgelehnt haben | 180 Tage |
+| `ni_consent` | Speichert Ihre Cookie-Auswahl: welche optionalen Kategorien Sie akzeptiert oder abgelehnt haben | 180 Tage |
 
 Wenn Sie diese Cookies löschen, werden Sie abgemeldet und als neuer Besucher behandelt.
 
@@ -76,7 +76,7 @@ Wenn Sie diese Cookies löschen, werden Sie abgemeldet und als neuer Besucher be
 | `_clck` | Microsoft Clarity: speichert eine pseudonyme Besucherkennung | 1 Jahr |
 | `_clsk` | Microsoft Clarity: verknüpft Seitenaufrufe zu einem Besuch | 1 Tag |
 
-Microsoft kann beim Laden von Clarity außerdem Cookies auf eigenen Domains setzen; diese sind in der Datenschutzerklärung von Microsoft beschrieben. Sie können Analyse-Cookies in dem Hinweis, der bei Ihrem ersten Besuch angezeigt wird, akzeptieren oder ablehnen und Ihre Wahl jederzeit über die Schaltfläche „Cookie-Einstellungen“ oben in dieser Erklärung ändern. Wenn Sie Ihre Einwilligung widerrufen, löschen wir die auf niceideas gesetzten Analyse-Cookies und laden die Tools nicht mehr.
+Microsoft kann beim Laden von Clarity außerdem Cookies auf eigenen Domains setzen; diese sind in der Datenschutzerklärung von Microsoft beschrieben. Im Cookie-Hinweis, der bei Ihrem ersten Besuch angezeigt wird, können Sie alle optionalen Cookies akzeptieren oder ablehnen oder nach Kategorie wählen, und Ihre Wahl jederzeit über die Schaltfläche „Cookie-Einstellungen“ oben in dieser Erklärung ändern. Wenn Sie Ihre Einwilligung widerrufen, löschen wir die auf niceideas gesetzten Analyse-Cookies und laden die Tools nicht mehr.
 
 ## 6. Weitergabe
 

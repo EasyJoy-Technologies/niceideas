@@ -269,11 +269,28 @@
     "title": "Kichwa"
   },
   "consent": {
-    "accept": "Kubali",
-    "reject": "Kataa",
+    "acceptAll": "Kubali vyote",
+    "alwaysOn": "Hufanya kazi daima",
+    "cat": {
+      "ads": {
+        "text": "Vinatumika kuonyesha matangazo na kupima utendaji wake, pengine pamoja na wenzetu wa matangazo.",
+        "title": "Matangazo"
+      },
+      "analytics": {
+        "text": "Vinatusaidia kuelewa jinsi tovuti inavyotumiwa ili tuweze kuiboresha.",
+        "title": "Uchanganuzi"
+      },
+      "necessary": {
+        "text": "Vinahitajika kwa tovuti kufanya kazi: kuingia, usalama, na kukumbuka lugha, mandhari na chaguo lako la vidakuzi.",
+        "title": "Muhimu"
+      }
+    },
+    "customize": "Badilisha mipangilio",
+    "rejectAll": "Kataa vyote",
+    "save": "Hifadhi chaguo",
     "settings": "Mipangilio ya vidakuzi",
-    "text": "Kwa ruhusa yako, tunatumia Google Analytics na Microsoft Clarity kuelewa jinsi tovuti inavyotumiwa na kuiboresha. Hupakiwa tu ukikubali, na unaweza kubadilisha chaguo lako wakati wowote.",
-    "title": "Vidakuzi vya uchanganuzi"
+    "text": "Tunatumia vidakuzi na teknolojia zinazofanana ili tovuti ifanye kazi. Kwa ruhusa yako, tunatumia pia vidakuzi vya hiari, kwa mfano kuelewa jinsi tovuti inavyotumiwa na kuiboresha. Unaweza kuchagua kwa kategoria na kubadilisha chaguo lako wakati wowote.",
+    "title": "Tunatumia vidakuzi"
   },
   "discover": {
     "title": "Gundua"

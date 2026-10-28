@@ -269,11 +269,28 @@
     "title": "Tajuk"
   },
   "consent": {
-    "accept": "Terima",
-    "reject": "Tolak",
+    "acceptAll": "Terima semua",
+    "alwaysOn": "Sentiasa aktif",
+    "cat": {
+      "ads": {
+        "text": "Digunakan untuk memaparkan iklan dan mengukur prestasinya, mungkin bersama rakan kongsi pengiklanan.",
+        "title": "Pengiklanan"
+      },
+      "analytics": {
+        "text": "Membantu kami memahami cara laman ini digunakan supaya kami boleh menambah baiknya.",
+        "title": "Analitik"
+      },
+      "necessary": {
+        "text": "Diperlukan untuk laman berfungsi: log masuk, keselamatan, dan mengingat bahasa, tema serta pilihan kuki anda.",
+        "title": "Keperluan"
+      }
+    },
+    "customize": "Sesuaikan",
+    "rejectAll": "Tolak semua",
+    "save": "Simpan pilihan",
     "settings": "Tetapan kuki",
-    "text": "Dengan kebenaran anda, kami menggunakan Google Analytics dan Microsoft Clarity untuk memahami cara laman ini digunakan dan menambah baiknya. Ia hanya dimuatkan jika anda menerima, dan anda boleh menukar pilihan anda pada bila-bila masa.",
-    "title": "Kuki analitik"
+    "text": "Kami menggunakan kuki dan teknologi serupa untuk memastikan laman berfungsi. Dengan kebenaran anda, kami juga menggunakan kuki pilihan, contohnya untuk memahami cara laman ini digunakan dan menambah baiknya. Anda boleh memilih mengikut kategori dan menukar pilihan anda pada bila-bila masa.",
+    "title": "Kami menggunakan kuki"
   },
   "discover": {
     "title": "Teroka"

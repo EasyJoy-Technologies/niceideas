@@ -2,8 +2,9 @@ import { getConfig } from "@/server/config/env";
 
 /**
  * Optional usage analytics (Google Analytics 4, Microsoft Clarity). Nothing loads before the
- * visitor accepts analytics cookies: the page carries only the ids, /scripts/consent.js asks and
- * injects the vendor scripts after consent. Ids come from the environment; empty = off.
+ * visitor grants the analytics cookie category (src/server/consent): the page carries only the
+ * ids, /scripts/consent.js asks and injects the vendor scripts after consent. Ids come from the
+ * environment; empty = off.
  */
 export type AnalyticsIds = { ga4: string; clarity: string };
 

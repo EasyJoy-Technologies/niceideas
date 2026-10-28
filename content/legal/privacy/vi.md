@@ -64,7 +64,7 @@ Chúng tôi sử dụng các cookie mà Dịch vụ cần để hoạt động v
 | `ni_vid` | Mã định danh ngẫu nhiên cho lượt thích và bình luận không có tài khoản, và phòng chống lạm dụng | 400 ngày |
 | `ni_locale` | Ghi nhớ ngôn ngữ bạn đã chọn | 1 năm |
 | `ni_theme` | Ghi nhớ chủ đề màu bạn đã chọn | 1 năm |
-| `ni_consent` | Ghi nhớ bạn đã chấp nhận hay từ chối cookie phân tích | 180 ngày |
+| `ni_consent` | Ghi nhớ lựa chọn cookie của bạn: những danh mục tùy chọn nào bạn đã chấp nhận hay từ chối | 180 ngày |
 
 Nếu bạn xóa các cookie này, bạn sẽ bị đăng xuất và được coi là khách truy cập mới.
 
@@ -76,7 +76,7 @@ Nếu bạn xóa các cookie này, bạn sẽ bị đăng xuất và được co
 | `_clck` | Microsoft Clarity: duy trì một mã định danh khách truy cập giả danh | 1 năm |
 | `_clsk` | Microsoft Clarity: liên kết các lượt xem trang thành một lượt truy cập | 1 ngày |
 
-Microsoft cũng có thể đặt cookie trên các miền của riêng họ khi Clarity được tải; chúng được mô tả trong tuyên bố về quyền riêng tư của Microsoft. Bạn có thể chấp nhận hoặc từ chối cookie phân tích trong banner hiển thị khi bạn truy cập lần đầu, và thay đổi lựa chọn của bạn bất cứ lúc nào bằng nút "Cài đặt cookie" ở đầu chính sách này. Khi bạn thu hồi sự đồng ý, chúng tôi xóa các cookie phân tích được đặt trên niceideas và ngừng tải các công cụ.
+Microsoft cũng có thể đặt cookie trên các miền của riêng họ khi Clarity được tải; chúng được mô tả trong tuyên bố về quyền riêng tư của Microsoft. Trong banner cookie hiển thị khi bạn truy cập lần đầu, bạn có thể chấp nhận hoặc từ chối tất cả cookie tùy chọn hoặc chọn theo danh mục, và thay đổi lựa chọn của bạn bất cứ lúc nào bằng nút "Cài đặt cookie" ở đầu chính sách này. Khi bạn thu hồi sự đồng ý, chúng tôi xóa các cookie phân tích được đặt trên niceideas và ngừng tải các công cụ.
 
 ## 6. Chia sẻ
 

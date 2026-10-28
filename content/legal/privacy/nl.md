@@ -64,7 +64,7 @@ Wij gebruiken cookies die de Dienst nodig heeft om te functioneren en, alleen al
 | `ni_vid` | Willekeurige identificatie voor likes en reacties zonder account, en voor misbruikpreventie | 400 dagen |
 | `ni_locale` | Onthoudt de taal die u hebt gekozen | 1 jaar |
 | `ni_theme` | Onthoudt het kleurenthema dat u hebt gekozen | 1 jaar |
-| `ni_consent` | Onthoudt of u analytische cookies hebt geaccepteerd of geweigerd | 180 dagen |
+| `ni_consent` | Onthoudt uw cookiekeuzes: welke optionele categorieën u hebt geaccepteerd of geweigerd | 180 dagen |
 
 Als u deze cookies verwijdert, wordt u uitgelogd en als nieuwe bezoeker behandeld.
 
@@ -76,7 +76,7 @@ Als u deze cookies verwijdert, wordt u uitgelogd en als nieuwe bezoeker behandel
 | `_clck` | Microsoft Clarity: bewaart een pseudonieme bezoekersidentificatie | 1 jaar |
 | `_clsk` | Microsoft Clarity: koppelt paginaweergaven aan één bezoek | 1 dag |
 
-Microsoft kan bij het laden van Clarity ook cookies plaatsen op zijn eigen domeinen; deze worden beschreven in de privacyverklaring van Microsoft. U kunt analytische cookies accepteren of weigeren in de melding die bij uw eerste bezoek wordt getoond, en uw keuze op elk moment wijzigen met de knop ‘Cookie-instellingen’ bovenaan dit beleid. Wanneer u uw toestemming intrekt, verwijderen wij de analytische cookies die op niceideas zijn geplaatst en laden wij de tools niet meer.
+Microsoft kan bij het laden van Clarity ook cookies plaatsen op zijn eigen domeinen; deze worden beschreven in de privacyverklaring van Microsoft. In de cookiemelding die bij uw eerste bezoek wordt getoond, kunt u alle optionele cookies accepteren of weigeren, of per categorie kiezen, en uw keuze op elk moment wijzigen met de knop ‘Cookie-instellingen’ bovenaan dit beleid. Wanneer u uw toestemming intrekt, verwijderen wij de analytische cookies die op niceideas zijn geplaatst en laden wij de tools niet meer.
 
 ## 6. Delen
 

@@ -269,11 +269,28 @@
     "title": "Název"
   },
   "consent": {
-    "accept": "Přijmout",
-    "reject": "Odmítnout",
+    "acceptAll": "Přijmout vše",
+    "alwaysOn": "Vždy zapnuto",
+    "cat": {
+      "ads": {
+        "text": "Slouží k zobrazování reklam a měření jejich výkonu, případně společně s reklamními partnery.",
+        "title": "Reklamní"
+      },
+      "analytics": {
+        "text": "Pomáhají nám pochopit, jak se web používá, abychom ho mohli vylepšovat.",
+        "title": "Analytické"
+      },
+      "necessary": {
+        "text": "Potřebné pro fungování webu: přihlášení, zabezpečení a zapamatování jazyka, motivu a volby souborů cookie.",
+        "title": "Nezbytné"
+      }
+    },
+    "customize": "Přizpůsobit",
+    "rejectAll": "Odmítnout vše",
+    "save": "Uložit volbu",
     "settings": "Nastavení cookies",
-    "text": "S vaším souhlasem používáme Google Analytics a Microsoft Clarity, abychom porozuměli, jak se web používá, a mohli ho zlepšovat. Načtou se jen tehdy, když souhlasíte, a svou volbu můžete kdykoli změnit.",
-    "title": "Analytické soubory cookie"
+    "text": "Používáme soubory cookie a podobné technologie, aby web fungoval. S vaším svolením používáme také volitelné soubory cookie, například abychom pochopili, jak se web používá, a mohli ho vylepšovat. Můžete volit podle kategorií a svou volbu kdykoli změnit.",
+    "title": "Používáme soubory cookie"
   },
   "discover": {
     "title": "Objevovat"

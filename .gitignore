@@ -28,4 +28,5 @@ next-env.d.ts
 # Generated browser bundles (scripts/build-client.mjs)
 /public/scripts/compose.js
 /public/scripts/viewer.js
+/public/scripts/consent.js
 /public/styles/photoswipe.css

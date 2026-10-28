@@ -269,11 +269,28 @@
     "title": "Titel"
   },
   "consent": {
-    "accept": "Akzeptieren",
-    "reject": "Ablehnen",
+    "acceptAll": "Alle akzeptieren",
+    "alwaysOn": "Immer aktiv",
+    "cat": {
+      "ads": {
+        "text": "Dienen dazu, Werbung anzuzeigen und ihre Wirkung zu messen, gegebenenfalls gemeinsam mit Werbepartnern.",
+        "title": "Werbung"
+      },
+      "analytics": {
+        "text": "Helfen uns zu verstehen, wie die Website genutzt wird, damit wir sie verbessern können.",
+        "title": "Analyse"
+      },
+      "necessary": {
+        "text": "Erforderlich, damit die Website funktioniert: Anmeldung, Sicherheit sowie das Speichern von Sprache, Design und Cookie-Auswahl.",
+        "title": "Notwendig"
+      }
+    },
+    "customize": "Anpassen",
+    "rejectAll": "Alle ablehnen",
+    "save": "Auswahl speichern",
     "settings": "Cookie-Einstellungen",
-    "text": "Mit deiner Zustimmung nutzen wir Google Analytics und Microsoft Clarity, um zu verstehen, wie die Website genutzt wird, und sie zu verbessern. Sie werden nur geladen, wenn du zustimmst, und du kannst deine Wahl jederzeit ändern.",
-    "title": "Analyse-Cookies"
+    "text": "Wir verwenden Cookies und ähnliche Technologien, damit die Website funktioniert. Mit Ihrer Erlaubnis setzen wir außerdem optionale Cookies ein, zum Beispiel um zu verstehen, wie die Website genutzt wird, und sie zu verbessern. Sie können nach Kategorien wählen und Ihre Auswahl jederzeit ändern.",
+    "title": "Wir verwenden Cookies"
   },
   "discover": {
     "title": "Entdecken"

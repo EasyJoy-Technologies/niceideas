@@ -269,11 +269,28 @@
     "title": "Title"
   },
   "consent": {
-    "accept": "Accept",
-    "reject": "Reject",
+    "acceptAll": "Accept all",
+    "alwaysOn": "Always on",
+    "cat": {
+      "ads": {
+        "text": "Used to show ads and measure how they perform, possibly together with advertising partners.",
+        "title": "Advertising"
+      },
+      "analytics": {
+        "text": "Help us understand how the site is used so we can improve it.",
+        "title": "Analytics"
+      },
+      "necessary": {
+        "text": "Needed for the site to work: signing in, security, and remembering your language, theme and cookie choices.",
+        "title": "Necessary"
+      }
+    },
+    "customize": "Customize",
+    "rejectAll": "Reject all",
+    "save": "Save choices",
     "settings": "Cookie settings",
-    "text": "With your permission, we use Google Analytics and Microsoft Clarity to understand how the site is used and improve it. They load only if you accept, and you can change your choice at any time.",
-    "title": "Analytics cookies"
+    "text": "We use cookies and similar technologies to keep the site working. With your permission, we also use optional cookies, for example to understand how the site is used and improve it. You can choose by category and change your choice at any time.",
+    "title": "We use cookies"
   },
   "discover": {
     "title": "Discover"

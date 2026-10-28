@@ -64,7 +64,7 @@ Utilizziamo i cookie necessari al funzionamento del Servizio e, solo se li accet
 | `ni_vid` | Identificativo casuale per "mi piace" e commenti senza account, e per la prevenzione degli abusi | 400 giorni |
 | `ni_locale` | Ricorda la lingua che ha scelto | 1 anno |
 | `ni_theme` | Ricorda il tema di colori che ha scelto | 1 anno |
-| `ni_consent` | Ricorda se ha accettato o rifiutato i cookie analitici | 180 giorni |
+| `ni_consent` | Ricorda le sue scelte sui cookie: quali categorie facoltative ha accettato o rifiutato | 180 giorni |
 
 Se elimina questi cookie, viene disconnesso e trattato come un nuovo visitatore.
 
@@ -76,7 +76,7 @@ Se elimina questi cookie, viene disconnesso e trattato come un nuovo visitatore.
 | `_clck` | Microsoft Clarity: conserva un identificativo pseudonimo del visitatore | 1 anno |
 | `_clsk` | Microsoft Clarity: collega le pagine visualizzate in un'unica visita | 1 giorno |
 
-Quando Clarity viene caricato, Microsoft può anche impostare cookie sui propri domini; sono descritti nell'informativa sulla privacy di Microsoft. Può accettare o rifiutare i cookie analitici nell'avviso mostrato alla sua prima visita e modificare la sua scelta in qualsiasi momento con il pulsante "Impostazioni cookie" in cima a questa informativa. Quando revoca il consenso, eliminiamo i cookie analitici impostati su niceideas e smettiamo di caricare gli strumenti.
+Quando Clarity viene caricato, Microsoft può anche impostare cookie sui propri domini; sono descritti nell'informativa sulla privacy di Microsoft. Nell'avviso sui cookie mostrato alla sua prima visita, può accettare o rifiutare tutti i cookie facoltativi o scegliere per categoria, e modificare la sua scelta in qualsiasi momento con il pulsante "Impostazioni cookie" in cima a questa informativa. Quando revoca il consenso, eliminiamo i cookie analitici impostati su niceideas e smettiamo di caricare gli strumenti.
 
 ## 6. Condivisione
 

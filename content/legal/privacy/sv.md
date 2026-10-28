@@ -64,7 +64,7 @@ Vi använder cookies som Tjänsten behöver för att fungera och, endast om du g
 | `ni_vid` | Slumpmässig identifierare för gillanden och kommentarer utan konto, och för missbruksförebyggande | 400 dagar |
 | `ni_locale` | Kommer ihåg språket du valt | 1 år |
 | `ni_theme` | Kommer ihåg färgtemat du valt | 1 år |
-| `ni_consent` | Kommer ihåg om du godkänt eller avvisat analyscookies | 180 dagar |
+| `ni_consent` | Kommer ihåg dina cookieval: vilka valfria kategorier du godkänt eller avvisat | 180 dagar |
 
 Om du raderar dessa cookies loggas du ut och behandlas som en ny besökare.
 
@@ -76,7 +76,7 @@ Om du raderar dessa cookies loggas du ut och behandlas som en ny besökare.
 | `_clck` | Microsoft Clarity: sparar en pseudonym besökaridentifierare | 1 år |
 | `_clsk` | Microsoft Clarity: kopplar ihop sidvisningar till ett besök | 1 dag |
 
-Microsoft kan också sätta cookies på sina egna domäner när Clarity laddas; de beskrivs i Microsofts sekretesspolicy. Du kan godkänna eller avvisa analyscookies i meddelandet som visas vid ditt första besök och ändra ditt val när som helst med knappen ”Cookieinställningar” högst upp i denna policy. När du återkallar ditt samtycke raderar vi de analyscookies som satts på niceideas och slutar ladda verktygen.
+Microsoft kan också sätta cookies på sina egna domäner när Clarity laddas; de beskrivs i Microsofts sekretesspolicy. I cookiemeddelandet som visas vid ditt första besök kan du godkänna eller avvisa alla valfria cookies eller välja per kategori, och ändra ditt val när som helst med knappen ”Cookieinställningar” högst upp i denna policy. När du återkallar ditt samtycke raderar vi de analyscookies som satts på niceideas och slutar ladda verktygen.
 
 ## 6. Delning
 

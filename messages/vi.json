@@ -269,11 +269,28 @@
     "title": "Tiêu đề"
   },
   "consent": {
-    "accept": "Chấp nhận",
-    "reject": "Từ chối",
+    "acceptAll": "Chấp nhận tất cả",
+    "alwaysOn": "Luôn hoạt động",
+    "cat": {
+      "ads": {
+        "text": "Dùng để hiển thị quảng cáo và đo lường hiệu suất của chúng, có thể cùng với các đối tác quảng cáo.",
+        "title": "Quảng cáo"
+      },
+      "analytics": {
+        "text": "Giúp chúng tôi hiểu cách trang web được sử dụng để có thể cải thiện nó.",
+        "title": "Phân tích"
+      },
+      "necessary": {
+        "text": "Cần thiết để trang web hoạt động: đăng nhập, bảo mật, và ghi nhớ ngôn ngữ, giao diện và lựa chọn cookie của bạn.",
+        "title": "Cần thiết"
+      }
+    },
+    "customize": "Tùy chỉnh",
+    "rejectAll": "Từ chối tất cả",
+    "save": "Lưu lựa chọn",
     "settings": "Cài đặt cookie",
-    "text": "Khi bạn cho phép, chúng tôi dùng Google Analytics và Microsoft Clarity để hiểu cách trang web được sử dụng và cải thiện nó. Các công cụ này chỉ được tải nếu bạn chấp nhận, và bạn có thể thay đổi lựa chọn bất cứ lúc nào.",
-    "title": "Cookie phân tích"
+    "text": "Chúng tôi sử dụng cookie và các công nghệ tương tự để trang web hoạt động. Khi bạn cho phép, chúng tôi cũng sử dụng cookie tùy chọn, chẳng hạn để hiểu cách trang web được sử dụng và cải thiện nó. Bạn có thể chọn theo danh mục và thay đổi lựa chọn bất cứ lúc nào.",
+    "title": "Chúng tôi sử dụng cookie"
   },
   "discover": {
     "title": "Khám phá"

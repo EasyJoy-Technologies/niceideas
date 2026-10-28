@@ -17,7 +17,7 @@ function section(ctx: ChromeContext, page: InfoPage, s: InfoSection): string {
 
 /**
  * Terms / privacy: effective date (plain text: share.js rewrites every <time datetime>), summary, table of contents
- * (wide: side column; phones: drop-down), sections. The privacy policy also offers "Cookie settings" (analytics consent).
+ * (wide: side column; phones: drop-down), sections. The privacy policy also offers "Cookie settings" (cookie choices by category).
  */
 function legalBody(ctx: ChromeContext, page: LegalDoc, title: string): string {
   const { t, locale } = ctx.intl;

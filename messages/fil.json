@@ -269,11 +269,28 @@
     "title": "Pamagat"
   },
   "consent": {
-    "accept": "Tanggapin",
-    "reject": "Tanggihan",
+    "acceptAll": "Tanggapin lahat",
+    "alwaysOn": "Palaging gana",
+    "cat": {
+      "ads": {
+        "text": "Ginagamit para ipakita ang mga patalastas at sukatin ang performance nito, posibleng kasama ang mga kasosyo sa patalastas.",
+        "title": "Patalastas"
+      },
+      "analytics": {
+        "text": "Tumutulong sa amin na maunawaan kung paano ginagamit ang site para mapahusay namin ito.",
+        "title": "Pagsusuri"
+      },
+      "necessary": {
+        "text": "Kailangan para gumana ang site: pag-sign in, seguridad, at pag-alala sa iyong wika, tema, at mga pinili sa cookie.",
+        "title": "Kailangan"
+      }
+    },
+    "customize": "I-customize",
+    "rejectAll": "Tanggihan lahat",
+    "save": "I-save ang mga pinili",
     "settings": "Mga setting ng cookie",
-    "text": "Kapag pumayag ka, gumagamit kami ng Google Analytics at Microsoft Clarity para maunawaan kung paano ginagamit ang site at mapahusay ito. Naglo-load lang ang mga ito kung tatanggapin mo, at puwede mong baguhin ang pinili mo anumang oras.",
-    "title": "Cookies para sa analytics"
+    "text": "Gumagamit kami ng cookies at mga kaparehong teknolohiya para gumana ang site. Kapag pumayag ka, gumagamit din kami ng mga opsyonal na cookies, halimbawa para maunawaan kung paano ginagamit ang site at mapahusay ito. Puwede kang pumili ayon sa kategorya at baguhin ang pinili mo anumang oras.",
+    "title": "Gumagamit kami ng cookies"
   },
   "discover": {
     "title": "Tuklasin"

@@ -64,7 +64,7 @@ Korzystamy z plików cookie niezbędnych do działania Usługi oraz, tylko jeśl
 | `ni_vid` | Losowy identyfikator dla polubień i komentarzy bez konta oraz do zapobiegania nadużyciom | 400 dni |
 | `ni_locale` | Zapamiętuje wybrany przez Ciebie język | 1 rok |
 | `ni_theme` | Zapamiętuje wybrany przez Ciebie motyw kolorystyczny | 1 rok |
-| `ni_consent` | Zapamiętuje, czy zaakceptowałeś(-aś), czy odrzuciłeś(-aś) analityczne pliki cookie | 180 dni |
+| `ni_consent` | Zapamiętuje Twoje wybory dotyczące plików cookie: które opcjonalne kategorie zaakceptowałeś(-aś) lub odrzuciłeś(-aś) | 180 dni |
 
 Jeśli usuniesz te pliki cookie, zostaniesz wylogowany i traktowany jako nowy odwiedzający.
 
@@ -76,7 +76,7 @@ Jeśli usuniesz te pliki cookie, zostaniesz wylogowany i traktowany jako nowy od
 | `_clck` | Microsoft Clarity: przechowuje pseudonimowy identyfikator odwiedzającego | 1 rok |
 | `_clsk` | Microsoft Clarity: łączy wyświetlenia stron w jedną wizytę | 1 dzień |
 
-Podczas ładowania Clarity Microsoft może także ustawiać pliki cookie we własnych domenach; są one opisane w oświadczeniu o ochronie prywatności Microsoft. Analityczne pliki cookie możesz zaakceptować lub odrzucić w komunikacie wyświetlanym przy pierwszej wizycie, a swój wybór możesz zmienić w każdej chwili za pomocą przycisku „Ustawienia plików cookie” na początku niniejszej polityki. Gdy wycofasz zgodę, usuwamy analityczne pliki cookie ustawione w niceideas i przestajemy ładować te narzędzia.
+Podczas ładowania Clarity Microsoft może także ustawiać pliki cookie we własnych domenach; są one opisane w oświadczeniu o ochronie prywatności Microsoft. W komunikacie o plikach cookie wyświetlanym przy pierwszej wizycie możesz zaakceptować lub odrzucić wszystkie opcjonalne pliki cookie albo wybrać według kategorii, a swój wybór możesz zmienić w każdej chwili za pomocą przycisku „Ustawienia plików cookie” na początku niniejszej polityki. Gdy wycofasz zgodę, usuwamy analityczne pliki cookie ustawione w niceideas i przestajemy ładować te narzędzia.
 
 ## 6. Udostępnianie
 

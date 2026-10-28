@@ -269,11 +269,28 @@
     "title": "标题"
   },
   "consent": {
-    "accept": "接受",
-    "reject": "拒绝",
+    "acceptAll": "全部接受",
+    "alwaysOn": "始终开启",
+    "cat": {
+      "ads": {
+        "text": "用于展示广告并衡量广告效果，可能会与广告合作伙伴共同进行。",
+        "title": "广告"
+      },
+      "analytics": {
+        "text": "帮助我们了解网站的使用情况，以便改进。",
+        "title": "统计分析"
+      },
+      "necessary": {
+        "text": "网站运行所必需：登录、安全，以及记住你的语言、主题和 Cookie 选择。",
+        "title": "必要"
+      }
+    },
+    "customize": "自定义",
+    "rejectAll": "全部拒绝",
+    "save": "保存选择",
     "settings": "Cookie 设置",
-    "text": "经你允许，我们会使用 Google Analytics 和 Microsoft Clarity 了解网站的使用情况并加以改进。只有你接受后它们才会加载，你也可以随时更改选择。",
-    "title": "分析类 Cookie"
+    "text": "我们使用 Cookie 及类似技术来维持网站正常运行。在你允许的情况下，我们还会使用可选 Cookie，例如用于了解网站的使用情况并加以改进。你可以按类别选择，并随时更改。",
+    "title": "我们使用 Cookie"
   },
   "discover": {
     "title": "发现"

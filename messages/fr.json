@@ -269,11 +269,28 @@
     "title": "Titre"
   },
   "consent": {
-    "accept": "Accepter",
-    "reject": "Refuser",
+    "acceptAll": "Tout accepter",
+    "alwaysOn": "Toujours actifs",
+    "cat": {
+      "ads": {
+        "text": "Servent à afficher des publicités et à mesurer leurs performances, éventuellement avec des partenaires publicitaires.",
+        "title": "Publicité"
+      },
+      "analytics": {
+        "text": "Nous aident à comprendre comment le site est utilisé afin de l’améliorer.",
+        "title": "Mesure d’audience"
+      },
+      "necessary": {
+        "text": "Indispensables au fonctionnement du site : connexion, sécurité et mémorisation de votre langue, de votre thème et de vos choix en matière de cookies.",
+        "title": "Nécessaires"
+      }
+    },
+    "customize": "Personnaliser",
+    "rejectAll": "Tout refuser",
+    "save": "Enregistrer mes choix",
     "settings": "Paramètres des cookies",
-    "text": "Avec votre accord, nous utilisons Google Analytics et Microsoft Clarity pour comprendre comment le site est utilisé et l’améliorer. Ils ne sont chargés que si vous acceptez, et vous pouvez modifier votre choix à tout moment.",
-    "title": "Cookies de mesure d’audience"
+    "text": "Nous utilisons des cookies et des technologies similaires pour assurer le fonctionnement du site. Avec votre accord, nous utilisons aussi des cookies facultatifs, par exemple pour comprendre comment le site est utilisé et l’améliorer. Vous pouvez choisir par catégorie et modifier votre choix à tout moment.",
+    "title": "Nous utilisons des cookies"
   },
   "discover": {
     "title": "Découvrir"

@@ -64,7 +64,7 @@ Hizmetin çalışması için gerekli çerezleri ve yalnızca kabul etmeniz halin
 | `ni_vid` | Hesapsız beğeniler ve yorumlar için, ve suistimali önlemek için rastgele tanımlayıcı | 400 gün |
 | `ni_locale` | Seçtiğiniz dili hatırlar | 1 yıl |
 | `ni_theme` | Seçtiğiniz renk temasını hatırlar | 1 yıl |
-| `ni_consent` | Analiz çerezlerini kabul edip etmediğinizi hatırlar | 180 gün |
+| `ni_consent` | Çerez seçimlerinizi hatırlar: hangi isteğe bağlı kategorileri kabul ettiğinizi veya reddettiğinizi | 180 gün |
 
 Bu çerezleri silerseniz, oturumunuz kapatılır ve yeni bir ziyaretçi olarak değerlendirilirsiniz.
 
@@ -76,7 +76,7 @@ Bu çerezleri silerseniz, oturumunuz kapatılır ve yeni bir ziyaretçi olarak d
 | `_clck` | Microsoft Clarity: takma adlı bir ziyaretçi tanımlayıcısı saklar | 1 yıl |
 | `_clsk` | Microsoft Clarity: sayfa görüntülemelerini tek bir ziyarette birleştirir | 1 gün |
 
-Clarity yüklendiğinde Microsoft kendi alan adlarında da çerez ayarlayabilir; bunlar Microsoft'un gizlilik bildiriminde açıklanmıştır. Analiz çerezlerini ilk ziyaretinizde gösterilen bildirimde kabul edebilir veya reddedebilir, seçiminizi istediğiniz zaman bu politikanın başındaki "Çerez ayarları" düğmesiyle değiştirebilirsiniz. İzninizi geri çektiğinizde niceideas üzerinde ayarlanan analiz çerezlerini siler ve araçları yüklemeyi bırakırız.
+Clarity yüklendiğinde Microsoft kendi alan adlarında da çerez ayarlayabilir; bunlar Microsoft'un gizlilik bildiriminde açıklanmıştır. İlk ziyaretinizde gösterilen çerez bildiriminde tüm isteğe bağlı çerezleri kabul edebilir veya reddedebilir, ya da kategoriye göre seçim yapabilirsiniz, ve seçiminizi istediğiniz zaman bu politikanın başındaki "Çerez ayarları" düğmesiyle değiştirebilirsiniz. İzninizi geri çektiğinizde niceideas üzerinde ayarlanan analiz çerezlerini siler ve araçları yüklemeyi bırakırız.
 
 ## 6. Paylaşım
 

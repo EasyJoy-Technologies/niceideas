@@ -269,11 +269,28 @@
     "title": "Rubrik"
   },
   "consent": {
-    "accept": "Godkänn",
-    "reject": "Avvisa",
+    "acceptAll": "Godkänn alla",
+    "alwaysOn": "Alltid på",
+    "cat": {
+      "ads": {
+        "text": "Används för att visa annonser och mäta hur de presterar, eventuellt tillsammans med annonspartner.",
+        "title": "Annonsering"
+      },
+      "analytics": {
+        "text": "Hjälper oss att förstå hur webbplatsen används så att vi kan förbättra den.",
+        "title": "Analys"
+      },
+      "necessary": {
+        "text": "Behövs för att webbplatsen ska fungera: inloggning, säkerhet och att komma ihåg ditt språk, tema och cookieval.",
+        "title": "Nödvändiga"
+      }
+    },
+    "customize": "Anpassa",
+    "rejectAll": "Avvisa alla",
+    "save": "Spara val",
     "settings": "Cookieinställningar",
-    "text": "Med ditt samtycke använder vi Google Analytics och Microsoft Clarity för att förstå hur webbplatsen används och förbättra den. De laddas bara om du godkänner, och du kan ändra ditt val när som helst.",
-    "title": "Analyscookies"
+    "text": "Vi använder cookies och liknande tekniker för att webbplatsen ska fungera. Med ditt tillstånd använder vi även valfria cookies, till exempel för att förstå hur webbplatsen används och förbättra den. Du kan välja per kategori och ändra ditt val när som helst.",
+    "title": "Vi använder cookies"
   },
   "discover": {
     "title": "Upptäck"

@@ -64,7 +64,7 @@ Utilizăm module cookie necesare pentru funcționarea Serviciului și, numai dac
 | `ni_vid` | Identificator aleatoriu pentru aprecieri și comentarii fără cont, și pentru prevenirea abuzurilor | 400 de zile |
 | `ni_locale` | Reține limba pe care ați ales-o | 1 an |
 | `ni_theme` | Reține tema de culori pe care ați ales-o | 1 an |
-| `ni_consent` | Reține dacă ați acceptat sau ați refuzat modulele cookie analitice | 180 de zile |
+| `ni_consent` | Reține alegerile dvs. privind modulele cookie: ce categorii opționale ați acceptat sau ați refuzat | 180 de zile |
 
 Dacă ștergeți aceste module cookie, veți fi deconectat și tratat ca vizitator nou.
 
@@ -76,7 +76,7 @@ Dacă ștergeți aceste module cookie, veți fi deconectat și tratat ca vizitat
 | `_clck` | Microsoft Clarity: păstrează un identificator pseudonim al vizitatorului | 1 an |
 | `_clsk` | Microsoft Clarity: leagă afișările de pagini într-o singură vizită | 1 zi |
 
-Microsoft poate seta și module cookie pe propriile domenii atunci când se încarcă Clarity; acestea sunt descrise în declarația de confidențialitate Microsoft. Puteți accepta sau refuza modulele cookie analitice în mesajul afișat la prima vizită și vă puteți schimba alegerea oricând cu butonul „Setări cookie-uri” din partea de sus a acestei politici. Când vă retrageți consimțământul, ștergem modulele cookie analitice setate pe niceideas și nu mai încărcăm instrumentele.
+Microsoft poate seta și module cookie pe propriile domenii atunci când se încarcă Clarity; acestea sunt descrise în declarația de confidențialitate Microsoft. În mesajul privind modulele cookie afișat la prima vizită, puteți accepta sau refuza toate modulele cookie opționale, sau puteți alege pe categorii, și vă puteți schimba alegerea oricând cu butonul „Setări cookie-uri” din partea de sus a acestei politici. Când vă retrageți consimțământul, ștergem modulele cookie analitice setate pe niceideas și nu mai încărcăm instrumentele.
 
 ## 6. Partajare
 

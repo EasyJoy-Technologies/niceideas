@@ -269,11 +269,28 @@
     "title": "Titel"
   },
   "consent": {
-    "accept": "Accepteren",
-    "reject": "Weigeren",
+    "acceptAll": "Alles accepteren",
+    "alwaysOn": "Altijd aan",
+    "cat": {
+      "ads": {
+        "text": "Worden gebruikt om advertenties te tonen en hun resultaten te meten, mogelijk samen met advertentiepartners.",
+        "title": "Advertenties"
+      },
+      "analytics": {
+        "text": "Helpen ons begrijpen hoe de site wordt gebruikt, zodat we die kunnen verbeteren.",
+        "title": "Analyse"
+      },
+      "necessary": {
+        "text": "Nodig om de site te laten werken: inloggen, beveiliging en het onthouden van je taal, thema en cookiekeuze.",
+        "title": "Noodzakelijk"
+      }
+    },
+    "customize": "Aanpassen",
+    "rejectAll": "Alles weigeren",
+    "save": "Keuze opslaan",
     "settings": "Cookie-instellingen",
-    "text": "Met je toestemming gebruiken we Google Analytics en Microsoft Clarity om te begrijpen hoe de site wordt gebruikt en hem te verbeteren. Ze worden alleen geladen als je accepteert, en je kunt je keuze altijd wijzigen.",
-    "title": "Analytische cookies"
+    "text": "Wij gebruiken cookies en vergelijkbare technieken om de site te laten werken. Met je toestemming gebruiken we ook optionele cookies, bijvoorbeeld om te begrijpen hoe de site wordt gebruikt en die te verbeteren. Je kunt per categorie kiezen en je keuze altijd wijzigen.",
+    "title": "Wij gebruiken cookies"
   },
   "discover": {
     "title": "Ontdekken"

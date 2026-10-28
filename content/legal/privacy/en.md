@@ -64,7 +64,7 @@ We use cookies that the Service needs to work and, only if you accept them, anal
 | `ni_vid` | Random identifier for likes and comments without an account, and for abuse prevention | 400 days |
 | `ni_locale` | Remembers the language you chose | 1 year |
 | `ni_theme` | Remembers the colour theme you chose | 1 year |
-| `ni_consent` | Remembers whether you accepted or rejected analytics cookies | 180 days |
+| `ni_consent` | Remembers your cookie choices: which optional categories you accepted or rejected | 180 days |
 
 If you delete these cookies, you are signed out and treated as a new visitor.
 
@@ -76,7 +76,7 @@ If you delete these cookies, you are signed out and treated as a new visitor.
 | `_clck` | Microsoft Clarity: keeps a pseudonymous visitor identifier | 1 year |
 | `_clsk` | Microsoft Clarity: links page views into one visit | 1 day |
 
-Microsoft may also set cookies on its own domains when Clarity loads; they are described in Microsoft's privacy statement. You can accept or reject analytics cookies in the banner shown on your first visit, and change your choice at any time with the "Cookie settings" button at the top of this policy. When you withdraw your consent, we delete the analytics cookies set on niceideas and stop loading the tools.
+Microsoft may also set cookies on its own domains when Clarity loads; they are described in Microsoft's privacy statement. In the cookie banner shown on your first visit, you can accept or reject all optional cookies or choose by category, and change your choice at any time with the "Cookie settings" button at the top of this policy. When you withdraw your consent, we delete the analytics cookies set on niceideas and stop loading the tools.
 
 ## 6. Sharing
 

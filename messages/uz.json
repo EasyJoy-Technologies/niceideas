@@ -269,11 +269,28 @@
     "title": "Sarlavha"
   },
   "consent": {
-    "accept": "Qabul qilish",
-    "reject": "Rad etish",
+    "acceptAll": "Barchasini qabul qilish",
+    "alwaysOn": "Doim yoqilgan",
+    "cat": {
+      "ads": {
+        "text": "Reklamalarni ko'rsatish va ularning samaradorligini o'lchash uchun ishlatiladi, ehtimol reklama hamkorlari bilan birga.",
+        "title": "Reklama"
+      },
+      "analytics": {
+        "text": "Sayt qanday ishlatilishini tushunishga yordam beradi, shunday qilib biz uni yaxshilashimiz mumkin.",
+        "title": "Tahlil"
+      },
+      "necessary": {
+        "text": "Sayt ishlashi uchun zarur: tizimga kirish, xavfsizlik va tilingiz, mavzuingiz va cookie tanlovlaringizni eslab qolish.",
+        "title": "Zarur"
+      }
+    },
+    "customize": "Sozlash",
+    "rejectAll": "Barchasini rad etish",
+    "save": "Tanlovlarni saqlash",
     "settings": "Cookie sozlamalari",
-    "text": "Ruxsatingiz bilan sayt qanday ishlatilishini tushunish va uni yaxshilash uchun Google Analytics va Microsoft Clarity’dan foydalanamiz. Ular faqat siz rozi bo‘lsangiz yuklanadi va tanlovingizni istalgan vaqtda o‘zgartirishingiz mumkin.",
-    "title": "Tahliliy cookie fayllari"
+    "text": "Sayt ishlashi uchun biz cookie fayllari va shunga o'xshash texnologiyalardan foydalanamiz. Ruxsatingiz bilan, biz ixtiyoriy cookie fayllaridan ham foydalanamiz, masalan, sayt qanday ishlatilishini tushunish va uni yaxshilash uchun. Kategoriya bo'yicha tanlashingiz va tanlovingizni istalgan vaqtda o'zgartirishingiz mumkin.",
+    "title": "Biz cookie fayllaridan foydalanamiz"
   },
   "discover": {
     "title": "Kashf etish"

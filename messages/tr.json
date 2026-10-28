@@ -269,11 +269,28 @@
     "title": "Başlık"
   },
   "consent": {
-    "accept": "Kabul et",
-    "reject": "Reddet",
+    "acceptAll": "Tümünü kabul et",
+    "alwaysOn": "Her zaman açık",
+    "cat": {
+      "ads": {
+        "text": "Reklam göstermek ve performansını ölçmek için kullanılır; reklam ortaklarıyla birlikte yapılabilir.",
+        "title": "Reklam"
+      },
+      "analytics": {
+        "text": "Sitenin nasıl kullanıldığını anlamamıza ve onu geliştirmemize yardımcı olur.",
+        "title": "Analiz"
+      },
+      "necessary": {
+        "text": "Sitenin çalışması için gereklidir: oturum açma, güvenlik ve dil, tema ile çerez seçimlerinizin hatırlanması.",
+        "title": "Zorunlu"
+      }
+    },
+    "customize": "Özelleştir",
+    "rejectAll": "Tümünü reddet",
+    "save": "Seçimleri kaydet",
     "settings": "Çerez ayarları",
-    "text": "İznin olursa, sitenin nasıl kullanıldığını anlamak ve geliştirmek için Google Analytics ve Microsoft Clarity kullanırız. Yalnızca kabul edersen yüklenirler ve seçimini istediğin zaman değiştirebilirsin.",
-    "title": "Analiz çerezleri"
+    "text": "Sitenin çalışması için çerezler ve benzer teknolojiler kullanıyoruz. İzninizle, örneğin sitenin nasıl kullanıldığını anlamak ve geliştirmek için isteğe bağlı çerezler de kullanıyoruz. Kategoriye göre seçim yapabilir ve seçiminizi istediğiniz zaman değiştirebilirsiniz.",
+    "title": "Çerez kullanıyoruz"
   },
   "discover": {
     "title": "Keşfet"

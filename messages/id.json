@@ -269,11 +269,28 @@
     "title": "Judul"
   },
   "consent": {
-    "accept": "Terima",
-    "reject": "Tolak",
+    "acceptAll": "Terima semua",
+    "alwaysOn": "Selalu aktif",
+    "cat": {
+      "ads": {
+        "text": "Digunakan untuk menampilkan iklan dan mengukur kinerjanya, kemungkinan bersama mitra periklanan.",
+        "title": "Iklan"
+      },
+      "analytics": {
+        "text": "Membantu kami memahami cara situs digunakan sehingga kami dapat memperbaikinya.",
+        "title": "Analitik"
+      },
+      "necessary": {
+        "text": "Diperlukan agar situs berfungsi: masuk, keamanan, dan mengingat bahasa, tema, serta pilihan cookie Anda.",
+        "title": "Diperlukan"
+      }
+    },
+    "customize": "Sesuaikan",
+    "rejectAll": "Tolak semua",
+    "save": "Simpan pilihan",
     "settings": "Pengaturan cookie",
-    "text": "Dengan izin Anda, kami menggunakan Google Analytics dan Microsoft Clarity untuk memahami cara situs digunakan dan memperbaikinya. Keduanya hanya dimuat jika Anda menerima, dan Anda dapat mengubah pilihan kapan saja.",
-    "title": "Cookie analitik"
+    "text": "Kami menggunakan cookie dan teknologi serupa agar situs dapat berfungsi. Dengan izin Anda, kami juga menggunakan cookie opsional, misalnya untuk memahami cara situs digunakan dan memperbaikinya. Anda dapat memilih berdasarkan kategori dan mengubah pilihan kapan saja.",
+    "title": "Kami menggunakan cookie"
   },
   "discover": {
     "title": "Jelajahi"

@@ -64,7 +64,7 @@ Biz Xizmatga kerak bo'lgan cookie'lardan, va faqat ularni qabul qilsangiz, tahli
 | `ni_vid` | Hisobsiz layklar va izohlar uchun, va suiiste'molning oldini olish uchun tasodifiy identifikator | 400 kun |
 | `ni_locale` | Tanlagan tilingizni eslab qoladi | 1 yil |
 | `ni_theme` | Tanlagan rang mavzungizni eslab qoladi | 1 yil |
-| `ni_consent` | Tahlil cookie'larini qabul qilganingizni yoki rad etganingizni eslab qoladi | 180 kun |
+| `ni_consent` | Cookie tanlovlaringizni eslab qoladi: qaysi ixtiyoriy toifalarni qabul qilganingizni yoki rad etganingizni | 180 kun |
 
 Agar ushbu cookie'larni o'chirsangiz, siz chiqib ketasiz va yangi tashrif buyuruvchi sifatida ko'riladi.
 
@@ -76,7 +76,7 @@ Agar ushbu cookie'larni o'chirsangiz, siz chiqib ketasiz va yangi tashrif buyuru
 | `_clck` | Microsoft Clarity: taxallusli tashrif buyuruvchi identifikatorini saqlaydi | 1 yil |
 | `_clsk` | Microsoft Clarity: sahifa ko'rishlarini bitta tashrifga bog'laydi | 1 kun |
 
-Clarity yuklanganda Microsoft o'zining domenlarida ham cookie'lar o'rnatishi mumkin; ular Microsoft'ning maxfiylik bayonotida tasvirlangan. Siz birinchi tashrifingizda ko'rsatilgan bannerda tahlil cookie'larini qabul qilishingiz yoki rad etishingiz mumkin va ushbu siyosat tepasidagi "Cookie sozlamalari" tugmasi orqali istalgan vaqtda tanlovingizni o'zgartirishingiz mumkin. Roziligingizni bekor qilganingizda, biz niceideas'da o'rnatilgan tahlil cookie'larini o'chiramiz va vositalarni yuklashni to'xtatamiz.
+Clarity yuklanganda Microsoft o'zining domenlarida ham cookie'lar o'rnatishi mumkin; ular Microsoft'ning maxfiylik bayonotida tasvirlangan. Birinchi tashrifingizda ko'rsatilgan cookie bannerida barcha ixtiyoriy cookie'larni qabul qilishingiz yoki rad etishingiz mumkin yoki toifa bo'yicha tanlashingiz mumkin, va ushbu siyosat tepasidagi "Cookie sozlamalari" tugmasi orqali istalgan vaqtda tanlovingizni o'zgartirishingiz mumkin. Roziligingizni bekor qilganingizda, biz niceideas'da o'rnatilgan tahlil cookie'larini o'chiramiz va vositalarni yuklashni to'xtatamiz.
 
 ## 6. Bo'lishish
 

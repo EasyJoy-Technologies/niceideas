@@ -269,11 +269,28 @@
     "title": "Tytuł"
   },
   "consent": {
-    "accept": "Akceptuj",
-    "reject": "Odrzuć",
+    "acceptAll": "Akceptuj wszystkie",
+    "alwaysOn": "Zawsze włączone",
+    "cat": {
+      "ads": {
+        "text": "Służą do wyświetlania reklam i mierzenia ich skuteczności, ewentualnie wspólnie z partnerami reklamowymi.",
+        "title": "Reklamowe"
+      },
+      "analytics": {
+        "text": "Pomagają nam zrozumieć, jak strona jest używana, abyśmy mogli ją ulepszać.",
+        "title": "Analityczne"
+      },
+      "necessary": {
+        "text": "Potrzebne do działania strony: logowanie, bezpieczeństwo oraz zapamiętywanie języka, motywu i wyboru dotyczącego plików cookie.",
+        "title": "Niezbędne"
+      }
+    },
+    "customize": "Dostosuj",
+    "rejectAll": "Odrzuć wszystkie",
+    "save": "Zapisz wybór",
     "settings": "Ustawienia plików cookie",
-    "text": "Za Twoją zgodą używamy Google Analytics i Microsoft Clarity, aby zrozumieć, jak korzystasz z serwisu, i go ulepszać. Ładują się tylko wtedy, gdy wyrazisz zgodę, a swój wybór możesz zmienić w każdej chwili.",
-    "title": "Analityczne pliki cookie"
+    "text": "Używamy plików cookie i podobnych technologii, aby strona działała. Za Twoją zgodą używamy też opcjonalnych plików cookie, na przykład aby zrozumieć, jak korzystasz ze strony, i ją ulepszać. Możesz wybrać według kategorii i w każdej chwili zmienić swój wybór.",
+    "title": "Używamy plików cookie"
   },
   "discover": {
     "title": "Odkrywaj"

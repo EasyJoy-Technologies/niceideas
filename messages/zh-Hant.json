@@ -269,11 +269,28 @@
     "title": "標題"
   },
   "consent": {
-    "accept": "接受",
-    "reject": "拒絕",
+    "acceptAll": "全部接受",
+    "alwaysOn": "一律啟用",
+    "cat": {
+      "ads": {
+        "text": "用於顯示廣告並衡量廣告成效，可能會與廣告合作夥伴共同進行。",
+        "title": "廣告"
+      },
+      "analytics": {
+        "text": "協助我們了解網站的使用情況，以便改進。",
+        "title": "統計分析"
+      },
+      "necessary": {
+        "text": "網站運作所必需：登入、安全，以及記住你的語言、主題和 Cookie 選擇。",
+        "title": "必要"
+      }
+    },
+    "customize": "自訂",
+    "rejectAll": "全部拒絕",
+    "save": "儲存選擇",
     "settings": "Cookie 設定",
-    "text": "經你允許，我們會使用 Google Analytics 和 Microsoft Clarity 了解網站的使用情況並加以改進。只有你接受後它們才會載入，你也可以隨時更改選擇。",
-    "title": "分析類 Cookie"
+    "text": "我們使用 Cookie 及類似技術來維持網站正常運作。在你允許的情況下，我們也會使用選用 Cookie，例如用於了解網站的使用情況並加以改進。你可以按類別選擇，並隨時變更。",
+    "title": "我們使用 Cookie"
   },
   "discover": {
     "title": "探索"

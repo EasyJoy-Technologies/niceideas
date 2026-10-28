@@ -64,7 +64,7 @@ Nous utilisons les cookies nécessaires au fonctionnement du Service et, uniquem
 | `ni_vid` | Identifiant aléatoire pour les mentions « j'aime » et les commentaires sans compte, et pour la prévention des abus | 400 jours |
 | `ni_locale` | Mémorise la langue que vous avez choisie | 1 an |
 | `ni_theme` | Mémorise le thème de couleurs que vous avez choisi | 1 an |
-| `ni_consent` | Mémorise si vous avez accepté ou refusé les cookies de mesure d'audience | 180 jours |
+| `ni_consent` | Mémorise vos choix de cookies : quelles catégories facultatives vous avez acceptées ou refusées | 180 jours |
 
 Si vous supprimez ces cookies, vous êtes déconnecté et traité comme un nouveau visiteur.
 
@@ -76,7 +76,7 @@ Si vous supprimez ces cookies, vous êtes déconnecté et traité comme un nouve
 | `_clck` | Microsoft Clarity : conserve un identifiant pseudonyme du visiteur | 1 an |
 | `_clsk` | Microsoft Clarity : relie les pages vues en une seule visite | 1 jour |
 
-Microsoft peut également déposer des cookies sur ses propres domaines lors du chargement de Clarity ; ils sont décrits dans la déclaration de confidentialité de Microsoft. Vous pouvez accepter ou refuser les cookies de mesure d'audience dans le bandeau affiché lors de votre première visite, et modifier votre choix à tout moment avec le bouton « Paramètres des cookies » en haut de la présente politique. Lorsque vous retirez votre consentement, nous supprimons les cookies de mesure d'audience déposés sur niceideas et cessons de charger les outils.
+Microsoft peut également déposer des cookies sur ses propres domaines lors du chargement de Clarity ; ils sont décrits dans la déclaration de confidentialité de Microsoft. Dans le bandeau de cookies affiché lors de votre première visite, vous pouvez accepter ou refuser tous les cookies facultatifs ou choisir par catégorie, et modifier votre choix à tout moment avec le bouton « Paramètres des cookies » en haut de la présente politique. Lorsque vous retirez votre consentement, nous supprimons les cookies de mesure d'audience déposés sur niceideas et cessons de charger les outils.
 
 ## 6. Partage
 

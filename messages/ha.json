@@ -269,11 +269,28 @@
     "title": "Take"
   },
   "consent": {
-    "accept": "Amince",
-    "reject": "Ƙi",
+    "acceptAll": "Amince da duka",
+    "alwaysOn": "Koyaushe a kunne",
+    "cat": {
+      "ads": {
+        "text": "Ana amfani da su don nuna tallace-tallace da auna yadda suke aiki, mai yiwuwa tare da abokan hulɗar talla.",
+        "title": "Talla"
+      },
+      "analytics": {
+        "text": "Suna taimaka mana fahimtar yadda ake amfani da shafin domin mu inganta shi.",
+        "title": "Nazari"
+      },
+      "necessary": {
+        "text": "Suna da muhimmanci don shafin ya yi aiki: shiga, tsaro, da tunawa da harshenka, jigonka da zaɓuɓɓukan kukis.",
+        "title": "Masu muhimmanci"
+      }
+    },
+    "customize": "Keɓance",
+    "rejectAll": "Ƙi duka",
+    "save": "Ajiye zaɓuɓɓuka",
     "settings": "Saitunan kukis",
-    "text": "Da izininka, muna amfani da Google Analytics da Microsoft Clarity don fahimtar yadda ake amfani da shafin da kuma inganta shi. Ana loda su ne kawai idan ka amince, kuma za ka iya canza zaɓinka a kowane lokaci.",
-    "title": "Kukis na nazari"
+    "text": "Muna amfani da kukis da fasahohi makamantansu domin shafin ya yi aiki. Da izininka, muna kuma amfani da kukis na zaɓi, misali don fahimtar yadda ake amfani da shafin da kuma inganta shi. Za ka iya zaɓa bisa rukuni kuma canza zaɓinka a kowane lokaci.",
+    "title": "Muna amfani da kukis"
   },
   "discover": {
     "title": "Bincika"

@@ -64,7 +64,7 @@ Muna amfani da kukis da Hidimar take buƙata don aiki kuma, sai idan ka amince d
 | `ni_vid` | Mai gano kai tsaye don so da sharhi ba tare da asusu ba, da hana cin zarafi | Kwana 400 |
 | `ni_locale` | Yana tuna harshen da ka zaɓa | Shekara 1 |
 | `ni_theme` | Yana tuna jigon launi da ka zaɓa | Shekara 1 |
-| `ni_consent` | Yana tuna ko ka amince ko ka ƙi kukis na nazari | Kwana 180 |
+| `ni_consent` | Yana tuna zaɓin kukis naka: waɗanne rukunan zaɓi ne ka amince ko ka ƙi | Kwana 180 |
 
 Idan ka share waɗannan kukis, za a fitar da kai kuma za a kula da kai kamar sabon baƙo.
 
@@ -76,7 +76,7 @@ Idan ka share waɗannan kukis, za a fitar da kai kuma za a kula da kai kamar sab
 | `_clck` | Microsoft Clarity: yana ajiye mai gano baƙo na laƙabi | Shekara 1 |
 | `_clsk` | Microsoft Clarity: yana haɗa kallon shafuka zuwa ziyara ɗaya | Kwana 1 |
 
-Microsoft kuma na iya saita kukis a kan yankunanta idan aka loda Clarity; an bayyana su a cikin sanarwar keɓantawa ta Microsoft. Za ka iya amincewa ko ƙin kukis na nazari a sanarwar da ake nunawa a ziyararka ta farko, kuma ka canza zaɓinka a kowane lokaci da maɓallin "Saitunan kukis" da ke saman wannan manufa. Idan ka janye izininka, muna share kukis na nazari da aka saita a niceideas kuma mu daina loda kayan aikin.
+Microsoft kuma na iya saita kukis a kan yankunanta idan aka loda Clarity; an bayyana su a cikin sanarwar keɓantawa ta Microsoft. A sanarwar kukis da ake nunawa a ziyararka ta farko, za ka iya amincewa ko ƙin duk kukis na zaɓi, ko zaɓar bisa rukuni, kuma canza zaɓinka a kowane lokaci da maɓallin "Saitunan kukis" da ke saman wannan manufa. Idan ka janye izininka, muna share kukis na nazari da aka saita a niceideas kuma mu daina loda kayan aikin.
 
 ## 6. Raba bayanai
 

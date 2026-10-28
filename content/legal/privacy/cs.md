@@ -64,7 +64,7 @@ Používáme soubory cookie, které Služba potřebuje k fungování, a pouze po
 | `ni_vid` | Náhodný identifikátor pro lajky a komentáře bez účtu a pro prevenci zneužití | 400 dní |
 | `ni_locale` | Pamatuje si zvolený jazyk | 1 rok |
 | `ni_theme` | Pamatuje si zvolený barevný motiv | 1 rok |
-| `ni_consent` | Pamatuje si, zda jste analytické soubory cookie přijali, nebo odmítli | 180 dní |
+| `ni_consent` | Pamatuje si vaše volby cookies: které volitelné kategorie jste přijali, nebo odmítli | 180 dní |
 
 Pokud tyto soubory cookie odstraníte, budete odhlášeni a budete považováni za nového návštěvníka.
 
@@ -76,7 +76,7 @@ Pokud tyto soubory cookie odstraníte, budete odhlášeni a budete považováni 
 | `_clck` | Microsoft Clarity: uchovává pseudonymní identifikátor návštěvníka | 1 rok |
 | `_clsk` | Microsoft Clarity: spojuje zobrazení stránek do jedné návštěvy | 1 den |
 
-Při načtení Clarity může Microsoft také nastavit soubory cookie ve svých vlastních doménách; jsou popsány v prohlášení Microsoftu o zásadách ochrany osobních údajů. Analytické soubory cookie můžete přijmout nebo odmítnout v oznámení zobrazeném při první návštěvě a svou volbu můžete kdykoli změnit tlačítkem „Nastavení cookies“ na začátku těchto zásad. Když souhlas odvoláte, smažeme analytické soubory cookie nastavené na niceideas a přestaneme nástroje načítat.
+Při načtení Clarity může Microsoft také nastavit soubory cookie ve svých vlastních doménách; jsou popsány v prohlášení Microsoftu o zásadách ochrany osobních údajů. V oznámení o cookies zobrazeném při první návštěvě můžete přijmout nebo odmítnout všechny volitelné soubory cookie, nebo si vybrat podle kategorie, a svou volbu můžete kdykoli změnit tlačítkem „Nastavení cookies“ na začátku těchto zásad. Když souhlas odvoláte, smažeme analytické soubory cookie nastavené na niceideas a přestaneme nástroje načítat.
 
 ## 6. Sdílení
 

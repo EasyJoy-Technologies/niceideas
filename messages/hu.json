@@ -269,11 +269,28 @@
     "title": "Cím"
   },
   "consent": {
-    "accept": "Elfogadom",
-    "reject": "Elutasítom",
+    "acceptAll": "Összes elfogadása",
+    "alwaysOn": "Mindig bekapcsolva",
+    "cat": {
+      "ads": {
+        "text": "Hirdetések megjelenítésére és hatékonyságuk mérésére szolgálnak, akár hirdetési partnerekkel közösen.",
+        "title": "Hirdetések"
+      },
+      "analytics": {
+        "text": "Segítenek megérteni, hogyan használják az oldalt, hogy fejleszthessük.",
+        "title": "Analitika"
+      },
+      "necessary": {
+        "text": "Az oldal működéséhez szükségesek: bejelentkezés, biztonság, valamint a nyelv, a téma és a sütikkel kapcsolatos választás megjegyzése.",
+        "title": "Szükséges"
+      }
+    },
+    "customize": "Testreszabás",
+    "rejectAll": "Összes elutasítása",
+    "save": "Választás mentése",
     "settings": "Sütibeállítások",
-    "text": "Az engedélyeddel a Google Analytics és a Microsoft Clarity segítségével megértjük, hogyan használják az oldalt, és fejlesztjük. Csak akkor töltődnek be, ha elfogadod, és a döntésedet bármikor megváltoztathatod.",
-    "title": "Analitikai sütik"
+    "text": "Sütiket és hasonló technológiákat használunk az oldal működéséhez. Az engedélyével nem kötelező sütiket is használunk, például annak megértésére, hogyan használják az oldalt, és hogy fejleszthessük. Kategóriánként választhat, és döntését bármikor módosíthatja.",
+    "title": "Sütiket használunk"
   },
   "discover": {
     "title": "Felfedezés"

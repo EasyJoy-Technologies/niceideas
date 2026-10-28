@@ -64,7 +64,7 @@ Kami menggunakan cookie yang diperlukan Layanan untuk berfungsi dan, hanya jika 
 | `ni_vid` | Pengenal acak untuk suka dan komentar tanpa akun, dan untuk pencegahan penyalahgunaan | 400 hari |
 | `ni_locale` | Mengingat bahasa yang Anda pilih | 1 tahun |
 | `ni_theme` | Mengingat tema warna yang Anda pilih | 1 tahun |
-| `ni_consent` | Mengingat apakah Anda menerima atau menolak cookie analitik | 180 hari |
+| `ni_consent` | Mengingat pilihan cookie Anda: kategori opsional mana yang Anda terima atau tolak | 180 hari |
 
 Jika Anda menghapus cookie ini, Anda akan keluar dan dianggap sebagai pengunjung baru.
 
@@ -76,7 +76,7 @@ Jika Anda menghapus cookie ini, Anda akan keluar dan dianggap sebagai pengunjung
 | `_clck` | Microsoft Clarity: menyimpan pengenal pengunjung pseudonim | 1 tahun |
 | `_clsk` | Microsoft Clarity: menghubungkan beberapa tampilan halaman menjadi satu kunjungan | 1 hari |
 
-Microsoft juga dapat mengatur cookie pada domainnya sendiri ketika Clarity dimuat; cookie ini dijelaskan dalam pernyataan privasi Microsoft. Anda dapat menerima atau menolak cookie analitik pada spanduk yang ditampilkan saat kunjungan pertama Anda, dan mengubah pilihan Anda kapan saja dengan tombol "Pengaturan cookie" di bagian atas kebijakan ini. Ketika Anda menarik persetujuan Anda, kami menghapus cookie analitik yang diatur pada niceideas dan berhenti memuat alat-alat tersebut.
+Microsoft juga dapat mengatur cookie pada domainnya sendiri ketika Clarity dimuat; cookie ini dijelaskan dalam pernyataan privasi Microsoft. Pada spanduk cookie yang ditampilkan saat kunjungan pertama Anda, Anda dapat menerima atau menolak semua cookie opsional atau memilih berdasarkan kategori, dan mengubah pilihan Anda kapan saja dengan tombol "Pengaturan cookie" di bagian atas kebijakan ini. Ketika Anda menarik persetujuan Anda, kami menghapus cookie analitik yang diatur pada niceideas dan berhenti memuat alat-alat tersebut.
 
 ## 6. Berbagi
 

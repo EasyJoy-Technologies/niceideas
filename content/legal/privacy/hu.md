@@ -64,7 +64,7 @@ A Szolgáltatás működéséhez szükséges cookie-kat, valamint – csak ha Ö
 | `ni_vid` | Véletlenszerű azonosító a fiók nélküli kedvelésekhez és hozzászólásokhoz, valamint a visszaélés-megelőzéshez | 400 nap |
 | `ni_locale` | Megjegyzi a választott nyelvet | 1 év |
 | `ni_theme` | Megjegyzi a választott színtémát | 1 év |
-| `ni_consent` | Megjegyzi, hogy elfogadta vagy elutasította-e az analitikai cookie-kat | 180 nap |
+| `ni_consent` | Megjegyzi a cookie-választásait: mely nem kötelező kategóriákat fogadta el, vagy utasította el | 180 nap |
 
 Ha törli ezeket a cookie-kat, kijelentkezik, és új látogatóként kezeljük.
 
@@ -76,7 +76,7 @@ Ha törli ezeket a cookie-kat, kijelentkezik, és új látogatóként kezeljük.
 | `_clck` | Microsoft Clarity: álneves látogatóazonosítót tárol | 1 év |
 | `_clsk` | Microsoft Clarity: az oldalmegtekintéseket egy látogatássá kapcsolja össze | 1 nap |
 
-A Clarity betöltésekor a Microsoft a saját domainjein is elhelyezhet cookie-kat; ezeket a Microsoft adatvédelmi nyilatkozata ismerteti. Az analitikai cookie-kat az első látogatáskor megjelenő értesítésben fogadhatja el vagy utasíthatja el, és döntését bármikor megváltoztathatja a szabályzat tetején található „Sütibeállítások” gombbal. Ha visszavonja hozzájárulását, töröljük a niceideas által elhelyezett analitikai cookie-kat, és többé nem töltjük be az eszközöket.
+A Clarity betöltésekor a Microsoft a saját domainjein is elhelyezhet cookie-kat; ezeket a Microsoft adatvédelmi nyilatkozata ismerteti. Az első látogatáskor megjelenő cookie-értesítésben elfogadhatja vagy elutasíthatja az összes nem kötelező cookie-t, vagy választhat kategóriánként, és döntését bármikor megváltoztathatja a szabályzat tetején található „Sütibeállítások” gombbal. Ha visszavonja hozzájárulását, töröljük a niceideas által elhelyezett analitikai cookie-kat, és többé nem töltjük be az eszközöket.
 
 ## 6. Megosztás
 

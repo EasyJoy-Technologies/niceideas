@@ -64,7 +64,7 @@ niceideas（niceideas.app）由 NiceMatrix Technologies Inc.（地址：434223 C
 | `ni_vid` | 用于未登录点赞、评论及防滥用的随机标识 | 400 天 |
 | `ni_locale` | 记住你选择的语言 | 1 年 |
 | `ni_theme` | 记住你选择的颜色主题 | 1 年 |
-| `ni_consent` | 记住你是否接受或拒绝了分析类 Cookie | 180 天 |
+| `ni_consent` | 记住你的 Cookie 选择：你接受或拒绝了哪些可选类别 | 180 天 |
 
 如你删除这些 Cookie，你将退出登录，并被视为新访客。
 
@@ -76,7 +76,7 @@ niceideas（niceideas.app）由 NiceMatrix Technologies Inc.（地址：434223 C
 | `_clck` | Microsoft Clarity：保存假名化的访客标识符 | 1 年 |
 | `_clsk` | Microsoft Clarity：将多次页面浏览关联为一次访问 | 1 天 |
 
-Microsoft 在加载 Clarity 时也可能在其自有域名下设置 Cookie；相关说明见 Microsoft 的隐私声明。你可以在首次访问时出现的横幅中接受或拒绝分析类 Cookie，并可随时通过本政策顶部的“Cookie 设置”按钮更改你的选择。当你撤回同意后，我们会删除 niceideas 上设置的分析类 Cookie 并停止加载这些工具。
+Microsoft 在加载 Clarity 时也可能在其自有域名下设置 Cookie；相关说明见 Microsoft 的隐私声明。在首次访问时出现的 Cookie 横幅中，你可以接受或拒绝所有可选 Cookie，或按类别选择，并可随时通过本政策顶部的“Cookie 设置”按钮更改你的选择。当你撤回同意后，我们会删除 niceideas 上设置的分析类 Cookie 并停止加载这些工具。
 
 ## 6. 信息共享
 

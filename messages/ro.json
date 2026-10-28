@@ -269,11 +269,28 @@
     "title": "Titlu"
   },
   "consent": {
-    "accept": "Accept",
-    "reject": "Refuz",
+    "acceptAll": "Acceptă toate",
+    "alwaysOn": "Mereu active",
+    "cat": {
+      "ads": {
+        "text": "Folosite pentru afișarea reclamelor și măsurarea performanței lor, eventual împreună cu parteneri de publicitate.",
+        "title": "Publicitate"
+      },
+      "analytics": {
+        "text": "Ne ajută să înțelegem cum este folosit site-ul, ca să-l putem îmbunătăți.",
+        "title": "Analiză"
+      },
+      "necessary": {
+        "text": "Necesare pentru funcționarea site-ului: autentificare, securitate și memorarea limbii, temei și alegerilor privind cookie-urile.",
+        "title": "Necesare"
+      }
+    },
+    "customize": "Personalizează",
+    "rejectAll": "Respinge toate",
+    "save": "Salvează alegerile",
     "settings": "Setări cookie-uri",
-    "text": "Cu permisiunea ta, folosim Google Analytics și Microsoft Clarity pentru a înțelege cum este folosit site-ul și a-l îmbunătăți. Se încarcă doar dacă accepți și îți poți schimba alegerea oricând.",
-    "title": "Cookie-uri de analiză"
+    "text": "Folosim cookie-uri și tehnologii similare pentru ca site-ul să funcționeze. Cu permisiunea ta, folosim și cookie-uri opționale, de exemplu pentru a înțelege cum este folosit site-ul și a-l îmbunătăți. Poți alege pe categorii și îți poți schimba alegerea oricând.",
+    "title": "Folosim cookie-uri"
   },
   "discover": {
     "title": "Descoperă"

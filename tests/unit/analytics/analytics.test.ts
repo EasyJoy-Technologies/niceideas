@@ -5,6 +5,7 @@ import { pageIntl } from "@/server/share/locale";
 import type { ChromeContext } from "@/server/share/chrome";
 import { consentSettingsButton, pageConsent } from "@/server/share/consent";
 import { renderPage } from "@/server/share/document";
+import { offeredCategories } from "@/server/consent/categories";
 
 process.env.DATABASE_URL ??= "postgres://unused@localhost/unused";
 
@@ -21,6 +22,7 @@ describe("analytics configuration", () => {
   it("is off without ids: no extra CSP sources, no banner, no button", async () => {
     setIds("", "");
     expect(analyticsIds()).toBeNull();
+    expect(offeredCategories()).toEqual([]);
     expect(analyticsCspSources("script-src")).toBe("");
     const ctx = await context();
     expect(pageConsent(ctx)).toBeNull();
@@ -57,9 +59,16 @@ describe("consent banner", () => {
     setIds("G-ABC1234", "abc123xyz0");
     const html = renderPage(await context(), { title: "t", main: "<main></main>" });
     expect(html).toMatch(/<body [^>]*data-ga4="G-ABC1234" data-clarity="abc123xyz0" data-clarity-mask="True"/);
-    expect(html).toContain('<section class="ni-consent" id="ni-consent" aria-labelledby="ni-consent-t" hidden>');
-    expect(html).toContain('data-consent="denied">Reject<');
-    expect(html).toContain('data-consent="granted">Accept<');
+    expect(html).toContain('<section class="ni-consent" id="ni-consent" aria-labelledby="ni-consent-t" data-consent-v="1" data-consent-cats="analytics" hidden>');
+    expect(html).toContain('data-consent-act="reject">Reject all<');
+    expect(html).toContain('data-consent-act="accept">Accept all<');
+    expect(html).toContain('data-consent-act="customize" aria-expanded="false" aria-controls="ni-consent-p">Customize<');
+    // Generic first layer: no vendor names; categories: necessary (locked) + analytics, no advertising yet.
+    const banner = html.slice(html.indexOf('<section class="ni-consent"'));
+    expect(banner).not.toMatch(/Google|Clarity/);
+    expect(banner).toContain('<input type="checkbox" checked disabled>');
+    expect(banner).toContain('<input type="checkbox" data-consent-cat="analytics">');
+    expect(banner).not.toContain('data-consent-cat="ads"');
     expect(html).toContain('<a href="/privacy#s5">Privacy policy</a>');
     expect(html).toMatch(/<script src="\/scripts\/consent\.js\?v=[^"]+" defer>/);
     expect(html).toMatch(/<link rel="stylesheet" href="\/styles\/consent\.css\?v=/);

@@ -269,11 +269,28 @@
     "title": "Título"
   },
   "consent": {
-    "accept": "Aceptar",
-    "reject": "Rechazar",
+    "acceptAll": "Aceptar todas",
+    "alwaysOn": "Siempre activas",
+    "cat": {
+      "ads": {
+        "text": "Se usan para mostrar anuncios y medir su rendimiento, posiblemente junto con socios publicitarios.",
+        "title": "Publicidad"
+      },
+      "analytics": {
+        "text": "Nos ayudan a entender cómo se usa el sitio para poder mejorarlo.",
+        "title": "Análisis"
+      },
+      "necessary": {
+        "text": "Imprescindibles para que el sitio funcione: inicio de sesión, seguridad y recordar tu idioma, tema y elección de cookies.",
+        "title": "Necesarias"
+      }
+    },
+    "customize": "Personalizar",
+    "rejectAll": "Rechazar todas",
+    "save": "Guardar selección",
     "settings": "Configuración de cookies",
-    "text": "Con tu permiso, usamos Google Analytics y Microsoft Clarity para entender cómo se usa el sitio y mejorarlo. Solo se cargan si aceptas, y puedes cambiar tu elección en cualquier momento.",
-    "title": "Cookies de análisis"
+    "text": "Usamos cookies y tecnologías similares para que el sitio funcione. Con tu permiso, también usamos cookies opcionales, por ejemplo para entender cómo se usa el sitio y mejorarlo. Puedes elegir por categoría y cambiar tu elección en cualquier momento.",
+    "title": "Usamos cookies"
   },
   "discover": {
     "title": "Descubrir"

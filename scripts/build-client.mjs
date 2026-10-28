@@ -7,7 +7,7 @@ import { copyFileSync } from "node:fs";
 import path from "node:path";
 
 const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), "..");
-const ENTRIES = { compose: "src/client/compose/index.ts", viewer: "src/client/viewer/index.ts" };
+const ENTRIES = { compose: "src/client/compose/index.ts", viewer: "src/client/viewer/index.ts", consent: "src/client/consent/index.ts" };
 const VENDOR_STYLES = { "photoswipe.css": "node_modules/photoswipe/dist/photoswipe.css" };
 
 for (const [name, entry] of Object.entries(ENTRIES)) {

@@ -64,7 +64,7 @@ Gumagamit kami ng mga cookie na kinakailangan ng Serbisyo upang gumana at, kung 
 | `ni_vid` | Random na identifier para sa mga like at komento nang walang account, at para sa pagpigil sa abuso | 400 araw |
 | `ni_locale` | Tinatandaan ang wikang pinili mo | 1 taon |
 | `ni_theme` | Tinatandaan ang color theme na pinili mo | 1 taon |
-| `ni_consent` | Tinatandaan kung tinanggap o tinanggihan mo ang mga analytics cookie | 180 araw |
+| `ni_consent` | Tinatandaan ang iyong mga pinili sa cookie: alin sa mga opsyonal na kategorya ang tinanggap o tinanggihan mo | 180 araw |
 
 Kung bubura mo ang mga cookie na ito, masign out ka at ituturing na bagong bisita.
 
@@ -76,7 +76,7 @@ Kung bubura mo ang mga cookie na ito, masign out ka at ituturing na bagong bisit
 | `_clck` | Microsoft Clarity: nagtatago ng pseudonymous na identifier ng bisita | 1 taon |
 | `_clsk` | Microsoft Clarity: pinag-uugnay ang mga page view sa iisang pagbisita | 1 araw |
 
-Maaari ring maglagay ang Microsoft ng mga cookie sa sarili nitong mga domain kapag nag-load ang Clarity; inilalarawan ang mga ito sa privacy statement ng Microsoft. Maaari mong tanggapin o tanggihan ang mga analytics cookie sa abisong ipinapakita sa iyong unang pagbisita, at baguhin ang iyong pinili anumang oras gamit ang button na "Mga setting ng cookie" sa itaas ng patakarang ito. Kapag binawi mo ang iyong pahintulot, binubura namin ang mga analytics cookie na inilagay sa niceideas at hindi na namin nilo-load ang mga tool.
+Maaari ring maglagay ang Microsoft ng mga cookie sa sarili nitong mga domain kapag nag-load ang Clarity; inilalarawan ang mga ito sa privacy statement ng Microsoft. Sa abiso ng cookie na ipinapakita sa iyong unang pagbisita, maaari mong tanggapin o tanggihan ang lahat ng opsyonal na cookies o pumili ayon sa kategorya, at baguhin ang iyong pinili anumang oras gamit ang button na "Mga setting ng cookie" sa itaas ng patakarang ito. Kapag binawi mo ang iyong pahintulot, binubura namin ang mga analytics cookie na inilagay sa niceideas at hindi na namin nilo-load ang mga tool.
 
 ## 6. Pagbahagi
 

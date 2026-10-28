@@ -64,7 +64,7 @@ Kami menggunakan kuki yang diperlukan oleh Perkhidmatan untuk berfungsi dan, han
 | `ni_vid` | Pengecam rawak untuk suka dan komen tanpa akaun, dan pencegahan penyalahgunaan | 400 hari |
 | `ni_locale` | Mengingati bahasa yang anda pilih | 1 tahun |
 | `ni_theme` | Mengingati tema warna yang anda pilih | 1 tahun |
-| `ni_consent` | Mengingati sama ada anda menerima atau menolak kuki analitik | 180 hari |
+| `ni_consent` | Mengingati pilihan kuki anda: kategori pilihan mana yang anda terima atau tolak | 180 hari |
 
 Jika anda memadam kuki ini, anda akan dilog keluar dan dianggap sebagai pelawat baharu.
 
@@ -76,7 +76,7 @@ Jika anda memadam kuki ini, anda akan dilog keluar dan dianggap sebagai pelawat 
 | `_clck` | Microsoft Clarity: menyimpan pengecam pelawat pseudonim | 1 tahun |
 | `_clsk` | Microsoft Clarity: menghubungkan beberapa paparan halaman ke dalam satu lawatan | 1 hari |
 
-Microsoft juga boleh menetapkan kuki pada domainnya sendiri apabila Clarity dimuatkan; ia diterangkan dalam penyataan privasi Microsoft. Anda boleh menerima atau menolak kuki analitik dalam sepanduk yang dipaparkan semasa lawatan pertama anda, dan menukar pilihan anda pada bila-bila masa dengan butang "Tetapan kuki" di bahagian atas dasar ini. Apabila anda menarik balik persetujuan anda, kami memadam kuki analitik yang ditetapkan pada niceideas dan berhenti memuatkan alat-alat tersebut.
+Microsoft juga boleh menetapkan kuki pada domainnya sendiri apabila Clarity dimuatkan; ia diterangkan dalam penyataan privasi Microsoft. Dalam sepanduk kuki yang dipaparkan semasa lawatan pertama anda, anda boleh menerima atau menolak semua kuki pilihan atau memilih mengikut kategori, dan menukar pilihan anda pada bila-bila masa dengan butang "Tetapan kuki" di bahagian atas dasar ini. Apabila anda menarik balik persetujuan anda, kami memadam kuki analitik yang ditetapkan pada niceideas dan berhenti memuatkan alat-alat tersebut.
 
 ## 6. Perkongsian
 
