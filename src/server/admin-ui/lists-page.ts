@@ -4,7 +4,8 @@ import { escapeHtml } from "@/server/render/escape";
 import { cardTitle } from "@/server/share/card";
 import { actionPop, emptyRow, notice, pager, pill, searchForm, table, tabs, when, withQuery } from "./parts";
 import { renderAdmin, type AdminContext } from "./shell";
-import { ADMIN_SOURCES, adminSourceLabel, postSourceLabel, type AdminSource } from "./source-class";
+import { adminSourceLabel, adminSources, postSourceLabel, type AdminSource } from "./source-class";
+import { appSettingsItem } from "./apps-page";
 
 const e = escapeHtml;
 type Note = "done" | "failed" | null;
@@ -20,7 +21,7 @@ export function renderPosts(ctx: AdminContext, v: { status: PostStatus | null; s
   const base = withQuery("/admin/posts", { s: v.status ?? "", src, q: v.query });
   const statusTabs = tabs(POST_STATUSES.map((s) => ({ href: withQuery("/admin/posts", { s, src, q: v.query }), label: t(s ? `admin.status.${s}` : "admin.filter.all"), on: (v.status ?? "") === s })), "ad-seg");
   const sourceTabs = tabs(
-    (["", ...ADMIN_SOURCES] as const).map((k) => ({ href: withQuery("/admin/posts", { s: v.status ?? "", src: k, q: v.query }), label: k ? adminSourceLabel(ctx, k) : t("admin.filter.allSources"), on: src === k })),
+    (["", ...adminSources()] as const).map((k) => ({ href: withQuery("/admin/posts", { s: v.status ?? "", src: k, q: v.query }), label: k ? adminSourceLabel(ctx, k) : t("admin.filter.allSources"), on: src === k })),
     "ad-seg ad-seg-wrap",
   );
   const tone = (s: PostStatus) => (s === "active" ? "ok" : s === "removed" ? "bad" : "");
@@ -76,7 +77,8 @@ export function renderAudit(ctx: AdminContext, v: { offset: number; page: Page<A
   const { t } = ctx.intl;
   const rows = v.page.rows.map((a) => [
     when(ctx, a.created_at), a.actor_handle ? `@${e(a.actor_handle)}` : e(a.actor_id), e(t(`admin.action.${a.action}`)),
-    a.slug ? `<a href="/p/${a.slug}${a.comment_id ? `#c-${a.comment_id}` : ""}" target="_blank" rel="noopener">/p/${a.slug}</a>${a.comment_id ? ` · ${e(t("admin.kind.comment"))}` : ""}` : "",
+    a.action === "app_settings" ? appSettingsItem(ctx, a.detail)
+    : a.slug ? `<a href="/p/${a.slug}${a.comment_id ? `#c-${a.comment_id}` : ""}" target="_blank" rel="noopener">/p/${a.slug}</a>${a.comment_id ? ` · ${e(t("admin.kind.comment"))}` : ""}` : "",
     e(a.reason),
   ]);
   const head: [string, string?][] = [[e(t("admin.col.time"))], [e(t("admin.col.actor"))], [e(t("admin.col.action"))], [e(t("admin.col.item"))], [e(t("admin.col.reason"))]];

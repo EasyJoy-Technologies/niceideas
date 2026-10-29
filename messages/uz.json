@@ -1,6 +1,7 @@
 {
   "admin": {
     "action": {
+      "app_settings": "Ilova sozlamalarini o‘zgartirdi",
       "ban": "Bloklandi",
       "comments_mode": "Izoh sozlamalari o‘zgartirildi",
       "delete_comment": "Izoh o‘chirildi",
@@ -11,6 +12,22 @@
       "restore": "Post tiklandi",
       "restore_comment": "Izoh tiklandi",
       "unban": "Blok olib tashlandi"
+    },
+    "apps": {
+      "edit": "Tahrirlash",
+      "empty": "Hozircha uchinchi tomon ilovalari yo‘q.",
+      "hidden": "Ko‘rsatilmaydi",
+      "icon": "Belgi (https://… yoki /brand/sources/…)",
+      "own": "Bizning ilovalar",
+      "ownHint": "NiceMatrix orqali ulashadigan ilovalar. Yangi ilova birinchi ulashishdan keyin shu yerda paydo bo‘ladi; uning postlarida “… dan” faqat siz yoqqaningizdan keyin ko‘rinadi.",
+      "save": "Saqlash",
+      "showBadge": "Postlarida “{app} dan” ni ko‘rsatish",
+      "shown": "Ko‘rsatilmoqda",
+      "thirdParty": "Uchinchi tomon ilovalari",
+      "thirdPartyHint": "Ochiq API orqali post joylaydigan ilovalar. Nomi, logotipi va veb-sayti NiceMatrix ilovalar katalogidan olinadi; ularning postlarida “… dan” faqat siz yoqqaningizdan keyin ko‘rinadi.",
+      "turnOff": "Yashirish",
+      "turnOn": "Ko‘rsatish",
+      "website": "Veb-sayt (https://…)"
     },
     "backToSite": "Saytga qaytish",
     "ban": {
@@ -30,7 +47,9 @@
     "col": {
       "action": "Amal",
       "actor": "Bajargan",
+      "app": "Ilova",
       "author": "Muallif",
+      "badge": "“Qayerdan” belgisi",
       "comment": "Izoh",
       "comments": "Izohlar",
       "ends": "Tugaydi",
@@ -40,6 +59,7 @@
       "likes": "Layklar",
       "likes7": "Layklar (7 kun)",
       "post": "Post",
+      "posts": "Postlar",
       "published": "Chop etilgan",
       "reason": "Sabab",
       "reporter": "Shikoyat qilgan",
@@ -47,7 +67,8 @@
       "source": "Manba",
       "status": "Holat",
       "time": "Vaqt",
-      "type": "Turi"
+      "type": "Turi",
+      "website": "Veb-sayt"
     },
     "commentStatus": {
       "deleted": "O‘chirilgan",
@@ -86,7 +107,8 @@
     },
     "group": {
       "content": "Kontent",
-      "moderation": "Moderatsiya"
+      "moderation": "Moderatsiya",
+      "settings": "Sozlamalar"
     },
     "health": {
       "db": "Ma’lumotlar bazasi",
@@ -110,6 +132,7 @@
       "vsPrev": "Oldingi 7 kun bilan solishtirganda"
     },
     "nav": {
+      "apps": "Ilovalar",
       "audit": "Audit jurnali",
       "bans": "Bloklar",
       "comments": "Izohlar",
@@ -211,11 +234,6 @@
     "title": "Saqlanganlar"
   },
   "common": {
-    "brand": {
-      "nicelist": "NiceList",
-      "nicenote": "NiceNote",
-      "nicerecorder": "NiceRecorder"
-    },
     "tagline": "nice ideas’laringizni istalgan vaqtda, istalgan joyda ulashing!"
   },
   "compose": {

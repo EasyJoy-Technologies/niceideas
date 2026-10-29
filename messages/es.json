@@ -1,6 +1,7 @@
 {
   "admin": {
     "action": {
+      "app_settings": "Cambió los ajustes de una aplicación",
       "ban": "Bloqueado",
       "comments_mode": "Configuración de comentarios modificada",
       "delete_comment": "Comentario eliminado",
@@ -11,6 +12,22 @@
       "restore": "Publicación restaurada",
       "restore_comment": "Comentario restaurado",
       "unban": "Bloqueo levantado"
+    },
+    "apps": {
+      "edit": "Editar",
+      "empty": "Todavía no hay aplicaciones de terceros.",
+      "hidden": "Oculta",
+      "icon": "Icono (https://… o /brand/sources/…)",
+      "own": "Nuestras aplicaciones",
+      "ownHint": "Aplicaciones que comparten a través de NiceMatrix. Una aplicación nueva aparece tras su primera publicación compartida; sus publicaciones muestran «Desde …» solo cuando la activas.",
+      "save": "Guardar",
+      "showBadge": "Mostrar «Desde {app}» en sus publicaciones",
+      "shown": "Visible",
+      "thirdParty": "Aplicaciones de terceros",
+      "thirdPartyHint": "Aplicaciones que publican mediante la API abierta. El nombre, el logotipo y el sitio web vienen del directorio de aplicaciones de NiceMatrix; sus publicaciones muestran «Desde …» solo cuando la activas.",
+      "turnOff": "Ocultar",
+      "turnOn": "Mostrar",
+      "website": "Sitio web (https://…)"
     },
     "backToSite": "Volver al sitio",
     "ban": {
@@ -30,7 +47,9 @@
     "col": {
       "action": "Acción",
       "actor": "Por",
+      "app": "Aplicación",
       "author": "Autor",
+      "badge": "Etiqueta «Desde»",
       "comment": "Comentario",
       "comments": "Comentarios",
       "ends": "Termina",
@@ -40,6 +59,7 @@
       "likes": "Me gusta",
       "likes7": "Me gusta (7 días)",
       "post": "Publicación",
+      "posts": "Publicaciones",
       "published": "Publicado",
       "reason": "Motivo",
       "reporter": "Reportado por",
@@ -47,7 +67,8 @@
       "source": "Origen",
       "status": "Estado",
       "time": "Hora",
-      "type": "Tipo"
+      "type": "Tipo",
+      "website": "Sitio web"
     },
     "commentStatus": {
       "deleted": "Eliminado",
@@ -86,7 +107,8 @@
     },
     "group": {
       "content": "Contenido",
-      "moderation": "Moderación"
+      "moderation": "Moderación",
+      "settings": "Ajustes"
     },
     "health": {
       "db": "Base de datos",
@@ -110,6 +132,7 @@
       "vsPrev": "vs. los 7 días anteriores"
     },
     "nav": {
+      "apps": "Aplicaciones",
       "audit": "Registro de auditoría",
       "bans": "Bloqueos",
       "comments": "Comentarios",
@@ -211,11 +234,6 @@
     "title": "Guardados"
   },
   "common": {
-    "brand": {
-      "nicelist": "NiceList",
-      "nicenote": "NiceNote",
-      "nicerecorder": "NiceRecorder"
-    },
     "tagline": "¡Comparte tus nice ideas cuando quieras, donde quieras!"
   },
   "compose": {

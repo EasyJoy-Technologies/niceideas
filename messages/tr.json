@@ -1,6 +1,7 @@
 {
   "admin": {
     "action": {
+      "app_settings": "Bir uygulamanın ayarlarını değiştirdi",
       "ban": "Yasaklandı",
       "comments_mode": "Yorum ayarları değiştirildi",
       "delete_comment": "Yorum silindi",
@@ -11,6 +12,22 @@
       "restore": "Gönderi geri yüklendi",
       "restore_comment": "Yorum geri yüklendi",
       "unban": "Yasak kaldırıldı"
+    },
+    "apps": {
+      "edit": "Düzenle",
+      "empty": "Henüz üçüncü taraf uygulama yok.",
+      "hidden": "Gösterilmiyor",
+      "icon": "Simge (https://… veya /brand/sources/…)",
+      "own": "Kendi uygulamalarımız",
+      "ownHint": "NiceMatrix üzerinden paylaşan uygulamalar. Yeni bir uygulama ilk paylaşımından sonra burada görünür; gönderilerinde “… kaynaklı” ancak siz açtıktan sonra gösterilir.",
+      "save": "Kaydet",
+      "showBadge": "Gönderilerinde “{app} kaynaklı” göster",
+      "shown": "Gösteriliyor",
+      "thirdParty": "Üçüncü taraf uygulamalar",
+      "thirdPartyHint": "Açık API üzerinden paylaşım yapan uygulamalar. Ad, logo ve web sitesi NiceMatrix uygulama dizininden gelir; gönderilerinde “… kaynaklı” ancak siz açtıktan sonra gösterilir.",
+      "turnOff": "Gizle",
+      "turnOn": "Göster",
+      "website": "Web sitesi (https://…)"
     },
     "backToSite": "Siteye dön",
     "ban": {
@@ -30,7 +47,9 @@
     "col": {
       "action": "İşlem",
       "actor": "İşlem yapan",
+      "app": "Uygulama",
       "author": "Yazar",
+      "badge": "“Kaynak” etiketi",
       "comment": "Yorum",
       "comments": "Yorumlar",
       "ends": "Bitiş",
@@ -40,6 +59,7 @@
       "likes": "Beğeniler",
       "likes7": "Beğeniler (7 gün)",
       "post": "Gönderi",
+      "posts": "Gönderiler",
       "published": "Yayınlandı",
       "reason": "Neden",
       "reporter": "Şikayet eden",
@@ -47,7 +67,8 @@
       "source": "Kaynak",
       "status": "Durum",
       "time": "Zaman",
-      "type": "Tür"
+      "type": "Tür",
+      "website": "Web sitesi"
     },
     "commentStatus": {
       "deleted": "Silindi",
@@ -86,7 +107,8 @@
     },
     "group": {
       "content": "İçerik",
-      "moderation": "Moderasyon"
+      "moderation": "Moderasyon",
+      "settings": "Ayarlar"
     },
     "health": {
       "db": "Veritabanı",
@@ -110,6 +132,7 @@
       "vsPrev": "önceki 7 güne göre"
     },
     "nav": {
+      "apps": "Uygulamalar",
       "audit": "Denetim günlüğü",
       "bans": "Yasaklamalar",
       "comments": "Yorumlar",
@@ -211,11 +234,6 @@
     "title": "Kaydedilenler"
   },
   "common": {
-    "brand": {
-      "nicelist": "NiceList",
-      "nicenote": "NiceNote",
-      "nicerecorder": "NiceRecorder"
-    },
     "tagline": "nice ideas'larını her zaman, her yerde paylaş!"
   },
   "compose": {

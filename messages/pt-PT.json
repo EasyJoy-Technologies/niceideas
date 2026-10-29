@@ -1,6 +1,7 @@
 {
   "admin": {
     "action": {
+      "app_settings": "Alterou as definições de uma aplicação",
       "ban": "Bloqueado",
       "comments_mode": "Configurações de comentários alteradas",
       "delete_comment": "Comentário eliminado",
@@ -11,6 +12,22 @@
       "restore": "Publicação restaurada",
       "restore_comment": "Comentário restaurado",
       "unban": "Bloqueio removido"
+    },
+    "apps": {
+      "edit": "Editar",
+      "empty": "Ainda não há aplicações de terceiros.",
+      "hidden": "Não mostrado",
+      "icon": "Ícone (https://… ou /brand/sources/…)",
+      "own": "As nossas aplicações",
+      "ownHint": "Aplicações que partilham através do NiceMatrix. Uma aplicação nova aparece após a primeira partilha; as suas publicações mostram “De …” só depois de a ativar.",
+      "save": "Guardar",
+      "showBadge": "Mostrar “De {app}” nas suas publicações",
+      "shown": "Mostrado",
+      "thirdParty": "Aplicações de terceiros",
+      "thirdPartyHint": "Aplicações que publicam através da API aberta. O nome, o logótipo e o site vêm do diretório de aplicações do NiceMatrix; as suas publicações mostram “De …” só depois de a ativar.",
+      "turnOff": "Ocultar",
+      "turnOn": "Mostrar",
+      "website": "Site (https://…)"
     },
     "backToSite": "Voltar ao site",
     "ban": {
@@ -30,7 +47,9 @@
     "col": {
       "action": "Ação",
       "actor": "Por",
+      "app": "Aplicação",
       "author": "Autor",
+      "badge": "Selo “De”",
       "comment": "Comentário",
       "comments": "Comentários",
       "ends": "Termina",
@@ -40,6 +59,7 @@
       "likes": "Gostos",
       "likes7": "Gostos (7 dias)",
       "post": "Publicação",
+      "posts": "Publicações",
       "published": "Publicado",
       "reason": "Motivo",
       "reporter": "Denunciado por",
@@ -47,7 +67,8 @@
       "source": "Origem",
       "status": "Estado",
       "time": "Hora",
-      "type": "Tipo"
+      "type": "Tipo",
+      "website": "Site"
     },
     "commentStatus": {
       "deleted": "Eliminado",
@@ -86,7 +107,8 @@
     },
     "group": {
       "content": "Conteúdo",
-      "moderation": "Moderação"
+      "moderation": "Moderação",
+      "settings": "Definições"
     },
     "health": {
       "db": "Base de dados",
@@ -110,6 +132,7 @@
       "vsPrev": "vs. os 7 dias anteriores"
     },
     "nav": {
+      "apps": "Aplicações",
       "audit": "Registo de auditoria",
       "bans": "Bloqueios",
       "comments": "Comentários",
@@ -211,11 +234,6 @@
     "title": "Guardados"
   },
   "common": {
-    "brand": {
-      "nicelist": "NiceList",
-      "nicenote": "NiceNote",
-      "nicerecorder": "NiceRecorder"
-    },
     "tagline": "Partilhe as suas nice ideas em qualquer altura, em qualquer lugar!"
   },
   "compose": {

@@ -1,6 +1,7 @@
 {
   "admin": {
     "action": {
+      "app_settings": "修改了应用设置",
       "ban": "封禁",
       "comments_mode": "修改评论设置",
       "delete_comment": "删除评论",
@@ -11,6 +12,22 @@
       "restore": "恢复帖子",
       "restore_comment": "恢复评论",
       "unban": "解除封禁"
+    },
+    "apps": {
+      "edit": "编辑",
+      "empty": "还没有第三方应用。",
+      "hidden": "不显示",
+      "icon": "图标（https://… 或 /brand/sources/…）",
+      "own": "自有应用",
+      "ownHint": "通过 NiceMatrix 分享的应用。新应用第一次分享后会出现在这里；打开后它的帖子才显示“来自 …”。",
+      "save": "保存",
+      "showBadge": "在它的帖子上显示“来自 {app}”",
+      "shown": "显示",
+      "thirdParty": "第三方应用",
+      "thirdPartyHint": "通过开放 API 发帖的应用。名称、图标和网站来自 NiceMatrix 应用目录；打开后它的帖子才显示“来自 …”。",
+      "turnOff": "隐藏",
+      "turnOn": "显示",
+      "website": "网站（https://…）"
     },
     "backToSite": "返回网站",
     "ban": {
@@ -30,7 +47,9 @@
     "col": {
       "action": "操作",
       "actor": "操作人",
+      "app": "应用",
       "author": "作者",
+      "badge": "“来自”标识",
       "comment": "评论",
       "comments": "评论",
       "ends": "到期",
@@ -40,6 +59,7 @@
       "likes": "点赞",
       "likes7": "7 天点赞",
       "post": "帖子",
+      "posts": "帖子",
       "published": "发布时间",
       "reason": "原因",
       "reporter": "举报人",
@@ -47,7 +67,8 @@
       "source": "来源",
       "status": "状态",
       "time": "时间",
-      "type": "类型"
+      "type": "类型",
+      "website": "网站"
     },
     "commentStatus": {
       "deleted": "已删除",
@@ -86,7 +107,8 @@
     },
     "group": {
       "content": "内容",
-      "moderation": "审核"
+      "moderation": "审核",
+      "settings": "设置"
     },
     "health": {
       "db": "数据库",
@@ -110,6 +132,7 @@
       "vsPrev": "对比前 7 天"
     },
     "nav": {
+      "apps": "应用",
       "audit": "审计日志",
       "bans": "封禁",
       "comments": "评论",
@@ -211,11 +234,6 @@
     "title": "我的收藏"
   },
   "common": {
-    "brand": {
-      "nicelist": "待办任务清单",
-      "nicenote": "乐趣记事本",
-      "nicerecorder": "易录音"
-    },
     "tagline": "随时随地分享你的好主意！"
   },
   "compose": {

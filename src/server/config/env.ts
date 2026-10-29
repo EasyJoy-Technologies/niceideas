@@ -80,11 +80,6 @@ const schema = z.object({
   FFPROBE_PATH: z.string().default("ffprobe"),
   MAGICK_PATH: z.string().default("magick"),
 
-  /** "From <app>" badge targets of our own apps (plan §16.4, share/source-apps.ts); `utm_*` is appended. */
-  SOURCE_NICENOTE_URL: z.url().default("https://enp.ej-mobile.cn"),
-  SOURCE_NICERECORDER_URL: z.url().default("https://er.ej-mobile.cn"),
-  SOURCE_NICELIST_URL: z.url().default("https://ec.ej-mobile.cn"),
-
   /** Key for one-way hashes of visitor cookies / network addresses (interactions). Required outside development / test. */
   INTERACTION_SECRET: z.string().min(32).optional(),
   /** Anonymous commenting: proof-of-work difficulty (leading zero bits) and limits. */

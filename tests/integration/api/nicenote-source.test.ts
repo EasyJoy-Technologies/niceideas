@@ -94,6 +94,11 @@ describe("NiceNote source API: share lifecycle", () => {
       expect(res.status).toBe(201);
       expect(await appOf(res.body.post.id)).toEqual({ source_app_key: null, source_app_names: null });
     }
+    // A new product group is registered (badge off); later names refresh the registry, settings are kept.
+    await create(share("app-user", { sourceApp: { key: "nicenew", names: { en: "NiceNew" } } }));
+    await create(share("app-user", { sourceApp: { key: "nicenew", names: { en: "NiceNew 2", "zh-Hans": "新" } } }));
+    const reg = await ctx.db.selectFrom("source_app").selectAll().where("key", "=", "nicenew").executeTakeFirstOrThrow();
+    expect([reg.names, reg.show_badge, reg.website_url]).toEqual([{ en: "NiceNew 2", "zh-Hans": "新" }, false, null]);
   });
 
   it("first push publishes; rich text renders structurally and safely; same content is a no-op; older revisions are refused", async () => {

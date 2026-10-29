@@ -1,6 +1,7 @@
 {
   "admin": {
     "action": {
+      "app_settings": "Binago ang mga setting ng app",
       "ban": "Na-ban",
       "comments_mode": "Binago ang setting ng komento",
       "delete_comment": "Binura ang komento",
@@ -11,6 +12,22 @@
       "restore": "Naibalik ang post",
       "restore_comment": "Naibalik ang komento",
       "unban": "Naalis ang ban"
+    },
+    "apps": {
+      "edit": "I-edit",
+      "empty": "Wala pang third-party app.",
+      "hidden": "Hindi ipinapakita",
+      "icon": "Icon (https://… o /brand/sources/…)",
+      "own": "Aming mga app",
+      "ownHint": "Mga app na nagbabahagi sa pamamagitan ng NiceMatrix. Lumalabas dito ang bagong app pagkatapos ng una nitong pagbabahagi; ipinapakita lang ng mga post nito ang “Mula sa …” kapag in-on mo ito.",
+      "save": "I-save",
+      "showBadge": "Ipakita ang “Mula sa {app}” sa mga post nito",
+      "shown": "Ipinapakita",
+      "thirdParty": "Mga third-party app",
+      "thirdPartyHint": "Mga app na nagpo-post sa pamamagitan ng bukas na API. Galing sa direktoryo ng app ng NiceMatrix ang pangalan, logo at website; ipinapakita lang ng mga post nila ang “Mula sa …” kapag in-on mo ito.",
+      "turnOff": "Itago",
+      "turnOn": "Ipakita",
+      "website": "Website (https://…)"
     },
     "backToSite": "Bumalik sa site",
     "ban": {
@@ -30,7 +47,9 @@
     "col": {
       "action": "Aksyon",
       "actor": "Ginawa ni",
+      "app": "App",
       "author": "May-akda",
+      "badge": "Label na “Mula sa”",
       "comment": "Komento",
       "comments": "Komento",
       "ends": "Matatapos",
@@ -40,6 +59,7 @@
       "likes": "Like",
       "likes7": "Like (7 araw)",
       "post": "Post",
+      "posts": "Mga post",
       "published": "Naipost noong",
       "reason": "Dahilan",
       "reporter": "Nag-report",
@@ -47,7 +67,8 @@
       "source": "Pinagmulan",
       "status": "Status",
       "time": "Oras",
-      "type": "Uri"
+      "type": "Uri",
+      "website": "Website"
     },
     "commentStatus": {
       "deleted": "Nabura",
@@ -86,7 +107,8 @@
     },
     "group": {
       "content": "Nilalaman",
-      "moderation": "Pagmo-moderate"
+      "moderation": "Pagmo-moderate",
+      "settings": "Mga setting"
     },
     "health": {
       "db": "Database",
@@ -110,6 +132,7 @@
       "vsPrev": "kumpara sa nakaraang 7 araw"
     },
     "nav": {
+      "apps": "Mga app",
       "audit": "Talaan ng audit",
       "bans": "Mga ban",
       "comments": "Mga komento",
@@ -211,11 +234,6 @@
     "title": "Mga naka-save"
   },
   "common": {
-    "brand": {
-      "nicelist": "NiceList",
-      "nicenote": "NiceNote",
-      "nicerecorder": "NiceRecorder"
-    },
     "tagline": "Ibahagi ang iyong nice ideas kahit kailan, kahit saan!"
   },
   "compose": {

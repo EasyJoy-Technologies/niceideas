@@ -1,6 +1,7 @@
 {
   "admin": {
     "action": {
+      "app_settings": "Ha modificato le impostazioni di un’app",
       "ban": "Bannato",
       "comments_mode": "Impostazioni commenti modificate",
       "delete_comment": "Commento eliminato",
@@ -11,6 +12,22 @@
       "restore": "Post ripristinato",
       "restore_comment": "Commento ripristinato",
       "unban": "Ban rimosso"
+    },
+    "apps": {
+      "edit": "Modifica",
+      "empty": "Ancora nessuna app di terze parti.",
+      "hidden": "Non mostrata",
+      "icon": "Icona (https://… o /brand/sources/…)",
+      "own": "Le nostre app",
+      "ownHint": "App che condividono tramite NiceMatrix. Una nuova app compare dopo la sua prima condivisione; i suoi post mostrano “Da …” solo dopo che la attivi.",
+      "save": "Salva",
+      "showBadge": "Mostra “Da {app}” sui suoi post",
+      "shown": "Mostrata",
+      "thirdParty": "App di terze parti",
+      "thirdPartyHint": "App che pubblicano tramite l’API aperta. Nome, logo e sito web provengono dalla directory delle app di NiceMatrix; i loro post mostrano “Da …” solo dopo che la attivi.",
+      "turnOff": "Nascondi",
+      "turnOn": "Mostra",
+      "website": "Sito web (https://…)"
     },
     "backToSite": "Torna al sito",
     "ban": {
@@ -30,7 +47,9 @@
     "col": {
       "action": "Azione",
       "actor": "Da",
+      "app": "App",
       "author": "Autore",
+      "badge": "Etichetta “Da”",
       "comment": "Commento",
       "comments": "Commenti",
       "ends": "Scade",
@@ -40,6 +59,7 @@
       "likes": "Mi piace",
       "likes7": "Mi piace (7 giorni)",
       "post": "Post",
+      "posts": "Post",
       "published": "Pubblicato",
       "reason": "Motivo",
       "reporter": "Segnalato da",
@@ -47,7 +67,8 @@
       "source": "Origine",
       "status": "Stato",
       "time": "Ora",
-      "type": "Tipo"
+      "type": "Tipo",
+      "website": "Sito web"
     },
     "commentStatus": {
       "deleted": "Eliminato",
@@ -86,7 +107,8 @@
     },
     "group": {
       "content": "Contenuti",
-      "moderation": "Moderazione"
+      "moderation": "Moderazione",
+      "settings": "Impostazioni"
     },
     "health": {
       "db": "Database",
@@ -110,6 +132,7 @@
       "vsPrev": "rispetto ai 7 giorni precedenti"
     },
     "nav": {
+      "apps": "App",
       "audit": "Registro di controllo",
       "bans": "Ban",
       "comments": "Commenti",
@@ -211,11 +234,6 @@
     "title": "Salvati"
   },
   "common": {
-    "brand": {
-      "nicelist": "NiceList",
-      "nicenote": "NiceNote",
-      "nicerecorder": "NiceRecorder"
-    },
     "tagline": "Condividi le tue nice ideas sempre e ovunque!"
   },
   "compose": {

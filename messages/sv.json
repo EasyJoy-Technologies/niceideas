@@ -1,6 +1,7 @@
 {
   "admin": {
     "action": {
+      "app_settings": "Ändrade inställningar för en app",
       "ban": "Avstängd",
       "comments_mode": "Kommentarsinställningar ändrade",
       "delete_comment": "Kommentar borttagen",
@@ -11,6 +12,22 @@
       "restore": "Inlägg återställt",
       "restore_comment": "Kommentar återställd",
       "unban": "Avstängning hävd"
+    },
+    "apps": {
+      "edit": "Redigera",
+      "empty": "Inga tredjepartsappar ännu.",
+      "hidden": "Visas inte",
+      "icon": "Ikon (https://… eller /brand/sources/…)",
+      "own": "Våra appar",
+      "ownHint": "Appar som delar via NiceMatrix. En ny app visas här efter sin första delning; dess inlägg visar ”Från …” först när du slår på det.",
+      "save": "Spara",
+      "showBadge": "Visa ”Från {app}” på dess inlägg",
+      "shown": "Visas",
+      "thirdParty": "Tredjepartsappar",
+      "thirdPartyHint": "Appar som publicerar via det öppna API:t. Namn, logotyp och webbplats kommer från NiceMatrix appkatalog; deras inlägg visar ”Från …” först när du slår på det.",
+      "turnOff": "Dölj",
+      "turnOn": "Visa",
+      "website": "Webbplats (https://…)"
     },
     "backToSite": "Tillbaka till sajten",
     "ban": {
@@ -30,7 +47,9 @@
     "col": {
       "action": "Åtgärd",
       "actor": "Av",
+      "app": "App",
       "author": "Skribent",
+      "badge": "”Från”-etikett",
       "comment": "Kommentar",
       "comments": "Kommentarer",
       "ends": "Upphör",
@@ -40,6 +59,7 @@
       "likes": "Gillningar",
       "likes7": "Gillningar (7 dagar)",
       "post": "Inlägg",
+      "posts": "Inlägg",
       "published": "Publicerat",
       "reason": "Anledning",
       "reporter": "Rapporterad av",
@@ -47,7 +67,8 @@
       "source": "Källa",
       "status": "Status",
       "time": "Tid",
-      "type": "Typ"
+      "type": "Typ",
+      "website": "Webbplats"
     },
     "commentStatus": {
       "deleted": "Borttagen",
@@ -86,7 +107,8 @@
     },
     "group": {
       "content": "Innehåll",
-      "moderation": "Moderering"
+      "moderation": "Moderering",
+      "settings": "Inställningar"
     },
     "health": {
       "db": "Databas",
@@ -110,6 +132,7 @@
       "vsPrev": "jämfört med föregående 7 dagar"
     },
     "nav": {
+      "apps": "Appar",
       "audit": "Granskningslogg",
       "bans": "Avstängningar",
       "comments": "Kommentarer",
@@ -211,11 +234,6 @@
     "title": "Sparat"
   },
   "common": {
-    "brand": {
-      "nicelist": "NiceList",
-      "nicenote": "NiceNote",
-      "nicerecorder": "NiceRecorder"
-    },
     "tagline": "Dela dina nice ideas när och var du vill!"
   },
   "compose": {

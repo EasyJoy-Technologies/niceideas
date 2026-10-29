@@ -1,6 +1,7 @@
 {
   "admin": {
     "action": {
+      "app_settings": "Změnil(a) nastavení aplikace",
       "ban": "Zakázán",
       "comments_mode": "Změněna nastavení komentářů",
       "delete_comment": "Komentář smazán",
@@ -11,6 +12,22 @@
       "restore": "Příspěvek obnoven",
       "restore_comment": "Komentář obnoven",
       "unban": "Zákaz zrušen"
+    },
+    "apps": {
+      "edit": "Upravit",
+      "empty": "Zatím žádné aplikace třetích stran.",
+      "hidden": "Nezobrazeno",
+      "icon": "Ikona (https://… nebo /brand/sources/…)",
+      "own": "Naše aplikace",
+      "ownHint": "Aplikace sdílející přes NiceMatrix. Nová aplikace se tu objeví po prvním sdílení; její příspěvky ukazují „Z …“ až po zapnutí.",
+      "save": "Uložit",
+      "showBadge": "Zobrazovat „Z {app}“ u jejích příspěvků",
+      "shown": "Zobrazeno",
+      "thirdParty": "Aplikace třetích stran",
+      "thirdPartyHint": "Aplikace publikující přes otevřené API. Název, logo a web pocházejí z adresáře aplikací NiceMatrix; jejich příspěvky ukazují „Z …“ až po zapnutí.",
+      "turnOff": "Skrýt",
+      "turnOn": "Zobrazit",
+      "website": "Web (https://…)"
     },
     "backToSite": "Zpět na web",
     "ban": {
@@ -30,7 +47,9 @@
     "col": {
       "action": "Akce",
       "actor": "Kým",
+      "app": "Aplikace",
       "author": "Autor",
+      "badge": "Štítek „Z“",
       "comment": "Komentář",
       "comments": "Komentáře",
       "ends": "Konec",
@@ -40,6 +59,7 @@
       "likes": "Lajky",
       "likes7": "Lajky (7 dní)",
       "post": "Příspěvek",
+      "posts": "Příspěvky",
       "published": "Zveřejněno",
       "reason": "Důvod",
       "reporter": "Nahlásil",
@@ -47,7 +67,8 @@
       "source": "Zdroj",
       "status": "Stav",
       "time": "Čas",
-      "type": "Typ"
+      "type": "Typ",
+      "website": "Web"
     },
     "commentStatus": {
       "deleted": "Smazaný",
@@ -86,7 +107,8 @@
     },
     "group": {
       "content": "Obsah",
-      "moderation": "Moderování"
+      "moderation": "Moderování",
+      "settings": "Nastavení"
     },
     "health": {
       "db": "Databáze",
@@ -110,6 +132,7 @@
       "vsPrev": "oproti předchozím 7 dnům"
     },
     "nav": {
+      "apps": "Aplikace",
       "audit": "Protokol auditu",
       "bans": "Zákazy",
       "comments": "Komentáře",
@@ -211,11 +234,6 @@
     "title": "Uložené"
   },
   "common": {
-    "brand": {
-      "nicelist": "NiceList",
-      "nicenote": "NiceNote",
-      "nicerecorder": "NiceRecorder"
-    },
     "tagline": "Sdílejte své nice ideas kdykoli a kdekoli!"
   },
   "compose": {

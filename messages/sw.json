@@ -1,6 +1,7 @@
 {
   "admin": {
     "action": {
+      "app_settings": "Alibadilisha mipangilio ya programu",
       "ban": "Imepigwa marufuku",
       "comments_mode": "Mipangilio ya maoni imebadilishwa",
       "delete_comment": "Maoni yamefutwa",
@@ -11,6 +12,22 @@
       "restore": "Chapisho limerejeshwa",
       "restore_comment": "Maoni yamerejeshwa",
       "unban": "Marufuku imeondolewa"
+    },
+    "apps": {
+      "edit": "Hariri",
+      "empty": "Bado hakuna programu za wahusika wengine.",
+      "hidden": "Haionyeshwi",
+      "icon": "Aikoni (https://… au /brand/sources/…)",
+      "own": "Programu zetu",
+      "ownHint": "Programu zinazoshiriki kupitia NiceMatrix. Programu mpya huonekana hapa baada ya kushiriki kwa mara ya kwanza; machapisho yake huonyesha “Kutoka …” tu baada ya kuiwasha.",
+      "save": "Hifadhi",
+      "showBadge": "Onyesha “Kutoka {app}” kwenye machapisho yake",
+      "shown": "Inaonyeshwa",
+      "thirdParty": "Programu za wahusika wengine",
+      "thirdPartyHint": "Programu zinazochapisha kupitia API iliyo wazi. Jina, nembo na tovuti hutoka kwenye saraka ya programu ya NiceMatrix; machapisho yao huonyesha “Kutoka …” tu baada ya kuiwasha.",
+      "turnOff": "Ficha",
+      "turnOn": "Onyesha",
+      "website": "Tovuti (https://…)"
     },
     "backToSite": "Rudi kwenye tovuti",
     "ban": {
@@ -30,7 +47,9 @@
     "col": {
       "action": "Kitendo",
       "actor": "Na",
+      "app": "Programu",
       "author": "Mwandishi",
+      "badge": "Lebo ya “Kutoka”",
       "comment": "Maoni",
       "comments": "Maoni",
       "ends": "Inaisha",
@@ -40,6 +59,7 @@
       "likes": "Mapendekezo",
       "likes7": "Mapendekezo (siku 7)",
       "post": "Chapisho",
+      "posts": "Machapisho",
       "published": "Tarehe ya kuchapishwa",
       "reason": "Sababu",
       "reporter": "Aliyeripoti",
@@ -47,7 +67,8 @@
       "source": "Chanzo",
       "status": "Hali",
       "time": "Muda",
-      "type": "Aina"
+      "type": "Aina",
+      "website": "Tovuti"
     },
     "commentStatus": {
       "deleted": "Limefutwa",
@@ -86,7 +107,8 @@
     },
     "group": {
       "content": "Maudhui",
-      "moderation": "Usimamizi"
+      "moderation": "Usimamizi",
+      "settings": "Mipangilio"
     },
     "health": {
       "db": "Hifadhidata",
@@ -110,6 +132,7 @@
       "vsPrev": "ikilinganishwa na siku 7 zilizopita"
     },
     "nav": {
+      "apps": "Programu",
       "audit": "Rekodi ya ukaguzi",
       "bans": "Marufuku",
       "comments": "Maoni",
@@ -211,11 +234,6 @@
     "title": "Vilivyohifadhiwa"
   },
   "common": {
-    "brand": {
-      "nicelist": "NiceList",
-      "nicenote": "NiceNote",
-      "nicerecorder": "NiceRecorder"
-    },
     "tagline": "Shiriki nice ideas zako wakati wowote, mahali popote!"
   },
   "compose": {

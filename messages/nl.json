@@ -1,6 +1,7 @@
 {
   "admin": {
     "action": {
+      "app_settings": "App-instellingen gewijzigd",
       "ban": "Verbannen",
       "comments_mode": "Reactie-instellingen gewijzigd",
       "delete_comment": "Reactie verwijderd",
@@ -11,6 +12,22 @@
       "restore": "Bericht hersteld",
       "restore_comment": "Reactie hersteld",
       "unban": "Verbanning opgeheven"
+    },
+    "apps": {
+      "edit": "Bewerken",
+      "empty": "Nog geen apps van derden.",
+      "hidden": "Niet getoond",
+      "icon": "Pictogram (https://… of /brand/sources/…)",
+      "own": "Onze apps",
+      "ownHint": "Apps die via NiceMatrix delen. Een nieuwe app verschijnt na de eerste keer delen; de berichten tonen ‘Via …’ pas nadat je het aanzet.",
+      "save": "Opslaan",
+      "showBadge": "‘Via {app}’ tonen bij de berichten",
+      "shown": "Getoond",
+      "thirdParty": "Apps van derden",
+      "thirdPartyHint": "Apps die via de open API posten. Naam, logo en website komen uit de app-directory van NiceMatrix; de berichten tonen ‘Via …’ pas nadat je het aanzet.",
+      "turnOff": "Verbergen",
+      "turnOn": "Tonen",
+      "website": "Website (https://…)"
     },
     "backToSite": "Terug naar site",
     "ban": {
@@ -30,7 +47,9 @@
     "col": {
       "action": "Actie",
       "actor": "Door",
+      "app": "App",
       "author": "Auteur",
+      "badge": "‘Via’-label",
       "comment": "Reactie",
       "comments": "Reacties",
       "ends": "Eindigt",
@@ -40,6 +59,7 @@
       "likes": "Likes",
       "likes7": "Likes (7 dagen)",
       "post": "Bericht",
+      "posts": "Berichten",
       "published": "Gepubliceerd",
       "reason": "Reden",
       "reporter": "Gemeld door",
@@ -47,7 +67,8 @@
       "source": "Bron",
       "status": "Status",
       "time": "Tijd",
-      "type": "Type"
+      "type": "Type",
+      "website": "Website"
     },
     "commentStatus": {
       "deleted": "Verwijderd",
@@ -86,7 +107,8 @@
     },
     "group": {
       "content": "Inhoud",
-      "moderation": "Moderatie"
+      "moderation": "Moderatie",
+      "settings": "Instellingen"
     },
     "health": {
       "db": "Database",
@@ -110,6 +132,7 @@
       "vsPrev": "t.o.v. de vorige 7 dagen"
     },
     "nav": {
+      "apps": "Apps",
       "audit": "Auditlog",
       "bans": "Verbanningen",
       "comments": "Reacties",
@@ -211,11 +234,6 @@
     "title": "Bewaard"
   },
   "common": {
-    "brand": {
-      "nicelist": "NiceList",
-      "nicenote": "NiceNote",
-      "nicerecorder": "NiceRecorder"
-    },
     "tagline": "Deel je nice ideas, altijd en overal!"
   },
   "compose": {

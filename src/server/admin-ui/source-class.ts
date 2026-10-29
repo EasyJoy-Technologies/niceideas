@@ -1,36 +1,48 @@
 import type { AdminPostSource } from "@/server/db/repos/admin-lists";
-import { isSourceAppKey, SOURCE_APP_KEYS, type SourceAppKey } from "@/server/share/source-apps";
-import { type BadgeSource, sourceBadge } from "@/server/share/sources";
+import { sourceAppName } from "@/server/share/source-apps";
+import { knownApp, knownSourceApp, sourceAppList } from "@/server/share/source-registry";
+import type { BadgeSource } from "@/server/share/sources";
 import type { AdminContext } from "./shell";
 
 /**
- * Where admin posts come from: one of our apps (by product group key), "other" (an app we do not know yet, or an
- * app share that named no app), the web, or third-party apps. Order = chart stacks and filter tabs.
+ * Where admin posts come from: one of our apps (`app:<product group key>`, admin Apps page), "other" (an app
+ * share that named no app), the web, or third-party apps. Order = chart stacks and filter tabs.
  */
-export type AdminSource = SourceAppKey | "other" | "web" | "api";
-export const ADMIN_SOURCES: readonly AdminSource[] = [...SOURCE_APP_KEYS, "other", "web", "api"];
+export type AdminSource = `app:${string}` | "other" | "web" | "api";
 
-/** Name of a source class in the admin language. */
+/** Current classes: our registered apps in registration order, then other apps, web, third-party apps. */
+export const adminSources = (): AdminSource[] => [...sourceAppList().map((a) => `app:${a.key}` as const), "other", "web", "api"];
+
+const appKey = (s: string): string | null => (s.startsWith("app:") ? s.slice(4) : null);
+
+/** Name of a source class in the admin language (our apps: their name as the backend last sent it). */
 export function adminSourceLabel(ctx: AdminContext, s: AdminSource): string {
-  return ctx.intl.t(isSourceAppKey(s) ? `common.brand.${s}` : `admin.source.${s}`);
+  const key = appKey(s);
+  const app = key ? knownSourceApp(key) : undefined;
+  if (key) return app ? sourceAppName(app.names, ctx.intl.locale) : key;
+  return ctx.intl.t(`admin.source.${s}`);
 }
 
-/** Class of a raw `postsBySource` key: `web`, `api` or `app:<product group key, empty when none>`. */
+/** Class of a raw `postsBySource` key: `web`, `api` or `app:<key>` (empty key / unregistered app → other). */
 export function adminSourceOfClass(raw: string): AdminSource {
   if (raw === "web" || raw === "api") return raw;
-  const key = raw.startsWith("app:") ? raw.slice(4) : null;
-  return isSourceAppKey(key) ? key : "other";
+  const key = appKey(raw);
+  return key && knownSourceApp(key) ? `app:${key}` : "other";
 }
+
+/** `?src=` value when it is a current class. */
+export const parseAdminSource = (v: string | null): AdminSource | null => (adminSources() as (string | null)[]).includes(v) ? (v as AdminSource) : null;
 
 /** Posts list filter for a source class. */
 export function adminPostSourceFilter(s: AdminSource): AdminPostSource {
   if (s === "web" || s === "api") return { kind: s };
-  return s === "other" ? { kind: "otherApp", known: SOURCE_APP_KEYS } : { kind: "app", key: s };
+  const key = appKey(s);
+  return key ? { kind: "app", key } : { kind: "otherApp", known: sourceAppList().map((a) => a.key) };
 }
 
-/** Source column of one post: the name the post page shows, else its class name. */
+/** Source column of one post: its app's name (shown or not on the site), else its class name. */
 export function postSourceLabel(ctx: AdminContext, post: BadgeSource): string {
-  const badge = sourceBadge(post, ctx.intl.locale);
-  if (badge) return badge.name;
-  return adminSourceLabel(ctx, post.source === "web" ? "web" : post.source.startsWith("api:") ? "api" : "other");
+  if (post.source_app_names) return sourceAppName(post.source_app_names, ctx.intl.locale);
+  if (post.source.startsWith("api:")) return knownApp(post.source.slice(4))?.name ?? ctx.intl.t("admin.source.api");
+  return ctx.intl.t(post.source === "web" ? "admin.source.web" : "admin.source.other");
 }

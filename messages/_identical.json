@@ -1,4 +1,12 @@
 {
+  "admin.apps.edit": [
+    "id"
+  ],
+  "admin.apps.website": [
+    "de",
+    "nl",
+    "fil"
+  ],
   "admin.ban.forever": [
     "fr",
     "nl",
@@ -15,6 +23,13 @@
   ],
   "admin.col.action": [
     "fr"
+  ],
+  "admin.col.app": [
+    "de",
+    "it",
+    "nl",
+    "sv",
+    "fil"
   ],
   "admin.col.item": [
     "pt-BR",
@@ -34,6 +49,9 @@
     "fil",
     "uz"
   ],
+  "admin.col.posts": [
+    "pt-BR"
+  ],
   "admin.col.source": [
     "fr"
   ],
@@ -50,6 +68,11 @@
   "admin.col.type": [
     "fr",
     "nl"
+  ],
+  "admin.col.website": [
+    "de",
+    "nl",
+    "fil"
   ],
   "admin.commentStatus.visible": [
     "es",
@@ -121,6 +144,10 @@
     "de",
     "nl"
   ],
+  "admin.nav.apps": [
+    "de",
+    "nl"
+  ],
   "admin.preset.spam": [
     "es",
     "fr",
@@ -183,123 +210,6 @@
   ],
   "admin.title": [
     "de"
-  ],
-  "common.brand.nicelist": [
-    "am",
-    "ar",
-    "bn",
-    "cs",
-    "de",
-    "el",
-    "es",
-    "fa",
-    "fil",
-    "fr",
-    "ha",
-    "he",
-    "hi",
-    "hu",
-    "id",
-    "it",
-    "ja",
-    "kk",
-    "km",
-    "ko",
-    "ms",
-    "my",
-    "ne",
-    "nl",
-    "pl",
-    "pt-BR",
-    "pt-PT",
-    "ro",
-    "ru",
-    "sv",
-    "sw",
-    "th",
-    "tr",
-    "uk",
-    "ur",
-    "uz",
-    "vi"
-  ],
-  "common.brand.nicenote": [
-    "am",
-    "ar",
-    "bn",
-    "cs",
-    "de",
-    "el",
-    "es",
-    "fa",
-    "fil",
-    "fr",
-    "ha",
-    "he",
-    "hi",
-    "hu",
-    "id",
-    "it",
-    "ja",
-    "kk",
-    "km",
-    "ko",
-    "ms",
-    "my",
-    "ne",
-    "nl",
-    "pl",
-    "pt-BR",
-    "pt-PT",
-    "ro",
-    "ru",
-    "sv",
-    "sw",
-    "th",
-    "tr",
-    "uk",
-    "ur",
-    "uz",
-    "vi"
-  ],
-  "common.brand.nicerecorder": [
-    "am",
-    "ar",
-    "bn",
-    "cs",
-    "de",
-    "el",
-    "es",
-    "fa",
-    "fil",
-    "fr",
-    "ha",
-    "he",
-    "hi",
-    "hu",
-    "id",
-    "it",
-    "ja",
-    "kk",
-    "km",
-    "ko",
-    "ms",
-    "my",
-    "ne",
-    "nl",
-    "pl",
-    "pt-BR",
-    "pt-PT",
-    "ro",
-    "ru",
-    "sv",
-    "sw",
-    "th",
-    "tr",
-    "uk",
-    "ur",
-    "uz",
-    "vi"
   ],
   "compose.fmt.code": [
     "nl"

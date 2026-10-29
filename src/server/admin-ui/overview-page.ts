@@ -6,7 +6,7 @@ import { APP_VERSION } from "@/server/version";
 import { stackedBars, sparkline } from "./charts";
 import { table, when } from "./parts";
 import { renderAdmin, type AdminContext } from "./shell";
-import { ADMIN_SOURCES, adminSourceLabel, adminSourceOfClass, postSourceLabel, type AdminSource } from "./source-class";
+import { adminSourceLabel, adminSourceOfClass, adminSources, postSourceLabel, type AdminSource } from "./source-class";
 
 export type OverviewView = {
   series: OverviewSeries;
@@ -43,12 +43,13 @@ const colorOf = (s: AdminSource, i: number) => (s === "web" ? "s3" : s === "api"
 /** Daily new posts stacked by source: each of our apps, other apps (only when there are any), web, third-party apps. */
 function sourceStacks(v: OverviewView): { s: AdminSource; cls: string; values: number[] }[] {
   const { days, byClass } = v.bySource;
-  const sums = new Map<AdminSource, number[]>(ADMIN_SOURCES.map((s) => [s, new Array<number>(days).fill(0)]));
+  const order = adminSources();
+  const sums = new Map<AdminSource, number[]>(order.map((s) => [s, new Array<number>(days).fill(0)]));
   for (const [raw, values] of byClass) {
     const into = sums.get(adminSourceOfClass(raw))!;
     values.forEach((n, i) => (into[i] += n));
   }
-  return ADMIN_SOURCES.filter((s) => s !== "other" || sum(sums.get(s)!) > 0).map((s, i) => ({ s, cls: colorOf(s, i), values: sums.get(s)! }));
+  return order.filter((s) => s !== "other" || sum(sums.get(s)!) > 0).map((s, i) => ({ s, cls: colorOf(s, i), values: sums.get(s)! }));
 }
 
 function sourceChart(ctx: AdminContext, v: OverviewView): string {

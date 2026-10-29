@@ -1,6 +1,7 @@
 {
   "admin": {
     "action": {
+      "app_settings": "Menukar tetapan aplikasi",
       "ban": "Disekat",
       "comments_mode": "Tetapan komen diubah",
       "delete_comment": "Padam komen",
@@ -11,6 +12,22 @@
       "restore": "Pulihkan hantaran",
       "restore_comment": "Pulihkan komen",
       "unban": "Sekatan dibuka"
+    },
+    "apps": {
+      "edit": "Sunting",
+      "empty": "Belum ada aplikasi pihak ketiga.",
+      "hidden": "Tidak dipaparkan",
+      "icon": "Ikon (https://… atau /brand/sources/…)",
+      "own": "Aplikasi kami",
+      "ownHint": "Aplikasi yang berkongsi melalui NiceMatrix. Aplikasi baharu muncul selepas perkongsian pertamanya; siarannya memaparkan “Daripada …” hanya selepas anda menghidupkannya.",
+      "save": "Simpan",
+      "showBadge": "Paparkan “Daripada {app}” pada siarannya",
+      "shown": "Dipaparkan",
+      "thirdParty": "Aplikasi pihak ketiga",
+      "thirdPartyHint": "Aplikasi yang menyiarkan melalui API terbuka. Nama, logo dan laman web datang daripada direktori aplikasi NiceMatrix; siarannya memaparkan “Daripada …” hanya selepas anda menghidupkannya.",
+      "turnOff": "Sembunyikan",
+      "turnOn": "Paparkan",
+      "website": "Laman web (https://…)"
     },
     "backToSite": "Kembali ke laman",
     "ban": {
@@ -30,7 +47,9 @@
     "col": {
       "action": "Tindakan",
       "actor": "Oleh",
+      "app": "Aplikasi",
       "author": "Penulis",
+      "badge": "Label “Daripada”",
       "comment": "Komen",
       "comments": "Komen",
       "ends": "Tamat",
@@ -40,6 +59,7 @@
       "likes": "Suka",
       "likes7": "Suka (7 hari)",
       "post": "Hantaran",
+      "posts": "Siaran",
       "published": "Masa diterbitkan",
       "reason": "Sebab",
       "reporter": "Dilaporkan oleh",
@@ -47,7 +67,8 @@
       "source": "Sumber",
       "status": "Status",
       "time": "Masa",
-      "type": "Jenis"
+      "type": "Jenis",
+      "website": "Laman web"
     },
     "commentStatus": {
       "deleted": "Dipadam",
@@ -86,7 +107,8 @@
     },
     "group": {
       "content": "Kandungan",
-      "moderation": "Moderasi"
+      "moderation": "Moderasi",
+      "settings": "Tetapan"
     },
     "health": {
       "db": "Pangkalan data",
@@ -110,6 +132,7 @@
       "vsPrev": "berbanding 7 hari sebelumnya"
     },
     "nav": {
+      "apps": "Aplikasi",
       "audit": "Log audit",
       "bans": "Sekatan",
       "comments": "Komen",
@@ -211,11 +234,6 @@
     "title": "Disimpan"
   },
   "common": {
-    "brand": {
-      "nicelist": "NiceList",
-      "nicenote": "NiceNote",
-      "nicerecorder": "NiceRecorder"
-    },
     "tagline": "Kongsi nice ideas anda bila-bila masa, di mana-mana sahaja!"
   },
   "compose": {

@@ -1,6 +1,7 @@
 {
   "admin": {
     "action": {
+      "app_settings": "A modificat setările unei aplicații",
       "ban": "Interzis",
       "comments_mode": "Setări comentarii modificate",
       "delete_comment": "Comentariu șters",
@@ -11,6 +12,22 @@
       "restore": "Postare restaurată",
       "restore_comment": "Comentariu restaurat",
       "unban": "Interdicție ridicată"
+    },
+    "apps": {
+      "edit": "Editează",
+      "empty": "Încă nu există aplicații terțe.",
+      "hidden": "Neafișată",
+      "icon": "Pictogramă (https://… sau /brand/sources/…)",
+      "own": "Aplicațiile noastre",
+      "ownHint": "Aplicații care distribuie prin NiceMatrix. O aplicație nouă apare după prima distribuire; postările ei arată „De la …” doar după ce o activezi.",
+      "save": "Salvează",
+      "showBadge": "Afișează „De la {app}” pe postările ei",
+      "shown": "Afișată",
+      "thirdParty": "Aplicații terțe",
+      "thirdPartyHint": "Aplicații care publică prin API-ul deschis. Numele, logoul și site-ul vin din directorul de aplicații NiceMatrix; postările lor arată „De la …” doar după ce o activezi.",
+      "turnOff": "Ascunde",
+      "turnOn": "Afișează",
+      "website": "Site (https://…)"
     },
     "backToSite": "Înapoi la site",
     "ban": {
@@ -30,7 +47,9 @@
     "col": {
       "action": "Acțiune",
       "actor": "De către",
+      "app": "Aplicație",
       "author": "Autor",
+      "badge": "Eticheta „De la”",
       "comment": "Comentariu",
       "comments": "Comentarii",
       "ends": "Expiră",
@@ -40,6 +59,7 @@
       "likes": "Aprecieri",
       "likes7": "Aprecieri (7 zile)",
       "post": "Postare",
+      "posts": "Postări",
       "published": "Publicată",
       "reason": "Motiv",
       "reporter": "Raportat de",
@@ -47,7 +67,8 @@
       "source": "Sursă",
       "status": "Stare",
       "time": "Oră",
-      "type": "Tip"
+      "type": "Tip",
+      "website": "Site"
     },
     "commentStatus": {
       "deleted": "Șters",
@@ -86,7 +107,8 @@
     },
     "group": {
       "content": "Conținut",
-      "moderation": "Moderare"
+      "moderation": "Moderare",
+      "settings": "Setări"
     },
     "health": {
       "db": "Bază de date",
@@ -110,6 +132,7 @@
       "vsPrev": "față de ultimele 7 zile"
     },
     "nav": {
+      "apps": "Aplicații",
       "audit": "Jurnal de audit",
       "bans": "Interdicții",
       "comments": "Comentarii",
@@ -211,11 +234,6 @@
     "title": "Salvate"
   },
   "common": {
-    "brand": {
-      "nicelist": "NiceList",
-      "nicenote": "NiceNote",
-      "nicerecorder": "NiceRecorder"
-    },
     "tagline": "Împărtășește-ți nice ideas oricând, oriunde!"
   },
   "compose": {

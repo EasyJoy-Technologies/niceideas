@@ -10,7 +10,7 @@ import { insertMediaOrGet } from "@/server/db/repos/media";
 import { mediaReferences } from "@/server/db/repos/media-visibility";
 import { claimIdempotency, completeIdempotency, releaseIdempotency } from "@/server/db/repos/idempotency";
 import { startTestDb } from "../helpers/pg";
-import * as sourceApp from "@/server/db/migrations/0025_post_source_app";
+import * as sourceApp from "@/server/db/migrations/0025_source_apps";
 
 let db: Db;
 let stop: () => Promise<void>;
@@ -43,6 +43,12 @@ describe("migrations", () => {
     expect(of(ids.web)).toMatchObject({ source_app_key: null, source_app_names: null });
     expect(of(ids["api:client-1"])).toMatchObject({ source_app_key: null, source_app_names: null });
     await expect(sql`UPDATE post SET source_app_key = 'x' WHERE id = ${ids.web}`.execute(db)).rejects.toThrow(/post_source_app_pair/);
+    const apps = await db.selectFrom("source_app").select(["key", "show_badge", "website_url", "icon_url"]).orderBy("created_at").execute();
+    expect(apps).toEqual([
+      { key: "nicenote", show_badge: true, website_url: "https://enp.ej-mobile.cn", icon_url: "/brand/sources/nicenote.png" },
+      { key: "nicerecorder", show_badge: true, website_url: "https://er.ej-mobile.cn", icon_url: "/brand/sources/nicerecorder.png" },
+      { key: "nicelist", show_badge: true, website_url: "https://ec.ej-mobile.cn", icon_url: "/brand/sources/nicelist.png" },
+    ]);
     await sql`DELETE FROM post WHERE id IN (${sql.join(Object.values(ids))})`.execute(db);
   });
 });

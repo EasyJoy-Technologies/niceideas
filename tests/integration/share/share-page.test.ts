@@ -13,6 +13,8 @@ import { params } from "../../helpers/api";
 import { deleteAs, publishAs, shareFromNiceNote, uploadAs } from "../../helpers/publish";
 import { jpegWithExif } from "../../helpers/media-fixtures";
 import { NICERECORDER_APP } from "../../helpers/source-app";
+import { updateSourceApp } from "@/server/db/repos/source-apps";
+import { resetSourceRegistry } from "@/server/share/source-registry";
 
 let ctx: Awaited<ReturnType<typeof startAppContext>>;
 beforeAll(async () => {
@@ -210,11 +212,24 @@ describe("source app badge (contract §3.2 sourceApp)", () => {
     expect(await text(rec.slug, { "accept-language": "de" })).toContain("NiceRecorder");
   });
 
-  it("an app we do not know yet: its name, the generic icon, no link", async () => {
+  it("a new app: registered on its first share, no badge until turned on; then its name, the generic icon, no link", async () => {
     const other = await shareFromNiceNote(ctx, "author-2", doc, { sourceApp: { key: "nicefuture", names: { en: "NiceFuture" } } });
+    resetSourceRegistry();
+    expect(await text(other.slug, { "accept-language": "zh-CN" })).not.toContain("ni-source");
+    expect(await updateSourceApp(ctx.db, "nicefuture", { showBadge: true, websiteUrl: null, iconUrl: null })).toBe(true);
+    resetSourceRegistry();
     const html = await text(other.slug, { "accept-language": "zh-CN" });
     expect(html).toContain("来自 NiceFuture");
     expect(html).toMatch(/<span class="ni-source"><img src="\/brand\/sources\/third-party.svg"/);
+  });
+
+  it("an app turned off: no badge", async () => {
+    const rec = await shareFromNiceNote(ctx, "author-2", doc, { sourceApp: NICERECORDER_APP });
+    await updateSourceApp(ctx.db, "nicerecorder", { showBadge: false, websiteUrl: "https://er.ej-mobile.cn", iconUrl: "/brand/sources/nicerecorder.png" });
+    resetSourceRegistry();
+    expect(await text(rec.slug, { "accept-language": "en" })).not.toContain("ni-source");
+    await updateSourceApp(ctx.db, "nicerecorder", { showBadge: true, websiteUrl: "https://er.ej-mobile.cn", iconUrl: "/brand/sources/nicerecorder.png" });
+    resetSourceRegistry();
   });
 
   it("no source app recorded: no badge", async () => {

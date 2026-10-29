@@ -1,6 +1,7 @@
 {
   "admin": {
     "action": {
+      "app_settings": "Zmieniono ustawienia aplikacji",
       "ban": "Zablokowano",
       "comments_mode": "Zmieniono ustawienia komentarzy",
       "delete_comment": "Usunięto komentarz",
@@ -11,6 +12,22 @@
       "restore": "Przywrócono post",
       "restore_comment": "Przywrócono komentarz",
       "unban": "Zdjęto blokadę"
+    },
+    "apps": {
+      "edit": "Edytuj",
+      "empty": "Nie ma jeszcze aplikacji zewnętrznych.",
+      "hidden": "Niewyświetlana",
+      "icon": "Ikona (https://… lub /brand/sources/…)",
+      "own": "Nasze aplikacje",
+      "ownHint": "Aplikacje udostępniające przez NiceMatrix. Nowa aplikacja pojawia się po pierwszym udostępnieniu; jej posty pokazują „Z …” dopiero po włączeniu.",
+      "save": "Zapisz",
+      "showBadge": "Pokazuj „Z {app}” przy jej postach",
+      "shown": "Wyświetlana",
+      "thirdParty": "Aplikacje zewnętrzne",
+      "thirdPartyHint": "Aplikacje publikujące przez otwarte API. Nazwa, logo i strona pochodzą z katalogu aplikacji NiceMatrix; ich posty pokazują „Z …” dopiero po włączeniu.",
+      "turnOff": "Ukryj",
+      "turnOn": "Pokaż",
+      "website": "Strona (https://…)"
     },
     "backToSite": "Powrót do serwisu",
     "ban": {
@@ -30,7 +47,9 @@
     "col": {
       "action": "Czynność",
       "actor": "Wykonał",
+      "app": "Aplikacja",
       "author": "Autor",
+      "badge": "Etykieta „Z”",
       "comment": "Komentarz",
       "comments": "Komentarze",
       "ends": "Koniec",
@@ -40,6 +59,7 @@
       "likes": "Polubienia",
       "likes7": "Polubienia (7 dni)",
       "post": "Post",
+      "posts": "Posty",
       "published": "Opublikowano",
       "reason": "Powód",
       "reporter": "Zgłosił",
@@ -47,7 +67,8 @@
       "source": "Źródło",
       "status": "Status",
       "time": "Czas",
-      "type": "Typ"
+      "type": "Typ",
+      "website": "Strona"
     },
     "commentStatus": {
       "deleted": "Usunięty",
@@ -86,7 +107,8 @@
     },
     "group": {
       "content": "Treść",
-      "moderation": "Moderacja"
+      "moderation": "Moderacja",
+      "settings": "Ustawienia"
     },
     "health": {
       "db": "Baza danych",
@@ -110,6 +132,7 @@
       "vsPrev": "vs poprzednie 7 dni"
     },
     "nav": {
+      "apps": "Aplikacje",
       "audit": "Dziennik audytu",
       "bans": "Blokady",
       "comments": "Komentarze",
@@ -211,11 +234,6 @@
     "title": "Zapisane"
   },
   "common": {
-    "brand": {
-      "nicelist": "NiceList",
-      "nicenote": "NiceNote",
-      "nicerecorder": "NiceRecorder"
-    },
     "tagline": "Dziel się swoimi nice ideas zawsze i wszędzie!"
   },
   "compose": {

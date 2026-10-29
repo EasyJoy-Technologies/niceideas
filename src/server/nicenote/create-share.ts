@@ -2,6 +2,7 @@ import type { Db } from "@/server/db/client";
 import type { Post } from "@/server/db/schema";
 import { findPostByShareId, insertPost } from "@/server/db/repos/posts";
 import { isUniqueViolation } from "@/server/db/repos/profiles";
+import { registerSourceApp } from "@/server/db/repos/source-apps";
 import { ApiError } from "@/server/http/errors";
 import { generateSlug } from "@/server/posts/slug";
 import { assertAuthorActive } from "@/server/accounts/author-gate";
@@ -22,7 +23,8 @@ async function existing(db: Db, input: CreateShareInput): Promise<{ post: Post; 
  * POST /posts (contract niceideas-share.md §3.2): idempotent by share id, database only (no
  * outside calls), so it answers in milliseconds. The new post is `preparing` until the first
  * content push. The profile is created on first contact and follows the sent NiceMatrix data. The source app
- * is recorded only here: a repeated request for the same share id never changes it.
+ * is recorded only here: a repeated request for the same share id never changes it. A new app is registered
+ * for the admin Apps page ("From <app>" stays off until turned on there).
  */
 export async function createShare(db: Db, input: CreateShareInput): Promise<{ post: Post; created: boolean }> {
   const found = await existing(db, input);
@@ -33,6 +35,7 @@ export async function createShare(db: Db, input: CreateShareInput): Promise<{ po
       // Re-checked under the profile lock: a deletion request committed meanwhile wins.
       const post = await db.transaction().execute(async (trx) => {
         await assertAuthorActive(trx, input.userId);
+        if (input.sourceApp) await registerSourceApp(trx, input.sourceApp);
         return insertPost(trx, {
           slug: generateSlug(),
           author_id: input.userId,

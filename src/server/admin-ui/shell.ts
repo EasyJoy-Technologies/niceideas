@@ -12,16 +12,17 @@ import { themeHead } from "@/server/share/theme";
 import { themeMenu } from "@/server/share/theme-menu";
 import { reasonList } from "./parts";
 
-export type AdminSection = "overview" | "posts" | "comments" | "reports" | "bans" | "audit";
-export const ADMIN_SECTIONS: readonly AdminSection[] = ["overview", "posts", "comments", "reports", "bans", "audit"];
+export type AdminSection = "overview" | "posts" | "comments" | "reports" | "bans" | "audit" | "apps";
+export const ADMIN_SECTIONS: readonly AdminSection[] = ["overview", "posts", "comments", "reports", "bans", "audit", "apps"];
 
 /** Page context of the admin console: the viewer's role and the open-report badge. */
 export type AdminContext = ChromeContext & { role: AdminRole; openReports: number };
 
-const NAV: { group: "content" | "moderation" | null; items: [AdminSection, IconName][] }[] = [
+const NAV: { group: "content" | "moderation" | "settings" | null; items: [AdminSection, IconName][] }[] = [
   { group: null, items: [["overview", "dashboard"]] },
   { group: "content", items: [["posts", "fileText"], ["comments", "comment"]] },
   { group: "moderation", items: [["reports", "flag"], ["bans", "restricted"], ["audit", "bulletList"]] },
+  { group: "settings", items: [["apps", "settings"]] },
 ];
 
 export const sectionHref = (s: AdminSection) => (s === "overview" ? "/admin" : `/admin/${s}`);

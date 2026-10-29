@@ -6,9 +6,12 @@ import { authorsWeekly, overviewSeries, postsBySource, systemHealth, todoCounts,
 import type { CommentStatus, PostStatus } from "@/server/db/schema";
 import { renderBans, renderAudit, renderComments, renderPosts } from "./lists-page";
 import { renderOverview } from "./overview-page";
+import { renderApps } from "./apps-page";
+import { listApiClients } from "@/server/db/repos/api-clients";
+import { countPostsByApp, listSourceApps } from "@/server/db/repos/source-apps";
 import { PAGE_SIZE } from "./parts";
 import { renderReports, type ReportsView } from "./reports-page";
-import { ADMIN_SOURCES, adminPostSourceFilter } from "./source-class";
+import { adminPostSourceFilter, parseAdminSource } from "./source-class";
 import type { AdminContext, AdminSection } from "./shell";
 
 const QUEUE_LIMIT = 100;
@@ -53,10 +56,14 @@ export async function loadSection(db: Db, ctx: AdminContext, section: AdminSecti
       return reports(db, ctx, url);
     case "posts": {
       const status = pick<PostStatus>(url.searchParams.get("s"), ["active", "preparing", "removed", "unpublished", "author_deleting"]);
-      const source = pick(url.searchParams.get("src"), ADMIN_SOURCES);
+      const source = parseAdminSource(url.searchParams.get("src"));
       const query = queryOf(url);
       const page = await listAdminPosts(db, { status, source: source && adminPostSourceFilter(source), query, offset, limit: PAGE_SIZE });
       return renderPosts(ctx, { status, source, query, offset, page, notice: noticeOf(url) });
+    }
+    case "apps": {
+      const [own, clients, posts] = await Promise.all([listSourceApps(db), listApiClients(db), countPostsByApp(db)]);
+      return renderApps(ctx, { own, clients, posts, notice: noticeOf(url) });
     }
     case "comments": {
       const status = pick<CommentStatus>(url.searchParams.get("s"), ["visible", "hidden", "deleted"]);

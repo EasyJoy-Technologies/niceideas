@@ -1,6 +1,7 @@
 {
   "admin": {
     "action": {
+      "app_settings": "アプリの設定を変更",
       "ban": "ブロック",
       "comments_mode": "コメント設定を変更",
       "delete_comment": "コメントを削除",
@@ -11,6 +12,22 @@
       "restore": "投稿を復元",
       "restore_comment": "コメントを復元",
       "unban": "ブロックを解除"
+    },
+    "apps": {
+      "edit": "編集",
+      "empty": "サードパーティアプリはまだありません。",
+      "hidden": "非表示",
+      "icon": "アイコン（https://… または /brand/sources/…）",
+      "own": "自社アプリ",
+      "ownHint": "NiceMatrix 経由で共有するアプリです。新しいアプリは最初の共有後にここに表示され、オンにすると投稿に「… から」が表示されます。",
+      "save": "保存",
+      "showBadge": "投稿に「{app} から」を表示する",
+      "shown": "表示中",
+      "thirdParty": "サードパーティアプリ",
+      "thirdPartyHint": "オープン API で投稿するアプリです。名前・ロゴ・ウェブサイトは NiceMatrix アプリディレクトリから取得し、オンにすると投稿に「… から」が表示されます。",
+      "turnOff": "非表示にする",
+      "turnOn": "表示する",
+      "website": "ウェブサイト（https://…）"
     },
     "backToSite": "サイトに戻る",
     "ban": {
@@ -30,7 +47,9 @@
     "col": {
       "action": "操作",
       "actor": "操作者",
+      "app": "アプリ",
       "author": "投稿者",
+      "badge": "「〜から」表示",
       "comment": "コメント",
       "comments": "コメント",
       "ends": "解除日時",
@@ -40,6 +59,7 @@
       "likes": "いいね",
       "likes7": "いいね（7日間）",
       "post": "投稿",
+      "posts": "投稿",
       "published": "公開日時",
       "reason": "理由",
       "reporter": "通報者",
@@ -47,7 +67,8 @@
       "source": "流入元",
       "status": "ステータス",
       "time": "日時",
-      "type": "種類"
+      "type": "種類",
+      "website": "ウェブサイト"
     },
     "commentStatus": {
       "deleted": "削除済み",
@@ -86,7 +107,8 @@
     },
     "group": {
       "content": "コンテンツ",
-      "moderation": "モデレーション"
+      "moderation": "モデレーション",
+      "settings": "設定"
     },
     "health": {
       "db": "データベース",
@@ -110,6 +132,7 @@
       "vsPrev": "直前7日間との比較"
     },
     "nav": {
+      "apps": "アプリ",
       "audit": "操作ログ",
       "bans": "ブロック",
       "comments": "コメント",
@@ -211,11 +234,6 @@
     "title": "保存済み"
   },
   "common": {
-    "brand": {
-      "nicelist": "NiceList",
-      "nicenote": "NiceNote",
-      "nicerecorder": "NiceRecorder"
-    },
     "tagline": "いつでもどこでも、あなたの nice ideas をシェアしよう！"
   },
   "compose": {

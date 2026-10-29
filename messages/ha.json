@@ -1,6 +1,7 @@
 {
   "admin": {
     "action": {
+      "app_settings": "Ya canza saitunan manhaja",
       "ban": "An haramta",
       "comments_mode": "An canza saitunan sharhi",
       "delete_comment": "An share sharhi",
@@ -11,6 +12,22 @@
       "restore": "An dawo da saƙon",
       "restore_comment": "An dawo da sharhi",
       "unban": "An cire hani"
+    },
+    "apps": {
+      "edit": "Gyara",
+      "empty": "Babu manhajojin wasu kamfani tukuna.",
+      "hidden": "Ba a nunawa",
+      "icon": "Gunki (https://… ko /brand/sources/…)",
+      "own": "Manhajojinmu",
+      "ownHint": "Manhajojin da ke rabawa ta NiceMatrix. Sabuwar manhaja tana bayyana a nan bayan rabawarta ta farko; rubuce-rubucenta suna nuna “Daga …” ne kawai bayan ka kunna.",
+      "save": "Ajiye",
+      "showBadge": "Nuna “Daga {app}” a rubuce-rubucenta",
+      "shown": "Ana nunawa",
+      "thirdParty": "Manhajojin wasu kamfani",
+      "thirdPartyHint": "Manhajojin da ke wallafawa ta buɗaɗɗen API. Suna, tambari da shafin yanar gizo suna fitowa daga kundin manhajojin NiceMatrix; rubuce-rubucensu suna nuna “Daga …” ne kawai bayan ka kunna.",
+      "turnOff": "Ɓoye",
+      "turnOn": "Nuna",
+      "website": "Shafin yanar gizo (https://…)"
     },
     "backToSite": "Koma shafin yanar gizo",
     "ban": {
@@ -30,7 +47,9 @@
     "col": {
       "action": "Aiki",
       "actor": "Daga",
+      "app": "Manhaja",
       "author": "Marubuci",
+      "badge": "Alamar “Daga”",
       "comment": "Sharhi",
       "comments": "Sharhohi",
       "ends": "Ƙarewa",
@@ -40,6 +59,7 @@
       "likes": "So",
       "likes7": "So (kwanaki 7)",
       "post": "Saƙo",
+      "posts": "Rubuce-rubuce",
       "published": "An buga",
       "reason": "Dalili",
       "reporter": "Mai bayar da rahoto",
@@ -47,7 +67,8 @@
       "source": "Tushe",
       "status": "Matsayi",
       "time": "Lokaci",
-      "type": "Nauʼi"
+      "type": "Nauʼi",
+      "website": "Shafin yanar gizo"
     },
     "commentStatus": {
       "deleted": "An share",
@@ -86,7 +107,8 @@
     },
     "group": {
       "content": "Abun ciki",
-      "moderation": "Kulawa"
+      "moderation": "Kulawa",
+      "settings": "Saituna"
     },
     "health": {
       "db": "Maʼajiyar bayanai",
@@ -110,6 +132,7 @@
       "vsPrev": "idan an kwatanta da kwanaki 7 da suka gabata"
     },
     "nav": {
+      "apps": "Manhajoji",
       "audit": "Rikodin bincike",
       "bans": "Hanawa",
       "comments": "Sharhohi",
@@ -211,11 +234,6 @@
     "title": "Abubuwan da aka ajiye"
   },
   "common": {
-    "brand": {
-      "nicelist": "NiceList",
-      "nicenote": "NiceNote",
-      "nicerecorder": "NiceRecorder"
-    },
     "tagline": "Raba nice ideas ɗinka a kowane lokaci, a ko'ina!"
   },
   "compose": {

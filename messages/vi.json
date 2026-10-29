@@ -1,6 +1,7 @@
 {
   "admin": {
     "action": {
+      "app_settings": "Đã thay đổi cài đặt ứng dụng",
       "ban": "Đã cấm",
       "comments_mode": "Đã thay đổi cài đặt bình luận",
       "delete_comment": "Xóa bình luận",
@@ -11,6 +12,22 @@
       "restore": "Khôi phục bài viết",
       "restore_comment": "Khôi phục bình luận",
       "unban": "Đã gỡ cấm"
+    },
+    "apps": {
+      "edit": "Sửa",
+      "empty": "Chưa có ứng dụng bên thứ ba nào.",
+      "hidden": "Không hiển thị",
+      "icon": "Biểu tượng (https://… hoặc /brand/sources/…)",
+      "own": "Ứng dụng của chúng ta",
+      "ownHint": "Các ứng dụng chia sẻ qua NiceMatrix. Ứng dụng mới xuất hiện sau lần chia sẻ đầu tiên; bài đăng của nó chỉ hiển thị “Từ …” khi bạn bật.",
+      "save": "Lưu",
+      "showBadge": "Hiển thị “Từ {app}” trên bài đăng của ứng dụng",
+      "shown": "Đang hiển thị",
+      "thirdParty": "Ứng dụng bên thứ ba",
+      "thirdPartyHint": "Các ứng dụng đăng bài qua API mở. Tên, logo và trang web lấy từ thư mục ứng dụng NiceMatrix; bài đăng của chúng chỉ hiển thị “Từ …” khi bạn bật.",
+      "turnOff": "Ẩn",
+      "turnOn": "Hiển thị",
+      "website": "Trang web (https://…)"
     },
     "backToSite": "Về trang chính",
     "ban": {
@@ -30,7 +47,9 @@
     "col": {
       "action": "Hành động",
       "actor": "Người thực hiện",
+      "app": "Ứng dụng",
       "author": "Tác giả",
+      "badge": "Nhãn “Từ”",
       "comment": "Bình luận",
       "comments": "Bình luận",
       "ends": "Hết hạn",
@@ -40,6 +59,7 @@
       "likes": "Lượt thích",
       "likes7": "Lượt thích (7 ngày)",
       "post": "Bài viết",
+      "posts": "Bài đăng",
       "published": "Ngày đăng",
       "reason": "Lý do",
       "reporter": "Người báo cáo",
@@ -47,7 +67,8 @@
       "source": "Nguồn",
       "status": "Trạng thái",
       "time": "Thời gian",
-      "type": "Loại"
+      "type": "Loại",
+      "website": "Trang web"
     },
     "commentStatus": {
       "deleted": "Đã xóa",
@@ -86,7 +107,8 @@
     },
     "group": {
       "content": "Nội dung",
-      "moderation": "Kiểm duyệt"
+      "moderation": "Kiểm duyệt",
+      "settings": "Cài đặt"
     },
     "health": {
       "db": "Cơ sở dữ liệu",
@@ -110,6 +132,7 @@
       "vsPrev": "So với 7 ngày trước"
     },
     "nav": {
+      "apps": "Ứng dụng",
       "audit": "Nhật ký hoạt động",
       "bans": "Cấm",
       "comments": "Bình luận",
@@ -211,11 +234,6 @@
     "title": "Đã lưu"
   },
   "common": {
-    "brand": {
-      "nicelist": "NiceList",
-      "nicenote": "NiceNote",
-      "nicerecorder": "NiceRecorder"
-    },
     "tagline": "Chia sẻ nice ideas của bạn mọi lúc, mọi nơi!"
   },
   "compose": {

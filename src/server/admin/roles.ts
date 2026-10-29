@@ -15,3 +15,6 @@ export async function adminRoleOf(db: Db, profile: Profile | null | undefined): 
 
 /** Moderation actions (take down, restore, ban, dismiss): admins and moderators. */
 export const canModerate = (role: AdminRole | null | undefined): boolean => role === "admin" || role === "moderator";
+
+/** Site settings (Apps page): admins only. */
+export const canConfigure = (role: AdminRole | null | undefined): boolean => role === "admin";

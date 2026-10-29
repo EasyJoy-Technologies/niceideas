@@ -1,6 +1,7 @@
 {
   "admin": {
     "action": {
+      "app_settings": "שינה את הגדרות האפליקציה",
       "ban": "נחסם",
       "comments_mode": "הוגדרות התגובות שונו",
       "delete_comment": "נמחקה תגובה",
@@ -11,6 +12,22 @@
       "restore": "שוחזר פוסט",
       "restore_comment": "שוחזרה תגובה",
       "unban": "הוסרה חסימה"
+    },
+    "apps": {
+      "edit": "עריכה",
+      "empty": "עדיין אין אפליקציות צד שלישי.",
+      "hidden": "לא מוצג",
+      "icon": "סמל (https://… או /brand/sources/…)",
+      "own": "האפליקציות שלנו",
+      "ownHint": "אפליקציות שמשתפות דרך NiceMatrix. אפליקציה חדשה מופיעה כאן אחרי השיתוף הראשון שלה; הפוסטים שלה מציגים „מאת …” רק אחרי שמפעילים זאת.",
+      "save": "שמירה",
+      "showBadge": "הצגת „מאת {app}” בפוסטים שלה",
+      "shown": "מוצג",
+      "thirdParty": "אפליקציות צד שלישי",
+      "thirdPartyHint": "אפליקציות שמפרסמות דרך ה-API הפתוח. השם, הלוגו והאתר מגיעים מספריית האפליקציות של NiceMatrix; הפוסטים שלהן מציגים „מאת …” רק אחרי שמפעילים זאת.",
+      "turnOff": "הסתרה",
+      "turnOn": "הצגה",
+      "website": "אתר (https://…)"
     },
     "backToSite": "חזרה לאתר",
     "ban": {
@@ -30,7 +47,9 @@
     "col": {
       "action": "פעולה",
       "actor": "על ידי",
+      "app": "אפליקציה",
       "author": "מחבר",
+      "badge": "תווית „מאת”",
       "comment": "תגובה",
       "comments": "תגובות",
       "ends": "מסתיים",
@@ -40,6 +59,7 @@
       "likes": "לייקים",
       "likes7": "לייקים (7 ימים)",
       "post": "פוסט",
+      "posts": "פוסטים",
       "published": "פורסם",
       "reason": "סיבה",
       "reporter": "דווח על ידי",
@@ -47,7 +67,8 @@
       "source": "מקור",
       "status": "סטטוס",
       "time": "זמן",
-      "type": "סוג"
+      "type": "סוג",
+      "website": "אתר"
     },
     "commentStatus": {
       "deleted": "נמחק",
@@ -86,7 +107,8 @@
     },
     "group": {
       "content": "תוכן",
-      "moderation": "פיקוח"
+      "moderation": "פיקוח",
+      "settings": "הגדרות"
     },
     "health": {
       "db": "מסד נתונים",
@@ -110,6 +132,7 @@
       "vsPrev": "לעומת 7 הימים הקודמים"
     },
     "nav": {
+      "apps": "אפליקציות",
       "audit": "יומן ביקורת",
       "bans": "חסימות",
       "comments": "תגובות",
@@ -211,11 +234,6 @@
     "title": "שמורים"
   },
   "common": {
-    "brand": {
-      "nicelist": "NiceList",
-      "nicenote": "NiceNote",
-      "nicerecorder": "NiceRecorder"
-    },
     "tagline": "שתפו את ה-nice ideas שלכם בכל זמן ובכל מקום!"
   },
   "compose": {

@@ -1,6 +1,7 @@
 {
   "admin": {
     "action": {
+      "app_settings": "Alterou as configurações de um aplicativo",
       "ban": "Banido",
       "comments_mode": "Configurações de comentários alteradas",
       "delete_comment": "Comentário excluído",
@@ -11,6 +12,22 @@
       "restore": "Publicação restaurada",
       "restore_comment": "Comentário restaurado",
       "unban": "Banimento removido"
+    },
+    "apps": {
+      "edit": "Editar",
+      "empty": "Ainda não há aplicativos de terceiros.",
+      "hidden": "Não exibido",
+      "icon": "Ícone (https://… ou /brand/sources/…)",
+      "own": "Nossos aplicativos",
+      "ownHint": "Aplicativos que compartilham pelo NiceMatrix. Um aplicativo novo aparece depois do primeiro compartilhamento; seus posts mostram “De …” só depois que você o ativar.",
+      "save": "Salvar",
+      "showBadge": "Mostrar “De {app}” nos posts dele",
+      "shown": "Exibido",
+      "thirdParty": "Aplicativos de terceiros",
+      "thirdPartyHint": "Aplicativos que publicam pela API aberta. Nome, logotipo e site vêm do diretório de aplicativos do NiceMatrix; seus posts mostram “De …” só depois que você o ativar.",
+      "turnOff": "Ocultar",
+      "turnOn": "Mostrar",
+      "website": "Site (https://…)"
     },
     "backToSite": "Voltar ao site",
     "ban": {
@@ -30,7 +47,9 @@
     "col": {
       "action": "Ação",
       "actor": "Por",
+      "app": "Aplicativo",
       "author": "Autor",
+      "badge": "Selo “De”",
       "comment": "Comentário",
       "comments": "Comentários",
       "ends": "Termina",
@@ -40,6 +59,7 @@
       "likes": "Curtidas",
       "likes7": "Curtidas (7 dias)",
       "post": "Publicação",
+      "posts": "Posts",
       "published": "Publicado",
       "reason": "Motivo",
       "reporter": "Denunciado por",
@@ -47,7 +67,8 @@
       "source": "Origem",
       "status": "Status",
       "time": "Hora",
-      "type": "Tipo"
+      "type": "Tipo",
+      "website": "Site"
     },
     "commentStatus": {
       "deleted": "Excluído",
@@ -86,7 +107,8 @@
     },
     "group": {
       "content": "Conteúdo",
-      "moderation": "Moderação"
+      "moderation": "Moderação",
+      "settings": "Configurações"
     },
     "health": {
       "db": "Banco de dados",
@@ -110,6 +132,7 @@
       "vsPrev": "vs. os 7 dias anteriores"
     },
     "nav": {
+      "apps": "Aplicativos",
       "audit": "Registro de auditoria",
       "bans": "Banimentos",
       "comments": "Comentários",
@@ -211,11 +234,6 @@
     "title": "Salvos"
   },
   "common": {
-    "brand": {
-      "nicelist": "NiceList",
-      "nicenote": "NiceNote",
-      "nicerecorder": "NiceRecorder"
-    },
     "tagline": "Compartilhe suas nice ideas a qualquer hora, em qualquer lugar!"
   },
   "compose": {

@@ -1,6 +1,7 @@
 {
   "admin": {
     "action": {
+      "app_settings": "የመተግበሪያ ቅንብሮችን ቀይሯል",
       "ban": "ተገድቧል",
       "comments_mode": "የአስተያየት ቅንብሮች ተቀይረዋል",
       "delete_comment": "አስተያየት ተሰርዟል",
@@ -11,6 +12,22 @@
       "restore": "ልጥፍ ተመልሷል",
       "restore_comment": "አስተያየት ተመልሷል",
       "unban": "እገዳ ተነስቷል"
+    },
+    "apps": {
+      "edit": "አርትዕ",
+      "empty": "እስካሁን የሶስተኛ ወገን መተግበሪያ የለም።",
+      "hidden": "አይታይም",
+      "icon": "አዶ (https://… ወይም /brand/sources/…)",
+      "own": "የእኛ መተግበሪያዎች",
+      "ownHint": "በ NiceMatrix በኩል የሚያጋሩ መተግበሪያዎች። አዲስ መተግበሪያ ከመጀመሪያው ማጋራት በኋላ እዚህ ይታያል፤ ልጥፎቹ “ከ …” የሚያሳዩት እርስዎ ካበሩት በኋላ ብቻ ነው።",
+      "save": "አስቀምጥ",
+      "showBadge": "በልጥፎቹ ላይ “ከ {app}” አሳይ",
+      "shown": "እየታየ ነው",
+      "thirdParty": "የሶስተኛ ወገን መተግበሪያዎች",
+      "thirdPartyHint": "በክፍት API በኩል የሚለጥፉ መተግበሪያዎች። ስም፣ አርማ እና ድረ-ገጽ ከ NiceMatrix የመተግበሪያ ማውጫ ይመጣሉ፤ ልጥፎቻቸው “ከ …” የሚያሳዩት እርስዎ ካበሩት በኋላ ብቻ ነው።",
+      "turnOff": "ደብቅ",
+      "turnOn": "አሳይ",
+      "website": "ድረ-ገጽ (https://…)"
     },
     "backToSite": "ወደ ድረ-ገጹ ተመለስ",
     "ban": {
@@ -30,7 +47,9 @@
     "col": {
       "action": "ድርጊት",
       "actor": "በ",
+      "app": "መተግበሪያ",
       "author": "ደራሲ",
+      "badge": "“ከ” መለያ",
       "comment": "አስተያየት",
       "comments": "አስተያየቶች",
       "ends": "ያበቃል",
@@ -40,6 +59,7 @@
       "likes": "ላይኮች",
       "likes7": "ላይኮች (7 ቀናት)",
       "post": "ልጥፍ",
+      "posts": "ልጥፎች",
       "published": "የታተመበት ጊዜ",
       "reason": "ምክንያት",
       "reporter": "ሪፖርት አድራጊ",
@@ -47,7 +67,8 @@
       "source": "ምንጭ",
       "status": "ሁኔታ",
       "time": "ጊዜ",
-      "type": "ዓይነት"
+      "type": "ዓይነት",
+      "website": "ድረ-ገጽ"
     },
     "commentStatus": {
       "deleted": "የተሰረዘ",
@@ -86,7 +107,8 @@
     },
     "group": {
       "content": "ይዘት",
-      "moderation": "ቁጥጥር"
+      "moderation": "ቁጥጥር",
+      "settings": "ቅንብሮች"
     },
     "health": {
       "db": "የውሂብ ጎታ",
@@ -110,6 +132,7 @@
       "vsPrev": "ካለፉት 7 ቀናት ጋር ሲነፃፀር"
     },
     "nav": {
+      "apps": "መተግበሪያዎች",
       "audit": "የቁጥጥር ምዝገባ",
       "bans": "እገዳዎች",
       "comments": "አስተያየቶች",
@@ -211,11 +234,6 @@
     "title": "የተቀመጡ"
   },
   "common": {
-    "brand": {
-      "nicelist": "NiceList",
-      "nicenote": "NiceNote",
-      "nicerecorder": "NiceRecorder"
-    },
     "tagline": "የእርስዎን nice ideas በማንኛውም ጊዜ፣ በማንኛውም ቦታ ያጋሩ!"
   },
   "compose": {

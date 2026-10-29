@@ -1,6 +1,7 @@
 {
   "admin": {
     "action": {
+      "app_settings": "Mengubah pengaturan aplikasi",
       "ban": "Memblokir",
       "comments_mode": "Mengubah pengaturan komentar",
       "delete_comment": "Menghapus komentar",
@@ -11,6 +12,22 @@
       "restore": "Memulihkan postingan",
       "restore_comment": "Memulihkan komentar",
       "unban": "Membuka blokir"
+    },
+    "apps": {
+      "edit": "Edit",
+      "empty": "Belum ada aplikasi pihak ketiga.",
+      "hidden": "Tidak ditampilkan",
+      "icon": "Ikon (https://… atau /brand/sources/…)",
+      "own": "Aplikasi kami",
+      "ownHint": "Aplikasi yang berbagi melalui NiceMatrix. Aplikasi baru muncul setelah berbagi pertama kali; postingannya menampilkan “Dari …” hanya setelah Anda mengaktifkannya.",
+      "save": "Simpan",
+      "showBadge": "Tampilkan “Dari {app}” di postingannya",
+      "shown": "Ditampilkan",
+      "thirdParty": "Aplikasi pihak ketiga",
+      "thirdPartyHint": "Aplikasi yang memposting melalui API terbuka. Nama, logo, dan situs web berasal dari direktori aplikasi NiceMatrix; postingannya menampilkan “Dari …” hanya setelah Anda mengaktifkannya.",
+      "turnOff": "Sembunyikan",
+      "turnOn": "Tampilkan",
+      "website": "Situs web (https://…)"
     },
     "backToSite": "Kembali ke situs",
     "ban": {
@@ -30,7 +47,9 @@
     "col": {
       "action": "Tindakan",
       "actor": "Oleh",
+      "app": "Aplikasi",
       "author": "Penulis",
+      "badge": "Label “Dari”",
       "comment": "Komentar",
       "comments": "Komentar",
       "ends": "Berakhir",
@@ -40,6 +59,7 @@
       "likes": "Suka",
       "likes7": "Suka (7 hari)",
       "post": "Postingan",
+      "posts": "Postingan",
       "published": "Waktu publikasi",
       "reason": "Alasan",
       "reporter": "Dilaporkan oleh",
@@ -47,7 +67,8 @@
       "source": "Sumber",
       "status": "Status",
       "time": "Waktu",
-      "type": "Jenis"
+      "type": "Jenis",
+      "website": "Situs web"
     },
     "commentStatus": {
       "deleted": "Dihapus",
@@ -86,7 +107,8 @@
     },
     "group": {
       "content": "Konten",
-      "moderation": "Moderasi"
+      "moderation": "Moderasi",
+      "settings": "Pengaturan"
     },
     "health": {
       "db": "Basis data",
@@ -110,6 +132,7 @@
       "vsPrev": "vs. 7 hari sebelumnya"
     },
     "nav": {
+      "apps": "Aplikasi",
       "audit": "Log audit",
       "bans": "Pemblokiran",
       "comments": "Komentar",
@@ -211,11 +234,6 @@
     "title": "Disimpan"
   },
   "common": {
-    "brand": {
-      "nicelist": "NiceList",
-      "nicenote": "NiceNote",
-      "nicerecorder": "NiceRecorder"
-    },
     "tagline": "Bagikan nice ideas-mu kapan saja, di mana saja!"
   },
   "compose": {

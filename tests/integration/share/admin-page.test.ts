@@ -1,6 +1,7 @@
 import { afterAll, beforeAll, describe, expect, it } from "vitest";
 import { GET as adminGet, POST as adminPost } from "@/app/admin/route";
 import { GET as sectionGet } from "@/app/admin/[section]/route";
+import { GET as pageGet } from "@/app/p/[slug]/route";
 import { publishAs, shareFromNiceNote } from "../../helpers/publish";
 import { NICERECORDER_APP } from "../../helpers/source-app";
 import { startSession } from "@/server/auth/web/session";
@@ -89,14 +90,14 @@ describe("admin console", () => {
   it("posts: source column and filter by source app / web / other apps; overview stacks posts by source app", async () => {
     const rec = await shareFromNiceNote(ctx, "admin-author", { version: 1, blocks: [{ type: "text", text: "Recorder idea" }] }, { sourceApp: NICERECORDER_APP });
     const none = await shareFromNiceNote(ctx, "admin-author", { version: 1, blocks: [{ type: "text", text: "Unnamed app idea" }] }, { sourceApp: null });
-    const list = (src: string) => section(adminCookie, "posts", src ? `?src=${src}` : "").then((r) => r.text());
+    const list = (src: string) => section(adminCookie, "posts", src ? `?src=${encodeURIComponent(src)}` : "").then((r) => r.text());
     const all = await list("");
     for (const label of ["All sources", "NiceNote", "NiceRecorder", "NiceList", "Other apps", "Web", "Third-party apps"]) expect(all).toContain(`>${label}<`);
     expect(all).toContain(`/p/${rec.slug}`);
-    const recorder = await list("nicerecorder");
+    const recorder = await list("app:nicerecorder");
     expect(recorder).toContain(`/p/${rec.slug}`);
     expect(recorder).not.toContain(`/p/${slug}`);
-    expect(recorder).toContain('href="/admin/posts?s=removed&amp;src=nicerecorder"');
+    expect(recorder).toContain('href="/admin/posts?s=removed&amp;src=app%3Anicerecorder"');
     const web = await list("web");
     expect(web).toContain(`/p/${slug}`);
     expect(web).not.toContain(`/p/${rec.slug}`);
@@ -104,13 +105,45 @@ describe("admin console", () => {
     expect(other).toContain(`/p/${none.slug}`);
     expect(other).not.toContain(`/p/${rec.slug}`);
     expect(await list("bogus")).toContain(`/p/${rec.slug}`);
-    const zh = await (await sectionGet(new Request(`${BASE}/admin/posts?src=nicerecorder`, { headers: { "accept-language": "zh-CN", cookie: `${adminCookie}; ni_sso=1` } }), { params: Promise.resolve({ section: "posts" }) })).text();
+    const zh = await (await sectionGet(new Request(`${BASE}/admin/posts?src=app%3Anicerecorder`, { headers: { "accept-language": "zh-CN", cookie: `${adminCookie}; ni_sso=1` } }), { params: Promise.resolve({ section: "posts" }) })).text();
     expect(zh).toContain("易录音");
     const overview = await (await get(adminCookie)).text();
     for (const [cls, label] of [["s1", "NiceNote"], ["s2", "NiceRecorder"], ["s5", "NiceList"], ["s6", "Other apps"], ["s3", "Web"], ["s4", "Third-party apps"]]) {
       expect(overview).toContain(`<span class="ad-li"><i class="${cls}"></i>${label}</span>`);
     }
     expect(overview).toMatch(/<rect class="s2"/);
+  });
+
+  it("apps: admins turn the From label on / off and edit our apps; audited; others cannot", async () => {
+    const rec = await shareFromNiceNote(ctx, "admin-author", { version: 1, blocks: [{ type: "text", text: "Recorder again" }] }, { sourceApp: NICERECORDER_APP });
+    await ctx.db.insertInto("api_client").values({ client_id: "tp-app", name: "Tp App", website_url: "https://tp.test", logo_url: null }).execute();
+    const appsHtml = async () => (await section(adminCookie, "apps")).text();
+    const html = await appsHtml();
+    for (const s of ["Our apps", "Third-party apps", "NiceNote", "NiceRecorder", "NiceList", "Tp App", "er.ej-mobile.cn", 'src="/brand/sources/nicelist.png"']) expect(html).toContain(s);
+    const badge = async () => (await pageGet(new Request(`${BASE}/p/${rec.slug}`, { headers: { "accept-language": "en" } }), { params: Promise.resolve({ slug: rec.slug }) })).text();
+    expect(await badge()).toContain("From NiceRecorder");
+    const set = (cookie: string, fields: Record<string, string>) => act(cookie, { action: "app-settings", back: "/admin/apps", ...fields });
+    expect((await set(adminCookie, { target: "app:nicerecorder", website: "javascript:alert(1)", icon: "" })).headers.get("location")).toBe("/admin/apps?n=failed");
+    expect((await set(adminCookie, { target: "app:nicerecorder", website: "https://rec.test", icon: "https://cdn.test/rec.png" })).headers.get("location")).toBe("/admin/apps?n=done");
+    expect(await badge()).not.toContain("From NiceRecorder");
+    expect((await set(adminCookie, { target: "app:nicerecorder", show: "1", website: "https://rec.test", icon: "https://cdn.test/rec.png" })).headers.get("location")).toBe("/admin/apps?n=done");
+    const on = await badge();
+    expect(on).toContain("From NiceRecorder");
+    expect(on).toContain('src="https://cdn.test/rec.png"');
+    expect(on).toContain("https://rec.test/?utm_source=niceideas");
+    expect((await set(adminCookie, { target: "api:tp-app", show: "1" })).headers.get("location")).toBe("/admin/apps?n=done");
+    expect((await ctx.db.selectFrom("api_client").select("show_badge").where("client_id", "=", "tp-app").executeTakeFirstOrThrow()).show_badge).toBe(true);
+    expect((await set(adminCookie, { target: "api:nobody", show: "1" })).headers.get("location")).toBe("/admin/apps?n=failed");
+    const audit = await (await section(adminCookie, "audit")).text();
+    expect(audit).toContain("Changed app settings");
+    expect(audit).toContain("Tp App");
+    await ctx.db.insertInto("admin_member").values({ user_id: "plain-user", role: "moderator", created_by: "mod-1" }).execute();
+    expect((await set(userCookie, { target: "api:tp-app", show: "0" })).headers.get("location")).toBe("/admin/apps?n=failed");
+    const asModerator = await (await section(userCookie, "apps")).text();
+    expect(asModerator).toContain("Tp App");
+    expect(asModerator).not.toContain('name="action" value="app-settings"');
+    await ctx.db.deleteFrom("admin_member").execute();
+    await set(adminCookie, { target: "app:nicerecorder", show: "1", website: "https://er.ej-mobile.cn", icon: "/brand/sources/nicerecorder.png" });
   });
 
   it("renders the overview; viewers can read but not act; unknown sections 404", async () => {

@@ -5,7 +5,8 @@ import { GET as pageRoute } from "@/app/p/[slug]/route";
 import { setAppDirectoryForTests, type DirectoryApp } from "@/server/auth/app-directory";
 import { clearAppDirectoryCacheForTests } from "@/server/auth/third-party";
 import { setApiClientStatus } from "@/server/db/repos/api-clients";
-import { resetSourceRegistryForTests } from "@/server/share/source-registry";
+import { resetSourceRegistry } from "@/server/share/source-registry";
+import { setApiClientBadge } from "@/server/db/repos/source-apps";
 import { startAppContext } from "../../helpers/app-context";
 import { jsonRequest, params } from "../../helpers/api";
 import { shareFromNiceNote } from "../../helpers/publish";
@@ -30,7 +31,7 @@ afterAll(async () => {
 });
 beforeEach(() => {
   clearAppDirectoryCacheForTests();
-  resetSourceRegistryForTests();
+  resetSourceRegistry();
   directoryDown = false;
   directory.set("app-one", { clientId: "app-one", name: "App One", logoUrl: "https://one.test/logo.png", websiteUrl: "https://one.test", status: "active" });
 });
@@ -43,12 +44,16 @@ const create = async (tok: string, ref: string, key: string | null = `k-${ref}`)
 const code = async (r: Response) => ((await r.json()) as { error?: { code: string } }).error?.code;
 
 describe("third-party API (app directory)", () => {
-  it("publishes for a directory app; the badge uses directory name, logo and website", async () => {
+  it("publishes for a directory app; once turned on, the badge uses directory name, logo and website", async () => {
     const res = await create(await token("app-one", "posts:write"), "a1");
     expect(res.status).toBe(201);
     const post = (await res.json()).post;
     expect(post.source).toBe("api:app-one");
-    const html = await (await pageRoute(new Request(`http://localhost:3000/p/${post.slug}`, { headers: { "accept-language": "en" } }), params({ slug: post.slug }))).text();
+    const pageHtml = async () => (await pageRoute(new Request(`http://localhost:3000/p/${post.slug}`, { headers: { "accept-language": "en" } }), params({ slug: post.slug }))).text();
+    expect(await pageHtml()).not.toContain("From App One");
+    await setApiClientBadge(ctx.db, "app-one", true);
+    resetSourceRegistry();
+    const html = await pageHtml();
     expect(html).toContain("From App One");
     expect(html).toContain("https://one.test/logo.png");
     expect(html).toContain("one.test/?utm_source=niceideas");

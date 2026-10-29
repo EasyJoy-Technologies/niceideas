@@ -1,6 +1,7 @@
 {
   "admin": {
     "action": {
+      "app_settings": "變更了應用程式設定",
       "ban": "封鎖",
       "comments_mode": "變更留言設定",
       "delete_comment": "刪除留言",
@@ -11,6 +12,22 @@
       "restore": "恢復貼文",
       "restore_comment": "恢復留言",
       "unban": "解除封鎖"
+    },
+    "apps": {
+      "edit": "編輯",
+      "empty": "還沒有第三方應用程式。",
+      "hidden": "不顯示",
+      "icon": "圖示（https://… 或 /brand/sources/…）",
+      "own": "自有應用程式",
+      "ownHint": "透過 NiceMatrix 分享的應用程式。新應用程式第一次分享後會出現在這裡；開啟後它的貼文才顯示「來自 …」。",
+      "save": "儲存",
+      "showBadge": "在它的貼文上顯示「來自 {app}」",
+      "shown": "顯示",
+      "thirdParty": "第三方應用程式",
+      "thirdPartyHint": "透過開放 API 發文的應用程式。名稱、圖示和網站來自 NiceMatrix 應用程式目錄；開啟後它的貼文才顯示「來自 …」。",
+      "turnOff": "隱藏",
+      "turnOn": "顯示",
+      "website": "網站（https://…）"
     },
     "backToSite": "返回網站",
     "ban": {
@@ -30,7 +47,9 @@
     "col": {
       "action": "動作",
       "actor": "操作人",
+      "app": "應用程式",
       "author": "作者",
+      "badge": "「來自」標示",
       "comment": "留言",
       "comments": "留言",
       "ends": "到期時間",
@@ -40,6 +59,7 @@
       "likes": "讚",
       "likes7": "讚數（7 天）",
       "post": "貼文",
+      "posts": "貼文",
       "published": "發布時間",
       "reason": "原因",
       "reporter": "檢舉人",
@@ -47,7 +67,8 @@
       "source": "來源",
       "status": "狀態",
       "time": "時間",
-      "type": "類型"
+      "type": "類型",
+      "website": "網站"
     },
     "commentStatus": {
       "deleted": "已刪除",
@@ -86,7 +107,8 @@
     },
     "group": {
       "content": "內容",
-      "moderation": "審核"
+      "moderation": "審核",
+      "settings": "設定"
     },
     "health": {
       "db": "資料庫",
@@ -110,6 +132,7 @@
       "vsPrev": "與前 7 天相比"
     },
     "nav": {
+      "apps": "應用程式",
       "audit": "稽核紀錄",
       "bans": "封鎖",
       "comments": "留言",
@@ -211,11 +234,6 @@
     "title": "我的收藏"
   },
   "common": {
-    "brand": {
-      "nicelist": "待辦任務清單",
-      "nicenote": "樂趣記事本",
-      "nicerecorder": "易錄音"
-    },
     "tagline": "隨時隨地分享你的好主意！"
   },
   "compose": {

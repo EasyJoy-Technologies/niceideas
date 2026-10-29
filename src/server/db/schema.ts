@@ -3,6 +3,7 @@ import type { CreatedAt, DefaultedTimestamp, JsonColumn, SourceAppNamesColumn, T
 import type { AccountEventTable, DeletedAccountTable } from "./schema-accounts";
 import type { WebSessionTable, WebTicketTable } from "./schema-auth";
 import type { PostBookmarkTable, PostRepostTable } from "./schema-social";
+import type { ApiClientTable, SourceAppTable } from "./schema-apps";
 import type { AvatarJobTable, CdnPurgeTable, MediaJobTable, MediaUploadTable, OutboxTable, ServiceNonceTable } from "./schema-share";
 
 export type { MediaJobState, OutboxKind } from "./schema-share";
@@ -159,7 +160,7 @@ export interface ReportTable {
 
 export type ModerationActionKind =
   | "remove" | "restore" | "hide_comment" | "restore_comment" | "delete_comment"
-  | "ban" | "unban" | "comments_mode" | "resolve_report" | "dismiss_report";
+  | "ban" | "unban" | "comments_mode" | "resolve_report" | "dismiss_report" | "app_settings";
 
 export interface ModerationActionTable {
   id: Generated<string>;
@@ -220,24 +221,6 @@ export interface AdminMemberTable {
   created_at: CreatedAt;
 }
 
-export interface ApiClientTable {
-  id: Generated<string>;
-  client_id: string;
-  name: string;
-  /** Local policy: `disabled` = blocked on NiceIdeas. */
-  status: Generated<"active" | "disabled">;
-  rate_tier: Generated<string>;
-  created_at: CreatedAt;
-  /** From the NiceMatrix app directory. */
-  website_url: string | null;
-  logo_url: string | null;
-  dir_status: Generated<"active" | "suspended">;
-  fetched_at: Timestamp | null;
-  note: Generated<string>;
-  /** Per-app hourly post ceiling; null = RATE_CLIENT_POSTS_PER_HOUR. */
-  posts_per_hour: number | null;
-}
-
 export interface IdempotencyTable {
   scope: string;
   key: string;
@@ -264,6 +247,7 @@ export interface Database {
   report: ReportTable;
   moderation_action: ModerationActionTable;
   api_client: ApiClientTable;
+  source_app: SourceAppTable;
   idempotency: IdempotencyTable;
   post_like: PostLikeTable;
   comment: CommentTable;
@@ -297,3 +281,4 @@ export type Comment = Selectable<CommentTable>;
 export type NewComment = Insertable<CommentTable>;
 export type Report = Selectable<ReportTable>;
 export type ApiClient = Selectable<ApiClientTable>;
+export type SourceAppRow = Selectable<SourceAppTable>;

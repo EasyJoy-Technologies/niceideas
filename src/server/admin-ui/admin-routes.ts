@@ -1,6 +1,7 @@
 import { randomUUID } from "node:crypto";
 import { runAdminAction, ADMIN_ACTIONS, type BanOption } from "@/server/admin/admin-actions";
-import { adminRoleOf, canModerate } from "@/server/admin/roles";
+import { applyAppSettings, APP_SETTINGS_ACTION } from "@/server/admin/app-settings";
+import { adminRoleOf, canConfigure, canModerate } from "@/server/admin/roles";
 import { sessionProfile } from "@/server/auth/web/session";
 import { getConfig } from "@/server/config/env";
 import { getDb } from "@/server/db";
@@ -48,6 +49,11 @@ export async function adminActionRoute(request: Request): Promise<Response> {
   const to = (n: "done" | "failed") => see(`${back.startsWith("/admin") ? back : "/admin"}${back.includes("?") ? "&" : "?"}n=${n}`);
   if (!form || !canModerate(role)) return to("failed");
   const action = String(form.get("action") ?? "");
+  if (action === APP_SETTINGS_ACTION) {
+    const ok = canConfigure(role) && (await applyAppSettings(db, viewer!.user_id, form).catch((err) => (console.error(`[admin] app settings failed errorId=${randomUUID()}`, err), false)));
+    console.info(JSON.stringify({ event: "admin_action", action, ok }));
+    return to(ok ? "done" : "failed");
+  }
   if (!(ADMIN_ACTIONS as readonly string[]).includes(action)) return to("failed");
   try {
     const cfg = getConfig();

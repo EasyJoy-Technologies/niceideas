@@ -1,6 +1,7 @@
 {
   "admin": {
     "action": {
+      "app_settings": "앱 설정을 변경함",
       "ban": "차단",
       "comments_mode": "댓글 설정 변경",
       "delete_comment": "댓글 삭제",
@@ -11,6 +12,22 @@
       "restore": "게시물 복원",
       "restore_comment": "댓글 복원",
       "unban": "차단 해제"
+    },
+    "apps": {
+      "edit": "편집",
+      "empty": "아직 타사 앱이 없습니다.",
+      "hidden": "표시 안 함",
+      "icon": "아이콘(https://… 또는 /brand/sources/…)",
+      "own": "자체 앱",
+      "ownHint": "NiceMatrix를 통해 공유하는 앱입니다. 새 앱은 첫 공유 후 여기에 나타나며, 켜야 게시물에 ‘… 에서’가 표시됩니다.",
+      "save": "저장",
+      "showBadge": "게시물에 ‘{app}에서’ 표시",
+      "shown": "표시 중",
+      "thirdParty": "타사 앱",
+      "thirdPartyHint": "공개 API로 게시하는 앱입니다. 이름, 로고, 웹사이트는 NiceMatrix 앱 디렉터리에서 가져오며, 켜야 게시물에 ‘… 에서’가 표시됩니다.",
+      "turnOff": "숨기기",
+      "turnOn": "표시",
+      "website": "웹사이트(https://…)"
     },
     "backToSite": "사이트로 돌아가기",
     "ban": {
@@ -30,7 +47,9 @@
     "col": {
       "action": "작업",
       "actor": "처리자",
+      "app": "앱",
       "author": "작성자",
+      "badge": "‘출처’ 표시",
       "comment": "댓글",
       "comments": "댓글",
       "ends": "해제일",
@@ -40,6 +59,7 @@
       "likes": "좋아요",
       "likes7": "좋아요 (7일)",
       "post": "게시물",
+      "posts": "게시물",
       "published": "게시일",
       "reason": "신고 이유",
       "reporter": "신고자",
@@ -47,7 +67,8 @@
       "source": "유입 경로",
       "status": "상태",
       "time": "시간",
-      "type": "유형"
+      "type": "유형",
+      "website": "웹사이트"
     },
     "commentStatus": {
       "deleted": "삭제됨",
@@ -86,7 +107,8 @@
     },
     "group": {
       "content": "콘텐츠",
-      "moderation": "모더레이션"
+      "moderation": "모더레이션",
+      "settings": "설정"
     },
     "health": {
       "db": "데이터베이스",
@@ -110,6 +132,7 @@
       "vsPrev": "이전 7일 대비"
     },
     "nav": {
+      "apps": "앱",
       "audit": "감사 로그",
       "bans": "차단",
       "comments": "댓글",
@@ -211,11 +234,6 @@
     "title": "저장한 글"
   },
   "common": {
-    "brand": {
-      "nicelist": "NiceList",
-      "nicenote": "NiceNote",
-      "nicerecorder": "NiceRecorder"
-    },
     "tagline": "언제 어디서나 나의 nice ideas를 공유하세요!"
   },
   "compose": {

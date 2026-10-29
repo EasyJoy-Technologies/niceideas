@@ -1,6 +1,7 @@
 {
   "admin": {
     "action": {
+      "app_settings": "Módosította egy alkalmazás beállításait",
       "ban": "Kitiltva",
       "comments_mode": "Megjegyzés-beállítások módosítva",
       "delete_comment": "Megjegyzés törölve",
@@ -11,6 +12,22 @@
       "restore": "Bejegyzés visszaállítva",
       "restore_comment": "Megjegyzés visszaállítva",
       "unban": "Kitiltás feloldva"
+    },
+    "apps": {
+      "edit": "Szerkesztés",
+      "empty": "Még nincsenek külső alkalmazások.",
+      "hidden": "Nem látható",
+      "icon": "Ikon (https://… vagy /brand/sources/…)",
+      "own": "Saját alkalmazásaink",
+      "ownHint": "A NiceMatrixon keresztül megosztó alkalmazások. Az új alkalmazás az első megosztása után jelenik meg; bejegyzésein csak bekapcsolás után látszik az „Innen: …”.",
+      "save": "Mentés",
+      "showBadge": "„Innen: {app}” megjelenítése a bejegyzésein",
+      "shown": "Látható",
+      "thirdParty": "Külső alkalmazások",
+      "thirdPartyHint": "A nyílt API-n keresztül posztoló alkalmazások. A név, a logó és a weboldal a NiceMatrix alkalmazáskönyvtárából származik; bejegyzéseiken csak bekapcsolás után látszik az „Innen: …”.",
+      "turnOff": "Elrejtés",
+      "turnOn": "Megjelenítés",
+      "website": "Weboldal (https://…)"
     },
     "backToSite": "Vissza az oldalra",
     "ban": {
@@ -30,7 +47,9 @@
     "col": {
       "action": "Művelet",
       "actor": "Végezte",
+      "app": "Alkalmazás",
       "author": "Szerző",
+      "badge": "„Innen:” címke",
       "comment": "Megjegyzés",
       "comments": "Megjegyzések",
       "ends": "Lejár",
@@ -40,6 +59,7 @@
       "likes": "Kedvelések",
       "likes7": "Kedvelések (7 nap)",
       "post": "Bejegyzés",
+      "posts": "Bejegyzések",
       "published": "Közzétéve",
       "reason": "Ok",
       "reporter": "Bejelentő",
@@ -47,7 +67,8 @@
       "source": "Forrás",
       "status": "Állapot",
       "time": "Időpont",
-      "type": "Típus"
+      "type": "Típus",
+      "website": "Weboldal"
     },
     "commentStatus": {
       "deleted": "Törölve",
@@ -86,7 +107,8 @@
     },
     "group": {
       "content": "Tartalom",
-      "moderation": "Moderálás"
+      "moderation": "Moderálás",
+      "settings": "Beállítások"
     },
     "health": {
       "db": "Adatbázis",
@@ -110,6 +132,7 @@
       "vsPrev": "az előző 7 naphoz képest"
     },
     "nav": {
+      "apps": "Alkalmazások",
       "audit": "Naplózás",
       "bans": "Kitiltások",
       "comments": "Megjegyzések",
@@ -211,11 +234,6 @@
     "title": "Mentett"
   },
   "common": {
-    "brand": {
-      "nicelist": "NiceList",
-      "nicenote": "NiceNote",
-      "nicerecorder": "NiceRecorder"
-    },
     "tagline": "Oszd meg a nice ideas-eidet bármikor, bárhol!"
   },
   "compose": {

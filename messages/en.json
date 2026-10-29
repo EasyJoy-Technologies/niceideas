@@ -1,6 +1,7 @@
 {
   "admin": {
     "action": {
+      "app_settings": "Changed app settings",
       "ban": "Banned",
       "comments_mode": "Changed comment settings",
       "delete_comment": "Deleted comment",
@@ -11,6 +12,22 @@
       "restore": "Restored post",
       "restore_comment": "Restored comment",
       "unban": "Lifted ban"
+    },
+    "apps": {
+      "edit": "Edit",
+      "empty": "No third-party apps yet.",
+      "hidden": "Not shown",
+      "icon": "Icon (https://… or /brand/sources/…)",
+      "own": "Our apps",
+      "ownHint": "Apps sharing through NiceMatrix. A new app is listed after its first share; its posts show “From …” only once you turn it on.",
+      "save": "Save",
+      "showBadge": "Show “From {app}” on its posts",
+      "shown": "Shown",
+      "thirdParty": "Third-party apps",
+      "thirdPartyHint": "Apps posting through the open API. Name, logo and website come from the NiceMatrix app directory; their posts show “From …” only once you turn it on.",
+      "turnOff": "Hide",
+      "turnOn": "Show",
+      "website": "Website (https://…)"
     },
     "backToSite": "Back to site",
     "ban": {
@@ -30,7 +47,9 @@
     "col": {
       "action": "Action",
       "actor": "By",
+      "app": "App",
       "author": "Author",
+      "badge": "“From” label",
       "comment": "Comment",
       "comments": "Comments",
       "ends": "Ends",
@@ -40,6 +59,7 @@
       "likes": "Likes",
       "likes7": "Likes (7 days)",
       "post": "Post",
+      "posts": "Posts",
       "published": "Published",
       "reason": "Reason",
       "reporter": "Reported by",
@@ -47,7 +67,8 @@
       "source": "Source",
       "status": "Status",
       "time": "Time",
-      "type": "Type"
+      "type": "Type",
+      "website": "Website"
     },
     "commentStatus": {
       "deleted": "Deleted",
@@ -86,7 +107,8 @@
     },
     "group": {
       "content": "Content",
-      "moderation": "Moderation"
+      "moderation": "Moderation",
+      "settings": "Settings"
     },
     "health": {
       "db": "Database",
@@ -110,6 +132,7 @@
       "vsPrev": "vs. previous 7 days"
     },
     "nav": {
+      "apps": "Apps",
       "audit": "Audit log",
       "bans": "Bans",
       "comments": "Comments",
@@ -211,11 +234,6 @@
     "title": "Bookmarks"
   },
   "common": {
-    "brand": {
-      "nicelist": "NiceList",
-      "nicenote": "NiceNote",
-      "nicerecorder": "NiceRecorder"
-    },
     "tagline": "Share your nice ideas anytime, anywhere!"
   },
   "compose": {
