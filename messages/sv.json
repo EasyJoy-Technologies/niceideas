@@ -81,6 +81,7 @@
     "failed": "Det gick inte – det kan redan vara hanterat.",
     "filter": {
       "all": "Alla",
+      "allSources": "Alla källor",
       "both": "Inlägg och kommentarer"
     },
     "group": {
@@ -143,8 +144,7 @@
     },
     "source": {
       "api": "Tredjepartsappar",
-      "cn": "{app} (Kina)",
-      "intl": "{app} (internationell)",
+      "other": "Andra appar",
       "web": "Webb"
     },
     "status": {
@@ -212,7 +212,9 @@
   },
   "common": {
     "brand": {
-      "nicenote": "NiceNote"
+      "nicelist": "NiceList",
+      "nicenote": "NiceNote",
+      "nicerecorder": "NiceRecorder"
     },
     "tagline": "Dela dina nice ideas när och var du vill!"
   },

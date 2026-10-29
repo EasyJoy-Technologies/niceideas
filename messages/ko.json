@@ -81,6 +81,7 @@
     "failed": "처리하지 못했어요. 이미 처리됐을 수 있어요.",
     "filter": {
       "all": "전체",
+      "allSources": "모든 유입 경로",
       "both": "게시물 및 댓글"
     },
     "group": {
@@ -143,8 +144,7 @@
     },
     "source": {
       "api": "타사 앱",
-      "cn": "{app} (중국판)",
-      "intl": "{app} (국제판)",
+      "other": "기타 앱",
       "web": "웹"
     },
     "status": {
@@ -212,7 +212,9 @@
   },
   "common": {
     "brand": {
-      "nicenote": "NiceNote"
+      "nicelist": "NiceList",
+      "nicenote": "NiceNote",
+      "nicerecorder": "NiceRecorder"
     },
     "tagline": "언제 어디서나 나의 nice ideas를 공유하세요!"
   },

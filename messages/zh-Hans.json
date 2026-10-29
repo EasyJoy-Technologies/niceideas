@@ -81,6 +81,7 @@
     "failed": "操作失败，可能已被处理过。",
     "filter": {
       "all": "全部",
+      "allSources": "全部来源",
       "both": "帖子和评论"
     },
     "group": {
@@ -143,8 +144,7 @@
     },
     "source": {
       "api": "第三方应用",
-      "cn": "{app} 国内版",
-      "intl": "{app} 国际版",
+      "other": "其他应用",
       "web": "网页"
     },
     "status": {
@@ -212,7 +212,9 @@
   },
   "common": {
     "brand": {
-      "nicenote": "乐趣记事本"
+      "nicelist": "待办任务清单",
+      "nicenote": "乐趣记事本",
+      "nicerecorder": "易录音"
     },
     "tagline": "随时随地分享你的好主意！"
   },

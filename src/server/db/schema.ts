@@ -1,5 +1,5 @@
 import type { ColumnType, Generated, Insertable, JSONColumnType, Selectable, Updateable } from "kysely";
-import type { CreatedAt, DefaultedTimestamp, JsonColumn, Timestamp } from "./schema-columns";
+import type { CreatedAt, DefaultedTimestamp, JsonColumn, SourceAppNamesColumn, Timestamp } from "./schema-columns";
 import type { AccountEventTable, DeletedAccountTable } from "./schema-accounts";
 import type { WebSessionTable, WebTicketTable } from "./schema-auth";
 import type { PostBookmarkTable, PostRepostTable } from "./schema-social";
@@ -8,6 +8,7 @@ import type { AvatarJobTable, CdnPurgeTable, MediaJobTable, MediaUploadTable, Ou
 export type { MediaJobState, OutboxKind } from "./schema-share";
 export type { AccountEventKind } from "./schema-accounts";
 export type { SessionSource } from "./schema-auth";
+export type { SourceAppNames } from "./schema-columns";
 
 export type ProfileStatus = "active" | "deleting";
 export type PostKind = "short" | "article";
@@ -91,6 +92,9 @@ export interface PostTable {
   source_revision: number | null;
   region: ShareRegion | null;
   media_state: Generated<MediaState>;
+  /** App shares: the NiceMatrix product group the post came from (§3.2 `sourceApp`); both null when not sent or invalid. */
+  source_app_key: string | null;
+  source_app_names: SourceAppNamesColumn;
   /** Content changed after publishing (web edit, app update or re-share): the page shows "Edited". */
   edited_at: Timestamp | null;
   /** Edited on the web since the app's last update: an app update of the same version leaves it in place. */

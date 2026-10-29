@@ -81,6 +81,7 @@
     "failed": "Δεν έγινε — ίσως έχει ήδη διεκπεραιωθεί.",
     "filter": {
       "all": "Όλα",
+      "allSources": "Όλες οι πηγές",
       "both": "Αναρτήσεις και σχόλια"
     },
     "group": {
@@ -143,8 +144,7 @@
     },
     "source": {
       "api": "Εφαρμογές τρίτων",
-      "cn": "{app} (Κίνα)",
-      "intl": "{app} (διεθνής)",
+      "other": "Άλλες εφαρμογές",
       "web": "Ιστός"
     },
     "status": {
@@ -212,7 +212,9 @@
   },
   "common": {
     "brand": {
-      "nicenote": "NiceNote"
+      "nicelist": "NiceList",
+      "nicenote": "NiceNote",
+      "nicerecorder": "NiceRecorder"
     },
     "tagline": "Μοιράσου τις nice ideas σου όποτε και όπου θέλεις!"
   },

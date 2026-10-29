@@ -12,6 +12,7 @@ import { startAppContext } from "../../helpers/app-context";
 import { params } from "../../helpers/api";
 import { jpegWithExif } from "../../helpers/media-fixtures";
 import { publishAs, uploadAs } from "../../helpers/publish";
+import { NICENOTE_APP, NICERECORDER_APP } from "../../helpers/source-app";
 
 const KEY = "k".repeat(40);
 const SERVICE = "nicematrix-test";
@@ -40,7 +41,7 @@ const page = async (slug: string) => {
   const res = await pageRoute(new Request(`http://localhost:3000/p/${slug}`, { headers: { "accept-language": "en" } }), params({ slug }));
   return { status: res.status, html: await res.text() };
 };
-const share = (userId: string, extra: Record<string, unknown> = {}) => ({ shareId: randomUUID(), userId, region: "cn", syncMode: "follow", commentsMode: null, ...extra });
+const share = (userId: string, extra: Record<string, unknown> = {}) => ({ shareId: randomUUID(), userId, region: "cn", syncMode: "follow", commentsMode: null, sourceApp: NICENOTE_APP, ...extra });
 const doc = (...blocks: unknown[]) => ({ version: 1, title: "Weekend hike", blocks });
 
 describe("NiceNote source API: signatures", () => {
@@ -78,6 +79,21 @@ describe("NiceNote source API: share lifecycle", () => {
     expect(preparing.status).toBe(200);
     expect(preparing.html).toContain("Getting this post ready");
     expect(preparing.html).toContain('<meta name="robots" content="noindex">');
+  });
+
+  it("records the source app once, when the post is created; a missing or invalid one records nothing", async () => {
+    const appOf = (id: string) => ctx.db.selectFrom("post").select(["source_app_key", "source_app_names"]).where("id", "=", id).executeTakeFirstOrThrow();
+    const rec = share("app-user", { sourceApp: NICERECORDER_APP });
+    const created = (await json(await create(rec))).body.post;
+    expect(await appOf(created.id)).toEqual({ source_app_key: "nicerecorder", source_app_names: NICERECORDER_APP.names });
+    expect((await json(await create({ ...rec, sourceApp: NICENOTE_APP }))).status).toBe(200);
+    expect((await appOf(created.id)).source_app_key).toBe("nicerecorder");
+    const cases = [{ sourceApp: undefined }, { sourceApp: null }, { sourceApp: { key: "Bad Key", names: { en: "X" } } }, { sourceApp: { key: "nicelist", names: { "zh-Hans": "x" } } }];
+    for (const extra of cases) {
+      const res = await json(await create(share("app-user", extra)));
+      expect(res.status).toBe(201);
+      expect(await appOf(res.body.post.id)).toEqual({ source_app_key: null, source_app_names: null });
+    }
   });
 
   it("first push publishes; rich text renders structurally and safely; same content is a no-op; older revisions are refused", async () => {

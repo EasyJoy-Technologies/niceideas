@@ -32,7 +32,7 @@ const op = { actorId: "ops", reason: "test" };
 let n = 0;
 const event = (event: "deletion_requested" | "deletion_cancelled" | "deletion_completed", userId: string, eventId = `fence-${++n}-evt`) =>
   applyAccountEvent(rt(), { eventId, event, userId, occurredAt: new Date(Date.UTC(2026, 9, 26, 0, 0, n)).toISOString() });
-const share = (userId: string) => createShare(ctx.db, { shareId: randomUUID(), userId, region: "intl", syncMode: "follow", commentsMode: null, profile: null });
+const share = (userId: string) => createShare(ctx.db, { shareId: randomUUID(), userId, region: "intl", syncMode: "follow", commentsMode: null, profile: null, sourceApp: null });
 const imageDoc = (ref: string) => ({ version: 1 as const, blocks: [{ type: "image" as const, state: "ready" as const, ref, mime: "image/jpeg", bytes: 10 }] });
 const textDoc = { version: 1 as const, blocks: [{ type: "text" as const, text: "fence test" }] };
 const push = (postId: string, document: unknown, sourceRevision = 1) => pushShareContent(ctx.db, ctx.stores, CACHE, postId, { sourceRevision, document: document as never, media: {} });

@@ -81,6 +81,7 @@
     "failed": "Không thành công — có thể đã được xử lý.",
     "filter": {
       "all": "Tất cả",
+      "allSources": "Tất cả nguồn",
       "both": "Bài viết và bình luận"
     },
     "group": {
@@ -143,8 +144,7 @@
     },
     "source": {
       "api": "Ứng dụng bên thứ ba",
-      "cn": "{app} (Trung Quốc)",
-      "intl": "{app} (quốc tế)",
+      "other": "Ứng dụng khác",
       "web": "Web"
     },
     "status": {
@@ -212,7 +212,9 @@
   },
   "common": {
     "brand": {
-      "nicenote": "NiceNote"
+      "nicelist": "NiceList",
+      "nicenote": "NiceNote",
+      "nicerecorder": "NiceRecorder"
     },
     "tagline": "Chia sẻ nice ideas của bạn mọi lúc, mọi nơi!"
   },

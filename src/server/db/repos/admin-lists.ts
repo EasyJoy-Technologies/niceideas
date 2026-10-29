@@ -1,21 +1,32 @@
 import { sql } from "kysely";
 import type { Db } from "../client";
-import type { CommentStatus, ModerationActionKind, PostStatus } from "../schema";
+import type { CommentStatus, ModerationActionKind, Post, PostStatus } from "../schema";
 import { containsPattern } from "./feed";
 
 /** Admin lists page with offset paging; `limit + 1` rows are read to know whether there is more. */
 export type Page<T> = { rows: T[]; more: boolean };
 const paged = <T>(rows: T[], limit: number): Page<T> => ({ rows: rows.slice(0, limit), more: rows.length > limit });
 
-export type AdminPostRow = { id: string; slug: string; title: string; summary: string; kind: string; source: string; status: PostStatus; like_count: number; comment_count: number; published_at: Date; handle: string };
+export type AdminPostRow = Pick<Post, "id" | "slug" | "title" | "summary" | "kind" | "source" | "source_app_key" | "source_app_names" | "status" | "like_count" | "comment_count" | "published_at"> & { handle: string };
 
-/** Posts by status; `query`: "@handle", a slug, or text of the title / body. */
-export async function listAdminPosts(db: Db, f: { status: PostStatus | null; query: string; offset: number; limit: number }): Promise<Page<AdminPostRow>> {
+/** Source filter: one app (product group key), app shares of none of `known`, web posts, third-party apps. */
+export type AdminPostSource = { kind: "app"; key: string } | { kind: "otherApp"; known: readonly string[] } | { kind: "web" } | { kind: "api" };
+
+/** Posts by status and source; `query`: "@handle", a slug, or text of the title / body. */
+export async function listAdminPosts(db: Db, f: { status: PostStatus | null; source: AdminPostSource | null; query: string; offset: number; limit: number }): Promise<Page<AdminPostRow>> {
   let q = db
     .selectFrom("post as p")
     .innerJoin("profile as pr", "pr.user_id", "p.author_id")
-    .select(["p.id", "p.slug", "p.title", "p.summary", "p.kind", "p.source", "p.status", "p.like_count", "p.comment_count", "p.published_at", "pr.handle"]);
+    .select(["p.id", "p.slug", "p.title", "p.summary", "p.kind", "p.source", "p.source_app_key", "p.source_app_names", "p.status", "p.like_count", "p.comment_count", "p.published_at", "pr.handle"]);
   if (f.status) q = q.where("p.status", "=", f.status);
+  const s = f.source;
+  if (s?.kind === "app") q = q.where("p.source_app_key", "=", s.key);
+  else if (s?.kind === "web") q = q.where("p.source", "=", "web");
+  else if (s?.kind === "api") q = q.where("p.source", "like", "api:%");
+  else if (s?.kind === "otherApp") {
+    q = q.where("p.source", "<>", "web").where("p.source", "not like", "api:%");
+    if (s.known.length) q = q.where((eb) => eb.or([eb("p.source_app_key", "is", null), eb("p.source_app_key", "not in", s.known)]));
+  }
   const query = f.query.trim();
   if (query.startsWith("@")) q = q.where("pr.handle", "=", query.slice(1).toLowerCase());
   else if (query) q = q.where((eb) => eb.or([eb("p.slug", "=", query.toLowerCase()), eb("p.search_text", "ilike", containsPattern(query))]));

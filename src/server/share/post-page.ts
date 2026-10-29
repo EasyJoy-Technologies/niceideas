@@ -20,7 +20,7 @@ import { postActions } from "./post-actions";
 import { renderPostAside } from "./post-aside";
 import { directionOf } from "@/i18n/locales";
 import { avatarHtml } from "./profile-bits";
-import { badgeAppName, sourceBadge } from "./sources";
+import { sourceBadge } from "./sources";
 
 const meta = (property: string, content: string, attr = "property") => `<meta ${attr}="${property}" content="${escapeHtml(content)}">`;
 
@@ -65,10 +65,9 @@ function authorBlock(ctx: ChromeContext, data: Pick<SharePost, "author" | "post"
 }
 
 function sourceBlock(ctx: ChromeContext, data: SharePost): string {
-  const badge = sourceBadge(data.post.source);
+  const badge = sourceBadge(data.post, ctx.intl.locale);
   if (!badge) return "";
-  const app = badgeAppName(ctx.intl.t, badge);
-  const inner = `<img src="${escapeHtml(badge.icon)}" width="18" height="18" alt="">${escapeHtml(ctx.intl.t("share.post.from", { app }))}`;
+  const inner = `<img src="${escapeHtml(badge.icon)}" width="18" height="18" alt="">${escapeHtml(ctx.intl.t("share.post.from", { app: badge.name }))}`;
   return badge.href ? `<a class="ni-source" href="${escapeHtml(badge.href)}" target="_blank" rel="noopener">${inner}${icon("outLink")}</a>` : `<span class="ni-source">${inner}</span>`;
 }
 

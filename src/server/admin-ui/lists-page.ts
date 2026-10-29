@@ -4,6 +4,7 @@ import { escapeHtml } from "@/server/render/escape";
 import { cardTitle } from "@/server/share/card";
 import { actionPop, emptyRow, notice, pager, pill, searchForm, table, tabs, when, withQuery } from "./parts";
 import { renderAdmin, type AdminContext } from "./shell";
+import { ADMIN_SOURCES, adminSourceLabel, postSourceLabel, type AdminSource } from "./source-class";
 
 const e = escapeHtml;
 type Note = "done" | "failed" | null;
@@ -13,10 +14,15 @@ const COMMENT_STATUSES: (CommentStatus | "")[] = ["", "visible", "hidden", "dele
 const body = (n: Note, ctx: AdminContext, filters: string, page: Page<unknown>, rows: string, base: string, offset: number) =>
   `${notice(ctx, n)}<div class="ad-filters">${filters}</div>${page.rows.length ? rows : `<section class="ad-cd">${emptyRow(ctx.intl.t("feed.empty"))}</section>`}${pager(ctx, base, offset, page.more)}`;
 
-export function renderPosts(ctx: AdminContext, v: { status: PostStatus | null; query: string; offset: number; page: Page<AdminPostRow>; notice: Note }): string {
+export function renderPosts(ctx: AdminContext, v: { status: PostStatus | null; source: AdminSource | null; query: string; offset: number; page: Page<AdminPostRow>; notice: Note }): string {
   const { t, format } = ctx.intl;
-  const base = withQuery("/admin/posts", { s: v.status ?? "", q: v.query });
-  const statusTabs = tabs(POST_STATUSES.map((s) => ({ href: withQuery("/admin/posts", { s, q: v.query }), label: t(s ? `admin.status.${s}` : "admin.filter.all"), on: (v.status ?? "") === s })), "ad-seg");
+  const src = v.source ?? "";
+  const base = withQuery("/admin/posts", { s: v.status ?? "", src, q: v.query });
+  const statusTabs = tabs(POST_STATUSES.map((s) => ({ href: withQuery("/admin/posts", { s, src, q: v.query }), label: t(s ? `admin.status.${s}` : "admin.filter.all"), on: (v.status ?? "") === s })), "ad-seg");
+  const sourceTabs = tabs(
+    (["", ...ADMIN_SOURCES] as const).map((k) => ({ href: withQuery("/admin/posts", { s: v.status ?? "", src: k, q: v.query }), label: k ? adminSourceLabel(ctx, k) : t("admin.filter.allSources"), on: src === k })),
+    "ad-seg ad-seg-wrap",
+  );
   const tone = (s: PostStatus) => (s === "active" ? "ok" : s === "removed" ? "bad" : "");
   const rows = v.page.rows.map((p) => {
     const back = withQuery(base, { o: v.offset });
@@ -25,11 +31,12 @@ export function renderPosts(ctx: AdminContext, v: { status: PostStatus | null; q
       : p.status === "removed" ? actionPop(ctx, { action: "restore-post", target: p.slug, back, label: t("admin.restorePost") }) : "";
     return [
       `<a class="ad-tt" href="/p/${p.slug}" target="_blank" rel="noopener">${e(cardTitle(p))}</a><small>/p/${p.slug} · ${e(t(p.kind === "article" ? "feed.article" : "compose.mode.short"))}</small>`,
-      `@${e(p.handle)}`, pill(t(`admin.status.${p.status}`), tone(p.status)), e(format.number(p.like_count)), e(format.number(p.comment_count)), when(ctx, p.published_at), act,
+      `@${e(p.handle)}`, e(postSourceLabel(ctx, p)), pill(t(`admin.status.${p.status}`), tone(p.status)), e(format.number(p.like_count)), e(format.number(p.comment_count)), when(ctx, p.published_at), act,
     ];
   });
-  const head: [string, string?][] = [[e(t("admin.col.post"))], [e(t("admin.col.author"))], [e(t("admin.col.status"))], [e(t("admin.col.likes")), "n"], [e(t("admin.col.comments")), "n"], [e(t("admin.col.published"))], ["", "a"]];
-  const filters = statusTabs + searchForm(ctx, "/admin/posts", v.query, "admin.posts.search", v.status ? { s: v.status } : {});
+  const head: [string, string?][] = [[e(t("admin.col.post"))], [e(t("admin.col.author"))], [e(t("admin.col.source"))], [e(t("admin.col.status"))], [e(t("admin.col.likes")), "n"], [e(t("admin.col.comments")), "n"], [e(t("admin.col.published"))], ["", "a"]];
+  const keep = { ...(v.status ? { s: v.status } : {}), ...(src ? { src } : {}) };
+  const filters = statusTabs + sourceTabs + searchForm(ctx, "/admin/posts", v.query, "admin.posts.search", keep);
   return renderAdmin(ctx, { section: "posts", title: t("admin.nav.posts"), main: body(v.notice, ctx, filters, v.page, table(head, rows), base, v.offset) });
 }
 

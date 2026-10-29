@@ -81,6 +81,7 @@
     "failed": "হয়নি — হয়তো আগেই নিষ্পত্তি হয়েছে।",
     "filter": {
       "all": "সব",
+      "allSources": "সব উৎস",
       "both": "পোস্ট ও মন্তব্য"
     },
     "group": {
@@ -143,8 +144,7 @@
     },
     "source": {
       "api": "থার্ড-পার্টি অ্যাপ",
-      "cn": "{app} (চীন)",
-      "intl": "{app} (ইন্টারন্যাশনাল)",
+      "other": "অন্যান্য অ্যাপ",
       "web": "ওয়েব"
     },
     "status": {
@@ -212,7 +212,9 @@
   },
   "common": {
     "brand": {
-      "nicenote": "NiceNote"
+      "nicelist": "NiceList",
+      "nicenote": "NiceNote",
+      "nicerecorder": "NiceRecorder"
     },
     "tagline": "যেকোনো সময়, যেকোনো জায়গা থেকে আপনার nice ideas শেয়ার করুন!"
   },

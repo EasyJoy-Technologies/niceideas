@@ -70,7 +70,7 @@ describe("F06: the worker settles media left due", () => {
 describe("F12: a share refresh survives a failure after its media job settled", () => {
   it("is retried by the worker until the share shows the media", async () => {
     const user = "rel-refresh";
-    const { post } = await createShare(ctx.db, { shareId: randomUUID(), userId: user, region: "intl", syncMode: "follow", commentsMode: null, profile: null });
+    const { post } = await createShare(ctx.db, { shareId: randomUUID(), userId: user, region: "intl", syncMode: "follow", commentsMode: null, profile: null, sourceApp: null });
     const ref = randomUUID();
     const doc = { version: 1, blocks: [{ type: "image", state: "ready", ref, mime: "image/png", bytes: 10 }] };
     await pushShareContent(ctx.db, ctx.stores, CACHE, post.id, { sourceRevision: 1, document: doc as never, media: { [ref]: { url: `${backend.base}/v1/internal/niceideas/media/one` } } as never });

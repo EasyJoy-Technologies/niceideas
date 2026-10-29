@@ -1,5 +1,6 @@
 import { sql, type RawBuilder } from "kysely";
 import type { Db } from "../client";
+import type { Post } from "../schema";
 
 /** Daily counts, oldest → newest, `days` entries ending today (UTC); missing days are 0. */
 async function daily(db: Db, table: string, column: string, days: number, count: RawBuilder<unknown> = sql`count(*)`): Promise<number[]> {
@@ -40,26 +41,31 @@ export async function authorsWeekly(db: Db): Promise<{ now: number; prev: number
   return { now: Number(rows[0]?.now ?? 0), prev: Number(rows[0]?.prev ?? 0) };
 }
 
-export const SOURCE_CLASSES = ["nicenote_intl", "nicenote_cn", "web", "api"] as const;
-export type SourceClass = (typeof SOURCE_CLASSES)[number];
-
-/** New posts per day and source class (third-party apps grouped; NiceNote shares by app region), last `days` days. */
-export async function postsBySource(db: Db, days: number): Promise<Record<SourceClass, number[]>> {
-  const { rows } = await sql<{ i: number; cls: SourceClass; n: string }>`
+/**
+ * New posts per day, last `days` days, by raw source class: `web`, `api` (third-party apps grouped) or
+ * `app:<product group key>` (app shares; empty key when none was recorded). Classes without posts are absent.
+ */
+export async function postsBySource(db: Db, days: number): Promise<Map<string, number[]>> {
+  const { rows } = await sql<{ i: number; cls: string; n: string }>`
     SELECT ((published_at AT TIME ZONE 'utc')::date - ((now() AT TIME ZONE 'utc')::date - ${days - 1}::int))::int AS i,
-           CASE WHEN source LIKE 'api:%' THEN 'api' WHEN source = 'nicenote' THEN 'nicenote_' || coalesce(region, 'intl') ELSE source END AS cls, count(*) AS n
+           CASE WHEN source LIKE 'api:%' THEN 'api' WHEN source = 'web' THEN 'web' ELSE 'app:' || coalesce(source_app_key, '') END AS cls, count(*) AS n
     FROM post WHERE published_at >= (now() AT TIME ZONE 'utc')::date - ${days - 1}::int GROUP BY 1, 2`.execute(db);
-  const out = Object.fromEntries(SOURCE_CLASSES.map((c) => [c, new Array<number>(days).fill(0)])) as Record<SourceClass, number[]>;
-  for (const r of rows) if (out[r.cls] && r.i >= 0 && r.i < days) out[r.cls][r.i] = Number(r.n);
+  const out = new Map<string, number[]>();
+  for (const r of rows) {
+    if (r.i < 0 || r.i >= days) continue;
+    const values = out.get(r.cls) ?? new Array<number>(days).fill(0);
+    values[r.i] = Number(r.n);
+    out.set(r.cls, values);
+  }
   return out;
 }
 
-export type TopPost = { slug: string; title: string; summary: string; kind: string; source: string; handle: string; likes: number; comments: number; recent: number };
+export type TopPost = Pick<Post, "slug" | "title" | "summary" | "kind" | "source" | "source_app_key" | "source_app_names"> & { handle: string; likes: number; comments: number; recent: number };
 
 /** Live posts with the most likes received in the last 7 days. */
 export async function topPosts(db: Db, limit: number): Promise<TopPost[]> {
   const { rows } = await sql<TopPost>`
-    SELECT p.slug, p.title, p.summary, p.kind, p.source, pr.handle, p.like_count AS likes, p.comment_count AS comments, count(l.post_id)::int AS recent
+    SELECT p.slug, p.title, p.summary, p.kind, p.source, p.source_app_key, p.source_app_names, pr.handle, p.like_count AS likes, p.comment_count AS comments, count(l.post_id)::int AS recent
     FROM post p JOIN profile pr ON pr.user_id = p.author_id
     LEFT JOIN post_like l ON l.post_id = p.id AND l.created_at >= now() - interval '7 days'
     WHERE p.status = 'active'

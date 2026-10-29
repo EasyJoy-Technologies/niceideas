@@ -1,3 +1,4 @@
+import { randomUUID } from "node:crypto";
 import { afterAll, beforeAll, describe, expect, it } from "vitest";
 import { sql } from "kysely";
 import type { Db } from "@/server/db/client";
@@ -9,6 +10,7 @@ import { insertMediaOrGet } from "@/server/db/repos/media";
 import { mediaReferences } from "@/server/db/repos/media-visibility";
 import { claimIdempotency, completeIdempotency, releaseIdempotency } from "@/server/db/repos/idempotency";
 import { startTestDb } from "../helpers/pg";
+import * as sourceApp from "@/server/db/migrations/0025_post_source_app";
 
 let db: Db;
 let stop: () => Promise<void>;
@@ -23,6 +25,25 @@ afterAll(async () => stop?.());
 describe("migrations", () => {
   it("are idempotent", async () => {
     expect(await migrateToLatest(db)).toEqual([]);
+  });
+
+  it("0025 marks posts shared before it as NiceNote; web and third-party posts get no source app", async () => {
+    await sourceApp.down(db as never);
+    const ids: Record<string, string> = {};
+    for (const [i, source] of (["nicenote", "nicenote_cn", "web", "api:client-1"] as const).entries()) {
+      const r = await sql<{ id: string }>`INSERT INTO post (slug, author_id, kind, source, share_id) VALUES (${`mig25slug000${i}`}, 'u1', 'short', ${source}, ${source === "nicenote" ? randomUUID() : null}) RETURNING id`.execute(db);
+      ids[source] = r.rows[0].id;
+    }
+    await sourceApp.up(db as never);
+    const rows = await db.selectFrom("post").select(["id", "source_app_key", "source_app_names"]).where("id", "in", Object.values(ids)).execute();
+    const of = (id: string) => rows.find((r) => r.id === id);
+    const nicenote = { source_app_key: "nicenote", source_app_names: { en: "NiceNote", "zh-Hans": "乐趣记事本", "zh-Hant": "樂趣記事本" } };
+    expect(of(ids.nicenote)).toMatchObject(nicenote);
+    expect(of(ids.nicenote_cn)).toMatchObject(nicenote);
+    expect(of(ids.web)).toMatchObject({ source_app_key: null, source_app_names: null });
+    expect(of(ids["api:client-1"])).toMatchObject({ source_app_key: null, source_app_names: null });
+    await expect(sql`UPDATE post SET source_app_key = 'x' WHERE id = ${ids.web}`.execute(db)).rejects.toThrow(/post_source_app_pair/);
+    await sql`DELETE FROM post WHERE id IN (${sql.join(Object.values(ids))})`.execute(db);
   });
 });
 

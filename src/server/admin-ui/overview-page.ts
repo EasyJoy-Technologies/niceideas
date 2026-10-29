@@ -1,17 +1,18 @@
-import type { OverviewSeries, SourceClass, TodoCounts, TopPost, Health } from "@/server/db/repos/admin-stats";
+import type { OverviewSeries, TodoCounts, TopPost, Health } from "@/server/db/repos/admin-stats";
 import { escapeHtml } from "@/server/render/escape";
 import { cardTitle } from "@/server/share/card";
 import { icon, type IconName } from "@/server/share/icons";
-import { sourceBadge, badgeAppName } from "@/server/share/sources";
 import { APP_VERSION } from "@/server/version";
 import { stackedBars, sparkline } from "./charts";
 import { table, when } from "./parts";
 import { renderAdmin, type AdminContext } from "./shell";
+import { ADMIN_SOURCES, adminSourceLabel, adminSourceOfClass, postSourceLabel, type AdminSource } from "./source-class";
 
 export type OverviewView = {
   series: OverviewSeries;
   authors: { now: number; prev: number };
-  bySource: Record<SourceClass, number[]>;
+  /** New posts per day (`days` entries) by raw source class (repos/admin-stats.ts `postsBySource`). */
+  bySource: { days: number; byClass: Map<string, number[]> };
   top: TopPost[];
   todo: TodoCounts;
   health: Health;
@@ -35,17 +36,29 @@ function kpi(ctx: AdminContext, key: keyof OverviewSeries, cls: string, v: Overv
   );
 }
 
+/** Colour class of each source's stack (admin.css); our apps take s1, s2, s5 in order, later ones share s6 with "other". */
+const APP_COLORS = ["s1", "s2", "s5"];
+const colorOf = (s: AdminSource, i: number) => (s === "web" ? "s3" : s === "api" ? "s4" : s === "other" ? "s6" : (APP_COLORS[i] ?? "s6"));
+
+/** Daily new posts stacked by source: each of our apps, other apps (only when there are any), web, third-party apps. */
+function sourceStacks(v: OverviewView): { s: AdminSource; cls: string; values: number[] }[] {
+  const { days, byClass } = v.bySource;
+  const sums = new Map<AdminSource, number[]>(ADMIN_SOURCES.map((s) => [s, new Array<number>(days).fill(0)]));
+  for (const [raw, values] of byClass) {
+    const into = sums.get(adminSourceOfClass(raw))!;
+    values.forEach((n, i) => (into[i] += n));
+  }
+  return ADMIN_SOURCES.filter((s) => s !== "other" || sum(sums.get(s)!) > 0).map((s, i) => ({ s, cls: colorOf(s, i), values: sums.get(s)! }));
+}
+
 function sourceChart(ctx: AdminContext, v: OverviewView): string {
   const { t, format } = ctx.intl;
-  const app = t("common.brand.nicenote");
-  const names: Record<SourceClass, string> = { nicenote_intl: t("admin.source.intl", { app }), nicenote_cn: t("admin.source.cn", { app }), web: t("admin.source.web"), api: t("admin.source.api") };
-  const cls: Record<SourceClass, string> = { nicenote_intl: "s1", nicenote_cn: "s2", web: "s3", api: "s4" };
-  const order: SourceClass[] = ["nicenote_intl", "nicenote_cn", "web", "api"];
-  const days = v.bySource.web.length;
+  const { days } = v.bySource;
+  const stacks = sourceStacks(v);
   const labels = Array.from({ length: days }, (_, i) => format.dateTime(new Date(Date.now() - (days - 1 - i) * 86_400_000), { month: "numeric", day: "numeric", timeZone: "UTC" }));
-  const legend = order.map((k) => `<span class="ad-li"><i class="${cls[k]}"></i>${e(names[k])}</span>`).join("");
+  const legend = stacks.map((k) => `<span class="ad-li"><i class="${k.cls}"></i>${e(adminSourceLabel(ctx, k.s))}</span>`).join("");
   const title = t("admin.chart.postsBySource");
-  return `<section class="ad-cd ad-span8"><h2>${e(title)}<span class="ad-legend">${legend}</span></h2>${stackedBars(order.map((k) => ({ cls: cls[k], values: v.bySource[k] })), labels, title)}</section>`;
+  return `<section class="ad-cd ad-span8"><h2>${e(title)}<span class="ad-legend">${legend}</span></h2>${stackedBars(stacks, labels, title)}</section>`;
 }
 
 function todo(ctx: AdminContext, v: OverviewView): string {
@@ -77,14 +90,11 @@ function health(ctx: AdminContext, v: OverviewView): string {
 function topTable(ctx: AdminContext, v: OverviewView): string {
   const { t, format } = ctx.intl;
   const kind = (k: string) => t(k === "article" ? "feed.article" : "compose.mode.short");
-  const rows = v.top.map((p) => {
-    const badge = sourceBadge(p.source as never);
-    return [
-      `<a class="ad-tt" href="/p/${p.slug}" target="_blank" rel="noopener">${e(cardTitle(p))}</a><small>${e(kind(p.kind))} · @${e(p.handle)}</small>`,
-      e(badge ? badgeAppName(t, badge) : t("admin.source.web")),
-      e(format.number(p.recent)), e(format.number(p.likes)), e(format.number(p.comments)),
-    ];
-  });
+  const rows = v.top.map((p) => [
+    `<a class="ad-tt" href="/p/${p.slug}" target="_blank" rel="noopener">${e(cardTitle(p))}</a><small>${e(kind(p.kind))} · @${e(p.handle)}</small>`,
+    e(postSourceLabel(ctx, p)),
+    e(format.number(p.recent)), e(format.number(p.likes)), e(format.number(p.comments)),
+  ]);
   const head: [string, string?][] = [[e(t("admin.col.post"))], [e(t("admin.col.source"))], [e(t("admin.col.likes7")), "n"], [e(t("admin.col.likes")), "n"], [e(t("admin.col.comments")), "n"]];
   return `<div class="ad-span8">${table(head, rows, e(t("admin.top.title")))}</div>`;
 }

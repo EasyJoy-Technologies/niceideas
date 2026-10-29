@@ -3,7 +3,7 @@ import { editBlocker } from "@/server/posts/edit-post";
 import { escapeHtml } from "@/server/render/escape";
 import type { ChromeContext } from "./chrome";
 import { icon } from "./icons";
-import { badgeAppName, sourceBadge } from "./sources";
+import { type BadgeSource, sourceBadge } from "./sources";
 
 /** True when the signed-in viewer wrote the post (author-only actions). */
 export const isOwnPost = (ctx: ChromeContext, post: Pick<Post, "author_id">) => !!ctx.viewer && ctx.viewer.user_id === post.author_id;
@@ -26,12 +26,12 @@ function visibilityItem(ctx: ChromeContext, post: Pick<Post, "slug" | "visibilit
   );
 }
 
-export function ownPostMenu(ctx: ChromeContext, post: Pick<Post, "slug" | "source" | "status" | "media_state" | "visibility">, back: string): string {
+export function ownPostMenu(ctx: ChromeContext, post: Pick<Post, "slug" | "status" | "media_state" | "visibility"> & BadgeSource, back: string): string {
   const { t } = ctx.intl;
   const more = escapeHtml(t("share.action.more"));
   const del = escapeHtml(t("share.action.delete"));
-  const badge = sourceBadge(post.source);
-  const fromApp = badge ? `<p>${escapeHtml(t("share.delete.fromApp", { app: badgeAppName(t, badge) }))}</p>` : "";
+  const badge = sourceBadge(post, ctx.intl.locale);
+  const fromApp = badge ? `<p>${escapeHtml(t("share.delete.fromApp", { app: badge.name }))}</p>` : "";
   const form =
     `<form class="ni-del-f" method="post" action="/api/web/posts/delete"><input type="hidden" name="slug" value="${escapeHtml(post.slug)}">` +
     `<input type="hidden" name="back" value="${escapeHtml(back)}"><b>${escapeHtml(t("share.delete.title"))}</b><p>${escapeHtml(t("share.delete.body"))}</p>${fromApp}` +

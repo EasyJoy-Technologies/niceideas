@@ -81,6 +81,7 @@
     "failed": "זה לא הצליח — ייתכן שכבר טופל.",
     "filter": {
       "all": "הכול",
+      "allSources": "כל המקורות",
       "both": "פוסטים ותגובות"
     },
     "group": {
@@ -143,8 +144,7 @@
     },
     "source": {
       "api": "אפליקציות צד שלישי",
-      "cn": "{app} (סין)",
-      "intl": "{app} (בין-לאומי)",
+      "other": "אפליקציות אחרות",
       "web": "אתר"
     },
     "status": {
@@ -212,7 +212,9 @@
   },
   "common": {
     "brand": {
-      "nicenote": "NiceNote"
+      "nicelist": "NiceList",
+      "nicenote": "NiceNote",
+      "nicerecorder": "NiceRecorder"
     },
     "tagline": "שתפו את ה-nice ideas שלכם בכל זמן ובכל מקום!"
   },

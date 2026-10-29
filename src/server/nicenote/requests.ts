@@ -1,6 +1,7 @@
 import { z } from "zod";
 import { sourceDocumentSchema } from "@/server/documents/source-schema";
 import { badRequest } from "@/server/http/errors";
+import { parseSourceApp } from "./source-app";
 
 /** Request bodies of the NiceNote source API (contract niceideas-share.md §3). */
 const nullableText = (max: number) => z.string().max(max).nullable().optional().transform((v) => v ?? null);
@@ -18,6 +19,8 @@ export const createShareBody = z.object({
   syncMode: syncMode.nullable().optional().transform((v) => v ?? "follow"),
   commentsMode: commentsMode.nullable().optional().transform((v) => v ?? null),
   profile: sourceProfile,
+  /** Missing or invalid → null (no source app recorded); never rejects the request. */
+  sourceApp: z.unknown().optional().transform(parseSourceApp),
 });
 
 /** POST /web-tickets (§10.2). */

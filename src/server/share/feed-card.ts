@@ -15,7 +15,7 @@ import { isOwnPost, ownPostMenu } from "./post-menu";
 import { quoteEmbed } from "./quote-embed";
 import { repostAction } from "./repost-button";
 import { repostedLine } from "./reposted-line";
-import { badgeAppName, sourceBadge } from "./sources";
+import { sourceBadge } from "./sources";
 
 const COVER_SIZES = "(min-width: 48rem) 37rem, 100vw";
 const NO_MEDIA: ReadonlyMap<string, Media> = new Map();
@@ -80,9 +80,9 @@ export function feedCard(ctx: ChromeContext, item: FeedItem): string {
   const name = post.author_name || `@${post.author_handle}`;
   const href = profilePath(post.author_handle);
   const at = post.published_at;
-  const badge = sourceBadge(post.source);
+  const badge = sourceBadge(post, ctx.intl.locale);
   // Phones show the app icon only (label in title / aria-label); wider screens add the text.
-  const from = badge ? escapeHtml(t("share.post.from", { app: badgeAppName(t, badge) })) : "";
+  const from = badge ? escapeHtml(t("share.post.from", { app: badge.name })) : "";
   const source = badge
     ? badge.href
       ? `<a class="ni-fc-src" href="${escapeHtml(badge.href)}" target="_blank" rel="noopener" title="${from}" aria-label="${from}"><img src="${escapeHtml(badge.icon)}" width="14" height="14" alt=""><span>${from}</span></a>`

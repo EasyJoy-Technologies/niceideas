@@ -8,9 +8,12 @@ import { renderBans, renderAudit, renderComments, renderPosts } from "./lists-pa
 import { renderOverview } from "./overview-page";
 import { PAGE_SIZE } from "./parts";
 import { renderReports, type ReportsView } from "./reports-page";
+import { ADMIN_SOURCES, adminPostSourceFilter } from "./source-class";
 import type { AdminContext, AdminSection } from "./shell";
 
 const QUEUE_LIMIT = 100;
+/** Days in the overview's posts-by-source chart. */
+const SOURCE_DAYS = 30;
 const pick = <T extends string>(v: string | null, allowed: readonly T[]): T | null => ((allowed as readonly string[]).includes(v ?? "") ? (v as T) : null);
 const offsetOf = (url: URL) => Math.max(0, Math.min(10_000, Math.floor(Number(url.searchParams.get("o")) || 0)));
 const noticeOf = (url: URL) => pick(url.searchParams.get("n"), ["done", "failed"] as const);
@@ -41,17 +44,19 @@ export async function loadSection(db: Db, ctx: AdminContext, section: AdminSecti
   const offset = offsetOf(url);
   switch (section) {
     case "overview": {
-      const [series, authors, bySource, top, todo, health] = await Promise.all([
-        overviewSeries(db), authorsWeekly(db), postsBySource(db, 30), topPosts(db, 5), todoCounts(db), systemHealth(db),
+      const [series, authors, byClass, top, todo, health] = await Promise.all([
+        overviewSeries(db), authorsWeekly(db), postsBySource(db, SOURCE_DAYS), topPosts(db, 5), todoCounts(db), systemHealth(db),
       ]);
-      return renderOverview(ctx, { series, authors, bySource, top, todo, health });
+      return renderOverview(ctx, { series, authors, bySource: { days: SOURCE_DAYS, byClass }, top, todo, health });
     }
     case "reports":
       return reports(db, ctx, url);
     case "posts": {
       const status = pick<PostStatus>(url.searchParams.get("s"), ["active", "preparing", "removed", "unpublished", "author_deleting"]);
+      const source = pick(url.searchParams.get("src"), ADMIN_SOURCES);
       const query = queryOf(url);
-      return renderPosts(ctx, { status, query, offset, page: await listAdminPosts(db, { status, query, offset, limit: PAGE_SIZE }), notice: noticeOf(url) });
+      const page = await listAdminPosts(db, { status, source: source && adminPostSourceFilter(source), query, offset, limit: PAGE_SIZE });
+      return renderPosts(ctx, { status, source, query, offset, page, notice: noticeOf(url) });
     }
     case "comments": {
       const status = pick<CommentStatus>(url.searchParams.get("s"), ["visible", "hidden", "deleted"]);

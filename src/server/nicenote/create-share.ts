@@ -21,7 +21,8 @@ async function existing(db: Db, input: CreateShareInput): Promise<{ post: Post; 
 /**
  * POST /posts (contract niceideas-share.md §3.2): idempotent by share id, database only (no
  * outside calls), so it answers in milliseconds. The new post is `preparing` until the first
- * content push. The profile is created on first contact and follows the sent NiceMatrix data.
+ * content push. The profile is created on first contact and follows the sent NiceMatrix data. The source app
+ * is recorded only here: a repeated request for the same share id never changes it.
  */
 export async function createShare(db: Db, input: CreateShareInput): Promise<{ post: Post; created: boolean }> {
   const found = await existing(db, input);
@@ -51,6 +52,8 @@ export async function createShare(db: Db, input: CreateShareInput): Promise<{ po
           status_reason: null,
           purge_after: null,
           source_revision: null,
+          source_app_key: input.sourceApp?.key ?? null,
+          source_app_names: input.sourceApp ? JSON.stringify(input.sourceApp.names) : null,
         });
       });
       return { post, created: true };

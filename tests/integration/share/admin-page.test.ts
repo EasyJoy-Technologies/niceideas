@@ -1,7 +1,8 @@
 import { afterAll, beforeAll, describe, expect, it } from "vitest";
 import { GET as adminGet, POST as adminPost } from "@/app/admin/route";
 import { GET as sectionGet } from "@/app/admin/[section]/route";
-import { publishAs } from "../../helpers/publish";
+import { publishAs, shareFromNiceNote } from "../../helpers/publish";
+import { NICERECORDER_APP } from "../../helpers/source-app";
 import { startSession } from "@/server/auth/web/session";
 import { resetConfigForTests } from "@/server/config/env";
 import { ensureProfile } from "@/server/profiles/ensure-profile";
@@ -83,6 +84,33 @@ describe("admin console", () => {
     expect(await (await section(adminCookie, "bans")).text()).toContain("Lift ban");
     expect(await (await section(adminCookie, "audit")).text()).toContain("Hid comment");
     expect((await act(adminCookie, { action: "unban", target: "visitor:vk-1", reason: "appeal", back: "/admin/bans" })).headers.get("location")).toBe("/admin/bans?n=done");
+  });
+
+  it("posts: source column and filter by source app / web / other apps; overview stacks posts by source app", async () => {
+    const rec = await shareFromNiceNote(ctx, "admin-author", { version: 1, blocks: [{ type: "text", text: "Recorder idea" }] }, { sourceApp: NICERECORDER_APP });
+    const none = await shareFromNiceNote(ctx, "admin-author", { version: 1, blocks: [{ type: "text", text: "Unnamed app idea" }] }, { sourceApp: null });
+    const list = (src: string) => section(adminCookie, "posts", src ? `?src=${src}` : "").then((r) => r.text());
+    const all = await list("");
+    for (const label of ["All sources", "NiceNote", "NiceRecorder", "NiceList", "Other apps", "Web", "Third-party apps"]) expect(all).toContain(`>${label}<`);
+    expect(all).toContain(`/p/${rec.slug}`);
+    const recorder = await list("nicerecorder");
+    expect(recorder).toContain(`/p/${rec.slug}`);
+    expect(recorder).not.toContain(`/p/${slug}`);
+    expect(recorder).toContain('href="/admin/posts?s=removed&amp;src=nicerecorder"');
+    const web = await list("web");
+    expect(web).toContain(`/p/${slug}`);
+    expect(web).not.toContain(`/p/${rec.slug}`);
+    const other = await list("other");
+    expect(other).toContain(`/p/${none.slug}`);
+    expect(other).not.toContain(`/p/${rec.slug}`);
+    expect(await list("bogus")).toContain(`/p/${rec.slug}`);
+    const zh = await (await sectionGet(new Request(`${BASE}/admin/posts?src=nicerecorder`, { headers: { "accept-language": "zh-CN", cookie: `${adminCookie}; ni_sso=1` } }), { params: Promise.resolve({ section: "posts" }) })).text();
+    expect(zh).toContain("易录音");
+    const overview = await (await get(adminCookie)).text();
+    for (const [cls, label] of [["s1", "NiceNote"], ["s2", "NiceRecorder"], ["s5", "NiceList"], ["s6", "Other apps"], ["s3", "Web"], ["s4", "Third-party apps"]]) {
+      expect(overview).toContain(`<span class="ad-li"><i class="${cls}"></i>${label}</span>`);
+    }
+    expect(overview).toMatch(/<rect class="s2"/);
   });
 
   it("renders the overview; viewers can read but not act; unknown sections 404", async () => {

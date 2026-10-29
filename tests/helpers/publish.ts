@@ -11,6 +11,8 @@ import { unpublishPost } from "@/server/posts/withdraw-post";
 import { ensureProfile } from "@/server/profiles/ensure-profile";
 import type { MediaStores } from "@/server/storage/types";
 import { removeTempDir, spoolBody } from "@/server/util/temp-file";
+import type { SourceApp } from "@/server/nicenote/source-app";
+import { NICENOTE_APP } from "./source-app";
 
 type Ctx = { db: Db; stores: MediaStores };
 export type Published = { id: string; slug: string };
@@ -40,9 +42,10 @@ export async function uploadAs(ctx: Ctx, userId: string, bytes: Buffer, sourceRe
 /** The author deletes a post (same service as the web). */
 export const deleteAs = (ctx: Ctx, postId: string) => unpublishPost(ctx.db, ctx.stores, postId, 30);
 
-/** A NiceNote share as the NiceMatrix backend makes it: create, then push a NiceNote document. */
-export async function shareFromNiceNote(ctx: Ctx, userId: string, document: unknown, opts: { revision?: number; region?: "intl" | "cn" } = {}): Promise<Published> {
-  const { post } = await createShare(ctx.db, { shareId: randomUUID(), userId, region: opts.region ?? "intl", syncMode: "follow", commentsMode: null, profile: null });
+/** An app share as the NiceMatrix backend makes it (NiceNote unless `sourceApp` says otherwise): create, then push a document. */
+export async function shareFromNiceNote(ctx: Ctx, userId: string, document: unknown, opts: { revision?: number; region?: "intl" | "cn"; sourceApp?: SourceApp | null } = {}): Promise<Published> {
+  const sourceApp = opts.sourceApp === undefined ? NICENOTE_APP : opts.sourceApp;
+  const { post } = await createShare(ctx.db, { shareId: randomUUID(), userId, region: opts.region ?? "intl", syncMode: "follow", commentsMode: null, profile: null, sourceApp });
   const pushed = await pushShareContent(ctx.db, ctx.stores, CACHE, post.id, { sourceRevision: opts.revision ?? 1, document: document as never, media: {} });
   return { id: pushed.post.id, slug: pushed.post.slug };
 }

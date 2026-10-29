@@ -26,7 +26,7 @@ const image = (ref: string) => ({ type: "image", state: "ready", ref, mime: "ima
 const audio = (ref: string) => ({ type: "audio", state: "ready", ref, mime: "audio/wav", bytes: 1, title: "Tone" });
 const doc = (...blocks: unknown[]) => ({ version: 1 as const, title: "Media", blocks });
 async function share(blocks: unknown[], media: Record<string, { url: string; expiresAt: string }>, revision = 1) {
-  const { post } = await createShare(ctx.db, { shareId: randomUUID(), userId: USER, region: "intl", syncMode: "follow", commentsMode: null, profile: null });
+  const { post } = await createShare(ctx.db, { shareId: randomUUID(), userId: USER, region: "intl", syncMode: "follow", commentsMode: null, profile: null, sourceApp: null });
   return (await pushShareContent(ctx.db, ctx.stores, CACHE, post.id, { sourceRevision: revision, document: doc(...blocks) as never, media })).post;
 }
 const push = (postId: string, blocks: unknown[], media: Record<string, { url: string; expiresAt: string }>, revision: number) =>

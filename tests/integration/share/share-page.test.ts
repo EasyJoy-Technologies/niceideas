@@ -12,6 +12,7 @@ import { startAppContext } from "../../helpers/app-context";
 import { params } from "../../helpers/api";
 import { deleteAs, publishAs, shareFromNiceNote, uploadAs } from "../../helpers/publish";
 import { jpegWithExif } from "../../helpers/media-fixtures";
+import { NICERECORDER_APP } from "../../helpers/source-app";
 
 let ctx: Awaited<ReturnType<typeof startAppContext>>;
 beforeAll(async () => {
@@ -190,5 +191,36 @@ describe("page-level mainland-China rule", () => {
     const html = await res.text();
     expect(html).toContain("此页面在你所在的地区不可用");
     expect(html).not.toContain('href="/"');
+  });
+});
+
+describe("source app badge (contract §3.2 sourceApp)", () => {
+  const text = (slug: string, headers: Record<string, string>) => page(slug, headers).then((r) => r.text());
+  const doc = { version: 1, blocks: [{ type: "text", text: "Voice memo" }] };
+
+  it("names the app in Simplified / Traditional Chinese, English in every other language; own icon and website", async () => {
+    const rec = await shareFromNiceNote(ctx, "author-2", doc, { sourceApp: NICERECORDER_APP });
+    const en = await text(rec.slug, { "accept-language": "en" });
+    expect(en).toContain("From NiceRecorder");
+    expect(en).toContain('src="/brand/sources/nicerecorder.png"');
+    expect(en).toContain('href="https://er.ej-mobile.cn/?utm_source=niceideas&amp;utm_medium=post_source"');
+    expect(await text(rec.slug, { "accept-language": "zh-CN" })).toContain("来自 易录音");
+    expect(await text(rec.slug, { cookie: "ni_locale=zh-Hant" })).toContain("來自 易錄音");
+    expect(await text(rec.slug, { "accept-language": "ja" })).toContain("NiceRecorder から");
+    expect(await text(rec.slug, { "accept-language": "de" })).toContain("NiceRecorder");
+  });
+
+  it("an app we do not know yet: its name, the generic icon, no link", async () => {
+    const other = await shareFromNiceNote(ctx, "author-2", doc, { sourceApp: { key: "nicefuture", names: { en: "NiceFuture" } } });
+    const html = await text(other.slug, { "accept-language": "zh-CN" });
+    expect(html).toContain("来自 NiceFuture");
+    expect(html).toMatch(/<span class="ni-source"><img src="\/brand\/sources\/third-party.svg"/);
+  });
+
+  it("no source app recorded: no badge", async () => {
+    const none = await shareFromNiceNote(ctx, "author-2", doc, { sourceApp: null });
+    const html = await text(none.slug, { "accept-language": "en" });
+    expect(html).not.toContain("ni-source");
+    expect(html).not.toContain("From ");
   });
 });
