@@ -13,7 +13,7 @@ const COLUMN_PX = 672;
 /** Wide screens leave room around the image for the bar, arrows and caption. */
 const WIDE_PX = 768;
 
-/** Long images (at least 3× taller than wide, e.g. long screenshots). */
+/** Long images (at least 3× taller than wide, e.g. long screenshots; post pages: LONG_IMAGE_RATIO in src/server/render/media-html.ts). */
 export const isLongItem = (item: SlideData | undefined) => !!item?.width && !!item.height && item.height >= 3 * item.width;
 const isLong = (zl: ZoomLevel) => !!zl.elementSize && zl.elementSize.y >= 3 * zl.elementSize.x;
 

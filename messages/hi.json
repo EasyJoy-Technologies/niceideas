@@ -473,6 +473,7 @@
     },
     "language": "भाषा",
     "media": {
+      "longImage": "लंबी तस्वीर",
       "processing": "प्रोसेस हो रहा है…",
       "unavailable": "मीडिया उपलब्ध नहीं है"
     },

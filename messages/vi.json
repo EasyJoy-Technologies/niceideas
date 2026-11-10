@@ -473,6 +473,7 @@
     },
     "language": "Ngôn ngữ",
     "media": {
+      "longImage": "Ảnh dài",
       "processing": "Đang xử lý…",
       "unavailable": "Không có sẵn nội dung đa phương tiện"
     },

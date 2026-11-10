@@ -473,6 +473,7 @@
     },
     "language": "Jazyk",
     "media": {
+      "longImage": "Dlouhý obrázek",
       "processing": "Zpracovává se…",
       "unavailable": "Médium není k dispozici"
     },

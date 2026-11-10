@@ -473,6 +473,7 @@
     },
     "language": "Bahasa",
     "media": {
+      "longImage": "Gambar panjang",
       "processing": "Memproses…",
       "unavailable": "Media tidak tersedia"
     },

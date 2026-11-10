@@ -473,6 +473,7 @@
     },
     "language": "语言",
     "media": {
+      "longImage": "长图",
       "processing": "媒体处理中…",
       "unavailable": "媒体暂不可用"
     },

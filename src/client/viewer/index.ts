@@ -1,6 +1,7 @@
 import PhotoSwipe from "photoswipe";
 import PhotoSwipeLightbox from "photoswipe/lightbox";
 import { bindBackButton } from "./back-button";
+import { bindThumbBounds } from "./thumb-bounds";
 import { bindUi, iconOptions } from "./ui";
 import { bindZoomBehaviour, zoomOptions } from "./zoom";
 
@@ -31,6 +32,7 @@ function setup(): void {
     ...zoomOptions,
   });
   bindZoomBehaviour(lightbox);
+  bindThumbBounds(lightbox);
   bindUi(lightbox, labels.viewerLabel ?? "");
   bindBackButton(lightbox);
 

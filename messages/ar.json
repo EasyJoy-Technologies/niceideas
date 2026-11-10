@@ -473,6 +473,7 @@
     },
     "language": "اللغة",
     "media": {
+      "longImage": "صورة طويلة",
       "processing": "قيد المعالجة…",
       "unavailable": "الوسائط غير متاحة"
     },

@@ -473,6 +473,7 @@
     },
     "language": "Limbă",
     "media": {
+      "longImage": "Imagine lungă",
       "processing": "Se procesează…",
       "unavailable": "Conținut media indisponibil"
     },

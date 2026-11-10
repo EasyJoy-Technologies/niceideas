@@ -1,5 +1,6 @@
 import path from "node:path";
 import sharp from "./sharp";
+import { dominantTone } from "./tone";
 import type { MediaRendition } from "@/server/db/schema";
 
 /** Responsive widths (plan §6). Never upscaled. */
@@ -23,6 +24,8 @@ export type ProcessedImage = {
   fallback: MediaRendition;
   /** Zoom rendition (WebP) when the image has more detail than the largest responsive rendition shows. */
   large: MediaRendition | null;
+  /** Dominant colour ("#rrggbb", tone.ts); null when it could not be read. */
+  tone: string | null;
 };
 
 export type ImageRejectReason = "too_large" | "decode_failed";
@@ -112,12 +115,15 @@ export async function processImage(input: string, workDir: string, maxPixels: nu
       const li = await stillImage().resize({ width: ls.w }).webp({ quality: 82, effort: 2 }).toFile(path.join(workDir, "large.webp"));
       large = { key: "large.webp", mime: "image/webp", bytes: li.size, width: li.width, height: li.height };
     }
+    // From the smallest rendition (already written): cheap, and never fails the upload.
+    const tone = await dominantTone(path.join(workDir, webp[0].key));
     return {
       width,
       height,
       webp,
       fallback: { key: fallbackName, mime: usePng ? "image/png" : "image/jpeg", bytes: info.size, width: info.width, height: info.height },
       large,
+      tone,
     };
   } catch (err) {
     // Disk / memory trouble is not the image's fault: let the caller retry later.

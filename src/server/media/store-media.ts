@@ -43,7 +43,13 @@ export async function storeImageRenditions(store: ObjectStore, prefix: string, w
   const results = await Promise.allSettled(all.map((r) => store.putFile(`${prefix}/${r.key}`, path.join(workDir, r.key), { contentType: r.mime })));
   const failed = results.find((r) => r.status === "rejected");
   if (failed) throw failed.reason;
-  return { kind: "image", webp: img.webp.map(withKey), fallback: withKey(img.fallback), ...(img.large ? { large: withKey(img.large) } : {}) };
+  return {
+    kind: "image",
+    webp: img.webp.map(withKey),
+    fallback: withKey(img.fallback),
+    ...(img.large ? { large: withKey(img.large) } : {}),
+    ...(img.tone ? { tone: img.tone } : {}),
+  };
 }
 
 /** Uploads one audio file to the private store under `prefix`. */

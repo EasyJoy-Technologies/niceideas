@@ -473,6 +473,7 @@
     },
     "language": "Тіл",
     "media": {
+      "longImage": "Ұзын сурет",
       "processing": "Өңделіп жатыр…",
       "unavailable": "Медиа қолжетімсіз"
     },

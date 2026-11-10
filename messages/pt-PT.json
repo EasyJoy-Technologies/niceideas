@@ -473,6 +473,7 @@
     },
     "language": "Idioma",
     "media": {
+      "longImage": "Imagem longa",
       "processing": "A processar…",
       "unavailable": "Multimédia indisponível"
     },

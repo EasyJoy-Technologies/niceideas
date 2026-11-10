@@ -85,7 +85,8 @@ describe("discover and profile pages", () => {
     expect(status).toBe(200);
     expect(html).toContain(`@${handle}`);
     expect(html).toMatch(/<b>22<\/b> Posts/);
-    expect(html).toContain("Joined October 2026");
+    // The profile was created by this test run: joined this month.
+    expect(html).toContain(`Joined ${new Intl.DateTimeFormat("en", { year: "numeric", month: "long", timeZone: "UTC" }).format(new Date())}`);
     expect(html).toContain(`<link rel="canonical" href="http://localhost:3000/@${handle}">`);
     const missing = await profile("nobody_here");
     expect(missing.status).toBe(404);

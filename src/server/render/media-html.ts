@@ -3,6 +3,8 @@ import { escapeHtml } from "./escape";
 
 /** Maps a stored object key to its public URL (injected; keeps rendering pure). */
 export type MediaUrl = (key: string) => string;
+/** Media texts of a post body: NiceNote placeholders and the long-image tag. */
+export type MediaLabels = { processing: string; unavailable: string; longImage?: string };
 
 const IMAGE_SIZES = "(min-width: 48rem) 42rem, 100vw";
 
@@ -39,15 +41,36 @@ export function zoomLink(v: ImageVariants, inner: string, publicUrl: MediaUrl, o
   return `${ZOOM_LINK_MARKER} href="${publicUrl(top.key)}"${data}>${inner}</a>`;
 }
 
-/** Responsive image opening the viewer; "" when the media is missing or not an image (never a broken element). */
-export function imageFigure(media: Media | undefined, text: { alt?: string; caption?: string }, eager: boolean, publicUrl: MediaUrl): string {
+/** Images at least this many times taller than wide are long (the image viewer's rule too: src/client/viewer/zoom.ts). */
+export const LONG_IMAGE_RATIO = 3;
+
+/** Stored tone when it is safe to put in markup ("#rrggbb"); older images have none. */
+const toneOf = (v: ImageVariants): string | null => (typeof v.tone === "string" && /^#[0-9a-f]{6}$/.test(v.tone) ? v.tone : null);
+
+/** Backdrop in the image's tone: an SVG fill, since the page CSP allows no style attributes. */
+const toneLayer = (tone: string) =>
+  `<svg class="ni-tone" viewBox="0 0 1 1" preserveAspectRatio="none" aria-hidden="true" focusable="false"><rect width="1" height="1" fill="${tone}"/></svg>`;
+
+/**
+ * Responsive image opening the viewer; "" when the media is missing or not an image (never a broken element).
+ * Post-body layout (post-body.css): a frame as wide as the column; the image is never enlarged and at most
+ * about one screen tall, the rest of the frame shows its tone. Long images show their top part, tagged
+ * with `longLabel`.
+ */
+export function imageFigure(media: Media | undefined, text: { alt?: string; caption?: string }, eager: boolean, publicUrl: MediaUrl, longLabel = ""): string {
   if (!media || media.variants.kind !== "image") return "";
   const v = media.variants;
   const alt = escapeHtml(text.alt ?? text.caption ?? "");
   const loading = eager ? 'fetchpriority="high"' : 'loading="lazy"';
-  const zoom = zoomLink(v, responsivePicture(v, IMAGE_SIZES, `alt="${alt}" ${loading}`, publicUrl), publicUrl);
+  const w = media.width ?? v.fallback.width ?? 0;
+  const h = media.height ?? v.fallback.height ?? 0;
+  const long = w > 0 && h >= LONG_IMAGE_RATIO * w;
+  const tone = toneOf(v);
+  const tag = long && longLabel ? `<span class="ni-long-tag" aria-hidden="true">${escapeHtml(longLabel)}</span>` : "";
+  const picture = responsivePicture(v, IMAGE_SIZES, `alt="${alt}" ${loading}`, publicUrl);
+  const zoom = zoomLink(v, `${tone ? toneLayer(tone) : ""}<span class="ni-fit">${picture}${tag}</span>`, publicUrl, { cropped: long });
   const caption = text.caption ? `<figcaption>${escapeHtml(text.caption)}</figcaption>` : "";
-  return `<figure class="ni-image">${zoom}${caption}</figure>`;
+  return `<figure class="ni-image${long ? " ni-image-long" : ""}">${zoom}${caption}</figure>`;
 }
 
 /** Audio player; "" when the media is missing or not audio. */

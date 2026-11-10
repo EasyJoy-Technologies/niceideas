@@ -62,4 +62,29 @@ describe("renderDocumentHtml", () => {
     expect(render([{ type: "image", mediaId: IMG }])).toContain('href="https://media.test/m/a/w480.webp" data-pswp-width="480" data-pswp-height="320"');
     expect(html).not.toContain("data-cropped");
   });
+
+  it("image frame: tone backdrop when stored and safe, long images tagged and cropped to their top", () => {
+    const one = (variants: Record<string, unknown>, dims: { width: number; height: number }) =>
+      new Map<string, Media>([[IMG, { id: IMG, kind: "image", ...dims, variants: { kind: "image", ...variants } } as Media]]);
+    const r = (m: Map<string, Media>, longImage?: string) =>
+      renderDocumentHtml(parseDocument({ version: 1, blocks: [{ type: "image", mediaId: IMG }] }), m, url, longImage ? { labels: { processing: "", unavailable: "", longImage } } : {});
+    const fb = { key: "m/a/fallback.jpg", mime: "image/jpeg", bytes: 1, width: 600, height: 400 };
+    const photo = { webp: [{ ...fb, key: "m/a/w600.webp", mime: "image/webp" }], fallback: fb };
+
+    const toned = r(one({ ...photo, tone: "#2266cc" }, { width: 600, height: 400 }), "Long image");
+    expect(toned).toContain('<svg class="ni-tone" viewBox="0 0 1 1" preserveAspectRatio="none" aria-hidden="true" focusable="false"><rect width="1" height="1" fill="#2266cc"/></svg><span class="ni-fit"><picture>');
+    expect(toned).toContain('<figure class="ni-image">');
+    expect(toned).not.toContain("ni-long-tag");
+    // Older images (no tone) and anything that is not "#rrggbb" get no backdrop layer.
+    expect(r(one(photo, { width: 600, height: 400 }))).not.toContain("ni-tone");
+    expect(r(one({ ...photo, tone: '"><script>' }, { width: 600, height: 400 }))).not.toMatch(/ni-tone|<script/);
+
+    const tall = { webp: [{ ...fb, key: "m/a/w600.webp", mime: "image/webp", height: 1800 }], fallback: { ...fb, height: 1800 } };
+    const long = r(one(tall, { width: 600, height: 1800 }), "Long <image>");
+    expect(long).toContain('<figure class="ni-image ni-image-long">');
+    expect(long).toContain(' data-cropped="true"');
+    expect(long).toContain('<span class="ni-long-tag" aria-hidden="true">Long &lt;image&gt;</span></span>');
+    // Just under 3× taller than wide: a regular image.
+    expect(r(one(tall, { width: 600, height: 1799 }), "Long image")).not.toMatch(/ni-image-long|ni-long-tag/);
+  });
 });

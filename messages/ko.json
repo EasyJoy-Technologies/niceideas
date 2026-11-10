@@ -473,6 +473,7 @@
     },
     "language": "언어",
     "media": {
+      "longImage": "긴 이미지",
       "processing": "처리 중…",
       "unavailable": "미디어를 사용할 수 없습니다"
     },

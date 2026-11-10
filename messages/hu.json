@@ -473,6 +473,7 @@
     },
     "language": "Nyelv",
     "media": {
+      "longImage": "Hosszú kép",
       "processing": "Feldolgozás…",
       "unavailable": "A média nem érhető el"
     },

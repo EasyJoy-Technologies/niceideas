@@ -473,6 +473,7 @@
     },
     "language": "ভাষা",
     "media": {
+      "longImage": "লম্বা ছবি",
       "processing": "প্রসেস করা হচ্ছে…",
       "unavailable": "মিডিয়া উপলব্ধ নয়"
     },

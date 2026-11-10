@@ -3,14 +3,14 @@ import type { DocBlock, PostDocument } from "@/server/documents/schema";
 import { isSourceDocument, type StoredDocument } from "@/server/documents/stored";
 import { escapeHtml, plainTextToHtml } from "./escape";
 import { renderMarkdown } from "./markdown";
-import { audioFigure, imageFigure, type MediaUrl } from "./media-html";
+import { audioFigure, imageFigure, type MediaLabels, type MediaUrl } from "./media-html";
 import { renderSourceHtml } from "./source-html";
 
 export type { MediaUrl } from "./media-html";
 /** Media lookup for rendering, by media id (API documents) or NiceNote ref; a missing entry renders nothing. */
 export type MediaIndex = ReadonlyMap<string, Media>;
 /** NiceNote documents: fetch state per ref and the placeholder texts. */
-export type RenderOptions = { jobs?: ReadonlyMap<string, MediaJobState>; labels?: { processing: string; unavailable: string } };
+export type RenderOptions = { jobs?: ReadonlyMap<string, MediaJobState>; labels?: MediaLabels };
 
 function todoHtml(b: Extract<DocBlock, { type: "todo" }>): string {
   const items = b.items
@@ -23,7 +23,7 @@ function todoHtml(b: Extract<DocBlock, { type: "todo" }>): string {
   return `<ul class="ni-todo">${items}</ul>`;
 }
 
-function apiDocumentHtml(doc: PostDocument, media: MediaIndex, publicUrl: MediaUrl): string {
+function apiDocumentHtml(doc: PostDocument, media: MediaIndex, publicUrl: MediaUrl, opts: RenderOptions): string {
   let firstImage = true;
   return doc.blocks
     .map((b) => {
@@ -33,7 +33,7 @@ function apiDocumentHtml(doc: PostDocument, media: MediaIndex, publicUrl: MediaU
         case "todo":
           return todoHtml(b);
         case "image": {
-          const html = imageFigure(media.get(b.mediaId), b, firstImage, publicUrl);
+          const html = imageFigure(media.get(b.mediaId), b, firstImage, publicUrl, opts.labels?.longImage);
           if (html) firstImage = false;
           return html;
         }
@@ -50,5 +50,5 @@ function apiDocumentHtml(doc: PostDocument, media: MediaIndex, publicUrl: MediaU
  * NiceNote's structured lines. The first image loads eagerly (largest paint).
  */
 export function renderDocumentHtml(doc: StoredDocument, media: MediaIndex, publicUrl: MediaUrl, opts: RenderOptions = {}): string {
-  return isSourceDocument(doc) ? renderSourceHtml(doc, media, publicUrl, opts) : apiDocumentHtml(doc, media, publicUrl);
+  return isSourceDocument(doc) ? renderSourceHtml(doc, media, publicUrl, opts) : apiDocumentHtml(doc, media, publicUrl, opts);
 }

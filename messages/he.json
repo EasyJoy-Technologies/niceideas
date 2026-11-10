@@ -473,6 +473,7 @@
     },
     "language": "שפה",
     "media": {
+      "longImage": "תמונה ארוכה",
       "processing": "מתבצע עיבוד…",
       "unavailable": "המדיה לא זמינה"
     },

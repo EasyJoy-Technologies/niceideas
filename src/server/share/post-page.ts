@@ -85,7 +85,10 @@ function backLink(ctx: ChromeContext): string {
 function bodyHtml(ctx: ChromeContext, data: SharePost): string {
   const { t } = ctx.intl;
   if (data.document.blocks.length === 0) return `<p class="ni-empty-body">${escapeHtml(t("share.post.empty"))}</p>`;
-  return renderDocumentHtml(data.document, data.media, mediaUrlFor(data.post), { jobs: data.jobs, labels: { processing: t("share.media.processing"), unavailable: t("share.media.unavailable") } });
+  return renderDocumentHtml(data.document, data.media, mediaUrlFor(data.post), {
+    jobs: data.jobs,
+    labels: { processing: t("share.media.processing"), unavailable: t("share.media.unavailable"), longImage: t("share.media.longImage") },
+  });
 }
 
 /** Result of the author's last failed action on this page (`?n=delete_failed` / `?n=visibility_failed`). */

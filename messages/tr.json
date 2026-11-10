@@ -473,6 +473,7 @@
     },
     "language": "Dil",
     "media": {
+      "longImage": "Uzun görsel",
       "processing": "İşleniyor…",
       "unavailable": "Medya kullanılamıyor"
     },

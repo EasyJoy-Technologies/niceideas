@@ -49,6 +49,8 @@
   --ni-color-source-text: #9a3412;
   --ni-color-source-border: #fed7aa;
   --ni-color-code-bg: #1f2937;
+  /* Strength of an image's tone in its post-page frame, over the surface (post-body.css). */
+  --ni-image-tone: 0.4;
   --ni-color-banner: linear-gradient(135deg, #ede9fe 0%, #ddd6fe 55%, #c4b5fd 100%);
   --ni-shadow-pop: 0 12px 32px rgb(31 41 55 / 0.12);
   --ni-shadow-chip: 0 1px 2px rgb(0 0 0 / 0.06);

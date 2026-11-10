@@ -1,9 +1,9 @@
 import type { Media, MediaJobState } from "@/server/db/schema";
 import type { SourceBlock, SourceDocument, SourceLine, SourceRun } from "@/server/documents/source-schema";
 import { escapeHtml, plainTextToHtml } from "./escape";
-import { audioFigure, imageFigure, mediaPlaceholder, type MediaUrl } from "./media-html";
+import { audioFigure, imageFigure, mediaPlaceholder, type MediaLabels, type MediaUrl } from "./media-html";
 
-type Opts = { jobs?: ReadonlyMap<string, MediaJobState>; labels?: { processing: string; unavailable: string } };
+type Opts = { jobs?: ReadonlyMap<string, MediaJobState>; labels?: MediaLabels };
 type ListTag = "ul" | "ol";
 
 const LINK_ATTRS = 'rel="nofollow noopener noreferrer ugc" target="_blank"';
@@ -100,7 +100,7 @@ export function renderSourceHtml(doc: SourceDocument, media: ReadonlyMap<string,
         return todoHtml(b.items);
       case "image": {
         if (b.state !== "ready") return placeholder("image", null, opts);
-        const html = imageFigure(media.get(b.ref), b, firstImage, publicUrl);
+        const html = imageFigure(media.get(b.ref), b, firstImage, publicUrl, opts.labels?.longImage);
         if (html) firstImage = false;
         return html || placeholder("image", b.ref, opts, media.has(b.ref));
       }

@@ -473,6 +473,7 @@
     },
     "language": "भाषा",
     "media": {
+      "longImage": "लामो तस्बिर",
       "processing": "प्रशोधन हुँदैछ…",
       "unavailable": "मीडिया उपलब्ध छैन"
     },

@@ -473,6 +473,7 @@
     },
     "language": "Язык",
     "media": {
+      "longImage": "Длинное изображение",
       "processing": "Обработка…",
       "unavailable": "Медиафайл недоступен"
     },

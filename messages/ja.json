@@ -473,6 +473,7 @@
     },
     "language": "言語",
     "media": {
+      "longImage": "縦長画像",
       "processing": "処理中…",
       "unavailable": "メディアを利用できません"
     },

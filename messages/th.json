@@ -473,6 +473,7 @@
     },
     "language": "ภาษา",
     "media": {
+      "longImage": "รูปภาพยาว",
       "processing": "กำลังประมวลผล…",
       "unavailable": "ไม่สามารถใช้งานมีเดียได้"
     },

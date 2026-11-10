@@ -473,6 +473,7 @@
     },
     "language": "زبان",
     "media": {
+      "longImage": "تصویر بلند",
       "processing": "در حال پردازش…",
       "unavailable": "رسانه در دسترس نیست"
     },

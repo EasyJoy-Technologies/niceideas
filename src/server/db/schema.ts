@@ -32,10 +32,11 @@ export type MediaRendition = { key: string; mime: string; bytes: number; width?:
 /**
  * Derived renditions. Images: responsive set (`webp`: WebP, or JPEG / PNG for images too tall for WebP;
  * animated WebP for animated NiceNote images) + one static jpeg/png fallback + optional `large` WebP for
- * the image viewer (still images with more detail than the set shows; since v1.0.65). Audio: one browser-playable file.
+ * the image viewer (still images with more detail than the set shows; since v1.0.65) + optional `tone`, the dominant
+ * colour "#rrggbb" behind the image on post pages (since v1.0.92; older images have none). Audio: one browser-playable file.
  */
 export type MediaVariants =
-  | { kind: "image"; webp: MediaRendition[]; fallback: MediaRendition; large?: MediaRendition }
+  | { kind: "image"; webp: MediaRendition[]; fallback: MediaRendition; large?: MediaRendition; tone?: string }
   | { kind: "audio"; original: MediaRendition };
 
 export interface ProfileTable {

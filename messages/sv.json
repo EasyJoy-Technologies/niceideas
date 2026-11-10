@@ -473,6 +473,7 @@
     },
     "language": "Språk",
     "media": {
+      "longImage": "Lång bild",
       "processing": "Bearbetar…",
       "unavailable": "Media ej tillgängligt"
     },

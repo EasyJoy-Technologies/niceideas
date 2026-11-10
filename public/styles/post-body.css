@@ -91,10 +91,32 @@
   text-decoration-color: rgb(107 114 128 / 0.6);
 }
 
-/* image */
+/* image: a frame as wide as the column with the image centred in it, never enlarged (its width attribute)
+   and at most about one screen tall. The rest of the frame shows the image's tone (.ni-tone: an SVG fill,
+   softened over the surface; older images without a tone: surface-2), also while the image loads.
+   Long images (at least 3× taller than wide) show their top part with a tag; the viewer shows them whole. */
 .ni-image { margin: 0; }
-.ni-image img { display: block; width: 100%; height: auto; background: var(--ni-color-surface-2); border-radius: var(--ni-radius-md); }
 .ni-zoom { display: block; cursor: zoom-in; }
+.ni-image .ni-zoom { position: relative; overflow: hidden; border-radius: var(--ni-radius-md); background: var(--ni-color-surface-2); }
+.ni-tone { position: absolute; inset: 0; display: block; width: 100%; height: 100%; background: var(--ni-color-surface); }
+.ni-tone rect { opacity: var(--ni-image-tone); }
+.ni-fit { position: relative; display: block; width: fit-content; max-width: 100%; margin-inline: auto; }
+.ni-fit picture { display: block; }
+.ni-image img { display: block; max-width: 100%; height: auto; max-height: min(80vh, 48rem); object-fit: contain; }
+.ni-image-long img { object-fit: cover; object-position: top; }
+.ni-long-tag {
+  position: absolute;
+  bottom: 0.5rem;
+  inset-inline-end: 0.5rem;
+  padding: 0.125rem 0.5rem;
+  border-radius: 999px;
+  background: rgb(17 24 39 / 0.72);
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1.25rem;
+  pointer-events: none;
+}
 .ni-image figcaption {
   font-size: 0.875rem;
   color: var(--ni-color-text-secondary);
@@ -128,7 +150,7 @@
 /* phones: images run edge to edge */
 @media (max-width: 47.99rem) {
   .ni-image { margin-inline: -1rem; }
-  .ni-image img { border-radius: 0; }
+  .ni-image .ni-zoom { border-radius: 0; }
 }
 
 /* NiceNote media still processing / unavailable (no broken element, keeps the reading flow). */
