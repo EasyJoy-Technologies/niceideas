@@ -430,8 +430,6 @@
       "delete": "Ta bort",
       "edit": "Redigera",
       "like": "Gilla",
-      "makePrivate": "Gör synlig bara för mig",
-      "makePublic": "Gör offentlig",
       "more": "Fler alternativ",
       "quote": "Citera",
       "reply": "Svara",
@@ -472,6 +470,18 @@
       "joinShort": "Gå med"
     },
     "language": "Språk",
+    "locked": {
+      "followers": {
+        "body": "Bara personer som följer {name} kan se inlägget. Följ för att se det.",
+        "title": "Endast följare"
+      },
+      "friends": {
+        "body": "Bara personer som följer varandra med {name} kan se inlägget.",
+        "title": "Endast vänner"
+      },
+      "friendsWaiting": "Du följer {name}. Du kan se inlägget när {name} följer dig tillbaka.",
+      "signedOut": "Följer du redan? Logga in för att se det."
+    },
     "media": {
       "longImage": "Lång bild",
       "processing": "Bearbetar…",
@@ -481,6 +491,8 @@
       "edited": "Redigerat {time}",
       "editedShort": "Redigerat",
       "empty": "Det här inlägget har inget innehåll.",
+      "followersNote": "Bara författarens följare kan se inlägget.",
+      "friendsNote": "Bara författarens vänner (personer som följer varandra med författaren) kan se inlägget.",
       "from": "Från {app}",
       "preparing": {
         "body": "Innehållet visas här inom en stund.",
@@ -534,7 +546,16 @@
       "zoom": "Zooma"
     },
     "visibility": {
-      "failed": "Det gick inte att ändra vem som kan se inlägget. Försök igen."
+      "failed": "Det gick inte att ändra vem som kan se inlägget. Försök igen.",
+      "followers": "Endast följare",
+      "followersHint": "Personer som följer dig",
+      "friends": "Endast vänner",
+      "friendsHint": "Personer du följer som också följer dig",
+      "label": "Vem som kan se inlägget",
+      "menu": "Synligt för: {value}",
+      "privateHint": "Ingen annan kan se det",
+      "public": "Offentligt",
+      "publicHint": "Alla, även personer utan konto"
     }
   },
   "status": {

@@ -1,4 +1,4 @@
-> **Ringkasan.** Anda memiliki apa yang Anda unggah, dan Anda bertanggung jawab atasnya. Unggahan di niceideas bersifat publik, kecuali Anda menjadikannya hanya terlihat oleh Anda. Jangan mengunggah apa pun yang ilegal atau berbahaya, atau apa pun yang tidak Anda miliki hak untuk dibagikan. Anda dapat menghapus unggahan kapan saja; unggahan yang dihapus akan dihapus secara permanen setelah 30 hari. niceideas disediakan secara gratis dan "sebagaimana adanya". Ketentuan ini diatur oleh hukum Alberta, Kanada. Ringkasan ini hanya untuk kemudahan; Ketentuan lengkap di bawah ini yang berlaku.
+> **Ringkasan.** Anda memiliki apa yang Anda unggah, dan Anda bertanggung jawab atasnya. Unggahan di niceideas bersifat publik, kecuali Anda memilih siapa yang dapat melihatnya (pengikut Anda, teman Anda, atau hanya Anda). Jangan mengunggah apa pun yang ilegal atau berbahaya, atau apa pun yang tidak Anda miliki hak untuk dibagikan. Anda dapat menghapus unggahan kapan saja; unggahan yang dihapus akan dihapus secara permanen setelah 30 hari. niceideas disediakan secara gratis dan "sebagaimana adanya". Ketentuan ini diatur oleh hukum Alberta, Kanada. Ringkasan ini hanya untuk kemudahan; Ketentuan lengkap di bawah ini yang berlaku.
 
 ## 1. Tentang Ketentuan ini
 
@@ -26,7 +26,7 @@ Dengan menggunakan Layanan, termasuk melihat, menyukai, atau mengomentari tanpa 
 
 ## 4. Konten publik dan tautan
 
-4.1 Unggahan yang Anda terbitkan bersifat publik (kecuali Anda menjadikannya hanya terlihat oleh Anda, lihat 4.5). Unggahan tersebut dapat muncul di profil Anda, di linimasa, di halaman Jelajahi, dan dalam hasil pencarian, dan siapa pun yang memiliki tautan dapat membukanya, dengan atau tanpa akun. Mesin pencari dan platform lain juga dapat menampilkan halaman publik dan pratinjau tautan.
+4.1 Unggahan yang Anda terbitkan bersifat publik (kecuali Anda memilih siapa yang dapat melihatnya, lihat 4.5). Unggahan tersebut dapat muncul di profil Anda, di linimasa, di halaman Jelajahi, dan dalam hasil pencarian, dan siapa pun yang memiliki tautan dapat membukanya, dengan atau tanpa akun. Mesin pencari dan platform lain juga dapat menampilkan halaman publik dan pratinjau tautan.
 
 4.2 Komentar bersifat publik dan muncul di bawah unggahan. Pengunjung tanpa akun dapat menyukai unggahan dan berkomentar dengan nama panggilan opsional.
 
@@ -34,7 +34,7 @@ Dengan menggunakan Layanan, termasuk melihat, menyukai, atau mengomentari tanpa 
 
 4.4 Bagi pengunjung yang koneksinya berasal dari Tiongkok daratan, hanya halaman unggahan bersama individual serta suka dan komentar pada halaman tersebut yang tersedia; halaman lain tidak tersedia. Ini menggambarkan cara Layanan ditawarkan saat ini dan dapat berubah.
 
-4.5 Anda dapat menjadikan unggahan mana pun hanya terlihat oleh Anda, dan menjadikannya publik lagi, kapan saja. Selama sebuah unggahan hanya terlihat oleh Anda, unggahan itu tidak muncul di mana pun di Layanan bagi orang lain dan tautannya hanya terbuka untuk Anda; salinan yang dibuat orang lain saat unggahan itu masih publik tidak terpengaruh (lihat 4.3).
+4.5 Anda dapat memilih siapa yang dapat melihat setiap unggahan Anda dan mengubahnya kapan saja: semua orang (publik), hanya pengikut Anda, hanya teman Anda (orang yang Anda ikuti dan juga mengikuti Anda), atau hanya Anda. Unggahan yang tidak publik tidak muncul di halaman Jelajahi, dalam hasil pencarian, atau dalam pratinjau tautan, dan tautannya hanya terbuka bagi orang yang Anda pilih. Siapa pun dapat mengikuti Anda, sehingga siapa pun yang mengikuti Anda dapat melihat unggahan khusus pengikut Anda. Salinan yang dibuat orang lain saat mereka dapat melihat suatu unggahan tidak terpengaruh (lihat 4.3).
 
 ## 5. Konten Anda
 

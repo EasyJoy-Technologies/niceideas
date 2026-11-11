@@ -430,8 +430,6 @@
       "delete": "Excluir",
       "edit": "Editar",
       "like": "Curtir",
-      "makePrivate": "Tornar visível só para mim",
-      "makePublic": "Tornar pública",
       "more": "Mais opções",
       "quote": "Citar",
       "reply": "Responder",
@@ -472,6 +470,18 @@
       "joinShort": "Entrar"
     },
     "language": "Idioma",
+    "locked": {
+      "followers": {
+        "body": "Só quem segue {name} pode ver esta publicação. Siga para ver.",
+        "title": "Só seguidores"
+      },
+      "friends": {
+        "body": "Só quem se segue mutuamente com {name} pode ver esta publicação.",
+        "title": "Só amigos"
+      },
+      "friendsWaiting": "Você segue {name}. Poderá ver esta publicação quando também seguir você.",
+      "signedOut": "Já segue? Entre para ver."
+    },
     "media": {
       "longImage": "Imagem longa",
       "processing": "Processando…",
@@ -481,6 +491,8 @@
       "edited": "Editado em {time}",
       "editedShort": "Editado",
       "empty": "Esta publicação não tem conteúdo.",
+      "followersNote": "Só os seguidores do autor podem ver esta publicação.",
+      "friendsNote": "Só os amigos do autor (pessoas que se seguem mutuamente com ele) podem ver esta publicação.",
       "from": "Via {app}",
       "preparing": {
         "body": "O conteúdo vai aparecer aqui em um instante.",
@@ -534,7 +546,16 @@
       "zoom": "Ampliar"
     },
     "visibility": {
-      "failed": "Não foi possível alterar quem pode ver esta publicação. Tente novamente."
+      "failed": "Não foi possível alterar quem pode ver esta publicação. Tente novamente.",
+      "followers": "Só seguidores",
+      "followersHint": "Pessoas que seguem você",
+      "friends": "Só amigos",
+      "friendsHint": "Pessoas que você segue e que também seguem você",
+      "label": "Quem pode ver esta publicação",
+      "menu": "Visível para: {value}",
+      "privateHint": "Ninguém mais pode ver",
+      "public": "Pública",
+      "publicHint": "Qualquer pessoa, inclusive sem conta"
     }
   },
   "status": {

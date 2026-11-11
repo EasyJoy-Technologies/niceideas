@@ -9,7 +9,7 @@ import { safeNextPath } from "./lang-route";
 const see = (location: string) => new Response(null, { status: 303, headers: { Location: location, "Cache-Control": "no-store" } });
 const failed = (back: string) => see(`${back}${back.includes("?") ? "&" : "?"}n=visibility_failed`);
 
-/** POST /api/web/posts/visibility (same-origin form from the author's "⋯" menu): make private / public, then back to the page. */
+/** POST /api/web/posts/visibility (same-origin form from the author's "⋯" menu): set who may see the post, then back to the page. */
 export async function setVisibilityFromWeb(request: Request): Promise<Response> {
   if (!isSameOrigin(request)) return new Response(null, { status: 403 });
   const form = await request.formData().catch(() => null);

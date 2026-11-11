@@ -21,6 +21,7 @@ import { renderPostAside } from "./post-aside";
 import { directionOf } from "@/i18n/locales";
 import { avatarHtml } from "./profile-bits";
 import { sourceBadge } from "./sources";
+import { visibilityNote } from "./visibility-bits";
 
 const meta = (property: string, content: string, attr = "property") => `<meta ${attr}="${property}" content="${escapeHtml(content)}">`;
 
@@ -101,9 +102,6 @@ export const pageNotice = (url: URL): PageNotice => {
 const noticeHtml = (ctx: ChromeContext, notice: PageNotice) =>
   notice ? `<p class="ni-compose-err" role="status">${escapeHtml(ctx.intl.t(NOTICE_KEYS[notice]))}</p>` : "";
 
-/** Private post (its author is the only one who can open it): a short note above the post. */
-const privateNote = (ctx: ChromeContext, post: Post) =>
-  post.visibility === "private" ? `<p class="ni-private-note" role="note">${icon("lock")}<span>${escapeHtml(ctx.intl.t("share.post.privateNote"))}</span></p>` : "";
 
 /** Server-rendered post page (plan §6, §16): complete without JS. */
 /**
@@ -116,7 +114,7 @@ export function renderPostPage(ctx: ChromeContext, data: SharePost, social: Page
   const title = post.title && !short ? `<h1 class="ni-title">${escapeHtml(post.title)}</h1>` : "";
   const body = bodyHtml(ctx, { ...data, document: withTitleInText(post.kind, data.document) });
   const main =
-    `<main class="ni-main">${aside ? backLink(ctx) : ""}${noticeHtml(ctx, notice)}${privateNote(ctx, post)}<article class="ni-post${short ? " ni-short" : ""}">` +
+    `<main class="ni-main">${aside ? backLink(ctx) : ""}${noticeHtml(ctx, notice)}${visibilityNote(ctx, post)}<article class="ni-post${short ? " ni-short" : ""}">` +
     `${authorBlock(ctx, data, following)}${title}<div class="ni-body">${body}</div>${quoted !== undefined ? quoteEmbed(ctx, quoted) : ""}` +
     `${postFoot(ctx, data)}${postActions(ctx, post, social)}</article>` +
     `${commentsSection(ctx, post, social, ctx.path)}${reportDialog(ctx, post.slug)}</main>`;

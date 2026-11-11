@@ -1,4 +1,4 @@
-> **Samenvatting.** U bent eigenaar van wat u plaatst en bent daarvoor verantwoordelijk. Berichten op niceideas zijn openbaar, tenzij u ze alleen voor uzelf zichtbaar maakt. Plaats niets illegaals of schadelijks, of iets waarvan u niet het recht heeft om het te delen. U kunt een bericht op elk moment verwijderen; verwijderde berichten worden na 30 dagen definitief gewist. niceideas is gratis en wordt geleverd zoals het is. Deze Voorwaarden worden beheerst door het recht van Alberta, Canada. Deze samenvatting is slechts voor het gemak; de volledige Voorwaarden hieronder zijn van toepassing.
+> **Samenvatting.** U bent eigenaar van wat u plaatst en bent daarvoor verantwoordelijk. Berichten op niceideas zijn openbaar, tenzij u kiest wie ze kan zien (uw volgers, uw vrienden of alleen uzelf). Plaats niets illegaals of schadelijks, of iets waarvan u niet het recht heeft om het te delen. U kunt een bericht op elk moment verwijderen; verwijderde berichten worden na 30 dagen definitief gewist. niceideas is gratis en wordt geleverd zoals het is. Deze Voorwaarden worden beheerst door het recht van Alberta, Canada. Deze samenvatting is slechts voor het gemak; de volledige Voorwaarden hieronder zijn van toepassing.
 
 ## 1. Over deze Voorwaarden
 
@@ -26,7 +26,7 @@ Door de Dienst te gebruiken, ook door te bekijken, te liken of te reageren zonde
 
 ## 4. Openbare inhoud en links
 
-4.1 Berichten die u plaatst zijn openbaar (tenzij u ze alleen voor uzelf zichtbaar maakt, zie 4.5). Ze kunnen verschijnen op uw profiel, in tijdlijnen, op de pagina Ontdekken en in zoekresultaten, en iedereen met de link kan ze openen, met of zonder account. Zoekmachines en andere platforms kunnen ook openbare pagina's en linkvoorbeelden weergeven.
+4.1 Berichten die u plaatst zijn openbaar (tenzij u kiest wie ze kan zien, zie 4.5). Ze kunnen verschijnen op uw profiel, in tijdlijnen, op de pagina Ontdekken en in zoekresultaten, en iedereen met de link kan ze openen, met of zonder account. Zoekmachines en andere platforms kunnen ook openbare pagina's en linkvoorbeelden weergeven.
 
 4.2 Reacties zijn openbaar en verschijnen onder het bericht. Bezoekers zonder account kunnen berichten liken en reageren onder een optionele bijnaam.
 
@@ -34,7 +34,7 @@ Door de Dienst te gebruiken, ook door te bekijken, te liken of te reageren zonde
 
 4.4 Voor bezoekers wier verbinding uit vasteland-China komt, zijn alleen individuele gedeelde berichtpagina's en de likes en reacties daarop beschikbaar; andere pagina's niet. Dit weerspiegelt hoe de Dienst momenteel wordt aangeboden en kan veranderen.
 
-4.5 U kunt elk van uw berichten op elk moment alleen voor uzelf zichtbaar maken en weer openbaar maken. Zolang een bericht alleen voor u zichtbaar is, verschijnt het voor anderen nergens in de Dienst en opent de link alleen voor u; kopieën die anderen maakten toen het openbaar was, worden daardoor niet geraakt (zie 4.3).
+4.5 U kunt voor elk van uw berichten kiezen wie het kan zien en dat op elk moment wijzigen: iedereen (openbaar), alleen uw volgers, alleen uw vrienden (mensen die u volgt en die u ook volgen) of alleen uzelf. Een bericht dat niet openbaar is, verschijnt niet op de pagina Ontdekken, in zoekresultaten of in linkvoorbeelden, en de link ervan opent alleen voor de mensen die u hebt gekozen. Iedereen kan u volgen, dus iedereen die u volgt, kan uw berichten voor alleen volgers zien. Kopieën die anderen hebben gemaakt toen zij een bericht konden zien, blijven buiten beschouwing (zie 4.3).
 
 ## 5. Uw inhoud
 

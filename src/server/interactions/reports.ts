@@ -17,11 +17,12 @@ const body = z.object({
 });
 
 /** Report a post or one of its comments (anyone, including anonymous visitors). */
-export async function reportContent(db: Db, visitor: Visitor, payload: unknown): Promise<void> {
+/** `viewerId`: the signed-in reporter (followers-only / friends-only posts take reports from their audience only). */
+export async function reportContent(db: Db, visitor: Visitor, payload: unknown, viewerId: string | null = null): Promise<void> {
   const parsed = body.safeParse(payload);
   if (!parsed.success) throw badRequest("request.invalid");
   const input = parsed.data;
-  const post = await interactivePost(db, input.slug);
+  const post = await interactivePost(db, input.slug, viewerId, "audience");
   if (input.commentId) {
     const c = await findComment(db, input.commentId);
     if (!c || c.post_id !== post.id) throw notFound("comment.not_found");

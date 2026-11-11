@@ -153,7 +153,10 @@ function setup(form: HTMLFormElement): void {
     submit.disabled = true;
     submit.textContent = d.posting ?? label;
     const extra = m === "short" ? tray.list().map((id) => ({ type: store.get(id)!.kind, attrs: { ref: id } })) : [];
-    const res = await postCompose(form.action, composeFormData(editor.getJSON(), extra, store, m, title.value, fields));
+    // Who can see (new posts and quotes only): the choice at the time of sending.
+    const visibility = q<HTMLInputElement>("input[name=visibility]:checked");
+    const sent: [string, string][] = visibility ? [...fields, ["visibility", visibility.value]] : fields;
+    const res = await postCompose(form.action, composeFormData(editor.getJSON(), extra, store, m, title.value, sent));
     if (res.ok) {
       window.location.assign(res.url);
       return;

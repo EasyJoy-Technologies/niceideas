@@ -430,8 +430,6 @@
       "delete": "Usuń",
       "edit": "Edytuj",
       "like": "Lubię to",
-      "makePrivate": "Widoczne tylko dla mnie",
-      "makePublic": "Upublicznij",
       "more": "Więcej opcji",
       "quote": "Cytuj",
       "reply": "Odpowiedz",
@@ -472,6 +470,18 @@
       "joinShort": "Dołącz"
     },
     "language": "Język",
+    "locked": {
+      "followers": {
+        "body": "Ten wpis widzą tylko osoby obserwujące {name}. Zacznij obserwować, aby go zobaczyć.",
+        "title": "Tylko obserwujący"
+      },
+      "friends": {
+        "body": "Ten wpis widzą tylko osoby, które obserwują się nawzajem z {name}.",
+        "title": "Tylko znajomi"
+      },
+      "friendsWaiting": "Obserwujesz {name}. Zobaczysz ten wpis, gdy {name} też zacznie cię obserwować.",
+      "signedOut": "Już obserwujesz? Zaloguj się, aby go zobaczyć."
+    },
     "media": {
       "longImage": "Długi obraz",
       "processing": "Przetwarzanie…",
@@ -481,6 +491,8 @@
       "edited": "Edytowano: {time}",
       "editedShort": "Edytowano",
       "empty": "Ten wpis nie ma treści.",
+      "followersNote": "Ten wpis widzą tylko obserwujący autora.",
+      "friendsNote": "Ten wpis widzą tylko znajomi autora (osoby, które obserwują się z nim nawzajem).",
       "from": "Z aplikacji {app}",
       "preparing": {
         "body": "Treść pojawi się tutaj za chwilę.",
@@ -534,7 +546,16 @@
       "zoom": "Powiększ"
     },
     "visibility": {
-      "failed": "Nie udało się zmienić, kto widzi ten wpis. Spróbuj ponownie."
+      "failed": "Nie udało się zmienić, kto widzi ten wpis. Spróbuj ponownie.",
+      "followers": "Tylko obserwujący",
+      "followersHint": "Osoby, które cię obserwują",
+      "friends": "Tylko znajomi",
+      "friendsHint": "Osoby, które obserwujesz i które obserwują ciebie",
+      "label": "Kto może zobaczyć ten wpis",
+      "menu": "Widoczne dla: {value}",
+      "privateHint": "Nikt inny go nie zobaczy",
+      "public": "Publiczny",
+      "publicHint": "Każdy, także osoby bez konta"
     }
   },
   "status": {

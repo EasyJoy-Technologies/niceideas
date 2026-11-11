@@ -430,8 +430,6 @@
       "delete": "Sil",
       "edit": "Düzenle",
       "like": "Beğen",
-      "makePrivate": "Yalnızca bana görünür yap",
-      "makePublic": "Herkese açık yap",
       "more": "Diğer seçenekler",
       "quote": "Alıntıla",
       "reply": "Yanıtla",
@@ -472,6 +470,18 @@
       "joinShort": "Katıl"
     },
     "language": "Dil",
+    "locked": {
+      "followers": {
+        "body": "Bu gönderiyi yalnızca {name} kullanıcısını takip edenler görebilir. Görmek için takip et.",
+        "title": "Yalnızca takipçiler"
+      },
+      "friends": {
+        "body": "Bu gönderiyi yalnızca {name} ile karşılıklı takipleşenler görebilir.",
+        "title": "Yalnızca arkadaşlar"
+      },
+      "friendsWaiting": "{name} kullanıcısını takip ediyorsun. O da seni takip ettiğinde bu gönderiyi görebilirsin.",
+      "signedOut": "Zaten takip ediyor musun? Görmek için giriş yap."
+    },
     "media": {
       "longImage": "Uzun görsel",
       "processing": "İşleniyor…",
@@ -481,6 +491,8 @@
       "edited": "Düzenlendi: {time}",
       "editedShort": "Düzenlendi",
       "empty": "Bu gönderinin içeriği yok.",
+      "followersNote": "Bu gönderiyi yalnızca yazarın takipçileri görebilir.",
+      "friendsNote": "Bu gönderiyi yalnızca yazarın arkadaşları (yazarla karşılıklı takipleşenler) görebilir.",
       "from": "{app} üzerinden",
       "preparing": {
         "body": "İçerik birazdan burada görünecek.",
@@ -534,7 +546,16 @@
       "zoom": "Yakınlaştır"
     },
     "visibility": {
-      "failed": "Bu gönderiyi kimlerin görebileceği değiştirilemedi. Lütfen tekrar deneyin."
+      "failed": "Bu gönderiyi kimlerin görebileceği değiştirilemedi. Lütfen tekrar deneyin.",
+      "followers": "Yalnızca takipçiler",
+      "followersHint": "Seni takip edenler",
+      "friends": "Yalnızca arkadaşlar",
+      "friendsHint": "Takip ettiğin ve seni de takip edenler",
+      "label": "Bu gönderiyi kimler görebilir",
+      "menu": "Görebilenler: {value}",
+      "privateHint": "Başka kimse göremez",
+      "public": "Herkese açık",
+      "publicHint": "Hesabı olmayanlar dahil herkes"
     }
   },
   "status": {

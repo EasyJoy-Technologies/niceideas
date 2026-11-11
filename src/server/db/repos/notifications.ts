@@ -1,5 +1,6 @@
 import { sql } from "kysely";
 import type { Db } from "../client";
+import { visibleTo } from "./post-access";
 
 export type NotificationKind = "like" | "comment" | "reply" | "follow" | "repost" | "quote";
 
@@ -20,7 +21,8 @@ const WINDOW_DAYS = 90;
 
 /**
  * Newest events for `userId` (likes / comments / reposts / quotes of their posts, replies to their
- * comments, new followers), newer than `after` when given. The user's own actions are skipped.
+ * comments, new followers), newer than `after` when given. The user's own actions are skipped. Replies and
+ * quotes on other people's posts only while the user may see those posts (post-access.ts).
  * A quote links to the quote itself (its text stands in for the post title).
  */
 export async function listNotifications(db: Db, userId: string, after: Date | null, limit: number): Promise<NotificationRow[]> {
@@ -63,7 +65,7 @@ export async function listNotifications(db: Db, userId: string, after: Date | nu
       .where("parent.author_id", "=", userId)
       .where("p.author_id", "<>", userId)
       .where("p.status", "=", "active")
-      .where("p.visibility", "=", "public")
+      .where(visibleTo("p", userId))
       .where("c.status", "=", "visible")
       .where((eb) => eb.or([eb("c.author_id", "is", null), eb("c.author_id", "<>", userId)]))
       .where("c.created_at", ">", since)
@@ -101,7 +103,7 @@ export async function listNotifications(db: Db, userId: string, after: Date | nu
       .where("p.author_id", "=", userId)
       .where("q.author_id", "<>", userId)
       .where("q.status", "=", "active")
-      .where("q.visibility", "=", "public")
+      .where(visibleTo("q", userId))
       .where("a.status", "=", "active")
       .where("q.published_at", ">", since)
       .orderBy("q.published_at", "desc")

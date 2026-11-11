@@ -11,6 +11,7 @@ import { repostAction } from "./repost-button";
  * others, report. Phones show the same row, "⋯" included, as the fixed bottom bar instead (interact.css; Xianglin
  * 2026-10-28). Interactive with /scripts/interact.js.
  * Private posts (seen by their author only): the author's own like and comments, no reposts, bookmarks or sharing.
+ * Followers-only / friends-only posts (seen by their audience only): everything but reposts (repostAction).
  */
 export function postActions(ctx: ChromeContext, post: Post, state: { liked: boolean; bookmarked: boolean; reposted: boolean; repostCount: number }): string {
   const { liked, bookmarked } = state;

@@ -16,6 +16,7 @@ import { quoteEmbed } from "./quote-embed";
 import { repostAction } from "./repost-button";
 import { repostedLine } from "./reposted-line";
 import { sourceBadge } from "./sources";
+import { visibilityMark } from "./visibility-bits";
 
 const COVER_SIZES = "(min-width: 48rem) 37rem, 100vw";
 const NO_MEDIA: ReadonlyMap<string, Media> = new Map();
@@ -65,9 +66,6 @@ function shortBlock(item: FeedItem): string {
   return `<div class="ni-body ni-fc-text">${body}${media}</div>`;
 }
 
-/** "Only you" marker of a private post in the meta line. */
-const privateMark = (ctx: ChromeContext, post: FeedItem["post"]) =>
-  post.visibility === "private" ? `<i class="ni-dot"></i><span class="ni-private">${icon("lock")}${escapeHtml(ctx.intl.t("share.post.private"))}</span>` : "";
 
 /**
  * Timeline / profile card (approved v2 design): "X reposted" line (home timeline, profile reposts), author
@@ -91,11 +89,12 @@ export function feedCard(ctx: ChromeContext, item: FeedItem): string {
   const head =
     `<div class="ni-fc-head"><a href="${href}" tabindex="-1" aria-hidden="true">${avatarHtml(name, post.author_avatar, 42)}</a><div class="ni-who">` +
     `<a class="ni-name" href="${href}">${escapeHtml(name)}</a><span class="ni-meta"><span class="ni-handle">@${escapeHtml(post.author_handle)}</span><i class="ni-dot"></i>` +
-    `<a href="/p/${post.slug}"><time datetime="${at.toISOString()}" data-rel>${escapeHtml(ctx.intl.format.dateTime(at, { dateStyle: "medium" }))}</time></a>${privateMark(ctx, post)}</span></div>${source}</div>`;
+    `<a href="/p/${post.slug}"><time datetime="${at.toISOString()}" data-rel>${escapeHtml(ctx.intl.format.dateTime(at, { dateStyle: "medium" }))}</time></a>${visibilityMark(ctx, post)}</span></div>${source}</div>`;
   const quoted = item.quoted !== undefined ? quoteEmbed(ctx, item.quoted) : "";
   const body = (post.kind === "short" ? shortBlock(item) : articleBlock(ctx, item)) + quoted;
   // Private posts (only on their author's own profile): the author's own like, no bookmarks, not shared.
-  const open = post.visibility === "public";
+  // Followers-only / friends-only posts (shown to their audience only): everything but reposts (repostAction).
+  const open = post.visibility !== "private";
   const actions =
     `<div class="ni-actions ni-fc-actions">${open || isOwnPost(ctx, post) ? `<button type="button" class="ni-act" data-like="post" data-id="${post.slug}" aria-pressed="${item.liked}" aria-label="${escapeHtml(t("share.action.like"))}">` +
     `${icon("heart")}<span>${post.like_count}</span></button>` : ""}` +

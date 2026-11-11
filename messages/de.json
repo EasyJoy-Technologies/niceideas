@@ -430,8 +430,6 @@
       "delete": "Löschen",
       "edit": "Bearbeiten",
       "like": "Gefällt mir",
-      "makePrivate": "Nur für mich sichtbar machen",
-      "makePublic": "Öffentlich machen",
       "more": "Weitere Optionen",
       "quote": "Zitieren",
       "reply": "Antworten",
@@ -472,6 +470,18 @@
       "joinShort": "Beitreten"
     },
     "language": "Sprache",
+    "locked": {
+      "followers": {
+        "body": "Nur Personen, die {name} folgen, können diesen Beitrag sehen. Folge, um ihn zu sehen.",
+        "title": "Nur Follower"
+      },
+      "friends": {
+        "body": "Nur Personen, die sich mit {name} gegenseitig folgen, können diesen Beitrag sehen.",
+        "title": "Nur Freunde"
+      },
+      "friendsWaiting": "Du folgst {name}. Du kannst den Beitrag sehen, sobald {name} dir auch folgt.",
+      "signedOut": "Folgst du schon? Melde dich an, um ihn zu sehen."
+    },
     "media": {
       "longImage": "Langes Bild",
       "processing": "Wird verarbeitet…",
@@ -481,6 +491,8 @@
       "edited": "Bearbeitet am {time}",
       "editedShort": "Bearbeitet",
       "empty": "Dieser Beitrag hat keinen Inhalt.",
+      "followersNote": "Nur die Follower des Autors können diesen Beitrag sehen.",
+      "friendsNote": "Nur die Freunde des Autors (Personen, die sich gegenseitig mit ihm folgen) können diesen Beitrag sehen.",
       "from": "Aus {app}",
       "preparing": {
         "body": "Der Inhalt wird gleich hier erscheinen.",
@@ -534,7 +546,16 @@
       "zoom": "Zoomen"
     },
     "visibility": {
-      "failed": "Die Sichtbarkeit dieses Beitrags konnte nicht geändert werden. Bitte versuchen Sie es erneut."
+      "failed": "Die Sichtbarkeit dieses Beitrags konnte nicht geändert werden. Bitte versuchen Sie es erneut.",
+      "followers": "Nur Follower",
+      "followersHint": "Personen, die dir folgen",
+      "friends": "Nur Freunde",
+      "friendsHint": "Personen, denen du folgst und die dir auch folgen",
+      "label": "Wer diesen Beitrag sehen kann",
+      "menu": "Sichtbar für: {value}",
+      "privateHint": "Niemand sonst kann ihn sehen",
+      "public": "Öffentlich",
+      "publicHint": "Alle, auch Personen ohne Konto"
     }
   },
   "status": {

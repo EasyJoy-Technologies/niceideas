@@ -430,8 +430,6 @@
       "delete": "Padam",
       "edit": "Sunting",
       "like": "Suka",
-      "makePrivate": "Jadikan hanya kelihatan kepada saya",
-      "makePublic": "Jadikan awam",
       "more": "Lagi pilihan",
       "quote": "Petik",
       "reply": "Balas",
@@ -472,6 +470,18 @@
       "joinShort": "Sertai"
     },
     "language": "Bahasa",
+    "locked": {
+      "followers": {
+        "body": "Hanya orang yang mengikuti {name} boleh melihat siaran ini. Ikuti untuk melihatnya.",
+        "title": "Pengikut sahaja"
+      },
+      "friends": {
+        "body": "Hanya orang yang saling mengikuti dengan {name} boleh melihat siaran ini.",
+        "title": "Rakan sahaja"
+      },
+      "friendsWaiting": "Anda mengikuti {name}. Anda boleh melihat siaran ini selepas dia turut mengikuti anda.",
+      "signedOut": "Sudah mengikuti? Log masuk untuk melihatnya."
+    },
     "media": {
       "longImage": "Imej panjang",
       "processing": "Sedang memproses…",
@@ -481,6 +491,8 @@
       "edited": "Disunting {time}",
       "editedShort": "Disunting",
       "empty": "Siaran ini tidak mempunyai kandungan.",
+      "followersNote": "Hanya pengikut penulis boleh melihat siaran ini.",
+      "friendsNote": "Hanya rakan penulis (orang yang saling mengikuti dengan penulis) boleh melihat siaran ini.",
       "from": "Daripada {app}",
       "preparing": {
         "body": "Kandungan akan dipaparkan di sini sebentar lagi.",
@@ -534,7 +546,16 @@
       "zoom": "Zum"
     },
     "visibility": {
-      "failed": "Tidak dapat menukar siapa yang boleh melihat siaran ini. Sila cuba lagi."
+      "failed": "Tidak dapat menukar siapa yang boleh melihat siaran ini. Sila cuba lagi.",
+      "followers": "Pengikut sahaja",
+      "followersHint": "Orang yang mengikuti anda",
+      "friends": "Rakan sahaja",
+      "friendsHint": "Orang yang anda ikuti dan turut mengikuti anda",
+      "label": "Siapa yang boleh melihat siaran ini",
+      "menu": "Boleh dilihat: {value}",
+      "privateHint": "Tiada orang lain boleh melihatnya",
+      "public": "Awam",
+      "publicHint": "Sesiapa sahaja, termasuk yang tiada akaun"
     }
   },
   "status": {

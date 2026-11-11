@@ -1,4 +1,4 @@
-> **Samenvatting.** Wij verzamelen alleen wat nodig is om niceideas te laten werken: uw profiel, wat u plaatst, en beperkte technische gegevens om de Dienst veilig te houden. Uw berichten zijn openbaar, tenzij u ze alleen voor uzelf zichtbaar maakt. Wij verkopen geen persoonsgegevens en tonen geen advertenties. Alleen als u analytische cookies accepteert, gebruiken wij Google Analytics en Microsoft Clarity om te begrijpen hoe de Dienst wordt gebruikt. U kunt berichten op elk moment verwijderen en uw account verwijderen door uw NiceMatrix ID te verwijderen. Schrijf naar support@nicematrix.ca met elke privacyvraag of verzoek.
+> **Samenvatting.** Wij verzamelen alleen wat nodig is om niceideas te laten werken: uw profiel, wat u plaatst, en beperkte technische gegevens om de Dienst veilig te houden. Uw berichten zijn openbaar, tenzij u kiest wie ze kan zien. Wij verkopen geen persoonsgegevens en tonen geen advertenties. Alleen als u analytische cookies accepteert, gebruiken wij Google Analytics en Microsoft Clarity om te begrijpen hoe de Dienst wordt gebruikt. U kunt berichten op elk moment verwijderen en uw account verwijderen door uw NiceMatrix ID te verwijderen. Schrijf naar support@nicematrix.ca met elke privacyvraag of verzoek.
 
 ## 1. Wie wij zijn
 
@@ -48,7 +48,7 @@ Onder de Canadese privacywetgeving baseren wij ons op uw toestemming, die u geef
 
 Uw profiel (handle, weergavenaam, avatar, biografie, aanmelddatum, aantal berichten, volgers, gevolgde accounts en ontvangen likes), uw berichten en uw reacties zijn openbaar. Iedereen kan ze zien, inclusief mensen zonder account; zoekmachines kunnen ze indexeren; en andere platforms kunnen linkvoorbeelden ervan weergeven. De bijnaam bij de reactie van een bezoeker is openbaar. De codes afgeleid van IP-adressen en browseridentificaties worden nooit weergegeven.
 
-Berichten die u alleen voor uzelf zichtbaar maakt, zijn niet openbaar: alleen u kunt ze zien, en hun afbeeldingen en audio zijn zolang niet openbaar toegankelijk.
+Berichten die u beperkt tot uw volgers, uw vrienden of alleen uzelf zijn niet openbaar: alleen de mensen die u hebt gekozen kunnen ze zien, en hun afbeeldingen en audio zijn niet openbaar toegankelijk zolang dat zo blijft.
 
 ## 5. Cookies
 

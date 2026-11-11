@@ -430,8 +430,6 @@
       "delete": "Supprimer",
       "edit": "Modifier",
       "like": "J’aime",
-      "makePrivate": "Rendre visible uniquement par moi",
-      "makePublic": "Rendre public",
       "more": "Plus d’options",
       "quote": "Citer",
       "reply": "Répondre",
@@ -472,6 +470,18 @@
       "joinShort": "Rejoindre"
     },
     "language": "Langue",
+    "locked": {
+      "followers": {
+        "body": "Seules les personnes qui suivent {name} peuvent voir cette publication. Abonnez-vous pour la voir.",
+        "title": "Abonnés uniquement"
+      },
+      "friends": {
+        "body": "Seules les personnes qui se suivent mutuellement avec {name} peuvent voir cette publication.",
+        "title": "Amis uniquement"
+      },
+      "friendsWaiting": "Vous suivez {name}. Vous pourrez voir cette publication dès que {name} vous suivra aussi.",
+      "signedOut": "Vous suivez déjà ? Connectez-vous pour la voir."
+    },
     "media": {
       "longImage": "Image longue",
       "processing": "Traitement en cours…",
@@ -481,6 +491,8 @@
       "edited": "Modifié le {time}",
       "editedShort": "Modifié",
       "empty": "Cette publication n’a pas de contenu.",
+      "followersNote": "Seuls les abonnés de l’auteur peuvent voir cette publication.",
+      "friendsNote": "Seuls les amis de l’auteur (personnes qui se suivent mutuellement avec lui) peuvent voir cette publication.",
       "from": "Depuis {app}",
       "preparing": {
         "body": "Le contenu apparaîtra ici dans un instant.",
@@ -534,7 +546,16 @@
       "zoom": "Zoomer"
     },
     "visibility": {
-      "failed": "Impossible de modifier qui peut voir cette publication. Veuillez réessayer."
+      "failed": "Impossible de modifier qui peut voir cette publication. Veuillez réessayer.",
+      "followers": "Abonnés uniquement",
+      "followersHint": "Les personnes qui vous suivent",
+      "friends": "Amis uniquement",
+      "friendsHint": "Les personnes que vous suivez et qui vous suivent aussi",
+      "label": "Qui peut voir cette publication",
+      "menu": "Visible par : {value}",
+      "privateHint": "Personne d’autre ne peut la voir",
+      "public": "Public",
+      "publicHint": "Tout le monde, y compris les personnes sans compte"
     }
   },
   "status": {

@@ -430,8 +430,6 @@
       "delete": "삭제",
       "edit": "수정",
       "like": "좋아요",
-      "makePrivate": "나만 보기로 설정",
-      "makePublic": "공개로 설정",
       "more": "더보기",
       "quote": "인용",
       "reply": "답글",
@@ -472,6 +470,18 @@
       "joinShort": "가입"
     },
     "language": "언어",
+    "locked": {
+      "followers": {
+        "body": "{name} 님의 팔로워만 이 게시물을 볼 수 있습니다. 팔로우하면 볼 수 있어요.",
+        "title": "팔로워만"
+      },
+      "friends": {
+        "body": "{name} 님과 서로 팔로우하는 사람만 이 게시물을 볼 수 있습니다.",
+        "title": "친구만"
+      },
+      "friendsWaiting": "{name} 님을 팔로우하고 있습니다. 상대방도 나를 팔로우하면 볼 수 있어요.",
+      "signedOut": "이미 팔로우하고 있나요? 로그인하면 볼 수 있어요."
+    },
     "media": {
       "longImage": "긴 이미지",
       "processing": "처리 중…",
@@ -481,6 +491,8 @@
       "edited": "{time}에 수정됨",
       "editedShort": "수정됨",
       "empty": "이 게시물에는 내용이 없습니다.",
+      "followersNote": "작성자의 팔로워만 이 게시물을 볼 수 있습니다.",
+      "friendsNote": "작성자와 서로 팔로우하는 친구만 이 게시물을 볼 수 있습니다.",
       "from": "{app}에서 작성",
       "preparing": {
         "body": "잠시 후 여기에 표시됩니다.",
@@ -534,7 +546,16 @@
       "zoom": "확대/축소"
     },
     "visibility": {
-      "failed": "이 게시물의 공개 범위를 변경하지 못했습니다. 다시 시도해 주세요."
+      "failed": "이 게시물의 공개 범위를 변경하지 못했습니다. 다시 시도해 주세요.",
+      "followers": "팔로워만",
+      "followersHint": "나를 팔로우하는 사람",
+      "friends": "친구만",
+      "friendsHint": "서로 팔로우하는 사람",
+      "label": "공개 범위",
+      "menu": "공개 범위: {value}",
+      "privateHint": "다른 사람은 볼 수 없음",
+      "public": "전체 공개",
+      "publicHint": "계정이 없는 사람을 포함한 모든 사람"
     }
   },
   "status": {

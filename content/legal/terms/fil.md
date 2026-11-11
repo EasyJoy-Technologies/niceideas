@@ -1,4 +1,4 @@
-> **Buod.** Pagmamay-ari mo ang anumang ipinapaskil mo, at ikaw ang responsable para dito. Pampubliko ang mga post sa niceideas maliban kung gawin mong ikaw lang ang makakakita. Huwag maglagay ng anumang labag sa batas o nakakasama, o anumang wala kang karapatang ibahagi. Maaari mong burahin ang isang post anumang oras; permanenteng mabubura ang mga binurang post pagkatapos ng 30 araw. Libre ang niceideas at ibinibigay ito "as is." Ang mga Tuntunin na ito ay pinaiiral ng mga batas ng Alberta, Canada. Ang buod na ito ay para lamang sa kaginhawahan; ang kumpletong Tuntunin sa ibaba ang may bisa.
+> **Buod.** Pagmamay-ari mo ang anumang ipinapaskil mo, at ikaw ang responsable para dito. Pampubliko ang mga post sa niceideas maliban kung pipiliin mo kung sino ang makakakita (ang iyong mga follower, ang iyong mga kaibigan, o ikaw lang). Huwag maglagay ng anumang labag sa batas o nakakasama, o anumang wala kang karapatang ibahagi. Maaari mong burahin ang isang post anumang oras; permanenteng mabubura ang mga binurang post pagkatapos ng 30 araw. Libre ang niceideas at ibinibigay ito "as is." Ang mga Tuntunin na ito ay pinaiiral ng mga batas ng Alberta, Canada. Ang buod na ito ay para lamang sa kaginhawahan; ang kumpletong Tuntunin sa ibaba ang may bisa.
 
 ## 1. Tungkol sa mga Tuntunin na ito
 
@@ -26,7 +26,7 @@ Sa paggamit ng Serbisyo, kasama ang pagtingin, pag-like, o pagkomento kahit wala
 
 ## 4. Pampublikong nilalaman at mga link
 
-4.1 Pampubliko ang mga post na iyong ipinapaskil (maliban kung gawin mong ikaw lang ang makakakita, tingnan ang 4.5). Maaari ito lumabas sa iyong profile, sa mga timeline, sa Discover page, at sa mga resulta ng paghahanap, at kahit sino na may link ang maaaring buksan ito, na may o walang account. Maaari rin na ipakita ng mga search engine at ng ibang mga platform ang mga pampublikong page at link preview.
+4.1 Pampubliko ang mga post na iyong ipinapaskil (maliban kung pipiliin mo kung sino ang makakakita, tingnan ang 4.5). Maaari ito lumabas sa iyong profile, sa mga timeline, sa Discover page, at sa mga resulta ng paghahanap, at kahit sino na may link ang maaaring buksan ito, na may o walang account. Maaari rin na ipakita ng mga search engine at ng ibang mga platform ang mga pampublikong page at link preview.
 
 4.2 Pampubliko ang mga komento at lumalabas ito sa ilalim ng post. Ang mga bisitang walang account ay maaaring mag-like ng mga post at magkomento gamit ang isang opsyonal na palayaw.
 
@@ -34,7 +34,7 @@ Sa paggamit ng Serbisyo, kasama ang pagtingin, pag-like, o pagkomento kahit wala
 
 4.4 Para sa mga bisitang nagkoneksyon mula sa mainland China, ang mga indibidwal na pinapaskil na post page lamang at ang mga like at komento dito ang maa-access; hindi maa-access ang ibang mga page. Ipinakikita nito ang kasalukuyang paraan ng pagbibigay ng Serbisyo at maaaring magbago.
 
-4.5 Maaari mong gawing ikaw lang ang makakakita sa alinman sa iyong mga post, at gawin itong pampubliko muli, anumang oras. Habang ikaw lang ang makakakita sa isang post, hindi ito lalabas kahit saan sa Serbisyo para sa iba at ikaw lang ang makakapagbukas ng link nito; hindi apektado ang mga kopyang ginawa ng iba noong pampubliko pa ito (tingnan ang 4.3).
+4.5 Maaari mong piliin kung sino ang makakakita ng bawat post mo at baguhin ito anumang oras: lahat (pampubliko), ang iyong mga follower lang, ang iyong mga kaibigan lang (mga taong fina-follow mo na nagfo-follow din sa iyo), o ikaw lang. Ang post na hindi pampubliko ay hindi lumalabas sa Discover page, sa mga resulta ng paghahanap, o sa mga link preview, at ang link nito ay nabubuksan lang ng mga taong pinili mo. Kahit sino ay maaaring mag-follow sa iyo, kaya ang sinumang nagfo-follow sa iyo ay makakakita ng iyong mga post na para sa mga follower lang. Hindi apektado ang mga kopyang ginawa ng iba habang nakikita nila ang isang post (tingnan ang 4.3).
 
 ## 5. Ang iyong nilalaman
 

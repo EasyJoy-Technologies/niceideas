@@ -430,8 +430,6 @@
       "delete": "Futa",
       "edit": "Hariri",
       "like": "Penda",
-      "makePrivate": "Ifanye ionekane kwangu tu",
-      "makePublic": "Ifanye ya umma",
       "more": "Chaguo zaidi",
       "quote": "Nukuu",
       "reply": "Jibu",
@@ -472,6 +470,18 @@
       "joinShort": "Jiunge"
     },
     "language": "Lugha",
+    "locked": {
+      "followers": {
+        "body": "Ni watu wanaomfuata {name} pekee wanaoweza kuona chapisho hili. Fuata ili ukione.",
+        "title": "Wafuasi pekee"
+      },
+      "friends": {
+        "body": "Ni watu wanaofuatana na {name} pekee wanaoweza kuona chapisho hili.",
+        "title": "Marafiki pekee"
+      },
+      "friendsWaiting": "Unamfuata {name}. Utaweza kuona chapisho hili atakapokufuata pia.",
+      "signedOut": "Tayari unafuata? Ingia ili ukione."
+    },
     "media": {
       "longImage": "Picha ndefu",
       "processing": "Inachakatwa…",
@@ -481,6 +491,8 @@
       "edited": "Ilihaririwa {time}",
       "editedShort": "Imehaririwa",
       "empty": "Chapisho hili halina maudhui.",
+      "followersNote": "Ni wafuasi wa mwandishi pekee wanaoweza kuona chapisho hili.",
+      "friendsNote": "Ni marafiki wa mwandishi pekee (wanaofuatana na mwandishi) wanaoweza kuona chapisho hili.",
       "from": "Kutoka {app}",
       "preparing": {
         "body": "Maudhui yataonekana hapa muda mfupi.",
@@ -534,7 +546,16 @@
       "zoom": "Kuza"
     },
     "visibility": {
-      "failed": "Imeshindikana kubadilisha nani anaweza kuona chapisho hili. Tafadhali jaribu tena."
+      "failed": "Imeshindikana kubadilisha nani anaweza kuona chapisho hili. Tafadhali jaribu tena.",
+      "followers": "Wafuasi pekee",
+      "followersHint": "Watu wanaokufuata",
+      "friends": "Marafiki pekee",
+      "friendsHint": "Watu unaowafuata ambao pia wanakufuata",
+      "label": "Nani anaweza kuona chapisho hili",
+      "menu": "Wanaoweza kuona: {value}",
+      "privateHint": "Hakuna mwingine anayeweza kukiona",
+      "public": "Hadharani",
+      "publicHint": "Mtu yeyote, hata wasio na akaunti"
     }
   },
   "status": {

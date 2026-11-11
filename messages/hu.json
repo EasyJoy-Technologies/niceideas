@@ -430,8 +430,6 @@
       "delete": "Törlés",
       "edit": "Szerkesztés",
       "like": "Tetszik",
-      "makePrivate": "Csak számomra látható",
-      "makePublic": "Nyilvánossá tétel",
       "more": "További lehetőségek",
       "quote": "Idézés",
       "reply": "Válasz",
@@ -472,6 +470,18 @@
       "joinShort": "Csatlakozás"
     },
     "language": "Nyelv",
+    "locked": {
+      "followers": {
+        "body": "Ezt a bejegyzést csak {name} követői láthatják. Kövesd, és láthatod.",
+        "title": "Csak követők"
+      },
+      "friends": {
+        "body": "Ezt a bejegyzést csak azok láthatják, akik kölcsönösen követik egymást {name} felhasználóval.",
+        "title": "Csak barátok"
+      },
+      "friendsWaiting": "Követed: {name}. Akkor láthatod a bejegyzést, ha ő is követ téged.",
+      "signedOut": "Már követed? Jelentkezz be, és láthatod."
+    },
     "media": {
       "longImage": "Hosszú kép",
       "processing": "Feldolgozás…",
@@ -481,6 +491,8 @@
       "edited": "Szerkesztve: {time}",
       "editedShort": "Szerkesztve",
       "empty": "Ennek a bejegyzésnek nincs tartalma.",
+      "followersNote": "Ezt a bejegyzést csak a szerző követői láthatják.",
+      "friendsNote": "Ezt a bejegyzést csak a szerző barátai (akik kölcsönösen követik egymást vele) láthatják.",
       "from": "Forrás: {app}",
       "preparing": {
         "body": "A tartalom hamarosan megjelenik itt.",
@@ -534,7 +546,16 @@
       "zoom": "Nagyítás"
     },
     "visibility": {
-      "failed": "Nem sikerült módosítani, ki láthatja ezt a bejegyzést. Próbálja újra."
+      "failed": "Nem sikerült módosítani, ki láthatja ezt a bejegyzést. Próbálja újra.",
+      "followers": "Csak követők",
+      "followersHint": "Akik követnek téged",
+      "friends": "Csak barátok",
+      "friendsHint": "Akiket követsz, és ők is követnek téged",
+      "label": "Ki láthatja ezt a bejegyzést",
+      "menu": "Látható: {value}",
+      "privateHint": "Senki más nem láthatja",
+      "public": "Nyilvános",
+      "publicHint": "Bárki, fiók nélkül is"
     }
   },
   "status": {

@@ -430,8 +430,6 @@
       "delete": "删除",
       "edit": "编辑",
       "like": "赞",
-      "makePrivate": "设为仅自己可见",
-      "makePublic": "设为公开",
       "more": "更多操作",
       "quote": "引用并评论",
       "reply": "回复",
@@ -472,6 +470,18 @@
       "joinShort": "加入"
     },
     "language": "语言",
+    "locked": {
+      "followers": {
+        "body": "这条帖子仅 {name} 的关注者可见，关注后即可查看。",
+        "title": "仅关注者可见"
+      },
+      "friends": {
+        "body": "这条帖子仅与 {name} 互相关注的朋友可见。",
+        "title": "仅朋友可见"
+      },
+      "friendsWaiting": "你已关注 {name}，对方也关注你后即可查看。",
+      "signedOut": "已经关注了？登录后即可查看。"
+    },
     "media": {
       "longImage": "长图",
       "processing": "媒体处理中…",
@@ -481,6 +491,8 @@
       "edited": "编辑于 {time}",
       "editedShort": "已编辑",
       "empty": "这条帖子没有内容。",
+      "followersNote": "这条帖子仅作者的关注者可见。",
+      "friendsNote": "这条帖子仅与作者互相关注的朋友可见。",
       "from": "来自 {app}",
       "preparing": {
         "body": "内容马上就会显示在这里。",
@@ -534,7 +546,16 @@
       "zoom": "缩放"
     },
     "visibility": {
-      "failed": "未能更改帖子的可见范围，请重试。"
+      "failed": "未能更改帖子的可见范围，请重试。",
+      "followers": "仅关注者",
+      "followersHint": "关注你的人",
+      "friends": "仅朋友",
+      "friendsHint": "你和对方互相关注",
+      "label": "谁可以看",
+      "menu": "谁可以看：{value}",
+      "privateHint": "其他人都看不到",
+      "public": "公开",
+      "publicHint": "所有人，包括没有账号的人"
     }
   },
   "status": {

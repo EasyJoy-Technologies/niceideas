@@ -1,6 +1,7 @@
 import { sql, type RawBuilder, type SelectQueryBuilder } from "kysely";
 import type { Db } from "../client";
 import { listHomeFeed } from "./home-feed";
+import { visibleTo } from "./post-access";
 import type { Database, Post, PostKind, PostRevision } from "../schema";
 
 /** Keyset position in a newest-first feed. */
@@ -13,8 +14,11 @@ export type FeedFilter = {
   query?: string;
   /** Home timeline: own posts + followed authors. */
   followerId?: string;
-  /** The author viewing their own profile: private posts included. */
-  includePrivate?: boolean;
+  /**
+   * Who is looking at an author's posts (`authorId`): their followers-only / friends-only posts they may see,
+   * and everything when it is the author (db/repos/post-access.ts). Other lists show public posts only.
+   */
+  viewerId?: string | null;
 };
 
 /** LIKE pattern matching `text` literally anywhere. */
@@ -42,10 +46,10 @@ export async function listFeed(db: Db, filter: FeedFilter, cursor: FeedCursor | 
 
 type PostQuery = SelectQueryBuilder<Database, "post", object>;
 
-/** Conditions shared by every feed: live public posts (own private ones on request), kind tab, keyset cursor. */
+/** Conditions shared by every feed: live public posts (an author's posts: those the viewer may see), kind tab, keyset cursor. */
 function feedConditions(filter: FeedFilter, cursor: FeedCursor | null): RawBuilder<boolean> {
   const parts: RawBuilder<unknown>[] = [sql`post.status = 'active'`];
-  if (!(filter.includePrivate && filter.authorId)) parts.push(sql`post.visibility = 'public'`);
+  parts.push(filter.authorId ? visibleTo("post", filter.viewerId ?? null, { ownPrivate: true }) : sql`post.visibility = 'public'`);
   if (filter.kind) parts.push(sql`post.kind = ${filter.kind}`);
   if (cursor) parts.push(sql`(post.published_at, post.id) < (${cursor.at}, ${cursor.id}::uuid)`);
   return sql<boolean>`(${sql.join(parts, sql` AND `)})`;
@@ -65,15 +69,15 @@ export async function findRevisions(db: Db, ids: string[]): Promise<PostRevision
 
 export type ProfileStats = { posts: number; likes: number; followers: number; following: number };
 
-/** `includePrivate`: the author's own view (counts their private posts too). */
-export async function profileStats(db: Db, userId: string, includePrivate = false): Promise<ProfileStats> {
+/** `viewerId`: who is looking (posts counted: those they may see; the author's own view counts all). */
+export async function profileStats(db: Db, userId: string, viewerId: string | null = null): Promise<ProfileStats> {
   const [posts, followers, following] = await Promise.all([
     db
       .selectFrom("post")
       .select([sql<number>`count(*)::int`.as("n"), sql<number>`coalesce(sum(like_count), 0)::int`.as("likes")])
       .where("author_id", "=", userId)
       .where("status", "=", "active")
-      .$if(!includePrivate, (q) => q.where("visibility", "=", "public"))
+      .where(visibleTo("post", viewerId, { ownPrivate: true }))
       .executeTakeFirstOrThrow(),
     db.selectFrom("follow").select(sql<number>`count(*)::int`.as("n")).where("followee_id", "=", userId).executeTakeFirstOrThrow(),
     db.selectFrom("follow").select(sql<number>`count(*)::int`.as("n")).where("follower_id", "=", userId).executeTakeFirstOrThrow(),

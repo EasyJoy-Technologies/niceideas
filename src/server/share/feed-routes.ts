@@ -82,8 +82,8 @@ export async function profileResponse(request: Request, rawHandle: string): Prom
       const own = ctx.viewer?.user_id === profile.user_id;
       const tab = profileTab(url, own);
       const [stats, list, asideData, followed] = await Promise.all([
-        profileStats(db, profile.user_id, own),
-        loadProfileList(db, profile.user_id, own, tab, parseCursor(url.searchParams.get("before")), feedViewer(ctx, request)),
+        profileStats(db, profile.user_id, ctx.viewer?.user_id ?? null),
+        loadProfileList(db, profile.user_id, tab, parseCursor(url.searchParams.get("before")), feedViewer(ctx, request)),
         loadDiscoverAside(db, ctx.viewer?.user_id ?? null),
         ctx.viewer ? followingAmong(db, ctx.viewer.user_id, [profile.user_id]) : Promise.resolve(new Set<string>()),
       ]);

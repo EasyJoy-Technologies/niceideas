@@ -49,6 +49,11 @@ export function bindToolbar(form: HTMLFormElement, editor: Editor, linkPrompt: s
     else CMDS[name]?.run(editor.chain().focus()).run();
     btn.closest("details")?.removeAttribute("open");
   });
+  // Who can see: a choice closes its menu.
+  form.addEventListener("change", (e) => {
+    const input = e.target as HTMLInputElement;
+    if (input.name === "visibility") input.closest("details")?.removeAttribute("open");
+  });
   const buttons = Array.from(form.querySelectorAll<HTMLButtonElement>(".ni-tb[data-cmd]"));
   const refresh = () => {
     for (const b of buttons) {

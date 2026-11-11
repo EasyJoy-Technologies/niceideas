@@ -1,4 +1,4 @@
-> **Shrnutí.** Shromažďujeme pouze to, co potřebujeme k provozu niceideas: váš profil, to, co zveřejňujete, a omezené technické údaje pro zajištění bezpečnosti Služby. Vaše příspěvky jsou veřejné, pokud je nenastavíte jako viditelné jen pro vás. Osobní údaje neprodáváme a nezobrazujeme reklamy. Pouze pokud přijmete analytické soubory cookie, používáme Google Analytics a Microsoft Clarity, abychom porozuměli, jak se Služba používá. Příspěvky můžete kdykoli smazat a účet odstranit odstraněním svého NiceMatrix ID. S jakýmkoli dotazem nebo žádostí týkající se ochrany osobních údajů nás kontaktujte na support@nicematrix.ca.
+> **Shrnutí.** Shromažďujeme pouze to, co potřebujeme k provozu niceideas: váš profil, to, co zveřejňujete, a omezené technické údaje pro zajištění bezpečnosti Služby. Vaše příspěvky jsou veřejné, pokud nezvolíte, kdo je může vidět. Osobní údaje neprodáváme a nezobrazujeme reklamy. Pouze pokud přijmete analytické soubory cookie, používáme Google Analytics a Microsoft Clarity, abychom porozuměli, jak se Služba používá. Příspěvky můžete kdykoli smazat a účet odstranit odstraněním svého NiceMatrix ID. S jakýmkoli dotazem nebo žádostí týkající se ochrany osobních údajů nás kontaktujte na support@nicematrix.ca.
 
 ## 1. Kdo jsme
 
@@ -48,7 +48,7 @@ Podle kanadského práva na ochranu osobních údajů se spoléháme na váš so
 
 Váš profil (přihlašovací jméno, zobrazované jméno, avatar, biografie, datum vstupu, počet příspěvků, sledujících, sledovaných účtů a obdržených lajků), vaše příspěvky a vaše komentáře jsou veřejné. Kdokoli je může vidět, včetně lidí bez účtu; vyhledávače je mohou indexovat; a jiné platformy mohou zobrazovat náhledy odkazů na ně. Přezdívka u komentáře návštěvníka je veřejná. Kódy odvozené z IP adres a identifikátorů prohlížeče se nikdy nezobrazují.
 
-Příspěvky, které nastavíte jako viditelné jen pro vás, nejsou veřejné: vidíte je jen vy a jejich obrázky a zvuk nejsou po tu dobu veřejně přístupné.
+Příspěvky, které omezíte na své sledující, přátele nebo jen na sebe, nejsou veřejné: vidí je jen lidé, které jste zvolili, a jejich obrázky a zvukové záznamy nejsou po tuto dobu veřejně přístupné.
 
 ## 5. Soubory cookie
 

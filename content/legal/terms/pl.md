@@ -1,4 +1,4 @@
-> **Podsumowanie.** Jesteś właścicielem tego, co publikujesz, i odpowiadasz za to. Wpisy na niceideas są publiczne, chyba że ustawisz je jako widoczne tylko dla Ciebie. Nie publikuj niczego nielegalnego lub szkodliwego, ani niczego, do czego nie masz prawa. Możesz usunąć wpis w każdej chwili; usunięte wpisy są trwale usuwane po 30 dniach. niceideas jest bezpłatne i dostarczane „tak jak jest". Niniejsze Warunki podlegają prawu prowincji Alberta, Kanada. Niniejsze podsumowanie służy jedynie wygodzie; obowiązują pełne Warunki poniżej.
+> **Podsumowanie.** Jesteś właścicielem tego, co publikujesz, i odpowiadasz za to. Wpisy na niceideas są publiczne, chyba że wybierzesz, kto może je widzieć (Twoi obserwujący, Twoi znajomi lub tylko Ty). Nie publikuj niczego nielegalnego lub szkodliwego, ani niczego, do czego nie masz prawa. Możesz usunąć wpis w każdej chwili; usunięte wpisy są trwale usuwane po 30 dniach. niceideas jest bezpłatne i dostarczane „tak jak jest". Niniejsze Warunki podlegają prawu prowincji Alberta, Kanada. Niniejsze podsumowanie służy jedynie wygodzie; obowiązują pełne Warunki poniżej.
 
 ## 1. O niniejszych Warunkach
 
@@ -26,7 +26,7 @@ Korzystając z Usługi, w tym przeglądając, polubiając lub komentując bez ko
 
 ## 4. Treści publiczne i linki
 
-4.1 Wpisy, które publikujesz, są publiczne (chyba że ustawisz je jako widoczne tylko dla Ciebie, zob. 4.5). Mogą pojawiać się na Twoim profilu, w osiach czasu, na stronie Odkryj oraz w wynikach wyszukiwania, a każdy, kto ma link, może je otworzyć, z kontem lub bez. Wyszukiwarki i inne platformy mogą również wyświetlać publiczne strony i podglądy linków.
+4.1 Wpisy, które publikujesz, są publiczne (chyba że wybierzesz, kto może je widzieć, zob. 4.5). Mogą pojawiać się na Twoim profilu, w osiach czasu, na stronie Odkryj oraz w wynikach wyszukiwania, a każdy, kto ma link, może je otworzyć, z kontem lub bez. Wyszukiwarki i inne platformy mogą również wyświetlać publiczne strony i podglądy linków.
 
 4.2 Komentarze są publiczne i pojawiają się pod wpisem. Odwiedzający bez konta mogą polubić wpisy i komentować pod opcjonalnym pseudonimem.
 
@@ -34,7 +34,7 @@ Korzystając z Usługi, w tym przeglądając, polubiając lub komentując bez ko
 
 4.4 Dla odwiedzających łączących się z Chin kontynentalnych dostępne są tylko poszczególne strony udostępnionych wpisów oraz polubienia i komentarze do nich; inne strony nie są dostępne. Odzwierciedla to aktualny sposób świadczenia Usługi i może się zmienić.
 
-4.5 W każdej chwili możesz ustawić dowolny swój wpis jako widoczny tylko dla Ciebie i ponownie go upublicznić. Dopóki wpis jest widoczny tylko dla Ciebie, nie pojawia się nigdzie w Usłudze dla innych, a jego link otwiera się tylko Tobie; nie dotyczy to kopii, które inni zrobili, gdy był publiczny (zob. 4.3).
+4.5 Dla każdego swojego wpisu możesz wybrać, kto może go widzieć, i w każdej chwili to zmienić: wszyscy (publiczny), tylko Twoi obserwujący, tylko Twoi znajomi (osoby, które obserwujesz i które obserwują Ciebie) lub tylko Ty. Wpis, który nie jest publiczny, nie pojawia się na stronie Odkryj, w wynikach wyszukiwania ani w podglądach linków, a jego link otwiera się tylko dla wybranych przez Ciebie osób. Każdy może Cię obserwować, więc każdy, kto Cię obserwuje, widzi Twoje wpisy tylko dla obserwujących. Nie dotyczy to kopii, które inni wykonali, gdy mogli widzieć wpis (zob. 4.3).
 
 ## 5. Twoje treści
 

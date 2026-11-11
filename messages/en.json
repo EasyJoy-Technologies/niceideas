@@ -430,8 +430,6 @@
       "delete": "Delete",
       "edit": "Edit",
       "like": "Like",
-      "makePrivate": "Make visible only to me",
-      "makePublic": "Make public",
       "more": "More options",
       "quote": "Quote",
       "reply": "Reply",
@@ -472,6 +470,18 @@
       "joinShort": "Join"
     },
     "language": "Language",
+    "locked": {
+      "followers": {
+        "body": "Only people who follow {name} can see this post. Follow to see it.",
+        "title": "Followers only"
+      },
+      "friends": {
+        "body": "Only people who follow each other with {name} can see this post.",
+        "title": "Friends only"
+      },
+      "friendsWaiting": "You follow {name}. You can see this post once they follow you back.",
+      "signedOut": "Already following? Sign in to see it."
+    },
     "media": {
       "longImage": "Long image",
       "processing": "Processing…",
@@ -481,6 +491,8 @@
       "edited": "Edited {time}",
       "editedShort": "Edited",
       "empty": "This post has no content.",
+      "followersNote": "Only the author's followers can see this post.",
+      "friendsNote": "Only the author's friends (people who follow each other with the author) can see this post.",
       "from": "From {app}",
       "preparing": {
         "body": "The content will appear here in a moment.",
@@ -534,7 +546,16 @@
       "zoom": "Zoom"
     },
     "visibility": {
-      "failed": "Couldn’t change who can see this post. Please try again."
+      "failed": "Couldn’t change who can see this post. Please try again.",
+      "followers": "Followers only",
+      "followersHint": "People who follow you",
+      "friends": "Friends only",
+      "friendsHint": "People you follow who also follow you",
+      "label": "Who can see this post",
+      "menu": "Who can see: {value}",
+      "privateHint": "Nobody else can see it",
+      "public": "Public",
+      "publicHint": "Anyone, including people without an account"
     }
   },
   "status": {

@@ -1,13 +1,13 @@
 import type { Principal } from "@/server/auth/principal";
 import type { Db } from "@/server/db/client";
-import type { Post, PostKind, SyncMode } from "@/server/db/schema";
+import type { Post, PostKind, PostVisibility, SyncMode } from "@/server/db/schema";
 import { findLivePostBySource, insertPost, updatePost } from "@/server/db/repos/posts";
 import { findRevision, insertRevision, linkRevisionMedia } from "@/server/db/repos/revisions";
 import { isUniqueViolation } from "@/server/db/repos/profiles";
 import { contentHash } from "@/server/documents/hash";
 import type { PostDocument } from "@/server/documents/schema";
 import { accountDeleting, assertAuthorActive, readAuthorState } from "@/server/accounts/author-gate";
-import { finishPublication, projectMediaPublic, recordPublication } from "@/server/media/publication";
+import { finishPublication, NO_PROJECTION, projectMediaPublic, recordPublication } from "@/server/media/publication";
 import type { MediaStores } from "@/server/storage/types";
 import { derivedFields } from "./derived-fields";
 import { resolveDocumentMedia } from "./media-refs";
@@ -22,6 +22,8 @@ export type CreatePostInput = {
   syncMode?: SyncMode;
   /** A quote: id of the (live, public) post it quotes — checked by the caller. */
   quoteOf?: string;
+  /** Who may see it (default public; web compose may choose, posts/visibility.ts). Only public posts' media go public. */
+  visibility?: PostVisibility;
 };
 
 export type CreatePostResult = { post: Post; contentHash: string | null; created: boolean };
@@ -54,7 +56,8 @@ export async function createPost(
   if (principal.apiClientId) await assertClientBudget(db, principal.apiClientId, principal.userId);
   const media = await resolveDocumentMedia(db, principal.userId, input.document);
   const rt = { db, stores, cacheControl };
-  const projection = await projectMediaPublic(rt, media);
+  const visibility = input.visibility ?? "public";
+  const projection = visibility === "public" ? await projectMediaPublic(rt, media) : NO_PROJECTION;
 
   const hash = contentHash(input.document);
   const fields = derivedFields(input.document);
@@ -77,10 +80,11 @@ export async function createPost(
             kind_locked: input.kind !== undefined,
             source_updated_at: input.sourceUpdatedAt,
             quote_of: input.quoteOf ?? null,
+            visibility,
           });
           const rev = await insertRevision(trx, { postId: row.id, document: input.document, contentHash: hash, sourceUpdatedAt: input.sourceUpdatedAt });
           await linkRevisionMedia(trx, rev.id, media.map((m) => m.id));
-          touched = await recordPublication(trx, projection, media.map((m) => m.id));
+          touched = await recordPublication(trx, projection, visibility === "public" ? media.map((m) => m.id) : []);
           return updatePost(trx, row.id, { current_revision_id: rev.id });
         });
         return { post, contentHash: hash, created: true };

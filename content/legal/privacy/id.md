@@ -1,4 +1,4 @@
-> **Ringkasan.** Kami hanya mengumpulkan apa yang kami perlukan untuk menjalankan niceideas: profil Anda, apa yang Anda terbitkan, dan data teknis terbatas untuk menjaga keamanan Layanan. Unggahan Anda bersifat publik, kecuali Anda menjadikannya hanya terlihat oleh Anda. Kami tidak menjual informasi pribadi atau menampilkan iklan. Hanya jika Anda menerima cookie analitik, kami menggunakan Google Analytics dan Microsoft Clarity untuk memahami bagaimana Layanan digunakan. Anda dapat menghapus unggahan kapan saja dan menghapus akun Anda dengan menghapus NiceMatrix ID Anda. Tulislah ke support@nicematrix.ca untuk pertanyaan atau permintaan privasi apa pun.
+> **Ringkasan.** Kami hanya mengumpulkan apa yang kami perlukan untuk menjalankan niceideas: profil Anda, apa yang Anda terbitkan, dan data teknis terbatas untuk menjaga keamanan Layanan. Unggahan Anda bersifat publik, kecuali Anda memilih siapa yang dapat melihatnya. Kami tidak menjual informasi pribadi atau menampilkan iklan. Hanya jika Anda menerima cookie analitik, kami menggunakan Google Analytics dan Microsoft Clarity untuk memahami bagaimana Layanan digunakan. Anda dapat menghapus unggahan kapan saja dan menghapus akun Anda dengan menghapus NiceMatrix ID Anda. Tulislah ke support@nicematrix.ca untuk pertanyaan atau permintaan privasi apa pun.
 
 ## 1. Siapa kami
 
@@ -48,7 +48,7 @@ Berdasarkan hukum privasi Kanada, kami mengandalkan persetujuan Anda, yang Anda 
 
 Profil Anda (handel, nama tampilan, avatar, biografi, tanggal bergabung, jumlah unggahan, pengikut, akun yang diikuti, dan suka yang diterima), unggahan Anda, dan komentar Anda bersifat publik. Siapa pun dapat melihatnya, termasuk orang tanpa akun; mesin pencari dapat mengindeksnya; dan platform lain dapat menampilkan pratinjau tautannya. Nama panggilan pada komentar pengunjung bersifat publik. Kode yang diturunkan dari alamat IP dan pengenal peramban tidak pernah ditampilkan.
 
-Unggahan yang Anda jadikan hanya terlihat oleh Anda tidak bersifat publik: hanya Anda yang dapat melihatnya, dan gambar serta audionya tidak dapat diakses publik selama tetap demikian.
+Unggahan yang Anda batasi untuk pengikut Anda, teman Anda, atau hanya Anda tidak bersifat publik: hanya orang yang Anda pilih yang dapat melihatnya, dan gambar serta audionya tidak dapat diakses secara publik selama tetap demikian.
 
 ## 5. Cookie
 

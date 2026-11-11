@@ -11,8 +11,8 @@ export type ReplyItem = { id: string; body: string; at: Date; toHandle: string |
 export type RepliesPage = { items: ReplyItem[]; next: string | null };
 
 /** Profile "Reposts": plain reposts and quotes, newest first (cursor on repost / publishing time). */
-export async function loadProfileReposts(db: Db, userId: string, own: boolean, cursor: FeedCursor | null, viewer: FeedViewer): Promise<FeedPage> {
-  const rows = await listProfileReposts(db, userId, own, cursor, FEED_PAGE_SIZE + 1);
+export async function loadProfileReposts(db: Db, userId: string, cursor: FeedCursor | null, viewer: FeedViewer): Promise<FeedPage> {
+  const rows = await listProfileReposts(db, userId, viewer.viewerId, cursor, FEED_PAGE_SIZE + 1);
   const page = rows.slice(0, FEED_PAGE_SIZE);
   const last = page[page.length - 1];
   return { items: await feedItems(db, page, viewer), next: rows.length > FEED_PAGE_SIZE ? cursorOf(last.feed_at ?? last.published_at, last.id) : null };

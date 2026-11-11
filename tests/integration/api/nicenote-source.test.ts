@@ -166,6 +166,13 @@ describe("NiceNote source API: share lifecycle", () => {
     expect((await json(await PATCH(signed("PATCH", `/posts/${post.id}`, { visibility: "secret" }), params({ id: post.id })))).status).toBe(400);
     expect((await json(await PATCH(signed("PATCH", `/posts/${post.id}`, { visibility: "public" }), params({ id: post.id })))).body.post.visibility).toBe("public");
     expect((await page(slug)).status).toBe(200);
+    // Followers-only / friends-only (set on the web, v1.0.93): reported as private, `audience` exact; `private`
+    // from the app keeps it as it is, `public` makes it public.
+    await ctx.db.updateTable("post").set({ visibility: "followers" }).where("id", "=", post.id).execute();
+    expect((await json(await GET(signed("GET", `/posts/${post.id}`), params({ id: post.id })))).body.post).toMatchObject({ visibility: "private", audience: "followers" });
+    const kept = await json(await PATCH(signed("PATCH", `/posts/${post.id}`, { visibility: "private", syncMode: "frozen" }), params({ id: post.id })));
+    expect(kept.body.post).toMatchObject({ visibility: "private", audience: "followers" });
+    expect((await json(await PATCH(signed("PATCH", `/posts/${post.id}`, { visibility: "public" }), params({ id: post.id })))).body.post).toMatchObject({ visibility: "public", audience: "public" });
     expect(await ctx.db.selectFrom("outbox").select("id").where("kind", "=", "post_event").where("payload", "@>", JSON.stringify({ postId: post.id, event: "visibility_changed" }) as never).executeTakeFirst()).toBeUndefined();
     const web = await publishAs(ctx, "nn-user", { version: 1, blocks: [{ type: "text", text: "web post" }] });
     expect((await GET(signed("GET", `/posts/${web.id}`), params({ id: web.id }))).status).toBe(404);

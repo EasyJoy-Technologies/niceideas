@@ -2,10 +2,12 @@ import { escapeHtml } from "@/server/render/escape";
 import { WEB_MAX_AUDIOS, WEB_MAX_IMAGES } from "@/server/posts/web-compose";
 import type { ChromeContext } from "./chrome";
 import { icon, type IconName } from "./icons";
+import { VISIBILITIES } from "@/server/posts/visibility";
+import { VISIBILITY_ICONS, visibilityHint, visibilityLabel } from "./visibility-bits";
 
 /**
  * Compose toolbar (v4 compose-v2 design): one row from the card's left edge —
- * image / audio | formatting | "…" | short / article toggle | Post.
+ * image / audio | formatting | "…" | who can see (new posts) | short / article toggle | Post.
  * Formatting needs the editor (`ni-ed-only`, shown once /scripts/compose.js is ready);
  * `data-only="long"`: article mode only; `ni-phone-hide` / `ni-phone-only`: moved into "…" on phones.
  */
@@ -68,12 +70,30 @@ function modeToggle(ctx: ChromeContext): string {
   return `<div class="ni-compose-seg" role="radiogroup" aria-label="${escapeHtml(t("compose.mode.label"))}">${opt("short", true)}${opt("long", false)}</div>`;
 }
 
+/**
+ * Who can see a new post (plan docs/plan/2026-11-10-audience-visibility.md §6): a menu of four radios (works
+ * without JS), public first and checked. The button shows the checked choice (compose.css, :has()).
+ */
+function visibilityPicker(ctx: ChromeContext): string {
+  const label = escapeHtml(ctx.intl.t("share.visibility.label"));
+  const current = VISIBILITIES.map((v) => `<span class="ni-vis-cur" data-v="${v}">${icon(VISIBILITY_ICONS[v])}<span>${escapeHtml(visibilityLabel(ctx, v))}</span></span>`).join("");
+  const options = VISIBILITIES.map(
+    (v) =>
+      `<li><label><input type="radio" name="visibility" value="${v}"${v === "public" ? " checked" : ""}>${icon(VISIBILITY_ICONS[v])}` +
+      `<span><b>${escapeHtml(visibilityLabel(ctx, v))}</b><small>${escapeHtml(visibilityHint(ctx, v))}</small></span>${icon("check", "ni-i ni-vis-on")}</label></li>`,
+  ).join("");
+  return (
+    `<details class="ni-menu ni-compose-vis"><summary class="ni-tb" aria-label="${label}" title="${label}">${current}</summary>` +
+    `<ul role="radiogroup" aria-label="${label}">${options}</ul></details>`
+  );
+}
+
 /** `fixed`: a fixed type instead of the type switch (editing: the post's type, with Save instead of Post; quotes: short). */
 export function composeToolbar(ctx: ChromeContext, fixed?: { mode: "short" | "long"; save: boolean }): string {
   const row = ROW.map((f) => (f === "sep" ? '<span class="ni-tb-sep ni-ed-only" data-only="long"></span>' : rowButton(ctx, f))).join("");
   return (
     `<div class="ni-compose-bar">${mediaButton(ctx, "images")}${mediaButton(ctx, "audios")}<span class="ni-tb-sep ni-ed-only"></span>${row}${moreMenu(ctx)}` +
-    `<span class="ni-sp"></span><span class="ni-compose-count" data-compose-count hidden></span>${fixed ? fixedMode(fixed.mode) : modeToggle(ctx)}` +
+    `<span class="ni-sp"></span><span class="ni-compose-count" data-compose-count hidden></span>${fixed?.save ? "" : visibilityPicker(ctx)}${fixed ? fixedMode(fixed.mode) : modeToggle(ctx)}` +
     `<button type="submit" class="ni-btn ni-btn-primary">${escapeHtml(ctx.intl.t(fixed?.save ? "compose.save" : "compose.publish"))}</button></div>`
   );
 }

@@ -90,7 +90,7 @@ describe("private posts", () => {
     expect(own.html).toContain('data-like="post"');
     expect(own.html).not.toContain("data-bookmark=");
     expect(own.html).not.toContain("data-repost-menu=");
-    expect(own.html).toContain("Make public");
+    expect(own.html).toContain("Who can see: Only me");
     const profile = await listing("profile", author);
     expect(profile).toContain(post.slug);
     expect(profile).toContain('class="ni-private"');
@@ -155,7 +155,7 @@ describe("private posts", () => {
     const shared = await shareFromNiceNote(ctx, "priv-author", { version: 1, blocks: [{ type: "text", text: "From the app" }] });
     await setVisibility(shared.slug, "private");
     const events = await ctx.db.selectFrom("outbox").select("payload").where("kind", "=", "post_event").execute();
-    expect(events.map((e) => e.payload)).toContainEqual(expect.objectContaining({ postId: shared.id, event: "visibility_changed", details: { visibility: "private" } }));
+    expect(events.map((e) => e.payload)).toContainEqual(expect.objectContaining({ postId: shared.id, event: "visibility_changed", details: { visibility: "private", audience: "private" } }));
 
     // Another image than the other tests (same bytes = same stored media, public through their posts).
     const mediaId = await uploadAs(ctx, "priv-author", await smallPngWithAlpha(), "ref-private-1");

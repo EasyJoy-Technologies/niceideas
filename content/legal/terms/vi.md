@@ -1,4 +1,4 @@
-> **Tóm tắt.** Bạn sở hữu những gì bạn đăng và bạn chịu trách nhiệm về nội dung đó. Các bài đăng trên niceideas là công khai, trừ khi bạn đặt chỉ mình bạn xem được. Không đăng bất cứ nội dung bất hợp pháp hay có hại, hoặc bất cứ nội dung mà bạn không có quyền chia sẻ. Bạn có thể xóa bài đăng bất cứ lúc nào; các bài đăng đã xóa sẽ bị xóa vĩnh viễn sau 30 ngày. niceideas được cung cấp miễn phí và theo "nguyên trạng". Các Điều khoản này tuân theo luật pháp của tỉnh Alberta, Canada. Bản tóm tắt này chỉ nhằm mục đích thuận tiện; toàn bộ Điều khoản dưới đây mới có hiệu lực áp dụng.
+> **Tóm tắt.** Bạn sở hữu những gì bạn đăng và bạn chịu trách nhiệm về nội dung đó. Các bài đăng trên niceideas là công khai, trừ khi bạn chọn ai có thể xem (người theo dõi bạn, bạn bè của bạn hoặc chỉ mình bạn). Không đăng bất cứ nội dung bất hợp pháp hay có hại, hoặc bất cứ nội dung mà bạn không có quyền chia sẻ. Bạn có thể xóa bài đăng bất cứ lúc nào; các bài đăng đã xóa sẽ bị xóa vĩnh viễn sau 30 ngày. niceideas được cung cấp miễn phí và theo "nguyên trạng". Các Điều khoản này tuân theo luật pháp của tỉnh Alberta, Canada. Bản tóm tắt này chỉ nhằm mục đích thuận tiện; toàn bộ Điều khoản dưới đây mới có hiệu lực áp dụng.
 
 ## 1. Về các Điều khoản này
 
@@ -26,7 +26,7 @@ Bằng việc sử dụng Dịch vụ, bao gồm việc xem, thích hoặc bình
 
 ## 4. Nội dung công khai và liên kết
 
-4.1 Các bài đăng bạn công khai là công khai (trừ khi bạn đặt chỉ mình bạn xem được, xem 4.5). Chúng có thể xuất hiện trên hồ sơ của bạn, trên dòng thời gian, trên trang Khám phá và trong kết quả tìm kiếm, và bất kỳ ai có liên kết đều có thể mở, có hoặc không có tài khoản. Các công cụ tìm kiếm và các nền tảng khác cũng có thể hiển thị các trang công khai và bản xem trước liên kết.
+4.1 Các bài đăng bạn công khai là công khai (trừ khi bạn chọn ai có thể xem, xem 4.5). Chúng có thể xuất hiện trên hồ sơ của bạn, trên dòng thời gian, trên trang Khám phá và trong kết quả tìm kiếm, và bất kỳ ai có liên kết đều có thể mở, có hoặc không có tài khoản. Các công cụ tìm kiếm và các nền tảng khác cũng có thể hiển thị các trang công khai và bản xem trước liên kết.
 
 4.2 Bình luận là công khai và xuất hiện dưới bài đăng. Khách truy cập không có tài khoản có thể thích bài đăng và bình luận dưới một biệt danh tùy chọn.
 
@@ -34,7 +34,7 @@ Bằng việc sử dụng Dịch vụ, bao gồm việc xem, thích hoặc bình
 
 4.4 Đối với khách truy cập có kết nối từ Trung Quốc đại lục, chỉ có các trang bài đăng được chia sẻ riêng lẻ và các lượt thích, bình luận trên đó là có thể truy cập được; các trang khác thì không. Điều này phản ánh cách Dịch vụ hiện đang được cung cấp và có thể thay đổi.
 
-4.5 Bạn có thể đặt bất kỳ bài đăng nào của mình thành chỉ mình bạn xem được, rồi đặt lại công khai, vào bất kỳ lúc nào. Khi một bài đăng chỉ mình bạn xem được, bài đó không hiển thị với người khác ở bất kỳ đâu trên Dịch vụ và liên kết của bài chỉ mở được cho bạn; các bản sao người khác đã tạo khi bài còn công khai không bị ảnh hưởng (xem 4.3).
+4.5 Bạn có thể chọn ai được xem từng bài đăng của mình và thay đổi bất cứ lúc nào: mọi người (công khai), chỉ người theo dõi bạn, chỉ bạn bè của bạn (những người bạn theo dõi và cũng theo dõi bạn), hoặc chỉ mình bạn. Bài đăng không công khai sẽ không xuất hiện trên trang Khám phá, trong kết quả tìm kiếm hay bản xem trước liên kết, và liên kết của nó chỉ mở được với những người bạn đã chọn. Ai cũng có thể theo dõi bạn, vì vậy bất kỳ ai theo dõi bạn đều xem được các bài đăng chỉ dành cho người theo dõi của bạn. Các bản sao mà người khác đã tạo trong lúc họ còn xem được bài đăng không bị ảnh hưởng (xem 4.3).
 
 ## 5. Nội dung của bạn
 

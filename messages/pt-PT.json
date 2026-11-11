@@ -430,8 +430,6 @@
       "delete": "Eliminar",
       "edit": "Editar",
       "like": "Gosto",
-      "makePrivate": "Tornar visível só para mim",
-      "makePublic": "Tornar pública",
       "more": "Mais opções",
       "quote": "Citar",
       "reply": "Responder",
@@ -472,6 +470,18 @@
       "joinShort": "Aderir"
     },
     "language": "Idioma",
+    "locked": {
+      "followers": {
+        "body": "Só quem segue {name} pode ver esta publicação. Siga para a ver.",
+        "title": "Só seguidores"
+      },
+      "friends": {
+        "body": "Só quem se segue mutuamente com {name} pode ver esta publicação.",
+        "title": "Só amigos"
+      },
+      "friendsWaiting": "Segue {name}. Poderá ver esta publicação quando também o seguir.",
+      "signedOut": "Já segue? Inicie sessão para a ver."
+    },
     "media": {
       "longImage": "Imagem longa",
       "processing": "A processar…",
@@ -481,6 +491,8 @@
       "edited": "Editado em {time}",
       "editedShort": "Editado",
       "empty": "Esta publicação não tem conteúdo.",
+      "followersNote": "Só os seguidores do autor podem ver esta publicação.",
+      "friendsNote": "Só os amigos do autor (pessoas que se seguem mutuamente com ele) podem ver esta publicação.",
       "from": "Via {app}",
       "preparing": {
         "body": "O conteúdo vai aparecer aqui dentro de momentos.",
@@ -534,7 +546,16 @@
       "zoom": "Ampliar"
     },
     "visibility": {
-      "failed": "Não foi possível alterar quem pode ver esta publicação. Tente novamente."
+      "failed": "Não foi possível alterar quem pode ver esta publicação. Tente novamente.",
+      "followers": "Só seguidores",
+      "followersHint": "Pessoas que o seguem",
+      "friends": "Só amigos",
+      "friendsHint": "Pessoas que segue e que também o seguem",
+      "label": "Quem pode ver esta publicação",
+      "menu": "Visível para: {value}",
+      "privateHint": "Mais ninguém a pode ver",
+      "public": "Pública",
+      "publicHint": "Qualquer pessoa, incluindo quem não tem conta"
     }
   },
   "status": {

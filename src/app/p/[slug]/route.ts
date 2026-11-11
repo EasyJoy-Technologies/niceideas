@@ -5,6 +5,7 @@ import { postPageVersion } from "@/server/db/repos/posts";
 import { peekVisitorKey } from "@/server/interactions/visitor";
 import { commentPage, loadPageInteractions } from "@/server/share/load-interactions";
 import { loadSharePost } from "@/server/share/load-post";
+import { renderLockedPage } from "@/server/share/locked-page";
 import { loadPostAside } from "@/server/share/load-post-aside";
 import { loadQuoted } from "@/server/share/load-quotes";
 import { pageNotice, renderPostPage, renderPreparingPage } from "@/server/share/post-page";
@@ -24,11 +25,17 @@ export async function GET(request: Request, ctx: RouteContext<"/p/[slug]">) {
     const db = getDb();
     const url = new URL(request.url);
     return await cachedPage(request, page, async () => {
-      // Private posts: their author only; everyone else gets the page of a nonexistent post.
+      // Private posts: their author only; everyone else gets the page of a nonexistent post. Followers-only /
+      // friends-only posts: the lock page for viewers outside their audience.
       const result = await loadSharePost(db, slug, page.viewer?.user_id ?? null);
       if (result.state === "not_found") return { html: renderStatusPage(page, "notFound"), status: 404 };
       if (result.state === "gone") return { html: renderStatusPage(page, result.reason), status: 410 };
       if (result.state === "preparing") return { html: renderPreparingPage(page, result.post, result.author), status: 200 };
+      if (result.state === "locked") {
+        const authorId = result.author.user_id;
+        const following = page.viewer ? (await followingAmong(db, page.viewer.user_id, [authorId])).has(authorId) : false;
+        return { html: renderLockedPage(page, result.author, result.audience, following), status: 403 };
+      }
       const social = await loadPageInteractions(db, result.data.post, page.viewer?.user_id ?? null, peekVisitorKey(request.headers), commentPage(url));
       const authorId = result.data.author.user_id;
       const following = page.viewer ? (await followingAmong(db, page.viewer.user_id, [authorId])).has(authorId) : false;

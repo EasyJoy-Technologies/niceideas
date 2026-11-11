@@ -430,8 +430,6 @@
       "delete": "Verwijderen",
       "edit": "Bewerken",
       "like": "Vind ik leuk",
-      "makePrivate": "Alleen zichtbaar voor mij maken",
-      "makePublic": "Openbaar maken",
       "more": "Meer opties",
       "quote": "Citeren",
       "reply": "Reageren",
@@ -472,6 +470,18 @@
       "joinShort": "Aanmelden"
     },
     "language": "Taal",
+    "locked": {
+      "followers": {
+        "body": "Alleen mensen die {name} volgen, kunnen dit bericht zien. Volg om het te zien.",
+        "title": "Alleen volgers"
+      },
+      "friends": {
+        "body": "Alleen mensen die elkaar wederzijds volgen met {name}, kunnen dit bericht zien.",
+        "title": "Alleen vrienden"
+      },
+      "friendsWaiting": "Je volgt {name}. Je kunt dit bericht zien zodra {name} jou ook volgt.",
+      "signedOut": "Volg je al? Log in om het te zien."
+    },
     "media": {
       "longImage": "Lange afbeelding",
       "processing": "Verwerken…",
@@ -481,6 +491,8 @@
       "edited": "Bewerkt op {time}",
       "editedShort": "Bewerkt",
       "empty": "Dit bericht heeft geen inhoud.",
+      "followersNote": "Alleen volgers van de auteur kunnen dit bericht zien.",
+      "friendsNote": "Alleen vrienden van de auteur (mensen die elkaar wederzijds volgen) kunnen dit bericht zien.",
       "from": "Via {app}",
       "preparing": {
         "body": "De inhoud verschijnt hier zo.",
@@ -534,7 +546,16 @@
       "zoom": "Zoomen"
     },
     "visibility": {
-      "failed": "Kan niet wijzigen wie dit bericht kan zien. Probeer het opnieuw."
+      "failed": "Kan niet wijzigen wie dit bericht kan zien. Probeer het opnieuw.",
+      "followers": "Alleen volgers",
+      "followersHint": "Mensen die jou volgen",
+      "friends": "Alleen vrienden",
+      "friendsHint": "Mensen die je volgt en die jou ook volgen",
+      "label": "Wie dit bericht kan zien",
+      "menu": "Zichtbaar voor: {value}",
+      "privateHint": "Niemand anders kan het zien",
+      "public": "Openbaar",
+      "publicHint": "Iedereen, ook mensen zonder account"
     }
   },
   "status": {

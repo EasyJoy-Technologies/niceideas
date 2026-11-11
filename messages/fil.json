@@ -430,8 +430,6 @@
       "delete": "Burahin",
       "edit": "I-edit",
       "like": "I-like",
-      "makePrivate": "Gawing ako lang ang makakakita",
-      "makePublic": "Gawing pampubliko",
       "more": "Higit pang opsyon",
       "quote": "I-quote",
       "reply": "Sumagot",
@@ -472,6 +470,18 @@
       "joinShort": "Sumali"
     },
     "language": "Wika",
+    "locked": {
+      "followers": {
+        "body": "Ang mga nagfo-follow lang kay {name} ang makakakita ng post na ito. Mag-follow para makita ito.",
+        "title": "Mga follower lang"
+      },
+      "friends": {
+        "body": "Ang mga nagfo-follow lang sa isa't isa kasama si {name} ang makakakita ng post na ito.",
+        "title": "Mga kaibigan lang"
+      },
+      "friendsWaiting": "Fina-follow mo si {name}. Makikita mo ang post na ito kapag fina-follow ka na rin niya.",
+      "signedOut": "Nagfo-follow ka na? Mag-sign in para makita ito."
+    },
     "media": {
       "longImage": "Mahabang larawan",
       "processing": "Pinoproseso…",
@@ -481,6 +491,8 @@
       "edited": "Na-edit noong {time}",
       "editedShort": "Na-edit",
       "empty": "Walang content ang post na ito.",
+      "followersNote": "Ang mga follower lang ng may-akda ang makakakita ng post na ito.",
+      "friendsNote": "Ang mga kaibigan lang ng may-akda (mga nagfo-follow sa isa't isa kasama ang may-akda) ang makakakita ng post na ito.",
       "from": "Mula sa {app}",
       "preparing": {
         "body": "Lalabas dito ang content sa ilang saglit.",
@@ -534,7 +546,16 @@
       "zoom": "I-zoom"
     },
     "visibility": {
-      "failed": "Hindi mabago kung sino ang makakakita sa post na ito. Pakisubukang muli."
+      "failed": "Hindi mabago kung sino ang makakakita sa post na ito. Pakisubukang muli.",
+      "followers": "Mga follower lang",
+      "followersHint": "Mga taong nagfo-follow sa iyo",
+      "friends": "Mga kaibigan lang",
+      "friendsHint": "Mga taong fina-follow mo na nagfo-follow din sa iyo",
+      "label": "Sino ang makakakita ng post na ito",
+      "menu": "Makikita ng: {value}",
+      "privateHint": "Walang ibang makakakita nito",
+      "public": "Pampubliko",
+      "publicHint": "Kahit sino, pati walang account"
     }
   },
   "status": {

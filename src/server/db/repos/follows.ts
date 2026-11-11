@@ -20,3 +20,15 @@ export async function countFollowing(db: Db, followerId: string): Promise<number
   const r = await db.selectFrom("follow").select((eb) => eb.fn.countAll<number>().as("n")).where("follower_id", "=", followerId).executeTakeFirstOrThrow();
   return Number(r.n);
 }
+
+/** How a viewer and an author follow each other (followers-only / friends-only posts, posts/visibility.ts). */
+export type FollowRelation = { follows: boolean; followedBack: boolean };
+
+export async function followRelation(db: Db, viewerId: string, authorId: string): Promise<FollowRelation> {
+  const rows = await db
+    .selectFrom("follow")
+    .select("follower_id")
+    .where((eb) => eb.or([eb.and([eb("follower_id", "=", viewerId), eb("followee_id", "=", authorId)]), eb.and([eb("follower_id", "=", authorId), eb("followee_id", "=", viewerId)])]))
+    .execute();
+  return { follows: rows.some((r) => r.follower_id === viewerId), followedBack: rows.some((r) => r.follower_id === authorId) };
+}

@@ -2,6 +2,7 @@ import { sql } from "kysely";
 import type { Db } from "../client";
 import type { PostKind } from "../schema";
 import type { FeedCursor, FeedRow } from "./feed";
+import { visibleTo } from "./post-access";
 
 /**
  * Home timeline: posts of the user and the accounts they follow, plus posts those accounts reposted
@@ -9,8 +10,9 @@ import type { FeedCursor, FeedRow } from "./feed";
  * newest repost), so the keyset cursor is on that time. Each account's newest `limit` posts and reposts
  * are read through post_author_published_idx / post_repost_user_recent_idx and merged, so the cost depends
  * on the number of followed accounts, not on how rare their posts are in the global timeline.
- * Validity (live, public, author active, tab kind) is checked inside the per-account reads, so a page never
- * passes over a valid item hidden behind invalid ones.
+ * Validity (live, seen by the user — public, or followers-only / friends-only they may see, own private ones
+ * excepted; post-access.ts — author active, tab kind) is checked inside the per-account reads, so a page never
+ * passes over a valid item hidden behind invalid ones. Reposts are of public posts only.
  */
 export async function listHomeFeed(db: Db, me: string, kind: PostKind | null, cursor: FeedCursor | null, limit: number): Promise<FeedRow[]> {
   const kindOk = kind ? sql`AND p.kind = ${kind}` : sql``;
@@ -29,7 +31,7 @@ export async function listHomeFeed(db: Db, me: string, kind: PostKind | null, cu
     own AS (
       SELECT x.id, x.published_at AS at, NULL::text AS by FROM au CROSS JOIN LATERAL (
         SELECT p.id, p.published_at FROM post p
-        WHERE p.author_id = au.a AND p.status = 'active' AND p.visibility = 'public' ${kindOk} ${before(sql`p.published_at`, sql`p.id`)}
+        WHERE p.author_id = au.a AND p.status = 'active' AND ${visibleTo("p", me)} ${kindOk} ${before(sql`p.published_at`, sql`p.id`)}
         ORDER BY p.published_at DESC, p.id DESC LIMIT ${limit}) x
     ),
     rp AS (

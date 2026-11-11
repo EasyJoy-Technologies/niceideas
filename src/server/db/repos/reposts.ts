@@ -1,6 +1,7 @@
 import { sql } from "kysely";
 import type { Db } from "../client";
 import type { FeedCursor, FeedRow } from "./feed";
+import { visibleTo } from "./post-access";
 
 /** Reposts a post for the user and bumps its counter; returns the new count. Idempotent. */
 export async function addRepost(db: Db, userId: string, postId: string): Promise<number> {
@@ -46,12 +47,12 @@ export async function liveQuoteCounts(db: Db, postIds: string[]): Promise<Map<st
 }
 
 /**
- * A profile's "Reposts" tab: its plain reposts (of live public posts) and its quotes (own private ones
- * only on the owner's view), newest first by repost / publishing time (keyset on that time + post id).
+ * A profile's "Reposts" tab: its plain reposts (of live public posts) and its quotes (those `viewerId` may see;
+ * post-access.ts — all of them on the owner's view), newest first by repost / publishing time (keyset on that time + post id).
  */
-export async function listProfileReposts(db: Db, userId: string, includePrivate: boolean, cursor: FeedCursor | null, limit: number): Promise<FeedRow[]> {
+export async function listProfileReposts(db: Db, userId: string, viewerId: string | null, cursor: FeedCursor | null, limit: number): Promise<FeedRow[]> {
   const before = (at: unknown, id: unknown) => (cursor ? sql`AND (${at}, ${id}) < (${cursor.at}, ${cursor.id}::uuid)` : sql``);
-  const quoteVisibility = includePrivate ? sql`` : sql`AND p.visibility = 'public'`;
+  const quoteVisibility = sql`AND ${visibleTo("p", viewerId, { ownPrivate: true })}`;
   const rows = await sql<FeedRow>`
     WITH items AS (
       (SELECT r.post_id AS id, r.created_at AS at, true AS plain FROM post_repost r

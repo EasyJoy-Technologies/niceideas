@@ -430,8 +430,6 @@
       "delete": "Hapus",
       "edit": "Edit",
       "like": "Suka",
-      "makePrivate": "Jadikan hanya terlihat oleh saya",
-      "makePublic": "Jadikan publik",
       "more": "Opsi lainnya",
       "quote": "Kutip",
       "reply": "Balas",
@@ -472,6 +470,18 @@
       "joinShort": "Gabung"
     },
     "language": "Bahasa",
+    "locked": {
+      "followers": {
+        "body": "Hanya orang yang mengikuti {name} yang dapat melihat postingan ini. Ikuti untuk melihatnya.",
+        "title": "Hanya pengikut"
+      },
+      "friends": {
+        "body": "Hanya orang yang saling mengikuti dengan {name} yang dapat melihat postingan ini.",
+        "title": "Hanya teman"
+      },
+      "friendsWaiting": "Anda mengikuti {name}. Anda dapat melihat postingan ini setelah dia juga mengikuti Anda.",
+      "signedOut": "Sudah mengikuti? Masuk untuk melihatnya."
+    },
     "media": {
       "longImage": "Gambar panjang",
       "processing": "Memproses…",
@@ -481,6 +491,8 @@
       "edited": "Diedit {time}",
       "editedShort": "Diedit",
       "empty": "Postingan ini tidak memiliki konten.",
+      "followersNote": "Hanya pengikut penulis yang dapat melihat postingan ini.",
+      "friendsNote": "Hanya teman penulis (orang yang saling mengikuti dengan penulis) yang dapat melihat postingan ini.",
       "from": "Dari {app}",
       "preparing": {
         "body": "Konten akan muncul di sini sebentar lagi.",
@@ -534,7 +546,16 @@
       "zoom": "Perbesar"
     },
     "visibility": {
-      "failed": "Tidak dapat mengubah siapa yang bisa melihat postingan ini. Silakan coba lagi."
+      "failed": "Tidak dapat mengubah siapa yang bisa melihat postingan ini. Silakan coba lagi.",
+      "followers": "Hanya pengikut",
+      "followersHint": "Orang yang mengikuti Anda",
+      "friends": "Hanya teman",
+      "friendsHint": "Orang yang Anda ikuti dan juga mengikuti Anda",
+      "label": "Siapa yang dapat melihat postingan ini",
+      "menu": "Dapat dilihat: {value}",
+      "privateHint": "Tidak ada orang lain yang dapat melihatnya",
+      "public": "Publik",
+      "publicHint": "Siapa saja, termasuk yang tidak punya akun"
     }
   },
   "status": {

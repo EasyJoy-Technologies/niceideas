@@ -1,5 +1,6 @@
 import { sql } from "kysely";
 import type { Db } from "../client";
+import { visibleTo } from "./post-access";
 import type { FeedCursor, FeedRow } from "./feed";
 
 /** Saves a post for the user and bumps its counter; returns the new count. Idempotent. */
@@ -33,8 +34,8 @@ export type BookmarkRow = FeedRow & { bookmarked_at: Date };
 
 /**
  * The user's saved posts, most recently saved first (keyset on save time + post id). Only posts the user
- * may see now: live, public or their own, by an active author; the others stay saved and reappear when
- * they are back.
+ * may see now (post-access.ts): live, by an active author; the others stay saved and reappear when they are
+ * back (or the user is in their audience again).
  */
 export async function listBookmarkedPosts(db: Db, userId: string, cursor: FeedCursor | null, limit: number): Promise<BookmarkRow[]> {
   return db
@@ -45,7 +46,7 @@ export async function listBookmarkedPosts(db: Db, userId: string, cursor: FeedCu
     .select(["profile.handle as author_handle", "profile.display_name as author_name", "profile.avatar_url as author_avatar", "b.created_at as bookmarked_at"])
     .where("b.user_id", "=", userId)
     .where("post.status", "=", "active")
-    .where((eb) => eb.or([eb("post.visibility", "=", "public"), eb("post.author_id", "=", userId)]))
+    .where(visibleTo("post", userId, { ownPrivate: true }))
     .where("profile.status", "=", "active")
     .$if(!!cursor, (q) => q.where(sql<boolean>`(b.created_at, b.post_id) < (${cursor!.at}, ${cursor!.id}::uuid)`))
     .orderBy("b.created_at", "desc")

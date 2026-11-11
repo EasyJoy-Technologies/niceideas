@@ -430,8 +430,6 @@
       "delete": "Xóa",
       "edit": "Chỉnh sửa",
       "like": "Thích",
-      "makePrivate": "Chỉ mình tôi xem được",
-      "makePublic": "Đặt công khai",
       "more": "Thêm tùy chọn",
       "quote": "Trích dẫn",
       "reply": "Trả lời",
@@ -472,6 +470,18 @@
       "joinShort": "Tham gia"
     },
     "language": "Ngôn ngữ",
+    "locked": {
+      "followers": {
+        "body": "Chỉ những người theo dõi {name} mới xem được bài đăng này. Hãy theo dõi để xem.",
+        "title": "Chỉ người theo dõi"
+      },
+      "friends": {
+        "body": "Chỉ những người theo dõi lẫn nhau với {name} mới xem được bài đăng này.",
+        "title": "Chỉ bạn bè"
+      },
+      "friendsWaiting": "Bạn đang theo dõi {name}. Bạn sẽ xem được bài đăng này khi họ cũng theo dõi bạn.",
+      "signedOut": "Đã theo dõi rồi? Hãy đăng nhập để xem."
+    },
     "media": {
       "longImage": "Ảnh dài",
       "processing": "Đang xử lý…",
@@ -481,6 +491,8 @@
       "edited": "Đã chỉnh sửa lúc {time}",
       "editedShort": "Đã chỉnh sửa",
       "empty": "Bài viết này không có nội dung.",
+      "followersNote": "Chỉ người theo dõi tác giả mới xem được bài đăng này.",
+      "friendsNote": "Chỉ bạn bè của tác giả (những người theo dõi lẫn nhau với tác giả) mới xem được bài đăng này.",
       "from": "Từ {app}",
       "preparing": {
         "body": "Nội dung sẽ xuất hiện ở đây trong chốc lát.",
@@ -534,7 +546,16 @@
       "zoom": "Thu phóng"
     },
     "visibility": {
-      "failed": "Không thể thay đổi người xem được bài viết này. Vui lòng thử lại."
+      "failed": "Không thể thay đổi người xem được bài viết này. Vui lòng thử lại.",
+      "followers": "Chỉ người theo dõi",
+      "followersHint": "Những người theo dõi bạn",
+      "friends": "Chỉ bạn bè",
+      "friendsHint": "Những người bạn theo dõi và cũng theo dõi bạn",
+      "label": "Ai có thể xem bài đăng này",
+      "menu": "Ai có thể xem: {value}",
+      "privateHint": "Không ai khác xem được",
+      "public": "Công khai",
+      "publicHint": "Mọi người, kể cả người không có tài khoản"
     }
   },
   "status": {

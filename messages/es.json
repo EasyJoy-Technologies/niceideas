@@ -430,8 +430,6 @@
       "delete": "Eliminar",
       "edit": "Editar",
       "like": "Me gusta",
-      "makePrivate": "Hacer visible solo para mí",
-      "makePublic": "Hacer pública",
       "more": "Más opciones",
       "quote": "Citar",
       "reply": "Responder",
@@ -472,6 +470,18 @@
       "joinShort": "Unirse"
     },
     "language": "Idioma",
+    "locked": {
+      "followers": {
+        "body": "Solo las personas que siguen a {name} pueden ver esta publicación. Síguele para verla.",
+        "title": "Solo seguidores"
+      },
+      "friends": {
+        "body": "Solo las personas que se siguen mutuamente con {name} pueden ver esta publicación.",
+        "title": "Solo amigos"
+      },
+      "friendsWaiting": "Sigues a {name}. Podrás ver esta publicación cuando también te siga.",
+      "signedOut": "¿Ya lo sigues? Inicia sesión para verla."
+    },
     "media": {
       "longImage": "Imagen larga",
       "processing": "Procesando…",
@@ -481,6 +491,8 @@
       "edited": "Editado: {time}",
       "editedShort": "Editado",
       "empty": "Esta publicación no tiene contenido.",
+      "followersNote": "Solo los seguidores del autor pueden ver esta publicación.",
+      "friendsNote": "Solo los amigos del autor (personas que se siguen mutuamente con él) pueden ver esta publicación.",
       "from": "Desde {app}",
       "preparing": {
         "body": "El contenido aparecerá aquí en un momento.",
@@ -534,7 +546,16 @@
       "zoom": "Ampliar"
     },
     "visibility": {
-      "failed": "No se pudo cambiar quién puede ver esta publicación. Inténtalo de nuevo."
+      "failed": "No se pudo cambiar quién puede ver esta publicación. Inténtalo de nuevo.",
+      "followers": "Solo seguidores",
+      "followersHint": "Las personas que te siguen",
+      "friends": "Solo amigos",
+      "friendsHint": "Las personas a las que sigues y que también te siguen",
+      "label": "Quién puede ver esta publicación",
+      "menu": "Visible para: {value}",
+      "privateHint": "Nadie más puede verla",
+      "public": "Pública",
+      "publicHint": "Cualquiera, incluso personas sin cuenta"
     }
   },
   "status": {

@@ -6,6 +6,7 @@ import { findPostBySlug } from "@/server/db/repos/posts";
 import { listRevisionMediaIds } from "@/server/db/repos/revisions";
 import { publicUrl, renditionsOf } from "@/server/media/keys";
 import { SLUG_PATTERN } from "@/server/posts/slug";
+import { canSee } from "@/server/posts/visibility";
 import { getMediaStores } from "@/server/storage";
 import { singleByteRange } from "@/server/storage/range";
 import { assertSafeKey, ObjectMissingError, RangeNotSatisfiableError } from "@/server/storage/types";
@@ -13,11 +14,11 @@ import { assertSafeKey, ObjectMissingError, RangeNotSatisfiableError } from "@/s
 const NO_STORE = { "Cache-Control": "no-store" };
 const notFound = () => new Response(null, { status: 404, headers: NO_STORE });
 
-/** The rendition `key` of a media the post's current revision uses; undefined otherwise. */
+/** The rendition `key` of a media the post's current revision uses, when the viewer may see the post; undefined otherwise. */
 async function renditionOfPost(slug: string, key: string, viewerId: string) {
   const db = getDb();
   const post = await findPostBySlug(db, slug);
-  if (!post || post.author_id !== viewerId || !post.current_revision_id) return undefined;
+  if (!post || !post.current_revision_id || !(await canSee(db, post, viewerId))) return undefined;
   const media = await findMediaByIds(db, await listRevisionMediaIds(db, post.current_revision_id));
   for (const m of media) {
     const r = renditionsOf(m).find((x) => x.key === key);
@@ -27,8 +28,8 @@ async function renditionOfPost(slug: string, key: string, viewerId: string) {
 }
 
 /**
- * GET /p/{slug}/media/{key}: media of a private post for its author (signed in) only — everyone else gets
- * 404. Read from the private store with single byte ranges (audio seeking); media that are public anyway
+ * GET /p/{slug}/media/{key}: media of a post that is not public, for whoever may see it (signed in: its author,
+ * and its followers / friends for followers-only / friends-only posts; posts/visibility.ts) — everyone else gets 404. Read from the private store with single byte ranges (audio seeking); media that are public anyway
  * (also used by a public post) redirect to the public domain. Never stored by shared caches.
  */
 export async function ownMediaResponse(request: Request, slug: string, keyParts: string[]): Promise<Response> {

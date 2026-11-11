@@ -1,4 +1,4 @@
-> **Summary.** We collect only what we need to run niceideas: your profile, what you publish, and limited technical data to keep the Service safe. Your posts are public unless you make them visible only to you. We do not sell personal information or show ads. Only if you accept analytics cookies, we use Google Analytics and Microsoft Clarity to understand how the Service is used. You can delete posts at any time and delete your account by deleting your NiceMatrix ID. Write to support@nicematrix.ca with any privacy question or request.
+> **Summary.** We collect only what we need to run niceideas: your profile, what you publish, and limited technical data to keep the Service safe. Your posts are public unless you choose who can see them. We do not sell personal information or show ads. Only if you accept analytics cookies, we use Google Analytics and Microsoft Clarity to understand how the Service is used. You can delete posts at any time and delete your account by deleting your NiceMatrix ID. Write to support@nicematrix.ca with any privacy question or request.
 
 ## 1. Who we are
 
@@ -48,7 +48,7 @@ Under Canadian privacy law, we rely on your consent, which you give by using the
 
 Your profile (handle, display name, avatar, bio, join date, numbers of posts, followers, accounts followed and likes received), your posts and your comments are public. Anyone can see them, including people without an account; search engines may index them; and other platforms may show link previews of them. The nickname on a visitor's comment is public. The codes derived from IP addresses and browser identifiers are never shown.
 
-Posts you make visible only to you are not public: only you can see them, and their images and audio are not publicly accessible while they stay that way.
+Posts you limit to your followers, your friends or only you are not public: only the people you chose can see them, and their images and audio are not publicly accessible while they stay that way.
 
 ## 5. Cookies
 

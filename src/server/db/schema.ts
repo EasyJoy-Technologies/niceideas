@@ -15,8 +15,11 @@ export type ProfileStatus = "active" | "deleting";
 export type PostKind = "short" | "article";
 /** `preparing`: shared from NiceNote, content not pushed yet (not listed, not indexed). */
 export type PostStatus = "preparing" | "active" | "unpublished" | "removed" | "author_deleting";
-/** Who may see a post: everyone, or its author only (independent of `status`). */
-export type PostVisibility = "public" | "private";
+/**
+ * Who may see a post (independent of `status`; posts/visibility.ts): everyone, the author's followers, the author's
+ * friends (mutual follows), or its author only. Only public posts are listed publicly and have public media.
+ */
+export type PostVisibility = "public" | "followers" | "friends" | "private";
 /** `nicenote`: shared through the NiceMatrix backend; `nicenote_intl` / `nicenote_cn`: legacy client-token posts. */
 export type PostSource = "nicenote" | "nicenote_intl" | "nicenote_cn" | "web" | `api:${string}`;
 export type ShareRegion = "intl" | "cn";

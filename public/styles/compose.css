@@ -78,6 +78,27 @@
 .ni-compose-seg input:checked + span { background: var(--ni-color-surface); color: var(--ni-color-primary); font-weight: 600; box-shadow: var(--ni-shadow-chip); }
 .ni-compose-seg input:focus-visible + span { outline: 2px solid var(--ni-color-primary); outline-offset: 1px; }
 .ni-compose-bar .ni-btn { flex: none; height: 2.125rem; }
+/* Who can see (compose-toolbar.ts): the button shows the checked choice; a choice other than public stands out. */
+.ni-compose-vis { flex: none; margin-inline-end: 0.375rem; }
+.ni-compose-vis > summary.ni-tb { display: inline-flex; align-items: center; gap: 0.25rem; padding: 0 0.5rem; font: 500 0.78125rem/1 var(--ni-font-sans); white-space: nowrap; }
+.ni-compose-vis[open] > summary.ni-tb { background: var(--ni-color-surface-2); color: var(--ni-color-primary); }
+.ni-compose-vis:has(input:not([value="public"]):checked) > summary.ni-tb { color: var(--ni-color-primary); }
+.ni-vis-cur { display: none; align-items: center; gap: 0.25rem; }
+.ni-vis-cur .ni-i { width: 1rem; height: 1rem; }
+.ni-compose-vis:has(input[value="public"]:checked) .ni-vis-cur[data-v="public"],
+.ni-compose-vis:has(input[value="followers"]:checked) .ni-vis-cur[data-v="followers"],
+.ni-compose-vis:has(input[value="friends"]:checked) .ni-vis-cur[data-v="friends"],
+.ni-compose-vis:has(input[value="private"]:checked) .ni-vis-cur[data-v="private"] { display: inline-flex; }
+.ni-compose-vis ul { bottom: calc(100% + 0.375rem); inset-inline-end: 0; min-width: 16rem; }
+.ni-compose-vis li label { position: relative; display: flex; align-items: center; gap: 0.625rem; padding: 0.5rem 0.625rem; border-radius: 0.5rem; cursor: pointer; }
+.ni-compose-vis li label:hover, .ni-compose-vis li label:has(input:focus-visible) { background: var(--ni-color-surface-2); }
+.ni-compose-vis li input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+.ni-compose-vis li label > span { display: flex; flex-direction: column; min-width: 0; font-size: 0.875rem; line-height: 1.3; }
+.ni-compose-vis li b { font-weight: 600; }
+.ni-compose-vis li small { color: var(--ni-color-text-secondary); font-size: 0.75rem; }
+.ni-compose-vis li input:checked ~ span b, .ni-compose-vis li input:checked ~ .ni-i { color: var(--ni-color-primary); }
+.ni-compose-vis .ni-vis-on { margin-inline-start: auto; visibility: hidden; }
+.ni-compose-vis li input:checked ~ .ni-vis-on { visibility: visible; }
 .ni-compose button[disabled] { opacity: 0.6; cursor: progress; }
 .ni-phone-only { display: none !important; }
 
@@ -105,6 +126,14 @@
   .ni-tb-sep { margin: 0 0.125rem; }
   .ni-compose-seg { font-size: 0.75rem; margin-inline-end: 0.25rem; }
   .ni-compose-seg span { padding: 0.25rem 0.4375rem; }
+  /* Phones: the choice's icon only (its name is the button's label and in the menu). */
+  .ni-compose-vis { margin-inline-end: 0.125rem; }
+  .ni-compose-vis > summary.ni-tb { padding: 0 0.3125rem; }
+  .ni-vis-cur > span { display: none; }
+  /* The menu spans the toolbar (the button sits mid-row: anchored to it, the menu would leave the screen). */
+  .ni-compose-bar { position: relative; }
+  .ni-compose-vis { position: static; }
+  .ni-compose-vis ul { inset-inline: 0; min-width: 0; }
   .ni-compose-bar .ni-btn { padding: 0 0.75rem; }
   .ni-media-aud span { display: none; }
 }

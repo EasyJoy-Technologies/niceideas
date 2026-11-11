@@ -1,4 +1,4 @@
-> **Összefoglaló.** Csak azt gyűjtjük, amire a niceideas működéséhez szükségünk van: az Ön profilját, amit közzétesz, és korlátozott technikai adatokat a Szolgáltatás biztonságának fenntartásához. Az Ön bejegyzései nyilvánosak, kivéve, ha csak az Ön számára láthatóvá teszi őket. Nem adunk el személyes adatokat, és nem jelenítünk meg hirdetéseket. Csak ha Ön elfogadja az analitikai cookie-kat, használjuk a Google Analytics és a Microsoft Clarity szolgáltatást annak megértésére, hogyan használják a Szolgáltatást. Bejegyzéseit bármikor törölheti, és fiókját a NiceMatrix ID törlésével törölheti. Írjon a support@nicematrix.ca címre bármilyen adatvédelmi kérdéssel vagy kéréssel.
+> **Összefoglaló.** Csak azt gyűjtjük, amire a niceideas működéséhez szükségünk van: az Ön profilját, amit közzétesz, és korlátozott technikai adatokat a Szolgáltatás biztonságának fenntartásához. Az Ön bejegyzései nyilvánosak, kivéve, ha Ön megválasztja, ki láthatja őket. Nem adunk el személyes adatokat, és nem jelenítünk meg hirdetéseket. Csak ha Ön elfogadja az analitikai cookie-kat, használjuk a Google Analytics és a Microsoft Clarity szolgáltatást annak megértésére, hogyan használják a Szolgáltatást. Bejegyzéseit bármikor törölheti, és fiókját a NiceMatrix ID törlésével törölheti. Írjon a support@nicematrix.ca címre bármilyen adatvédelmi kérdéssel vagy kéréssel.
 
 ## 1. Kik vagyunk
 
@@ -48,7 +48,7 @@ A kanadai adatvédelmi jog szerint az Ön hozzájárulására támaszkodunk, ame
 
 Az Ön profilja (felhasználónév, megjelenítendő név, avatár, bemutatkozás, csatlakozás dátuma, bejegyzések, követők, követett fiókok és kapott kedvelések száma), bejegyzései és hozzászólásai nyilvánosak. Bárki láthatja ezeket, fiók nélküli személyek is; a keresőmotorok indexelhetik; és más platformok megjeleníthetnek linkelőnézeteket ezekről. A látogató hozzászólásán szereplő álnév nyilvános. Az IP-címekből és böngésző-azonosítókból származó kódokat soha nem jelenítjük meg.
 
-A csak az Ön számára láthatóvá tett bejegyzések nem nyilvánosak: csak Ön láthatja őket, és képeik és hanganyagaik addig nem érhetők el nyilvánosan.
+Azok a bejegyzések, amelyeket a követőire, a barátaira vagy csak önmagára korlátoz, nem nyilvánosak: csak az Ön által választott személyek láthatják őket, és képeik, hanganyagaik addig nem érhetők el nyilvánosan, amíg ez így marad.
 
 ## 5. Cookie-k
 

@@ -109,6 +109,13 @@ Plan `docs/plan/2026-10-26-app-sign-in-ticket.md` (Xianglin 2026-10-26 21:47, in
   `author_deleting` posts; `removed` → 409 `post.removed`, `unpublished` → 409 `post.unpublished`; same value → no-op.
   Pushes, moderation (remove / restore) and account deletion never change it. A change made by the backend sends no
   event back; a change the author makes on the web sends `visibility_changed` with `details.visibility`.
+  - **Followers only / friends only** (v1.0.93, web only; plan `docs/plan/2026-11-10-audience-visibility.md`): the author
+    may also limit a post to their followers or to mutual follows. No contract change: `visibility` stays
+    `"public" | "private"` and reports these posts as `private` ("not public"); the new field `audience`
+    (`"public" | "followers" | "friends" | "private"`) carries the exact value, in every `post` object and in
+    `visibility_changed` (`details.visibility` + `details.audience`). `PATCH` still accepts `public | private`:
+    `private` on a followers-only / friends-only post keeps it as it is (the app already sees it as private), `public`
+    makes it public. Their media stay out of the public store, like private posts.
 - **Events to the backend** (`outbox`, delivered by the worker, signed, `X-NM-Service: niceideas`; retried after 1 min,
   5 min, 30 min, then hourly for 24 h; 400 / 404 / 409 / 410 / 413 / 422 are not retried): `user_registered` on first
   profile (existing users were queued by migration 0014); post events `unpublished` (author deleted on the web),

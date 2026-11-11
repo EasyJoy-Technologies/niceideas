@@ -430,8 +430,6 @@
       "delete": "刪除",
       "edit": "編輯",
       "like": "讚",
-      "makePrivate": "設為僅自己可見",
-      "makePublic": "設為公開",
       "more": "更多操作",
       "quote": "引用並評論",
       "reply": "回覆",
@@ -472,6 +470,18 @@
       "joinShort": "加入"
     },
     "language": "語言",
+    "locked": {
+      "followers": {
+        "body": "這則貼文僅 {name} 的追蹤者可見，追蹤後即可查看。",
+        "title": "僅追蹤者可見"
+      },
+      "friends": {
+        "body": "這則貼文僅與 {name} 互相追蹤的朋友可見。",
+        "title": "僅朋友可見"
+      },
+      "friendsWaiting": "你已追蹤 {name}，對方也追蹤你後即可查看。",
+      "signedOut": "已經追蹤了？登入後即可查看。"
+    },
     "media": {
       "longImage": "長圖",
       "processing": "媒體處理中…",
@@ -481,6 +491,8 @@
       "edited": "編輯於 {time}",
       "editedShort": "已編輯",
       "empty": "這則貼文沒有內容。",
+      "followersNote": "這則貼文僅作者的追蹤者可見。",
+      "friendsNote": "這則貼文僅與作者互相追蹤的朋友可見。",
       "from": "來自 {app}",
       "preparing": {
         "body": "內容稍後就會顯示在這裡。",
@@ -534,7 +546,16 @@
       "zoom": "縮放"
     },
     "visibility": {
-      "failed": "未能變更貼文的可見範圍，請重試。"
+      "failed": "未能變更貼文的可見範圍，請重試。",
+      "followers": "僅追蹤者",
+      "followersHint": "追蹤你的人",
+      "friends": "僅朋友",
+      "friendsHint": "你和對方互相追蹤",
+      "label": "誰可以看",
+      "menu": "誰可以看：{value}",
+      "privateHint": "其他人都看不到",
+      "public": "公開",
+      "publicHint": "所有人，包括沒有帳號的人"
     }
   },
   "status": {

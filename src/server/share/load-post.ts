@@ -5,7 +5,7 @@ import { findProfile } from "@/server/db/repos/profiles";
 import { findRevision } from "@/server/db/repos/revisions";
 import { parseStoredDocument, type StoredDocument } from "@/server/documents/stored";
 import { SLUG_PATTERN } from "@/server/posts/slug";
-import { canSee } from "@/server/posts/visibility";
+import { canSee, isAudience, type Audience } from "@/server/posts/visibility";
 import { loadDocumentMedia, type DocumentMedia } from "./document-media";
 
 export type SharePost = DocumentMedia & {
@@ -19,24 +19,28 @@ export type ShareLoad =
   | { state: "not_found" }
   | { state: "gone"; reason: "withdrawn" | "removed" }
   | { state: "preparing"; post: Post; author: Profile }
+  /** Followers-only / friends-only post the viewer may not see (yet): the lock page. */
+  | { state: "locked"; post: Post; author: Profile; audience: Audience }
   | { state: "ok"; data: SharePost };
 
 /**
  * Active posts are shown; a just-shared post is `preparing`; everything else (and every post of an
  * account being deleted) is gone (410) until purged (then 404). Private posts only to their author
- * (`viewerId`, posts/visibility.ts); to everyone else they do not exist.
+ * (`viewerId`, posts/visibility.ts); to everyone else they do not exist. Followers-only / friends-only posts
+ * show the lock page to viewers outside their audience (plan docs/plan/2026-11-10-audience-visibility.md §2).
  */
 export async function loadSharePost(db: Db, slug: string, viewerId: string | null = null): Promise<ShareLoad> {
   if (!SLUG_PATTERN.test(slug)) return { state: "not_found" };
   const post = await findPostBySlug(db, slug);
   // Private posts: nonexistent to everyone but their author, and once offline to the author too (no "deleted" / "removed" hint).
-  if (!post || (post.visibility === "private" && (!canSee(post, viewerId) || (post.status !== "active" && post.status !== "preparing")))) return { state: "not_found" };
+  if (!post || (post.visibility === "private" && (post.author_id !== viewerId || (post.status !== "active" && post.status !== "preparing")))) return { state: "not_found" };
   if (post.status !== "active" && post.status !== "preparing") return { state: "gone", reason: post.status === "removed" ? "removed" : "withdrawn" };
   // post.author_id references profile (FK); a missing row means the account is being deleted.
   const author = await findProfile(db, post.author_id);
   if (!author) return { state: "not_found" };
   // Defence in depth: posts of an account in its deletion cooling-off period are never shown.
   if (author.status !== "active") return { state: "gone", reason: "withdrawn" };
+  if (isAudience(post.visibility) && !(await canSee(db, post, viewerId))) return { state: "locked", post, author, audience: post.visibility };
   if (post.status === "preparing") return { state: "preparing", post, author };
   const revision = post.current_revision_id ? await findRevision(db, post.current_revision_id) : undefined;
   if (!revision) return { state: "not_found" };

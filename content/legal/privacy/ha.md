@@ -1,4 +1,4 @@
-> **Taƙaitawa.** Muna tattara kawai abin da muke buƙata don gudanar da niceideas: bayanin martabarka, abin da ka fitowa, da taƙaitattun bayanan fasaha don kiyaye Hidimar lafiya. Saƙonninka na jama'a ne, sai dai idan ka mai da su kai kaɗai za ka gani. Ba mu sayar da bayanan sirri kuma ba mu nuna talla. Sai idan ka amince da kukis na nazari ne kawai, muke amfani da Google Analytics da Microsoft Clarity don fahimtar yadda ake amfani da Hidimar. Za ka iya share saƙonni a kowane lokaci kuma share asusunka ta share NiceMatrix ID naka. Rubuta zuwa support@nicematrix.ca da kowace tambaya ta keɓantawa ko buƙata.
+> **Taƙaitawa.** Muna tattara kawai abin da muke buƙata don gudanar da niceideas: bayanin martabarka, abin da ka fitowa, da taƙaitattun bayanan fasaha don kiyaye Hidimar lafiya. Saƙonninka na jama'a ne, sai dai idan ka zaɓi wanda zai iya ganinsu. Ba mu sayar da bayanan sirri kuma ba mu nuna talla. Sai idan ka amince da kukis na nazari ne kawai, muke amfani da Google Analytics da Microsoft Clarity don fahimtar yadda ake amfani da Hidimar. Za ka iya share saƙonni a kowane lokaci kuma share asusunka ta share NiceMatrix ID naka. Rubuta zuwa support@nicematrix.ca da kowace tambaya ta keɓantawa ko buƙata.
 
 ## 1. Wanene mu
 
@@ -48,7 +48,7 @@ Mutane ne suke yanke shawara kan abun ciki da asusu. Iyakokin kima na injina kaw
 
 Bayanin martabarka (sunan amfani, sunan nuni, hoto, bayanin taƙaitacce, ranar shiga, yawan saƙonni, masu bibiya, asusun da kake bi da sonsu da ka samu), saƙonninka da sharhinka na jama'a ne. Kowa zai iya ganin su, hade da mutane marasa asusu; injunan bincike na iya jera su; kuma wasu dandamali na iya nuna kallon hanyoyin haɗinsu. Laƙabin da ke kan sharhin baƙo na jama'a ne. Lambobin da suka fito daga adireshin IP da masu gano injin bincike ba a nuna su ko kaɗan.
 
-Saƙonnin da ka mai da kai kaɗai za ka gani ba na jama'a ba ne: kai kaɗai ne za ka iya ganin su, kuma hotunansu da sautunansu ba sa samuwa ga jama'a muddin suna haka.
+Saƙonnin da ka taƙaita ga mabiyanka, abokanka ko kai kaɗai ba na jama'a ba ne: mutanen da ka zaɓa ne kawai za su iya ganinsu, kuma hotunansu da sautinsu ba sa samuwa ga jama'a muddin suna haka.
 
 ## 5. Kukis
 

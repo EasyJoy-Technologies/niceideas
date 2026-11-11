@@ -430,8 +430,6 @@
       "delete": "削除",
       "edit": "編集",
       "like": "いいね",
-      "makePrivate": "自分だけに公開",
-      "makePublic": "公開する",
       "more": "その他の操作",
       "quote": "引用",
       "reply": "返信",
@@ -472,6 +470,18 @@
       "joinShort": "参加"
     },
     "language": "言語",
+    "locked": {
+      "followers": {
+        "body": "この投稿は {name} さんのフォロワーだけが見られます。フォローすると見られます。",
+        "title": "フォロワーのみ"
+      },
+      "friends": {
+        "body": "この投稿は {name} さんと相互フォローしている人だけが見られます。",
+        "title": "友達のみ"
+      },
+      "friendsWaiting": "{name} さんをフォロー中です。フォローが返されると見られます。",
+      "signedOut": "フォロー済みですか？ログインすると見られます。"
+    },
     "media": {
       "longImage": "縦長画像",
       "processing": "処理中…",
@@ -481,6 +491,8 @@
       "edited": "{time} に編集",
       "editedShort": "編集済み",
       "empty": "この投稿には内容がありません。",
+      "followersNote": "この投稿は投稿者のフォロワーだけが見られます。",
+      "friendsNote": "この投稿は投稿者と相互フォローしている友達だけが見られます。",
       "from": "{app} から",
       "preparing": {
         "body": "もうすぐここに表示されます。",
@@ -534,7 +546,16 @@
       "zoom": "ズーム"
     },
     "visibility": {
-      "failed": "この投稿の公開範囲を変更できませんでした。もう一度お試しください。"
+      "failed": "この投稿の公開範囲を変更できませんでした。もう一度お試しください。",
+      "followers": "フォロワーのみ",
+      "followersHint": "あなたをフォローしている人",
+      "friends": "友達のみ",
+      "friendsHint": "相互フォローしている人",
+      "label": "公開範囲",
+      "menu": "公開範囲：{value}",
+      "privateHint": "ほかの人には見えません",
+      "public": "公開",
+      "publicHint": "アカウントのない人も含めて全員"
     }
   },
   "status": {

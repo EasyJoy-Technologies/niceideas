@@ -1,4 +1,4 @@
-> **Özet.** Paylaştığınız içeriğin sahibisiniz ve bundan sorumlusunuz. niceideas'taki paylaşımlar, yalnızca size görünür yapmadığınız sürece herkese açıktır. Yasa dışı veya zararlı hiçbir şey, ya da paylaşma hakkına sahip olmadığınız hiçbir şey paylaşmayın. Bir paylaşımı istediğiniz zaman silebilirsiniz; silinen paylaşımlar 30 gün sonra kalıcı olarak kaldırılır. niceideas ücretsizdir ve "olduğu gibi" sunulur. Bu Şartlar, Kanada'nın Alberta eyaleti yasalarına tabidir. Bu özet sadece kolaylık için sunulmuştur; aşağıdaki tam Şartlar geçerlidir.
+> **Özet.** Paylaştığınız içeriğin sahibisiniz ve bundan sorumlusunuz. niceideas'taki paylaşımlar, kimlerin görebileceğini (takipçileriniz, arkadaşlarınız veya yalnızca siz) seçmediğiniz sürece herkese açıktır. Yasa dışı veya zararlı hiçbir şey, ya da paylaşma hakkına sahip olmadığınız hiçbir şey paylaşmayın. Bir paylaşımı istediğiniz zaman silebilirsiniz; silinen paylaşımlar 30 gün sonra kalıcı olarak kaldırılır. niceideas ücretsizdir ve "olduğu gibi" sunulur. Bu Şartlar, Kanada'nın Alberta eyaleti yasalarına tabidir. Bu özet sadece kolaylık için sunulmuştur; aşağıdaki tam Şartlar geçerlidir.
 
 ## 1. Bu Şartlar Hakkında
 
@@ -26,7 +26,7 @@ Hesap olmaksızın görüntüleme, beğenme veya yorum yapma dahil olmak üzere 
 
 ## 4. Herkese açık içerik ve bağlantılar
 
-4.1 Yayınladığınız paylaşımlar herkese açıktır (yalnızca size görünür yapmadıklarınız hariç, bkz. 4.5). Profilinizde, akışlarda, Keşfet sayfasında ve arama sonuçlarında görünebilir ve bağlantıya sahip herkes, hesapla veya hesapsız, bunları açabilir. Arama motorları ve diğer platformlar da herkese açık sayfaları ve bağlantı önizlemelerini gösterebilir.
+4.1 Yayınladığınız paylaşımlar herkese açıktır (kimlerin görebileceğini seçtikleriniz hariç, bkz. 4.5). Profilinizde, akışlarda, Keşfet sayfasında ve arama sonuçlarında görünebilir ve bağlantıya sahip herkes, hesapla veya hesapsız, bunları açabilir. Arama motorları ve diğer platformlar da herkese açık sayfaları ve bağlantı önizlemelerini gösterebilir.
 
 4.2 Yorumlar herkese açıktır ve paylaşımın altında görünür. Hesabı olmayan ziyaretçiler paylaşımları beğenebilir ve isteğe bağlı bir takma ad altında yorum yapabilir.
 
@@ -34,7 +34,7 @@ Hesap olmaksızın görüntüleme, beğenme veya yorum yapma dahil olmak üzere 
 
 4.4 Bağlantısı Çin anakarasından gelen ziyaretçiler için, yalnızca paylaşılan bireysel gönderi sayfaları ve bunların altındaki beğeniler ve yorumlar erişilebilir; diğer sayfalar erişilebilir değildir. Bu, Hizmetin şu anda sunulma şeklini yansıtır ve değişebilir.
 
-4.5 Paylaşımlarınızdan herhangi birini istediğiniz zaman yalnızca size görünür yapabilir ve yeniden herkese açık hâle getirebilirsiniz. Bir paylaşım yalnızca size görünürken Hizmetin hiçbir yerinde başkalarına gösterilmez ve bağlantısı yalnızca sizin için açılır; herkese açıkken başkalarının aldığı kopyalar bundan etkilenmez (bkz. 4.3).
+4.5 Her paylaşımınızı kimlerin görebileceğini seçebilir ve bunu istediğiniz zaman değiştirebilirsiniz: herkes (herkese açık), yalnızca takipçileriniz, yalnızca arkadaşlarınız (takip ettiğiniz ve sizi de takip eden kişiler) veya yalnızca siz. Herkese açık olmayan bir paylaşım Keşfet sayfasında, arama sonuçlarında veya bağlantı önizlemelerinde görünmez ve bağlantısı yalnızca seçtiğiniz kişiler için açılır. Herkes sizi takip edebilir; bu nedenle sizi takip eden herkes yalnızca takipçilere açık paylaşımlarınızı görebilir. Başkalarının bir paylaşımı görebildikleri sırada yaptıkları kopyalar bundan etkilenmez (bkz. 4.3).
 
 ## 5. İçeriğiniz
 

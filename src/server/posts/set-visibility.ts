@@ -21,10 +21,12 @@ function assertChangeable(post: Post): void {
 }
 
 /**
- * Makes a post private (author only) or public again (plan docs/plan/2026-10-26-private-theme-guidelines.md C).
- * Private: the page, share card and interactions answer 404 to everyone else at once, the media leave the
- * public store and the CDN edge. Public: media move back before the commit (no broken images); the post
- * returns to its old place in feeds (published_at unchanged) without notifying anyone. Same value → no-op.
+ * Sets who may see a post (plans docs/plan/2026-10-26-private-theme-guidelines.md C,
+ * docs/plan/2026-11-10-audience-visibility.md; posts/visibility.ts). Leaving public (private, followers-only,
+ * friends-only): the post is hidden from everyone outside its new audience at once, the media leave the public
+ * store and the CDN edge. Public: media move back before the commit (no broken images); the post returns to its
+ * old place in feeds (published_at unchanged) without notifying anyone. Between the non-public values nothing
+ * moves (their media are private either way). Same value → no-op.
  */
 export async function setPostVisibility(
   rt: VisibilityRuntime, postId: string, visibility: PostVisibility, onChanged?: OnVisibilityChanged,
@@ -48,8 +50,9 @@ export async function setPostVisibility(
       const updated = await updatePost(trx, post.id, { visibility, visibility_changed_at: new Date() });
       // The current revision may have changed since it was read: settle the media it uses now.
       const current = post.current_revision_id ? await listRevisionMediaIds(trx, post.current_revision_id) : [];
-      if (visibility === "private") {
-        await queuePostPurge(trx, [post.slug]);
+      if (visibility !== "public") {
+        // Leaving public: page copies and media leave the CDN edge. Already not public: nothing to move.
+        if (post.visibility === "public") await queuePostPurge(trx, [post.slug]);
         await queueVisibilityCheck(trx, current);
         touched = current;
       } else {

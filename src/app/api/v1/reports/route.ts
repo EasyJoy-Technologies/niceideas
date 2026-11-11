@@ -5,6 +5,6 @@ import { interactionRoute } from "@/server/interactions/route";
 
 /** Report a post or comment; always 202 (repeats are accepted silently). */
 export const POST = interactionRoute("reports.create", async ({ request, db, actor }) => {
-  await reportContent(db, actor.visitor, await readJson(request, 16_384));
+  await reportContent(db, actor.visitor, await readJson(request, 16_384), actor.viewer?.user_id ?? null);
   return jsonOk({ accepted: true }, 202);
 });

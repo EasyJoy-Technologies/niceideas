@@ -1,4 +1,4 @@
-> **Rezumat.** Dețineți ceea ce publicați și sunteți responsabil pentru acest lucru. Postările de pe niceideas sunt publice, cu excepția celor pe care le faceți vizibile doar pentru dumneavoastră. Nu publicați nimic ilegal sau dăunător, sau ceva pentru care nu aveți dreptul de a-l distribui. Puteți șterge o postare în orice moment; postările șterse sunt eliminate definitiv după 30 de zile. niceideas este gratuit și oferit „ca atare". Acești Termeni sunt reglementați de legile provinciei Alberta, Canada. Acest rezumat este oferit doar pentru comoditate; se aplică Termenii integrali de mai jos.
+> **Rezumat.** Dețineți ceea ce publicați și sunteți responsabil pentru acest lucru. Postările de pe niceideas sunt publice, cu excepția celor pentru care alegeți cine le poate vedea (urmăritorii dumneavoastră, prietenii dumneavoastră sau doar dumneavoastră). Nu publicați nimic ilegal sau dăunător, sau ceva pentru care nu aveți dreptul de a-l distribui. Puteți șterge o postare în orice moment; postările șterse sunt eliminate definitiv după 30 de zile. niceideas este gratuit și oferit „ca atare". Acești Termeni sunt reglementați de legile provinciei Alberta, Canada. Acest rezumat este oferit doar pentru comoditate; se aplică Termenii integrali de mai jos.
 
 ## 1. Despre acești Termeni
 
@@ -26,7 +26,7 @@ Prin utilizarea Serviciului, inclusiv vizualizarea, aprecierea sau comentarea f�
 
 ## 4. Conținut public și linkuri
 
-4.1 Postările pe care le publicați sunt publice (cu excepția celor pe care le faceți vizibile doar pentru dumneavoastră, a se vedea 4.5). Acestea pot apărea pe profilul dumneavoastră, în fluxuri, pe pagina Descoperă și în rezultatele căutării, și orice persoană care are linkul le poate deschide, cu sau fără cont. Motoarele de căutare și alte platforme pot afișa, de asemenea, pagini publice și previzualizări de linkuri.
+4.1 Postările pe care le publicați sunt publice (cu excepția celor pentru care alegeți cine le poate vedea, a se vedea 4.5). Acestea pot apărea pe profilul dumneavoastră, în fluxuri, pe pagina Descoperă și în rezultatele căutării, și orice persoană care are linkul le poate deschide, cu sau fără cont. Motoarele de căutare și alte platforme pot afișa, de asemenea, pagini publice și previzualizări de linkuri.
 
 4.2 Comentariile sunt publice și apar sub postare. Vizitatorii fără cont pot aprecia postările și comenta sub un pseudonim opțional.
 
@@ -34,7 +34,7 @@ Prin utilizarea Serviciului, inclusiv vizualizarea, aprecierea sau comentarea f�
 
 4.4 Pentru vizitatorii a căror conexiune provine din China continentală, sunt disponibile numai paginile individuale ale postărilor partajate și aprecierile și comentariile de pe acestea; alte pagini nu sunt disponibile. Aceasta reflectă modul în care Serviciul este oferit în prezent și se poate schimba.
 
-4.5 Puteți oricând să faceți oricare dintre postările dumneavoastră vizibilă doar pentru dumneavoastră și apoi din nou publică. Cât timp o postare este vizibilă doar pentru dumneavoastră, nu apare nicăieri în Serviciu pentru ceilalți, iar linkul ei se deschide doar pentru dumneavoastră; copiile făcute de alții cât timp era publică nu sunt afectate (a se vedea 4.3).
+4.5 Puteți alege cine poate vedea fiecare dintre postările dumneavoastră și puteți schimba acest lucru oricând: toată lumea (publică), doar urmăritorii dumneavoastră, doar prietenii dumneavoastră (persoanele pe care le urmăriți și care vă urmăresc și ele) sau doar dumneavoastră. O postare care nu este publică nu apare pe pagina Descoperă, în rezultatele căutării sau în previzualizările linkurilor, iar linkul său se deschide doar pentru persoanele alese de dumneavoastră. Oricine vă poate urmări, așa că oricine vă urmărește poate vedea postările dumneavoastră doar pentru urmăritori. Copiile făcute de alții cât timp puteau vedea o postare nu sunt afectate (a se vedea 4.3).
 
 ## 5. Conținutul dumneavoastră
 

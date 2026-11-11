@@ -3,6 +3,7 @@ import type { Post } from "@/server/db/schema";
 import { findPostById, updatePost } from "@/server/db/repos/posts";
 import { ApiError, notFound } from "@/server/http/errors";
 import { setPostVisibility, type VisibilityRuntime } from "@/server/posts/set-visibility";
+import { isAudience } from "@/server/posts/visibility";
 import { unpublishPost } from "@/server/posts/withdraw-post";
 import type { MediaStores } from "@/server/storage/types";
 import type { ShareSettingsInput } from "./requests";
@@ -24,7 +25,8 @@ export function assertShareOpen(post: Post): void {
 
 /**
  * PATCH: sync mode / comments mode (`null` = NiceIdeas default, open) / visibility (private = the author
- * only; set-visibility.ts). The backend made the change, so no event goes back.
+ * only; set-visibility.ts). The backend made the change, so no event goes back. The API knows public / private
+ * only (dto.ts): `private` on a followers-only / friends-only post (reported as `private`) keeps it as it is.
  */
 export async function updateShareSettings(rt: VisibilityRuntime, postId: string, input: ShareSettingsInput): Promise<Post> {
   const post = await loadShare(rt.db, postId);
@@ -33,7 +35,9 @@ export async function updateShareSettings(rt: VisibilityRuntime, postId: string,
   if (input.syncMode && input.syncMode !== post.sync_mode) patch.sync_mode = input.syncMode;
   if (input.commentsMode !== undefined && (input.commentsMode ?? "open") !== post.comments_mode) patch.comments_mode = input.commentsMode ?? "open";
   const updated = Object.keys(patch).length ? await updatePost(rt.db, post.id, patch) : post;
-  return input.visibility ? (await setPostVisibility(rt, post.id, input.visibility)).post : updated;
+  const to = input.visibility;
+  if (!to || (to === "private" && isAudience(updated.visibility))) return updated;
+  return (await setPostVisibility(rt, post.id, to)).post;
 }
 
 /** DELETE (the user deleted the share in NiceNote): link offline at once, idempotent. No event back to the backend. */

@@ -10,7 +10,7 @@ import { interactivePost } from "./target";
  */
 export async function setBookmark(db: Db, slug: string, actor: Actor, saved: boolean): Promise<{ bookmarked: boolean; bookmarkCount: number }> {
   if (!actor.viewer) throw new ApiError("auth.required", 401);
-  const post = await interactivePost(db, slug);
+  const post = await interactivePost(db, slug, actor.viewer.user_id, "audience");
   const count = saved ? await addBookmark(db, actor.viewer.user_id, post.id) : await removeBookmark(db, actor.viewer.user_id, post.id);
   return { bookmarked: saved, bookmarkCount: count };
 }

@@ -430,8 +430,6 @@
       "delete": "O'chirish",
       "edit": "Tahrirlash",
       "like": "Yoqdi",
-      "makePrivate": "Faqat menga ko‘rinadigan qilish",
-      "makePublic": "Ommaviy qilish",
       "more": "Qo'shimcha amallar",
       "quote": "Iqtibos keltirish",
       "reply": "Javob berish",
@@ -472,6 +470,18 @@
       "joinShort": "Qoʻshilish"
     },
     "language": "Til",
+    "locked": {
+      "followers": {
+        "body": "Bu postni faqat {name} obunachilari ko‘ra oladi. Ko‘rish uchun obuna bo‘ling.",
+        "title": "Faqat obunachilar"
+      },
+      "friends": {
+        "body": "Bu postni faqat {name} bilan o‘zaro obuna bo‘lganlar ko‘ra oladi.",
+        "title": "Faqat do‘stlar"
+      },
+      "friendsWaiting": "Siz {name} ga obuna bo‘lgansiz. U ham sizga obuna bo‘lgach, postni ko‘ra olasiz.",
+      "signedOut": "Obuna bo‘lganmisiz? Ko‘rish uchun tizimga kiring."
+    },
     "media": {
       "longImage": "Uzun rasm",
       "processing": "Qayta ishlanmoqda…",
@@ -481,6 +491,8 @@
       "edited": "Tahrirlangan: {time}",
       "editedShort": "Tahrirlangan",
       "empty": "Bu postda mazmun yo'q.",
+      "followersNote": "Bu postni faqat muallifning obunachilari ko‘ra oladi.",
+      "friendsNote": "Bu postni faqat muallifning do‘stlari (muallif bilan o‘zaro obuna bo‘lganlar) ko‘ra oladi.",
       "from": "{app} orqali",
       "preparing": {
         "body": "Mazmun bir zumda shu yerda ko'rinadi.",
@@ -534,7 +546,16 @@
       "zoom": "Kattalashtirish"
     },
     "visibility": {
-      "failed": "Bu postni kim ko‘ra olishini o‘zgartirib bo‘lmadi. Qaytadan urinib ko‘ring."
+      "failed": "Bu postni kim ko‘ra olishini o‘zgartirib bo‘lmadi. Qaytadan urinib ko‘ring.",
+      "followers": "Faqat obunachilar",
+      "followersHint": "Sizga obuna bo‘lganlar",
+      "friends": "Faqat do‘stlar",
+      "friendsHint": "Siz obuna bo‘lgan va sizga ham obuna bo‘lganlar",
+      "label": "Bu postni kim ko‘ra oladi",
+      "menu": "Ko‘rinadi: {value}",
+      "privateHint": "Boshqa hech kim ko‘rmaydi",
+      "public": "Hammaga",
+      "publicHint": "Hamma, hisobi yo‘qlar ham"
     }
   },
   "status": {

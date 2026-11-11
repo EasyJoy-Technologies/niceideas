@@ -1,4 +1,4 @@
-> **Tóm tắt.** Chúng tôi chỉ thu thập những gì cần thiết để vận hành niceideas: hồ sơ của bạn, những gì bạn công khai, và một lượng dữ liệu kỹ thuật hạn chế để giữ an toàn cho Dịch vụ. Các bài đăng của bạn là công khai, trừ khi bạn đặt chỉ mình bạn xem được. Chúng tôi không bán thông tin cá nhân, cũng không hiển thị quảng cáo. Chỉ khi bạn chấp nhận cookie phân tích, chúng tôi mới sử dụng Google Analytics và Microsoft Clarity để hiểu cách Dịch vụ được sử dụng. Bạn có thể xóa bài đăng bất cứ lúc nào và xóa tài khoản của mình bằng cách xóa NiceMatrix ID của bạn. Hãy viết thư tới support@nicematrix.ca với bất kỳ câu hỏi hoặc yêu cầu nào về quyền riêng tư.
+> **Tóm tắt.** Chúng tôi chỉ thu thập những gì cần thiết để vận hành niceideas: hồ sơ của bạn, những gì bạn công khai, và một lượng dữ liệu kỹ thuật hạn chế để giữ an toàn cho Dịch vụ. Các bài đăng của bạn là công khai, trừ khi bạn chọn ai có thể xem. Chúng tôi không bán thông tin cá nhân, cũng không hiển thị quảng cáo. Chỉ khi bạn chấp nhận cookie phân tích, chúng tôi mới sử dụng Google Analytics và Microsoft Clarity để hiểu cách Dịch vụ được sử dụng. Bạn có thể xóa bài đăng bất cứ lúc nào và xóa tài khoản của mình bằng cách xóa NiceMatrix ID của bạn. Hãy viết thư tới support@nicematrix.ca với bất kỳ câu hỏi hoặc yêu cầu nào về quyền riêng tư.
 
 ## 1. Chúng tôi là ai
 
@@ -48,7 +48,7 @@ Theo luật quyền riêng tư của Canada, chúng tôi dựa vào sự đồng
 
 Hồ sơ của bạn (tên người dùng, tên hiển thị, ảnh đại diện, phần giới thiệu, ngày tham gia, số lượng bài đăng, người theo dõi, tài khoản đang theo dõi và lượt thích nhận được), các bài đăng của bạn và các bình luận của bạn là công khai. Bất kỳ ai cũng có thể xem, bao gồm những người không có tài khoản; các công cụ tìm kiếm có thể lập chỉ mục chúng; và các nền tảng khác có thể hiển thị bản xem trước liên kết của chúng. Biệt danh trên bình luận của khách truy cập là công khai. Các mã được tạo ra từ địa chỉ IP và mã định danh trình duyệt không bao giờ được hiển thị.
 
-Các bài đăng bạn đặt chỉ mình bạn xem được không công khai: chỉ bạn xem được, và hình ảnh cũng như âm thanh của chúng không được truy cập công khai trong thời gian đó.
+Các bài đăng bạn giới hạn cho người theo dõi, bạn bè hoặc chỉ mình bạn không công khai: chỉ những người bạn đã chọn mới xem được, và hình ảnh cũng như âm thanh của chúng không thể truy cập công khai trong thời gian đó.
 
 ## 5. Cookie
 

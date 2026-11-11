@@ -1,7 +1,7 @@
 import { randomUUID } from "node:crypto";
 import type { Principal } from "@/server/auth/principal";
 import type { Db } from "@/server/db/client";
-import type { Post } from "@/server/db/schema";
+import type { Post, PostVisibility } from "@/server/db/schema";
 import { documentPlainText, SHORT_MAX_CHARS } from "@/server/documents/derive";
 import type { DocBlock, PostDocument } from "@/server/documents/schema";
 import { parseDocument } from "@/server/documents/validate";
@@ -13,6 +13,7 @@ import { removeTempDir, spoolBody } from "@/server/util/temp-file";
 import { createPost } from "./create-post";
 import { findQuotable, quoteSlugOf } from "./quote";
 import { assertCanUploadMedia } from "./rate-limit";
+import { isVisibility } from "./visibility";
 import { editorBlocks, type DraftBlock, type DraftMeta } from "./web-compose-doc";
 
 /** Web compose limits (the API allows more; the form keeps posts light). */
@@ -22,8 +23,11 @@ export const WEB_MAX_TEXT = 20_000;
 
 /** "short": short post (≤ SHORT_MAX_CHARS, media under the text); "long": article. null: derived (older form). */
 export type ComposeMode = "short" | "long";
-/** `quote`: slug of the post a new quote quotes (a quote is always a short post). */
-export type WebComposeInput = { mode: ComposeMode | null; title: string; blocks: DraftBlock[]; files: File[]; quote?: string | null };
+/**
+ * `quote`: slug of the post a new quote quotes (a quote is always a short post). `visibility`: who may see a
+ * new post (default public; edits keep the post's own).
+ */
+export type WebComposeInput = { mode: ComposeMode | null; title: string; blocks: DraftBlock[]; files: File[]; quote?: string | null; visibility?: PostVisibility };
 
 const filesOf = (form: FormData, name: string) => form.getAll(name).filter((f): f is File => typeof f !== "string" && f.size > 0);
 
@@ -39,8 +43,10 @@ export function readComposeForm(form: FormData): WebComposeInput {
   const m = String(form.get("mode") ?? "");
   const mode: ComposeMode | null = quote ? "short" : m === "short" || m === "long" ? m : null;
   const title = mode === "short" ? "" : String(form.get("title") ?? "").trim();
+  const v = form.get("visibility");
+  const visibility: PostVisibility = isVisibility(v) ? v : "public";
   const doc = form.get("doc");
-  if (typeof doc === "string" && doc) return { mode, title, blocks: editorBlocks(doc), files: filesOf(form, "media"), quote };
+  if (typeof doc === "string" && doc) return { mode, title, blocks: editorBlocks(doc), files: filesOf(form, "media"), quote, visibility };
   const images = filesOf(form, "images");
   const audios = filesOf(form, "audios");
   const text = String(form.get("text") ?? "").trim();
@@ -51,7 +57,7 @@ export function readComposeForm(form: FormData): WebComposeInput {
   }
   images.forEach((_, i) => blocks.push({ type: "media", kind: "image", file: i }));
   audios.forEach((_, i) => blocks.push({ type: "media", kind: "audio", file: images.length + i }));
-  return { mode, title, blocks, files: [...images, ...audios], quote };
+  return { mode, title, blocks, files: [...images, ...audios], quote, visibility };
 }
 
 const isMedia = (b: DraftBlock) => b.type === "media" || b.type === "stored";
@@ -106,7 +112,8 @@ export async function draftDocument(db: Db, stores: MediaStores, userId: string,
 }
 
 /**
- * Publishes a web post (source `web`, no badge) with media in place; the chosen mode sets the kind.
+ * Publishes a web post (source `web`, no badge) with media in place; the chosen mode sets the kind and the
+ * chosen visibility who may see it.
  * A quote (`input.quote`) is a short post pointing at a live public post (checked before any upload).
  */
 export async function publishFromWeb(db: Db, stores: MediaStores, userId: string, input: WebComposeInput, cacheControl: string): Promise<Post> {
@@ -115,6 +122,6 @@ export async function publishFromWeb(db: Db, stores: MediaStores, userId: string
   const document = await draftDocument(db, stores, userId, input);
   const principal: Principal = { userId, clientId: "web", kind: "first_party", source: "web" };
   const kind = input.mode === "short" ? "short" : input.mode === "long" ? "article" : undefined;
-  const result = await createPost(db, stores, principal, { document, sourceRef: `web-${randomUUID()}`, sourceUpdatedAt: null, kind, quoteOf: quoted?.id }, cacheControl);
+  const result = await createPost(db, stores, principal, { document, sourceRef: `web-${randomUUID()}`, sourceUpdatedAt: null, kind, quoteOf: quoted?.id, visibility: input.visibility }, cacheControl);
   return result.post;
 }

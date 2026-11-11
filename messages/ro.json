@@ -430,8 +430,6 @@
       "delete": "Șterge",
       "edit": "Editează",
       "like": "Îmi place",
-      "makePrivate": "Fă vizibil doar pentru mine",
-      "makePublic": "Fă public",
       "more": "Mai multe opțiuni",
       "quote": "Citează",
       "reply": "Răspunde",
@@ -472,6 +470,18 @@
       "joinShort": "Alătură-te"
     },
     "language": "Limbă",
+    "locked": {
+      "followers": {
+        "body": "Doar persoanele care îl urmăresc pe {name} pot vedea această postare. Urmărește pentru a o vedea.",
+        "title": "Doar urmăritori"
+      },
+      "friends": {
+        "body": "Doar persoanele care se urmăresc reciproc cu {name} pot vedea această postare.",
+        "title": "Doar prieteni"
+      },
+      "friendsWaiting": "Îl urmărești pe {name}. Vei putea vedea postarea după ce te urmărește și el.",
+      "signedOut": "Urmărești deja? Conectează-te pentru a o vedea."
+    },
     "media": {
       "longImage": "Imagine lungă",
       "processing": "Se procesează…",
@@ -481,6 +491,8 @@
       "edited": "Editat la {time}",
       "editedShort": "Editat",
       "empty": "Această postare nu are conținut.",
+      "followersNote": "Doar urmăritorii autorului pot vedea această postare.",
+      "friendsNote": "Doar prietenii autorului (persoanele care se urmăresc reciproc cu el) pot vedea această postare.",
       "from": "Din {app}",
       "preparing": {
         "body": "Conținutul va apărea aici imediat.",
@@ -534,7 +546,16 @@
       "zoom": "Mărește"
     },
     "visibility": {
-      "failed": "Nu s-a putut schimba cine poate vedea această postare. Încearcă din nou."
+      "failed": "Nu s-a putut schimba cine poate vedea această postare. Încearcă din nou.",
+      "followers": "Doar urmăritori",
+      "followersHint": "Persoanele care te urmăresc",
+      "friends": "Doar prieteni",
+      "friendsHint": "Persoanele pe care le urmărești și care te urmăresc și ele",
+      "label": "Cine poate vedea această postare",
+      "menu": "Vizibilă pentru: {value}",
+      "privateHint": "Nimeni altcineva nu o poate vedea",
+      "public": "Publică",
+      "publicHint": "Oricine, inclusiv persoane fără cont"
     }
   },
   "status": {

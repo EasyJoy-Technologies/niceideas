@@ -1,4 +1,4 @@
-> **Sammanfattning.** Vi samlar bara in vad som behövs för att driva niceideas: din profil, vad du publicerar, och begränsade tekniska uppgifter för att hålla Tjänsten säker. Dina inlägg är offentliga om du inte gör dem synliga bara för dig. Vi säljer inte personuppgifter och visar ingen reklam. Endast om du godkänner analyscookies använder vi Google Analytics och Microsoft Clarity för att förstå hur Tjänsten används. Du kan ta bort inlägg när som helst och radera ditt konto genom att radera ditt NiceMatrix ID. Skriv till support@nicematrix.ca med alla frågor eller begäranden om integritet.
+> **Sammanfattning.** Vi samlar bara in vad som behövs för att driva niceideas: din profil, vad du publicerar, och begränsade tekniska uppgifter för att hålla Tjänsten säker. Dina inlägg är offentliga om du inte väljer vem som kan se dem. Vi säljer inte personuppgifter och visar ingen reklam. Endast om du godkänner analyscookies använder vi Google Analytics och Microsoft Clarity för att förstå hur Tjänsten används. Du kan ta bort inlägg när som helst och radera ditt konto genom att radera ditt NiceMatrix ID. Skriv till support@nicematrix.ca med alla frågor eller begäranden om integritet.
 
 ## 1. Vilka vi är
 
@@ -48,7 +48,7 @@ Enligt kanadensisk integritetslagstiftning förlitar vi oss på ditt samtycke, s
 
 Din profil (handtag, visningsnamn, avatar, biografi, anslutningsdatum, antal inlägg, följare, följda konton och mottagna gillanden), dina inlägg och dina kommentarer är offentliga. Alla kan se dem, inklusive personer utan konto; sökmotorer kan indexera dem; och andra plattformar kan visa länkförhandsvisningar av dem. Smeknamnet i en besökares kommentar är offentligt. Koder som härleds från IP-adresser och webbläsaridentifierare visas aldrig.
 
-Inlägg som du gör synliga bara för dig är inte offentliga: bara du kan se dem, och deras bilder och ljud är inte offentligt tillgängliga så länge de förblir så.
+Inlägg som du begränsar till dina följare, dina vänner eller bara dig själv är inte offentliga: bara de personer du har valt kan se dem, och deras bilder och ljud är inte offentligt tillgängliga så länge det förblir så.
 
 ## 5. Cookies
 

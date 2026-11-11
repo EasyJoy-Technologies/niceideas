@@ -430,8 +430,6 @@
       "delete": "Share",
       "edit": "Gyara",
       "like": "So",
-      "makePrivate": "Mai da shi ni kaɗai zan gani",
-      "makePublic": "Mai da shi na kowa",
       "more": "Ƙarin zaɓuɓɓuka",
       "quote": "Ambato",
       "reply": "Amsa",
@@ -472,6 +470,18 @@
       "joinShort": "Shiga"
     },
     "language": "Harshe",
+    "locked": {
+      "followers": {
+        "body": "Waɗanda ke bin {name} ne kawai za su iya ganin wannan rubutu. Bi don ganinsa.",
+        "title": "Mabiya kawai"
+      },
+      "friends": {
+        "body": "Waɗanda ke bin juna da {name} ne kawai za su iya ganin wannan rubutu.",
+        "title": "Abokai kawai"
+      },
+      "friendsWaiting": "Kana bin {name}. Za ka iya ganin wannan rubutu idan shi ma ya bi ka.",
+      "signedOut": "Kana bi tuni? Shiga don ganinsa."
+    },
     "media": {
       "longImage": "Dogon hoto",
       "processing": "Ana sarrafawa…",
@@ -481,6 +491,8 @@
       "edited": "An gyara a {time}",
       "editedShort": "An gyara",
       "empty": "Wannan rubutun ba shi da abun ciki.",
+      "followersNote": "Mabiya marubucin ne kawai za su iya ganin wannan rubutu.",
+      "friendsNote": "Abokan marubucin ne kawai (waɗanda ke bin juna da marubucin) za su iya ganin wannan rubutu.",
       "from": "Daga {app}",
       "preparing": {
         "body": "Abun ciki zai bayyana a nan cikin ɗan lokaci.",
@@ -534,7 +546,16 @@
       "zoom": "Zuƙowa"
     },
     "visibility": {
-      "failed": "Ba a iya canza waɗanda za su iya ganin wannan rubutun ba. Da fatan za a sake gwadawa."
+      "failed": "Ba a iya canza waɗanda za su iya ganin wannan rubutun ba. Da fatan za a sake gwadawa.",
+      "followers": "Mabiya kawai",
+      "followersHint": "Mutanen da ke bin ka",
+      "friends": "Abokai kawai",
+      "friendsHint": "Mutanen da kake bi kuma suke bin ka",
+      "label": "Wa zai iya ganin wannan rubutu",
+      "menu": "Masu iya gani: {value}",
+      "privateHint": "Babu wani da zai iya gani",
+      "public": "Na jamaʼa",
+      "publicHint": "Kowa, har da waɗanda ba su da asusu"
     }
   },
   "status": {
