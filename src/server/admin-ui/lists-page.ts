@@ -38,6 +38,22 @@ function visibilityCell(ctx: AdminContext, p: Pick<AdminPostRow, "slug" | "statu
   return actionPop(ctx, { action: "set-visibility", target: p.slug, back, label: ctx.intl.t("admin.setVisibility"), fields, summary: text }) || text;
 }
 
+/**
+ * The Post cell (approved option A, 2026-11-23: fewer columns so the list fits at 1280 px in every language): the
+ * title; author · source · published; likes · comments · link · kind.
+ */
+function postCell(ctx: AdminContext, p: AdminPostRow): string {
+  const { t, format } = ctx.intl;
+  const count = (ico: "heart" | "comment", label: string, n: number) =>
+    `<span class="ad-cnt" title="${e(label)}">${icon(ico)}<span class="ad-sr">${e(label)} </span>${e(format.number(n))}</span>`;
+  const kind = t(p.kind === "article" ? "feed.article" : "compose.mode.short");
+  return (
+    `<a class="ad-tt" href="/p/${p.slug}" target="_blank" rel="noopener">${e(cardTitle(p))}</a>` +
+    `<small class="ad-meta">@${e(p.handle)} · ${e(postSourceLabel(ctx, p))} · ${when(ctx, p.published_at)}</small>` +
+    `<small class="ad-meta">${count("heart", t("admin.col.likes"), p.like_count)} · ${count("comment", t("admin.col.comments"), p.comment_count)} · /p/${p.slug} · ${e(kind)}</small>`
+  );
+}
+
 /** Audit detail of an admin visibility change (`from>to`, moderation/admin.ts). */
 function visibilityChange(ctx: AdminContext, detail: string): string {
   const [from, to] = detail.split(">");
@@ -45,7 +61,7 @@ function visibilityChange(ctx: AdminContext, detail: string): string {
 }
 
 export function renderPosts(ctx: AdminContext, v: { status: PostStatus | null; source: AdminSource | null; query: string; offset: number; page: Page<AdminPostRow>; notice: ListNotice }): string {
-  const { t, format } = ctx.intl;
+  const { t } = ctx.intl;
   const src = v.source ?? "";
   const base = withQuery("/admin/posts", { s: v.status ?? "", src, q: v.query });
   const statusTabs = tabs(POST_STATUSES.map((s) => ({ href: withQuery("/admin/posts", { s, src, q: v.query }), label: t(s ? `admin.status.${s}` : "admin.filter.all"), on: (v.status ?? "") === s })), "ad-seg");
@@ -59,12 +75,9 @@ export function renderPosts(ctx: AdminContext, v: { status: PostStatus | null; s
     const act =
       p.status === "active" ? actionPop(ctx, { action: "remove-post", target: p.slug, back, label: t("admin.removePost"), danger: true })
       : p.status === "removed" ? actionPop(ctx, { action: "restore-post", target: p.slug, back, label: t("admin.restorePost") }) : "";
-    return [
-      `<a class="ad-tt" href="/p/${p.slug}" target="_blank" rel="noopener">${e(cardTitle(p))}</a><small>/p/${p.slug} · ${e(t(p.kind === "article" ? "feed.article" : "compose.mode.short"))}</small>`,
-      `@${e(p.handle)}`, e(postSourceLabel(ctx, p)), pill(t(`admin.status.${p.status}`), tone(p.status)), visibilityCell(ctx, p, back), e(format.number(p.like_count)), e(format.number(p.comment_count)), when(ctx, p.published_at), act,
-    ];
+    return [postCell(ctx, p), pill(t(`admin.status.${p.status}`), tone(p.status)), visibilityCell(ctx, p, back), act];
   });
-  const head: [string, string?][] = [[e(t("admin.col.post"))], [e(t("admin.col.author")), "nw"], [e(t("admin.col.source")), "nw"], [e(t("admin.col.status")), "nw"], [e(t("admin.col.visibility")), "nw"], [e(t("admin.col.likes")), "n"], [e(t("admin.col.comments")), "n"], [e(t("admin.col.published")), "nw"], ["", "a"]];
+  const head: [string, string?][] = [[e(t("admin.col.post"))], [e(t("admin.col.status")), "nw"], [e(t("admin.col.visibility")), "nw"], ["", "a"]];
   const keep = { ...(v.status ? { s: v.status } : {}), ...(src ? { src } : {}) };
   const filters = statusTabs + sourceTabs + searchForm(ctx, "/admin/posts", v.query, "admin.posts.search", keep);
   return renderAdmin(ctx, { section: "posts", title: t("admin.nav.posts"), main: body(v.notice, ctx, filters, v.page, bulkTable(ctx, "posts", back, head, rows, v.page.rows.map((p) => p.slug)), base, v.offset) });

@@ -106,7 +106,11 @@ body.ad { background: var(--ni-color-neutral); font-size: 0.875rem; }
   .ad-tbl th:last-child, .ad-tbl td:last-child { padding-inline-end: 1.125rem; }
 }
 .ad-tbl .n { text-align: end; font-variant-numeric: tabular-nums; white-space: nowrap; }
-.ad-tbl .nw { white-space: nowrap; }
+.ad-tbl .nw, .ad-tbl time { white-space: nowrap; }
+/* posts list: author · source · time and likes · comments · link under the title */
+.ad-meta .ad-cnt { display: inline-flex; align-items: center; gap: 0.1875rem; white-space: nowrap; }
+.ad-meta .ni-i { width: 0.75rem; height: 0.75rem; }
+.ad-sr { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
 .ad-tbl .a { text-align: end; width: 1%; white-space: nowrap; }
 .ad-tbl small { display: block; color: var(--ni-color-muted); font-size: 0.75rem; }
 .ad-tt { display: block; font-weight: 500; overflow-wrap: anywhere; }
@@ -203,6 +207,8 @@ select.ad-in { width: auto; }
   .ad-ng { display: none; }
   .ad-k6 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .ad-ct { padding: 1rem; }
+  /* Long status filters scroll sideways instead of widening the page. */
+  .ad-seg:not(.ad-seg-wrap) { max-width: 100%; overflow-x: auto; scrollbar-width: none; }
   .ad-rr { grid-template-columns: 1.5rem minmax(0, 1fr) 2rem; }
   .ad-rr-r, .ad-rr-at { display: none; }
   /* Tables become stacked rows: first cell full width, others labelled, action at the end. */
