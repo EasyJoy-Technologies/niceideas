@@ -48,6 +48,8 @@ Di bawah undang-undang privasi Kanada, kami bergantung kepada persetujuan anda, 
 
 Profil anda (nama pengendali, nama paparan, avatar, bio, tarikh menyertai, bilangan hantaran, pengikut, akaun yang diikuti dan suka yang diterima), hantaran anda dan komen anda adalah bersifat awam. Sesiapa boleh melihatnya, termasuk orang tanpa akaun; enjin carian boleh mengindeksnya; dan platform lain boleh memaparkan pratonton pautannya. Nama panggilan pada komen pelawat adalah bersifat awam. Kod yang diperoleh daripada alamat IP dan pengecam pelayar tidak pernah dipaparkan.
 
+Hantaran untuk sesiapa yang ada pautan tidak disenaraikan di mana-mana, tetapi sesiapa yang mempunyai pautan itu boleh melihatnya, termasuk imej dan audionya, walaupun tanpa akaun, dan platform lain mungkin memaparkan pratonton pautannya.
+
 Hantaran yang anda hadkan kepada pengikut anda, rakan anda atau anda sahaja tidak bersifat awam: hanya orang yang anda pilih boleh melihatnya, dan imej serta audionya tidak boleh diakses secara awam selagi ia kekal begitu.
 
 ## 5. Kuki

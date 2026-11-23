@@ -48,6 +48,8 @@ Chini ya sheria ya faragha ya Kanada, tunategemea ridhaa yako, unayoitoa kwa kut
 
 Wasifu wako (jina la mtumiaji, jina la kuonyesha, picha, maelezo mafupi, tarehe ya kujiunga, idadi ya machapisho, wafuasi, akaunti unazofuata na mapendo uliyopokea), machapisho yako na maoni yako ni ya umma. Mtu yeyote anaweza kuyaona, ikiwa ni pamoja na watu wasio na akaunti; mitambo ya utafutaji inaweza kuyaorodhesha; na majukwaa mengine yanaweza kuonyesha hakikisho za viungo vyake. Jina la utani kwenye maoni ya mtembeleaji ni la umma. Misimbo inayotokana na anwani za IP na vitambulisho vya kivinjari haionyeshwi kamwe.
 
+Machapisho ya yeyote aliye na kiungo hayaonyeshwi kwenye orodha yoyote, lakini yeyote aliye na kiungo anaweza kuyaona, pamoja na picha na sauti zake, hata bila akaunti, na mifumo mingine inaweza kuonyesha hakikisho za viungo vyake.
+
 Machapisho unayoyawekea kikomo kwa wafuasi wako, marafiki zako au wewe tu si ya umma: ni watu uliowachagua pekee wanaoweza kuyaona, na picha na sauti zake hazipatikani hadharani muda wote yanapobaki hivyo.
 
 ## 5. Vidakuzi

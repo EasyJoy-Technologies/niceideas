@@ -46,7 +46,7 @@ export async function listBookmarkedPosts(db: Db, userId: string, cursor: FeedCu
     .select(["profile.handle as author_handle", "profile.display_name as author_name", "profile.avatar_url as author_avatar", "b.created_at as bookmarked_at"])
     .where("b.user_id", "=", userId)
     .where("post.status", "=", "active")
-    .where(visibleTo("post", userId, { ownPrivate: true }))
+    .where(visibleTo("post", userId, { ownPrivate: true, reached: true }))
     .where("profile.status", "=", "active")
     .$if(!!cursor, (q) => q.where(sql<boolean>`(b.created_at, b.post_id) < (${cursor!.at}, ${cursor!.id}::uuid)`))
     .orderBy("b.created_at", "desc")

@@ -1,10 +1,11 @@
 import { findComment } from "@/server/db/repos/comments";
 import { findReport, openReportsOfTarget } from "@/server/db/repos/admin-queue";
 import { findPostBySlug } from "@/server/db/repos/posts";
-import { banCommenter, closeReportAs, liftBan, ModerationError, removePost, restorePost, setCommentVisibility, type ModerationRuntime, type Operator } from "@/server/moderation/admin";
+import { banCommenter, closeReportAs, liftBan, ModerationError, removePost, restorePost, setCommentVisibility, setVisibilityAsAdmin, type ModerationRuntime, type Operator } from "@/server/moderation/admin";
 import { SLUG_PATTERN } from "@/server/posts/slug";
+import { isVisibility } from "@/server/posts/visibility";
 
-export const ADMIN_ACTIONS = ["takedown", "dismiss", "remove-post", "restore-post", "hide-comment", "restore-comment", "unban"] as const;
+export const ADMIN_ACTIONS = ["takedown", "dismiss", "remove-post", "restore-post", "set-visibility", "hide-comment", "restore-comment", "unban"] as const;
 export type AdminAction = (typeof ADMIN_ACTIONS)[number];
 
 /** Optional ban of the commenter, taken with "hide comment" / "take down". */
@@ -36,10 +37,11 @@ async function handleReport(rt: ModerationRuntime, op: Operator, reportId: strin
 
 /**
  * One admin console action, audited by the moderation services (every action needs a reason):
- * `takedown` / `dismiss` a report (target = report id); `remove-post` / `restore-post` (slug);
+ * `takedown` / `dismiss` a report (target = report id); `remove-post` / `restore-post` (slug); `set-visibility`
+ * (slug, `visibility`: who may see it);
  * `hide-comment` / `restore-comment` (comment id); `unban` (`visitor:<hash>` or `ip:<hash>`).
  */
-export async function runAdminAction(rt: ModerationRuntime, actorId: string, input: { action: string; target: string; reason: string; ban?: BanOption }): Promise<boolean> {
+export async function runAdminAction(rt: ModerationRuntime, actorId: string, input: { action: string; target: string; reason: string; ban?: BanOption; visibility?: string }): Promise<boolean> {
   const reason = input.reason.trim().slice(0, REASON_MAX);
   if (!reason || !(ADMIN_ACTIONS as readonly string[]).includes(input.action)) return false;
   const op = { actorId, reason };
@@ -53,6 +55,10 @@ export async function runAdminAction(rt: ModerationRuntime, actorId: string, inp
       case "restore-post":
         if (!SLUG_PATTERN.test(input.target)) return false;
         await (action === "remove-post" ? removePost : restorePost)(rt, op, input.target);
+        return true;
+      case "set-visibility":
+        if (!SLUG_PATTERN.test(input.target) || !isVisibility(input.visibility)) return false;
+        await setVisibilityAsAdmin(rt, op, input.target, input.visibility);
         return true;
       case "hide-comment":
       case "restore-comment":

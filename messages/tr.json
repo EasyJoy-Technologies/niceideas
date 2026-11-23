@@ -11,7 +11,8 @@
       "resolve_report": "Şikayet çözüldü",
       "restore": "Gönderi geri yüklendi",
       "restore_comment": "Yorum geri yüklendi",
-      "unban": "Yasak kaldırıldı"
+      "unban": "Yasak kaldırıldı",
+      "visibility": "Görünürlük değiştirildi"
     },
     "apps": {
       "edit": "Düzenle",
@@ -68,6 +69,7 @@
       "status": "Durum",
       "time": "Zaman",
       "type": "Tür",
+      "visibility": "Görünürlük",
       "website": "Web sitesi"
     },
     "commentStatus": {
@@ -165,6 +167,7 @@
       "moderator": "Moderatör",
       "viewer": "Salt okunur"
     },
+    "setVisibility": "Görünürlüğü değiştir",
     "source": {
       "api": "Üçüncü taraf uygulamalar",
       "other": "Diğer uygulamalar",
@@ -494,6 +497,7 @@
       "followersNote": "Bu gönderiyi yalnızca yazarın takipçileri görebilir.",
       "friendsNote": "Bu gönderiyi yalnızca yazarın arkadaşları (yazarla karşılıklı takipleşenler) görebilir.",
       "from": "{app} üzerinden",
+      "linkNote": "Bu gönderi hiçbir yerde listelenmez. Yalnızca bağlantıya sahip olanlar görebilir.",
       "preparing": {
         "body": "İçerik birazdan burada görünecek.",
         "title": "Bu gönderi hazırlanıyor"
@@ -552,6 +556,8 @@
       "friends": "Yalnızca arkadaşlar",
       "friendsHint": "Takip ettiğin ve seni de takip edenler",
       "label": "Bu gönderiyi kimler görebilir",
+      "link": "Bağlantıya sahip olan herkes",
+      "linkHint": "Hiçbir yerde listelenmez; bağlantıya sahip olan herkes açabilir",
       "menu": "Görebilenler: {value}",
       "privateHint": "Başka kimse göremez",
       "public": "Herkese açık",

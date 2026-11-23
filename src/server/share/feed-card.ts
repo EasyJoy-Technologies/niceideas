@@ -93,7 +93,7 @@ export function feedCard(ctx: ChromeContext, item: FeedItem): string {
   const quoted = item.quoted !== undefined ? quoteEmbed(ctx, item.quoted) : "";
   const body = (post.kind === "short" ? shortBlock(item) : articleBlock(ctx, item)) + quoted;
   // Private posts (only on their author's own profile): the author's own like, no bookmarks, not shared.
-  // Followers-only / friends-only posts (shown to their audience only): everything but reposts (repostAction).
+  // Link, followers-only and friends-only posts (shown to whoever may see them): everything but reposts (repostAction).
   const open = post.visibility !== "private";
   const actions =
     `<div class="ni-actions ni-fc-actions">${open || isOwnPost(ctx, post) ? `<button type="button" class="ni-act" data-like="post" data-id="${post.slug}" aria-pressed="${item.liked}" aria-label="${escapeHtml(t("share.action.like"))}">` +

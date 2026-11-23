@@ -48,6 +48,8 @@ En vertu de la législation canadienne relative à la vie privée, nous nous app
 
 Votre profil (identifiant, nom d'affichage, avatar, biographie, date d'inscription, nombre de publications, d'abonnés, de comptes suivis et de mentions « j'aime » reçues), vos publications et vos commentaires sont publics. Tout le monde peut les consulter, y compris les personnes sans compte ; les moteurs de recherche peuvent les indexer ; et d'autres plateformes peuvent en afficher des aperçus de liens. Le pseudonyme figurant sur le commentaire d'un visiteur est public. Les codes dérivés des adresses IP et des identifiants de navigateur ne sont jamais affichés.
 
+Les publications destinées à toute personne disposant du lien ne sont répertoriées nulle part, mais toute personne qui dispose du lien peut les voir, y compris leurs images et sons, même sans compte, et d'autres plateformes peuvent en afficher des aperçus de liens.
+
 Les publications que vous réservez à vos abonnés, à vos amis ou à vous seul ne sont pas publiques : seules les personnes que vous avez choisies peuvent les voir, et leurs images et sons ne sont pas accessibles publiquement tant qu'elles le restent.
 
 ## 5. Cookies

@@ -48,6 +48,8 @@ Conform legislației canadiene privind confidențialitatea, ne bazăm pe consim�
 
 Profilul dumneavoastră (handle, nume de afișare, avatar, biografie, data înscrierii, numărul de postări, urmăritori, conturi urmărite și aprecieri primite), postările dumneavoastră și comentariile dumneavoastră sunt publice. Oricine le poate vedea, inclusiv persoanele fără cont; motoarele de căutare le pot indexa; și alte platforme pot afișa previzualizări de link-uri ale acestora. Pseudonimul dintr-un comentariu al unui vizitator este public. Codurile derivate din adresele IP și identificatorii de browser nu sunt afișate niciodată.
 
+Postările pentru oricine are linkul nu apar în nicio listă, dar oricine are linkul le poate vedea, inclusiv imaginile și fișierele audio ale acestora, chiar și fără cont, iar alte platforme pot afișa previzualizări de link ale lor.
+
 Postările pe care le limitați la urmăritorii dumneavoastră, la prietenii dumneavoastră sau doar la dumneavoastră nu sunt publice: doar persoanele alese de dumneavoastră le pot vedea, iar imaginile și fișierele audio ale acestora nu sunt accesibile public cât timp rămân așa.
 
 ## 5. Module cookie

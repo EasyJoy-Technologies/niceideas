@@ -8,11 +8,12 @@ import { listRevisionMediaIds } from "@/server/db/repos/revisions";
 import { ApiError, notFound } from "@/server/http/errors";
 import { finishPublication, NO_PROJECTION, projectMediaPublic, queueVisibilityCheck, recordPublication, type Projection } from "@/server/media/publication";
 import type { MediaStores } from "@/server/storage/types";
+import { isOpenToAll } from "./visibility";
 
 export type VisibilityRuntime = { db: Db; stores: MediaStores; cacheControl: string };
 
-/** Runs in the changing transaction (e.g. telling the backend about a change made on the web). */
-export type OnVisibilityChanged = (trx: Db, post: Post) => Promise<void>;
+/** Runs in the changing transaction (e.g. telling the backend about a change made on the web); `from`: the value it had. */
+export type OnVisibilityChanged = (trx: Db, post: Post, from: PostVisibility) => Promise<void>;
 
 /** Deleted (409 `post.unpublished`) and taken-down (409 `post.removed`) posts keep their setting. */
 function assertChangeable(post: Post): void {
@@ -22,8 +23,8 @@ function assertChangeable(post: Post): void {
 
 /**
  * Sets who may see a post (plans docs/plan/2026-10-26-private-theme-guidelines.md C,
- * docs/plan/2026-11-10-audience-visibility.md; posts/visibility.ts). Leaving public (private, followers-only,
- * friends-only): the post is hidden from everyone outside its new audience at once, the media leave the public
+ * docs/plan/2026-11-10-audience-visibility.md, docs/plan/2026-11-23-link-visibility.md; posts/visibility.ts).
+ * Leaving public (link, private, followers-only, friends-only): the post is hidden from everyone outside its new audience at once, the media leave the public
  * store and the CDN edge. Public: media move back before the commit (no broken images); the post returns to its
  * old place in feeds (published_at unchanged) without notifying anyone. Between the non-public values nothing
  * moves (their media are private either way). Same value → no-op.
@@ -51,8 +52,9 @@ export async function setPostVisibility(
       // The current revision may have changed since it was read: settle the media it uses now.
       const current = post.current_revision_id ? await listRevisionMediaIds(trx, post.current_revision_id) : [];
       if (visibility !== "public") {
-        // Leaving public: page copies and media leave the CDN edge. Already not public: nothing to move.
-        if (post.visibility === "public") await queuePostPurge(trx, [post.slug]);
+        // Leaving public: page copies and media leave the CDN edge. Already not public: nothing to move. Leaving
+        // link (never cached by the edge): its share card is purged too, in case an edge kept one.
+        if (isOpenToAll(post.visibility)) await queuePostPurge(trx, [post.slug]);
         await queueVisibilityCheck(trx, current);
         touched = current;
       } else {
@@ -60,7 +62,7 @@ export async function setPostVisibility(
         touched = await recordPublication(trx, projection, live);
         await queueReturningMediaPurge(trx, live);
       }
-      await onChanged?.(trx, updated);
+      await onChanged?.(trx, updated, post.visibility);
       return { post: updated, changed: true };
     });
     return outcome;

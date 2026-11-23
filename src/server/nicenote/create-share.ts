@@ -48,6 +48,7 @@ export async function createShare(db: Db, input: CreateShareInput): Promise<{ po
           kind: "short",
           sync_mode: input.syncMode,
           comments_mode: input.commentsMode ?? "open",
+          visibility: input.audience ?? "public",
           cover_media_id: null,
           current_revision_id: null,
           source_updated_at: null,

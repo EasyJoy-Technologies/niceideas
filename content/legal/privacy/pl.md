@@ -48,6 +48,8 @@ Zgodnie z kanadyjskim prawem o ochronie prywatności opieramy się na Twojej zgo
 
 Twój profil (uchwyt, nazwa wyświetlana, awatar, opis, data przystąpienia, liczba wpisów, obserwujących, obserwowanych kont i otrzymanych polubień), Twoje wpisy i Twoje komentarze są publiczne. Każdy może je zobaczyć, w tym osoby bez konta; wyszukiwarki mogą je indeksować; a inne platformy mogą wyświetlać podglądy linków do nich. Pseudonim w komentarzu odwiedzającego jest publiczny. Kody uzyskane z adresów IP i identyfikatorów przeglądarki nigdy nie są wyświetlane.
 
+Wpisy dla każdego, kto ma link, nie są nigdzie wyświetlane na listach, ale każdy, kto ma link, może je zobaczyć, łącznie z ich obrazami i nagraniami audio, nawet bez konta, a inne platformy mogą pokazywać ich podglądy linków.
+
 Wpisy, które ograniczysz do swoich obserwujących, znajomych lub tylko do siebie, nie są publiczne: widzą je tylko wybrane przez Ciebie osoby, a ich obrazy i nagrania audio nie są publicznie dostępne, dopóki tak pozostaje.
 
 ## 5. Pliki cookie

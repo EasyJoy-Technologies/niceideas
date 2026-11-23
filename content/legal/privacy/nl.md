@@ -48,6 +48,8 @@ Onder de Canadese privacywetgeving baseren wij ons op uw toestemming, die u geef
 
 Uw profiel (handle, weergavenaam, avatar, biografie, aanmelddatum, aantal berichten, volgers, gevolgde accounts en ontvangen likes), uw berichten en uw reacties zijn openbaar. Iedereen kan ze zien, inclusief mensen zonder account; zoekmachines kunnen ze indexeren; en andere platforms kunnen linkvoorbeelden ervan weergeven. De bijnaam bij de reactie van een bezoeker is openbaar. De codes afgeleid van IP-adressen en browseridentificaties worden nooit weergegeven.
 
+Berichten voor iedereen met de link worden nergens vermeld, maar iedereen die de link heeft, kan ze zien, inclusief hun afbeeldingen en audio, ook zonder account, en andere platforms kunnen er linkvoorbeelden van tonen.
+
 Berichten die u beperkt tot uw volgers, uw vrienden of alleen uzelf zijn niet openbaar: alleen de mensen die u hebt gekozen kunnen ze zien, en hun afbeeldingen en audio zijn niet openbaar toegankelijk zolang dat zo blijft.
 
 ## 5. Cookies

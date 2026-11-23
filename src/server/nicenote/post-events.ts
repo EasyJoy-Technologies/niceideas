@@ -2,6 +2,7 @@ import { randomUUID } from "node:crypto";
 import type { Db } from "@/server/db/client";
 import type { MediaState, Post } from "@/server/db/schema";
 import { enqueueOutbox } from "@/server/db/repos/outbox";
+import { visibilityFields } from "./dto";
 import type { FailedRef } from "./share-media";
 
 export type SharePostEvent = "unpublished" | "removed" | "restored" | "media_failed" | "media_ready" | "visibility_changed";
@@ -18,6 +19,14 @@ export async function queuePostEvent(db: Db, post: Pick<Post, "id" | "source" | 
     dedupeKey: `post_event:${eventId}`,
     payload: { eventId, postId: post.id, shareId: post.share_id, event, occurredAt: new Date().toISOString(), ...(details ? { details } : {}) },
   });
+}
+
+/**
+ * `visibility_changed` for a change made on NiceIdeas (the author on the web, or an admin), so the app shows the
+ * same state: `visibility` public / private as before, `audience` the exact value (dto.ts).
+ */
+export async function queueVisibilityChanged(db: Db, post: Post): Promise<void> {
+  await queuePostEvent(db, post, "visibility_changed", visibilityFields(post));
 }
 
 /**

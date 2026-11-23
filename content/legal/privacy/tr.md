@@ -48,6 +48,8 @@ Kanada gizlilik yasasına göre, bu politikayı okuduktan sonra Hizmeti kullanar
 
 Profiliniz (kullanıcı adı, görünen ad, avatar, biyografi, katılım tarihi, paylaşım sayısı, takipçiler, takip edilen hesaplar ve alınan beğeniler), paylaşımlarınız ve yorumlarınız herkese açıktır. Hesabı olmayan kişiler dahil herkes bunları görebilir; arama motorları bunları dizine ekleyebilir; ve diğer platformlar bunların bağlantı önizlemelerini gösterebilir. Bir ziyaretçinin yorumundaki takma ad herkese açıktır. IP adreslerinden ve tarayıcı tanımlayıcılarından türetilen kodlar asla gösterilmez.
 
+Bağlantıya sahip olan herkese açık paylaşımlar hiçbir yerde listelenmez, ancak bağlantıya sahip olan herkes onları görselleri ve sesleri dahil, hesabı olmasa bile görebilir ve diğer platformlar bunların bağlantı önizlemelerini gösterebilir.
+
 Takipçilerinizle, arkadaşlarınızla veya yalnızca kendinizle sınırladığınız paylaşımlar herkese açık değildir: onları yalnızca seçtiğiniz kişiler görebilir ve bu durum sürdükçe görselleri ve sesleri herkese açık olarak erişilebilir değildir.
 
 ## 5. Çerezler

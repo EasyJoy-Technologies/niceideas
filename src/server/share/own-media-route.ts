@@ -3,6 +3,7 @@ import { sessionProfile } from "@/server/auth/web/session";
 import { getDb } from "@/server/db";
 import { findMediaByIds } from "@/server/db/repos/media";
 import { findPostBySlug } from "@/server/db/repos/posts";
+import { findProfile } from "@/server/db/repos/profiles";
 import { listRevisionMediaIds } from "@/server/db/repos/revisions";
 import { publicUrl, renditionsOf } from "@/server/media/keys";
 import { SLUG_PATTERN } from "@/server/posts/slug";
@@ -14,11 +15,15 @@ import { assertSafeKey, ObjectMissingError, RangeNotSatisfiableError } from "@/s
 const NO_STORE = { "Cache-Control": "no-store" };
 const notFound = () => new Response(null, { status: 404, headers: NO_STORE });
 
-/** The rendition `key` of a media the post's current revision uses, when the viewer may see the post; undefined otherwise. */
-async function renditionOfPost(slug: string, key: string, viewerId: string) {
+/**
+ * The rendition `key` of a media the post's current revision uses, when the viewer may see the post; undefined
+ * otherwise. Like the page: live posts of active accounts only.
+ */
+async function renditionOfPost(slug: string, key: string, viewerId: string | null) {
   const db = getDb();
   const post = await findPostBySlug(db, slug);
-  if (!post || !post.current_revision_id || !(await canSee(db, post, viewerId))) return undefined;
+  if (!post || post.status !== "active" || !post.current_revision_id || !(await canSee(db, post, viewerId))) return undefined;
+  if ((await findProfile(db, post.author_id))?.status !== "active") return undefined;
   const media = await findMediaByIds(db, await listRevisionMediaIds(db, post.current_revision_id));
   for (const m of media) {
     const r = renditionsOf(m).find((x) => x.key === key);
@@ -28,8 +33,9 @@ async function renditionOfPost(slug: string, key: string, viewerId: string) {
 }
 
 /**
- * GET /p/{slug}/media/{key}: media of a post that is not public, for whoever may see it (signed in: its author,
- * and its followers / friends for followers-only / friends-only posts; posts/visibility.ts) — everyone else gets 404. Read from the private store with single byte ranges (audio seeking); media that are public anyway
+ * GET /p/{slug}/media/{key}: media of a post that is not public, for whoever may see it (posts/visibility.ts:
+ * anyone, also signed out, for link posts; signed in: its author, and its followers / friends for followers-only /
+ * friends-only posts) — everyone else gets 404. Read from the private store with single byte ranges (audio seeking); media that are public anyway
  * (also used by a public post) redirect to the public domain. Never stored by shared caches.
  */
 export async function ownMediaResponse(request: Request, slug: string, keyParts: string[]): Promise<Response> {
@@ -41,7 +47,7 @@ export async function ownMediaResponse(request: Request, slug: string, keyParts:
     return notFound();
   }
   const viewer = await sessionProfile(getDb(), request.headers);
-  const found = viewer ? await renditionOfPost(slug, key, viewer.user_id) : undefined;
+  const found = await renditionOfPost(slug, key, viewer?.user_id ?? null);
   if (!found) return notFound();
   if (found.media.public_at) return new Response(null, { status: 302, headers: { Location: publicUrl(key), ...NO_STORE } });
   try {

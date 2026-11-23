@@ -79,17 +79,23 @@
 .ni-compose-seg input:focus-visible + span { outline: 2px solid var(--ni-color-primary); outline-offset: 1px; }
 .ni-compose-bar .ni-btn { flex: none; height: 2.125rem; }
 /* Who can see (compose-toolbar.ts): the button shows the checked choice; a choice other than public stands out. */
-.ni-compose-vis { flex: none; margin-inline-end: 0.375rem; }
+/* The choice's name shrinks (…) when a long one would push the toolbar past the card (the menu shows it in full). */
+.ni-compose-vis { flex: 0 1 auto; min-width: 0; margin-inline-end: 0.375rem; }
+.ni-compose-vis > summary.ni-tb { max-width: 100%; }
 .ni-compose-vis > summary.ni-tb { display: inline-flex; align-items: center; gap: 0.25rem; padding: 0 0.5rem; font: 500 0.78125rem/1 var(--ni-font-sans); white-space: nowrap; }
 .ni-compose-vis[open] > summary.ni-tb { background: var(--ni-color-surface-2); color: var(--ni-color-primary); }
 .ni-compose-vis:has(input:not([value="public"]):checked) > summary.ni-tb { color: var(--ni-color-primary); }
-.ni-vis-cur { display: none; align-items: center; gap: 0.25rem; }
+.ni-vis-cur { display: none; align-items: center; gap: 0.25rem; min-width: 0; }
+.ni-vis-cur > span { min-width: 0; overflow: hidden; text-overflow: ellipsis; }
+.ni-vis-cur .ni-i { flex: none; }
 .ni-vis-cur .ni-i { width: 1rem; height: 1rem; }
 .ni-compose-vis:has(input[value="public"]:checked) .ni-vis-cur[data-v="public"],
+.ni-compose-vis:has(input[value="link"]:checked) .ni-vis-cur[data-v="link"],
 .ni-compose-vis:has(input[value="followers"]:checked) .ni-vis-cur[data-v="followers"],
 .ni-compose-vis:has(input[value="friends"]:checked) .ni-vis-cur[data-v="friends"],
 .ni-compose-vis:has(input[value="private"]:checked) .ni-vis-cur[data-v="private"] { display: inline-flex; }
-.ni-compose-vis ul { bottom: calc(100% + 0.375rem); inset-inline-end: 0; min-width: 16rem; }
+/* Opens downward (the card sits at the top of the page); upward in the phone bottom sheet (below). */
+.ni-compose-vis ul { top: calc(100% + 0.375rem); inset-inline-end: 0; min-width: 16rem; }
 .ni-compose-vis li label { position: relative; display: flex; align-items: center; gap: 0.625rem; padding: 0.5rem 0.625rem; border-radius: 0.5rem; cursor: pointer; }
 .ni-compose-vis li label:hover, .ni-compose-vis li label:has(input:focus-visible) { background: var(--ni-color-surface-2); }
 .ni-compose-vis li input { position: absolute; opacity: 0; width: 1px; height: 1px; }
@@ -113,6 +119,7 @@
   }
   body:has(.ni-tabbar) .ni-compose:target .ni-sheet-h { display: flex; justify-content: flex-end; margin: -0.375rem -0.25rem 0.125rem; }
   body:has(.ni-tabbar) .ni-compose:target .ni-ed { max-height: 45vh; overflow-y: auto; }
+  body:has(.ni-tabbar) .ni-compose:target .ni-compose-vis ul { top: auto; bottom: calc(100% + 0.375rem); }
   body:has(.ni-tabbar) .ni-compose:target:has(input[name="mode"][value="long"]:checked) .ni-ed { min-height: 14rem; }
   .ni-sheet-x { display: inline-grid; place-items: center; width: 2rem; height: 2rem; border-radius: 50%; color: var(--ni-color-text-secondary); }
   .ni-sheet-x:hover { background: var(--ni-color-hover); }

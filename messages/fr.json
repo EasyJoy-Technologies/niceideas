@@ -11,7 +11,8 @@
       "resolve_report": "Signalement traité",
       "restore": "Publication restaurée",
       "restore_comment": "Commentaire restauré",
-      "unban": "Bannissement levé"
+      "unban": "Bannissement levé",
+      "visibility": "Visibilité modifiée"
     },
     "apps": {
       "edit": "Modifier",
@@ -68,6 +69,7 @@
       "status": "Statut",
       "time": "Heure",
       "type": "Type",
+      "visibility": "Visibilité",
       "website": "Site web"
     },
     "commentStatus": {
@@ -165,6 +167,7 @@
       "moderator": "Modérateur",
       "viewer": "Lecture seule"
     },
+    "setVisibility": "Modifier la visibilité",
     "source": {
       "api": "Applications tierces",
       "other": "Autres applications",
@@ -494,6 +497,7 @@
       "followersNote": "Seuls les abonnés de l’auteur peuvent voir cette publication.",
       "friendsNote": "Seuls les amis de l’auteur (personnes qui se suivent mutuellement avec lui) peuvent voir cette publication.",
       "from": "Depuis {app}",
+      "linkNote": "Cette publication n’est répertoriée nulle part. Seules les personnes disposant du lien peuvent la voir.",
       "preparing": {
         "body": "Le contenu apparaîtra ici dans un instant.",
         "title": "Préparation de la publication"
@@ -552,6 +556,8 @@
       "friends": "Amis uniquement",
       "friendsHint": "Les personnes que vous suivez et qui vous suivent aussi",
       "label": "Qui peut voir cette publication",
+      "link": "Toute personne disposant du lien",
+      "linkHint": "Répertoriée nulle part ; toute personne disposant du lien peut l’ouvrir",
       "menu": "Visible par : {value}",
       "privateHint": "Personne d’autre ne peut la voir",
       "public": "Public",

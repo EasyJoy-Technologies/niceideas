@@ -11,7 +11,8 @@
       "resolve_report": "處理檢舉",
       "restore": "恢復貼文",
       "restore_comment": "恢復留言",
-      "unban": "解除封鎖"
+      "unban": "解除封鎖",
+      "visibility": "變更可見範圍"
     },
     "apps": {
       "edit": "編輯",
@@ -68,6 +69,7 @@
       "status": "狀態",
       "time": "時間",
       "type": "類型",
+      "visibility": "可見範圍",
       "website": "網站"
     },
     "commentStatus": {
@@ -165,6 +167,7 @@
       "moderator": "審核員",
       "viewer": "只讀成員"
     },
+    "setVisibility": "變更可見範圍",
     "source": {
       "api": "第三方應用程式",
       "other": "其他應用程式",
@@ -494,6 +497,7 @@
       "followersNote": "這則貼文僅作者的追蹤者可見。",
       "friendsNote": "這則貼文僅與作者互相追蹤的朋友可見。",
       "from": "來自 {app}",
+      "linkNote": "這則貼文不公開列出，只有拿到連結的人能看到。",
       "preparing": {
         "body": "內容稍後就會顯示在這裡。",
         "title": "貼文準備中"
@@ -552,6 +556,8 @@
       "friends": "僅朋友",
       "friendsHint": "你和對方互相追蹤",
       "label": "誰可以看",
+      "link": "有連結的人",
+      "linkHint": "不公開列出，拿到連結就能看",
       "menu": "誰可以看：{value}",
       "privateHint": "其他人都看不到",
       "public": "公開",

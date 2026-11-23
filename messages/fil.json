@@ -11,7 +11,8 @@
       "resolve_report": "Naresolba ang report",
       "restore": "Naibalik ang post",
       "restore_comment": "Naibalik ang komento",
-      "unban": "Naalis ang ban"
+      "unban": "Naalis ang ban",
+      "visibility": "Binago kung sino ang makakakita"
     },
     "apps": {
       "edit": "I-edit",
@@ -68,6 +69,7 @@
       "status": "Status",
       "time": "Oras",
       "type": "Uri",
+      "visibility": "Sino ang makakakita",
       "website": "Website"
     },
     "commentStatus": {
@@ -165,6 +167,7 @@
       "moderator": "Moderator",
       "viewer": "Miyembrong pagbabasa lang"
     },
+    "setVisibility": "Baguhin kung sino ang makakakita",
     "source": {
       "api": "Mga third-party app",
       "other": "Iba pang app",
@@ -494,6 +497,7 @@
       "followersNote": "Ang mga follower lang ng may-akda ang makakakita ng post na ito.",
       "friendsNote": "Ang mga kaibigan lang ng may-akda (mga nagfo-follow sa isa't isa kasama ang may-akda) ang makakakita ng post na ito.",
       "from": "Mula sa {app}",
+      "linkNote": "Hindi nakalista kahit saan ang post na ito. Ang mga may link lang ang makakakita nito.",
       "preparing": {
         "body": "Lalabas dito ang content sa ilang saglit.",
         "title": "Inihahanda ang post na ito"
@@ -552,6 +556,8 @@
       "friends": "Mga kaibigan lang",
       "friendsHint": "Mga taong fina-follow mo na nagfo-follow din sa iyo",
       "label": "Sino ang makakakita ng post na ito",
+      "link": "Sinumang may link",
+      "linkHint": "Hindi nakalista kahit saan; mabubuksan ito ng sinumang may link",
       "menu": "Makikita ng: {value}",
       "privateHint": "Walang ibang makakakita nito",
       "public": "Pampubliko",

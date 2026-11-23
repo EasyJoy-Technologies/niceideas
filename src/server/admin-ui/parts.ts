@@ -63,13 +63,17 @@ export function banFields(ctx: AdminContext): string {
 export const hiddenFields = (fields: Record<string, string>) =>
   Object.entries(fields).map(([k, v]) => `<input type="hidden" name="${k}" value="${e(v)}">`).join("");
 
-/** Row action: a small button opening a form with the (required) reason. Nothing for read-only members. */
-export function actionPop(ctx: AdminContext, o: { action: string; target: string; back: string; label: string; danger?: boolean; ban?: boolean }): string {
+/**
+ * Row action: a small button opening a form with the (required) reason. Nothing for read-only members.
+ * `fields`: extra form fields (already escaped), shown above the reason; `summary`: the button's content
+ * (already escaped) when it is not the label, which then stays its accessible name and the submit text.
+ */
+export function actionPop(ctx: AdminContext, o: { action: string; target: string; back: string; label: string; danger?: boolean; ban?: boolean; fields?: string; summary?: string }): string {
   if (!canModerate(ctx.role)) return "";
   const cls = o.danger ? "ad-btn-danger" : "ni-btn-ghost";
   return (
-    `<details class="ni-menu ad-pop"><summary class="ad-act${o.danger ? " ad-danger" : ""}">${e(o.label)}</summary>` +
-    `<form class="ad-pop-f" method="post" action="/admin">${hiddenFields({ action: o.action, target: o.target, back: o.back })}${reasonField(ctx)}` +
+    `<details class="ni-menu ad-pop"><summary class="ad-act${o.danger ? " ad-danger" : ""}"${o.summary ? ` aria-label="${e(o.label)}" title="${e(o.label)}"` : ""}>${o.summary ?? e(o.label)}</summary>` +
+    `<form class="ad-pop-f" method="post" action="/admin">${hiddenFields({ action: o.action, target: o.target, back: o.back })}${o.fields ?? ""}${reasonField(ctx)}` +
     `${o.ban ? banFields(ctx) : ""}<button type="submit" class="ni-btn ni-btn-sm ${cls}">${e(o.label)}</button></form></details>`
   );
 }

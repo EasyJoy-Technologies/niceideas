@@ -48,6 +48,8 @@ Secondo la legislazione canadese sulla privacy, ci basiamo sul suo consenso, che
 
 Il suo profilo (handle, nome visualizzato, avatar, biografia, data di adesione, numero di pubblicazioni, follower, account seguiti e "mi piace" ricevuti), le sue pubblicazioni e i suoi commenti sono pubblici. Chiunque può vederli, comprese le persone senza account; i motori di ricerca possono indicizzarli; e altre piattaforme possono mostrarne anteprime dei link. Il soprannome nel commento di un visitatore è pubblico. I codici derivati da indirizzi IP e identificativi del browser non vengono mai mostrati.
 
+Le pubblicazioni per chiunque abbia il link non sono elencate da nessuna parte, ma chiunque abbia il link può vederle, comprese le immagini e gli audio, anche senza account, e altre piattaforme possono mostrarne le anteprime dei link.
+
 Le pubblicazioni che lei limita ai suoi follower, ai suoi amici o solo a sé non sono pubbliche: solo le persone che ha scelto possono vederle, e le loro immagini e i loro audio non sono accessibili pubblicamente finché restano tali.
 
 ## 5. Cookie

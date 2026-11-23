@@ -8,7 +8,7 @@ import { canSee } from "@/server/posts/visibility";
 /**
  * Which posts an interaction takes, beyond being seen by the viewer (posts/visibility.ts):
  * - `public`: public posts only (reposts: they show to the reposter's followers);
- * - `audience`: also followers-only / friends-only posts the viewer may see (bookmarks, reports);
+ * - `audience`: also link posts and followers-only / friends-only posts the viewer may see (bookmarks, reports);
  * - `any`: also the viewer's own private posts (likes and comments: the author may use them, Xianglin 2026-10-28).
  */
 export type InteractionScope = "public" | "audience" | "any";

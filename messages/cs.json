@@ -11,7 +11,8 @@
       "resolve_report": "Nahlášení vyřízeno",
       "restore": "Příspěvek obnoven",
       "restore_comment": "Komentář obnoven",
-      "unban": "Zákaz zrušen"
+      "unban": "Zákaz zrušen",
+      "visibility": "Změněna viditelnost"
     },
     "apps": {
       "edit": "Upravit",
@@ -68,6 +69,7 @@
       "status": "Stav",
       "time": "Čas",
       "type": "Typ",
+      "visibility": "Viditelnost",
       "website": "Web"
     },
     "commentStatus": {
@@ -165,6 +167,7 @@
       "moderator": "Moderátor",
       "viewer": "Pouze ke čtení"
     },
+    "setVisibility": "Změnit viditelnost",
     "source": {
       "api": "Aplikace třetích stran",
       "other": "Ostatní aplikace",
@@ -494,6 +497,7 @@
       "followersNote": "Tento příspěvek vidí jen sledující autora.",
       "friendsNote": "Tento příspěvek vidí jen přátelé autora (lidé, kteří se s ním navzájem sledují).",
       "from": "Z aplikace {app}",
+      "linkNote": "Tento příspěvek není nikde uveden. Vidí ho jen lidé, kteří mají odkaz.",
       "preparing": {
         "body": "Obsah se tu zobrazí za okamžik.",
         "title": "Příspěvek se připravuje"
@@ -552,6 +556,8 @@
       "friends": "Jen přátelé",
       "friendsHint": "Lidé, které sledujete a kteří sledují vás",
       "label": "Kdo může příspěvek vidět",
+      "link": "Kdokoli s odkazem",
+      "linkHint": "Nikde se nezobrazuje v přehledech; otevře ho kdokoli s odkazem",
       "menu": "Viditelné pro: {value}",
       "privateHint": "Nikdo jiný ho neuvidí",
       "public": "Veřejný",

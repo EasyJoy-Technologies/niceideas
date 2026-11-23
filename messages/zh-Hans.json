@@ -11,7 +11,8 @@
       "resolve_report": "处理举报",
       "restore": "恢复帖子",
       "restore_comment": "恢复评论",
-      "unban": "解除封禁"
+      "unban": "解除封禁",
+      "visibility": "修改可见范围"
     },
     "apps": {
       "edit": "编辑",
@@ -68,6 +69,7 @@
       "status": "状态",
       "time": "时间",
       "type": "类型",
+      "visibility": "可见范围",
       "website": "网站"
     },
     "commentStatus": {
@@ -165,6 +167,7 @@
       "moderator": "审核员",
       "viewer": "只读成员"
     },
+    "setVisibility": "修改可见范围",
     "source": {
       "api": "第三方应用",
       "other": "其他应用",
@@ -494,6 +497,7 @@
       "followersNote": "这条帖子仅作者的关注者可见。",
       "friendsNote": "这条帖子仅与作者互相关注的朋友可见。",
       "from": "来自 {app}",
+      "linkNote": "这条帖子不公开列出，只有拿到链接的人能看到。",
       "preparing": {
         "body": "内容马上就会显示在这里。",
         "title": "内容准备中"
@@ -552,6 +556,8 @@
       "friends": "仅朋友",
       "friendsHint": "你和对方互相关注",
       "label": "谁可以看",
+      "link": "有链接的人",
+      "linkHint": "不公开列出，拿到链接就能看",
       "menu": "谁可以看：{value}",
       "privateHint": "其他人都看不到",
       "public": "公开",

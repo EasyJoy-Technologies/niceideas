@@ -48,6 +48,8 @@ Nach kanadischem Datenschutzrecht stützen wir uns auf Ihre Einwilligung, die Si
 
 Ihr Profil (Handle, Anzeigename, Avatar, Biografie, Beitrittsdatum, Anzahl der Beiträge, Follower, gefolgten Konten und erhaltenen Gefällt-mir-Angaben), Ihre Beiträge und Ihre Kommentare sind öffentlich. Jeder kann sie sehen, auch Personen ohne Konto; Suchmaschinen können sie indexieren; und andere Plattformen können Link-Vorschauen davon anzeigen. Der Spitzname im Kommentar eines Besuchers ist öffentlich. Die aus IP-Adressen und Browserkennungen abgeleiteten Codes werden niemals angezeigt.
 
+Beiträge für alle mit dem Link werden nirgends aufgelistet, aber jeder, der den Link hat, kann sie sehen, einschließlich ihrer Bilder und Audiodateien, auch ohne Konto, und andere Plattformen können Linkvorschauen davon anzeigen.
+
 Beiträge, die Sie auf Ihre Follower, Ihre Freunde oder nur sich selbst beschränken, sind nicht öffentlich: Nur die von Ihnen gewählten Personen können sie sehen, und ihre Bilder und Audiodateien sind nicht öffentlich zugänglich, solange dies so bleibt.
 
 ## 5. Cookies

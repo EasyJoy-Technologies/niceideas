@@ -11,7 +11,8 @@
       "resolve_report": "通報を対応済みにする",
       "restore": "投稿を復元",
       "restore_comment": "コメントを復元",
-      "unban": "ブロックを解除"
+      "unban": "ブロックを解除",
+      "visibility": "公開範囲を変更"
     },
     "apps": {
       "edit": "編集",
@@ -68,6 +69,7 @@
       "status": "ステータス",
       "time": "日時",
       "type": "種類",
+      "visibility": "公開範囲",
       "website": "ウェブサイト"
     },
     "commentStatus": {
@@ -165,6 +167,7 @@
       "moderator": "モデレーター",
       "viewer": "閲覧専用メンバー"
     },
+    "setVisibility": "公開範囲を変更",
     "source": {
       "api": "サードパーティアプリ",
       "other": "その他のアプリ",
@@ -494,6 +497,7 @@
       "followersNote": "この投稿は投稿者のフォロワーだけが見られます。",
       "friendsNote": "この投稿は投稿者と相互フォローしている友達だけが見られます。",
       "from": "{app} から",
+      "linkNote": "この投稿はどこにも表示されません。リンクを知っている人だけが見られます。",
       "preparing": {
         "body": "もうすぐここに表示されます。",
         "title": "投稿を準備中です"
@@ -552,6 +556,8 @@
       "friends": "友達のみ",
       "friendsHint": "相互フォローしている人",
       "label": "公開範囲",
+      "link": "リンクを知っている人",
+      "linkHint": "どこにも表示されず、リンクを知っている人なら誰でも開けます",
       "menu": "公開範囲：{value}",
       "privateHint": "ほかの人には見えません",
       "public": "公開",

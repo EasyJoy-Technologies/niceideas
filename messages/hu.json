@@ -11,7 +11,8 @@
       "resolve_report": "Bejelentés megoldva",
       "restore": "Bejegyzés visszaállítva",
       "restore_comment": "Megjegyzés visszaállítva",
-      "unban": "Kitiltás feloldva"
+      "unban": "Kitiltás feloldva",
+      "visibility": "Láthatóság módosítva"
     },
     "apps": {
       "edit": "Szerkesztés",
@@ -68,6 +69,7 @@
       "status": "Állapot",
       "time": "Időpont",
       "type": "Típus",
+      "visibility": "Láthatóság",
       "website": "Weboldal"
     },
     "commentStatus": {
@@ -165,6 +167,7 @@
       "moderator": "Moderátor",
       "viewer": "Csak olvasó"
     },
+    "setVisibility": "Láthatóság módosítása",
     "source": {
       "api": "Külső alkalmazások",
       "other": "Egyéb alkalmazások",
@@ -494,6 +497,7 @@
       "followersNote": "Ezt a bejegyzést csak a szerző követői láthatják.",
       "friendsNote": "Ezt a bejegyzést csak a szerző barátai (akik kölcsönösen követik egymást vele) láthatják.",
       "from": "Forrás: {app}",
+      "linkNote": "Ez a bejegyzés sehol sem jelenik meg. Csak azok láthatják, akiknél ott a link.",
       "preparing": {
         "body": "A tartalom hamarosan megjelenik itt.",
         "title": "A bejegyzés előkészítése"
@@ -552,6 +556,8 @@
       "friends": "Csak barátok",
       "friendsHint": "Akiket követsz, és ők is követnek téged",
       "label": "Ki láthatja ezt a bejegyzést",
+      "link": "Bárki, akinél ott a link",
+      "linkHint": "Sehol nem jelenik meg; bárki megnyithatja, akinél ott a link",
       "menu": "Látható: {value}",
       "privateHint": "Senki más nem láthatja",
       "public": "Nyilvános",

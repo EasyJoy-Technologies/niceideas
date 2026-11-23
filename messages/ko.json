@@ -11,7 +11,8 @@
       "resolve_report": "신고 처리 완료",
       "restore": "게시물 복원",
       "restore_comment": "댓글 복원",
-      "unban": "차단 해제"
+      "unban": "차단 해제",
+      "visibility": "공개 범위 변경"
     },
     "apps": {
       "edit": "편집",
@@ -68,6 +69,7 @@
       "status": "상태",
       "time": "시간",
       "type": "유형",
+      "visibility": "공개 범위",
       "website": "웹사이트"
     },
     "commentStatus": {
@@ -165,6 +167,7 @@
       "moderator": "모더레이터",
       "viewer": "읽기 전용 멤버"
     },
+    "setVisibility": "공개 범위 변경",
     "source": {
       "api": "타사 앱",
       "other": "기타 앱",
@@ -494,6 +497,7 @@
       "followersNote": "작성자의 팔로워만 이 게시물을 볼 수 있습니다.",
       "friendsNote": "작성자와 서로 팔로우하는 친구만 이 게시물을 볼 수 있습니다.",
       "from": "{app}에서 작성",
+      "linkNote": "이 게시물은 어디에도 표시되지 않습니다. 링크가 있는 사람만 볼 수 있습니다.",
       "preparing": {
         "body": "잠시 후 여기에 표시됩니다.",
         "title": "게시물을 준비하고 있습니다"
@@ -552,6 +556,8 @@
       "friends": "친구만",
       "friendsHint": "서로 팔로우하는 사람",
       "label": "공개 범위",
+      "link": "링크가 있는 모든 사람",
+      "linkHint": "어디에도 표시되지 않으며, 링크가 있는 사람은 누구나 열 수 있습니다",
       "menu": "공개 범위: {value}",
       "privateHint": "다른 사람은 볼 수 없음",
       "public": "전체 공개",

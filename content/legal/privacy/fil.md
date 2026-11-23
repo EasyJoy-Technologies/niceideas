@@ -48,6 +48,8 @@ Sa ilalim ng batas sa privacy ng Canada, inaasahan namin ang iyong pahintulot, n
 
 Ang iyong profile (handle, display name, avatar, bio, petsa ng pagsali, bilang ng mga post, follower, mga account na sinusundan, at mga natanggap na like), ang iyong mga post, at ang iyong mga komento ay pampubliko. Kahit sino ang makakita nito, kasama ang mga walang account; maaaring i-index ito ng mga search engine; at maaaring ipakita ng ibang mga platform ang mga link preview nito. Pampubliko ang palayaw sa komento ng isang bisita. Hindi kailanman ipinapakita ang mga code na nagmula sa mga IP address at browser identifier.
 
+Ang mga post para sa sinumang may link ay hindi nakalista kahit saan, pero makikita ang mga ito ng sinumang may link, kasama ang mga larawan at audio nito, kahit walang account, at maaaring magpakita ng link preview ng mga ito ang ibang platform.
+
 Ang mga post na nililimitahan mo sa iyong mga follower, sa iyong mga kaibigan, o sa iyo lang ay hindi pampubliko: ang mga taong pinili mo lang ang makakakita sa mga ito, at ang mga larawan at audio nito ay hindi pampublikong naa-access habang nananatili itong ganoon.
 
 ## 5. Mga Cookie

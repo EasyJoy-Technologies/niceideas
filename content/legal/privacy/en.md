@@ -48,6 +48,8 @@ Under Canadian privacy law, we rely on your consent, which you give by using the
 
 Your profile (handle, display name, avatar, bio, join date, numbers of posts, followers, accounts followed and likes received), your posts and your comments are public. Anyone can see them, including people without an account; search engines may index them; and other platforms may show link previews of them. The nickname on a visitor's comment is public. The codes derived from IP addresses and browser identifiers are never shown.
 
+Posts for anyone with the link are not listed anywhere, but anyone who has the link can see them, including their images and audio, even without an account, and other platforms may show link previews of them.
+
 Posts you limit to your followers, your friends or only you are not public: only the people you chose can see them, and their images and audio are not publicly accessible while they stay that way.
 
 ## 5. Cookies

@@ -11,7 +11,8 @@
       "resolve_report": "Menyelesaikan laporan",
       "restore": "Memulihkan postingan",
       "restore_comment": "Memulihkan komentar",
-      "unban": "Membuka blokir"
+      "unban": "Membuka blokir",
+      "visibility": "Mengubah visibilitas"
     },
     "apps": {
       "edit": "Edit",
@@ -68,6 +69,7 @@
       "status": "Status",
       "time": "Waktu",
       "type": "Jenis",
+      "visibility": "Visibilitas",
       "website": "Situs web"
     },
     "commentStatus": {
@@ -165,6 +167,7 @@
       "moderator": "Moderator",
       "viewer": "Anggota hanya-baca"
     },
+    "setVisibility": "Ubah visibilitas",
     "source": {
       "api": "Aplikasi pihak ketiga",
       "other": "Aplikasi lainnya",
@@ -494,6 +497,7 @@
       "followersNote": "Hanya pengikut penulis yang dapat melihat postingan ini.",
       "friendsNote": "Hanya teman penulis (orang yang saling mengikuti dengan penulis) yang dapat melihat postingan ini.",
       "from": "Dari {app}",
+      "linkNote": "Postingan ini tidak tercantum di mana pun. Hanya orang yang punya tautan yang dapat melihatnya.",
       "preparing": {
         "body": "Konten akan muncul di sini sebentar lagi.",
         "title": "Menyiapkan postingan ini"
@@ -552,6 +556,8 @@
       "friends": "Hanya teman",
       "friendsHint": "Orang yang Anda ikuti dan juga mengikuti Anda",
       "label": "Siapa yang dapat melihat postingan ini",
+      "link": "Siapa saja yang punya tautan",
+      "linkHint": "Tidak tercantum di mana pun; siapa saja yang punya tautan dapat membukanya",
       "menu": "Dapat dilihat: {value}",
       "privateHint": "Tidak ada orang lain yang dapat melihatnya",
       "public": "Publik",

@@ -12,7 +12,8 @@ export type SourcePostDto = {
   commentsMode: Post["comments_mode"];
   /**
    * public / private, v1.0.75: still only these two, so existing clients keep working — followers-only and
-   * friends-only posts (web only, v1.0.93) report `private` ("not public"). `audience`: the exact value.
+   * friends-only posts (web only, v1.0.93) and link posts (web only, v1.0.94) report `private` ("not public").
+   * `audience`: the exact value.
    */
   visibility: LegacyVisibility;
   audience: Post["visibility"];

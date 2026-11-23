@@ -16,7 +16,7 @@ export type FeedFilter = {
   followerId?: string;
   /**
    * Who is looking at an author's posts (`authorId`): their followers-only / friends-only posts they may see,
-   * and everything when it is the author (db/repos/post-access.ts). Other lists show public posts only.
+   * and everything when it is the author (link posts too: only there). Other lists show public posts only.
    */
   viewerId?: string | null;
 };

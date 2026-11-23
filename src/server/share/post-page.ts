@@ -2,6 +2,7 @@ import { GLOSSARY } from "@/i18n/glossary";
 import { withTitleInText } from "@/server/documents/short-title";
 import { mediaUrlFor } from "@/server/posts/media-url";
 import { postUrl } from "@/server/posts/post-dto";
+import { isOpenToAll } from "@/server/posts/visibility";
 import { renderDocumentHtml } from "@/server/render/document-html";
 import { escapeHtml } from "@/server/render/escape";
 import { shareCard } from "./card";
@@ -25,12 +26,16 @@ import { visibilityNote } from "./visibility-bits";
 
 const meta = (property: string, content: string, attr = "property") => `<meta ${attr}="${property}" content="${escapeHtml(content)}">`;
 
-/** Share-card tags read by Facebook, X, LinkedIn, Telegram, WhatsApp, WeChat, QQ, Weibo … (plan §16.3). */
-function cardHead(ctx: ChromeContext, data: SharePost, url: string): string {
+/**
+ * Share-card tags read by Facebook, X, LinkedIn, Telegram, WhatsApp, WeChat, QQ, Weibo … (plan §16.3).
+ * `listed`: public posts are indexed; link posts keep the card for chat previews but are never indexed
+ * (plan docs/plan/2026-11-23-link-visibility.md §4).
+ */
+function cardHead(ctx: ChromeContext, data: SharePost, url: string, listed: boolean): string {
   const card = shareCard(data.post);
   const desc = card.description || ctx.intl.t("common.tagline");
   return [
-    `<link rel="canonical" href="${escapeHtml(url)}">`,
+    listed ? `<link rel="canonical" href="${escapeHtml(url)}">` : '<meta name="robots" content="noindex">',
     meta("description", desc, "name"),
     meta("og:type", "article"),
     meta("og:site_name", GLOSSARY.brand),
@@ -119,12 +124,12 @@ export function renderPostPage(ctx: ChromeContext, data: SharePost, social: Page
     `${postFoot(ctx, data)}${postActions(ctx, post, social)}</article>` +
     `${commentsSection(ctx, post, social, ctx.path)}${reportDialog(ctx, post.slug)}</main>`;
   const card = shareCard(post);
-  const open = post.visibility === "public";
-  // WeChat's in-app browser picks the first sizeable <img> as the thumbnail. Private posts: no card, never indexed.
+  const open = isOpenToAll(post.visibility);
+  // WeChat's in-app browser picks the first sizeable <img> as the thumbnail. Posts not open to everyone: no card, never indexed.
   const wx = open ? `<div class="ni-wx"><img src="${escapeHtml(card.thumbUrl)}" width="600" height="600" alt=""></div>` : "";
   return renderPage(ctx, {
     title: `${card.title} · ${GLOSSARY.brand}`,
-    head: open ? cardHead(ctx, data, url) : '<meta name="robots" content="noindex">',
+    head: open ? cardHead(ctx, data, url, post.visibility === "public") : '<meta name="robots" content="noindex">',
     main: wx + main,
     // Wide-screen shell only outside mainland China (no site navigation there, plan §4.2).
     side: !!aside,

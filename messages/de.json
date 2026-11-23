@@ -11,7 +11,8 @@
       "resolve_report": "Meldung bearbeitet",
       "restore": "Beitrag wiederhergestellt",
       "restore_comment": "Kommentar wiederhergestellt",
-      "unban": "Sperrung aufgehoben"
+      "unban": "Sperrung aufgehoben",
+      "visibility": "Sichtbarkeit geändert"
     },
     "apps": {
       "edit": "Bearbeiten",
@@ -68,6 +69,7 @@
       "status": "Status",
       "time": "Zeit",
       "type": "Typ",
+      "visibility": "Sichtbarkeit",
       "website": "Website"
     },
     "commentStatus": {
@@ -165,6 +167,7 @@
       "moderator": "Moderator",
       "viewer": "Nur Lesezugriff"
     },
+    "setVisibility": "Sichtbarkeit ändern",
     "source": {
       "api": "Drittanbieter-Apps",
       "other": "Andere Apps",
@@ -494,6 +497,7 @@
       "followersNote": "Nur die Follower des Autors können diesen Beitrag sehen.",
       "friendsNote": "Nur die Freunde des Autors (Personen, die sich gegenseitig mit ihm folgen) können diesen Beitrag sehen.",
       "from": "Aus {app}",
+      "linkNote": "Dieser Beitrag ist nirgends aufgelistet. Nur Personen mit dem Link können ihn sehen.",
       "preparing": {
         "body": "Der Inhalt wird gleich hier erscheinen.",
         "title": "Dieser Beitrag wird vorbereitet"
@@ -552,6 +556,8 @@
       "friends": "Nur Freunde",
       "friendsHint": "Personen, denen du folgst und die dir auch folgen",
       "label": "Wer diesen Beitrag sehen kann",
+      "link": "Alle mit dem Link",
+      "linkHint": "Nirgends aufgelistet; alle mit dem Link können ihn öffnen",
       "menu": "Sichtbar für: {value}",
       "privateHint": "Niemand sonst kann ihn sehen",
       "public": "Öffentlich",

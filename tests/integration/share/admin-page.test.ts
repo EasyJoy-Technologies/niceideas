@@ -146,6 +146,33 @@ describe("admin console", () => {
     await set(adminCookie, { target: "app:nicerecorder", show: "1", website: "https://er.ej-mobile.cn", icon: "/brand/sources/nicerecorder.png" });
   });
 
+  it("changes who can see a post with an audited reason; NiceNote shares tell the backend; removed posts keep theirs", async () => {
+    const share = await shareFromNiceNote(ctx, "admin-author", { version: 1, blocks: [{ type: "text", text: "Admin visibility idea" }] });
+    const list = await (await section(adminCookie, "posts", `?q=${share.slug}`)).text();
+    expect(list).toContain('<input type="hidden" name="action" value="set-visibility">');
+    expect(list).toContain('<option value="public" selected>Public</option>');
+    expect(list).toContain('<option value="link">Anyone with the link</option>');
+    expect(list).toContain('<span class="ad-vis">');
+    const change = (visibility: string, reason = "too personal") => act(adminCookie, { action: "set-visibility", target: share.slug, visibility, reason, back: "/admin/posts" });
+    expect((await change("link", "")).headers.get("location")).toBe("/admin/posts?n=failed");
+    expect((await change("secret")).headers.get("location")).toBe("/admin/posts?n=failed");
+    expect((await change("link")).headers.get("location")).toBe("/admin/posts?n=done");
+    const row = await ctx.db.selectFrom("post").select("visibility").where("id", "=", share.id).executeTakeFirstOrThrow();
+    expect(row.visibility).toBe("link");
+    const audit = await ctx.db.selectFrom("moderation_action").selectAll().where("post_id", "=", share.id).execute();
+    expect(audit.map((a) => [a.action, a.reason, a.detail, a.actor_id])).toEqual([["visibility", "too personal", "public>link", "mod-1"]]);
+    const event = await ctx.db.selectFrom("outbox").select("payload").where("kind", "=", "post_event").where("payload", "@>", JSON.stringify({ postId: share.id, event: "visibility_changed" }) as never).executeTakeFirstOrThrow();
+    expect((event.payload as { details: unknown }).details).toEqual({ visibility: "private", audience: "link" });
+    expect(await (await section(adminCookie, "audit")).text()).toContain(" · Public → Anyone with the link");
+    // Same value: nothing changes, nothing more is audited.
+    expect((await change("link")).headers.get("location")).toBe("/admin/posts?n=done");
+    expect(await ctx.db.selectFrom("moderation_action").select("id").where("post_id", "=", share.id).execute()).toHaveLength(1);
+    // A removed post keeps its setting (restore first).
+    await act(adminCookie, { action: "remove-post", target: share.slug, reason: "spam" });
+    expect((await change("public")).headers.get("location")).toBe("/admin/posts?n=failed");
+    expect((await ctx.db.selectFrom("post").select("visibility").where("id", "=", share.id).executeTakeFirstOrThrow()).visibility).toBe("link");
+  });
+
   it("renders the overview; viewers can read but not act; unknown sections 404", async () => {
     const html = await (await get(adminCookie)).text();
     expect(html).toContain("New posts");

@@ -48,6 +48,8 @@ Berdasarkan hukum privasi Kanada, kami mengandalkan persetujuan Anda, yang Anda 
 
 Profil Anda (handel, nama tampilan, avatar, biografi, tanggal bergabung, jumlah unggahan, pengikut, akun yang diikuti, dan suka yang diterima), unggahan Anda, dan komentar Anda bersifat publik. Siapa pun dapat melihatnya, termasuk orang tanpa akun; mesin pencari dapat mengindeksnya; dan platform lain dapat menampilkan pratinjau tautannya. Nama panggilan pada komentar pengunjung bersifat publik. Kode yang diturunkan dari alamat IP dan pengenal peramban tidak pernah ditampilkan.
 
+Unggahan untuk siapa saja yang punya tautan tidak tercantum di mana pun, tetapi siapa saja yang memiliki tautannya dapat melihatnya, termasuk gambar dan audionya, bahkan tanpa akun, dan platform lain dapat menampilkan pratinjau tautannya.
+
 Unggahan yang Anda batasi untuk pengikut Anda, teman Anda, atau hanya Anda tidak bersifat publik: hanya orang yang Anda pilih yang dapat melihatnya, dan gambar serta audionya tidak dapat diakses secara publik selama tetap demikian.
 
 ## 5. Cookie

@@ -48,6 +48,8 @@ Theo luật quyền riêng tư của Canada, chúng tôi dựa vào sự đồng
 
 Hồ sơ của bạn (tên người dùng, tên hiển thị, ảnh đại diện, phần giới thiệu, ngày tham gia, số lượng bài đăng, người theo dõi, tài khoản đang theo dõi và lượt thích nhận được), các bài đăng của bạn và các bình luận của bạn là công khai. Bất kỳ ai cũng có thể xem, bao gồm những người không có tài khoản; các công cụ tìm kiếm có thể lập chỉ mục chúng; và các nền tảng khác có thể hiển thị bản xem trước liên kết của chúng. Biệt danh trên bình luận của khách truy cập là công khai. Các mã được tạo ra từ địa chỉ IP và mã định danh trình duyệt không bao giờ được hiển thị.
 
+Các bài đăng dành cho bất kỳ ai có liên kết không được liệt kê ở bất kỳ đâu, nhưng ai có liên kết đều xem được, kể cả hình ảnh và âm thanh của chúng, ngay cả khi không có tài khoản, và các nền tảng khác có thể hiển thị bản xem trước liên kết của chúng.
+
 Các bài đăng bạn giới hạn cho người theo dõi, bạn bè hoặc chỉ mình bạn không công khai: chỉ những người bạn đã chọn mới xem được, và hình ảnh cũng như âm thanh của chúng không thể truy cập công khai trong thời gian đó.
 
 ## 5. Cookie

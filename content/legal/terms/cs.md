@@ -1,4 +1,4 @@
-> **Shrnutí.** Vlastníte to, co zveřejňujete, a nesete za to odpovědnost. Příspěvky na niceideas jsou veřejné, pokud nezvolíte, kdo je může vidět (vaši sledující, vaši přátelé nebo jen vy). Nezveřejňujte nic nezákonného nebo škodlivého, ani nic, k čemu nemáte právo. Příspěvek můžete kdykoli smazat; smazané příspěvky jsou trvale odstraněny po 30 dnech. niceideas je zdarma a poskytováno „tak, jak je". Tyto Podmínky se řídí právem provincie Alberta, Kanada. Toto shrnutí slouží pouze pro usnadnění; platí úplné Podmínky uvedené níže.
+> **Shrnutí.** Vlastníte to, co zveřejňujete, a nesete za to odpovědnost. Příspěvky na niceideas jsou veřejné, pokud nezvolíte, kdo je může vidět (kdokoli s odkazem, vaši sledující, vaši přátelé nebo jen vy). Nezveřejňujte nic nezákonného nebo škodlivého, ani nic, k čemu nemáte právo. Příspěvek můžete kdykoli smazat; smazané příspěvky jsou trvale odstraněny po 30 dnech. niceideas je zdarma a poskytováno „tak, jak je". Tyto Podmínky se řídí právem provincie Alberta, Kanada. Toto shrnutí slouží pouze pro usnadnění; platí úplné Podmínky uvedené níže.
 
 ## 1. O těchto Podmínkách
 
@@ -34,7 +34,7 @@ Používáním Služby, včetně prohlížení, lajkování nebo komentování b
 
 4.4 Pro návštěvníky připojující se z Číny na pevnině jsou dostupné pouze jednotlivé stránky sdílených příspěvků a lajky a komentáře k nim; ostatní stránky nejsou dostupné. To odráží způsob, jakým je Služba v současnosti poskytována, a může se změnit.
 
-4.5 U každého svého příspěvku můžete zvolit, kdo ho může vidět, a kdykoli to změnit: všichni (veřejný), jen vaši sledující, jen vaši přátelé (lidé, které sledujete a kteří sledují i vás) nebo jen vy. Příspěvek, který není veřejný, se nezobrazuje na stránce Objevit, ve výsledcích vyhledávání ani v náhledech odkazů a jeho odkaz se otevře jen lidem, které jste zvolili. Sledovat vás může kdokoli, takže kdokoli, kdo vás sleduje, uvidí vaše příspěvky jen pro sledující. Kopie, které si jiní pořídili v době, kdy příspěvek mohli vidět, tím nejsou dotčeny (viz 4.3).
+4.5 U každého svého příspěvku můžete zvolit, kdo ho může vidět, a kdykoli to změnit: všichni (veřejný), kdokoli s odkazem, jen vaši sledující, jen vaši přátelé (lidé, které sledujete a kteří sledují i vás) nebo jen vy. Příspěvek, který není veřejný, se nezobrazuje na stránce Objevit ani ve výsledcích vyhledávání. Příspěvek pro kohokoli s odkazem není uveden ani nikde jinde, ale kdokoli, kdo má jeho odkaz, ho může otevřít, i bez účtu, a odkaz předat dál, a jiné platformy mohou zobrazit jeho náhled. Žádný jiný příspěvek, který není veřejný, nemá náhled odkazu a jeho odkaz se otevře jen lidem, které jste zvolili. Sledovat vás může kdokoli, takže kdokoli, kdo vás sleduje, uvidí vaše příspěvky jen pro sledující. Kopie, které si jiní pořídili v době, kdy příspěvek mohli vidět, tím nejsou dotčeny (viz 4.3).
 
 ## 5. Váš obsah
 

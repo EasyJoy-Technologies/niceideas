@@ -1,4 +1,5 @@
 import { z } from "zod";
+import type { PostVisibility } from "@/server/db/schema";
 import { sourceDocumentSchema } from "@/server/documents/source-schema";
 import { badRequest } from "@/server/http/errors";
 import { parseSourceApp } from "./source-app";
@@ -7,6 +8,8 @@ import { parseSourceApp } from "./source-app";
 const nullableText = (max: number) => z.string().max(max).nullable().optional().transform((v) => v ?? null);
 const syncMode = z.enum(["follow", "frozen"]);
 const commentsMode = z.enum(["open", "signed_in", "closed"]);
+/** Exact visibility (posts/visibility.ts VISIBILITIES; plan docs/plan/2026-11-23-link-visibility.md §6). */
+const audience = z.enum(["public", "link", "followers", "friends", "private"] satisfies [PostVisibility, ...PostVisibility[]]);
 
 /** NiceMatrix user id (Logto `sub`) and the profile data sent with it (§3.2, §10.2). */
 const userId = z.string().min(1).max(200).regex(/^[\x21-\x7e]+$/);
@@ -21,6 +24,8 @@ export const createShareBody = z.object({
   profile: sourceProfile,
   /** Missing or invalid → null (no source app recorded); never rejects the request. */
   sourceApp: z.unknown().optional().transform(parseSourceApp),
+  /** Who may see the new post (v1.0.94); missing → public. A repeated request never changes it. */
+  audience: audience.optional(),
 });
 
 /** POST /web-tickets (§10.2). */
@@ -35,7 +40,13 @@ export const pushContentBody = z.object({
     .transform((v) => v ?? {}),
 });
 
-export const shareSettingsBody = z.object({ syncMode: syncMode.optional(), commentsMode: commentsMode.nullable().optional(), visibility: z.enum(["public", "private"]).optional() });
+/** `audience` (exact, v1.0.94) wins over the legacy `visibility` (public / private) when both are sent. */
+export const shareSettingsBody = z.object({
+  syncMode: syncMode.optional(),
+  commentsMode: commentsMode.nullable().optional(),
+  visibility: z.enum(["public", "private"]).optional(),
+  audience: audience.optional(),
+});
 
 export type CreateShareInput = z.infer<typeof createShareBody>;
 export type PushContentInput = z.infer<typeof pushContentBody>;

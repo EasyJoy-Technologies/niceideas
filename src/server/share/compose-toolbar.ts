@@ -71,7 +71,7 @@ function modeToggle(ctx: ChromeContext): string {
 }
 
 /**
- * Who can see a new post (plan docs/plan/2026-11-10-audience-visibility.md §6): a menu of four radios (works
+ * Who can see a new post (plan docs/plan/2026-11-10-audience-visibility.md §6, docs/plan/2026-11-23-link-visibility.md): a menu of five radios (works
  * without JS), public first and checked. The button shows the checked choice (compose.css, :has()).
  */
 function visibilityPicker(ctx: ChromeContext): string {

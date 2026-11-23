@@ -11,7 +11,8 @@
       "resolve_report": "Ripoti imeshughulikiwa",
       "restore": "Chapisho limerejeshwa",
       "restore_comment": "Maoni yamerejeshwa",
-      "unban": "Marufuku imeondolewa"
+      "unban": "Marufuku imeondolewa",
+      "visibility": "Mwonekano umebadilishwa"
     },
     "apps": {
       "edit": "Hariri",
@@ -68,6 +69,7 @@
       "status": "Hali",
       "time": "Muda",
       "type": "Aina",
+      "visibility": "Mwonekano",
       "website": "Tovuti"
     },
     "commentStatus": {
@@ -165,6 +167,7 @@
       "moderator": "Msimamizi",
       "viewer": "Mwanachama wa kusoma tu"
     },
+    "setVisibility": "Badilisha mwonekano",
     "source": {
       "api": "Programu za wahusika wengine",
       "other": "Programu nyingine",
@@ -494,6 +497,7 @@
       "followersNote": "Ni wafuasi wa mwandishi pekee wanaoweza kuona chapisho hili.",
       "friendsNote": "Ni marafiki wa mwandishi pekee (wanaofuatana na mwandishi) wanaoweza kuona chapisho hili.",
       "from": "Kutoka {app}",
+      "linkNote": "Chapisho hili halionyeshwi kwenye orodha yoyote. Ni wenye kiungo pekee wanaoweza kuliona.",
       "preparing": {
         "body": "Maudhui yataonekana hapa muda mfupi.",
         "title": "Chapisho hili linatayarishwa"
@@ -552,6 +556,8 @@
       "friends": "Marafiki pekee",
       "friendsHint": "Watu unaowafuata ambao pia wanakufuata",
       "label": "Nani anaweza kuona chapisho hili",
+      "link": "Yeyote aliye na kiungo",
+      "linkHint": "Halionyeshwi kwenye orodha yoyote; yeyote aliye na kiungo anaweza kulifungua",
       "menu": "Wanaoweza kuona: {value}",
       "privateHint": "Hakuna mwingine anayeweza kukiona",
       "public": "Hadharani",

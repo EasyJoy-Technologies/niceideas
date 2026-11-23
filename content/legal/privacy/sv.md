@@ -48,6 +48,8 @@ Enligt kanadensisk integritetslagstiftning förlitar vi oss på ditt samtycke, s
 
 Din profil (handtag, visningsnamn, avatar, biografi, anslutningsdatum, antal inlägg, följare, följda konton och mottagna gillanden), dina inlägg och dina kommentarer är offentliga. Alla kan se dem, inklusive personer utan konto; sökmotorer kan indexera dem; och andra plattformar kan visa länkförhandsvisningar av dem. Smeknamnet i en besökares kommentar är offentligt. Koder som härleds från IP-adresser och webbläsaridentifierare visas aldrig.
 
+Inlägg för alla som har länken listas ingenstans, men alla som har länken kan se dem, inklusive deras bilder och ljud, även utan konto, och andra plattformar kan visa länkförhandsvisningar av dem.
+
 Inlägg som du begränsar till dina följare, dina vänner eller bara dig själv är inte offentliga: bara de personer du har valt kan se dem, och deras bilder och ljud är inte offentligt tillgängliga så länge det förblir så.
 
 ## 5. Cookies

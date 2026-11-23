@@ -3,7 +3,6 @@ import type { Post } from "@/server/db/schema";
 import { findPostById, updatePost } from "@/server/db/repos/posts";
 import { ApiError, notFound } from "@/server/http/errors";
 import { setPostVisibility, type VisibilityRuntime } from "@/server/posts/set-visibility";
-import { isAudience } from "@/server/posts/visibility";
 import { unpublishPost } from "@/server/posts/withdraw-post";
 import type { MediaStores } from "@/server/storage/types";
 import type { ShareSettingsInput } from "./requests";
@@ -23,10 +22,15 @@ export function assertShareOpen(post: Post): void {
   if (post.status === "unpublished") throw new ApiError("post.unpublished", 409);
 }
 
+/** Legacy `visibility`: `private` keeps a post that is not public as it is (the app sees it as private already). */
+const legacyTarget = (post: Post, v: ShareSettingsInput["visibility"]) => (v === "private" && post.visibility !== "public" ? undefined : v);
+
 /**
- * PATCH: sync mode / comments mode (`null` = NiceIdeas default, open) / visibility (private = the author
- * only; set-visibility.ts). The backend made the change, so no event goes back. The API knows public / private
- * only (dto.ts): `private` on a followers-only / friends-only post (reported as `private`) keeps it as it is.
+ * PATCH: sync mode / comments mode (`null` = NiceIdeas default, open) / who may see it (set-visibility.ts).
+ * The backend made the change (for the user in NiceNote, or an operator on its admin console), so no event goes
+ * back. `audience` sets the exact value (v1.0.94). The legacy `visibility` knows public / private only (dto.ts):
+ * `private` on a post that is not public (link, followers-only, friends-only: reported as `private`) keeps it as
+ * it is.
  */
 export async function updateShareSettings(rt: VisibilityRuntime, postId: string, input: ShareSettingsInput): Promise<Post> {
   const post = await loadShare(rt.db, postId);
@@ -35,8 +39,8 @@ export async function updateShareSettings(rt: VisibilityRuntime, postId: string,
   if (input.syncMode && input.syncMode !== post.sync_mode) patch.sync_mode = input.syncMode;
   if (input.commentsMode !== undefined && (input.commentsMode ?? "open") !== post.comments_mode) patch.comments_mode = input.commentsMode ?? "open";
   const updated = Object.keys(patch).length ? await updatePost(rt.db, post.id, patch) : post;
-  const to = input.visibility;
-  if (!to || (to === "private" && isAudience(updated.visibility))) return updated;
+  const to = input.audience ?? legacyTarget(updated, input.visibility);
+  if (!to) return updated;
   return (await setPostVisibility(rt, post.id, to)).post;
 }
 

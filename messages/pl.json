@@ -11,7 +11,8 @@
       "resolve_report": "Rozwiązano zgłoszenie",
       "restore": "Przywrócono post",
       "restore_comment": "Przywrócono komentarz",
-      "unban": "Zdjęto blokadę"
+      "unban": "Zdjęto blokadę",
+      "visibility": "Zmieniono widoczność"
     },
     "apps": {
       "edit": "Edytuj",
@@ -68,6 +69,7 @@
       "status": "Status",
       "time": "Czas",
       "type": "Typ",
+      "visibility": "Widoczność",
       "website": "Strona"
     },
     "commentStatus": {
@@ -165,6 +167,7 @@
       "moderator": "Moderator",
       "viewer": "Tylko podgląd"
     },
+    "setVisibility": "Zmień widoczność",
     "source": {
       "api": "Aplikacje zewnętrzne",
       "other": "Inne aplikacje",
@@ -494,6 +497,7 @@
       "followersNote": "Ten wpis widzą tylko obserwujący autora.",
       "friendsNote": "Ten wpis widzą tylko znajomi autora (osoby, które obserwują się z nim nawzajem).",
       "from": "Z aplikacji {app}",
+      "linkNote": "Ten wpis nie jest nigdzie wyświetlany na listach. Widzą go tylko osoby, które mają link.",
       "preparing": {
         "body": "Treść pojawi się tutaj za chwilę.",
         "title": "Przygotowywanie wpisu"
@@ -552,6 +556,8 @@
       "friends": "Tylko znajomi",
       "friendsHint": "Osoby, które obserwujesz i które obserwują ciebie",
       "label": "Kto może zobaczyć ten wpis",
+      "link": "Każdy, kto ma link",
+      "linkHint": "Nigdzie niewidoczny na listach; otworzy go każdy, kto ma link",
       "menu": "Widoczne dla: {value}",
       "privateHint": "Nikt inny go nie zobaczy",
       "public": "Publiczny",

@@ -11,7 +11,8 @@
       "resolve_report": "Rapport löst",
       "restore": "Inlägg återställt",
       "restore_comment": "Kommentar återställd",
-      "unban": "Avstängning hävd"
+      "unban": "Avstängning hävd",
+      "visibility": "Synlighet ändrad"
     },
     "apps": {
       "edit": "Redigera",
@@ -68,6 +69,7 @@
       "status": "Status",
       "time": "Tid",
       "type": "Typ",
+      "visibility": "Synlighet",
       "website": "Webbplats"
     },
     "commentStatus": {
@@ -165,6 +167,7 @@
       "moderator": "Moderator",
       "viewer": "Granskare"
     },
+    "setVisibility": "Ändra synlighet",
     "source": {
       "api": "Tredjepartsappar",
       "other": "Andra appar",
@@ -494,6 +497,7 @@
       "followersNote": "Bara författarens följare kan se inlägget.",
       "friendsNote": "Bara författarens vänner (personer som följer varandra med författaren) kan se inlägget.",
       "from": "Från {app}",
+      "linkNote": "Det här inlägget visas inte i några listor. Bara de som har länken kan se det.",
       "preparing": {
         "body": "Innehållet visas här inom en stund.",
         "title": "Inlägget förbereds"
@@ -552,6 +556,8 @@
       "friends": "Endast vänner",
       "friendsHint": "Personer du följer som också följer dig",
       "label": "Vem som kan se inlägget",
+      "link": "Alla som har länken",
+      "linkHint": "Visas inte i några listor; alla som har länken kan öppna det",
       "menu": "Synligt för: {value}",
       "privateHint": "Ingen annan kan se det",
       "public": "Offentligt",

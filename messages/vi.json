@@ -11,7 +11,8 @@
       "resolve_report": "Đã xử lý báo cáo",
       "restore": "Khôi phục bài viết",
       "restore_comment": "Khôi phục bình luận",
-      "unban": "Đã gỡ cấm"
+      "unban": "Đã gỡ cấm",
+      "visibility": "Đã đổi chế độ hiển thị"
     },
     "apps": {
       "edit": "Sửa",
@@ -68,6 +69,7 @@
       "status": "Trạng thái",
       "time": "Thời gian",
       "type": "Loại",
+      "visibility": "Chế độ hiển thị",
       "website": "Trang web"
     },
     "commentStatus": {
@@ -165,6 +167,7 @@
       "moderator": "Người kiểm duyệt",
       "viewer": "Thành viên chỉ xem"
     },
+    "setVisibility": "Đổi chế độ hiển thị",
     "source": {
       "api": "Ứng dụng bên thứ ba",
       "other": "Ứng dụng khác",
@@ -494,6 +497,7 @@
       "followersNote": "Chỉ người theo dõi tác giả mới xem được bài đăng này.",
       "friendsNote": "Chỉ bạn bè của tác giả (những người theo dõi lẫn nhau với tác giả) mới xem được bài đăng này.",
       "from": "Từ {app}",
+      "linkNote": "Bài đăng này không hiển thị ở danh sách nào. Chỉ người có liên kết mới xem được.",
       "preparing": {
         "body": "Nội dung sẽ xuất hiện ở đây trong chốc lát.",
         "title": "Đang chuẩn bị bài viết này"
@@ -552,6 +556,8 @@
       "friends": "Chỉ bạn bè",
       "friendsHint": "Những người bạn theo dõi và cũng theo dõi bạn",
       "label": "Ai có thể xem bài đăng này",
+      "link": "Bất kỳ ai có liên kết",
+      "linkHint": "Không hiển thị ở danh sách nào; ai có liên kết cũng mở được",
       "menu": "Ai có thể xem: {value}",
       "privateHint": "Không ai khác xem được",
       "public": "Công khai",

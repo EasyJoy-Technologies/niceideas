@@ -11,7 +11,8 @@
       "resolve_report": "Raportare rezolvată",
       "restore": "Postare restaurată",
       "restore_comment": "Comentariu restaurat",
-      "unban": "Interdicție ridicată"
+      "unban": "Interdicție ridicată",
+      "visibility": "Vizibilitate modificată"
     },
     "apps": {
       "edit": "Editează",
@@ -68,6 +69,7 @@
       "status": "Stare",
       "time": "Oră",
       "type": "Tip",
+      "visibility": "Vizibilitate",
       "website": "Site"
     },
     "commentStatus": {
@@ -165,6 +167,7 @@
       "moderator": "Moderator",
       "viewer": "Doar vizualizare"
     },
+    "setVisibility": "Schimbă vizibilitatea",
     "source": {
       "api": "Aplicații terțe",
       "other": "Alte aplicații",
@@ -494,6 +497,7 @@
       "followersNote": "Doar urmăritorii autorului pot vedea această postare.",
       "friendsNote": "Doar prietenii autorului (persoanele care se urmăresc reciproc cu el) pot vedea această postare.",
       "from": "Din {app}",
+      "linkNote": "Această postare nu apare în nicio listă. Doar cei care au linkul o pot vedea.",
       "preparing": {
         "body": "Conținutul va apărea aici imediat.",
         "title": "Postarea se pregătește"
@@ -552,6 +556,8 @@
       "friends": "Doar prieteni",
       "friendsHint": "Persoanele pe care le urmărești și care te urmăresc și ele",
       "label": "Cine poate vedea această postare",
+      "link": "Oricine are linkul",
+      "linkHint": "Nu apare în nicio listă; oricine are linkul o poate deschide",
       "menu": "Vizibilă pentru: {value}",
       "privateHint": "Nimeni altcineva nu o poate vedea",
       "public": "Publică",

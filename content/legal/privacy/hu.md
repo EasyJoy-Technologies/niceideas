@@ -48,6 +48,8 @@ A kanadai adatvédelmi jog szerint az Ön hozzájárulására támaszkodunk, ame
 
 Az Ön profilja (felhasználónév, megjelenítendő név, avatár, bemutatkozás, csatlakozás dátuma, bejegyzések, követők, követett fiókok és kapott kedvelések száma), bejegyzései és hozzászólásai nyilvánosak. Bárki láthatja ezeket, fiók nélküli személyek is; a keresőmotorok indexelhetik; és más platformok megjeleníthetnek linkelőnézeteket ezekről. A látogató hozzászólásán szereplő álnév nyilvános. Az IP-címekből és böngésző-azonosítókból származó kódokat soha nem jelenítjük meg.
 
+A bárkinek, akinél ott a link, szóló bejegyzések sehol sem jelennek meg listában, de bárki, akinél ott a link, láthatja őket a képeikkel és hanganyagaikkal együtt, fiók nélkül is, más platformok pedig linkelőnézetet mutathatnak róluk.
+
 Azok a bejegyzések, amelyeket a követőire, a barátaira vagy csak önmagára korlátoz, nem nyilvánosak: csak az Ön által választott személyek láthatják őket, és képeik, hanganyagaik addig nem érhetők el nyilvánosan, amíg ez így marad.
 
 ## 5. Cookie-k

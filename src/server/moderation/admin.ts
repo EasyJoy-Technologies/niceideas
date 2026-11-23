@@ -1,5 +1,5 @@
 import type { Db } from "@/server/db/client";
-import type { CommentsMode, CommentStatus } from "@/server/db/schema";
+import type { CommentsMode, CommentStatus, PostVisibility } from "@/server/db/schema";
 import { findComment, setCommentStatus } from "@/server/db/repos/comments";
 import { closeReport, deleteBan, recordModeration, upsertBan } from "@/server/db/repos/moderation";
 import { findPostBySlug, lockPost, updatePost } from "@/server/db/repos/posts";
@@ -9,7 +9,8 @@ import { lockAuthor, readAuthorState } from "@/server/accounts/author-gate";
 import { finishPublication, NO_PROJECTION, projectMediaPublic, queueVisibilityCheck, recordPublication } from "@/server/media/publication";
 import { checkMediaVisibility } from "@/server/media/visibility";
 import { queuePostPurge, queueReturningMediaPurge } from "@/server/cdn/purge-queue";
-import { queuePostEvent } from "@/server/nicenote/post-events";
+import { queuePostEvent, queueVisibilityChanged } from "@/server/nicenote/post-events";
+import { setPostVisibility } from "@/server/posts/set-visibility";
 import type { MediaStores } from "@/server/storage/types";
 
 /**
@@ -110,6 +111,20 @@ export async function restorePost(rt: ModerationRuntime, op: Operator, slug: str
   } finally {
     await finishPublication(rt, projection, touched);
   }
+}
+
+/**
+ * Sets who may see a post from the admin console (plan docs/plan/2026-11-23-link-visibility.md §8): the same
+ * change as the author's (posts/set-visibility.ts: media, CDN, `visibility_changed` to the backend), audited
+ * with the old and new value in the same transaction. Removed and deleted posts keep theirs; same value → no-op.
+ */
+export async function setVisibilityAsAdmin(rt: ModerationRuntime, op: Operator, slug: string, visibility: PostVisibility): Promise<void> {
+  const post = await postBySlug(rt.db, slug);
+  if (post.status === "removed" || post.status === "unpublished") throw new ModerationError(`post is ${post.status}`);
+  await setPostVisibility(rt, post.id, visibility, async (trx, changed, from) => {
+    await queueVisibilityChanged(trx, changed);
+    await recordModeration(trx, { action: "visibility", actorId: op.actorId, reason: op.reason, postId: post.id, detail: `${from}>${visibility}` });
+  });
 }
 
 export async function closeReportAs(db: Db, op: Operator, reportId: string, outcome: "resolved" | "dismissed"): Promise<void> {

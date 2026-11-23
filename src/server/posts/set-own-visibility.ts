@@ -1,8 +1,6 @@
-import type { Db } from "@/server/db/client";
 import type { Post, PostVisibility } from "@/server/db/schema";
 import { findPostBySlug } from "@/server/db/repos/posts";
-import { visibilityFields } from "@/server/nicenote/dto";
-import { queuePostEvent } from "@/server/nicenote/post-events";
+import { queueVisibilityChanged } from "@/server/nicenote/post-events";
 import { setPostVisibility, type VisibilityRuntime } from "./set-visibility";
 import { SLUG_PATTERN } from "./slug";
 
@@ -15,6 +13,5 @@ export async function setOwnPostVisibility(rt: VisibilityRuntime, userId: string
   if (!SLUG_PATTERN.test(slug)) return null;
   const post = await findPostBySlug(rt.db, slug);
   if (!post || post.author_id !== userId) return null;
-  const notifyBackend = (trx: Db, changed: Post) => queuePostEvent(trx, changed, "visibility_changed", visibilityFields(changed));
-  return (await setPostVisibility(rt, post.id, visibility, notifyBackend)).post;
+  return (await setPostVisibility(rt, post.id, visibility, queueVisibilityChanged)).post;
 }

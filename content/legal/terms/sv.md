@@ -1,4 +1,4 @@
-> **Sammanfattning.** Du äger det du publicerar och ansvarar för det. Inlägg på niceideas är offentliga om du inte väljer vem som kan se dem (dina följare, dina vänner eller bara du). Publicera inget olagligt eller skadligt, eller något du inte har rätt att dela. Du kan ta bort ett inlägg när som helst; borttagna inlägg raderas permanent efter 30 dagar. niceideas är kostnadsfritt och tillhandahålls i befintligt skick. Dessa Villkor regleras av lagarna i Alberta, Kanada. Denna sammanfattning är enbart för bekvämlighet; de fullständiga Villkoren nedan gäller.
+> **Sammanfattning.** Du äger det du publicerar och ansvarar för det. Inlägg på niceideas är offentliga om du inte väljer vem som kan se dem (alla som har länken, dina följare, dina vänner eller bara du). Publicera inget olagligt eller skadligt, eller något du inte har rätt att dela. Du kan ta bort ett inlägg när som helst; borttagna inlägg raderas permanent efter 30 dagar. niceideas är kostnadsfritt och tillhandahålls i befintligt skick. Dessa Villkor regleras av lagarna i Alberta, Kanada. Denna sammanfattning är enbart för bekvämlighet; de fullständiga Villkoren nedan gäller.
 
 ## 1. Om dessa Villkor
 
@@ -34,7 +34,7 @@ Genom att använda Tjänsten, inklusive att visa, gilla eller kommentera utan ko
 
 4.4 För besökare vars anslutning kommer från Fastlandskina är endast enskilda delade inläggssidor samt gilla-markeringar och kommentarer på dem tillgängliga; andra sidor är det inte. Detta speglar hur Tjänsten för närvarande erbjuds och kan ändras.
 
-4.5 Du kan välja vem som kan se vart och ett av dina inlägg och ändra det när som helst: alla (offentligt), endast dina följare, endast dina vänner (personer du följer som också följer dig) eller bara du. Ett inlägg som inte är offentligt visas inte på sidan Upptäck, i sökresultat eller i länkförhandsvisningar, och dess länk öppnas bara för de personer du har valt. Vem som helst kan följa dig, så alla som följer dig kan se dina inlägg för endast följare. Kopior som andra gjort medan de kunde se ett inlägg påverkas inte (se 4.3).
+4.5 Du kan välja vem som kan se vart och ett av dina inlägg och ändra det när som helst: alla (offentligt), alla som har länken, endast dina följare, endast dina vänner (personer du följer som också följer dig) eller bara du. Ett inlägg som inte är offentligt visas inte på sidan Upptäck eller i sökresultat. Ett inlägg för alla som har länken listas inte heller någon annanstans, men alla som har dess länk kan öppna det, även utan konto, och skicka länken vidare, och andra plattformar kan visa en förhandsvisning av det. Alla andra inlägg som inte är offentliga saknar länkförhandsvisning, och deras länk öppnas bara för de personer du har valt. Vem som helst kan följa dig, så alla som följer dig kan se dina inlägg för endast följare. Kopior som andra gjort medan de kunde se ett inlägg påverkas inte (se 4.3).
 
 ## 5. Ditt innehåll
 

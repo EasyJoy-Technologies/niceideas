@@ -48,6 +48,8 @@ Conforme a la legislación canadiense de privacidad, nos basamos en su consentim
 
 Su perfil (identificador, nombre para mostrar, avatar, biografía, fecha de registro, número de publicaciones, seguidores, cuentas seguidas y "me gusta" recibidos), sus publicaciones y sus comentarios son públicos. Cualquier persona puede verlos, incluidas las personas sin cuenta; los motores de búsqueda pueden indexarlos; y otras plataformas pueden mostrar vistas previas de enlaces de ellos. El apodo en el comentario de un visitante es público. Los códigos derivados de direcciones IP e identificadores de navegador nunca se muestran.
 
+Las publicaciones para cualquiera con el enlace no aparecen en ninguna lista, pero cualquier persona que tenga el enlace puede verlas, incluidas sus imágenes y audios, incluso sin cuenta, y otras plataformas pueden mostrar vistas previas de enlaces de ellas.
+
 Las publicaciones que limite a sus seguidores, a sus amigos o solo a usted no son públicas: solo las personas que usted eligió pueden verlas, y sus imágenes y audios no son accesibles públicamente mientras sigan así.
 
 ## 5. Cookies

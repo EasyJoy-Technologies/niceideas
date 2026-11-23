@@ -4,13 +4,15 @@ import type { ChromeContext } from "./chrome";
 import { icon, type IconName } from "./icons";
 
 /**
- * How a post's visibility shows on pages (plan docs/plan/2026-11-10-audience-visibility.md): one icon and one
- * label per value, used by the compose picker, the author's menu, feed-card marks and the post-page note.
+ * How a post's visibility shows on pages (plans docs/plan/2026-11-10-audience-visibility.md,
+ * docs/plan/2026-11-23-link-visibility.md): one icon and one label per value, used by the compose picker, the
+ * author's menu, feed-card marks, the post-page note and the admin posts list.
  */
-export const VISIBILITY_ICONS: Record<PostVisibility, IconName> = { public: "globe", followers: "users", friends: "userCheck", private: "lock" };
+export const VISIBILITY_ICONS: Record<PostVisibility, IconName> = { public: "globe", link: "link", followers: "users", friends: "userCheck", private: "lock" };
 
 const LABEL_KEYS: Record<PostVisibility, string> = {
   public: "share.visibility.public",
+  link: "share.visibility.link",
   followers: "share.visibility.followers",
   friends: "share.visibility.friends",
   private: "share.post.private",
@@ -18,12 +20,14 @@ const LABEL_KEYS: Record<PostVisibility, string> = {
 
 const HINT_KEYS: Record<PostVisibility, string> = {
   public: "share.visibility.publicHint",
+  link: "share.visibility.linkHint",
   followers: "share.visibility.followersHint",
   friends: "share.visibility.friendsHint",
   private: "share.visibility.privateHint",
 };
 
 const NOTE_KEYS: Partial<Record<PostVisibility, string>> = {
+  link: "share.post.linkNote",
   followers: "share.post.followersNote",
   friends: "share.post.friendsNote",
   private: "share.post.privateNote",

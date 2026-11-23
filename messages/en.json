@@ -11,7 +11,8 @@
       "resolve_report": "Resolved report",
       "restore": "Restored post",
       "restore_comment": "Restored comment",
-      "unban": "Lifted ban"
+      "unban": "Lifted ban",
+      "visibility": "Changed visibility"
     },
     "apps": {
       "edit": "Edit",
@@ -68,6 +69,7 @@
       "status": "Status",
       "time": "Time",
       "type": "Type",
+      "visibility": "Visibility",
       "website": "Website"
     },
     "commentStatus": {
@@ -165,6 +167,7 @@
       "moderator": "Moderator",
       "viewer": "Viewer"
     },
+    "setVisibility": "Change visibility",
     "source": {
       "api": "Third-party apps",
       "other": "Other apps",
@@ -494,6 +497,7 @@
       "followersNote": "Only the author's followers can see this post.",
       "friendsNote": "Only the author's friends (people who follow each other with the author) can see this post.",
       "from": "From {app}",
+      "linkNote": "This post isn't listed anywhere. Only people with the link can see it.",
       "preparing": {
         "body": "The content will appear here in a moment.",
         "title": "Getting this post ready"
@@ -552,6 +556,8 @@
       "friends": "Friends only",
       "friendsHint": "People you follow who also follow you",
       "label": "Who can see this post",
+      "link": "Anyone with the link",
+      "linkHint": "Not listed anywhere; anyone with the link can open it",
       "menu": "Who can see: {value}",
       "privateHint": "Nobody else can see it",
       "public": "Public",

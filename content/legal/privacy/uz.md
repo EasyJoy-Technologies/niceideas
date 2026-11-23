@@ -48,6 +48,8 @@ Kanada maxfiylik qonuniga ko'ra, biz ushbu siyosatni o'qiganingizdan keyin Xizma
 
 Profilingiz (taxallus, ko'rsatiladigan ism, avatar, bio, qo'shilgan sana, postlar, kuzatuvchilar, kuzatilgan hisoblar va olingan layklar soni), postlaringiz va izohlaringiz ommaviy hisoblanadi. Hisobsiz odamlar ham kiradi, ularni har kim ko'rishi mumkin; qidiruv tizimlari ularni indekslashi mumkin; va boshqa platformalar ularning havola ko'rinishlarini ko'rsatishi mumkin. Tashrif buyuruvchining izohidagi taxallus ommaviy hisoblanadi. IP manzillari va brauzer identifikatorlaridan olingan kodlar hech qachon ko'rsatilmaydi.
 
+Havolasi bor har kim uchun postlar hech qayerda ro'yxatda ko'rinmaydi, lekin havolasi bor har qanday kishi ularni rasmlari va audiolari bilan birga, hisobsiz ham ko'ra oladi, boshqa platformalar esa ularning havola ko'rinishlarini ko'rsatishi mumkin.
+
 Obunachilaringiz, do'stlaringiz yoki faqat o'zingiz bilan cheklagan postlaringiz ommaviy emas: ularni faqat siz tanlagan kishilar ko'ra oladi va shunday qolar ekan, ularning rasmlari va audiolari ommaga ochiq bo'lmaydi.
 
 ## 5. Cookie'lar

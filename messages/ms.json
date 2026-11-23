@@ -11,7 +11,8 @@
       "resolve_report": "Laporan diselesaikan",
       "restore": "Pulihkan hantaran",
       "restore_comment": "Pulihkan komen",
-      "unban": "Sekatan dibuka"
+      "unban": "Sekatan dibuka",
+      "visibility": "Keterlihatan diubah"
     },
     "apps": {
       "edit": "Sunting",
@@ -68,6 +69,7 @@
       "status": "Status",
       "time": "Masa",
       "type": "Jenis",
+      "visibility": "Keterlihatan",
       "website": "Laman web"
     },
     "commentStatus": {
@@ -165,6 +167,7 @@
       "moderator": "Moderator",
       "viewer": "Ahli baca sahaja"
     },
+    "setVisibility": "Tukar keterlihatan",
     "source": {
       "api": "Aplikasi pihak ketiga",
       "other": "Aplikasi lain",
@@ -494,6 +497,7 @@
       "followersNote": "Hanya pengikut penulis boleh melihat siaran ini.",
       "friendsNote": "Hanya rakan penulis (orang yang saling mengikuti dengan penulis) boleh melihat siaran ini.",
       "from": "Daripada {app}",
+      "linkNote": "Siaran ini tidak disenaraikan di mana-mana. Hanya orang yang ada pautan boleh melihatnya.",
       "preparing": {
         "body": "Kandungan akan dipaparkan di sini sebentar lagi.",
         "title": "Menyediakan siaran ini"
@@ -552,6 +556,8 @@
       "friends": "Rakan sahaja",
       "friendsHint": "Orang yang anda ikuti dan turut mengikuti anda",
       "label": "Siapa yang boleh melihat siaran ini",
+      "link": "Sesiapa yang ada pautan",
+      "linkHint": "Tidak disenaraikan di mana-mana; sesiapa yang ada pautan boleh membukanya",
       "menu": "Boleh dilihat: {value}",
       "privateHint": "Tiada orang lain boleh melihatnya",
       "public": "Awam",

@@ -11,7 +11,8 @@
       "resolve_report": "Denúncia resolvida",
       "restore": "Publicação restaurada",
       "restore_comment": "Comentário restaurado",
-      "unban": "Banimento removido"
+      "unban": "Banimento removido",
+      "visibility": "Visibilidade alterada"
     },
     "apps": {
       "edit": "Editar",
@@ -68,6 +69,7 @@
       "status": "Status",
       "time": "Hora",
       "type": "Tipo",
+      "visibility": "Visibilidade",
       "website": "Site"
     },
     "commentStatus": {
@@ -165,6 +167,7 @@
       "moderator": "Moderador",
       "viewer": "Somente leitura"
     },
+    "setVisibility": "Alterar visibilidade",
     "source": {
       "api": "Aplicativos de terceiros",
       "other": "Outros aplicativos",
@@ -494,6 +497,7 @@
       "followersNote": "Só os seguidores do autor podem ver esta publicação.",
       "friendsNote": "Só os amigos do autor (pessoas que se seguem mutuamente com ele) podem ver esta publicação.",
       "from": "Via {app}",
+      "linkNote": "Esta publicação não aparece em nenhuma lista. Só quem tem o link pode vê-la.",
       "preparing": {
         "body": "O conteúdo vai aparecer aqui em um instante.",
         "title": "Preparando esta publicação"
@@ -552,6 +556,8 @@
       "friends": "Só amigos",
       "friendsHint": "Pessoas que você segue e que também seguem você",
       "label": "Quem pode ver esta publicação",
+      "link": "Qualquer pessoa com o link",
+      "linkHint": "Não aparece em nenhuma lista; qualquer pessoa com o link pode abri-la",
       "menu": "Visível para: {value}",
       "privateHint": "Ninguém mais pode ver",
       "public": "Pública",

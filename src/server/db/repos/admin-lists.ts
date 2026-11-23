@@ -7,7 +7,7 @@ import { containsPattern } from "./feed";
 export type Page<T> = { rows: T[]; more: boolean };
 const paged = <T>(rows: T[], limit: number): Page<T> => ({ rows: rows.slice(0, limit), more: rows.length > limit });
 
-export type AdminPostRow = Pick<Post, "id" | "slug" | "title" | "summary" | "kind" | "source" | "source_app_key" | "source_app_names" | "status" | "like_count" | "comment_count" | "published_at"> & { handle: string };
+export type AdminPostRow = Pick<Post, "id" | "slug" | "title" | "summary" | "kind" | "source" | "source_app_key" | "source_app_names" | "status" | "visibility" | "like_count" | "comment_count" | "published_at"> & { handle: string };
 
 /** Source filter: one app (product group key), app shares of none of `known`, web posts, third-party apps. */
 export type AdminPostSource = { kind: "app"; key: string } | { kind: "otherApp"; known: readonly string[] } | { kind: "web" } | { kind: "api" };
@@ -17,7 +17,7 @@ export async function listAdminPosts(db: Db, f: { status: PostStatus | null; sou
   let q = db
     .selectFrom("post as p")
     .innerJoin("profile as pr", "pr.user_id", "p.author_id")
-    .select(["p.id", "p.slug", "p.title", "p.summary", "p.kind", "p.source", "p.source_app_key", "p.source_app_names", "p.status", "p.like_count", "p.comment_count", "p.published_at", "pr.handle"]);
+    .select(["p.id", "p.slug", "p.title", "p.summary", "p.kind", "p.source", "p.source_app_key", "p.source_app_names", "p.status", "p.visibility", "p.like_count", "p.comment_count", "p.published_at", "pr.handle"]);
   if (f.status) q = q.where("p.status", "=", f.status);
   const s = f.source;
   if (s?.kind === "app") q = q.where("p.source_app_key", "=", s.key);

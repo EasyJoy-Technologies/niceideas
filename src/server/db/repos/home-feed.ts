@@ -10,7 +10,7 @@ import { visibleTo } from "./post-access";
  * newest repost), so the keyset cursor is on that time. Each account's newest `limit` posts and reposts
  * are read through post_author_published_idx / post_repost_user_recent_idx and merged, so the cost depends
  * on the number of followed accounts, not on how rare their posts are in the global timeline.
- * Validity (live, seen by the user — public, or followers-only / friends-only they may see, own private ones
+ * Validity (live, seen by the user — public, or followers-only / friends-only they may see, own private and link ones
  * excepted; post-access.ts — author active, tab kind) is checked inside the per-account reads, so a page never
  * passes over a valid item hidden behind invalid ones. Reposts are of public posts only.
  */

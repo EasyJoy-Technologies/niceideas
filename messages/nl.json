@@ -11,7 +11,8 @@
       "resolve_report": "Melding opgelost",
       "restore": "Bericht hersteld",
       "restore_comment": "Reactie hersteld",
-      "unban": "Verbanning opgeheven"
+      "unban": "Verbanning opgeheven",
+      "visibility": "Zichtbaarheid gewijzigd"
     },
     "apps": {
       "edit": "Bewerken",
@@ -68,6 +69,7 @@
       "status": "Status",
       "time": "Tijd",
       "type": "Type",
+      "visibility": "Zichtbaarheid",
       "website": "Website"
     },
     "commentStatus": {
@@ -165,6 +167,7 @@
       "moderator": "Moderator",
       "viewer": "Alleen-lezen"
     },
+    "setVisibility": "Zichtbaarheid wijzigen",
     "source": {
       "api": "Apps van derden",
       "other": "Andere apps",
@@ -494,6 +497,7 @@
       "followersNote": "Alleen volgers van de auteur kunnen dit bericht zien.",
       "friendsNote": "Alleen vrienden van de auteur (mensen die elkaar wederzijds volgen) kunnen dit bericht zien.",
       "from": "Via {app}",
+      "linkNote": "Dit bericht wordt nergens vermeld. Alleen mensen met de link kunnen het zien.",
       "preparing": {
         "body": "De inhoud verschijnt hier zo.",
         "title": "Dit bericht wordt voorbereid"
@@ -552,6 +556,8 @@
       "friends": "Alleen vrienden",
       "friendsHint": "Mensen die je volgt en die jou ook volgen",
       "label": "Wie dit bericht kan zien",
+      "link": "Iedereen met de link",
+      "linkHint": "Nergens vermeld; iedereen met de link kan het openen",
       "menu": "Zichtbaar voor: {value}",
       "privateHint": "Niemand anders kan het zien",
       "public": "Openbaar",

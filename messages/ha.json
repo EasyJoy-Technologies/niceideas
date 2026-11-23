@@ -11,7 +11,8 @@
       "resolve_report": "An warware rahoto",
       "restore": "An dawo da saƙon",
       "restore_comment": "An dawo da sharhi",
-      "unban": "An cire hani"
+      "unban": "An cire hani",
+      "visibility": "An canza ganuwa"
     },
     "apps": {
       "edit": "Gyara",
@@ -68,6 +69,7 @@
       "status": "Matsayi",
       "time": "Lokaci",
       "type": "Nauʼi",
+      "visibility": "Ganuwa",
       "website": "Shafin yanar gizo"
     },
     "commentStatus": {
@@ -165,6 +167,7 @@
       "moderator": "Mai Kulawa",
       "viewer": "Memba mai karantawa kawai"
     },
+    "setVisibility": "Canza ganuwa",
     "source": {
       "api": "Manhajojin wasu kamfani",
       "other": "Wasu manhajoji",
@@ -494,6 +497,7 @@
       "followersNote": "Mabiya marubucin ne kawai za su iya ganin wannan rubutu.",
       "friendsNote": "Abokan marubucin ne kawai (waɗanda ke bin juna da marubucin) za su iya ganin wannan rubutu.",
       "from": "Daga {app}",
+      "linkNote": "Ba a jera wannan rubutu a ko'ina ba. Waɗanda ke da hanyar haɗin ne kawai za su iya ganinsa.",
       "preparing": {
         "body": "Abun ciki zai bayyana a nan cikin ɗan lokaci.",
         "title": "Ana shirya wannan rubutun"
@@ -552,6 +556,8 @@
       "friends": "Abokai kawai",
       "friendsHint": "Mutanen da kake bi kuma suke bin ka",
       "label": "Wa zai iya ganin wannan rubutu",
+      "link": "Duk wanda ke da hanyar haɗin",
+      "linkHint": "Ba a jera shi a ko'ina ba; duk wanda ke da hanyar haɗin zai iya buɗe shi",
       "menu": "Masu iya gani: {value}",
       "privateHint": "Babu wani da zai iya gani",
       "public": "Na jamaʼa",

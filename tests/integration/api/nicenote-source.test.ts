@@ -94,6 +94,12 @@ describe("NiceNote source API: share lifecycle", () => {
       expect(res.status).toBe(201);
       expect(await appOf(res.body.post.id)).toEqual({ source_app_key: null, source_app_names: null });
     }
+    // Who may see it from the start (v1.0.94): missing → public; a repeated request never changes it; unknown → 400.
+    expect((await json(await create(share("app-user", {})))).body.post).toMatchObject({ visibility: "public", audience: "public" });
+    const lk = share("app-user", { audience: "link" });
+    expect((await json(await create(lk))).body.post).toMatchObject({ visibility: "private", audience: "link" });
+    expect((await json(await create({ ...lk, audience: "public" }))).body.post).toMatchObject({ audience: "link" });
+    expect((await json(await create(share("app-user", { audience: "everyone" })))).status).toBe(400);
     // A new product group is registered (badge off); later names refresh the registry, settings are kept.
     await create(share("app-user", { sourceApp: { key: "nicenew", names: { en: "NiceNew" } } }));
     await create(share("app-user", { sourceApp: { key: "nicenew", names: { en: "NiceNew 2", "zh-Hans": "新" } } }));
@@ -173,6 +179,16 @@ describe("NiceNote source API: share lifecycle", () => {
     const kept = await json(await PATCH(signed("PATCH", `/posts/${post.id}`, { visibility: "private", syncMode: "frozen" }), params({ id: post.id })));
     expect(kept.body.post).toMatchObject({ visibility: "private", audience: "followers" });
     expect((await json(await PATCH(signed("PATCH", `/posts/${post.id}`, { visibility: "public" }), params({ id: post.id })))).body.post).toMatchObject({ visibility: "public", audience: "public" });
+    expect(await ctx.db.selectFrom("outbox").select("id").where("kind", "=", "post_event").where("payload", "@>", JSON.stringify({ postId: post.id, event: "visibility_changed" }) as never).executeTakeFirst()).toBeUndefined();
+    // Anyone with the link (v1.0.94): `audience` sets the exact value (wins over `visibility`), e.g. from the
+    // backend's admin console; reported as private; `private` keeps it; the page opens for everyone.
+    const linked = await json(await PATCH(signed("PATCH", `/posts/${post.id}`, { audience: "link", visibility: "public" }), params({ id: post.id })));
+    expect(linked.body.post).toMatchObject({ visibility: "private", audience: "link" });
+    expect((await page(slug)).status).toBe(200);
+    expect((await json(await PATCH(signed("PATCH", `/posts/${post.id}`, { visibility: "private" }), params({ id: post.id })))).body.post).toMatchObject({ audience: "link" });
+    expect((await json(await PATCH(signed("PATCH", `/posts/${post.id}`, { audience: "friends" }), params({ id: post.id })))).body.post).toMatchObject({ visibility: "private", audience: "friends" });
+    expect((await json(await PATCH(signed("PATCH", `/posts/${post.id}`, { audience: "everyone" }), params({ id: post.id })))).status).toBe(400);
+    expect((await json(await PATCH(signed("PATCH", `/posts/${post.id}`, { audience: "public" }), params({ id: post.id })))).body.post).toMatchObject({ visibility: "public", audience: "public" });
     expect(await ctx.db.selectFrom("outbox").select("id").where("kind", "=", "post_event").where("payload", "@>", JSON.stringify({ postId: post.id, event: "visibility_changed" }) as never).executeTakeFirst()).toBeUndefined();
     const web = await publishAs(ctx, "nn-user", { version: 1, blocks: [{ type: "text", text: "web post" }] });
     expect((await GET(signed("GET", `/posts/${web.id}`), params({ id: web.id }))).status).toBe(404);

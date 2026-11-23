@@ -19,7 +19,7 @@ export type PostStatus = "preparing" | "active" | "unpublished" | "removed" | "a
  * Who may see a post (independent of `status`; posts/visibility.ts): everyone, the author's followers, the author's
  * friends (mutual follows), or its author only. Only public posts are listed publicly and have public media.
  */
-export type PostVisibility = "public" | "followers" | "friends" | "private";
+export type PostVisibility = "public" | "link" | "followers" | "friends" | "private";
 /** `nicenote`: shared through the NiceMatrix backend; `nicenote_intl` / `nicenote_cn`: legacy client-token posts. */
 export type PostSource = "nicenote" | "nicenote_intl" | "nicenote_cn" | "web" | `api:${string}`;
 export type ShareRegion = "intl" | "cn";
@@ -164,7 +164,7 @@ export interface ReportTable {
 
 export type ModerationActionKind =
   | "remove" | "restore" | "hide_comment" | "restore_comment" | "delete_comment"
-  | "ban" | "unban" | "comments_mode" | "resolve_report" | "dismiss_report" | "app_settings";
+  | "ban" | "unban" | "comments_mode" | "resolve_report" | "dismiss_report" | "app_settings" | "visibility";
 
 export interface ModerationActionTable {
   id: Generated<string>;

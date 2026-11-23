@@ -25,6 +25,7 @@ import * as m0023 from "./0023_bookmarks";
 import * as m0024 from "./0024_reposts";
 import * as m0025 from "./0025_source_apps";
 import * as m0026 from "./0026_post_audience";
+import * as m0027 from "./0027_post_link_visibility";
 
 /**
  * Static registry (bundler-friendly; no filesystem scanning at runtime).
@@ -57,6 +58,7 @@ const MIGRATIONS: Record<string, Migration> = {
   "0024_reposts": m0024,
   "0025_source_apps": m0025,
   "0026_post_audience": m0026,
+  "0027_post_link_visibility": m0027,
 };
 
 export const migrationProvider: MigrationProvider = {

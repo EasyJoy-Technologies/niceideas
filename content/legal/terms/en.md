@@ -1,4 +1,4 @@
-> **Summary.** You own what you post, and you are responsible for it. Posts on niceideas are public unless you choose who can see them (your followers, your friends or only you). Do not post anything illegal or harmful, or anything you do not have the right to share. You can delete a post at any time; deleted posts are permanently removed after 30 days. niceideas is free and provided as is. These Terms are governed by the laws of Alberta, Canada. This summary is for convenience only; the full Terms below apply.
+> **Summary.** You own what you post, and you are responsible for it. Posts on niceideas are public unless you choose who can see them (anyone with the link, your followers, your friends or only you). Do not post anything illegal or harmful, or anything you do not have the right to share. You can delete a post at any time; deleted posts are permanently removed after 30 days. niceideas is free and provided as is. These Terms are governed by the laws of Alberta, Canada. This summary is for convenience only; the full Terms below apply.
 
 ## 1. About these Terms
 
@@ -34,7 +34,7 @@ By using the Service, including viewing, liking or commenting without an account
 
 4.4 For visitors whose connection comes from mainland China, only individual shared post pages and the likes and comments on them are available; other pages are not. This reflects how the Service is currently offered and may change.
 
-4.5 You can choose who can see each of your posts and change it at any time: everyone (public), your followers only, your friends only (people you follow who also follow you), or only you. A post that is not public does not appear on the Discover page, in search results or in link previews, and its link opens only for the people you chose. Anyone can follow you, so anyone who follows you can see your followers-only posts. Copies others made while they could see a post are not affected (see 4.3).
+4.5 You can choose who can see each of your posts and change it at any time: everyone (public), anyone with the link, your followers only, your friends only (people you follow who also follow you), or only you. A post that is not public does not appear on the Discover page or in search results. A post for anyone with the link is not listed anywhere else either, but anyone who has its link can open it, even without an account, and pass the link on, and other platforms may show a preview of it. Any other post that is not public has no link preview, and its link opens only for the people you chose. Anyone can follow you, so anyone who follows you can see your followers-only posts. Copies others made while they could see a post are not affected (see 4.3).
 
 ## 5. Your content
 

@@ -58,7 +58,7 @@ export async function adminActionRoute(request: Request): Promise<Response> {
   try {
     const cfg = getConfig();
     const rt = { db, stores: getMediaStores(), cacheControl: cfg.MEDIA_CACHE_CONTROL, retentionDays: cfg.POST_RETENTION_DAYS };
-    const ok = await runAdminAction(rt, viewer!.user_id, { action, target: String(form.get("target") ?? ""), reason: String(form.get("reason") ?? ""), ban: banOption(form) });
+    const ok = await runAdminAction(rt, viewer!.user_id, { action, target: String(form.get("target") ?? ""), reason: String(form.get("reason") ?? ""), ban: banOption(form), visibility: String(form.get("visibility") ?? "") });
     console.info(JSON.stringify({ event: "admin_action", action, ok }));
     return to(ok ? "done" : "failed");
   } catch (err) {

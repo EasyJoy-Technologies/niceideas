@@ -116,6 +116,20 @@ Plan `docs/plan/2026-10-26-app-sign-in-ticket.md` (Xianglin 2026-10-26 21:47, in
     `visibility_changed` (`details.visibility` + `details.audience`). `PATCH` still accepts `public | private`:
     `private` on a followers-only / friends-only post keeps it as it is (the app already sees it as private), `public`
     makes it public. Their media stay out of the public store, like private posts.
+  - **Anyone with the link + exact `audience` in requests** (v1.0.94; plan `docs/plan/2026-11-23-link-visibility.md`):
+    a fifth value `link`: the page, media and share card open for anyone with the link, signed in or not (chat
+    previews show the card; never indexed), but the post is listed nowhere except on its author's own profile
+    (not on timelines, Discover, search or other people's view of the profile); no reposts or quotes. Reported as
+    `visibility: "private"` ("not public") with `audience: "link"`. Its media stay out of the public store and the
+    CDN (served through `/p/{slug}/media/{key}` to everyone, `Cache-Control: private`).
+    - `PATCH /posts/{id}` also accepts `audience: "public" | "link" | "followers" | "friends" | "private"`, which sets
+      the exact value and wins over `visibility` when both are sent (for the user in NiceNote, or an operator on the
+      backend's admin console). Old clients keep sending `visibility` only: `private` on any post that is not public
+      keeps it as it is. Unknown values → 400 `request.invalid`. No event goes back.
+    - `POST /posts` (create) also accepts `audience` (missing → `public`), so a share can start limited; a repeated
+      request for the same share id never changes it.
+    - A change made on NiceIdeas — by the author on the web, or by a NiceIdeas admin (`/admin/posts`, audited) —
+      sends `visibility_changed` with `details.visibility` + `details.audience`.
 - **Events to the backend** (`outbox`, delivered by the worker, signed, `X-NM-Service: niceideas`; retried after 1 min,
   5 min, 30 min, then hourly for 24 h; 400 / 404 / 409 / 410 / 413 / 422 are not retried): `user_registered` on first
   profile (existing users were queued by migration 0014); post events `unpublished` (author deleted on the web),

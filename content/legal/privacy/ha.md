@@ -48,6 +48,8 @@ Mutane ne suke yanke shawara kan abun ciki da asusu. Iyakokin kima na injina kaw
 
 Bayanin martabarka (sunan amfani, sunan nuni, hoto, bayanin taƙaitacce, ranar shiga, yawan saƙonni, masu bibiya, asusun da kake bi da sonsu da ka samu), saƙonninka da sharhinka na jama'a ne. Kowa zai iya ganin su, hade da mutane marasa asusu; injunan bincike na iya jera su; kuma wasu dandamali na iya nuna kallon hanyoyin haɗinsu. Laƙabin da ke kan sharhin baƙo na jama'a ne. Lambobin da suka fito daga adireshin IP da masu gano injin bincike ba a nuna su ko kaɗan.
 
+Saƙonnin duk wanda ke da hanyar haɗin ba a jera su a ko'ina ba, amma duk wanda ke da hanyar haɗin zai iya ganinsu, har da hotunansu da sautinsu, ko da ba shi da asusu, kuma wasu dandamali na iya nuna kallon hanyar haɗinsu.
+
 Saƙonnin da ka taƙaita ga mabiyanka, abokanka ko kai kaɗai ba na jama'a ba ne: mutanen da ka zaɓa ne kawai za su iya ganinsu, kuma hotunansu da sautinsu ba sa samuwa ga jama'a muddin suna haka.
 
 ## 5. Kukis

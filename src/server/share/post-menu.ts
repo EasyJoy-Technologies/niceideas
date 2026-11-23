@@ -11,7 +11,7 @@ import { VISIBILITY_ICONS, visibilityLabel } from "./visibility-bits";
 export const isOwnPost = (ctx: ChromeContext, post: Pick<Post, "author_id">) => !!ctx.viewer && ctx.viewer.user_id === post.author_id;
 
 /**
- * "Who can see: …" (plan docs/plan/2026-11-10-audience-visibility.md §6): opens the four choices, the current one
+ * "Who can see: …" (plan docs/plan/2026-11-10-audience-visibility.md §6, docs/plan/2026-11-23-link-visibility.md): opens the five choices, the current one
  * ticked; each is a one-button form (src/server/share/visibility-route.ts; reversible, no confirmation).
  */
 function visibilityItem(ctx: ChromeContext, post: Pick<Post, "slug" | "visibility">, back: string): string {

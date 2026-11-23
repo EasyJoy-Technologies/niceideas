@@ -199,3 +199,9 @@ select.ad-in { width: auto; }
 .ad-appc { display: inline-flex; align-items: center; gap: 0.625rem; }
 .ad-appc img { width: 1.5rem; height: 1.5rem; border-radius: 0.375rem; object-fit: cover; flex: none; }
 .ad-field { display: flex; flex-direction: column; gap: 0.25rem; font-size: 0.75rem; color: var(--ni-color-text-secondary); }
+
+/* posts list: who can see (the value opens the change form for live posts) */
+.ad-vis { display: inline-flex; align-items: center; gap: 0.25rem; font-size: 0.8125rem; color: var(--ni-color-text-secondary); white-space: nowrap; }
+.ad-vis .ni-i { width: 0.875rem; height: 0.875rem; }
+.ad-pop summary.ad-act .ad-vis { color: inherit; }
+.ad-tbl td:has(> .ad-pop .ad-vis) .ad-pop-f { inset-inline-end: auto; inset-inline-start: 0; }
