@@ -159,6 +159,8 @@
       "prev": "Zurück"
     },
     "posts": {
+      "noContent": "(Kein Inhalt)",
+      "noText": "(Kein Text)",
       "search": "@Name, Beitragscode oder Text"
     },
     "preset": {

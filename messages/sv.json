@@ -159,6 +159,8 @@
       "prev": "Föregående"
     },
     "posts": {
+      "noContent": "(Inget innehåll)",
+      "noText": "(Ingen text)",
       "search": "@användarnamn, inläggskod eller text"
     },
     "preset": {

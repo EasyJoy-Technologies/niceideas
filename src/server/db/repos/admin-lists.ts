@@ -7,7 +7,7 @@ import { containsPattern } from "./feed";
 export type Page<T> = { rows: T[]; more: boolean };
 const paged = <T>(rows: T[], limit: number): Page<T> => ({ rows: rows.slice(0, limit), more: rows.length > limit });
 
-export type AdminPostRow = Pick<Post, "id" | "slug" | "title" | "summary" | "kind" | "source" | "source_app_key" | "source_app_names" | "status" | "visibility" | "like_count" | "comment_count" | "published_at"> & { handle: string };
+export type AdminPostRow = Pick<Post, "id" | "slug" | "title" | "summary" | "current_revision_id" | "kind" | "source" | "source_app_key" | "source_app_names" | "status" | "visibility" | "like_count" | "comment_count" | "published_at"> & { handle: string };
 
 /** Source filter: one app (product group key), app shares of none of `known`, web posts, third-party apps. */
 export type AdminPostSource = { kind: "app"; key: string } | { kind: "otherApp"; known: readonly string[] } | { kind: "web" } | { kind: "api" };
@@ -17,7 +17,7 @@ export async function listAdminPosts(db: Db, f: { status: PostStatus | null; sou
   let q = db
     .selectFrom("post as p")
     .innerJoin("profile as pr", "pr.user_id", "p.author_id")
-    .select(["p.id", "p.slug", "p.title", "p.summary", "p.kind", "p.source", "p.source_app_key", "p.source_app_names", "p.status", "p.visibility", "p.like_count", "p.comment_count", "p.published_at", "pr.handle"]);
+    .select(["p.id", "p.slug", "p.title", "p.summary", "p.current_revision_id", "p.kind", "p.source", "p.source_app_key", "p.source_app_names", "p.status", "p.visibility", "p.like_count", "p.comment_count", "p.published_at", "pr.handle"]);
   if (f.status) q = q.where("p.status", "=", f.status);
   const s = f.source;
   if (s?.kind === "app") q = q.where("p.source_app_key", "=", s.key);
@@ -34,14 +34,14 @@ export async function listAdminPosts(db: Db, f: { status: PostStatus | null; sou
   return paged(rows, f.limit);
 }
 
-export type AdminCommentRow = { id: string; body: string; status: CommentStatus; created_at: Date; anon_name: string | null; author_id: string | null; handle: string | null; slug: string; title: string; summary: string };
+export type AdminCommentRow = { id: string; body: string; status: CommentStatus; created_at: Date; anon_name: string | null; author_id: string | null; handle: string | null; slug: string; title: string; summary: string; current_revision_id: string | null };
 
 export async function listAdminComments(db: Db, f: { status: CommentStatus | null; query: string; offset: number; limit: number }): Promise<Page<AdminCommentRow>> {
   let q = db
     .selectFrom("comment as c")
     .innerJoin("post as p", "p.id", "c.post_id")
     .leftJoin("profile as pr", "pr.user_id", "c.author_id")
-    .select(["c.id", "c.body", "c.status", "c.created_at", "c.anon_name", "c.author_id", "pr.handle", "p.slug", "p.title", "p.summary"]);
+    .select(["c.id", "c.body", "c.status", "c.created_at", "c.anon_name", "c.author_id", "pr.handle", "p.slug", "p.title", "p.summary", "p.current_revision_id"]);
   if (f.status) q = q.where("c.status", "=", f.status);
   if (f.query.trim()) q = q.where("c.body", "ilike", containsPattern(f.query.trim()));
   const rows = await q.orderBy("c.created_at", "desc").orderBy("c.id").offset(f.offset).limit(f.limit + 1).execute();

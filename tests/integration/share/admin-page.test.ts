@@ -2,8 +2,11 @@ import { afterAll, beforeAll, describe, expect, it } from "vitest";
 import { GET as adminGet, POST as adminPost } from "@/app/admin/route";
 import { GET as sectionGet } from "@/app/admin/[section]/route";
 import { GET as pageGet } from "@/app/p/[slug]/route";
-import { publishAs, shareFromNiceNote } from "../../helpers/publish";
-import { NICERECORDER_APP } from "../../helpers/source-app";
+import { randomUUID } from "node:crypto";
+import { deleteAs, publishAs, shareFromNiceNote, uploadAs } from "../../helpers/publish";
+import { smallPngWithAlpha } from "../../helpers/media-fixtures";
+import { createShare } from "@/server/nicenote/create-share";
+import { NICENOTE_APP, NICERECORDER_APP } from "../../helpers/source-app";
 import { startSession } from "@/server/auth/web/session";
 import { resetConfigForTests } from "@/server/config/env";
 import { ensureProfile } from "@/server/profiles/ensure-profile";
@@ -186,6 +189,25 @@ describe("admin console", () => {
     await act(adminCookie, { action: "remove-post", target: share.slug, reason: "spam" });
     expect((await change("private")).headers.get("location")).toBe("/admin/posts?n=failed");
     expect(await current()).toBe("public");
+  });
+
+  it("names posts without text: a share that never got content, an image-only post (lists and reports)", async () => {
+    const { post: shell } = await createShare(ctx.db, { shareId: randomUUID(), userId: "admin-author", region: "intl", syncMode: "follow", commentsMode: null, profile: null, sourceApp: NICENOTE_APP });
+    await deleteAs(ctx, shell.id);
+    const img = await uploadAs(ctx, "admin-author", await smallPngWithAlpha());
+    const pic = await publishAs(ctx, "admin-author", { version: 1, blocks: [{ type: "image", mediaId: img }] });
+    const link = (s: string, text: string) => `href="/p/${s}" target="_blank" rel="noopener"><span class="ad-none">${text}</span></a>`;
+    const posts = await (await section(adminCookie, "posts")).text();
+    expect(posts).toContain(link(shell.slug, "(No content)"));
+    expect(posts).toContain(link(pic.slug, "(No text)"));
+    await ctx.db.insertInto("report").values({ post_id: pic.id, reason: "spam", detail: "", reporter_key: "v:pic", ip_hash: "h" }).execute();
+    const report = await ctx.db.selectFrom("report").select("id").where("post_id", "=", pic.id).executeTakeFirstOrThrow();
+    const reports = await (await section(adminCookie, "reports", `?r=${report.id}`)).text();
+    expect(reports).toContain('<b><span class="ad-none">(No text)</span></b>');
+    expect(reports).toContain('<blockquote class="ad-quote"><span class="ad-none">(No text)</span></blockquote>');
+    const zh = await (await sectionGet(new Request(`${BASE}/admin/posts`, { headers: { "accept-language": "zh-CN", cookie: `${adminCookie}; ni_sso=1` } }), { params: Promise.resolve({ section: "posts" }) })).text();
+    expect(zh).toContain(link(shell.slug, "（无内容）"));
+    expect(zh).toContain(link(pic.slug, "（无文字）"));
   });
 
   it("renders the overview; viewers can read but not act; unknown sections 404", async () => {

@@ -8,7 +8,7 @@ export type ReportKind = "all" | "posts" | "comments";
 /** All reports on one item (post, or comment) with the same status, merged into one row. */
 export type ReportGroup = {
   id: string; post_id: string; comment_id: string | null; n: number; reasons: string[]; first_at: Date; last_at: Date;
-  slug: string; title: string; summary: string; kind: string; post_status: string;
+  slug: string; title: string; summary: string; current_revision_id: string | null; kind: string; post_status: string;
   comment_body: string | null; comment_status: string | null; author_handle: string | null; anon_name: string | null; comment_author: string | null;
 };
 
@@ -19,7 +19,7 @@ export async function listReportGroups(db: Db, tab: ReportTab, kind: ReportKind,
   const { rows } = await sql<ReportGroup>`
     SELECT (array_agg(r.id ORDER BY r.created_at))[1] AS id, r.post_id, r.comment_id, count(*)::int AS n,
            array_agg(DISTINCT r.reason) AS reasons, min(r.created_at) AS first_at, max(coalesce(r.resolved_at, r.created_at)) AS last_at,
-           p.slug, p.title, p.summary, p.kind, p.status AS post_status, c.body AS comment_body, c.status AS comment_status,
+           p.slug, p.title, p.summary, p.current_revision_id, p.kind, p.status AS post_status, c.body AS comment_body, c.status AS comment_status,
            CASE WHEN r.comment_id IS NULL THEN pa.handle ELSE ca.handle END AS author_handle, c.anon_name, c.author_id AS comment_author
     FROM report r JOIN post p ON p.id = r.post_id LEFT JOIN comment c ON c.id = r.comment_id
     LEFT JOIN profile pa ON pa.user_id = p.author_id LEFT JOIN profile ca ON ca.user_id = c.author_id

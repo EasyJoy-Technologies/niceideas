@@ -159,6 +159,8 @@
       "prev": "Trước"
     },
     "posts": {
+      "noContent": "(Không có nội dung)",
+      "noText": "(Không có văn bản)",
       "search": "@tên người dùng, mã bài viết hoặc nội dung"
     },
     "preset": {

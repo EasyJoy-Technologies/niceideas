@@ -159,6 +159,8 @@
       "prev": "上一頁"
     },
     "posts": {
+      "noContent": "（無內容）",
+      "noText": "（無文字）",
       "search": "@帳號、貼文代碼或文字"
     },
     "preset": {

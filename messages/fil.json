@@ -159,6 +159,8 @@
       "prev": "Nakaraan"
     },
     "posts": {
+      "noContent": "(Walang content)",
+      "noText": "(Walang text)",
       "search": "@handle, post code, o text"
     },
     "preset": {

@@ -159,6 +159,8 @@
       "prev": "Previous"
     },
     "posts": {
+      "noContent": "(No content)",
+      "noText": "(No text)",
       "search": "@handle, post code or text"
     },
     "preset": {

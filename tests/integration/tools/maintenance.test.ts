@@ -8,7 +8,11 @@ import { removePost, restorePost } from "@/server/moderation/admin";
 import { startAppContext } from "../../helpers/app-context";
 import { params } from "../../helpers/api";
 import { jpegWithExif, smallPngWithAlpha } from "../../helpers/media-fixtures";
+import { randomUUID } from "node:crypto";
 import { deleteAs, publishAs, uploadAs } from "../../helpers/publish";
+import { createShare } from "@/server/nicenote/create-share";
+import { NICENOTE_APP } from "../../helpers/source-app";
+import { unpublishPost } from "@/server/posts/withdraw-post";
 
 let ctx: Awaited<ReturnType<typeof startAppContext>>;
 beforeAll(async () => {
@@ -69,6 +73,37 @@ describe("daily maintenance", () => {
     expect(await media(liveImg)).toBeDefined();
     expect(await status(live.slug)).toBe(200);
     expect((await runMaintenance(ctx.db, ctx.stores)).postsPurged).toBe(0);
+  });
+
+  it("deletes NiceNote shares still waiting for their first push after 30 days, tells the backend; keeps newer ones", async () => {
+    const share = async (days: number) => {
+      const { post } = await createShare(ctx.db, { shareId: randomUUID(), userId: "maint-user", region: "intl", syncMode: "follow", commentsMode: null, profile: null, sourceApp: NICENOTE_APP });
+      await ctx.db.updateTable("post").set({ published_at: sql<Date>`now() - make_interval(days => ${days})` }).where("id", "=", post.id).execute();
+      return post;
+    };
+    const stale = await share(31);
+    const fresh = await share(29);
+    const row = (id: string) => ctx.db.selectFrom("post").select(["status", "purge_after"]).where("id", "=", id).executeTakeFirstOrThrow();
+    const events = (id: string) => ctx.db.selectFrom("outbox").select("payload").where("kind", "=", "post_event").execute()
+      .then((rows) => rows.map((r) => r.payload as { postId: string; event: string }).filter((p) => p.postId === id).map((p) => p.event));
+
+    const report = await runMaintenance(ctx.db, ctx.stores);
+    expect(report.preparingExpired).toBe(1);
+    expect(report.postsPurged).toBe(0);
+    const gone = await row(stale.id);
+    expect(gone.status).toBe("unpublished");
+    expect(gone.purge_after!.getTime() - Date.now()).toBeGreaterThan(29 * 86_400_000);
+    expect(await events(stale.id)).toEqual(["unpublished"]);
+    expect(await status(stale.slug)).toBe(410);
+    expect((await row(fresh.id)).status).toBe("preparing");
+    expect(await events(fresh.id)).toEqual([]);
+    expect((await runMaintenance(ctx.db, ctx.stores)).preparingExpired).toBe(0);
+  });
+
+  it("onlyIf: a post no longer in the expected status is left as it is", async () => {
+    const live = await publish("only-if", await upload(Buffer.concat([await jpegWithExif(), Buffer.from("only-if")])));
+    expect((await unpublishPost(ctx.db, ctx.stores, live.id, 30, { onlyIf: "preparing" })).changed).toBe(false);
+    expect(await status(live.slug)).toBe(200);
   });
 
   it("drops account-event ids completed over 90 days ago, keeps recent and unfinished ones", async () => {

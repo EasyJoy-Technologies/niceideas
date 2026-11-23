@@ -159,6 +159,8 @@
       "prev": "Előző"
     },
     "posts": {
+      "noContent": "(Nincs tartalom)",
+      "noText": "(Nincs szöveg)",
       "search": "@felhasználónév, bejegyzéskód vagy szöveg"
     },
     "preset": {

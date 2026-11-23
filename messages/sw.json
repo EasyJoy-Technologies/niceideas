@@ -159,6 +159,8 @@
       "prev": "Iliyotangulia"
     },
     "posts": {
+      "noContent": "(Hakuna maudhui)",
+      "noText": "(Hakuna maandishi)",
       "search": "@jina, msimbo wa chapisho au maandishi"
     },
     "preset": {

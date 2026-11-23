@@ -159,6 +159,8 @@
       "prev": "Předchozí"
     },
     "posts": {
+      "noContent": "(Bez obsahu)",
+      "noText": "(Bez textu)",
       "search": "@uživatel, kód příspěvku nebo text"
     },
     "preset": {

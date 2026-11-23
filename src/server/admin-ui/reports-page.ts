@@ -2,9 +2,9 @@ import type { ReportGroup, ReportKind, ReportLine, ReportTab } from "@/server/db
 import type { Comment, Report } from "@/server/db/schema";
 import { canModerate } from "@/server/admin/roles";
 import { escapeHtml } from "@/server/render/escape";
-import { cardTitle } from "@/server/share/card";
 import { icon } from "@/server/share/icons";
 import { banFields, emptyRow, hiddenFields, notice, reasonField, tabs, when, withQuery } from "./parts";
+import { adminPostTitle } from "./post-title";
 import { renderAdmin, type AdminContext } from "./shell";
 
 export type ReportsView = {
@@ -16,8 +16,9 @@ export type ReportsView = {
 const e = escapeHtml;
 const BASE = "/admin/reports";
 
-function itemText(g: ReportGroup): string {
-  return g.comment_id ? (g.comment_body ?? "") : cardTitle(g);
+/** The reported comment, or the post's title (escaped HTML). */
+function itemText(ctx: AdminContext, g: ReportGroup): string {
+  return g.comment_id ? e(g.comment_body ?? "") : adminPostTitle(ctx, g);
 }
 
 function who(ctx: AdminContext, g: ReportGroup): string {
@@ -33,7 +34,7 @@ function listRow(ctx: AdminContext, v: ReportsView, g: ReportGroup): string {
   const kind = t(g.comment_id ? "admin.kind.comment" : "admin.kind.post");
   return (
     `<a class="ad-rr" href="${e(href)}"${on}><span class="ad-rr-i">${icon(g.comment_id ? "comment" : "fileText")}</span>` +
-    `<span class="ad-rr-t"><b>${e(itemText(g))}</b><small>/p/${g.slug} · ${e(kind)} · ${who(ctx, g)}</small></span>` +
+    `<span class="ad-rr-t"><b>${itemText(ctx, g)}</b><small>/p/${g.slug} · ${e(kind)} · ${who(ctx, g)}</small></span>` +
     `<span class="ad-rr-r">${reasons}</span><span class="ad-rr-n">${g.n}</span><span class="ad-rr-at">${when(ctx, v.tab === "open" ? g.first_at : g.last_at)}</span></a>`
   );
 }
@@ -69,8 +70,8 @@ function detail(ctx: AdminContext, v: ReportsView): string {
   return (
     `<section class="ad-cd ad-detail"><h2>${e(t(g.comment_id ? "admin.kind.comment" : "admin.kind.post"))} · ${e(t("admin.detail.reports", { count: g.n }))}` +
     `<a class="ad-lnk" href="/p/${g.slug}${g.comment_id ? `#c-${g.comment_id}` : ""}" target="_blank" rel="noopener">${e(t("admin.detail.openPost"))} ↗</a></h2>` +
-    `<div class="ad-dsec"><h3>${e(t("admin.detail.reported"))}</h3><blockquote class="ad-quote">${e(itemText(g))}</blockquote>` +
-    kv("admin.detail.author", who(ctx, g)) + (g.comment_id ? kv("admin.detail.post", `<a href="/p/${g.slug}" target="_blank" rel="noopener">${e(cardTitle(g))}</a>`) : "") +
+    `<div class="ad-dsec"><h3>${e(t("admin.detail.reported"))}</h3><blockquote class="ad-quote">${itemText(ctx, g)}</blockquote>` +
+    kv("admin.detail.author", who(ctx, g)) + (g.comment_id ? kv("admin.detail.post", `<a href="/p/${g.slug}" target="_blank" rel="noopener">${adminPostTitle(ctx, g)}</a>`) : "") +
     (at ? kv("admin.detail.at", when(ctx, at, false)) : "") + visitor + `</div>` +
     `<div class="ad-dsec"><h3>${e(t("admin.detail.reports", { count: s.lines.length }))}</h3>${lines}</div>${actions(ctx, v)}</section>`
   );

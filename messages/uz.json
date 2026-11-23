@@ -159,6 +159,8 @@
       "prev": "Oldingi"
     },
     "posts": {
+      "noContent": "(Mazmun yo‘q)",
+      "noText": "(Matn yo‘q)",
       "search": "@foydalanuvchi, post kodi yoki matn"
     },
     "preset": {

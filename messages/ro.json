@@ -159,6 +159,8 @@
       "prev": "Anterior"
     },
     "posts": {
+      "noContent": "(Fără conținut)",
+      "noText": "(Fără text)",
       "search": "@utilizator, cod de postare sau text"
     },
     "preset": {

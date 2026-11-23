@@ -73,7 +73,9 @@ Plan `docs/plan/2026-10-26-app-sign-in-ticket.md` (Xianglin 2026-10-26 21:47, in
 ## Behaviour
 - **Create**: database only (no outside calls); idempotent by `shareId`; post `preparing` (page "Getting this post
   ready", noindex, refreshes every 5 s, not in feeds / search); profile created on first contact and following the sent
-  NiceMatrix data; first contact also queues the user registration (contract §4.1).
+  NiceMatrix data; first contact also queues the user registration (contract §4.1). A share still `preparing` 30 days
+  after creation (no push ever came) is deleted by the daily maintenance like an author's deletion (page 410, purged
+  after 30 more days) and the backend gets `unpublished` (v1.0.98, Xianglin 2026-11-23).
 - **Push**: `sourceRevision` lower than stored → 409 `post.stale_update` `{ current }`; same revision with other content
   is accepted; same content → `changed: false` (media progress and new grant URLs still apply). Frozen posts take no
   push once they have content. The first push makes the post `active`. Page cache keys include the post's version, so
@@ -137,7 +139,7 @@ Plan `docs/plan/2026-10-26-app-sign-in-ticket.md` (Xianglin 2026-10-26 21:47, in
       sends `visibility_changed` with `details.visibility` + `details.audience`.
 - **Events to the backend** (`outbox`, delivered by the worker, signed, `X-NM-Service: niceideas`; retried after 1 min,
   5 min, 30 min, then hourly for 24 h; 400 / 404 / 409 / 410 / 413 / 422 are not retried): `user_registered` on first
-  profile (existing users were queued by migration 0014); post events `unpublished` (author deleted on the web),
+  profile (existing users were queued by migration 0014); post events `unpublished` (author deleted on the web, or a share that never got content expired after 30 days),
   `visibility_changed` (author made the post private / public on the web, `details.visibility`, v1.0.75),
   `removed` / `restored` (moderation), `media_failed` (`details.refs` + `reason`, per reason; split into several events
   so each stays ≤ 7000 bytes, v1.0.71) and `media_ready` (the post's media became complete — by the worker or by a push).

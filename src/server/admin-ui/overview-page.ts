@@ -1,10 +1,10 @@
 import type { OverviewSeries, TodoCounts, TopPost, Health } from "@/server/db/repos/admin-stats";
 import { escapeHtml } from "@/server/render/escape";
-import { cardTitle } from "@/server/share/card";
 import { icon, type IconName } from "@/server/share/icons";
 import { APP_VERSION } from "@/server/version";
 import { stackedBars, sparkline } from "./charts";
 import { table, when } from "./parts";
+import { adminPostTitle } from "./post-title";
 import { renderAdmin, type AdminContext } from "./shell";
 import { adminSourceLabel, adminSourceOfClass, adminSources, postSourceLabel, type AdminSource } from "./source-class";
 
@@ -92,7 +92,7 @@ function topTable(ctx: AdminContext, v: OverviewView): string {
   const { t, format } = ctx.intl;
   const kind = (k: string) => t(k === "article" ? "feed.article" : "compose.mode.short");
   const rows = v.top.map((p) => [
-    `<a class="ad-tt" href="/p/${p.slug}" target="_blank" rel="noopener">${e(cardTitle(p))}</a><small>${e(kind(p.kind))} · @${e(p.handle)}</small>`,
+    `<a class="ad-tt" href="/p/${p.slug}" target="_blank" rel="noopener">${adminPostTitle(ctx, p)}</a><small>${e(kind(p.kind))} · @${e(p.handle)}</small>`,
     e(postSourceLabel(ctx, p)),
     e(format.number(p.recent)), e(format.number(p.likes)), e(format.number(p.comments)),
   ]);

@@ -7,6 +7,21 @@ export async function listExpiredPosts(db: Db, limit: number): Promise<{ id: str
   return db.selectFrom("post").select("id").where("purge_after", "<", sql<Date>`now()`).orderBy("purge_after").limit(limit).execute();
 }
 
+/**
+ * NiceNote shares still waiting for their first push, created more than `days` ago (oldest first). A preparing
+ * post's `published_at` is its creation time (the first push sets it again).
+ */
+export async function listStalePreparingPosts(db: Db, days: number, limit: number): Promise<{ id: string }[]> {
+  return db
+    .selectFrom("post")
+    .select("id")
+    .where("status", "=", "preparing")
+    .where("published_at", "<", sql<Date>`now() - make_interval(days => ${days})`)
+    .orderBy("published_at")
+    .limit(limit)
+    .execute();
+}
+
 /** Media used by any revision of the given posts (collected before the posts are deleted). */
 export async function mediaOfPosts(db: Db, postIds: string[]): Promise<string[]> {
   if (postIds.length === 0) return [];

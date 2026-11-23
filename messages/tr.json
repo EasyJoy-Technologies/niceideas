@@ -159,6 +159,8 @@
       "prev": "Önceki"
     },
     "posts": {
+      "noContent": "(İçerik yok)",
+      "noText": "(Metin yok)",
       "search": "@kullanıcı adı, gönderi kodu veya metin"
     },
     "preset": {

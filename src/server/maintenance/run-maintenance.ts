@@ -1,4 +1,5 @@
 import type { Db } from "@/server/db/client";
+import type { Post } from "@/server/db/schema";
 import { purgeOldAccountEvents } from "@/server/db/repos/accounts";
 import { purgeExpiredIdempotency } from "@/server/db/repos/idempotency";
 import { purgeSpentChallenges } from "@/server/db/repos/pow";
@@ -6,16 +7,20 @@ import { purgeDeliveredOutbox } from "@/server/db/repos/outbox";
 import { purgeExpiredServiceNonces } from "@/server/db/repos/service-nonces";
 import { purgeExpiredSessions } from "@/server/db/repos/sessions";
 import { purgeExpiredWebTickets } from "@/server/db/repos/web-tickets";
-import { deleteMediaRows, deletePosts, listDeletableMedia, listExpiredPosts, listStrayPublicMedia, mediaOfPosts, purgeExpiredBans } from "@/server/db/repos/maintenance";
+import { deleteMediaRows, deletePosts, listDeletableMedia, listExpiredPosts, listStalePreparingPosts, listStrayPublicMedia, mediaOfPosts, purgeExpiredBans } from "@/server/db/repos/maintenance";
 import { mediaKeys } from "@/server/media/keys";
 import { getConfig } from "@/server/config/env";
 import { requestVisibilityCheck } from "@/server/db/repos/media-visibility";
 import { dropUpload, listStaleUploads } from "@/server/db/repos/media-uploads";
 import { checkMediaVisibility } from "@/server/media/visibility";
+import { queuePostEvent } from "@/server/nicenote/post-events";
+import { unpublishPost } from "@/server/posts/withdraw-post";
 import type { MediaStores } from "@/server/storage/types";
 
 /** Unreferenced media are kept this long before physical deletion (plan §10). */
 export const MEDIA_GRACE_DAYS = 7;
+/** A NiceNote share that never got its first push is deleted after this long (Xianglin 2026-11-23). */
+export const PREPARING_EXPIRE_DAYS = 30;
 const BATCH = 200;
 /** Delivered backend notifications are kept this long for diagnostics. */
 const OUTBOX_KEEP_DAYS = 30;
@@ -24,18 +29,20 @@ const ACCOUNT_EVENT_KEEP_DAYS = 90;
 /** An upload without its media row after this long failed (the longest transcode is 1 hour). */
 const UPLOAD_STALE_HOURS = 24;
 
-export type MaintenanceReport = { postsPurged: number; mediaDeleted: number; strayPublicWithdrawn: number; uploadsCleaned: number; idempotencyPurged: number; bansExpired: number; sessionsExpired: number; ticketsExpired: number; challengesExpired: number; noncesExpired: number; outboxPurged: number; accountEventsPurged: number };
+export type MaintenanceReport = { preparingExpired: number; postsPurged: number; mediaDeleted: number; strayPublicWithdrawn: number; uploadsCleaned: number; idempotencyPurged: number; bansExpired: number; sessionsExpired: number; ticketsExpired: number; challengesExpired: number; noncesExpired: number; outboxPurged: number; accountEventsPurged: number };
 
 /**
- * Daily job (plan §10): physically deletes posts past their 30-day retention,
+ * Daily job (plan §10): deletes NiceNote shares that never got content within 30 days (as the author would),
+ * physically deletes posts past their 30-day retention,
  * then media no post uses any more (objects first, rows after), re-checks media
  * public without a live post, removes objects of failed uploads, and drops expired idempotency keys, bans, web sessions, app sign-in tickets, spent PoW challenges, service-signature nonces
  * backend notifications delivered over 30 days ago and account-event ids processed over 90 days ago.
  * Safe to re-run; each step is idempotent.
  */
 export async function runMaintenance(db: Db, stores: MediaStores): Promise<MaintenanceReport> {
-  const report: MaintenanceReport = { postsPurged: 0, mediaDeleted: 0, strayPublicWithdrawn: 0, uploadsCleaned: 0, idempotencyPurged: 0, bansExpired: 0, sessionsExpired: 0, ticketsExpired: 0, challengesExpired: 0, noncesExpired: 0, outboxPurged: 0, accountEventsPurged: 0 };
+  const report: MaintenanceReport = { preparingExpired: 0, postsPurged: 0, mediaDeleted: 0, strayPublicWithdrawn: 0, uploadsCleaned: 0, idempotencyPurged: 0, bansExpired: 0, sessionsExpired: 0, ticketsExpired: 0, challengesExpired: 0, noncesExpired: 0, outboxPurged: 0, accountEventsPurged: 0 };
 
+  report.preparingExpired = await expireStalePreparing(db, stores);
   const visibility = { db, stores, cacheControl: getConfig().MEDIA_CACHE_CONTROL };
   for (;;) {
     const posts = (await listExpiredPosts(db, BATCH)).map((p) => p.id);
@@ -77,6 +84,24 @@ async function deleteMedia(db: Db, stores: MediaStores, candidates: string[]): P
     await deleteMediaRows(db, media.map((m) => m.id));
     total += media.length;
     candidates = [];
+  }
+}
+
+/**
+ * Shares still `preparing` after PREPARING_EXPIRE_DAYS: deleted like an author's deletion (page 410, purged after the
+ * retention period) and the backend is told (`unpublished`), so sharing the note again gets a new link. A push that
+ * arrives meanwhile wins: only posts still preparing when locked are deleted.
+ */
+async function expireStalePreparing(db: Db, stores: MediaStores): Promise<number> {
+  const retentionDays = getConfig().POST_RETENTION_DAYS;
+  const onDeleted = (trx: Db, post: Post) => queuePostEvent(trx, post, "unpublished");
+  let total = 0;
+  for (;;) {
+    const posts = await listStalePreparingPosts(db, PREPARING_EXPIRE_DAYS, BATCH);
+    if (posts.length === 0) return total;
+    for (const { id } of posts) {
+      if ((await unpublishPost(db, stores, id, retentionDays, { onDeleted, onlyIf: "preparing" })).changed) total++;
+    }
   }
 }
 

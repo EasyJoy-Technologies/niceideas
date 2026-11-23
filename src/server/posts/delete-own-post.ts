@@ -16,5 +16,5 @@ export async function deleteOwnPost(db: Db, stores: MediaStores, userId: string,
   const post = await findPostBySlug(db, slug);
   if (!post || post.author_id !== userId) return null;
   const notifyBackend = (trx: Db, deleted: Post) => queuePostEvent(trx, deleted, "unpublished");
-  return (await unpublishPost(db, stores, post.id, retentionDays, notifyBackend)).post;
+  return (await unpublishPost(db, stores, post.id, retentionDays, { onDeleted: notifyBackend })).post;
 }

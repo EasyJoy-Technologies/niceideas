@@ -159,6 +159,8 @@
       "prev": "上一页"
     },
     "posts": {
+      "noContent": "（无内容）",
+      "noText": "（无文字）",
       "search": "@用户名、帖子代码或文字"
     },
     "preset": {

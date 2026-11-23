@@ -60,12 +60,12 @@ export async function postsBySource(db: Db, days: number): Promise<Map<string, n
   return out;
 }
 
-export type TopPost = Pick<Post, "slug" | "title" | "summary" | "kind" | "source" | "source_app_key" | "source_app_names"> & { handle: string; likes: number; comments: number; recent: number };
+export type TopPost = Pick<Post, "slug" | "title" | "summary" | "current_revision_id" | "kind" | "source" | "source_app_key" | "source_app_names"> & { handle: string; likes: number; comments: number; recent: number };
 
 /** Live posts with the most likes received in the last 7 days. */
 export async function topPosts(db: Db, limit: number): Promise<TopPost[]> {
   const { rows } = await sql<TopPost>`
-    SELECT p.slug, p.title, p.summary, p.kind, p.source, p.source_app_key, p.source_app_names, pr.handle, p.like_count AS likes, p.comment_count AS comments, count(l.post_id)::int AS recent
+    SELECT p.slug, p.title, p.summary, p.current_revision_id, p.kind, p.source, p.source_app_key, p.source_app_names, pr.handle, p.like_count AS likes, p.comment_count AS comments, count(l.post_id)::int AS recent
     FROM post p JOIN profile pr ON pr.user_id = p.author_id
     LEFT JOIN post_like l ON l.post_id = p.id AND l.created_at >= now() - interval '7 days'
     WHERE p.status = 'active'

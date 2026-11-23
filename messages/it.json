@@ -159,6 +159,8 @@
       "prev": "Precedente"
     },
     "posts": {
+      "noContent": "(Nessun contenuto)",
+      "noText": "(Nessun testo)",
       "search": "@utente, codice o testo del post"
     },
     "preset": {

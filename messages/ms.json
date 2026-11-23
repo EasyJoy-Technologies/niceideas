@@ -159,6 +159,8 @@
       "prev": "Sebelumnya"
     },
     "posts": {
+      "noContent": "(Tiada kandungan)",
+      "noText": "(Tiada teks)",
       "search": "@nama pengguna, kod hantaran atau teks"
     },
     "preset": {

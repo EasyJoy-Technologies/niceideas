@@ -159,6 +159,8 @@
       "prev": "Poprzednia"
     },
     "posts": {
+      "noContent": "(Brak treści)",
+      "noText": "(Brak tekstu)",
       "search": "@nazwa użytkownika, kod posta lub tekst"
     },
     "preset": {

@@ -4,12 +4,12 @@ import { isNarrower, isVisibility, VISIBILITIES } from "@/server/posts/visibilit
 import { icon } from "@/server/share/icons";
 import { VISIBILITY_ICONS, visibilityLabel } from "@/server/share/visibility-bits";
 import { escapeHtml } from "@/server/render/escape";
-import { cardTitle } from "@/server/share/card";
 import { bulkTable, listNotice, type ListNotice } from "./bulk-bar";
 import { actionPop, emptyRow, notice, pager, pill, searchForm, table, tabs, when, withQuery } from "./parts";
 import { renderAdmin, type AdminContext } from "./shell";
 import { adminSourceLabel, adminSources, postSourceLabel, type AdminSource } from "./source-class";
 import { appSettingsItem } from "./apps-page";
+import { adminPostTitle } from "./post-title";
 
 const e = escapeHtml;
 type Note = "done" | "failed" | null;
@@ -48,7 +48,7 @@ function postCell(ctx: AdminContext, p: AdminPostRow): string {
     `<span class="ad-cnt" title="${e(label)}">${icon(ico)}<span class="ad-sr">${e(label)} </span>${e(format.number(n))}</span>`;
   const kind = t(p.kind === "article" ? "feed.article" : "compose.mode.short");
   return (
-    `<a class="ad-tt" href="/p/${p.slug}" target="_blank" rel="noopener">${e(cardTitle(p))}</a>` +
+    `<a class="ad-tt" href="/p/${p.slug}" target="_blank" rel="noopener">${adminPostTitle(ctx, p)}</a>` +
     `<small class="ad-meta">@${e(p.handle)} · ${e(postSourceLabel(ctx, p))} · ${when(ctx, p.published_at)}</small>` +
     `<small class="ad-meta">${count("heart", t("admin.col.likes"), p.like_count)} · ${count("comment", t("admin.col.comments"), p.comment_count)} · /p/${p.slug} · ${e(kind)}</small>`
   );
@@ -94,7 +94,7 @@ export function renderComments(ctx: AdminContext, v: { status: CommentStatus | n
       : c.status === "hidden" ? actionPop(ctx, { action: "restore-comment", target: c.id, back, label: t("admin.restoreComment") }) : "";
     const author = c.handle ? `@${e(c.handle)}` : e(c.anon_name || t("share.comments.anonymous"));
     return [
-      `<span class="ad-tt ad-clamp">${e(c.body)}</span><small><a href="/p/${c.slug}#c-${c.id}" target="_blank" rel="noopener">${e(cardTitle(c))}</a></small>`,
+      `<span class="ad-tt ad-clamp">${e(c.body)}</span><small><a href="/p/${c.slug}#c-${c.id}" target="_blank" rel="noopener">${adminPostTitle(ctx, c)}</a></small>`,
       author, pill(t(`admin.commentStatus.${c.status}`), c.status === "visible" ? "ok" : c.status === "hidden" ? "warn" : ""), when(ctx, c.created_at), act,
     ];
   });

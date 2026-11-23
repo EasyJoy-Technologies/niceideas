@@ -159,6 +159,8 @@
       "prev": "Vorige"
     },
     "posts": {
+      "noContent": "(Geen inhoud)",
+      "noText": "(Geen tekst)",
       "search": "@gebruikersnaam, berichtcode of tekst"
     },
     "preset": {
