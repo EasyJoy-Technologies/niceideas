@@ -1,9 +1,11 @@
+import { BULK_MAX, isBulkOp } from "@/server/admin/bulk-actions";
 import { findComment } from "@/server/db/repos/comments";
 import type { Db } from "@/server/db/client";
 import { listActiveBans, listAdminComments, listAdminPosts, listAudit } from "@/server/db/repos/admin-lists";
 import { findReport, listReportGroups, recentCommentsOfVisitor, reportsOfGroup, type ReportKind, type ReportTab } from "@/server/db/repos/admin-queue";
 import { authorsWeekly, overviewSeries, postsBySource, systemHealth, todoCounts, topPosts } from "@/server/db/repos/admin-stats";
 import type { CommentStatus, PostStatus } from "@/server/db/schema";
+import type { ListNotice } from "./bulk-bar";
 import { renderBans, renderAudit, renderComments, renderPosts } from "./lists-page";
 import { renderOverview } from "./overview-page";
 import { renderApps } from "./apps-page";
@@ -20,6 +22,14 @@ const SOURCE_DAYS = 30;
 const pick = <T extends string>(v: string | null, allowed: readonly T[]): T | null => ((allowed as readonly string[]).includes(v ?? "") ? (v as T) : null);
 const offsetOf = (url: URL) => Math.max(0, Math.min(10_000, Math.floor(Number(url.searchParams.get("o")) || 0)));
 const noticeOf = (url: URL) => pick(url.searchParams.get("n"), ["done", "failed"] as const);
+/** `?n=bulk&op=…&ok=…&skip=…&fail=…` (admin-routes.ts) → the counts of a bulk action; else `?n=done|failed`. */
+function listNoticeOf(url: URL): ListNotice {
+  const q = url.searchParams;
+  const op = q.get("op") ?? "";
+  if (q.get("n") !== "bulk" || !isBulkOp(op)) return noticeOf(url);
+  const count = (k: string) => Math.max(0, Math.min(BULK_MAX, Math.floor(Number(q.get(k)) || 0)));
+  return { op, done: count("ok"), skipped: count("skip"), failed: count("fail") };
+}
 const queryOf = (url: URL) => (url.searchParams.get("q") ?? "").replace(/\s+/g, " ").trim().slice(0, 100);
 
 async function reports(db: Db, ctx: AdminContext, url: URL): Promise<string> {
@@ -59,7 +69,7 @@ export async function loadSection(db: Db, ctx: AdminContext, section: AdminSecti
       const source = parseAdminSource(url.searchParams.get("src"));
       const query = queryOf(url);
       const page = await listAdminPosts(db, { status, source: source && adminPostSourceFilter(source), query, offset, limit: PAGE_SIZE });
-      return renderPosts(ctx, { status, source, query, offset, page, notice: noticeOf(url) });
+      return renderPosts(ctx, { status, source, query, offset, page, notice: listNoticeOf(url) });
     }
     case "apps": {
       const [own, clients, posts] = await Promise.all([listSourceApps(db), listApiClients(db), countPostsByApp(db)]);
@@ -68,7 +78,7 @@ export async function loadSection(db: Db, ctx: AdminContext, section: AdminSecti
     case "comments": {
       const status = pick<CommentStatus>(url.searchParams.get("s"), ["visible", "hidden", "deleted"]);
       const query = queryOf(url);
-      return renderComments(ctx, { status, query, offset, page: await listAdminComments(db, { status, query, offset, limit: PAGE_SIZE }), notice: noticeOf(url) });
+      return renderComments(ctx, { status, query, offset, page: await listAdminComments(db, { status, query, offset, limit: PAGE_SIZE }), notice: listNoticeOf(url) });
     }
     case "bans":
       return renderBans(ctx, { offset, page: await listActiveBans(db, offset, PAGE_SIZE), notice: noticeOf(url) });

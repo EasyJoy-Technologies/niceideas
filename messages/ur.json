@@ -42,6 +42,18 @@
       "visitor": "براؤزر",
       "with": "اس وزیٹر پر بھی پابندی لگائیں"
     },
+    "bulk": {
+      "apply": "لاگو کریں",
+      "applyN": "{count} پر لاگو کریں",
+      "clear": "انتخاب صاف کریں",
+      "narrow": "نمایانی محدود کریں",
+      "pick": "منتخب کریں",
+      "result": "{action} — مکمل: {done} · چھوڑے گئے: {skipped}",
+      "resultFailed": "ناکام: {count}",
+      "selectAll": "اس صفحے پر سب منتخب کریں",
+      "selected": "منتخب: {total} میں سے {count}",
+      "to": "اس میں تبدیل کریں"
+    },
     "chart": {
       "postsBySource": "ذریعہ کے لحاظ سے نئی پوسٹس · 30 دن"
     },

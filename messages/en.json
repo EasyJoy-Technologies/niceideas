@@ -42,6 +42,18 @@
       "visitor": "Browser",
       "with": "Also ban this visitor"
     },
+    "bulk": {
+      "apply": "Apply",
+      "applyN": "Apply to {count}",
+      "clear": "Clear selection",
+      "narrow": "Narrow visibility",
+      "pick": "Select",
+      "result": "{action}: {done} done · {skipped} skipped",
+      "resultFailed": "{count} failed",
+      "selectAll": "Select all on this page",
+      "selected": "{count} of {total} selected",
+      "to": "Change to"
+    },
     "chart": {
       "postsBySource": "New posts by source · 30 days"
     },

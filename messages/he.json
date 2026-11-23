@@ -42,6 +42,18 @@
       "visitor": "דפדפן",
       "with": "חסימת המשתמש הזה גם כן"
     },
+    "bulk": {
+      "apply": "החלה",
+      "applyN": "החלה על {count}",
+      "clear": "ניקוי הבחירה",
+      "narrow": "צמצום נראות",
+      "pick": "בחירה",
+      "result": "{action} — בוצעו: {done} · דולגו: {skipped}",
+      "resultFailed": "נכשלו: {count}",
+      "selectAll": "בחירת הכול בעמוד",
+      "selected": "נבחרו: {count} מתוך {total}",
+      "to": "שינוי ל"
+    },
     "chart": {
       "postsBySource": "פוסטים חדשים לפי מקור · 30 יום"
     },

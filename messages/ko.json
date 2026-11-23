@@ -42,6 +42,18 @@
       "visitor": "브라우저",
       "with": "이 방문자도 함께 차단"
     },
+    "bulk": {
+      "apply": "적용",
+      "applyN": "{count}개에 적용",
+      "clear": "선택 해제",
+      "narrow": "공개 범위 좁히기",
+      "pick": "선택",
+      "result": "{action}: 완료 {done}개 · 건너뜀 {skipped}개",
+      "resultFailed": "실패 {count}개",
+      "selectAll": "이 페이지 모두 선택",
+      "selected": "{total}개 중 {count}개 선택됨",
+      "to": "변경할 범위"
+    },
     "chart": {
       "postsBySource": "신규 게시물 (유입 경로별 · 최근 30일)"
     },

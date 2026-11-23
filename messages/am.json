@@ -42,6 +42,18 @@
       "visitor": "አሳሽ",
       "with": "ይህንንም ጎብኝ አግዱ"
     },
+    "bulk": {
+      "apply": "ተግብር",
+      "applyN": "በ{count} ላይ ተግብር",
+      "clear": "ምርጫን አጽዳ",
+      "narrow": "ታይነትን አጥብብ",
+      "pick": "ምረጥ",
+      "result": "{action} — ተጠናቋል: {done} · ተዘሏል: {skipped}",
+      "resultFailed": "አልተሳካም: {count}",
+      "selectAll": "በዚህ ገጽ ያሉትን ሁሉ ምረጥ",
+      "selected": "ተመርጠዋል: {count} ከ{total}",
+      "to": "ወደዚህ ቀይር"
+    },
     "chart": {
       "postsBySource": "አዳዲስ ልጥፎች በምንጭ · 30 ቀናት"
     },

@@ -42,6 +42,18 @@
       "visitor": "Trình duyệt",
       "with": "Đồng thời cấm khách này"
     },
+    "bulk": {
+      "apply": "Áp dụng",
+      "applyN": "Áp dụng cho {count}",
+      "clear": "Bỏ chọn",
+      "narrow": "Thu hẹp phạm vi hiển thị",
+      "pick": "Chọn",
+      "result": "{action}: thành công {done} · bỏ qua {skipped}",
+      "resultFailed": "thất bại {count}",
+      "selectAll": "Chọn tất cả trên trang này",
+      "selected": "Đã chọn {count}/{total}",
+      "to": "Đổi thành"
+    },
     "chart": {
       "postsBySource": "Bài viết mới theo nguồn · 30 ngày"
     },

@@ -79,7 +79,7 @@ export function renderAdmin(ctx: AdminContext, page: AdminPage): string {
     `<!doctype html><html lang="${locale}" dir="${directionOf(locale)}"><head><meta charset="utf-8">` +
     `<meta name="viewport" content="width=device-width, initial-scale=1"><title>${escapeHtml(`${page.title} · ${t("admin.console")} · ${GLOSSARY.brand}`)}</title>` +
     `<meta name="robots" content="noindex"><link rel="icon" href="/favicon.ico" sizes="48x48"><link rel="icon" href="/brand/favicon.svg" type="image/svg+xml">` +
-    `${css}${themeHead(ctx.theme, asset("/styles/dark.css"))}<script src="${asset("/scripts/share.js")}" defer></script></head>` +
+    `${css}${themeHead(ctx.theme, asset("/styles/dark.css"))}<script src="${asset("/scripts/share.js")}" defer></script><script src="${asset("/scripts/admin.js")}" defer></script></head>` +
     `<body class="ad"><div class="ad-app">${sidebar(ctx, page.section)}<div class="ad-mn"><header class="ad-tb"><h1>${escapeHtml(page.title)}</h1>${readOnly}` +
     `<span class="ni-sp"></span>${page.tools ?? ""}</header><main class="ad-ct">${page.main}</main></div></div>${canModerate(ctx.role) ? reasonList(ctx) : ""}</body></html>`
   );

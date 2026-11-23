@@ -42,6 +42,18 @@
       "visitor": "Browser",
       "with": "Blokir pengunjung ini juga"
     },
+    "bulk": {
+      "apply": "Terapkan",
+      "applyN": "Terapkan ke {count}",
+      "clear": "Kosongkan pilihan",
+      "narrow": "Persempit visibilitas",
+      "pick": "Pilih",
+      "result": "{action} — selesai: {done} · dilewati: {skipped}",
+      "resultFailed": "gagal: {count}",
+      "selectAll": "Pilih semua di halaman ini",
+      "selected": "Dipilih: {count} dari {total}",
+      "to": "Ubah menjadi"
+    },
     "chart": {
       "postsBySource": "Postingan baru per sumber · 30 hari"
     },

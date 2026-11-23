@@ -42,6 +42,18 @@
       "visitor": "Przeglądarka",
       "with": "Zablokuj też tego odwiedzającego"
     },
+    "bulk": {
+      "apply": "Zastosuj",
+      "applyN": "Zastosuj do: {count}",
+      "clear": "Wyczyść zaznaczenie",
+      "narrow": "Zawęź widoczność",
+      "pick": "Zaznacz",
+      "result": "{action} — wykonano: {done} · pominięto: {skipped}",
+      "resultFailed": "niepowodzenia: {count}",
+      "selectAll": "Zaznacz wszystko na tej stronie",
+      "selected": "Zaznaczono: {count} z {total}",
+      "to": "Zmień na"
+    },
     "chart": {
       "postsBySource": "Nowe posty według źródła · 30 dni"
     },

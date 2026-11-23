@@ -42,6 +42,18 @@
       "visitor": "ブラウザー",
       "with": "この訪問者もブロックする"
     },
+    "bulk": {
+      "apply": "適用",
+      "applyN": "{count} 件に適用",
+      "clear": "選択を解除",
+      "narrow": "公開範囲を狭める",
+      "pick": "選択",
+      "result": "{action}：成功 {done} 件 · スキップ {skipped} 件",
+      "resultFailed": "失敗 {count} 件",
+      "selectAll": "このページをすべて選択",
+      "selected": "{count} / {total} 件を選択中",
+      "to": "変更後"
+    },
     "chart": {
       "postsBySource": "新規投稿（流入元別・過去30日）"
     },

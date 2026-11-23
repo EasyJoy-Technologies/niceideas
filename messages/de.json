@@ -42,6 +42,18 @@
       "visitor": "Browser",
       "with": "Diesen Besucher ebenfalls sperren"
     },
+    "bulk": {
+      "apply": "Anwenden",
+      "applyN": "Auf {count} anwenden",
+      "clear": "Auswahl aufheben",
+      "narrow": "Sichtbarkeit einschränken",
+      "pick": "Auswählen",
+      "result": "{action}: {done} erledigt · {skipped} übersprungen",
+      "resultFailed": "{count} fehlgeschlagen",
+      "selectAll": "Alle auf dieser Seite auswählen",
+      "selected": "{count} von {total} ausgewählt",
+      "to": "Ändern in"
+    },
     "chart": {
       "postsBySource": "Neue Beiträge nach Quelle · 30 Tage"
     },

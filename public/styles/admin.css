@@ -98,9 +98,15 @@ body.ad { background: var(--ni-color-neutral); font-size: 0.875rem; }
 .ad-tbl > table:first-child th:last-child { border-start-end-radius: calc(0.75rem - 1px); }
 .ad-tbl h2 { padding: 1rem 1.125rem 0; }
 .ad-tbl table { width: 100%; border-collapse: collapse; }
-.ad-tbl th { text-align: start; font-weight: 500; font-size: 0.75rem; color: var(--ni-color-text-secondary); background: var(--ni-color-hover); padding: 0.5rem 1.125rem; white-space: nowrap; }
-.ad-tbl td { padding: 0.625rem 1.125rem; border-top: 1px solid var(--ni-color-divider); vertical-align: top; }
-.ad-tbl .n { text-align: end; font-variant-numeric: tabular-nums; }
+/* Compact cells (0.75rem apart, card edge 1.125rem) so wide lists fit at 1280 px in long languages; short values ("nw") stay on one line. */
+.ad-tbl th { text-align: start; font-weight: 500; font-size: 0.75rem; color: var(--ni-color-text-secondary); background: var(--ni-color-hover); padding: 0.5rem 0.75rem; white-space: nowrap; }
+.ad-tbl td { padding: 0.625rem 0.75rem; border-top: 1px solid var(--ni-color-divider); vertical-align: top; }
+@media (min-width: 48rem) {
+  .ad-tbl th:first-child, .ad-tbl td:first-child { padding-inline-start: 1.125rem; }
+  .ad-tbl th:last-child, .ad-tbl td:last-child { padding-inline-end: 1.125rem; }
+}
+.ad-tbl .n { text-align: end; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.ad-tbl .nw { white-space: nowrap; }
 .ad-tbl .a { text-align: end; width: 1%; white-space: nowrap; }
 .ad-tbl small { display: block; color: var(--ni-color-muted); font-size: 0.75rem; }
 .ad-tt { display: block; font-weight: 500; overflow-wrap: anywhere; }
@@ -168,6 +174,22 @@ select.ad-in { width: auto; }
 .ad-handle + .ad-handle { padding-top: 0.75rem; border-top: 1px dashed var(--ni-color-divider); }
 .ad-handle .ni-btn { align-self: flex-start; }
 
+/* bulk selection on the posts / comments lists (bulk-bar.ts, scripts/admin.js); selected rows and the bar tint without JS too */
+.ad-tbl .ck { width: 1%; padding-inline-end: 0; }
+.ad-tbl .ck input, .ad-bulk-all input { width: 1rem; height: 1rem; margin: 0.125rem 0 0; accent-color: var(--ni-color-primary); cursor: pointer; }
+.ad-tbl tr:has(> .ck input:checked) td { background: var(--ni-color-surface-2); }
+.ad-bulk { position: sticky; top: 0; z-index: 5; display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem 0.625rem; padding: 0.625rem 1.125rem; background: var(--ni-color-surface); border-bottom: 1px solid var(--ni-color-divider); border-start-start-radius: calc(0.75rem - 1px); border-start-end-radius: calc(0.75rem - 1px); }
+.ad-tbl:has(.ck input:checked) .ad-bulk { background: var(--ni-color-surface-2); }
+.ad-bulk [hidden] { display: none; }
+.ad-bulk-all { display: inline-flex; align-items: center; gap: 0.5rem; margin-inline-end: 0.375rem; font-size: 0.8125rem; color: var(--ni-color-text-secondary); white-space: nowrap; cursor: pointer; }
+.ad-tbl:has(.ck input:checked) .ad-bulk-all { color: var(--ni-color-text-primary); }
+.ad-bulk select.ad-in { height: 2rem; font-size: 0.8125rem; }
+.ad-bulk .ad-row { white-space: nowrap; }
+.ad-bulk input[name="reason"] { flex: 1; min-width: 12rem; max-width: 20rem; height: 2rem; font-size: 0.8125rem; }
+.ad-bulk .ni-btn { white-space: nowrap; }
+.ad-bulk .ni-btn:disabled { opacity: 0.45; cursor: not-allowed; }
+.ad-bulk-x { padding: 0; border: 0; background: none; font-family: inherit; cursor: pointer; }
+
 @media (max-width: 80rem) {
   .ad-k6 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .ad-span8, .ad-span4 { grid-column: span 12; }
@@ -192,6 +214,20 @@ select.ad-in { width: auto; }
   .ad-tbl td[data-label]:not(:first-child)::before { content: attr(data-label) " "; color: var(--ni-color-muted); }
   .ad-tbl td:empty { display: none; }
   .ad-tbl .a { width: auto; margin-inline-start: auto; }
+  /* Bulk: the checkbox in a left gutter, the item text full width; the bar docks at the bottom of the screen. */
+  .ad-tbl tr { position: relative; }
+  .ad-tbl tr:has(> .ck) { padding-inline-start: 2.75rem; }
+  .ad-tbl td.ck { position: absolute; inset-inline-start: 1rem; top: 0.875rem; width: auto; }
+  .ad-tbl td.ck + td { flex-basis: 100%; font-size: 0.875rem; }
+  .ad-tbl td.ck + td[data-label]::before { content: none; }
+  .ad-tbl tr:has(> .ck input:checked) { background: var(--ni-color-surface-2); }
+  .ad-tbl tr:has(> .ck input:checked) td { background: none; }
+  .ad-tbl:has(> .ad-bulk) { display: flex; flex-direction: column; }
+  .ad-tbl:has(> .ad-bulk) > table { order: 1; }
+  .ad-bulk { order: 2; top: auto; bottom: 0; padding: 0.75rem 1rem; border-bottom: 0; border-top: 1px solid var(--ni-color-border); border-radius: 0 0 calc(0.75rem - 1px) calc(0.75rem - 1px); box-shadow: 0 -6px 18px rgb(31 41 55 / 0.08); }
+  .ad-bulk input[name="reason"] { order: 5; flex-basis: 100%; max-width: none; }
+  .ad-bulk .ni-btn { order: 6; flex: 1; }
+  .ad-bulk-x { order: 7; }
 }
 
 /* apps page */

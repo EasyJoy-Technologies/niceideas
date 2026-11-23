@@ -42,6 +42,18 @@
       "visitor": "المتصفح",
       "with": "حظر هذا الزائر أيضًا"
     },
+    "bulk": {
+      "apply": "تطبيق",
+      "applyN": "تطبيق على {count}",
+      "clear": "مسح التحديد",
+      "narrow": "تضييق الظهور",
+      "pick": "تحديد",
+      "result": "{action} — تم: {done} · تم التخطي: {skipped}",
+      "resultFailed": "فشل: {count}",
+      "selectAll": "تحديد الكل في هذه الصفحة",
+      "selected": "المحدد: {count} من {total}",
+      "to": "التغيير إلى"
+    },
     "chart": {
       "postsBySource": "المنشورات الجديدة حسب المصدر · 30 يومًا"
     },

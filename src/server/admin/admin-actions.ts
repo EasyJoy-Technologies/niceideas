@@ -12,7 +12,8 @@ export type AdminAction = (typeof ADMIN_ACTIONS)[number];
 export type BanOption = { days: number | null; byIp: boolean } | null;
 
 const REASON_MAX = 500;
-const UUID = /^[0-9a-f-]{36}$/i;
+/** Comment ids (uuid). */
+export const COMMENT_ID_PATTERN = /^[0-9a-f-]{36}$/i;
 
 /** Hides a comment, banning its author's browser (or network) first when asked. */
 async function hideComment(rt: ModerationRuntime, op: Operator, commentId: string, ban: BanOption): Promise<void> {
@@ -62,7 +63,7 @@ export async function runAdminAction(rt: ModerationRuntime, actorId: string, inp
         return true;
       case "hide-comment":
       case "restore-comment":
-        if (!UUID.test(input.target) || !(await findComment(rt.db, input.target))) return false;
+        if (!COMMENT_ID_PATTERN.test(input.target) || !(await findComment(rt.db, input.target))) return false;
         if (action === "hide-comment") await hideComment(rt, op, input.target, input.ban ?? null);
         else await setCommentVisibility(rt.db, op, input.target, "visible");
         return true;

@@ -42,6 +42,18 @@
       "visitor": "Pelayar",
       "with": "Sekat pelawat ini juga"
     },
+    "bulk": {
+      "apply": "Guna",
+      "applyN": "Guna pada {count}",
+      "clear": "Kosongkan pilihan",
+      "narrow": "Sempitkan keterlihatan",
+      "pick": "Pilih",
+      "result": "{action} — selesai: {done} · dilangkau: {skipped}",
+      "resultFailed": "gagal: {count}",
+      "selectAll": "Pilih semua di halaman ini",
+      "selected": "Dipilih: {count} daripada {total}",
+      "to": "Tukar kepada"
+    },
     "chart": {
       "postsBySource": "Hantaran baharu mengikut sumber · 30 hari"
     },

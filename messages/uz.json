@@ -42,6 +42,18 @@
       "visitor": "Brauzer",
       "with": "Ushbu tashrifchini ham bloklash"
     },
+    "bulk": {
+      "apply": "Qo‘llash",
+      "applyN": "Qo‘llash ({count})",
+      "clear": "Tanlovni tozalash",
+      "narrow": "Ko‘rinishni toraytirish",
+      "pick": "Tanlash",
+      "result": "{action} — bajarildi: {done} · o‘tkazib yuborildi: {skipped}",
+      "resultFailed": "xatolik: {count}",
+      "selectAll": "Sahifadagi barchasini tanlash",
+      "selected": "Tanlandi: {count} / {total}",
+      "to": "Quyidagiga o‘zgartirish"
+    },
     "chart": {
       "postsBySource": "Manbaga ko‘ra yangi postlar · 30 kun"
     },

@@ -42,6 +42,18 @@
       "visitor": "Browser",
       "with": "Banna anche questo visitatore"
     },
+    "bulk": {
+      "apply": "Applica",
+      "applyN": "Applica a {count}",
+      "clear": "Annulla selezione",
+      "narrow": "Restringi visibilità",
+      "pick": "Seleziona",
+      "result": "{action} — completati: {done} · saltati: {skipped}",
+      "resultFailed": "non riusciti: {count}",
+      "selectAll": "Seleziona tutto in questa pagina",
+      "selected": "Selezionati: {count} su {total}",
+      "to": "Cambia in"
+    },
     "chart": {
       "postsBySource": "Nuovi post per origine · 30 giorni"
     },

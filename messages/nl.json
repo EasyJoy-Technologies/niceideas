@@ -42,6 +42,18 @@
       "visitor": "Browser",
       "with": "Deze bezoeker ook verbannen"
     },
+    "bulk": {
+      "apply": "Toepassen",
+      "applyN": "Toepassen op {count}",
+      "clear": "Selectie wissen",
+      "narrow": "Zichtbaarheid beperken",
+      "pick": "Selecteren",
+      "result": "{action}: {done} gelukt · {skipped} overgeslagen",
+      "resultFailed": "{count} mislukt",
+      "selectAll": "Alles op deze pagina selecteren",
+      "selected": "{count} van {total} geselecteerd",
+      "to": "Wijzigen in"
+    },
     "chart": {
       "postsBySource": "Nieuwe berichten per bron · 30 dagen"
     },

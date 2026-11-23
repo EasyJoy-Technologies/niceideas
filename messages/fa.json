@@ -42,6 +42,18 @@
       "visitor": "مرورگر",
       "with": "این بازدیدکننده نیز مسدود شود"
     },
+    "bulk": {
+      "apply": "اعمال",
+      "applyN": "اعمال روی {count}",
+      "clear": "پاک‌کردن انتخاب",
+      "narrow": "محدودکردن نمایانی",
+      "pick": "انتخاب",
+      "result": "{action} — انجام‌شده: {done} · ردشده: {skipped}",
+      "resultFailed": "ناموفق: {count}",
+      "selectAll": "انتخاب همه در این صفحه",
+      "selected": "انتخاب‌شده: {count} از {total}",
+      "to": "تغییر به"
+    },
     "chart": {
       "postsBySource": "پست‌های جدید بر اساس منبع · ۳۰ روز"
     },

@@ -42,6 +42,18 @@
       "visitor": "Webbläsare",
       "with": "Stäng även av den här besökaren"
     },
+    "bulk": {
+      "apply": "Verkställ",
+      "applyN": "Verkställ för {count}",
+      "clear": "Rensa urval",
+      "narrow": "Begränsa synlighet",
+      "pick": "Välj",
+      "result": "{action}: {done} klara · {skipped} överhoppade",
+      "resultFailed": "{count} misslyckades",
+      "selectAll": "Välj alla på sidan",
+      "selected": "{count} av {total} valda",
+      "to": "Ändra till"
+    },
     "chart": {
       "postsBySource": "Nya inlägg per källa · 30 dagar"
     },

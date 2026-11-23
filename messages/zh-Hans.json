@@ -42,6 +42,18 @@
       "visitor": "浏览器",
       "with": "同时封禁该访客"
     },
+    "bulk": {
+      "apply": "应用到所选",
+      "applyN": "应用到 {count} 条",
+      "clear": "取消选择",
+      "narrow": "收窄可见范围",
+      "pick": "选择",
+      "result": "{action}：成功 {done} 条 · 跳过 {skipped} 条",
+      "resultFailed": "失败 {count} 条",
+      "selectAll": "全选本页",
+      "selected": "已选 {count} / {total} 条",
+      "to": "改为"
+    },
     "chart": {
       "postsBySource": "新帖子 · 按来源 · 近 30 天"
     },

@@ -6,4 +6,4 @@ Bar sits at the top of the table card (sticky); on phones it docks at the bottom
 - `sheet-2-comments.jpg` — hide 3 comments (desktop + phone); bulk hide never bans
 - `sheet-3-result-en.jpg` — result notice + idle bar · English at 1280 px (denser cells: the posts table no longer overflows)
 
-Sources in `_src/`: real pages rendered by `render.test.ts` (copy to `var/bulk-admin/`), then `inject.py`, then `shoot.mjs` (playwright-core in /tmp/pw).
+Sources in `_src/`: real pages rendered by `render.test.ts.txt` + `vitest.config.ts.txt` (copy to `var/bulk-admin/` without `.txt`), then `inject.py`, then `shoot.mjs` (playwright-core in /tmp/pw).

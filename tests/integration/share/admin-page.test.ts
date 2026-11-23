@@ -179,7 +179,7 @@ describe("admin console", () => {
     expect(await current()).toBe("private");
     // Nothing narrower than only me: just the value, no form.
     const last = await list();
-    expect(last).not.toContain('value="set-visibility"');
+    expect(last).not.toContain('name="action" value="set-visibility"');
     expect(last).toContain("Only me</span>");
     // A removed post keeps its setting.
     await ctx.db.updateTable("post").set({ visibility: "public" }).where("id", "=", share.id).execute();

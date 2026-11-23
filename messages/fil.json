@@ -42,6 +42,18 @@
       "visitor": "Browser",
       "with": "I-ban din ang bisitang ito"
     },
+    "bulk": {
+      "apply": "Ilapat",
+      "applyN": "Ilapat sa {count}",
+      "clear": "I-clear ang pinili",
+      "narrow": "Paliitin kung sino ang makakakita",
+      "pick": "Piliin",
+      "result": "{action} — tapos: {done} · nilaktawan: {skipped}",
+      "resultFailed": "nabigo: {count}",
+      "selectAll": "Piliin lahat sa pahinang ito",
+      "selected": "Napili: {count} sa {total}",
+      "to": "Gawing"
+    },
     "chart": {
       "postsBySource": "Mga bagong post ayon sa pinagmulan · 30 araw"
     },

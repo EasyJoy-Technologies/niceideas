@@ -42,6 +42,18 @@
       "visitor": "Browser",
       "with": "Interzice și acest vizitator"
     },
+    "bulk": {
+      "apply": "Aplică",
+      "applyN": "Aplică la {count}",
+      "clear": "Golește selecția",
+      "narrow": "Restrânge vizibilitatea",
+      "pick": "Selectează",
+      "result": "{action} — reușite: {done} · omise: {skipped}",
+      "resultFailed": "eșuate: {count}",
+      "selectAll": "Selectează tot pe această pagină",
+      "selected": "Selectate: {count} din {total}",
+      "to": "Schimbă în"
+    },
     "chart": {
       "postsBySource": "Postări noi pe sursă · 30 de zile"
     },

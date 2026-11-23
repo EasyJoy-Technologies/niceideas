@@ -42,6 +42,18 @@
       "visitor": "Navigateur",
       "with": "Bannir aussi ce visiteur"
     },
+    "bulk": {
+      "apply": "Appliquer",
+      "applyN": "Appliquer à {count}",
+      "clear": "Effacer la sélection",
+      "narrow": "Restreindre la visibilité",
+      "pick": "Sélectionner",
+      "result": "{action} — traités : {done} · ignorés : {skipped}",
+      "resultFailed": "échecs : {count}",
+      "selectAll": "Tout sélectionner sur cette page",
+      "selected": "Sélection : {count} sur {total}",
+      "to": "Passer à"
+    },
     "chart": {
       "postsBySource": "Nouvelles publications par source · 30 jours"
     },

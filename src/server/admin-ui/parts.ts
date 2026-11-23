@@ -87,11 +87,14 @@ export function notice(ctx: AdminContext, n: "done" | "failed" | null): string {
 
 export const emptyRow = (text: string) => `<p class="ad-empty">${e(text)}</p>`;
 
-/** Table card (`title` / `sub` already escaped); `head` cells are already escaped, `cls` per column ("n" = number); labels repeat per cell for the phone layout. */
-export function table(head: [string, string?][], rows: string[][], title = "", sub = ""): string {
+/**
+ * Table card (`title` / `sub` already escaped); `head` cells are already escaped, `cls` per column ("n" = number,
+ * "ck" = bulk checkbox); labels repeat per cell for the phone layout. `bar`: bulk bar above the table (bulk-bar.ts).
+ */
+export function table(head: [string, string?][], rows: string[][], title = "", sub = "", bar = ""): string {
   const th = head.map(([h, c]) => `<th${c ? ` class="${c}"` : ""}>${h}</th>`).join("");
   const body = rows.map((r) => `<tr>${r.map((cell, i) => `<td${head[i]?.[1] ? ` class="${head[i][1]}"` : ""}${head[i]?.[0] ? ` data-label="${head[i][0]}"` : ""}>${cell}</td>`).join("")}</tr>`).join("");
-  return `<section class="ad-cd ad-tbl">${title ? `<h2>${title}</h2>` : ""}${sub ? `<p class="ad-sub">${sub}</p>` : ""}<table><thead><tr>${th}</tr></thead><tbody>${body}</tbody></table></section>`;
+  return `<section class="ad-cd ad-tbl">${title ? `<h2>${title}</h2>` : ""}${sub ? `<p class="ad-sub">${sub}</p>` : ""}${bar}<table><thead><tr>${th}</tr></thead><tbody>${body}</tbody></table></section>`;
 }
 
 /** Search box of a list page (GET; keeps the other filters). */

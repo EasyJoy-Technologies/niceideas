@@ -42,6 +42,18 @@
       "visitor": "ब्राउज़र",
       "with": "इस विज़िटर को भी प्रतिबंधित करें"
     },
+    "bulk": {
+      "apply": "लागू करें",
+      "applyN": "{count} पर लागू करें",
+      "clear": "चयन हटाएँ",
+      "narrow": "दृश्यता सीमित करें",
+      "pick": "चुनें",
+      "result": "{action} — पूरे हुए: {done} · छोड़े गए: {skipped}",
+      "resultFailed": "विफल: {count}",
+      "selectAll": "इस पेज पर सभी चुनें",
+      "selected": "चुने गए: {total} में से {count}",
+      "to": "इसमें बदलें"
+    },
     "chart": {
       "postsBySource": "स्रोत के अनुसार नई पोस्ट · 30 दिन"
     },

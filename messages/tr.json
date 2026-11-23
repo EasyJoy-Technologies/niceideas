@@ -42,6 +42,18 @@
       "visitor": "Tarayıcı",
       "with": "Bu ziyaretçiyi de yasakla"
     },
+    "bulk": {
+      "apply": "Uygula",
+      "applyN": "{count} öğeye uygula",
+      "clear": "Seçimi temizle",
+      "narrow": "Görünürlüğü daralt",
+      "pick": "Seç",
+      "result": "{action}: {done} tamamlandı · {skipped} atlandı",
+      "resultFailed": "{count} başarısız",
+      "selectAll": "Bu sayfadakilerin tümünü seç",
+      "selected": "{total} öğeden {count} seçildi",
+      "to": "Şuna değiştir"
+    },
     "chart": {
       "postsBySource": "Kaynağa göre yeni gönderiler · 30 gün"
     },

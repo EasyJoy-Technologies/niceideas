@@ -1,6 +1,7 @@
 import { randomUUID } from "node:crypto";
 import { runAdminAction, ADMIN_ACTIONS, type BanOption } from "@/server/admin/admin-actions";
 import { applyAppSettings, APP_SETTINGS_ACTION } from "@/server/admin/app-settings";
+import { BULK_ACTION, runBulkAction, type BulkResult } from "@/server/admin/bulk-actions";
 import { adminRoleOf, canConfigure, canModerate } from "@/server/admin/roles";
 import { sessionProfile } from "@/server/auth/web/session";
 import { getConfig } from "@/server/config/env";
@@ -31,6 +32,25 @@ export async function adminSectionPage(request: Request, section: string): Promi
   return res;
 }
 
+function moderationRuntime() {
+  const cfg = getConfig();
+  return { db: getDb(), stores: getMediaStores(), cacheControl: cfg.MEDIA_CACHE_CONTROL, retentionDays: cfg.POST_RETENTION_DAYS };
+}
+
+/** Bulk action from the posts / comments lists: back with the counts (`n=bulk`, see admin-load.ts noticeOf). */
+async function bulk(form: FormData, actorId: string, backTo: (query: string) => Response): Promise<Response> {
+  const input = { op: String(form.get("op") ?? ""), targets: form.getAll("targets").map(String), reason: String(form.get("reason") ?? ""), visibility: String(form.get("visibility") ?? "") };
+  let result: BulkResult | null = null;
+  try {
+    result = await runBulkAction(moderationRuntime(), actorId, input);
+  } catch (err) {
+    console.error(`[admin] bulk action failed errorId=${randomUUID()}`, err);
+  }
+  console.info(JSON.stringify({ event: "admin_action", action: BULK_ACTION, ...(result ?? { op: input.op, ok: false }) }));
+  if (!result) return backTo("n=failed");
+  return backTo(new URLSearchParams({ n: "bulk", op: result.op, ok: String(result.done), skip: String(result.skipped), fail: String(result.failed) }).toString());
+}
+
 function banOption(form: FormData): BanOption {
   if (form.get("ban") !== "1") return null;
   const days = Number(form.get("days"));
@@ -46,9 +66,11 @@ export async function adminActionRoute(request: Request): Promise<Response> {
   if (!role) return new Response(null, { status: 404 });
   const form = await request.formData().catch(() => null);
   const back = safeNextPath(String(form?.get("back") ?? "/admin"));
-  const to = (n: "done" | "failed") => see(`${back.startsWith("/admin") ? back : "/admin"}${back.includes("?") ? "&" : "?"}n=${n}`);
+  const backTo = (query: string) => see(`${back.startsWith("/admin") ? back : "/admin"}${back.includes("?") ? "&" : "?"}${query}`);
+  const to = (n: "done" | "failed") => backTo(`n=${n}`);
   if (!form || !canModerate(role)) return to("failed");
   const action = String(form.get("action") ?? "");
+  if (action === BULK_ACTION) return bulk(form, viewer!.user_id, backTo);
   if (action === APP_SETTINGS_ACTION) {
     const ok = canConfigure(role) && (await applyAppSettings(db, viewer!.user_id, form).catch((err) => (console.error(`[admin] app settings failed errorId=${randomUUID()}`, err), false)));
     console.info(JSON.stringify({ event: "admin_action", action, ok }));
@@ -56,9 +78,7 @@ export async function adminActionRoute(request: Request): Promise<Response> {
   }
   if (!(ADMIN_ACTIONS as readonly string[]).includes(action)) return to("failed");
   try {
-    const cfg = getConfig();
-    const rt = { db, stores: getMediaStores(), cacheControl: cfg.MEDIA_CACHE_CONTROL, retentionDays: cfg.POST_RETENTION_DAYS };
-    const ok = await runAdminAction(rt, viewer!.user_id, { action, target: String(form.get("target") ?? ""), reason: String(form.get("reason") ?? ""), ban: banOption(form), visibility: String(form.get("visibility") ?? "") });
+    const ok = await runAdminAction(moderationRuntime(), viewer!.user_id, { action, target: String(form.get("target") ?? ""), reason: String(form.get("reason") ?? ""), ban: banOption(form), visibility: String(form.get("visibility") ?? "") });
     console.info(JSON.stringify({ event: "admin_action", action, ok }));
     return to(ok ? "done" : "failed");
   } catch (err) {

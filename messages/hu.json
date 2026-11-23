@@ -42,6 +42,18 @@
       "visitor": "Böngésző",
       "with": "A látogató kitiltása is"
     },
+    "bulk": {
+      "apply": "Alkalmaz",
+      "applyN": "Alkalmazás ({count})",
+      "clear": "Kijelölés törlése",
+      "narrow": "Láthatóság szűkítése",
+      "pick": "Kijelölés",
+      "result": "{action} — kész: {done} · kihagyva: {skipped}",
+      "resultFailed": "sikertelen: {count}",
+      "selectAll": "Az oldal összes elemének kijelölése",
+      "selected": "Kijelölve: {count} / {total}",
+      "to": "Módosítás erre"
+    },
     "chart": {
       "postsBySource": "Új bejegyzések forrás szerint · 30 nap"
     },

@@ -42,6 +42,18 @@
       "visitor": "Burauza",
       "with": "Haramta wannan baƙon shima"
     },
+    "bulk": {
+      "apply": "Aiwatar",
+      "applyN": "Aiwatar akan {count}",
+      "clear": "Share zaɓi",
+      "narrow": "Taƙaita ganuwa",
+      "pick": "Zaɓa",
+      "result": "{action} — an gama: {done} · an tsallake: {skipped}",
+      "resultFailed": "sun gaza: {count}",
+      "selectAll": "Zaɓi duka a wannan shafi",
+      "selected": "An zaɓa: {count} cikin {total}",
+      "to": "Canza zuwa"
+    },
     "chart": {
       "postsBySource": "Sabbin saƙonni bisa tushe · kwanaki 30"
     },

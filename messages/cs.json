@@ -42,6 +42,18 @@
       "visitor": "Prohlížeč",
       "with": "Zakázat také tohoto návštěvníka"
     },
+    "bulk": {
+      "apply": "Použít",
+      "applyN": "Použít na: {count}",
+      "clear": "Zrušit výběr",
+      "narrow": "Omezit viditelnost",
+      "pick": "Vybrat",
+      "result": "{action} — hotovo: {done} · přeskočeno: {skipped}",
+      "resultFailed": "selhalo: {count}",
+      "selectAll": "Vybrat vše na této stránce",
+      "selected": "Vybráno: {count} z {total}",
+      "to": "Změnit na"
+    },
     "chart": {
       "postsBySource": "Nové příspěvky podle zdroje · 30 dní"
     },

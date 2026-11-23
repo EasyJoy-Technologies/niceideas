@@ -42,6 +42,18 @@
       "visitor": "瀏覽器",
       "with": "同時封鎖此訪客"
     },
+    "bulk": {
+      "apply": "套用",
+      "applyN": "套用到 {count} 則",
+      "clear": "取消選取",
+      "narrow": "縮小可見範圍",
+      "pick": "選取",
+      "result": "{action}：成功 {done} 則 · 略過 {skipped} 則",
+      "resultFailed": "失敗 {count} 則",
+      "selectAll": "全選本頁",
+      "selected": "已選 {count} / {total} 則",
+      "to": "改為"
+    },
     "chart": {
       "postsBySource": "新增貼文來源 · 近 30 天"
     },

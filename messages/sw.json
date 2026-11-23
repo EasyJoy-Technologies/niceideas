@@ -42,6 +42,18 @@
       "visitor": "Kivinjari",
       "with": "Pia piga marufuku mtembeleaji huyu"
     },
+    "bulk": {
+      "apply": "Tekeleza",
+      "applyN": "Tekeleza kwa {count}",
+      "clear": "Futa uteuzi",
+      "narrow": "Punguza mwonekano",
+      "pick": "Chagua",
+      "result": "{action} — zimekamilika: {done} · zimerukwa: {skipped}",
+      "resultFailed": "zimeshindwa: {count}",
+      "selectAll": "Chagua zote kwenye ukurasa huu",
+      "selected": "Zilizochaguliwa: {count} kati ya {total}",
+      "to": "Badilisha kuwa"
+    },
     "chart": {
       "postsBySource": "Machapisho mapya kwa chanzo · siku 30"
     },

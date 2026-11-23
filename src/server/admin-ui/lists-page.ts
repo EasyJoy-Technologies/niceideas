@@ -5,6 +5,7 @@ import { icon } from "@/server/share/icons";
 import { VISIBILITY_ICONS, visibilityLabel } from "@/server/share/visibility-bits";
 import { escapeHtml } from "@/server/render/escape";
 import { cardTitle } from "@/server/share/card";
+import { bulkTable, listNotice, type ListNotice } from "./bulk-bar";
 import { actionPop, emptyRow, notice, pager, pill, searchForm, table, tabs, when, withQuery } from "./parts";
 import { renderAdmin, type AdminContext } from "./shell";
 import { adminSourceLabel, adminSources, postSourceLabel, type AdminSource } from "./source-class";
@@ -15,8 +16,8 @@ type Note = "done" | "failed" | null;
 const POST_STATUSES: (PostStatus | "")[] = ["", "active", "removed", "unpublished"];
 const COMMENT_STATUSES: (CommentStatus | "")[] = ["", "visible", "hidden", "deleted"];
 
-const body = (n: Note, ctx: AdminContext, filters: string, page: Page<unknown>, rows: string, base: string, offset: number) =>
-  `${notice(ctx, n)}<div class="ad-filters">${filters}</div>${page.rows.length ? rows : `<section class="ad-cd">${emptyRow(ctx.intl.t("feed.empty"))}</section>`}${pager(ctx, base, offset, page.more)}`;
+const body = (n: ListNotice, ctx: AdminContext, filters: string, page: Page<unknown>, rows: string, base: string, offset: number) =>
+  `${listNotice(ctx, n)}<div class="ad-filters">${filters}</div>${page.rows.length ? rows : `<section class="ad-cd">${emptyRow(ctx.intl.t("feed.empty"))}</section>`}${pager(ctx, base, offset, page.more)}`;
 
 /** Who may see the post: icon and label as on the site (share/visibility-bits.ts). */
 const visibilityText = (ctx: AdminContext, v: PostVisibility) => `<span class="ad-vis">${icon(VISIBILITY_ICONS[v])}${e(visibilityLabel(ctx, v))}</span>`;
@@ -43,7 +44,7 @@ function visibilityChange(ctx: AdminContext, detail: string): string {
   return isVisibility(from) && isVisibility(to) ? ` · ${e(visibilityLabel(ctx, from))} → ${e(visibilityLabel(ctx, to))}` : "";
 }
 
-export function renderPosts(ctx: AdminContext, v: { status: PostStatus | null; source: AdminSource | null; query: string; offset: number; page: Page<AdminPostRow>; notice: Note }): string {
+export function renderPosts(ctx: AdminContext, v: { status: PostStatus | null; source: AdminSource | null; query: string; offset: number; page: Page<AdminPostRow>; notice: ListNotice }): string {
   const { t, format } = ctx.intl;
   const src = v.source ?? "";
   const base = withQuery("/admin/posts", { s: v.status ?? "", src, q: v.query });
@@ -53,8 +54,8 @@ export function renderPosts(ctx: AdminContext, v: { status: PostStatus | null; s
     "ad-seg ad-seg-wrap",
   );
   const tone = (s: PostStatus) => (s === "active" ? "ok" : s === "removed" ? "bad" : "");
+  const back = withQuery(base, { o: v.offset });
   const rows = v.page.rows.map((p) => {
-    const back = withQuery(base, { o: v.offset });
     const act =
       p.status === "active" ? actionPop(ctx, { action: "remove-post", target: p.slug, back, label: t("admin.removePost"), danger: true })
       : p.status === "removed" ? actionPop(ctx, { action: "restore-post", target: p.slug, back, label: t("admin.restorePost") }) : "";
@@ -63,18 +64,18 @@ export function renderPosts(ctx: AdminContext, v: { status: PostStatus | null; s
       `@${e(p.handle)}`, e(postSourceLabel(ctx, p)), pill(t(`admin.status.${p.status}`), tone(p.status)), visibilityCell(ctx, p, back), e(format.number(p.like_count)), e(format.number(p.comment_count)), when(ctx, p.published_at), act,
     ];
   });
-  const head: [string, string?][] = [[e(t("admin.col.post"))], [e(t("admin.col.author"))], [e(t("admin.col.source"))], [e(t("admin.col.status"))], [e(t("admin.col.visibility"))], [e(t("admin.col.likes")), "n"], [e(t("admin.col.comments")), "n"], [e(t("admin.col.published"))], ["", "a"]];
+  const head: [string, string?][] = [[e(t("admin.col.post"))], [e(t("admin.col.author")), "nw"], [e(t("admin.col.source")), "nw"], [e(t("admin.col.status")), "nw"], [e(t("admin.col.visibility")), "nw"], [e(t("admin.col.likes")), "n"], [e(t("admin.col.comments")), "n"], [e(t("admin.col.published")), "nw"], ["", "a"]];
   const keep = { ...(v.status ? { s: v.status } : {}), ...(src ? { src } : {}) };
   const filters = statusTabs + sourceTabs + searchForm(ctx, "/admin/posts", v.query, "admin.posts.search", keep);
-  return renderAdmin(ctx, { section: "posts", title: t("admin.nav.posts"), main: body(v.notice, ctx, filters, v.page, table(head, rows), base, v.offset) });
+  return renderAdmin(ctx, { section: "posts", title: t("admin.nav.posts"), main: body(v.notice, ctx, filters, v.page, bulkTable(ctx, "posts", back, head, rows, v.page.rows.map((p) => p.slug)), base, v.offset) });
 }
 
-export function renderComments(ctx: AdminContext, v: { status: CommentStatus | null; query: string; offset: number; page: Page<AdminCommentRow>; notice: Note }): string {
+export function renderComments(ctx: AdminContext, v: { status: CommentStatus | null; query: string; offset: number; page: Page<AdminCommentRow>; notice: ListNotice }): string {
   const { t } = ctx.intl;
   const base = withQuery("/admin/comments", { s: v.status ?? "", q: v.query });
   const statusTabs = tabs(COMMENT_STATUSES.map((s) => ({ href: withQuery("/admin/comments", { s, q: v.query }), label: t(s ? `admin.commentStatus.${s}` : "admin.filter.all"), on: (v.status ?? "") === s })), "ad-seg");
+  const back = withQuery(base, { o: v.offset });
   const rows = v.page.rows.map((c) => {
-    const back = withQuery(base, { o: v.offset });
     const act =
       c.status === "visible" ? actionPop(ctx, { action: "hide-comment", target: c.id, back, label: t("admin.hideComment"), danger: true, ban: !c.author_id })
       : c.status === "hidden" ? actionPop(ctx, { action: "restore-comment", target: c.id, back, label: t("admin.restoreComment") }) : "";
@@ -84,9 +85,9 @@ export function renderComments(ctx: AdminContext, v: { status: CommentStatus | n
       author, pill(t(`admin.commentStatus.${c.status}`), c.status === "visible" ? "ok" : c.status === "hidden" ? "warn" : ""), when(ctx, c.created_at), act,
     ];
   });
-  const head: [string, string?][] = [[e(t("admin.col.comment"))], [e(t("admin.col.author"))], [e(t("admin.col.status"))], [e(t("admin.col.time"))], ["", "a"]];
+  const head: [string, string?][] = [[e(t("admin.col.comment"))], [e(t("admin.col.author")), "nw"], [e(t("admin.col.status")), "nw"], [e(t("admin.col.time")), "nw"], ["", "a"]];
   const filters = statusTabs + searchForm(ctx, "/admin/comments", v.query, "admin.comments.search", v.status ? { s: v.status } : {});
-  return renderAdmin(ctx, { section: "comments", title: t("admin.nav.comments"), main: body(v.notice, ctx, filters, v.page, table(head, rows), base, v.offset) });
+  return renderAdmin(ctx, { section: "comments", title: t("admin.nav.comments"), main: body(v.notice, ctx, filters, v.page, bulkTable(ctx, "comments", back, head, rows, v.page.rows.map((c) => c.id)), base, v.offset) });
 }
 
 export function renderBans(ctx: AdminContext, v: { offset: number; page: Page<AdminBanRow>; notice: Note }): string {
