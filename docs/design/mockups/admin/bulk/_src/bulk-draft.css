@@ -1,0 +1,36 @@
+/* DRAFT (mockup only): bulk actions on the posts / comments lists. */
+/* Denser cells so 9–10 columns fit at 1280 px in long locales (en overflowed by ~40 px before this change). */
+.ad-tbl th, .ad-tbl td { padding-inline: 0.75rem; }
+.ad-tbl th:first-child, .ad-tbl td:first-child { padding-inline-start: 1.125rem; }
+.ad-tbl th:last-child, .ad-tbl td:last-child { padding-inline-end: 1.125rem; }
+.ad-tbl .ck { width: 1%; padding-inline-end: 0; }
+.ad-tbl .ck input, .ad-bulk-all input { width: 1rem; height: 1rem; margin: 0.125rem 0 0; accent-color: var(--ni-color-primary); cursor: pointer; }
+.ad-tbl tr.ad-sel td { background: var(--ni-color-surface-2); }
+.ad-bulk { position: sticky; top: 0; z-index: 5; display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem 0.625rem; padding: 0.625rem 1.125rem; background: var(--ni-color-surface); border-bottom: 1px solid var(--ni-color-divider); border-start-start-radius: calc(0.75rem - 1px); border-start-end-radius: calc(0.75rem - 1px); }
+.ad-bulk.on { background: var(--ni-color-surface-2); }
+.ad-bulk-all { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.8125rem; color: var(--ni-color-text-secondary); white-space: nowrap; margin-inline-end: 0.375rem; }
+.ad-bulk.on .ad-bulk-all { color: var(--ni-color-text-primary); }
+.ad-bulk-all b { color: var(--ni-color-primary); font-variant-numeric: tabular-nums; }
+.ad-bulk select.ad-in { height: 2rem; font-size: 0.8125rem; }
+.ad-bulk .ad-row { white-space: nowrap; }
+.ad-bulk-why { flex: 1; min-width: 12rem; max-width: 20rem; height: 2rem !important; font-size: 0.8125rem; }
+.ad-bulk .ni-btn[disabled] { opacity: 0.45; cursor: not-allowed; }
+.ad-bulk-x { background: none; border: 0; padding: 0; font: inherit; cursor: pointer; }
+.ad-bulk-hint { flex-basis: 100%; margin: 0; font-size: 0.75rem; color: var(--ni-color-muted); }
+.ad-bulk ~ table th { border-radius: 0 !important; }
+@media (max-width: 47.99rem) {
+  .ad-tbl tr { position: relative; }
+  .ad-tbl tr:has(> td.ck) { padding-inline-start: 2.75rem; }
+  .ad-tbl td.ck { position: absolute; inset-inline-start: 1rem; top: 0.875rem; padding: 0; }
+  .ad-tbl td.ck + td { flex-basis: 100%; font-size: 0.875rem; }
+  .ad-tbl td.ck + td[data-label]::before { content: none; }
+  .ad-tbl tr.ad-sel { background: var(--ni-color-surface-2); }
+  .ad-tbl tr.ad-sel td { background: none; }
+  .ad-tbl:has(.ad-bulk) { display: flex; flex-direction: column; }
+  .ad-tbl:has(.ad-bulk) > table { order: 1; }
+  .ad-bulk { top: auto; bottom: 0; order: 2; border-radius: 0 0 calc(0.75rem - 1px) calc(0.75rem - 1px); border-bottom: 0; border-top: 1px solid var(--ni-color-border); box-shadow: 0 -6px 18px rgb(31 41 55 / 0.08); padding: 0.75rem 1rem; }
+  .ad-bulk-why { flex-basis: 100%; max-width: none; order: 5; }
+  .ad-bulk .ni-btn { order: 6; flex: 1; }
+  .ad-bulk-x { order: 7; }
+  .ad-bulk-hint { order: 8; }
+}
