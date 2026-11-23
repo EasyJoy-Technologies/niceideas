@@ -160,7 +160,6 @@
     },
     "posts": {
       "noContent": "(Tanpa konten)",
-      "noText": "(Tanpa teks)",
       "search": "@nama pengguna, kode postingan, atau teks"
     },
     "preset": {
@@ -512,6 +511,7 @@
       "friendsNote": "Hanya teman penulis (orang yang saling mengikuti dengan penulis) yang dapat melihat postingan ini.",
       "from": "Dari {app}",
       "linkNote": "Postingan ini tidak tercantum di mana pun. Hanya orang yang punya tautan yang dapat melihatnya.",
+      "noText": "(Tanpa teks)",
       "preparing": {
         "body": "Konten akan muncul di sini sebentar lagi.",
         "title": "Menyiapkan postingan ini"

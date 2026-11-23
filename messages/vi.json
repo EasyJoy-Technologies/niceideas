@@ -160,7 +160,6 @@
     },
     "posts": {
       "noContent": "(Không có nội dung)",
-      "noText": "(Không có văn bản)",
       "search": "@tên người dùng, mã bài viết hoặc nội dung"
     },
     "preset": {
@@ -512,6 +511,7 @@
       "friendsNote": "Chỉ bạn bè của tác giả (những người theo dõi lẫn nhau với tác giả) mới xem được bài đăng này.",
       "from": "Từ {app}",
       "linkNote": "Bài đăng này không hiển thị ở danh sách nào. Chỉ người có liên kết mới xem được.",
+      "noText": "(Không có văn bản)",
       "preparing": {
         "body": "Nội dung sẽ xuất hiện ở đây trong chốc lát.",
         "title": "Đang chuẩn bị bài viết này"

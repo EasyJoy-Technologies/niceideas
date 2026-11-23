@@ -28,7 +28,7 @@ export function quoteEmbed(ctx: ChromeContext, q: QuotedPost | null, link = true
     `<span>@${escapeHtml(q.author_handle)} · <time datetime="${q.published_at.toISOString()}" data-rel>${escapeHtml(format.dateTime(q.published_at, { dateStyle: "medium" }))}</time></span></div>`;
   const text =
     q.kind === "article"
-      ? `<div class="ni-qe-t"><span class="ni-fc-kind">${escapeHtml(t("feed.article"))}</span><h4>${escapeHtml(q.title)}</h4>${q.summary ? `<p>${escapeHtml(q.summary)}</p>` : ""}</div>`
+      ? `<div class="ni-qe-t"><span class="ni-fc-kind">${escapeHtml(t("feed.article"))}</span>${q.title ? `<h4>${escapeHtml(q.title)}</h4>` : ""}${q.summary ? `<p>${escapeHtml(q.summary)}</p>` : ""}</div>`
       : `<div class="ni-qe-t">${q.summary ? `<p class="ni-qe-short">${escapeHtml(q.summary)}</p>` : ""}</div>`;
   const body = `${head}<div class="ni-qe-b">${text}${thumb(q)}</div>`;
   return link ? `<a class="ni-qe" href="/p/${escapeHtml(q.slug)}">${body}</a>` : `<div class="ni-qe">${body}</div>`;

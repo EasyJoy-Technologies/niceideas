@@ -160,7 +160,6 @@
     },
     "posts": {
       "noContent": "(Brak treści)",
-      "noText": "(Brak tekstu)",
       "search": "@nazwa użytkownika, kod posta lub tekst"
     },
     "preset": {
@@ -512,6 +511,7 @@
       "friendsNote": "Ten wpis widzą tylko znajomi autora (osoby, które obserwują się z nim nawzajem).",
       "from": "Z aplikacji {app}",
       "linkNote": "Ten wpis nie jest nigdzie wyświetlany na listach. Widzą go tylko osoby, które mają link.",
+      "noText": "(Brak tekstu)",
       "preparing": {
         "body": "Treść pojawi się tutaj za chwilę.",
         "title": "Przygotowywanie wpisu"

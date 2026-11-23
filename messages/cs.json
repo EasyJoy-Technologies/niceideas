@@ -160,7 +160,6 @@
     },
     "posts": {
       "noContent": "(Bez obsahu)",
-      "noText": "(Bez textu)",
       "search": "@uživatel, kód příspěvku nebo text"
     },
     "preset": {
@@ -512,6 +511,7 @@
       "friendsNote": "Tento příspěvek vidí jen přátelé autora (lidé, kteří se s ním navzájem sledují).",
       "from": "Z aplikace {app}",
       "linkNote": "Tento příspěvek není nikde uveden. Vidí ho jen lidé, kteří mají odkaz.",
+      "noText": "(Bez textu)",
       "preparing": {
         "body": "Obsah se tu zobrazí za okamžik.",
         "title": "Příspěvek se připravuje"

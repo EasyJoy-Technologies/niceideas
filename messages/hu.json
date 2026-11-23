@@ -160,7 +160,6 @@
     },
     "posts": {
       "noContent": "(Nincs tartalom)",
-      "noText": "(Nincs szöveg)",
       "search": "@felhasználónév, bejegyzéskód vagy szöveg"
     },
     "preset": {
@@ -512,6 +511,7 @@
       "friendsNote": "Ezt a bejegyzést csak a szerző barátai (akik kölcsönösen követik egymást vele) láthatják.",
       "from": "Forrás: {app}",
       "linkNote": "Ez a bejegyzés sehol sem jelenik meg. Csak azok láthatják, akiknél ott a link.",
+      "noText": "(Nincs szöveg)",
       "preparing": {
         "body": "A tartalom hamarosan megjelenik itt.",
         "title": "A bejegyzés előkészítése"

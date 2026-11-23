@@ -160,7 +160,6 @@
     },
     "posts": {
       "noContent": "(Fără conținut)",
-      "noText": "(Fără text)",
       "search": "@utilizator, cod de postare sau text"
     },
     "preset": {
@@ -512,6 +511,7 @@
       "friendsNote": "Doar prietenii autorului (persoanele care se urmăresc reciproc cu el) pot vedea această postare.",
       "from": "Din {app}",
       "linkNote": "Această postare nu apare în nicio listă. Doar cei care au linkul o pot vedea.",
+      "noText": "(Fără text)",
       "preparing": {
         "body": "Conținutul va apărea aici imediat.",
         "title": "Postarea se pregătește"

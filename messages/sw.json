@@ -160,7 +160,6 @@
     },
     "posts": {
       "noContent": "(Hakuna maudhui)",
-      "noText": "(Hakuna maandishi)",
       "search": "@jina, msimbo wa chapisho au maandishi"
     },
     "preset": {
@@ -512,6 +511,7 @@
       "friendsNote": "Ni marafiki wa mwandishi pekee (wanaofuatana na mwandishi) wanaoweza kuona chapisho hili.",
       "from": "Kutoka {app}",
       "linkNote": "Chapisho hili halionyeshwi kwenye orodha yoyote. Ni wenye kiungo pekee wanaoweza kuliona.",
+      "noText": "(Hakuna maandishi)",
       "preparing": {
         "body": "Maudhui yataonekana hapa muda mfupi.",
         "title": "Chapisho hili linatayarishwa"

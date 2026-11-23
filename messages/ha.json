@@ -160,7 +160,6 @@
     },
     "posts": {
       "noContent": "(Babu abun ciki)",
-      "noText": "(Babu rubutu)",
       "search": "@suna, lambar saƙo ko rubutu"
     },
     "preset": {
@@ -512,6 +511,7 @@
       "friendsNote": "Abokan marubucin ne kawai (waɗanda ke bin juna da marubucin) za su iya ganin wannan rubutu.",
       "from": "Daga {app}",
       "linkNote": "Ba a jera wannan rubutu a ko'ina ba. Waɗanda ke da hanyar haɗin ne kawai za su iya ganinsa.",
+      "noText": "(Babu rubutu)",
       "preparing": {
         "body": "Abun ciki zai bayyana a nan cikin ɗan lokaci.",
         "title": "Ana shirya wannan rubutun"

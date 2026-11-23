@@ -1,10 +1,10 @@
-import { cardTitle } from "./card";
 import { publicUrl } from "@/server/media/keys";
 import type { Media } from "@/server/db/schema";
 import { escapeHtml } from "@/server/render/escape";
 import type { ChromeContext } from "./chrome";
 import type { PostAside } from "./load-post-aside";
 import { followButton } from "./follow-button";
+import { postLabelHtml } from "./post-label";
 import { avatarHtml, profilePath } from "./profile-bits";
 
 /** Smallest webp rendition (list thumbnails). */
@@ -32,7 +32,7 @@ export function renderPostAside(ctx: ChromeContext, a: PostAside): string {
   const items = a.more
     .map(({ post, cover }) => {
       const at = escapeHtml(format.dateTime(post.published_at, { dateStyle: "medium" }));
-      return `<a class="ni-mini" href="/p/${post.slug}">${thumb(cover)}<span><b>${escapeHtml(cardTitle(post))}</b><small>${at}</small></span></a>`;
+      return `<a class="ni-mini" href="/p/${post.slug}">${thumb(cover)}<span><b>${postLabelHtml(t, post)}</b><small>${at}</small></span></a>`;
     })
     .join("");
   const all = `<a href="${href}?tab=articles">${escapeHtml(t("feed.tab.all"))}</a>`;

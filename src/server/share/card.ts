@@ -1,5 +1,5 @@
 import { getConfig } from "@/server/config/env";
-import type { Post } from "@/server/db/schema";
+import type { Post, Profile } from "@/server/db/schema";
 
 /** Share-card data used by the page's meta tags and returned to apps for native sharing (plan §16.3). */
 export type ShareCard = {
@@ -24,13 +24,20 @@ export function cardTitle(post: Pick<Post, "title" | "summary">): string {
   return chars.length <= CARD_TITLE_CHARS ? chars.join("") : `${chars.slice(0, CARD_TITLE_CHARS).join("").trimEnd()}…`;
 }
 
-/** Cover-based images are versioned by the post's last change so caches refresh after edits. */
-export function shareCard(post: Pick<Post, "slug" | "title" | "summary" | "cover_media_id" | "updated_at">): ShareCard {
+/** Share title of a post with no title and no text (images / audio only): its author, as on the profile page. */
+export const authorCardTitle = (author: Pick<Profile, "display_name" | "handle">): string =>
+  author.display_name ? `${author.display_name} (@${author.handle})` : `@${author.handle}`;
+
+/**
+ * Cover-based images are versioned by the post's last change so caches refresh after edits.
+ * `fallbackTitle`: the title when the post has neither title nor text (authorCardTitle).
+ */
+export function shareCard(post: Pick<Post, "slug" | "title" | "summary" | "cover_media_id" | "updated_at">, fallbackTitle: string): ShareCard {
   const root = base();
   const v = post.updated_at.getTime().toString(36);
   const cover = post.cover_media_id !== null;
   return {
-    title: cardTitle(post),
+    title: cardTitle(post) || fallbackTitle,
     description: post.summary,
     imageUrl: cover ? `${root}/p/${post.slug}/og/wide.jpg?v=${v}` : `${root}/brand/og-default.png`,
     thumbUrl: cover ? `${root}/p/${post.slug}/og/square.jpg?v=${v}` : `${root}/brand/og-default-square.png`,

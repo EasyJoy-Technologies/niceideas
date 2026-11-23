@@ -160,7 +160,6 @@
     },
     "posts": {
       "noContent": "(Mazmun yo‘q)",
-      "noText": "(Matn yo‘q)",
       "search": "@foydalanuvchi, post kodi yoki matn"
     },
     "preset": {
@@ -512,6 +511,7 @@
       "friendsNote": "Bu postni faqat muallifning do‘stlari (muallif bilan o‘zaro obuna bo‘lganlar) ko‘ra oladi.",
       "from": "{app} orqali",
       "linkNote": "Bu post hech qayerda ro‘yxatda ko‘rinmaydi. Uni faqat havolasi borlar ko‘ra oladi.",
+      "noText": "(Matn yo‘q)",
       "preparing": {
         "body": "Mazmun bir zumda shu yerda ko'rinadi.",
         "title": "Bu post tayyorlanmoqda"

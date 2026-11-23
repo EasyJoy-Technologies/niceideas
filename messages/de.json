@@ -160,7 +160,6 @@
     },
     "posts": {
       "noContent": "(Kein Inhalt)",
-      "noText": "(Kein Text)",
       "search": "@Name, Beitragscode oder Text"
     },
     "preset": {
@@ -512,6 +511,7 @@
       "friendsNote": "Nur die Freunde des Autors (Personen, die sich gegenseitig mit ihm folgen) können diesen Beitrag sehen.",
       "from": "Aus {app}",
       "linkNote": "Dieser Beitrag ist nirgends aufgelistet. Nur Personen mit dem Link können ihn sehen.",
+      "noText": "(Kein Text)",
       "preparing": {
         "body": "Der Inhalt wird gleich hier erscheinen.",
         "title": "Dieser Beitrag wird vorbereitet"

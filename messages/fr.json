@@ -160,7 +160,6 @@
     },
     "posts": {
       "noContent": "(Aucun contenu)",
-      "noText": "(Aucun texte)",
       "search": "@identifiant, code ou texte de la publication"
     },
     "preset": {
@@ -512,6 +511,7 @@
       "friendsNote": "Seuls les amis de l’auteur (personnes qui se suivent mutuellement avec lui) peuvent voir cette publication.",
       "from": "Depuis {app}",
       "linkNote": "Cette publication n’est répertoriée nulle part. Seules les personnes disposant du lien peuvent la voir.",
+      "noText": "(Aucun texte)",
       "preparing": {
         "body": "Le contenu apparaîtra ici dans un instant.",
         "title": "Préparation de la publication"

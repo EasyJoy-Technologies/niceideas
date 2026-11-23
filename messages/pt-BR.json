@@ -160,7 +160,6 @@
     },
     "posts": {
       "noContent": "(Sem conteúdo)",
-      "noText": "(Sem texto)",
       "search": "@usuário, código ou texto da publicação"
     },
     "preset": {
@@ -512,6 +511,7 @@
       "friendsNote": "Só os amigos do autor (pessoas que se seguem mutuamente com ele) podem ver esta publicação.",
       "from": "Via {app}",
       "linkNote": "Esta publicação não aparece em nenhuma lista. Só quem tem o link pode vê-la.",
+      "noText": "(Sem texto)",
       "preparing": {
         "body": "O conteúdo vai aparecer aqui em um instante.",
         "title": "Preparando esta publicação"

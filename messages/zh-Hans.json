@@ -160,7 +160,6 @@
     },
     "posts": {
       "noContent": "（无内容）",
-      "noText": "（无文字）",
       "search": "@用户名、帖子代码或文字"
     },
     "preset": {
@@ -512,6 +511,7 @@
       "friendsNote": "这条帖子仅与作者互相关注的朋友可见。",
       "from": "来自 {app}",
       "linkNote": "这条帖子不公开列出，只有拿到链接的人能看到。",
+      "noText": "（无文字）",
       "preparing": {
         "body": "内容马上就会显示在这里。",
         "title": "内容准备中"

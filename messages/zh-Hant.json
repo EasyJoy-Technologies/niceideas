@@ -160,7 +160,6 @@
     },
     "posts": {
       "noContent": "（無內容）",
-      "noText": "（無文字）",
       "search": "@帳號、貼文代碼或文字"
     },
     "preset": {
@@ -512,6 +511,7 @@
       "friendsNote": "這則貼文僅與作者互相追蹤的朋友可見。",
       "from": "來自 {app}",
       "linkNote": "這則貼文不公開列出，只有拿到連結的人能看到。",
+      "noText": "（無文字）",
       "preparing": {
         "body": "內容稍後就會顯示在這裡。",
         "title": "貼文準備中"

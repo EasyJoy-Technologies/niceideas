@@ -36,9 +36,11 @@ function articleBlock(ctx: ChromeContext, item: FeedItem): string {
   // The "Article" label shares the facts line (one row less per card); "Read more" ends it.
   // Without a cover the box has no frame, its text laid out like a short post's text.
   const more = `<span class="ni-fc-more">${escapeHtml(t("feed.readMore"))}${icon("chevronRight")}</span>`;
+  // Images / audio only (no title, no text): no heading; the cover and the facts line say what it is.
+  const title = cardTitle(post);
   return (
     `<a class="ni-fc-article${cover ? "" : " ni-fc-plain"}" href="/p/${post.slug}">${cover}<div class="ni-fc-t">` +
-    `<h3>${escapeHtml(cardTitle(post))}</h3>${post.summary ? `<p>${escapeHtml(post.summary)}</p>` : ""}` +
+    `${title ? `<h3>${escapeHtml(title)}</h3>` : ""}${post.summary ? `<p>${escapeHtml(post.summary)}</p>` : ""}` +
     `<div class="ni-fc-rt"><span><span class="ni-fc-kind">${escapeHtml(t("feed.article"))}</span> · ${escapeHtml(facts.join(" · "))}</span>${more}</div></div></a>`
   );
 }

@@ -160,7 +160,6 @@
     },
     "posts": {
       "noContent": "(Inget innehåll)",
-      "noText": "(Ingen text)",
       "search": "@användarnamn, inläggskod eller text"
     },
     "preset": {
@@ -512,6 +511,7 @@
       "friendsNote": "Bara författarens vänner (personer som följer varandra med författaren) kan se inlägget.",
       "from": "Från {app}",
       "linkNote": "Det här inlägget visas inte i några listor. Bara de som har länken kan se det.",
+      "noText": "(Ingen text)",
       "preparing": {
         "body": "Innehållet visas här inom en stund.",
         "title": "Inlägget förbereds"

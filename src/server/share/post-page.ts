@@ -5,7 +5,7 @@ import { postUrl } from "@/server/posts/post-dto";
 import { isOpenToAll } from "@/server/posts/visibility";
 import { renderDocumentHtml } from "@/server/render/document-html";
 import { escapeHtml } from "@/server/render/escape";
-import { shareCard } from "./card";
+import { authorCardTitle, shareCard } from "./card";
 import type { ChromeContext } from "./chrome";
 import { renderPage } from "./document";
 import { followButton } from "./follow-button";
@@ -32,7 +32,7 @@ const meta = (property: string, content: string, attr = "property") => `<meta ${
  * (plan docs/plan/2026-11-23-link-visibility.md §4).
  */
 function cardHead(ctx: ChromeContext, data: SharePost, url: string, listed: boolean): string {
-  const card = shareCard(data.post);
+  const card = shareCard(data.post, authorCardTitle(data.author));
   const desc = card.description || ctx.intl.t("common.tagline");
   return [
     listed ? `<link rel="canonical" href="${escapeHtml(url)}">` : '<meta name="robots" content="noindex">',
@@ -123,7 +123,7 @@ export function renderPostPage(ctx: ChromeContext, data: SharePost, social: Page
     `${authorBlock(ctx, data, following)}${title}<div class="ni-body">${body}</div>${quoted !== undefined ? quoteEmbed(ctx, quoted) : ""}` +
     `${postFoot(ctx, data)}${postActions(ctx, post, social)}</article>` +
     `${commentsSection(ctx, post, social, ctx.path)}${reportDialog(ctx, post.slug)}</main>`;
-  const card = shareCard(post);
+  const card = shareCard(post, authorCardTitle(data.author));
   const open = isOpenToAll(post.visibility);
   // WeChat's in-app browser picks the first sizeable <img> as the thumbnail. Posts not open to everyone: no card, never indexed.
   const wx = open ? `<div class="ni-wx"><img src="${escapeHtml(card.thumbUrl)}" width="600" height="600" alt=""></div>` : "";

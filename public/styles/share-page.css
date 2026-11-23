@@ -95,6 +95,9 @@ a { color: inherit; text-decoration: none; }
 .ni-title { font-size: 2.125rem; line-height: 1.2; letter-spacing: -0.02em; margin: 1.125rem 0 0; overflow-wrap: anywhere; }
 .ni-post .ni-body { margin-top: 1.25rem; }
 .ni-edited { cursor: help; }
+/* Name of a post with no title and no text (images / audio only) in links: "(No text)", not read as a title. */
+.ni-none { color: var(--ni-color-text-secondary); font-weight: 400; }
+a:hover .ni-none { color: inherit; }
 /* Private post (author only): note above the post, "Only you" marker on cards. */
 .ni-private-note { display: flex; align-items: center; gap: 0.5rem; margin: 0 0 0.75rem; padding: 0.625rem 0.875rem; border-radius: 0.625rem; background: var(--ni-color-surface-2); color: var(--ni-color-text-secondary); font-size: 0.875rem; line-height: 1.45; }
 .ni-private-note .ni-i { width: 1rem; height: 1rem; color: var(--ni-color-primary); }

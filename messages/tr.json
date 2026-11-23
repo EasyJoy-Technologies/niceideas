@@ -160,7 +160,6 @@
     },
     "posts": {
       "noContent": "(İçerik yok)",
-      "noText": "(Metin yok)",
       "search": "@kullanıcı adı, gönderi kodu veya metin"
     },
     "preset": {
@@ -512,6 +511,7 @@
       "friendsNote": "Bu gönderiyi yalnızca yazarın arkadaşları (yazarla karşılıklı takipleşenler) görebilir.",
       "from": "{app} üzerinden",
       "linkNote": "Bu gönderi hiçbir yerde listelenmez. Yalnızca bağlantıya sahip olanlar görebilir.",
+      "noText": "(Metin yok)",
       "preparing": {
         "body": "İçerik birazdan burada görünecek.",
         "title": "Bu gönderi hazırlanıyor"

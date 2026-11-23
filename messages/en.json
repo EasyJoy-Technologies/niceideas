@@ -160,7 +160,6 @@
     },
     "posts": {
       "noContent": "(No content)",
-      "noText": "(No text)",
       "search": "@handle, post code or text"
     },
     "preset": {
@@ -512,6 +511,7 @@
       "friendsNote": "Only the author's friends (people who follow each other with the author) can see this post.",
       "from": "From {app}",
       "linkNote": "This post isn't listed anywhere. Only people with the link can see it.",
+      "noText": "(No text)",
       "preparing": {
         "body": "The content will appear here in a moment.",
         "title": "Getting this post ready"

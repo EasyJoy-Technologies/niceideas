@@ -160,7 +160,6 @@
     },
     "posts": {
       "noContent": "(Walang content)",
-      "noText": "(Walang text)",
       "search": "@handle, post code, o text"
     },
     "preset": {
@@ -512,6 +511,7 @@
       "friendsNote": "Ang mga kaibigan lang ng may-akda (mga nagfo-follow sa isa't isa kasama ang may-akda) ang makakakita ng post na ito.",
       "from": "Mula sa {app}",
       "linkNote": "Hindi nakalista kahit saan ang post na ito. Ang mga may link lang ang makakakita nito.",
+      "noText": "(Walang text)",
       "preparing": {
         "body": "Lalabas dito ang content sa ilang saglit.",
         "title": "Inihahanda ang post na ito"

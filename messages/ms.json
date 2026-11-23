@@ -160,7 +160,6 @@
     },
     "posts": {
       "noContent": "(Tiada kandungan)",
-      "noText": "(Tiada teks)",
       "search": "@nama pengguna, kod hantaran atau teks"
     },
     "preset": {
@@ -512,6 +511,7 @@
       "friendsNote": "Hanya rakan penulis (orang yang saling mengikuti dengan penulis) boleh melihat siaran ini.",
       "from": "Daripada {app}",
       "linkNote": "Siaran ini tidak disenaraikan di mana-mana. Hanya orang yang ada pautan boleh melihatnya.",
+      "noText": "(Tiada teks)",
       "preparing": {
         "body": "Kandungan akan dipaparkan di sini sebentar lagi.",
         "title": "Menyediakan siaran ini"

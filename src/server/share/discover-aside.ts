@@ -7,8 +7,8 @@ import type { FeedRow } from "@/server/db/repos/feed";
 import { escapeHtml } from "@/server/render/escape";
 import { ttlCache } from "@/server/util/ttl-cache";
 import type { ChromeContext } from "./chrome";
-import { cardTitle } from "./card";
 import { followButton } from "./follow-button";
+import { postLabelHtml } from "./post-label";
 import { avatarHtml, profilePath } from "./profile-bits";
 
 export type DiscoverAside = { authors: Profile[]; hot: FeedRow[] };
@@ -54,7 +54,7 @@ export function renderDiscoverAside(ctx: ChromeContext, a: DiscoverAside): strin
     })
     .join("");
   const hot = a.hot
-    .map((p) => `<a class="ni-mini ni-mini-text" href="/p/${p.slug}"><span><b>${escapeHtml(cardTitle(p))}</b><small>${escapeHtml(p.author_name || `@${p.author_handle}`)} · ${escapeHtml(format.dateTime(p.published_at, { dateStyle: "medium" }))}</small></span></a>`)
+    .map((p) => `<a class="ni-mini ni-mini-text" href="/p/${p.slug}"><span><b>${postLabelHtml(t, p)}</b><small>${escapeHtml(p.author_name || `@${p.author_handle}`)} · ${escapeHtml(format.dateTime(p.published_at, { dateStyle: "medium" }))}</small></span></a>`)
     .join("");
   return (
     (people ? `<section class="ni-card ni-box"><h2>${escapeHtml(t("aside.suggested"))}</h2>${people}</section>` : "") +

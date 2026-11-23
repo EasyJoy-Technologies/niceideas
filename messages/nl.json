@@ -160,7 +160,6 @@
     },
     "posts": {
       "noContent": "(Geen inhoud)",
-      "noText": "(Geen tekst)",
       "search": "@gebruikersnaam, berichtcode of tekst"
     },
     "preset": {
@@ -512,6 +511,7 @@
       "friendsNote": "Alleen vrienden van de auteur (mensen die elkaar wederzijds volgen) kunnen dit bericht zien.",
       "from": "Via {app}",
       "linkNote": "Dit bericht wordt nergens vermeld. Alleen mensen met de link kunnen het zien.",
+      "noText": "(Geen tekst)",
       "preparing": {
         "body": "De inhoud verschijnt hier zo.",
         "title": "Dit bericht wordt voorbereid"
