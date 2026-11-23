@@ -43,7 +43,7 @@
   - `visibility` 继续只返回 `public | private`，「有链接的人」算 `private`（不公开）；`audience` 返回 `link`；`visibility_changed` 事件带上它。
   - `PATCH` 新增 `audience`（五种值，和 `visibility` 一起发时以 `audience` 为准），后台管理页和以后的 App 都用它；只发 `visibility` 的旧客户端照旧：对不公开的帖子发 `private` 保持原样。
   - 创建分享（`POST /posts`）也可以带 `audience`，不带就是公开；同一个分享重复请求不改。这样以后 App 分享时加「有链接的人」选项，NiceIdeas 不用再改。
-  - 后台要做的（另一个项目，记在 `docs/plan/cross-agent-requests.md` #7）：分享列表显示 `audience`，管理员选五种之一后调 `PATCH`，后台自己记审计；NiceIdeas 不回发事件。
+  - 后台要做的（另一个项目，记在 `docs/plan/cross-agent-requests.md` #7）：分享列表显示 `audience`，管理员只能改小，调 `PATCH` 时带 `narrowOnly: true`，后台自己记审计；NiceIdeas 不回发事件。
 
 ## 7. 实现
 - **迁移 `0027_post_link_visibility`：**`post.visibility` 的取值检查放宽到五种，不改数据。回滚时「有链接的人」的帖子变成「仅自己可见」（看到的人只少不多）。
@@ -58,7 +58,8 @@
 
 ## 8. 管理后台修改可见范围（Xianglin 11:55 追加）
 - 帖子列表新增「可见范围」一列（图标 + 文字）。
-- 正常状态的帖子在「下架」旁边多一个「可见范围」按钮：选五种之一，必须填原因，和其他管理操作一样记入审计日志（记录改前和改后的值）。已下架、已删除的帖子不能改（和作者自己改的规则一样）。
+- 正常状态的帖子，「可见范围」一列的值就是按钮，点开选新的范围，必须填原因，和其他管理操作一样记入审计日志（记录改前和改后的值）。已下架、已删除的帖子不能改（和作者自己改的规则一样）。
+- **只能改小**（Xianglin 12:54）：公开 → 其余四种；有链接的人 → 仅自己可见；仅关注者 → 仅朋友 / 仅自己可见；仅朋友 → 仅自己可见。「有链接的人」改成仅关注者 / 仅朋友不算改小（会出现在别人的时间线里）。仅自己可见的帖子没有可选项，只显示当前值。服务端同样检查，加锁后再查一次。m.nicematrix.com 后台调用 `PATCH` 时带 `narrowOnly: true`，NiceIdeas 同样拒绝改大。
 - 走和作者自己修改同一套流程（`posts/set-visibility.ts`）：媒体搬移、CDN 清理都一样；乐趣记事本分享的帖子同样发 `visibility_changed` 事件，App 里显示同样的状态。
 - 只有能执行管理操作的成员能改，只读成员只能看。
 - 迁移 0027 同时允许审计日志的新操作类型 `visibility`。

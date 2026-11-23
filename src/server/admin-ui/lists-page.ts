@@ -1,6 +1,6 @@
 import type { AdminBanRow, AdminCommentRow, AdminPostRow, AuditRow, Page } from "@/server/db/repos/admin-lists";
 import type { CommentStatus, PostStatus, PostVisibility } from "@/server/db/schema";
-import { isVisibility, VISIBILITIES } from "@/server/posts/visibility";
+import { isNarrower, isVisibility, VISIBILITIES } from "@/server/posts/visibility";
 import { icon } from "@/server/share/icons";
 import { VISIBILITY_ICONS, visibilityLabel } from "@/server/share/visibility-bits";
 import { escapeHtml } from "@/server/render/escape";
@@ -23,14 +23,16 @@ const visibilityText = (ctx: AdminContext, v: PostVisibility) => `<span class="a
 
 /**
  * The Visibility cell (plan docs/plan/2026-11-23-link-visibility.md §8). For a live post, the value opens the
- * change form: the five values, the current one selected, and the reason. Otherwise, and for read-only
+ * change form: the current value (selected) and the narrower ones, and the reason. Otherwise, and for read-only
  * members, just the value.
  */
 function visibilityCell(ctx: AdminContext, p: Pick<AdminPostRow, "slug" | "status" | "visibility">, back: string): string {
   const text = visibilityText(ctx, p.visibility);
-  if (p.status !== "active") return text;
+  // Admins only narrow (moderation/admin.ts): the current value and the narrower ones; nothing narrower → just the value.
+  const choices = VISIBILITIES.filter((v) => isNarrower(p.visibility, v));
+  if (p.status !== "active" || choices.length === 0) return text;
   const label = e(ctx.intl.t("share.visibility.label"));
-  const options = VISIBILITIES.map((v) => `<option value="${v}"${v === p.visibility ? " selected" : ""}>${e(visibilityLabel(ctx, v))}</option>`).join("");
+  const options = [p.visibility, ...choices].map((v) => `<option value="${v}"${v === p.visibility ? " selected" : ""}>${e(visibilityLabel(ctx, v))}</option>`).join("");
   const fields = `<label class="ad-row"><span>${label}</span><select class="ad-in" name="visibility">${options}</select></label>`;
   return actionPop(ctx, { action: "set-visibility", target: p.slug, back, label: ctx.intl.t("admin.setVisibility"), fields, summary: text }) || text;
 }

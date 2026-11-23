@@ -189,6 +189,16 @@ describe("NiceNote source API: share lifecycle", () => {
     expect((await json(await PATCH(signed("PATCH", `/posts/${post.id}`, { audience: "friends" }), params({ id: post.id })))).body.post).toMatchObject({ visibility: "private", audience: "friends" });
     expect((await json(await PATCH(signed("PATCH", `/posts/${post.id}`, { audience: "everyone" }), params({ id: post.id })))).status).toBe(400);
     expect((await json(await PATCH(signed("PATCH", `/posts/${post.id}`, { audience: "public" }), params({ id: post.id })))).body.post).toMatchObject({ visibility: "public", audience: "public" });
+    // `narrowOnly` (operators on the backend's console): narrower only, else 409 and nothing changes.
+    const narrow = (body: Record<string, unknown>) => PATCH(signed("PATCH", `/posts/${post.id}`, { narrowOnly: true, ...body }), params({ id: post.id }));
+    expect((await json(await narrow({ audience: "link" }))).body.post).toMatchObject({ audience: "link" });
+    const wider = await json(await narrow({ audience: "followers", commentsMode: "open" }));
+    expect([wider.status, wider.body.error.code]).toEqual([409, "post.visibility_not_narrower"]);
+    expect((await json(await GET(signed("GET", `/posts/${post.id}`), params({ id: post.id })))).body.post).toMatchObject({ audience: "link", commentsMode: "closed" });
+    expect((await json(await narrow({ visibility: "public" }))).status).toBe(409);
+    expect((await json(await narrow({ audience: "link" }))).status).toBe(200);
+    expect((await json(await narrow({ audience: "private" }))).body.post).toMatchObject({ audience: "private" });
+    expect((await json(await PATCH(signed("PATCH", `/posts/${post.id}`, { audience: "public" }), params({ id: post.id })))).body.post).toMatchObject({ audience: "public" });
     expect(await ctx.db.selectFrom("outbox").select("id").where("kind", "=", "post_event").where("payload", "@>", JSON.stringify({ postId: post.id, event: "visibility_changed" }) as never).executeTakeFirst()).toBeUndefined();
     const web = await publishAs(ctx, "nn-user", { version: 1, blocks: [{ type: "text", text: "web post" }] });
     expect((await GET(signed("GET", `/posts/${web.id}`), params({ id: web.id }))).status).toBe(404);

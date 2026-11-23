@@ -126,9 +126,14 @@ Plan `docs/plan/2026-10-26-app-sign-in-ticket.md` (Xianglin 2026-10-26 21:47, in
       the exact value and wins over `visibility` when both are sent (for the user in NiceNote, or an operator on the
       backend's admin console). Old clients keep sending `visibility` only: `private` on any post that is not public
       keeps it as it is. Unknown values → 400 `request.invalid`. No event goes back.
+    - `narrowOnly: true` (send it for operators on the backend's admin console; Xianglin 2026-11-23: admins may
+      only narrow): the new value must be strictly narrower, else 409 `post.visibility_not_narrower` and nothing in
+      the request is applied. Narrower: public → link / followers / friends / private; link → private;
+      followers → friends / private; friends → private (link → followers / friends is not narrower: those show in
+      timelines). Same value → no-op.
     - `POST /posts` (create) also accepts `audience` (missing → `public`), so a share can start limited; a repeated
       request for the same share id never changes it.
-    - A change made on NiceIdeas — by the author on the web, or by a NiceIdeas admin (`/admin/posts`, audited) —
+    - A change made on NiceIdeas — by the author on the web, or by a NiceIdeas admin (`/admin/posts`, narrower only, audited) —
       sends `visibility_changed` with `details.visibility` + `details.audience`.
 - **Events to the backend** (`outbox`, delivered by the worker, signed, `X-NM-Service: niceideas`; retried after 1 min,
   5 min, 30 min, then hourly for 24 h; 400 / 404 / 409 / 410 / 413 / 422 are not retried): `user_registered` on first

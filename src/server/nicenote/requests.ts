@@ -40,12 +40,16 @@ export const pushContentBody = z.object({
     .transform((v) => v ?? {}),
 });
 
-/** `audience` (exact, v1.0.94) wins over the legacy `visibility` (public / private) when both are sent. */
+/**
+ * `audience` (exact, v1.0.94) wins over the legacy `visibility` (public / private) when both are sent.
+ * `narrowOnly` (operators on the backend's admin console): the change must be to a narrower value, else 409.
+ */
 export const shareSettingsBody = z.object({
   syncMode: syncMode.optional(),
   commentsMode: commentsMode.nullable().optional(),
   visibility: z.enum(["public", "private"]).optional(),
   audience: audience.optional(),
+  narrowOnly: z.boolean().optional(),
 });
 
 export type CreateShareInput = z.infer<typeof createShareBody>;

@@ -24,6 +24,20 @@ export const isAudience = (v: PostVisibility): v is Audience => v === "followers
 /** Anyone who has the link may open it, signed in or not: public and link posts (only public ones are listed). */
 export const isOpenToAll = (v: PostVisibility): boolean => v === "public" || v === "link";
 
+/**
+ * Strictly narrower values (admins may only narrow, Xianglin 2026-11-23): everyone who may see the post after
+ * could see it before, and it is listed nowhere it was not. Link → followers / friends is not narrower: those
+ * posts show in timelines, link posts nowhere.
+ */
+const NARROWER: Record<PostVisibility, readonly PostVisibility[]> = {
+  public: ["link", "followers", "friends", "private"],
+  link: ["private"],
+  followers: ["friends", "private"],
+  friends: ["private"],
+  private: [],
+};
+export const isNarrower = (from: PostVisibility, to: PostVisibility): boolean => NARROWER[from].includes(to);
+
 /** Shown to everyone with its media in the public store (an active author is checked separately). */
 export function isPublicLive(post: Pick<Post, "status" | "visibility">): boolean {
   return post.status === "active" && post.visibility === "public";
